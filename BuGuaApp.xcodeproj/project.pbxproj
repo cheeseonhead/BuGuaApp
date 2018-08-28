@@ -19,7 +19,6 @@
 		9B933F412134F054004DCD3F /* FuXiBaGuaView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 9B933F402134F054004DCD3F /* FuXiBaGuaView.xib */; };
 		9B933F592135034B004DCD3F /* BuGuaKit.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 9B933F582135034B004DCD3F /* BuGuaKit.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		9B933F5B2135A8B0004DCD3F /* GuaXiangView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9B933F5A2135A8B0004DCD3F /* GuaXiangView.swift */; };
-		9B933F5D2135A8C4004DCD3F /* GuaXiangView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 9B933F5C2135A8C4004DCD3F /* GuaXiangView.xib */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -72,7 +71,6 @@
 		9B933F402134F054004DCD3F /* FuXiBaGuaView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = FuXiBaGuaView.xib; sourceTree = "<group>"; };
 		9B933F582135034B004DCD3F /* BuGuaKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = BuGuaKit.framework; sourceTree = "<group>"; };
 		9B933F5A2135A8B0004DCD3F /* GuaXiangView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GuaXiangView.swift; sourceTree = "<group>"; };
-		9B933F5C2135A8C4004DCD3F /* GuaXiangView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = GuaXiangView.xib; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -160,7 +158,6 @@
 				9B933F3A2134EB01004DCD3F /* FuXiBaGuaView.swift */,
 				9B933F402134F054004DCD3F /* FuXiBaGuaView.xib */,
 				9B933F5A2135A8B0004DCD3F /* GuaXiangView.swift */,
-				9B933F5C2135A8C4004DCD3F /* GuaXiangView.xib */,
 			);
 			name = Views;
 			sourceTree = "<group>";
@@ -288,7 +285,6 @@
 			files = (
 				9B933EFB2134E52A004DCD3F /* LaunchScreen.storyboard in Resources */,
 				9B933F412134F054004DCD3F /* FuXiBaGuaView.xib in Resources */,
-				9B933F5D2135A8C4004DCD3F /* GuaXiangView.xib in Resources */,
 				9B933EF82134E52A004DCD3F /* Assets.xcassets in Resources */,
 				9B933EF62134E529004DCD3F /* Main.storyboard in Resources */,
 			);
