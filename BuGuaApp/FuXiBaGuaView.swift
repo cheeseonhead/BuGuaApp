@@ -12,7 +12,18 @@ import UIKit
 @IBDesignable
 class FuXiBaGuaView: UIView, NibLoadable {
 
-    var baGua: FuXiBaGua = .qian
+    // MARK: - Views
+    @IBOutlet weak var topCenter: UIView!
+    @IBOutlet weak var middleCenter: UIView!
+    @IBOutlet weak var bottomCenter: UIView!
+    lazy var centerViews: [UIView] = [bottomCenter, middleCenter, topCenter]
+
+    // MARK: - Properties
+    var baGua: FuXiBaGua = .qian {
+        didSet {
+            render()
+        }
+    }
 
     required init?(coder aDecoder: NSCoder) {
         super.init(coder: aDecoder)
@@ -35,5 +46,21 @@ private extension FuXiBaGuaView {
 
     func setProperties() {
         semanticContentAttribute = .forceLeftToRight
+        backgroundColor = nil
+    }
+}
+
+// MARK: - Rendering
+private extension FuXiBaGuaView {
+    func render() {
+        zip(centerViews, [FuXiBaGua.Position.bottom, .middle, .top])
+            .forEach { centerView, position in
+                let liangYi = baGua.yao(at: position)
+
+                switch liangYi {
+                case .yang: centerView.backgroundColor = .black
+                case .yin: centerView.backgroundColor = nil
+                }
+            }
     }
 }
