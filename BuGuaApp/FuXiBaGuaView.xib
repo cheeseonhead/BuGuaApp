@@ -12,19 +12,92 @@
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="FuXiBaGuaView" customModule="BuGuaApp" customModuleProvider="target"/>
         <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
         <view contentMode="scaleToFill" id="iN0-l3-epB">
-            <rect key="frame" x="0.0" y="0.0" width="386" height="360"/>
+            <rect key="frame" x="0.0" y="0.0" width="150" height="150"/>
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
-                <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="7N8-0O-9NQ">
-                    <rect key="frame" x="73" y="116" width="240" height="128"/>
-                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                    <color key="backgroundColor" red="0.0" green="0.97680455450000003" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                </view>
+                <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="36" translatesAutoresizingMaskIntoConstraints="NO" id="QQT-LW-wTc">
+                    <rect key="frame" x="0.0" y="0.0" width="150" height="150"/>
+                    <subviews>
+                        <stackView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="tCJ-uY-Lyx">
+                            <rect key="frame" x="0.0" y="0.0" width="150" height="26"/>
+                            <subviews>
+                                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="IZf-fb-RTU" userLabel="Leading">
+                                    <rect key="frame" x="0.0" y="0.0" width="60" height="26"/>
+                                    <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                </view>
+                                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="eMW-h6-h7H" userLabel="Center">
+                                    <rect key="frame" x="60" y="0.0" width="30" height="26"/>
+                                </view>
+                                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="2vk-ag-l2B" userLabel="Trailing">
+                                    <rect key="frame" x="90" y="0.0" width="60" height="26"/>
+                                    <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                </view>
+                            </subviews>
+                            <constraints>
+                                <constraint firstItem="2vk-ag-l2B" firstAttribute="width" secondItem="tCJ-uY-Lyx" secondAttribute="width" multiplier="40%" id="Ncj-93-a2D"/>
+                                <constraint firstItem="IZf-fb-RTU" firstAttribute="width" secondItem="tCJ-uY-Lyx" secondAttribute="width" multiplier="40%" id="jHN-ol-kGy"/>
+                                <constraint firstItem="eMW-h6-h7H" firstAttribute="width" secondItem="tCJ-uY-Lyx" secondAttribute="width" multiplier="20%" id="x9R-KH-n5v"/>
+                            </constraints>
+                        </stackView>
+                        <stackView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="WzX-2x-mkl">
+                            <rect key="frame" x="0.0" y="62" width="150" height="26"/>
+                            <subviews>
+                                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="mg5-d8-mvG" userLabel="Leading">
+                                    <rect key="frame" x="0.0" y="0.0" width="60" height="26"/>
+                                    <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                </view>
+                                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="SCP-C3-xJK" userLabel="Center">
+                                    <rect key="frame" x="60" y="0.0" width="30" height="26"/>
+                                    <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                </view>
+                                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="rGd-Vs-2AY" userLabel="Trailing">
+                                    <rect key="frame" x="90" y="0.0" width="60" height="26"/>
+                                    <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                </view>
+                            </subviews>
+                            <constraints>
+                                <constraint firstItem="SCP-C3-xJK" firstAttribute="width" secondItem="WzX-2x-mkl" secondAttribute="width" multiplier="20%" id="RfA-5H-Agj"/>
+                                <constraint firstItem="mg5-d8-mvG" firstAttribute="width" secondItem="WzX-2x-mkl" secondAttribute="width" multiplier="40%" id="eIk-9u-fb5"/>
+                                <constraint firstItem="rGd-Vs-2AY" firstAttribute="width" secondItem="WzX-2x-mkl" secondAttribute="width" multiplier="40%" id="pFV-lX-cLU"/>
+                            </constraints>
+                        </stackView>
+                        <stackView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="MYS-9I-mKb">
+                            <rect key="frame" x="0.0" y="124" width="150" height="26"/>
+                            <subviews>
+                                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="ejf-cl-d3j" userLabel="Leading">
+                                    <rect key="frame" x="0.0" y="0.0" width="60" height="26"/>
+                                    <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                </view>
+                                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="9zu-LQ-1im" userLabel="Center">
+                                    <rect key="frame" x="60" y="0.0" width="30" height="26"/>
+                                </view>
+                                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="1N2-sm-HCu" userLabel="Trailing">
+                                    <rect key="frame" x="90" y="0.0" width="60" height="26"/>
+                                    <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                </view>
+                            </subviews>
+                            <constraints>
+                                <constraint firstItem="9zu-LQ-1im" firstAttribute="width" secondItem="MYS-9I-mKb" secondAttribute="width" multiplier="20%" id="7lT-fu-dWZ"/>
+                                <constraint firstItem="1N2-sm-HCu" firstAttribute="width" secondItem="MYS-9I-mKb" secondAttribute="width" multiplier="40%" id="9SE-MO-p3T"/>
+                                <constraint firstItem="ejf-cl-d3j" firstAttribute="width" secondItem="MYS-9I-mKb" secondAttribute="width" multiplier="40%" id="nAO-gm-twt"/>
+                            </constraints>
+                        </stackView>
+                    </subviews>
+                    <constraints>
+                        <constraint firstItem="tCJ-uY-Lyx" firstAttribute="height" secondItem="WzX-2x-mkl" secondAttribute="height" id="b5r-vG-oKn"/>
+                        <constraint firstItem="tCJ-uY-Lyx" firstAttribute="height" secondItem="MYS-9I-mKb" secondAttribute="height" id="sBH-sl-ePI"/>
+                    </constraints>
+                </stackView>
             </subviews>
-            <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+            <constraints>
+                <constraint firstItem="vUN-kp-3ea" firstAttribute="bottom" secondItem="QQT-LW-wTc" secondAttribute="bottom" id="5Gx-r5-HdW"/>
+                <constraint firstItem="QQT-LW-wTc" firstAttribute="top" secondItem="vUN-kp-3ea" secondAttribute="top" id="5sa-Qy-trS"/>
+                <constraint firstItem="QQT-LW-wTc" firstAttribute="leading" secondItem="vUN-kp-3ea" secondAttribute="leading" id="T5m-0F-NNZ"/>
+                <constraint firstAttribute="trailing" secondItem="QQT-LW-wTc" secondAttribute="trailing" id="kIJ-Cw-DV8"/>
+            </constraints>
             <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
             <viewLayoutGuide key="safeArea" id="vUN-kp-3ea"/>
-            <point key="canvasLocation" x="147.19999999999999" y="15.292353823088456"/>
+            <point key="canvasLocation" x="88" y="-15.292353823088456"/>
         </view>
     </objects>
 </document>
