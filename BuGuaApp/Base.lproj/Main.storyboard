@@ -17,21 +17,18 @@
                         <rect key="frame" x="0.0" y="0.0" width="1024" height="768"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="9r5-kL-w1T" customClass="FuXiBaGuaView" customModule="BuGuaApp" customModuleProvider="target">
-                                <rect key="frame" x="437" y="309" width="150" height="150"/>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="9r5-kL-w1T" customClass="GuaXiangView" customModule="BuGuaApp" customModuleProvider="target">
+                                <rect key="frame" x="196" y="126" width="632" height="516"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <constraints>
-                                    <constraint firstAttribute="width" secondItem="9r5-kL-w1T" secondAttribute="height" id="WYL-Yi-22D"/>
-                                    <constraint firstAttribute="width" constant="150" id="Ztd-mV-lpX"/>
+                                    <constraint firstAttribute="width" constant="632" id="SuH-Ee-wuz"/>
+                                    <constraint firstAttribute="height" constant="516" id="nHP-RZ-ZrD"/>
                                 </constraints>
                             </view>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="0Vu-q8-Atc">
-                                <rect key="frame" x="161" y="189" width="53" height="30"/>
+                                <rect key="frame" x="172" y="83" width="53" height="30"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <state key="normal" title="Change"/>
-                                <connections>
-                                    <action selector="tapped:" destination="BYZ-38-t0r" eventType="touchUpInside" id="mqq-aQ-bCe"/>
-                                </connections>
                             </button>
                         </subviews>
                         <color key="backgroundColor" red="0.0" green="0.97680455450000003" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
@@ -41,12 +38,10 @@
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                     </view>
-                    <connections>
-                        <outlet property="baGuaView" destination="9r5-kL-w1T" id="min-MF-z65"/>
-                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
+            <point key="canvasLocation" x="14.648437499999998" y="22.65625"/>
         </scene>
     </scenes>
 </document>

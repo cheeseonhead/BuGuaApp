@@ -11,19 +11,10 @@ import BuGuaKit
 
 class ViewController: UIViewController {
 
-    @IBOutlet weak var baGuaView: FuXiBaGuaView!
-
     override func viewDidLoad() {
         super.viewDidLoad()
 
 
-    }
-
-
-    @IBAction func tapped(_ sender: Any) {
-        let randomBaGua = FuXiBaGua.allCases.randomElement()!
-
-        baGuaView.baGua = randomBaGua
     }
 }
 
