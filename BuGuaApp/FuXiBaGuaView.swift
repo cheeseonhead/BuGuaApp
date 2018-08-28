@@ -13,13 +13,24 @@ class FuXiBaGuaView: UIView, NibLoadable {
 
     required init?(coder aDecoder: NSCoder) {
         super.init(coder: aDecoder)
-
-        loadNib()
+        setup()
     }
 
     override init(frame: CGRect) {
         super.init(frame: frame)
+        setup()
+    }
+}
 
+// MARK: - Setup
+private extension FuXiBaGuaView {
+
+    func setup() {
         loadNib()
+        setProperties()
+    }
+
+    func setProperties() {
+        semanticContentAttribute = .forceLeftToRight
     }
 }
