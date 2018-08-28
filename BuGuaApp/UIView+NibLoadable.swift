@@ -14,8 +14,10 @@ protocol NibLoadable {
 }
 
 extension NibLoadable where Self: UIView {
+    
+    /// Call this method in `init(coder:)` and `init(frame:)`
     func loadNib() {
-        let contentView = Bundle.main.loadNibNamed(String(describing: Self.self), owner: self, options: nil)!.first! as! Self
+        let contentView = Bundle(for: Self.self).loadNibNamed(String(describing: Self.self), owner: self, options: nil)!.first! as! UIView
         self.addSubview(contentView)
 
         contentView.translatesAutoresizingMaskIntoConstraints = false

@@ -8,8 +8,18 @@
 
 import UIKit
 
-class FuXiBaGuaView: UIView {
+@IBDesignable
+class FuXiBaGuaView: UIView, NibLoadable {
 
-    
+    required init?(coder aDecoder: NSCoder) {
+        super.init(coder: aDecoder)
 
+        loadNib()
+    }
+
+    override init(frame: CGRect) {
+        super.init(frame: frame)
+
+        loadNib()
+    }
 }
