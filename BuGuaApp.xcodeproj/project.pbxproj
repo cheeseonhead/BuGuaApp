@@ -14,6 +14,9 @@
 		9B933EFB2134E52A004DCD3F /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 9B933EF92134E52A004DCD3F /* LaunchScreen.storyboard */; };
 		9B933F062134E52A004DCD3F /* BuGuaAppTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9B933F052134E52A004DCD3F /* BuGuaAppTests.swift */; };
 		9B933F112134E52A004DCD3F /* BuGuaAppUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9B933F102134E52A004DCD3F /* BuGuaAppUITests.swift */; };
+		9B933F3B2134EB01004DCD3F /* FuXiBaGuaView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9B933F3A2134EB01004DCD3F /* FuXiBaGuaView.swift */; };
+		9B933F3F2134EBBE004DCD3F /* UIView+NibLoadable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9B933F3E2134EBBE004DCD3F /* UIView+NibLoadable.swift */; };
+		9B933F412134F054004DCD3F /* FuXiBaGuaView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 9B933F402134F054004DCD3F /* FuXiBaGuaView.xib */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -47,6 +50,10 @@
 		9B933F0C2134E52A004DCD3F /* BuGuaAppUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = BuGuaAppUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		9B933F102134E52A004DCD3F /* BuGuaAppUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BuGuaAppUITests.swift; sourceTree = "<group>"; };
 		9B933F122134E52A004DCD3F /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		9B933F352134E728004DCD3F /* BuGuaKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = BuGuaKit.framework; sourceTree = "<group>"; };
+		9B933F3A2134EB01004DCD3F /* FuXiBaGuaView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FuXiBaGuaView.swift; sourceTree = "<group>"; };
+		9B933F3E2134EBBE004DCD3F /* UIView+NibLoadable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIView+NibLoadable.swift"; sourceTree = "<group>"; };
+		9B933F402134F054004DCD3F /* FuXiBaGuaView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = FuXiBaGuaView.xib; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -80,6 +87,7 @@
 				9B933EEF2134E529004DCD3F /* BuGuaApp */,
 				9B933F042134E52A004DCD3F /* BuGuaAppTests */,
 				9B933F0F2134E52A004DCD3F /* BuGuaAppUITests */,
+				9B933F352134E728004DCD3F /* BuGuaKit.framework */,
 				9B933EEE2134E529004DCD3F /* Products */,
 			);
 			sourceTree = "<group>";
@@ -100,6 +108,8 @@
 				9B933EF02134E529004DCD3F /* AppDelegate.swift */,
 				9B933EF22134E529004DCD3F /* ViewController.swift */,
 				9B933EF42134E529004DCD3F /* Main.storyboard */,
+				9B933F3C2134EB58004DCD3F /* Views */,
+				9B933F3D2134EB64004DCD3F /* Extensions */,
 				9B933EF72134E52A004DCD3F /* Assets.xcassets */,
 				9B933EF92134E52A004DCD3F /* LaunchScreen.storyboard */,
 				9B933EFC2134E52A004DCD3F /* Info.plist */,
@@ -123,6 +133,23 @@
 				9B933F122134E52A004DCD3F /* Info.plist */,
 			);
 			path = BuGuaAppUITests;
+			sourceTree = "<group>";
+		};
+		9B933F3C2134EB58004DCD3F /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				9B933F3A2134EB01004DCD3F /* FuXiBaGuaView.swift */,
+				9B933F402134F054004DCD3F /* FuXiBaGuaView.xib */,
+			);
+			name = Views;
+			sourceTree = "<group>";
+		};
+		9B933F3D2134EB64004DCD3F /* Extensions */ = {
+			isa = PBXGroup;
+			children = (
+				9B933F3E2134EBBE004DCD3F /* UIView+NibLoadable.swift */,
+			);
+			name = Extensions;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -230,6 +257,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				9B933EFB2134E52A004DCD3F /* LaunchScreen.storyboard in Resources */,
+				9B933F412134F054004DCD3F /* FuXiBaGuaView.xib in Resources */,
 				9B933EF82134E52A004DCD3F /* Assets.xcassets in Resources */,
 				9B933EF62134E529004DCD3F /* Main.storyboard in Resources */,
 			);
@@ -256,6 +284,8 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				9B933F3F2134EBBE004DCD3F /* UIView+NibLoadable.swift in Sources */,
+				9B933F3B2134EB01004DCD3F /* FuXiBaGuaView.swift in Sources */,
 				9B933EF32134E529004DCD3F /* ViewController.swift in Sources */,
 				9B933EF12134E529004DCD3F /* AppDelegate.swift in Sources */,
 			);
@@ -434,6 +464,10 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 77Q2XB2RSV;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)",
+				);
 				INFOPLIST_FILE = BuGuaApp/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
@@ -452,6 +486,10 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 77Q2XB2RSV;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)",
+				);
 				INFOPLIST_FILE = BuGuaApp/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
