@@ -6,10 +6,13 @@
 //  Copyright © 2018 Jeffrey Wu. All rights reserved.
 //
 
+import BuGuaKit
 import UIKit
 
 @IBDesignable
 class FuXiBaGuaView: UIView, NibLoadable {
+
+    var baGua: FuXiBaGua = .qian
 
     required init?(coder aDecoder: NSCoder) {
         super.init(coder: aDecoder)

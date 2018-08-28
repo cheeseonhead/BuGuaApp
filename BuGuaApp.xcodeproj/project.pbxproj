@@ -17,6 +17,7 @@
 		9B933F3B2134EB01004DCD3F /* FuXiBaGuaView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9B933F3A2134EB01004DCD3F /* FuXiBaGuaView.swift */; };
 		9B933F3F2134EBBE004DCD3F /* UIView+NibLoadable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9B933F3E2134EBBE004DCD3F /* UIView+NibLoadable.swift */; };
 		9B933F412134F054004DCD3F /* FuXiBaGuaView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 9B933F402134F054004DCD3F /* FuXiBaGuaView.xib */; };
+		9B933F592135034B004DCD3F /* BuGuaKit.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 9B933F582135034B004DCD3F /* BuGuaKit.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -36,6 +37,20 @@
 		};
 /* End PBXContainerItemProxy section */
 
+/* Begin PBXCopyFilesBuildPhase section */
+		9B933F442134FD9A004DCD3F /* Embed Frameworks */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 10;
+			files = (
+				9B933F592135034B004DCD3F /* BuGuaKit.framework in Embed Frameworks */,
+			);
+			name = "Embed Frameworks";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXCopyFilesBuildPhase section */
+
 /* Begin PBXFileReference section */
 		9B933EED2134E529004DCD3F /* BuGuaApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = BuGuaApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		9B933EF02134E529004DCD3F /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -50,10 +65,10 @@
 		9B933F0C2134E52A004DCD3F /* BuGuaAppUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = BuGuaAppUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		9B933F102134E52A004DCD3F /* BuGuaAppUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BuGuaAppUITests.swift; sourceTree = "<group>"; };
 		9B933F122134E52A004DCD3F /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		9B933F352134E728004DCD3F /* BuGuaKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = BuGuaKit.framework; sourceTree = "<group>"; };
 		9B933F3A2134EB01004DCD3F /* FuXiBaGuaView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FuXiBaGuaView.swift; sourceTree = "<group>"; };
 		9B933F3E2134EBBE004DCD3F /* UIView+NibLoadable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIView+NibLoadable.swift"; sourceTree = "<group>"; };
 		9B933F402134F054004DCD3F /* FuXiBaGuaView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = FuXiBaGuaView.xib; sourceTree = "<group>"; };
+		9B933F582135034B004DCD3F /* BuGuaKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = BuGuaKit.framework; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -87,8 +102,8 @@
 				9B933EEF2134E529004DCD3F /* BuGuaApp */,
 				9B933F042134E52A004DCD3F /* BuGuaAppTests */,
 				9B933F0F2134E52A004DCD3F /* BuGuaAppUITests */,
-				9B933F352134E728004DCD3F /* BuGuaKit.framework */,
 				9B933EEE2134E529004DCD3F /* Products */,
+				9B933F472135008A004DCD3F /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -152,6 +167,14 @@
 			name = Extensions;
 			sourceTree = "<group>";
 		};
+		9B933F472135008A004DCD3F /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				9B933F582135034B004DCD3F /* BuGuaKit.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -162,6 +185,7 @@
 				9B933EE92134E529004DCD3F /* Sources */,
 				9B933EEA2134E529004DCD3F /* Frameworks */,
 				9B933EEB2134E529004DCD3F /* Resources */,
+				9B933F442134FD9A004DCD3F /* Embed Frameworks */,
 			);
 			buildRules = (
 			);
