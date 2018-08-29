@@ -12,30 +12,31 @@
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="FuXiBaGuaView" customModule="BuGuaApp" customModuleProvider="target">
             <connections>
                 <outlet property="bottomCenter" destination="9zu-LQ-1im" id="poJ-fg-Xdu"/>
+                <outlet property="mainStackView" destination="QQT-LW-wTc" id="yCv-EY-AyT"/>
                 <outlet property="middleCenter" destination="SCP-C3-xJK" id="RzT-av-d0Q"/>
                 <outlet property="topCenter" destination="eMW-h6-h7H" id="fOg-TM-PPE"/>
             </connections>
         </placeholder>
         <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
         <view contentMode="scaleToFill" id="iN0-l3-epB">
-            <rect key="frame" x="0.0" y="0.0" width="150" height="150"/>
+            <rect key="frame" x="0.0" y="0.0" width="204" height="394"/>
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
-                <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="36" translatesAutoresizingMaskIntoConstraints="NO" id="QQT-LW-wTc">
-                    <rect key="frame" x="0.0" y="0.0" width="150" height="150"/>
+                <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="equalSpacing" spacing="36" translatesAutoresizingMaskIntoConstraints="NO" id="QQT-LW-wTc">
+                    <rect key="frame" x="0.0" y="0.0" width="204" height="394"/>
                     <subviews>
                         <stackView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="tCJ-uY-Lyx">
-                            <rect key="frame" x="0.0" y="0.0" width="150" height="26"/>
+                            <rect key="frame" x="0.0" y="0.0" width="204" height="65.5"/>
                             <subviews>
                                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="IZf-fb-RTU" userLabel="Leading">
-                                    <rect key="frame" x="0.0" y="0.0" width="60" height="26"/>
+                                    <rect key="frame" x="0.0" y="0.0" width="81.5" height="65.5"/>
                                     <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 </view>
                                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="eMW-h6-h7H" userLabel="Center">
-                                    <rect key="frame" x="60" y="0.0" width="30" height="26"/>
+                                    <rect key="frame" x="81.5" y="0.0" width="41" height="65.5"/>
                                 </view>
                                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="2vk-ag-l2B" userLabel="Trailing">
-                                    <rect key="frame" x="90" y="0.0" width="60" height="26"/>
+                                    <rect key="frame" x="122.5" y="0.0" width="81.5" height="65.5"/>
                                     <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 </view>
                             </subviews>
@@ -46,18 +47,18 @@
                             </constraints>
                         </stackView>
                         <stackView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="WzX-2x-mkl">
-                            <rect key="frame" x="0.0" y="62" width="150" height="26"/>
+                            <rect key="frame" x="0.0" y="164" width="204" height="66"/>
                             <subviews>
                                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="mg5-d8-mvG" userLabel="Leading">
-                                    <rect key="frame" x="0.0" y="0.0" width="60" height="26"/>
+                                    <rect key="frame" x="0.0" y="0.0" width="81.5" height="66"/>
                                     <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 </view>
                                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="SCP-C3-xJK" userLabel="Center">
-                                    <rect key="frame" x="60" y="0.0" width="30" height="26"/>
+                                    <rect key="frame" x="81.5" y="0.0" width="41" height="66"/>
                                     <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 </view>
                                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="rGd-Vs-2AY" userLabel="Trailing">
-                                    <rect key="frame" x="90" y="0.0" width="60" height="26"/>
+                                    <rect key="frame" x="122.5" y="0.0" width="81.5" height="66"/>
                                     <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 </view>
                             </subviews>
@@ -68,17 +69,17 @@
                             </constraints>
                         </stackView>
                         <stackView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="MYS-9I-mKb">
-                            <rect key="frame" x="0.0" y="124" width="150" height="26"/>
+                            <rect key="frame" x="0.0" y="328.5" width="204" height="65.5"/>
                             <subviews>
                                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="ejf-cl-d3j" userLabel="Leading">
-                                    <rect key="frame" x="0.0" y="0.0" width="60" height="26"/>
+                                    <rect key="frame" x="0.0" y="0.0" width="81.5" height="65.5"/>
                                     <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 </view>
                                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="9zu-LQ-1im" userLabel="Center">
-                                    <rect key="frame" x="60" y="0.0" width="30" height="26"/>
+                                    <rect key="frame" x="81.5" y="0.0" width="41" height="65.5"/>
                                 </view>
                                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="1N2-sm-HCu" userLabel="Trailing">
-                                    <rect key="frame" x="90" y="0.0" width="60" height="26"/>
+                                    <rect key="frame" x="122.5" y="0.0" width="81.5" height="65.5"/>
                                     <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 </view>
                             </subviews>
@@ -91,6 +92,7 @@
                     </subviews>
                     <constraints>
                         <constraint firstItem="tCJ-uY-Lyx" firstAttribute="height" secondItem="WzX-2x-mkl" secondAttribute="height" id="b5r-vG-oKn"/>
+                        <constraint firstItem="tCJ-uY-Lyx" firstAttribute="height" secondItem="QQT-LW-wTc" secondAttribute="height" multiplier="25:150" id="esa-I4-Sf6"/>
                         <constraint firstItem="tCJ-uY-Lyx" firstAttribute="height" secondItem="MYS-9I-mKb" secondAttribute="height" id="sBH-sl-ePI"/>
                     </constraints>
                 </stackView>
@@ -103,7 +105,7 @@
             </constraints>
             <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
             <viewLayoutGuide key="safeArea" id="vUN-kp-3ea"/>
-            <point key="canvasLocation" x="88" y="-15.292353823088456"/>
+            <point key="canvasLocation" x="131.19999999999999" y="94.452773613193415"/>
         </view>
     </objects>
 </document>
