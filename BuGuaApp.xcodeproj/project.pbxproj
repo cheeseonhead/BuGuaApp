@@ -25,6 +25,7 @@
 		9B933F6821365201004DCD3F /* RxTest.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9B933F5F21364AD4004DCD3F /* RxTest.framework */; };
 		9B933F6A21365262004DCD3F /* RxBlocking.framework in CopyFiles */ = {isa = PBXBuildFile; fileRef = 9B933F5E21364AD4004DCD3F /* RxBlocking.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		9B933F6B21365266004DCD3F /* RxTest.framework in CopyFiles */ = {isa = PBXBuildFile; fileRef = 9B933F5F21364AD4004DCD3F /* RxTest.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		9B933F6D2136537A004DCD3F /* UIView+Layout.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9B933F6C2136537A004DCD3F /* UIView+Layout.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -92,6 +93,7 @@
 		9B933F5F21364AD4004DCD3F /* RxTest.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = RxTest.framework; path = Carthage/Build/iOS/RxTest.framework; sourceTree = "<group>"; };
 		9B933F6021364AD4004DCD3F /* RxCocoa.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = RxCocoa.framework; path = Carthage/Build/iOS/RxCocoa.framework; sourceTree = "<group>"; };
 		9B933F6121364AD4004DCD3F /* RxSwift.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = RxSwift.framework; path = Carthage/Build/iOS/RxSwift.framework; sourceTree = "<group>"; };
+		9B933F6C2136537A004DCD3F /* UIView+Layout.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIView+Layout.swift"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -191,6 +193,7 @@
 			isa = PBXGroup;
 			children = (
 				9B933F3E2134EBBE004DCD3F /* UIView+NibLoadable.swift */,
+				9B933F6C2136537A004DCD3F /* UIView+Layout.swift */,
 			);
 			name = Extensions;
 			sourceTree = "<group>";
@@ -388,6 +391,7 @@
 			files = (
 				9B933F3F2134EBBE004DCD3F /* UIView+NibLoadable.swift in Sources */,
 				9B933F3B2134EB01004DCD3F /* FuXiBaGuaView.swift in Sources */,
+				9B933F6D2136537A004DCD3F /* UIView+Layout.swift in Sources */,
 				9B933EF32134E529004DCD3F /* ViewController.swift in Sources */,
 				9B933F5B2135A8B0004DCD3F /* GuaXiangView.swift in Sources */,
 				9B933EF12134E529004DCD3F /* AppDelegate.swift in Sources */,
