@@ -7,6 +7,8 @@
 //
 
 import BuGuaKit
+import RxSwift
+import RxCocoa
 import UIKit
 
 @IBDesignable
@@ -15,9 +17,16 @@ class GuaXiangView: UIView {
     // MARK: - Views
     var innerGuaView: FuXiBaGuaView!
     var outerGuaView: FuXiBaGuaView!
+    var baGuaStackView: UIStackView!
+    var diZhiLabels: [UILabel]!
 
     // MARK: - Properties
-    var guaXiang: LiuYaoGuaXiang?
+    let guaXiangRelay = PublishRelay<LiuYaoGuaXiang>()
+
+    // MARK: - Private
+    let bag = DisposeBag()
+
+    // MARK: - Initializers
 
     override init(frame: CGRect) {
         super.init(frame: frame)
@@ -38,32 +47,76 @@ private extension GuaXiangView {
     func setupViews() {
         translatesAutoresizingMaskIntoConstraints = false
         setupBaGuaViews()
+        setupDiZhiLabels()
+
+        bindings()
     }
 
     func setupBaGuaViews() {
 
         innerGuaView = makeBaGuaView()
         outerGuaView = makeBaGuaView()
-        outerGuaView.baGuaRelay.accept(.kun)
 
-        let centerStackView = UIStackView(arrangedSubviews: [innerGuaView, outerGuaView])
-        centerStackView.translatesAutoresizingMaskIntoConstraints = false
+        baGuaStackView = UIStackView(arrangedSubviews: [outerGuaView, innerGuaView])
+        baGuaStackView.translatesAutoresizingMaskIntoConstraints = false
 
-        centerStackView.axis = .vertical
-        centerStackView.spacing = 48
+        baGuaStackView.axis = .vertical
+        baGuaStackView.spacing = 48
 
 
-        addSubview(centerStackView)
-        centerStackView.center(useSafeArea: true)
-        centerStackView.anchorFillHeight(useSafeArea: true)
+        addSubview(baGuaStackView)
+        baGuaStackView.center(useSafeArea: true)
+            .anchorFillHeight(useSafeArea: true)
     }
 
     func makeBaGuaView() -> FuXiBaGuaView {
         let baGuaView = FuXiBaGuaView(frame: CGRect.zero)
-
-//        baGuaView.anchorHeight(to: ).anchorWidth(to: 500)
         baGuaView.heightAnchor.constraint(equalTo: baGuaView.widthAnchor).isActive = true
 
         return baGuaView
+    }
+
+    func setupDiZhiLabels() {
+        diZhiLabels = [innerGuaView, outerGuaView].lazy.flatMap { $0.centerViews }
+            .map { createDiZhiLabel(to: $0) }
+    }
+
+    func createDiZhiLabel(to yaoView: UIView) -> UILabel {
+        let label = UILabel(frame: CGRect.zero)
+        label.translatesAutoresizingMaskIntoConstraints = false
+
+        addSubview(label)
+
+        let horizontalSpacing: CGFloat = 24
+
+        label.leadingAnchor.constraint(equalTo: baGuaStackView.trailingAnchor, constant: horizontalSpacing).isActive = true
+        label.centerYAnchor.constraint(equalTo: yaoView.centerYAnchor).isActive = true
+
+        return label
+    }
+}
+
+// MARK: - Bindings
+private extension GuaXiangView {
+    func bindings() {
+        guaXiangRelay.map { $0.originalGua.innerGua }
+            .bind(to: innerGuaView.baGuaRelay)
+            .disposed(by: bag)
+
+        guaXiangRelay.map { $0.originalGua.outerGua }
+            .bind(to: outerGuaView.baGuaRelay)
+            .disposed(by: bag)
+
+        let diZhiStrings: Observable<[String?]> = guaXiangRelay.map { $0.originalGua.yaoZhi }
+            .map { $0.map { $0.character + $0.wuXing.character } }
+
+        let textObservables = (0..<diZhiLabels.count).map { index in
+            diZhiStrings.map { $0[index] }
+        }
+
+        zip(textObservables, diZhiLabels).map { stringRelay, label in
+            stringRelay.bind(to: label.rx.text)
+        }.forEach { $0.disposed(by: bag) }
+
     }
 }
