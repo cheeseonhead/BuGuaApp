@@ -19,6 +19,12 @@
 		9B933F412134F054004DCD3F /* FuXiBaGuaView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 9B933F402134F054004DCD3F /* FuXiBaGuaView.xib */; };
 		9B933F592135034B004DCD3F /* BuGuaKit.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 9B933F582135034B004DCD3F /* BuGuaKit.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		9B933F5B2135A8B0004DCD3F /* GuaXiangView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9B933F5A2135A8B0004DCD3F /* GuaXiangView.swift */; };
+		9B933F6421364AD4004DCD3F /* RxCocoa.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9B933F6021364AD4004DCD3F /* RxCocoa.framework */; };
+		9B933F6521364AD4004DCD3F /* RxSwift.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9B933F6121364AD4004DCD3F /* RxSwift.framework */; };
+		9B933F67213651FF004DCD3F /* RxBlocking.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9B933F5E21364AD4004DCD3F /* RxBlocking.framework */; };
+		9B933F6821365201004DCD3F /* RxTest.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9B933F5F21364AD4004DCD3F /* RxTest.framework */; };
+		9B933F6A21365262004DCD3F /* RxBlocking.framework in CopyFiles */ = {isa = PBXBuildFile; fileRef = 9B933F5E21364AD4004DCD3F /* RxBlocking.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		9B933F6B21365266004DCD3F /* RxTest.framework in CopyFiles */ = {isa = PBXBuildFile; fileRef = 9B933F5F21364AD4004DCD3F /* RxTest.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -50,6 +56,17 @@
 			name = "Embed Frameworks";
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		9B933F6921365254004DCD3F /* CopyFiles */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 10;
+			files = (
+				9B933F6B21365266004DCD3F /* RxTest.framework in CopyFiles */,
+				9B933F6A21365262004DCD3F /* RxBlocking.framework in CopyFiles */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
@@ -71,6 +88,10 @@
 		9B933F402134F054004DCD3F /* FuXiBaGuaView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = FuXiBaGuaView.xib; sourceTree = "<group>"; };
 		9B933F582135034B004DCD3F /* BuGuaKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = BuGuaKit.framework; sourceTree = "<group>"; };
 		9B933F5A2135A8B0004DCD3F /* GuaXiangView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GuaXiangView.swift; sourceTree = "<group>"; };
+		9B933F5E21364AD4004DCD3F /* RxBlocking.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = RxBlocking.framework; path = Carthage/Build/iOS/RxBlocking.framework; sourceTree = "<group>"; };
+		9B933F5F21364AD4004DCD3F /* RxTest.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = RxTest.framework; path = Carthage/Build/iOS/RxTest.framework; sourceTree = "<group>"; };
+		9B933F6021364AD4004DCD3F /* RxCocoa.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = RxCocoa.framework; path = Carthage/Build/iOS/RxCocoa.framework; sourceTree = "<group>"; };
+		9B933F6121364AD4004DCD3F /* RxSwift.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = RxSwift.framework; path = Carthage/Build/iOS/RxSwift.framework; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -78,6 +99,8 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				9B933F6521364AD4004DCD3F /* RxSwift.framework in Frameworks */,
+				9B933F6421364AD4004DCD3F /* RxCocoa.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -85,6 +108,8 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				9B933F67213651FF004DCD3F /* RxBlocking.framework in Frameworks */,
+				9B933F6821365201004DCD3F /* RxTest.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -173,6 +198,10 @@
 		9B933F472135008A004DCD3F /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				9B933F5E21364AD4004DCD3F /* RxBlocking.framework */,
+				9B933F6021364AD4004DCD3F /* RxCocoa.framework */,
+				9B933F6121364AD4004DCD3F /* RxSwift.framework */,
+				9B933F5F21364AD4004DCD3F /* RxTest.framework */,
 				9B933F582135034B004DCD3F /* BuGuaKit.framework */,
 			);
 			name = Frameworks;
@@ -185,6 +214,7 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 9B933F152134E52A004DCD3F /* Build configuration list for PBXNativeTarget "BuGuaApp" */;
 			buildPhases = (
+				9B933F66213650DD004DCD3F /* Copy Carthage */,
 				9B933EE92134E529004DCD3F /* Sources */,
 				9B933EEA2134E529004DCD3F /* Frameworks */,
 				9B933EEB2134E529004DCD3F /* Resources */,
@@ -203,11 +233,10 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 9B933F182134E52A004DCD3F /* Build configuration list for PBXNativeTarget "BuGuaAppTests" */;
 			buildPhases = (
-				390BEA9637FF5834F575CA53 /* [CP] Check Pods Manifest.lock */,
 				9B933EFD2134E52A004DCD3F /* Sources */,
 				9B933EFE2134E52A004DCD3F /* Frameworks */,
 				9B933EFF2134E52A004DCD3F /* Resources */,
-				AA2372E20469D2DE4D5C9AA8 /* [CP] Embed Pods Frameworks */,
+				9B933F6921365254004DCD3F /* CopyFiles */,
 			);
 			buildRules = (
 			);
@@ -310,45 +339,27 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXShellScriptBuildPhase section */
-		390BEA9637FF5834F575CA53 /* [CP] Check Pods Manifest.lock */ = {
+		9B933F66213650DD004DCD3F /* Copy Carthage */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
 			);
-			inputPaths = (
-				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
-				"${PODS_ROOT}/Manifest.lock",
+			inputFileListPaths = (
 			);
-			name = "[CP] Check Pods Manifest.lock";
+			inputPaths = (
+				"$(SRCROOT)/Carthage/Build/iOS/RxCocoa.framework",
+				"$(SRCROOT)/Carthage/Build/iOS/RxSwift.framework",
+			);
+			name = "Copy Carthage";
+			outputFileListPaths = (
+			);
 			outputPaths = (
-				"$(DERIVED_FILE_DIR)/Pods-BuGuaAppTests-checkManifestLockResult.txt",
+				"$(BUILT_PRODUCTS_DIR)/$(FRAMEWORKS_FOLDER_PATH)/RxSwift.framework",
+				"$(BUILT_PRODUCTS_DIR)/$(FRAMEWORKS_FOLDER_PATH)/RxCocoa.framework",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
-			showEnvVarsInLog = 0;
-		};
-		AA2372E20469D2DE4D5C9AA8 /* [CP] Embed Pods Frameworks */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputPaths = (
-				"${SRCROOT}/Pods/Target Support Files/Pods-BuGuaAppTests/Pods-BuGuaAppTests-frameworks.sh",
-				"${BUILT_PRODUCTS_DIR}/RxSwift/RxSwift.framework",
-				"${BUILT_PRODUCTS_DIR}/RxBlocking/RxBlocking.framework",
-				"${BUILT_PRODUCTS_DIR}/RxTest/RxTest.framework",
-			);
-			name = "[CP] Embed Pods Frameworks";
-			outputPaths = (
-				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/RxSwift.framework",
-				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/RxBlocking.framework",
-				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/RxTest.framework",
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-BuGuaAppTests/Pods-BuGuaAppTests-frameworks.sh\"\n";
-			showEnvVarsInLog = 0;
+			shellScript = "#!bin/sh\n\n# Type a script or drag a script file from your workspace to insert its path.\n/usr/local/bin/carthage copy-frameworks\n";
 		};
 		FF68C329D2A74B52C6778C33 /* [CP] Check Pods Manifest.lock */ = {
 			isa = PBXShellScriptBuildPhase;
@@ -559,6 +570,7 @@
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(PROJECT_DIR)",
+					"$(PROJECT_DIR)/Carthage/Build/iOS",
 				);
 				INFOPLIST_FILE = BuGuaApp/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
@@ -581,6 +593,7 @@
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(PROJECT_DIR)",
+					"$(PROJECT_DIR)/Carthage/Build/iOS",
 				);
 				INFOPLIST_FILE = BuGuaApp/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
@@ -601,6 +614,10 @@
 				BUNDLE_LOADER = "$(TEST_HOST)";
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 77Q2XB2RSV;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/Carthage/Build/iOS",
+				);
 				INFOPLIST_FILE = BuGuaAppTests/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
@@ -622,6 +639,10 @@
 				BUNDLE_LOADER = "$(TEST_HOST)";
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 77Q2XB2RSV;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/Carthage/Build/iOS",
+				);
 				INFOPLIST_FILE = BuGuaAppTests/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
