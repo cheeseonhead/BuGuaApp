@@ -7,6 +7,9 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		32222563F374766EBDEC5765 /* Pods_BuGuaApp.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C759B6D9D5D1598355F79022 /* Pods_BuGuaApp.framework */; };
+		877D6AF36805FD129142968C /* Pods_BuGuaAppTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C3C1CD0CC4293EC3E2A9C07C /* Pods_BuGuaAppTests.framework */; };
+		8E00CBB03F57EB2277ABAEAD /* Pods_BuGuaAppUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 52FCB92F9CD4C5C7EBAF20C6 /* Pods_BuGuaAppUITests.framework */; };
 		9B933EF12134E529004DCD3F /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9B933EF02134E529004DCD3F /* AppDelegate.swift */; };
 		9B933EF32134E529004DCD3F /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9B933EF22134E529004DCD3F /* ViewController.swift */; };
 		9B933EF62134E529004DCD3F /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 9B933EF42134E529004DCD3F /* Main.storyboard */; };
@@ -53,6 +56,12 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
+		1851092EF1C15CF0997A2DEA /* Pods-BuGuaAppUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-BuGuaAppUITests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-BuGuaAppUITests/Pods-BuGuaAppUITests.debug.xcconfig"; sourceTree = "<group>"; };
+		320858683A9787403AE580C1 /* Pods-BuGuaAppUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-BuGuaAppUITests.release.xcconfig"; path = "Pods/Target Support Files/Pods-BuGuaAppUITests/Pods-BuGuaAppUITests.release.xcconfig"; sourceTree = "<group>"; };
+		52FCB92F9CD4C5C7EBAF20C6 /* Pods_BuGuaAppUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_BuGuaAppUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		63C1B7654433D4774C37CD7A /* Pods-BuGuaApp.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-BuGuaApp.debug.xcconfig"; path = "Pods/Target Support Files/Pods-BuGuaApp/Pods-BuGuaApp.debug.xcconfig"; sourceTree = "<group>"; };
+		7F0AB1A4A18007E1D1DA20CC /* Pods-BuGuaApp.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-BuGuaApp.release.xcconfig"; path = "Pods/Target Support Files/Pods-BuGuaApp/Pods-BuGuaApp.release.xcconfig"; sourceTree = "<group>"; };
+		85D90160965E7A2F69962EE7 /* Pods-BuGuaAppTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-BuGuaAppTests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-BuGuaAppTests/Pods-BuGuaAppTests.debug.xcconfig"; sourceTree = "<group>"; };
 		9B933EED2134E529004DCD3F /* BuGuaApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = BuGuaApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		9B933EF02134E529004DCD3F /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		9B933EF22134E529004DCD3F /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -71,6 +80,9 @@
 		9B933F402134F054004DCD3F /* FuXiBaGuaView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = FuXiBaGuaView.xib; sourceTree = "<group>"; };
 		9B933F582135034B004DCD3F /* BuGuaKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = BuGuaKit.framework; sourceTree = "<group>"; };
 		9B933F5A2135A8B0004DCD3F /* GuaXiangView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GuaXiangView.swift; sourceTree = "<group>"; };
+		B45C4F55759728D9448EEDEC /* Pods-BuGuaAppTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-BuGuaAppTests.release.xcconfig"; path = "Pods/Target Support Files/Pods-BuGuaAppTests/Pods-BuGuaAppTests.release.xcconfig"; sourceTree = "<group>"; };
+		C3C1CD0CC4293EC3E2A9C07C /* Pods_BuGuaAppTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_BuGuaAppTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		C759B6D9D5D1598355F79022 /* Pods_BuGuaApp.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_BuGuaApp.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -78,6 +90,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				32222563F374766EBDEC5765 /* Pods_BuGuaApp.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -85,6 +98,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				877D6AF36805FD129142968C /* Pods_BuGuaAppTests.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -92,6 +106,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				8E00CBB03F57EB2277ABAEAD /* Pods_BuGuaAppUITests.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -106,6 +121,7 @@
 				9B933F0F2134E52A004DCD3F /* BuGuaAppUITests */,
 				9B933EEE2134E529004DCD3F /* Products */,
 				9B933F472135008A004DCD3F /* Frameworks */,
+				A24787B05EE1FCF4D328386F /* Pods */,
 			);
 			sourceTree = "<group>";
 		};
@@ -174,8 +190,24 @@
 			isa = PBXGroup;
 			children = (
 				9B933F582135034B004DCD3F /* BuGuaKit.framework */,
+				C759B6D9D5D1598355F79022 /* Pods_BuGuaApp.framework */,
+				C3C1CD0CC4293EC3E2A9C07C /* Pods_BuGuaAppTests.framework */,
+				52FCB92F9CD4C5C7EBAF20C6 /* Pods_BuGuaAppUITests.framework */,
 			);
 			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		A24787B05EE1FCF4D328386F /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				63C1B7654433D4774C37CD7A /* Pods-BuGuaApp.debug.xcconfig */,
+				7F0AB1A4A18007E1D1DA20CC /* Pods-BuGuaApp.release.xcconfig */,
+				85D90160965E7A2F69962EE7 /* Pods-BuGuaAppTests.debug.xcconfig */,
+				B45C4F55759728D9448EEDEC /* Pods-BuGuaAppTests.release.xcconfig */,
+				1851092EF1C15CF0997A2DEA /* Pods-BuGuaAppUITests.debug.xcconfig */,
+				320858683A9787403AE580C1 /* Pods-BuGuaAppUITests.release.xcconfig */,
+			);
+			name = Pods;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -185,10 +217,12 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 9B933F152134E52A004DCD3F /* Build configuration list for PBXNativeTarget "BuGuaApp" */;
 			buildPhases = (
+				A4B710392875C0AE6C929758 /* [CP] Check Pods Manifest.lock */,
 				9B933EE92134E529004DCD3F /* Sources */,
 				9B933EEA2134E529004DCD3F /* Frameworks */,
 				9B933EEB2134E529004DCD3F /* Resources */,
 				9B933F442134FD9A004DCD3F /* Embed Frameworks */,
+				7F8A49AB4C9A91E8CDEF7549 /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -203,9 +237,11 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 9B933F182134E52A004DCD3F /* Build configuration list for PBXNativeTarget "BuGuaAppTests" */;
 			buildPhases = (
+				390BEA9637FF5834F575CA53 /* [CP] Check Pods Manifest.lock */,
 				9B933EFD2134E52A004DCD3F /* Sources */,
 				9B933EFE2134E52A004DCD3F /* Frameworks */,
 				9B933EFF2134E52A004DCD3F /* Resources */,
+				AA2372E20469D2DE4D5C9AA8 /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -221,6 +257,7 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 9B933F1B2134E52A004DCD3F /* Build configuration list for PBXNativeTarget "BuGuaAppUITests" */;
 			buildPhases = (
+				FF68C329D2A74B52C6778C33 /* [CP] Check Pods Manifest.lock */,
 				9B933F082134E52A004DCD3F /* Sources */,
 				9B933F092134E52A004DCD3F /* Frameworks */,
 				9B933F0A2134E52A004DCD3F /* Resources */,
@@ -305,6 +342,105 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		390BEA9637FF5834F575CA53 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-BuGuaAppTests-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		7F8A49AB4C9A91E8CDEF7549 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"${SRCROOT}/Pods/Target Support Files/Pods-BuGuaApp/Pods-BuGuaApp-frameworks.sh",
+				"${BUILT_PRODUCTS_DIR}/RxCocoa/RxCocoa.framework",
+				"${BUILT_PRODUCTS_DIR}/RxSwift/RxSwift.framework",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputPaths = (
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/RxCocoa.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/RxSwift.framework",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-BuGuaApp/Pods-BuGuaApp-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		A4B710392875C0AE6C929758 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-BuGuaApp-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		AA2372E20469D2DE4D5C9AA8 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"${SRCROOT}/Pods/Target Support Files/Pods-BuGuaAppTests/Pods-BuGuaAppTests-frameworks.sh",
+				"${BUILT_PRODUCTS_DIR}/RxSwift/RxSwift.framework",
+				"${BUILT_PRODUCTS_DIR}/RxBlocking/RxBlocking.framework",
+				"${BUILT_PRODUCTS_DIR}/RxTest/RxTest.framework",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputPaths = (
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/RxSwift.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/RxBlocking.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/RxTest.framework",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-BuGuaAppTests/Pods-BuGuaAppTests-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		FF68C329D2A74B52C6778C33 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-BuGuaAppUITests-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		9B933EE92134E529004DCD3F /* Sources */ = {
@@ -488,6 +624,7 @@
 		};
 		9B933F162134E52A004DCD3F /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 63C1B7654433D4774C37CD7A /* Pods-BuGuaApp.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
@@ -510,6 +647,7 @@
 		};
 		9B933F172134E52A004DCD3F /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 7F0AB1A4A18007E1D1DA20CC /* Pods-BuGuaApp.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
@@ -532,6 +670,7 @@
 		};
 		9B933F192134E52A004DCD3F /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 85D90160965E7A2F69962EE7 /* Pods-BuGuaAppTests.debug.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				BUNDLE_LOADER = "$(TEST_HOST)";
@@ -553,6 +692,7 @@
 		};
 		9B933F1A2134E52A004DCD3F /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = B45C4F55759728D9448EEDEC /* Pods-BuGuaAppTests.release.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				BUNDLE_LOADER = "$(TEST_HOST)";
@@ -574,6 +714,7 @@
 		};
 		9B933F1C2134E52A004DCD3F /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 1851092EF1C15CF0997A2DEA /* Pods-BuGuaAppUITests.debug.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				CODE_SIGN_STYLE = Automatic;
@@ -594,6 +735,7 @@
 		};
 		9B933F1D2134E52A004DCD3F /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 320858683A9787403AE580C1 /* Pods-BuGuaAppUITests.release.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				CODE_SIGN_STYLE = Automatic;

@@ -7,23 +7,25 @@
 //
 
 import BuGuaKit
+import RxSwift
+import RxCocoa
 import UIKit
 
 @IBDesignable
 class FuXiBaGuaView: UIView, NibLoadable {
 
     // MARK: - Views
+    @IBOutlet weak var mainStackView: UIStackView!
     @IBOutlet weak var topCenter: UIView!
     @IBOutlet weak var middleCenter: UIView!
     @IBOutlet weak var bottomCenter: UIView!
     lazy var centerViews: [UIView] = [bottomCenter, middleCenter, topCenter]
 
-    // MARK: - Properties
-    var baGua: FuXiBaGua = .qian {
-        didSet {
-            render()
-        }
-    }
+    // MARK: - Public Properties
+    let baGuaRelay = BehaviorRelay(value: FuXiBaGua.qian)
+
+    // MARK: - Private Properties
+    let disposeBag = DisposeBag()
 
     required init?(coder aDecoder: NSCoder) {
         super.init(coder: aDecoder)
@@ -42,17 +44,24 @@ private extension FuXiBaGuaView {
     func setup() {
         loadNib()
         setProperties()
+        setBindings()
     }
 
     func setProperties() {
         semanticContentAttribute = .forceLeftToRight
         backgroundColor = nil
     }
+
+    func setBindings() {
+        baGuaRelay.bind(onNext: { [unowned self] in self.renderViews(baGua: $0) })
+        .disposed(by: disposeBag)
+    }
 }
 
 // MARK: - Rendering
 private extension FuXiBaGuaView {
-    func render() {
+    func renderViews(baGua: FuXiBaGua) {
+
         zip(centerViews, [FuXiBaGua.Position.bottom, .middle, .top])
             .forEach { centerView, position in
                 let liangYi = baGua.yao(at: position)
