@@ -11,7 +11,6 @@ import RxSwift
 import RxCocoa
 import UIKit
 
-@IBDesignable
 class GuaXiangView: UIView {
 
     // MARK: - Views
@@ -55,6 +54,8 @@ private extension GuaXiangView {
         setupLiuQinLabels()
 
         bindings()
+
+        setStyle()
     }
 
     func setupBaGuaViews() {
@@ -62,12 +63,17 @@ private extension GuaXiangView {
         innerGuaView = makeBaGuaView()
         outerGuaView = makeBaGuaView()
 
-        baGuaStackView = UIStackView(arrangedSubviews: [outerGuaView, innerGuaView])
+        let spacer = UIView(frame: .zero)
+
+        baGuaStackView = UIStackView(arrangedSubviews: [outerGuaView, spacer, innerGuaView])
         baGuaStackView.translatesAutoresizingMaskIntoConstraints = false
 
         baGuaStackView.axis = .vertical
-        baGuaStackView.spacing = 48
+        baGuaStackView.spacing = 0
+        baGuaStackView.anchorWidth(to: 48)
 
+        innerGuaView.heightAnchor.constraint(equalTo: outerGuaView.heightAnchor).isActive = true
+        spacer.heightAnchor.constraint(equalTo: baGuaStackView.heightAnchor, multiplier: 0.15).isActive = true
 
         addSubview(baGuaStackView)
         baGuaStackView.center(useSafeArea: true)
@@ -76,7 +82,6 @@ private extension GuaXiangView {
 
     func makeBaGuaView() -> FuXiBaGuaView {
         let baGuaView = FuXiBaGuaView(frame: CGRect.zero)
-        baGuaView.heightAnchor.constraint(equalTo: baGuaView.widthAnchor).isActive = true
 
         return baGuaView
     }
@@ -159,5 +164,15 @@ private extension GuaXiangView {
         zip(textObservables, liuQinLabels).map { stringRelay, label in
             stringRelay.bind(to: label.rx.text)
         }.forEach { $0.disposed(by:bag) }
+    }
+}
+
+// MARK: - Styling
+extension GuaXiangView {
+    func setStyle() {
+        yaoInfoLabels.forEach { label in
+            label.font = .title2
+            label.textColor = .spaceGrey
+        }
     }
 }

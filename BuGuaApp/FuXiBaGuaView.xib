@@ -4,6 +4,7 @@
         <adaptation id="fullscreen"/>
     </device>
     <dependencies>
+        <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14283.9"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
@@ -26,17 +27,17 @@
                     <rect key="frame" x="0.0" y="0.0" width="204" height="394"/>
                     <subviews>
                         <stackView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="tCJ-uY-Lyx">
-                            <rect key="frame" x="0.0" y="0.0" width="204" height="65.5"/>
+                            <rect key="frame" x="0.0" y="0.0" width="204" height="26.5"/>
                             <subviews>
                                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="IZf-fb-RTU" userLabel="Leading">
-                                    <rect key="frame" x="0.0" y="0.0" width="81.5" height="65.5"/>
+                                    <rect key="frame" x="0.0" y="0.0" width="81.5" height="26.5"/>
                                     <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 </view>
                                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="eMW-h6-h7H" userLabel="Center">
-                                    <rect key="frame" x="81.5" y="0.0" width="41" height="65.5"/>
+                                    <rect key="frame" x="81.5" y="0.0" width="41" height="26.5"/>
                                 </view>
                                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="2vk-ag-l2B" userLabel="Trailing">
-                                    <rect key="frame" x="122.5" y="0.0" width="81.5" height="65.5"/>
+                                    <rect key="frame" x="122.5" y="0.0" width="81.5" height="26.5"/>
                                     <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 </view>
                             </subviews>
@@ -47,18 +48,18 @@
                             </constraints>
                         </stackView>
                         <stackView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="WzX-2x-mkl">
-                            <rect key="frame" x="0.0" y="164" width="204" height="66"/>
+                            <rect key="frame" x="0.0" y="184" width="204" height="26"/>
                             <subviews>
                                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="mg5-d8-mvG" userLabel="Leading">
-                                    <rect key="frame" x="0.0" y="0.0" width="81.5" height="66"/>
+                                    <rect key="frame" x="0.0" y="0.0" width="81.5" height="26"/>
                                     <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 </view>
                                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="SCP-C3-xJK" userLabel="Center">
-                                    <rect key="frame" x="81.5" y="0.0" width="41" height="66"/>
+                                    <rect key="frame" x="81.5" y="0.0" width="41" height="26"/>
                                     <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 </view>
                                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="rGd-Vs-2AY" userLabel="Trailing">
-                                    <rect key="frame" x="122.5" y="0.0" width="81.5" height="66"/>
+                                    <rect key="frame" x="122.5" y="0.0" width="81.5" height="26"/>
                                     <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 </view>
                             </subviews>
@@ -69,17 +70,17 @@
                             </constraints>
                         </stackView>
                         <stackView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="MYS-9I-mKb">
-                            <rect key="frame" x="0.0" y="328.5" width="204" height="65.5"/>
+                            <rect key="frame" x="0.0" y="367.5" width="204" height="26.5"/>
                             <subviews>
                                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="ejf-cl-d3j" userLabel="Leading">
-                                    <rect key="frame" x="0.0" y="0.0" width="81.5" height="65.5"/>
+                                    <rect key="frame" x="0.0" y="0.0" width="81.5" height="26.5"/>
                                     <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 </view>
                                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="9zu-LQ-1im" userLabel="Center">
-                                    <rect key="frame" x="81.5" y="0.0" width="41" height="65.5"/>
+                                    <rect key="frame" x="81.5" y="0.0" width="41" height="26.5"/>
                                 </view>
                                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="1N2-sm-HCu" userLabel="Trailing">
-                                    <rect key="frame" x="122.5" y="0.0" width="81.5" height="65.5"/>
+                                    <rect key="frame" x="122.5" y="0.0" width="81.5" height="26.5"/>
                                     <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 </view>
                             </subviews>
@@ -92,7 +93,7 @@
                     </subviews>
                     <constraints>
                         <constraint firstItem="tCJ-uY-Lyx" firstAttribute="height" secondItem="WzX-2x-mkl" secondAttribute="height" id="b5r-vG-oKn"/>
-                        <constraint firstItem="tCJ-uY-Lyx" firstAttribute="height" secondItem="QQT-LW-wTc" secondAttribute="height" multiplier="25:150" id="esa-I4-Sf6"/>
+                        <constraint firstItem="tCJ-uY-Lyx" firstAttribute="height" secondItem="QQT-LW-wTc" secondAttribute="height" multiplier="10:150" id="esa-I4-Sf6"/>
                         <constraint firstItem="tCJ-uY-Lyx" firstAttribute="height" secondItem="MYS-9I-mKb" secondAttribute="height" id="sBH-sl-ePI"/>
                     </constraints>
                 </stackView>
