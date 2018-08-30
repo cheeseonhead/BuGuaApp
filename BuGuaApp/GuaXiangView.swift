@@ -171,7 +171,7 @@ private extension GuaXiangView {
 extension GuaXiangView {
     func setStyle() {
         yaoInfoLabels.forEach { label in
-            label.font = .title2
+            label.font = .headline
             label.textColor = .spaceGrey
         }
     }
