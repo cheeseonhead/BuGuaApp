@@ -29,6 +29,7 @@
 		9B933F6F213794F7004DCD3F /* UIFont+AppFont.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9B933F6E213794F7004DCD3F /* UIFont+AppFont.swift */; };
 		9B933F712137976C004DCD3F /* Colors.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 9B933F702137976C004DCD3F /* Colors.xcassets */; };
 		9B933F73213797A2004DCD3F /* UIColor+AppColors.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9B933F72213797A2004DCD3F /* UIColor+AppColors.swift */; };
+		9B933F752137A839004DCD3F /* GuaXiangView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 9B933F742137A839004DCD3F /* GuaXiangView.xib */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -100,6 +101,7 @@
 		9B933F6E213794F7004DCD3F /* UIFont+AppFont.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIFont+AppFont.swift"; sourceTree = "<group>"; };
 		9B933F702137976C004DCD3F /* Colors.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Colors.xcassets; sourceTree = "<group>"; };
 		9B933F72213797A2004DCD3F /* UIColor+AppColors.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIColor+AppColors.swift"; sourceTree = "<group>"; };
+		9B933F742137A839004DCD3F /* GuaXiangView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = GuaXiangView.xib; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -192,6 +194,7 @@
 				9B933F3A2134EB01004DCD3F /* FuXiBaGuaView.swift */,
 				9B933F402134F054004DCD3F /* FuXiBaGuaView.xib */,
 				9B933F5A2135A8B0004DCD3F /* GuaXiangView.swift */,
+				9B933F742137A839004DCD3F /* GuaXiangView.xib */,
 			);
 			name = Views;
 			sourceTree = "<group>";
@@ -326,6 +329,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				9B933F752137A839004DCD3F /* GuaXiangView.xib in Resources */,
 				9B933F712137976C004DCD3F /* Colors.xcassets in Resources */,
 				9B933EFB2134E52A004DCD3F /* LaunchScreen.storyboard in Resources */,
 				9B933F412134F054004DCD3F /* FuXiBaGuaView.xib in Resources */,
