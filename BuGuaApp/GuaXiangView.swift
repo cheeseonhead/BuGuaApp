@@ -19,6 +19,8 @@ class GuaXiangView: UIView {
     var outerGuaView: FuXiBaGuaView!
     var baGuaStackView: UIStackView!
     var diZhiLabels: [UILabel]!
+    var liuQinLabels: [UILabel]!
+    lazy var yaoInfoLabels = diZhiLabels + liuQinLabels
 
     // MARK: - Properties
     let guaXiangRelay = PublishRelay<LiuYaoGuaXiang>()
@@ -46,8 +48,11 @@ private extension GuaXiangView {
 
     func setupViews() {
         translatesAutoresizingMaskIntoConstraints = false
+        backgroundColor = nil
+
         setupBaGuaViews()
         setupDiZhiLabels()
+        setupLiuQinLabels()
 
         bindings()
     }
@@ -94,6 +99,25 @@ private extension GuaXiangView {
 
         return label
     }
+
+    func setupLiuQinLabels() {
+        liuQinLabels = [innerGuaView, outerGuaView].lazy.flatMap { $0.centerViews }
+            .map { createLiuQinLabels(to: $0) }
+    }
+
+    func createLiuQinLabels(to yaoView: UIView) -> UILabel {
+        let label = UILabel(frame: CGRect.zero)
+        label.translatesAutoresizingMaskIntoConstraints = false
+
+        addSubview(label)
+
+        let horizontalSpacing: CGFloat = 24
+
+        baGuaStackView.leadingAnchor.constraint(equalTo: label.trailingAnchor, constant: horizontalSpacing).isActive = true
+        label.centerYAnchor.constraint(equalTo: yaoView.centerYAnchor).isActive = true
+
+        return label
+    }
 }
 
 // MARK: - Bindings
@@ -107,6 +131,11 @@ private extension GuaXiangView {
             .bind(to: outerGuaView.baGuaRelay)
             .disposed(by: bag)
 
+        diZhiBindings()
+        liuQinBindings()
+    }
+
+    func diZhiBindings() {
         let diZhiStrings: Observable<[String?]> = guaXiangRelay.map { $0.originalGua.yaoZhi }
             .map { $0.map { $0.character + $0.wuXing.character } }
 
@@ -117,6 +146,18 @@ private extension GuaXiangView {
         zip(textObservables, diZhiLabels).map { stringRelay, label in
             stringRelay.bind(to: label.rx.text)
         }.forEach { $0.disposed(by: bag) }
+    }
 
+    func liuQinBindings() {
+        let liuQinStrings: Observable<[String?]> = guaXiangRelay.map { $0.originalGua.liuQin }
+            .map { $0.map { $0.character } }
+
+        let textObservables = (0..<liuQinLabels.count).map { index in
+            liuQinStrings.map { $0[index] }
+        }
+
+        zip(textObservables, liuQinLabels).map { stringRelay, label in
+            stringRelay.bind(to: label.rx.text)
+        }.forEach { $0.disposed(by:bag) }
     }
 }
