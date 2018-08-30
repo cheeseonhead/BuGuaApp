@@ -22,7 +22,7 @@
 		</data>
 		<key>Modules/BuGuaKit.swiftmodule/x86_64.swiftmodule</key>
 		<data>
-		S7g5lHVoD1y3U2yDsZciDN2Oca8=
+		Fe5nhzSx/+oIPEuNwPedERNlibA=
 		</data>
 		<key>Modules/module.modulemap</key>
 		<data>
@@ -32,7 +32,7 @@
 		<dict>
 			<key>hash</key>
 			<data>
-			4EKyfnM86luMVFw41puwyh9EcNY=
+			10q5D0qkQxGxPCVmp5qTt1N2S2M=
 			</data>
 			<key>optional</key>
 			<true/>
@@ -65,7 +65,7 @@
 		<dict>
 			<key>hash2</key>
 			<data>
-			xfX+CV0a7LD89K1Ai++rNwcG+jRbTLrwzAVCkspw/wU=
+			jOvNyarvmyUeyBk/IXPPpooCIfw/ZiNWBPzvLjzuhCI=
 			</data>
 		</dict>
 		<key>Modules/module.modulemap</key>
@@ -79,7 +79,7 @@
 		<dict>
 			<key>hash2</key>
 			<data>
-			NpzG+pySi0on2bsA+56GMTF93CC4Fqnf73VixMHllR4=
+			FpmgEshfoZs1c/mlUO12+q4ewE4vy1YYjNlcu0zMaak=
 			</data>
 			<key>optional</key>
 			<true/>
