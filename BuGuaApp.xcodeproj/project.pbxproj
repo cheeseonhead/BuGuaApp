@@ -26,6 +26,9 @@
 		9B933F6A21365262004DCD3F /* RxBlocking.framework in CopyFiles */ = {isa = PBXBuildFile; fileRef = 9B933F5E21364AD4004DCD3F /* RxBlocking.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		9B933F6B21365266004DCD3F /* RxTest.framework in CopyFiles */ = {isa = PBXBuildFile; fileRef = 9B933F5F21364AD4004DCD3F /* RxTest.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		9B933F6D2136537A004DCD3F /* UIView+Layout.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9B933F6C2136537A004DCD3F /* UIView+Layout.swift */; };
+		9B933F6F213794F7004DCD3F /* UIFont+AppFont.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9B933F6E213794F7004DCD3F /* UIFont+AppFont.swift */; };
+		9B933F712137976C004DCD3F /* Colors.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 9B933F702137976C004DCD3F /* Colors.xcassets */; };
+		9B933F73213797A2004DCD3F /* UIColor+AppColors.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9B933F72213797A2004DCD3F /* UIColor+AppColors.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -94,6 +97,9 @@
 		9B933F6021364AD4004DCD3F /* RxCocoa.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = RxCocoa.framework; path = Carthage/Build/iOS/RxCocoa.framework; sourceTree = "<group>"; };
 		9B933F6121364AD4004DCD3F /* RxSwift.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = RxSwift.framework; path = Carthage/Build/iOS/RxSwift.framework; sourceTree = "<group>"; };
 		9B933F6C2136537A004DCD3F /* UIView+Layout.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIView+Layout.swift"; sourceTree = "<group>"; };
+		9B933F6E213794F7004DCD3F /* UIFont+AppFont.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIFont+AppFont.swift"; sourceTree = "<group>"; };
+		9B933F702137976C004DCD3F /* Colors.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Colors.xcassets; sourceTree = "<group>"; };
+		9B933F72213797A2004DCD3F /* UIColor+AppColors.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIColor+AppColors.swift"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -155,6 +161,7 @@
 				9B933F3C2134EB58004DCD3F /* Views */,
 				9B933F3D2134EB64004DCD3F /* Extensions */,
 				9B933EF72134E52A004DCD3F /* Assets.xcassets */,
+				9B933F702137976C004DCD3F /* Colors.xcassets */,
 				9B933EF92134E52A004DCD3F /* LaunchScreen.storyboard */,
 				9B933EFC2134E52A004DCD3F /* Info.plist */,
 			);
@@ -194,6 +201,8 @@
 			children = (
 				9B933F3E2134EBBE004DCD3F /* UIView+NibLoadable.swift */,
 				9B933F6C2136537A004DCD3F /* UIView+Layout.swift */,
+				9B933F6E213794F7004DCD3F /* UIFont+AppFont.swift */,
+				9B933F72213797A2004DCD3F /* UIColor+AppColors.swift */,
 			);
 			name = Extensions;
 			sourceTree = "<group>";
@@ -255,7 +264,6 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 9B933F1B2134E52A004DCD3F /* Build configuration list for PBXNativeTarget "BuGuaAppUITests" */;
 			buildPhases = (
-				FF68C329D2A74B52C6778C33 /* [CP] Check Pods Manifest.lock */,
 				9B933F082134E52A004DCD3F /* Sources */,
 				9B933F092134E52A004DCD3F /* Frameworks */,
 				9B933F0A2134E52A004DCD3F /* Resources */,
@@ -318,6 +326,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				9B933F712137976C004DCD3F /* Colors.xcassets in Resources */,
 				9B933EFB2134E52A004DCD3F /* LaunchScreen.storyboard in Resources */,
 				9B933F412134F054004DCD3F /* FuXiBaGuaView.xib in Resources */,
 				9B933EF82134E52A004DCD3F /* Assets.xcassets in Resources */,
@@ -364,24 +373,6 @@
 			shellPath = /bin/sh;
 			shellScript = "#!bin/sh\n\n# Type a script or drag a script file from your workspace to insert its path.\n/usr/local/bin/carthage copy-frameworks\n";
 		};
-		FF68C329D2A74B52C6778C33 /* [CP] Check Pods Manifest.lock */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputPaths = (
-				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
-				"${PODS_ROOT}/Manifest.lock",
-			);
-			name = "[CP] Check Pods Manifest.lock";
-			outputPaths = (
-				"$(DERIVED_FILE_DIR)/Pods-BuGuaAppUITests-checkManifestLockResult.txt",
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
-			showEnvVarsInLog = 0;
-		};
 /* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
@@ -389,10 +380,12 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				9B933F6F213794F7004DCD3F /* UIFont+AppFont.swift in Sources */,
 				9B933F3F2134EBBE004DCD3F /* UIView+NibLoadable.swift in Sources */,
 				9B933F3B2134EB01004DCD3F /* FuXiBaGuaView.swift in Sources */,
 				9B933F6D2136537A004DCD3F /* UIView+Layout.swift in Sources */,
 				9B933EF32134E529004DCD3F /* ViewController.swift in Sources */,
+				9B933F73213797A2004DCD3F /* UIColor+AppColors.swift in Sources */,
 				9B933F5B2135A8B0004DCD3F /* GuaXiangView.swift in Sources */,
 				9B933EF12134E529004DCD3F /* AppDelegate.swift in Sources */,
 			);
