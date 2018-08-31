@@ -25,4 +25,12 @@ extension CGRect {
     var bottomRight: CGPoint {
         return origin + CGPoint(x: width, y: height)
     }
+
+    func scaledAtCenter(scaleX: CGFloat, scaleY: CGFloat) -> CGRect {
+
+        let scaled = CGRect(origin: origin, size: CGSize(width: width * scaleX, height: height * scaleY))
+        let translation = center - scaled.center
+
+        return scaled.applying(.init(translationX: translation.x, y: translation.y))
+    }
 }
