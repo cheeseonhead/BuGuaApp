@@ -30,6 +30,10 @@
 		9B933F712137976C004DCD3F /* Colors.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 9B933F702137976C004DCD3F /* Colors.xcassets */; };
 		9B933F73213797A2004DCD3F /* UIColor+AppColors.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9B933F72213797A2004DCD3F /* UIColor+AppColors.swift */; };
 		9B933F752137A839004DCD3F /* GuaXiangView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 9B933F742137A839004DCD3F /* GuaXiangView.xib */; };
+		9B933F772137A8C3004DCD3F /* YaoView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9B933F762137A8C3004DCD3F /* YaoView.swift */; };
+		9B933F792138DEE2004DCD3F /* CGPoint+Math.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9B933F782138DEE2004DCD3F /* CGPoint+Math.swift */; };
+		9B933F7B2138DF3B004DCD3F /* CGRect+Points.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9B933F7A2138DF3B004DCD3F /* CGRect+Points.swift */; };
+		9B933F7D2138DF75004DCD3F /* CGSize+Points.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9B933F7C2138DF75004DCD3F /* CGSize+Points.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -102,6 +106,10 @@
 		9B933F702137976C004DCD3F /* Colors.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Colors.xcassets; sourceTree = "<group>"; };
 		9B933F72213797A2004DCD3F /* UIColor+AppColors.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIColor+AppColors.swift"; sourceTree = "<group>"; };
 		9B933F742137A839004DCD3F /* GuaXiangView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = GuaXiangView.xib; sourceTree = "<group>"; };
+		9B933F762137A8C3004DCD3F /* YaoView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = YaoView.swift; sourceTree = "<group>"; };
+		9B933F782138DEE2004DCD3F /* CGPoint+Math.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "CGPoint+Math.swift"; sourceTree = "<group>"; };
+		9B933F7A2138DF3B004DCD3F /* CGRect+Points.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "CGRect+Points.swift"; sourceTree = "<group>"; };
+		9B933F7C2138DF75004DCD3F /* CGSize+Points.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "CGSize+Points.swift"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -195,6 +203,7 @@
 				9B933F402134F054004DCD3F /* FuXiBaGuaView.xib */,
 				9B933F5A2135A8B0004DCD3F /* GuaXiangView.swift */,
 				9B933F742137A839004DCD3F /* GuaXiangView.xib */,
+				9B933F762137A8C3004DCD3F /* YaoView.swift */,
 			);
 			name = Views;
 			sourceTree = "<group>";
@@ -206,6 +215,9 @@
 				9B933F6C2136537A004DCD3F /* UIView+Layout.swift */,
 				9B933F6E213794F7004DCD3F /* UIFont+AppFont.swift */,
 				9B933F72213797A2004DCD3F /* UIColor+AppColors.swift */,
+				9B933F782138DEE2004DCD3F /* CGPoint+Math.swift */,
+				9B933F7A2138DF3B004DCD3F /* CGRect+Points.swift */,
+				9B933F7C2138DF75004DCD3F /* CGSize+Points.swift */,
 			);
 			name = Extensions;
 			sourceTree = "<group>";
@@ -386,12 +398,16 @@
 			files = (
 				9B933F6F213794F7004DCD3F /* UIFont+AppFont.swift in Sources */,
 				9B933F3F2134EBBE004DCD3F /* UIView+NibLoadable.swift in Sources */,
+				9B933F792138DEE2004DCD3F /* CGPoint+Math.swift in Sources */,
 				9B933F3B2134EB01004DCD3F /* FuXiBaGuaView.swift in Sources */,
+				9B933F772137A8C3004DCD3F /* YaoView.swift in Sources */,
 				9B933F6D2136537A004DCD3F /* UIView+Layout.swift in Sources */,
 				9B933EF32134E529004DCD3F /* ViewController.swift in Sources */,
+				9B933F7D2138DF75004DCD3F /* CGSize+Points.swift in Sources */,
 				9B933F73213797A2004DCD3F /* UIColor+AppColors.swift in Sources */,
 				9B933F5B2135A8B0004DCD3F /* GuaXiangView.swift in Sources */,
 				9B933EF12134E529004DCD3F /* AppDelegate.swift in Sources */,
+				9B933F7B2138DF3B004DCD3F /* CGRect+Points.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
