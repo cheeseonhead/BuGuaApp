@@ -34,7 +34,7 @@ class ViewController: UIViewController {
     override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(animated)
 
-        let guaXiang = LiuYaoGuaXiang(liuYao: [.youngYin, .youngYang, .youngYang, .youngYang, .youngYang, .youngYang])
+        let guaXiang = LiuYaoGuaXiang(liuYao: [.youngYin, .oldYang, .youngYang, .youngYang, .oldYin, .youngYang])
         guaXiangView.guaXiangRelay.accept(guaXiang)
     }
 
