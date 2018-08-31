@@ -6,16 +6,24 @@
 //  Copyright © 2018 Jeffrey Wu. All rights reserved.
 //
 
+import BuGuaKit
 import Foundation
+import RxCocoa
+import RxSwift
 import UIKit
 
 class YaoView: UIView {
 
     // MARK: - Constants
-    let preferredSize = CGSize(width: 48, height: 16)
+    let preferredSize = CGSize(width: 48, height: 36)
+
+    // MARK: - Public Rx
+    let yaoRelay = PublishRelay<YaoType>()
 
     // MARK: - Private properties
-    private let oldYinLayerDelegate = OldYinLayerDelegate()
+    private var yaoLayer: CALayer!
+    private var layerDelegate: YaoLayerDelegate!
+    private let bag = DisposeBag()
 
     // MARK: - Initializers
     override init(frame: CGRect) {
@@ -29,9 +37,10 @@ class YaoView: UIView {
     }
 
     // MARK: - Life cycle
-    override func layoutSubviews() {
-        super.layoutSubviews()
-        setPaths()
+    override func setNeedsDisplay() {
+        super.setNeedsDisplay()
+
+        yaoLayer?.setNeedsDisplay()
     }
 }
 
@@ -39,33 +48,99 @@ class YaoView: UIView {
 private extension YaoView {
     func setup() {
         backgroundColor = nil
-        clipsToBounds = false
 
-        addOldYinLayer()
+        addYaoLayer()
+
+        yaoRelay.distinctUntilChanged().bind { [unowned self] yaoType in
+            self.layerDelegate.yaoType = yaoType
+            self.yaoLayer.setNeedsDisplay()
+        }.disposed(by: bag)
     }
 
-    func addOldYinLayer() {
-        let yaoLayer = CALayer()
+    func addYaoLayer() {
+        yaoLayer = CALayer()
         yaoLayer.contentsScale  = UIScreen.main.scale
-        yaoLayer.delegate = oldYinLayerDelegate
         yaoLayer.frame = bounds
-        yaoLayer.setNeedsDisplay()
+
+        layerDelegate = YaoLayerDelegate()
+        yaoLayer.delegate = layerDelegate
+
         self.layer.addSublayer(yaoLayer)
-    }
-
-    func setPaths() {
-
     }
 }
 
-private class OldYinLayerDelegate: NSObject, CALayerDelegate {
-    func draw(_ layer: CALayer, in ctx: CGContext) {
-        print("Draw called")
+private class YaoLayerDelegate: NSObject, CALayerDelegate {
 
+    var yaoType: YaoType = .oldYang
+
+    func draw(_ layer: CALayer, in ctx: CGContext) {
+        switch yaoType {
+        case .youngYang: drawYoungYang(layer, in: ctx)
+        case .youngYin: drawYoungYin(layer, in: ctx)
+        case .oldYang: drawOldYang(layer, in: ctx)
+        case .oldYin: drawOldYin(layer, in: ctx)
+        }
+    }
+
+    // MARK: - Draw Young Yang
+    private func drawYoungYang(_ layer: CALayer, in ctx: CGContext) {
+        let strokeWidth: CGFloat = 8
+        let frameToDrawIn = frame(in: layer.bounds, widthOverHeight: 0.7897838950157166).scaledAtCenter(scaleX: 0.3, scaleY: 0.3)
+
+        print(frameToDrawIn)
+
+        ctx.beginPath()
+        ctx.addLines(between: [frameToDrawIn.origin, frameToDrawIn.bottomRight])
+
+        ctx.setStrokeColor(UIColor.spaceGrey.cgColor)
+        ctx.setLineWidth(strokeWidth)
+        ctx.setLineCap(.round)
+        ctx.drawPath(using: .stroke)
+    }
+
+    // MARK: - Draw Young Yin
+    private func drawYoungYin(_ layer: CALayer, in ctx: CGContext) {
+        let strokeWidth: CGFloat = 8
+        let spacing: CGFloat = 16.797642409801483
+        let frameToDrawIn = frame(in: layer.bounds, widthOverHeight: 0.7897838950157166).scaledAtCenter(scaleX: 0.3, scaleY: 0.3)
+
+        let leftFrame = frameToDrawIn.applying(.init(translationX: -spacing, y: 0))
+        let rightFrame = frameToDrawIn.applying(.init(translationX: spacing, y: 0))
+
+        ctx.beginPath()
+        ctx.addLines(between: [leftFrame.origin, leftFrame.bottomRight])
+        ctx.addLines(between: [rightFrame.origin, rightFrame.bottomRight])
+
+        ctx.setStrokeColor(UIColor.spaceGrey.cgColor)
+        ctx.setLineWidth(strokeWidth)
+        ctx.setLineCap(.round)
+        ctx.drawPath(using: .stroke)
+    }
+
+    // MARK: - Draw Old Yang
+
+    private func drawOldYang(_ layer: CALayer, in ctx: CGContext) {
         let strokeWidth: CGFloat = 8
         let inset = strokeWidth / 2
-        let frameToDrawIn = frame(in: layer.bounds, radian: (80 / 180) * .pi)
+        let frameToDrawIn = frame(in: layer.bounds, widthOverHeight: 0.974459707736969).insetBy(dx: inset, dy: inset)
 
+        ctx.beginPath()
+        ctx.addEllipse(in: frameToDrawIn)
+
+        ctx.setStrokeColor(UIColor.spaceGrey.cgColor)
+        ctx.setLineWidth(strokeWidth)
+        ctx.setLineCap(.round)
+        ctx.drawPath(using: .stroke)
+    }
+
+    // MARK: - Draw Old Yin
+
+    private func drawOldYin(_ layer: CALayer, in ctx: CGContext) {
+        let strokeWidth: CGFloat = 8
+        let inset = strokeWidth / 2
+        let frameToDrawIn = frame(in: layer.bounds.applying(.init(scaleX: 1, y: 0.9)), widthOverHeight: tan((80 / 180) * .pi / 2))
+
+        ctx.beginPath()
         ctx.move(to: frameToDrawIn.origin + CGPoint(x: inset, y: inset))
         ctx.addLine(to: frameToDrawIn.bottomRight - CGPoint(x: inset, y: inset))
         ctx.move(to: frameToDrawIn.topRight + CGPoint(x: -inset, y: inset))
@@ -77,18 +152,18 @@ private class OldYinLayerDelegate: NSObject, CALayerDelegate {
         ctx.drawPath(using: .stroke)
     }
 
-    /// radian is the angle of the top and bottom V's.
-    private func frame(in bounds: CGRect, radian: CGFloat) -> CGRect {
-        let widthOverHeight = tan(radian / 2)
+    // MARK: - Helper
 
-        let size: CGSize
+    /// radian is the angle of the top and bottom V's.
+    private func frame(in bounds: CGRect, widthOverHeight: CGFloat) -> CGRect {
+        let newFrame: CGRect
         if bounds.height <= bounds.width {
-            size = CGSize(width: widthOverHeight * bounds.height, height: bounds.height)
+            newFrame = CGRect(origin: .zero, size: CGSize(width: widthOverHeight * bounds.height, height: bounds.height))
         } else {
-            size = CGSize(width: bounds.width, height: bounds.width / widthOverHeight)
+            newFrame = CGRect(origin: .zero, size: CGSize(width: bounds.width, height: bounds.width / widthOverHeight))
         }
 
-        let translation = bounds.center - size.center
-        return CGRect(origin: translation, size: size)
+        let translation = bounds.center - newFrame.center
+        return newFrame.applying(.init(translationX: translation.x, y: translation.y))
     }
 }
