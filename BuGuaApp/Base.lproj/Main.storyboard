@@ -19,11 +19,10 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="9r5-kL-w1T" customClass="GuaXiangView" customModule="BuGuaApp" customModuleProvider="target">
-                                <rect key="frame" x="196" y="126" width="632" height="516"/>
-                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <rect key="frame" x="196" y="84" width="632" height="600"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="632" id="SuH-Ee-wuz"/>
-                                    <constraint firstAttribute="height" constant="516" id="nHP-RZ-ZrD"/>
+                                    <constraint firstAttribute="height" constant="600" id="nHP-RZ-ZrD"/>
                                 </constraints>
                             </view>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="0Vu-q8-Atc">
@@ -49,13 +48,6 @@
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                             </view>
-                            <slider opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" value="0.5" minValue="0.0" maxValue="1" translatesAutoresizingMaskIntoConstraints="NO" id="vM3-Ok-QJe">
-                                <rect key="frame" x="40" y="299" width="509" height="30"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <connections>
-                                    <action selector="changed:" destination="BYZ-38-t0r" eventType="valueChanged" id="bOI-k8-XHO"/>
-                                </connections>
-                            </slider>
                             <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="nea-1N-4RD" customClass="YaoView" customModule="BuGuaApp" customModuleProvider="target">
                                 <rect key="frame" x="40" y="223" width="100" height="36"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>

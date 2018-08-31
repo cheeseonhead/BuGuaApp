@@ -14,12 +14,8 @@ import UIKit
 class GuaXiangView: UIView {
 
     // MARK: - Views
-    var innerGuaView: FuXiBaGuaView!
-    var outerGuaView: FuXiBaGuaView!
-    var baGuaStackView: UIStackView!
-    var diZhiLabels: [UILabel]!
-    var liuQinLabels: [UILabel]!
-    lazy var yaoInfoLabels = diZhiLabels + liuQinLabels
+    var yaoViews: [YaoView]!
+    var shiYingLabels: [UILabel]!
 
     // MARK: - Properties
     let guaXiangRelay = PublishRelay<LiuYaoGuaXiang>()
@@ -49,128 +45,125 @@ private extension GuaXiangView {
         translatesAutoresizingMaskIntoConstraints = false
         backgroundColor = nil
 
-        setupBaGuaViews()
-        setupDiZhiLabels()
-        setupLiuQinLabels()
+        addViews()
 
         bindings()
 
         setStyle()
     }
+}
 
-    func setupBaGuaViews() {
-
-        innerGuaView = makeBaGuaView()
-        outerGuaView = makeBaGuaView()
-
-        let spacer = UIView(frame: .zero)
-
-        baGuaStackView = UIStackView(arrangedSubviews: [outerGuaView, spacer, innerGuaView])
-        baGuaStackView.translatesAutoresizingMaskIntoConstraints = false
-
-        baGuaStackView.axis = .vertical
-        baGuaStackView.spacing = 0
-        baGuaStackView.anchorWidth(to: 48)
-
-        innerGuaView.heightAnchor.constraint(equalTo: outerGuaView.heightAnchor).isActive = true
-        spacer.heightAnchor.constraint(equalTo: baGuaStackView.heightAnchor, multiplier: 0.15).isActive = true
-
-        addSubview(baGuaStackView)
-        baGuaStackView.center(useSafeArea: true)
-            .anchorFillHeight(useSafeArea: true)
+// MARK: - Add Views
+private extension GuaXiangView {
+    func addViews() {
+        setupYaoViews()
     }
 
-    func makeBaGuaView() -> FuXiBaGuaView {
-        let baGuaView = FuXiBaGuaView(frame: CGRect.zero)
-
-        return baGuaView
+    func setupYaoViews() {
+        (1...6).map { makeYaoView(at: $0) }.forEach { addSubview($0) }
     }
 
-    func setupDiZhiLabels() {
-        diZhiLabels = [innerGuaView, outerGuaView].lazy.flatMap { $0.centerViews }
-            .map { createDiZhiLabel(to: $0) }
+    func makeYaoView(at position: Int) -> YaoView {
+        let yaoView = YaoView(frame: .zero)
+        yaoView.translatesAutoresizingMaskIntoConstraints = false
+
+        guaXiangRelay.map { $0.liuYao[position] }
+            .bind(to: yaoView.yaoRelay)
+            .disposed(by: bag)
+
+        return yaoView
     }
 
-    func createDiZhiLabel(to yaoView: UIView) -> UILabel {
-        let label = UILabel(frame: CGRect.zero)
+    func setupShiYingLabels() {
+        (1...6).map { makeShiYingLabel(at: $0) }.forEach { addSubview($0) }
+    }
+
+    func makeShiYingLabel(at position: Int) -> UILabel {
+        let label = UILabel(frame: .zero)
         label.translatesAutoresizingMaskIntoConstraints = false
 
-        addSubview(label)
-
-        let horizontalSpacing: CGFloat = 24
-
-        label.leadingAnchor.constraint(equalTo: baGuaStackView.trailingAnchor, constant: horizontalSpacing).isActive = true
-        label.centerYAnchor.constraint(equalTo: yaoView.centerYAnchor).isActive = true
-
-        return label
-    }
-
-    func setupLiuQinLabels() {
-        liuQinLabels = [innerGuaView, outerGuaView].lazy.flatMap { $0.centerViews }
-            .map { createLiuQinLabels(to: $0) }
-    }
-
-    func createLiuQinLabels(to yaoView: UIView) -> UILabel {
-        let label = UILabel(frame: CGRect.zero)
-        label.translatesAutoresizingMaskIntoConstraints = false
-
-        addSubview(label)
-
-        let horizontalSpacing: CGFloat = 24
-
-        baGuaStackView.leadingAnchor.constraint(equalTo: label.trailingAnchor, constant: horizontalSpacing).isActive = true
-        label.centerYAnchor.constraint(equalTo: yaoView.centerYAnchor).isActive = true
+        guaXiangRelay.map { ($0.originalGua.shi, $0.originalGua.ying) }
+            .bind { shi, ying in
+                if position == shi {
+                    label.text = "世"
+                } else if position == ying {
+                    label.text = "應"
+                } else {
+                    label.text = " "
+                }
+            }.disposed(by: bag)
 
         return label
     }
 }
 
+
 // MARK: - Bindings
 private extension GuaXiangView {
     func bindings() {
-        guaXiangRelay.map { $0.originalGua.innerGua }
-            .bind(to: innerGuaView.baGuaRelay)
-            .disposed(by: bag)
+//        guaXiangRelay.map { $0.originalGua.innerGua }
+//            .bind(to: innerGuaView.baGuaRelay)
+//            .disposed(by: bag)
+//
+//        guaXiangRelay.map { $0.originalGua.outerGua }
+//            .bind(to: outerGuaView.baGuaRelay)
+//            .disposed(by: bag)
 
-        guaXiangRelay.map { $0.originalGua.outerGua }
-            .bind(to: outerGuaView.baGuaRelay)
-            .disposed(by: bag)
+        guaXiangRelay.map { $0.liuYao }
+            .bind { [unowned self] yaoTypes in
+                self.yaoViews.forEach { yaoView in
+                    yaoView.yaoRelay.accept(yaoTypes[yaoView.tag - 1])
+                }
+            }.disposed(by: bag)
 
-        diZhiBindings()
-        liuQinBindings()
+        guaXiangRelay.map { ($0.originalGua.shi, $0.originalGua.ying) }
+            .bind { [unowned self] shi, ying in
+                self.shiYingLabels.forEach { shiYingLabel in
+                    if shiYingLabel.tag == shi {
+                        shiYingLabel.text = "世"
+                    } else if shiYingLabel.tag == ying {
+                        shiYingLabel.text = "應"
+                    } else {
+                        shiYingLabel.text = " "
+                    }
+                }
+            }.disposed(by: bag)
+
+//        diZhiBindings()
+//        liuQinBindings()
     }
 
-    func diZhiBindings() {
-        let diZhiStrings: Observable<[String?]> = guaXiangRelay.map { $0.originalGua.yaoZhi }
-            .map { $0.map { $0.character + $0.wuXing.character } }
-
-        let textObservables = (0..<diZhiLabels.count).map { index in
-            diZhiStrings.map { $0[index] }
-        }
-
-        zip(textObservables, diZhiLabels).map { stringRelay, label in
-            stringRelay.bind(to: label.rx.text)
-        }.forEach { $0.disposed(by: bag) }
-    }
-
-    func liuQinBindings() {
-        let liuQinStrings: Observable<[String?]> = guaXiangRelay.map { $0.originalGua.liuQin }
-            .map { $0.map { $0.character } }
-
-        let textObservables = (0..<liuQinLabels.count).map { index in
-            liuQinStrings.map { $0[index] }
-        }
-
-        zip(textObservables, liuQinLabels).map { stringRelay, label in
-            stringRelay.bind(to: label.rx.text)
-        }.forEach { $0.disposed(by:bag) }
-    }
+//    func diZhiBindings() {
+//        let diZhiStrings: Observable<[String?]> = guaXiangRelay.map { $0.originalGua.yaoZhi }
+//            .map { $0.map { $0.character + $0.wuXing.character } }
+//
+//        let textObservables = (0..<diZhiLabels.count).map { index in
+//            diZhiStrings.map { $0[index] }
+//        }
+//
+//        zip(textObservables, diZhiLabels).map { stringRelay, label in
+//            stringRelay.bind(to: label.rx.text)
+//        }.forEach { $0.disposed(by: bag) }
+//    }
+//
+//    func liuQinBindings() {
+//        let liuQinStrings: Observable<[String?]> = guaXiangRelay.map { $0.originalGua.liuQin }
+//            .map { $0.map { $0.character } }
+//
+//        let textObservables = (0..<liuQinLabels.count).map { index in
+//            liuQinStrings.map { $0[index] }
+//        }
+//
+//        zip(textObservables, liuQinLabels).map { stringRelay, label in
+//            stringRelay.bind(to: label.rx.text)
+//        }.forEach { $0.disposed(by:bag) }
+//    }
 }
 
 // MARK: - Styling
 extension GuaXiangView {
     func setStyle() {
-        yaoInfoLabels.forEach { label in
+        shiYingLabels.forEach { label in
             label.font = .headline
             label.textColor = .spaceGrey
         }
