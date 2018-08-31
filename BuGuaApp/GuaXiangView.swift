@@ -17,6 +17,7 @@ class GuaXiangView: UIView {
     // MARK: - Views
     var yaoViews: [YaoView]!
     var shiYingLabels: [UILabel]!
+    var horizontalDividers: [UIView]!
 
     // MARK: - Properties
     let guaXiangRelay = PublishRelay<LiuYaoGuaXiang>()
@@ -60,6 +61,7 @@ private extension GuaXiangView {
     func addViews() {
         setupYaoViews()
         setupShiYingLabels()
+        setupHorizontalDividers()
     }
 
     func setupYaoViews() {
@@ -106,15 +108,36 @@ private extension GuaXiangView {
 
         return label
     }
+
+    func setupHorizontalDividers() {
+        horizontalDividers = (1...7).map { _ in makeHorizontalDividers() }.map {
+            addSubview($0)
+            return $0
+        }
+    }
+
+    func makeHorizontalDividers() -> UIView {
+        let divider = UIView(frame: .zero)
+        divider.backgroundColor = UIColor(named: "Sunset")
+
+        divider.snp.makeConstraints { make in
+            make.height.equalTo(1)
+        }
+
+        return divider
+    }
 }
 
 // MARK: - Constraints
 private extension GuaXiangView {
-    func createConstraints() {
 
-        shiYingLabels.last!.snp.makeConstraints { make in
-            make.top.equalTo(snp.top).offset(8)
-        }
+
+    func createConstraints() {
+        shiYingConstraints()
+        horizontalDividerConstraints()
+    }
+
+    func shiYingConstraints() {
 
         // Between same yao and shi ying
         zip(yaoViews, shiYingLabels).forEach { yaoView, shiYingLabel in
@@ -132,6 +155,26 @@ private extension GuaXiangView {
 
         yaoViews.forEach { $0.snp.makeConstraints { $0.centerX.equalToSuperview() } }
         shiYingLabels.forEach { $0.snp.makeConstraints { $0.centerX.equalToSuperview() } }
+    }
+
+    func horizontalDividerConstraints() {
+        horizontalDividers.first!.snp.makeConstraints { make in
+            make.top.equalToSuperview()
+            make.bottom.equalTo(shiYingLabels.last!.snp.top).offset(8)
+        }
+
+        zip(horizontalDividers.suffix(6), yaoViews).forEach { belowDivider, yaoView in
+            belowDivider.snp.makeConstraints { make in
+                make.top.equalTo(yaoView.snp.bottom).offset(8)
+            }
+        }
+
+        horizontalDividers.map { $0.snp.makeConstraints }
+            .forEach { maker in
+                maker { make in
+                    make.width.equalToSuperview()
+                }
+            }
     }
 }
 
