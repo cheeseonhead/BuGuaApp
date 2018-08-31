@@ -34,6 +34,33 @@
                                     <action selector="tapped:" destination="BYZ-38-t0r" eventType="touchUpInside" id="xby-Em-WEj"/>
                                 </connections>
                             </button>
+                            <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="d1L-Ui-dj0" customClass="YaoView" customModule="BuGuaApp" customModuleProvider="target">
+                                <rect key="frame" x="40" y="55" width="100" height="36"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                            </view>
+                            <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="E0x-pL-68D" customClass="YaoView" customModule="BuGuaApp" customModuleProvider="target">
+                                <rect key="frame" x="40" y="112" width="100" height="36"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                            </view>
+                            <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Gfg-IC-GBk" customClass="YaoView" customModule="BuGuaApp" customModuleProvider="target">
+                                <rect key="frame" x="40" y="169" width="100" height="36"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                            </view>
+                            <slider opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" value="0.5" minValue="0.0" maxValue="1" translatesAutoresizingMaskIntoConstraints="NO" id="vM3-Ok-QJe">
+                                <rect key="frame" x="40" y="299" width="509" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <connections>
+                                    <action selector="changed:" destination="BYZ-38-t0r" eventType="valueChanged" id="bOI-k8-XHO"/>
+                                </connections>
+                            </slider>
+                            <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="nea-1N-4RD" customClass="YaoView" customModule="BuGuaApp" customModuleProvider="target">
+                                <rect key="frame" x="40" y="223" width="100" height="36"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                            </view>
                         </subviews>
                         <color key="backgroundColor" red="1" green="0.94117647058823528" blue="0.87450980392156863" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
@@ -44,6 +71,10 @@
                     </view>
                     <connections>
                         <outlet property="guaXiangView" destination="9r5-kL-w1T" id="14G-fy-oex"/>
+                        <outlet property="yaoView" destination="d1L-Ui-dj0" id="4TY-Yr-ixD"/>
+                        <outlet property="yaoView2" destination="E0x-pL-68D" id="Zpq-pq-9GX"/>
+                        <outlet property="yaoView3" destination="Gfg-IC-GBk" id="3xV-tP-A2d"/>
+                        <outlet property="yaoView4" destination="nea-1N-4RD" id="sO4-qz-oIv"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
