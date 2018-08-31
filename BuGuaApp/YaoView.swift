@@ -42,6 +42,12 @@ class YaoView: UIView {
 
         yaoLayer?.setNeedsDisplay()
     }
+
+    override func layoutSubviews() {
+        super.layoutSubviews()
+
+        yaoLayer?.setNeedsDisplay()
+    }
 }
 
 // MARK: - Setup
@@ -51,9 +57,9 @@ private extension YaoView {
 
         addYaoLayer()
 
-        yaoRelay.distinctUntilChanged().bind { [unowned self] yaoType in
+        yaoRelay.bind { [unowned self] yaoType in
             self.layerDelegate.yaoType = yaoType
-            self.yaoLayer.setNeedsDisplay()
+            self.setNeedsDisplay()
         }.disposed(by: bag)
     }
 
@@ -74,6 +80,11 @@ private class YaoLayerDelegate: NSObject, CALayerDelegate {
     var yaoType: YaoType = .oldYang
 
     func draw(_ layer: CALayer, in ctx: CGContext) {
+
+        guard let superlayer = layer.superlayer else { return }
+
+        layer.frame = superlayer.bounds
+
         switch yaoType {
         case .youngYang: drawYoungYang(layer, in: ctx)
         case .youngYin: drawYoungYin(layer, in: ctx)
@@ -86,8 +97,6 @@ private class YaoLayerDelegate: NSObject, CALayerDelegate {
     private func drawYoungYang(_ layer: CALayer, in ctx: CGContext) {
         let strokeWidth: CGFloat = 8
         let frameToDrawIn = frame(in: layer.bounds, widthOverHeight: 0.7897838950157166).scaledAtCenter(scaleX: 0.3, scaleY: 0.3)
-
-        print(frameToDrawIn)
 
         ctx.beginPath()
         ctx.addLines(between: [frameToDrawIn.origin, frameToDrawIn.bottomRight])

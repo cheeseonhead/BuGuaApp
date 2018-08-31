@@ -14,21 +14,9 @@ var testingCGFloat: CGFloat = 0
 class ViewController: UIViewController {
 
     @IBOutlet weak var guaXiangView: GuaXiangView!
-    @IBOutlet weak var yaoView: YaoView!
-    @IBOutlet weak var yaoView2: YaoView!
-    @IBOutlet weak var yaoView3: YaoView!
-    @IBOutlet weak var yaoView4: YaoView!
 
     override func viewDidLoad() {
         super.viewDidLoad()
-
-        yaoView.yaoRelay.accept(.youngYang)
-        yaoView2.yaoRelay.accept(.youngYin)
-        yaoView3.yaoRelay.accept(.oldYin)
-        yaoView4.yaoRelay.accept(.oldYang)
-
-        let ttt = CGRect(x: 0, y: 0, width: 50, height: 100).scaledAtCenter(scaleX: 0.5, scaleY: 0.5)
-        print(ttt)
     }
 
     override func viewDidAppear(_ animated: Bool) {
@@ -41,7 +29,6 @@ class ViewController: UIViewController {
     @IBAction func changed(_ sender: UISlider) {
         testingCGFloat = CGFloat(sender.value)
         print(testingCGFloat)
-        yaoView2.setNeedsDisplay()
     }
 
     @IBAction func tapped(_ sender: Any) {
@@ -50,8 +37,6 @@ class ViewController: UIViewController {
         print("\(guaXiang.originalGua.innerGua.character) \(guaXiang.originalGua.outerGua.character)")
         guaXiangView.guaXiangRelay.accept(guaXiang)
 
-        yaoView.yaoRelay.accept(YaoType.allCases.randomElement()!)
-        yaoView2.yaoRelay.accept(YaoType.allCases.randomElement()!)
     }
 
     func randomYao() -> [YaoType] {
