@@ -9,6 +9,7 @@
 import BuGuaKit
 import RxSwift
 import RxCocoa
+import SnapKit
 import UIKit
 
 class GuaXiangView: UIView {
@@ -46,6 +47,7 @@ private extension GuaXiangView {
         backgroundColor = nil
 
         addViews()
+        createConstraints()
 
         bindings()
 
@@ -57,17 +59,24 @@ private extension GuaXiangView {
 private extension GuaXiangView {
     func addViews() {
         setupYaoViews()
+        setupShiYingLabels()
     }
 
     func setupYaoViews() {
-        (1...6).map { makeYaoView(at: $0) }.forEach { addSubview($0) }
+        yaoViews = (1...6).map { makeYaoView(at: $0) }.map {
+            addSubview($0)
+            return $0
+        }
     }
 
     func makeYaoView(at position: Int) -> YaoView {
-        let yaoView = YaoView(frame: .zero)
-        yaoView.translatesAutoresizingMaskIntoConstraints = false
+        let yaoView = YaoView(frame: CGRect(x: 0, y: 0, width: 100, height: 50))
 
-        guaXiangRelay.map { $0.liuYao[position] }
+        yaoView.snp.makeConstraints { make in
+            make.size.equalTo(CGSize(width: 56, height: 36))
+        }
+
+        guaXiangRelay.map { $0.yao(at: position) }
             .bind(to: yaoView.yaoRelay)
             .disposed(by: bag)
 
@@ -75,12 +84,14 @@ private extension GuaXiangView {
     }
 
     func setupShiYingLabels() {
-        (1...6).map { makeShiYingLabel(at: $0) }.forEach { addSubview($0) }
+        shiYingLabels = (1...6).map { makeShiYingLabel(at: $0) }.map {
+            addSubview($0)
+            return $0
+        }
     }
 
     func makeShiYingLabel(at position: Int) -> UILabel {
         let label = UILabel(frame: .zero)
-        label.translatesAutoresizingMaskIntoConstraints = false
 
         guaXiangRelay.map { ($0.originalGua.shi, $0.originalGua.ying) }
             .bind { shi, ying in
@@ -97,6 +108,32 @@ private extension GuaXiangView {
     }
 }
 
+// MARK: - Constraints
+private extension GuaXiangView {
+    func createConstraints() {
+
+        shiYingLabels.last!.snp.makeConstraints { make in
+            make.top.equalTo(snp.top).offset(8)
+        }
+
+        // Between same yao and shi ying
+        zip(yaoViews, shiYingLabels).forEach { yaoView, shiYingLabel in
+            shiYingLabel.snp.makeConstraints { make in
+                make.bottom.equalTo(yaoView.snp.top)
+            }
+        }
+
+        // In between different yao and shi ying
+        zip(yaoViews.suffix(5), shiYingLabels.prefix(5)).forEach { upperYaoView, lowerShiYingLabel in
+            lowerShiYingLabel.snp.makeConstraints({ make in
+                make.top.equalTo(upperYaoView.snp.bottom).offset(16)
+            })
+        }
+
+        yaoViews.forEach { $0.snp.makeConstraints { $0.centerX.equalToSuperview() } }
+        shiYingLabels.forEach { $0.snp.makeConstraints { $0.centerX.equalToSuperview() } }
+    }
+}
 
 // MARK: - Bindings
 private extension GuaXiangView {
@@ -109,25 +146,6 @@ private extension GuaXiangView {
 //            .bind(to: outerGuaView.baGuaRelay)
 //            .disposed(by: bag)
 
-        guaXiangRelay.map { $0.liuYao }
-            .bind { [unowned self] yaoTypes in
-                self.yaoViews.forEach { yaoView in
-                    yaoView.yaoRelay.accept(yaoTypes[yaoView.tag - 1])
-                }
-            }.disposed(by: bag)
-
-        guaXiangRelay.map { ($0.originalGua.shi, $0.originalGua.ying) }
-            .bind { [unowned self] shi, ying in
-                self.shiYingLabels.forEach { shiYingLabel in
-                    if shiYingLabel.tag == shi {
-                        shiYingLabel.text = "世"
-                    } else if shiYingLabel.tag == ying {
-                        shiYingLabel.text = "應"
-                    } else {
-                        shiYingLabel.text = " "
-                    }
-                }
-            }.disposed(by: bag)
 
 //        diZhiBindings()
 //        liuQinBindings()
