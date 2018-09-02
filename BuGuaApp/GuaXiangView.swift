@@ -18,6 +18,7 @@ class GuaXiangView: UIView {
     var yaoViews: [YaoView]!
     var shiYingLabels: [UILabel]!
     var horizontalDividers: [UIView]!
+    var cellSpacers: [UIView]!
 
     // MARK: - Properties
     let guaXiangRelay = PublishRelay<LiuYaoGuaXiang>()
@@ -62,6 +63,7 @@ private extension GuaXiangView {
         setupYaoViews()
         setupShiYingLabels()
         setupHorizontalDividers()
+        setupCellSpacers()
     }
 
     func setupYaoViews() {
@@ -126,6 +128,24 @@ private extension GuaXiangView {
 
         return divider
     }
+
+    func setupCellSpacers() {
+        cellSpacers = (1...6).map { _ in
+            makeCellSpacers()
+        }.map { (spacer) -> UIView in
+            addSubview(spacer)
+            return spacer
+        }
+    }
+
+    func makeCellSpacers() -> UIView {
+        let spacer = UIView(frame: .zero)
+        spacer.backgroundColor = nil
+        spacer.snp.makeConstraints { make in
+            make.width.equalTo(100)
+        }
+        return spacer
+    }
 }
 
 // MARK: - Constraints
@@ -135,6 +155,7 @@ private extension GuaXiangView {
     func createConstraints() {
         shiYingConstraints()
         horizontalDividerConstraints()
+        cellSpacerConstraints()
     }
 
     func shiYingConstraints() {
@@ -160,10 +181,10 @@ private extension GuaXiangView {
     func horizontalDividerConstraints() {
         horizontalDividers.first!.snp.makeConstraints { make in
             make.top.equalToSuperview()
-            make.bottom.equalTo(shiYingLabels.last!.snp.top).offset(8)
+            make.bottom.equalTo(shiYingLabels.last!.snp.top).offset(-8)
         }
 
-        zip(horizontalDividers.suffix(6), yaoViews).forEach { belowDivider, yaoView in
+        zip(horizontalDividers.suffix(6), yaoViews.reversed()).forEach { belowDivider, yaoView in
             belowDivider.snp.makeConstraints { make in
                 make.top.equalTo(yaoView.snp.bottom).offset(8)
             }
@@ -175,6 +196,25 @@ private extension GuaXiangView {
                     make.width.equalToSuperview()
                 }
             }
+    }
+
+    func cellSpacerConstraints() {
+        cellSpacers.forEach { spacer in
+            spacer.snp.makeConstraints({ make in
+                make.centerX.equalToSuperview()
+            })
+        }
+        zip(horizontalDividers.prefix(6), cellSpacers.reversed()).forEach { above, spacer in
+            spacer.snp.makeConstraints { make in
+                make.top.equalTo(above.snp.bottom)
+            }
+        }
+
+        zip(horizontalDividers.suffix(6), cellSpacers.reversed()).forEach { below, spacer in
+            spacer.snp.makeConstraints { make in
+                make.bottom.equalTo(below.snp.top)
+            }
+        }
     }
 }
 
