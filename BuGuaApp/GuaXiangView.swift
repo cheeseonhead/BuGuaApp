@@ -163,18 +163,22 @@ private extension GuaXiangView {
 // MARK: - Horizontal Dividers
 private extension GuaXiangView {
     func setupHorizontalDividers() {
-        horizontalDividers = (1...7).map { _ in makeHorizontalDividers() }.map {
+        horizontalDividers = (1...7).map { makeHorizontalDividers(at: $0) }.map {
             addSubview($0)
             return $0
         }
     }
 
-    func makeHorizontalDividers() -> UIView {
+    func makeHorizontalDividers(at position: Int) -> UIView {
         let divider = UIView(frame: .zero)
-        divider.backgroundColor = UIColor(named: "Sunset")
+        divider.backgroundColor = position == 4 ? .orange:  UIColor(named: "Sunset")
 
         divider.snp.makeConstraints { make in
-            make.height.equalTo(1)
+            if position == 4 {
+                make.height.equalTo(2)
+            } else {
+                make.height.equalTo(1)
+            }
         }
 
         return divider
