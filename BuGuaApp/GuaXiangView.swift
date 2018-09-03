@@ -19,6 +19,8 @@ class GuaXiangView: UIView {
     var shiYingLabels: [UILabel]!
     var horizontalDividers: [UIView]!
     var cellSpacers: [UIView]!
+    var diZhiLabels: [UILabel]!
+    var liuQinLabels: [UILabel]!
 
     // MARK: - Properties
     let guaXiangRelay = PublishRelay<LiuYaoGuaXiang>()
@@ -55,16 +57,38 @@ private extension GuaXiangView {
 
         setStyle()
     }
-}
 
-// MARK: - Add Views
-private extension GuaXiangView {
     func addViews() {
         setupYaoViews()
         setupShiYingLabels()
         setupHorizontalDividers()
         setupCellSpacers()
+        setupDiZhiLabels()
+        setupLiuQinLabels()
     }
+
+    func createConstraints() {
+        shiYingConstraints()
+        horizontalDividerConstraints()
+        cellSpacerConstraints()
+        diZhiConstraints()
+        liuQinConstraints()
+    }
+
+    func bindings() {
+
+    }
+
+    func setStyle() {
+        (diZhiLabels + shiYingLabels + liuQinLabels).forEach { label in
+            label.font = .headline
+            label.textColor = .spaceGrey
+        }
+    }
+}
+
+// MARK: - Yao Views
+private extension GuaXiangView {
 
     func setupYaoViews() {
         yaoViews = (1...6).map { makeYaoView(at: $0) }.map {
@@ -86,6 +110,10 @@ private extension GuaXiangView {
 
         return yaoView
     }
+}
+
+// MARK: - Shi Ying Labels
+private extension GuaXiangView {
 
     func setupShiYingLabels() {
         shiYingLabels = (1...6).map { makeShiYingLabel(at: $0) }.map {
@@ -111,53 +139,6 @@ private extension GuaXiangView {
         return label
     }
 
-    func setupHorizontalDividers() {
-        horizontalDividers = (1...7).map { _ in makeHorizontalDividers() }.map {
-            addSubview($0)
-            return $0
-        }
-    }
-
-    func makeHorizontalDividers() -> UIView {
-        let divider = UIView(frame: .zero)
-        divider.backgroundColor = UIColor(named: "Sunset")
-
-        divider.snp.makeConstraints { make in
-            make.height.equalTo(1)
-        }
-
-        return divider
-    }
-
-    func setupCellSpacers() {
-        cellSpacers = (1...6).map { _ in
-            makeCellSpacers()
-        }.map { (spacer) -> UIView in
-            addSubview(spacer)
-            return spacer
-        }
-    }
-
-    func makeCellSpacers() -> UIView {
-        let spacer = UIView(frame: .zero)
-        spacer.backgroundColor = nil
-        spacer.snp.makeConstraints { make in
-            make.width.equalTo(100)
-        }
-        return spacer
-    }
-}
-
-// MARK: - Constraints
-private extension GuaXiangView {
-
-
-    func createConstraints() {
-        shiYingConstraints()
-        horizontalDividerConstraints()
-        cellSpacerConstraints()
-    }
-
     func shiYingConstraints() {
 
         // Between same yao and shi ying
@@ -177,6 +158,27 @@ private extension GuaXiangView {
         yaoViews.forEach { $0.snp.makeConstraints { $0.centerX.equalToSuperview() } }
         shiYingLabels.forEach { $0.snp.makeConstraints { $0.centerX.equalToSuperview() } }
     }
+}
+
+// MARK: - Horizontal Dividers
+private extension GuaXiangView {
+    func setupHorizontalDividers() {
+        horizontalDividers = (1...7).map { _ in makeHorizontalDividers() }.map {
+            addSubview($0)
+            return $0
+        }
+    }
+
+    func makeHorizontalDividers() -> UIView {
+        let divider = UIView(frame: .zero)
+        divider.backgroundColor = UIColor(named: "Sunset")
+
+        divider.snp.makeConstraints { make in
+            make.height.equalTo(1)
+        }
+
+        return divider
+    }
 
     func horizontalDividerConstraints() {
         horizontalDividers.first!.snp.makeConstraints { make in
@@ -195,7 +197,28 @@ private extension GuaXiangView {
                 maker { make in
                     make.width.equalToSuperview()
                 }
-            }
+        }
+    }
+}
+
+// MARK: - Cell spacers
+private extension GuaXiangView {
+    func setupCellSpacers() {
+        cellSpacers = (1...6).map { _ in
+            makeCellSpacers()
+        }.map { (spacer) -> UIView in
+                addSubview(spacer)
+                return spacer
+        }
+    }
+
+    func makeCellSpacers() -> UIView {
+        let spacer = UIView(frame: .zero)
+        spacer.backgroundColor = nil
+        spacer.snp.makeConstraints { make in
+            make.width.equalTo(100)
+        }
+        return spacer
     }
 
     func cellSpacerConstraints() {
@@ -218,9 +241,89 @@ private extension GuaXiangView {
     }
 }
 
+// MARK: - DiZhi Labels
+private extension GuaXiangView {
+    func setupDiZhiLabels() {
+        diZhiLabels = (1...6).map { makeDiZhiLabel(at: $0) }.map { label in
+            addSubview(label)
+            return label
+        }
+    }
+
+    func makeDiZhiLabel(at position: Int) -> UILabel {
+        let label = UILabel(frame: .zero)
+        label.numberOfLines = 0
+
+        guaXiangRelay.map { $0.originalGua.yaoZhi(at: position) }
+            .bind { diZhi in
+                label.text = diZhi.character
+            }.disposed(by: bag)
+
+        return label
+    }
+
+    func diZhiConstraints() {
+        zip(diZhiLabels, cellSpacers).forEach { label, spacer in
+            label.snp.makeConstraints { make in
+                make.centerY.equalTo(spacer.snp.centerY)
+            }
+        }
+
+        zip(diZhiLabels, yaoViews).forEach { label, yaoView in
+            label.snp.makeConstraints { make in
+                make.leading.equalTo(yaoView.snp.trailing).offset(24)
+            }
+        }
+    }
+}
+
+// MARK: - LiuQin Labels
+private extension GuaXiangView {
+    func setupLiuQinLabels() {
+        liuQinLabels = (1...6).map { makeLiuQinLabel(at: $0) }.map { label in
+            addSubview(label)
+            return label
+        }
+    }
+
+    func makeLiuQinLabel(at position: Int) -> UILabel {
+        let label = UILabel(frame: .zero)
+        label.numberOfLines = 0
+
+        guaXiangRelay.map { $0.originalGua.liuQin(at: position) }
+            .bind { liuQin in
+                label.text = liuQin.character.vertical
+            }.disposed(by: bag)
+
+        return label
+    }
+
+    func liuQinConstraints() {
+        zip(liuQinLabels, cellSpacers).forEach { label, spacer in
+            label.snp.makeConstraints { make in
+                make.centerY.equalTo(spacer.snp.centerY)
+            }
+        }
+
+        zip(liuQinLabels, yaoViews).forEach { label, yaoView in
+            label.snp.makeConstraints { make in
+                make.trailing.equalTo(yaoView.snp.leading).offset(-24)
+            }
+        }
+    }
+}
+
+private extension String {
+    var vertical: String {
+        forEach { c in
+            print(c)
+        }
+        return lazy.map { String($0) }.joined(separator: "\n")
+    }
+}
+
 // MARK: - Bindings
 private extension GuaXiangView {
-    func bindings() {
 //        guaXiangRelay.map { $0.originalGua.innerGua }
 //            .bind(to: innerGuaView.baGuaRelay)
 //            .disposed(by: bag)
@@ -232,7 +335,6 @@ private extension GuaXiangView {
 
 //        diZhiBindings()
 //        liuQinBindings()
-    }
 
 //    func diZhiBindings() {
 //        let diZhiStrings: Observable<[String?]> = guaXiangRelay.map { $0.originalGua.yaoZhi }
@@ -259,14 +361,4 @@ private extension GuaXiangView {
 //            stringRelay.bind(to: label.rx.text)
 //        }.forEach { $0.disposed(by:bag) }
 //    }
-}
-
-// MARK: - Styling
-extension GuaXiangView {
-    func setStyle() {
-        shiYingLabels.forEach { label in
-            label.font = .headline
-            label.textColor = .spaceGrey
-        }
-    }
 }
