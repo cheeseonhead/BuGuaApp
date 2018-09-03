@@ -21,6 +21,7 @@ class GuaXiangView: UIView {
     var cellSpacers: [UIView]!
     var diZhiLabels: [UILabel]!
     var liuQinLabels: [UILabel]!
+    var headerLabels: [UILabel]!
 
     // MARK: - Properties
     let guaXiangRelay = PublishRelay<LiuYaoGuaXiang>()
@@ -65,6 +66,7 @@ private extension GuaXiangView {
         setupCellSpacers()
         setupDiZhiLabels()
         setupLiuQinLabels()
+        setupHeaderLabels()
     }
 
     func createConstraints() {
@@ -73,6 +75,7 @@ private extension GuaXiangView {
         cellSpacerConstraints()
         diZhiConstraints()
         liuQinConstraints()
+        headerLabelConstraints()
     }
 
     func bindings() {
@@ -83,6 +86,40 @@ private extension GuaXiangView {
         (diZhiLabels + shiYingLabels + liuQinLabels).forEach { label in
             label.font = .headline
             label.textColor = .spaceGrey
+        }
+
+        headerLabels.forEach { $0.textColor = .spaceGrey }
+    }
+}
+
+// MARK: - Header Labels
+private extension GuaXiangView {
+    func setupHeaderLabels() {
+        let headerNames = ["六親", "爻象世應", "干支"]
+
+        headerLabels = headerNames.map { makeHeaderLabel(text: $0) }.map {
+            addSubview($0)
+            return $0
+        }
+    }
+
+    func makeHeaderLabel(text: String) -> UILabel {
+        let label = UILabel(frame: .zero)
+        label.numberOfLines = 0
+        label.text = text
+
+        return label
+    }
+
+    func headerLabelConstraints() {
+        let alignLabels = [liuQinLabels.last!, shiYingLabels.last!, diZhiLabels.last!]
+
+        zip(alignLabels, headerLabels).forEach { alignLabel, header in
+            header.snp.makeConstraints { make in
+                make.top.equalToSuperview().offset(8)
+                make.bottom.equalTo(horizontalDividers.first!.snp.top)
+                make.centerX.equalTo(alignLabel.snp.centerX)
+            }
         }
     }
 }
@@ -186,7 +223,6 @@ private extension GuaXiangView {
 
     func horizontalDividerConstraints() {
         horizontalDividers.first!.snp.makeConstraints { make in
-            make.top.equalToSuperview()
             make.bottom.equalTo(shiYingLabels.last!.snp.top).offset(-8)
         }
 
