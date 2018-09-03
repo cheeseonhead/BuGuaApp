@@ -34,6 +34,7 @@
 		9B933F792138DEE2004DCD3F /* CGPoint+Math.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9B933F782138DEE2004DCD3F /* CGPoint+Math.swift */; };
 		9B933F7B2138DF3B004DCD3F /* CGRect+Points.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9B933F7A2138DF3B004DCD3F /* CGRect+Points.swift */; };
 		9B933F7D2138DF75004DCD3F /* CGSize+Points.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9B933F7C2138DF75004DCD3F /* CGSize+Points.swift */; };
+		9BCB3609213E011800F7FDDE /* String+Vertical.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9BCB3608213E011800F7FDDE /* String+Vertical.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -110,6 +111,7 @@
 		9B933F782138DEE2004DCD3F /* CGPoint+Math.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "CGPoint+Math.swift"; sourceTree = "<group>"; };
 		9B933F7A2138DF3B004DCD3F /* CGRect+Points.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "CGRect+Points.swift"; sourceTree = "<group>"; };
 		9B933F7C2138DF75004DCD3F /* CGSize+Points.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "CGSize+Points.swift"; sourceTree = "<group>"; };
+		9BCB3608213E011800F7FDDE /* String+Vertical.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "String+Vertical.swift"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -211,13 +213,14 @@
 		9B933F3D2134EB64004DCD3F /* Extensions */ = {
 			isa = PBXGroup;
 			children = (
-				9B933F3E2134EBBE004DCD3F /* UIView+NibLoadable.swift */,
-				9B933F6C2136537A004DCD3F /* UIView+Layout.swift */,
-				9B933F6E213794F7004DCD3F /* UIFont+AppFont.swift */,
-				9B933F72213797A2004DCD3F /* UIColor+AppColors.swift */,
 				9B933F782138DEE2004DCD3F /* CGPoint+Math.swift */,
 				9B933F7A2138DF3B004DCD3F /* CGRect+Points.swift */,
 				9B933F7C2138DF75004DCD3F /* CGSize+Points.swift */,
+				9BCB3608213E011800F7FDDE /* String+Vertical.swift */,
+				9B933F72213797A2004DCD3F /* UIColor+AppColors.swift */,
+				9B933F6E213794F7004DCD3F /* UIFont+AppFont.swift */,
+				9B933F6C2136537A004DCD3F /* UIView+Layout.swift */,
+				9B933F3E2134EBBE004DCD3F /* UIView+NibLoadable.swift */,
 			);
 			name = Extensions;
 			sourceTree = "<group>";
@@ -403,6 +406,7 @@
 				9B933F792138DEE2004DCD3F /* CGPoint+Math.swift in Sources */,
 				9B933F3B2134EB01004DCD3F /* FuXiBaGuaView.swift in Sources */,
 				9B933F772137A8C3004DCD3F /* YaoView.swift in Sources */,
+				9BCB3609213E011800F7FDDE /* String+Vertical.swift in Sources */,
 				9B933F6D2136537A004DCD3F /* UIView+Layout.swift in Sources */,
 				9B933EF32134E529004DCD3F /* ViewController.swift in Sources */,
 				9B933F7D2138DF75004DCD3F /* CGSize+Points.swift in Sources */,
