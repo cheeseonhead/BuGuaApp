@@ -19,15 +19,10 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="9r5-kL-w1T" customClass="GuaXiangView" customModule="BuGuaApp" customModuleProvider="target">
-                                <rect key="frame" x="196" y="84" width="632" height="600"/>
-                                <constraints>
-                                    <constraint firstAttribute="width" constant="632" id="SuH-Ee-wuz"/>
-                                    <constraint firstAttribute="height" constant="600" id="nHP-RZ-ZrD"/>
-                                </constraints>
+                                <rect key="frame" x="0.0" y="84" width="1024" height="684"/>
                             </view>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="0Vu-q8-Atc">
-                                <rect key="frame" x="486" y="28" width="53" height="30"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="0Vu-q8-Atc">
+                                <rect key="frame" x="485.5" y="28" width="53" height="30"/>
                                 <state key="normal" title="Change"/>
                                 <connections>
                                     <action selector="tapped:" destination="BYZ-38-t0r" eventType="touchUpInside" id="xby-Em-WEj"/>
@@ -36,8 +31,12 @@
                         </subviews>
                         <color key="backgroundColor" red="1" green="0.94117647058823528" blue="0.87450980392156863" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
-                            <constraint firstItem="9r5-kL-w1T" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="65S-8A-eGw"/>
-                            <constraint firstItem="9r5-kL-w1T" firstAttribute="centerY" secondItem="8bC-Xf-vdC" secondAttribute="centerY" id="8i8-wv-j7p"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="9r5-kL-w1T" secondAttribute="trailing" id="9hY-bk-HaO"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="9r5-kL-w1T" secondAttribute="bottom" id="Icn-RF-hnN"/>
+                            <constraint firstItem="0Vu-q8-Atc" firstAttribute="centerX" secondItem="6Tk-OE-BBY" secondAttribute="centerX" id="ZQb-Gh-F6b"/>
+                            <constraint firstItem="9r5-kL-w1T" firstAttribute="top" secondItem="0Vu-q8-Atc" secondAttribute="bottom" constant="26" id="eA3-oc-Uen"/>
+                            <constraint firstItem="9r5-kL-w1T" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="is8-ej-Mhe"/>
+                            <constraint firstItem="0Vu-q8-Atc" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="8" id="us2-Tr-QOU"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                     </view>
