@@ -161,6 +161,7 @@ private extension GuaXiangView {
 
     func makeShiYingLabel(at position: Int) -> UILabel {
         let label = UILabel(frame: .zero)
+        label.text = " "
 
         guaXiangRelay.map { ($0.originalGua.shi, $0.originalGua.ying) }
             .bind { shi, ying in
@@ -293,6 +294,7 @@ private extension GuaXiangView {
     func makeDiZhiLabel(at position: Int) -> UILabel {
         let label = UILabel(frame: .zero)
         label.numberOfLines = 0
+        label.text = "-"
 
         guaXiangRelay.map { $0.originalGua.yaoZhi(at: position) }
             .bind { diZhi in
@@ -329,6 +331,7 @@ private extension GuaXiangView {
     func makeLiuQinLabel(at position: Int) -> UILabel {
         let label = UILabel(frame: .zero)
         label.numberOfLines = 0
+        label.text = "-"
 
         guaXiangRelay.map { $0.originalGua.liuQin(at: position) }
             .bind { liuQin in
