@@ -16,11 +16,16 @@ protocol Coordinator: class {
 
 class AppCoordinator: Coordinator {
 
-    let navigationController: UINavigationController
     private (set) var childCoordinators = [Coordinator]()
 
-    init(with navigationController: UINavigationController) {
-        self.navigationController = navigationController
+    private let testing = true
+
+    private weak var window: UIWindow?
+    private let factory: AppFactory
+
+    init(with window: UIWindow, factory: AppFactory) {
+        self.window = window
+        self.factory = factory
     }
 
     deinit {
@@ -28,6 +33,10 @@ class AppCoordinator: Coordinator {
     }
 
     func start() {
-        
+        if testing {
+            window?.rootViewController = UIStoryboard(name: "Main", bundle: nil).instantiateInitialViewController() as! ViewController
+        } else {
+//            window?.rootViewController = UITabBarController(nibName: nil, bundle: nil)
+        }
     }
 }
