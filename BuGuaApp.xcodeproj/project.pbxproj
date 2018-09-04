@@ -37,6 +37,7 @@
 		9BCB3609213E011800F7FDDE /* String+Vertical.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9BCB3608213E011800F7FDDE /* String+Vertical.swift */; };
 		9BCB360D213E148200F7FDDE /* GuaXiangViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9BCB360C213E148200F7FDDE /* GuaXiangViewController.swift */; };
 		9BCB3611213E150500F7FDDE /* GuaXiangViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 9BCB3610213E150500F7FDDE /* GuaXiangViewController.xib */; };
+		9BCB3614213E234000F7FDDE /* AppCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9BCB3613213E234000F7FDDE /* AppCoordinator.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -116,6 +117,7 @@
 		9BCB3608213E011800F7FDDE /* String+Vertical.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "String+Vertical.swift"; sourceTree = "<group>"; };
 		9BCB360C213E148200F7FDDE /* GuaXiangViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GuaXiangViewController.swift; sourceTree = "<group>"; };
 		9BCB3610213E150500F7FDDE /* GuaXiangViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = GuaXiangViewController.xib; sourceTree = "<group>"; };
+		9BCB3613213E234000F7FDDE /* AppCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppCoordinator.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -175,6 +177,7 @@
 				9B933EF02134E529004DCD3F /* AppDelegate.swift */,
 				9B933EF22134E529004DCD3F /* ViewController.swift */,
 				9B933EF42134E529004DCD3F /* Main.storyboard */,
+				9BCB3612213E227700F7FDDE /* Coordinators */,
 				9BCB360B213E147000F7FDDE /* ViewController */,
 				9B933F3C2134EB58004DCD3F /* Views */,
 				9B933F3D2134EB64004DCD3F /* Extensions */,
@@ -250,6 +253,14 @@
 				9BCB3610213E150500F7FDDE /* GuaXiangViewController.xib */,
 			);
 			name = ViewController;
+			sourceTree = "<group>";
+		};
+		9BCB3612213E227700F7FDDE /* Coordinators */ = {
+			isa = PBXGroup;
+			children = (
+				9BCB3613213E234000F7FDDE /* AppCoordinator.swift */,
+			);
+			name = Coordinators;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -428,6 +439,7 @@
 				9B933F7D2138DF75004DCD3F /* CGSize+Points.swift in Sources */,
 				9B933F73213797A2004DCD3F /* UIColor+AppColors.swift in Sources */,
 				9B933F5B2135A8B0004DCD3F /* GuaXiangView.swift in Sources */,
+				9BCB3614213E234000F7FDDE /* AppCoordinator.swift in Sources */,
 				9B933EF12134E529004DCD3F /* AppDelegate.swift in Sources */,
 				9B933F7B2138DF3B004DCD3F /* CGRect+Points.swift in Sources */,
 			);
