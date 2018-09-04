@@ -40,6 +40,7 @@
 		9BCB3614213E234000F7FDDE /* AppCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9BCB3613213E234000F7FDDE /* AppCoordinator.swift */; };
 		9BCB3616213E254900F7FDDE /* AppFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9BCB3615213E254900F7FDDE /* AppFactory.swift */; };
 		9BCB3618213E2A5800F7FDDE /* GuaXiangCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9BCB3617213E2A5800F7FDDE /* GuaXiangCoordinator.swift */; };
+		9BCB361A213E30D700F7FDDE /* GuaXiangViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9BCB3619213E30D700F7FDDE /* GuaXiangViewModel.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -122,6 +123,7 @@
 		9BCB3613213E234000F7FDDE /* AppCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppCoordinator.swift; sourceTree = "<group>"; };
 		9BCB3615213E254900F7FDDE /* AppFactory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppFactory.swift; sourceTree = "<group>"; };
 		9BCB3617213E2A5800F7FDDE /* GuaXiangCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GuaXiangCoordinator.swift; sourceTree = "<group>"; };
+		9BCB3619213E30D700F7FDDE /* GuaXiangViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GuaXiangViewModel.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -256,6 +258,7 @@
 			children = (
 				9BCB360C213E148200F7FDDE /* GuaXiangViewController.swift */,
 				9BCB3610213E150500F7FDDE /* GuaXiangViewController.xib */,
+				9BCB3619213E30D700F7FDDE /* GuaXiangViewModel.swift */,
 			);
 			name = ViewController;
 			sourceTree = "<group>";
@@ -439,6 +442,7 @@
 				9B933F3B2134EB01004DCD3F /* FuXiBaGuaView.swift in Sources */,
 				9BCB3616213E254900F7FDDE /* AppFactory.swift in Sources */,
 				9B933F772137A8C3004DCD3F /* YaoView.swift in Sources */,
+				9BCB361A213E30D700F7FDDE /* GuaXiangViewModel.swift in Sources */,
 				9BCB3609213E011800F7FDDE /* String+Vertical.swift in Sources */,
 				9BCB3618213E2A5800F7FDDE /* GuaXiangCoordinator.swift in Sources */,
 				9BCB360D213E148200F7FDDE /* GuaXiangViewController.swift in Sources */,
