@@ -9,14 +9,31 @@
 import Foundation
 import UIKit
 
+protocol CoordinatorDelegate: class {
+    func didStart(_ coordinator: Coordinator, viewController: UIViewController)
+}
+
 protocol Coordinator: class {
-    var childCoordinators: [Coordinator] { get }
+    var childCoordinators: [Coordinator] { get set }
+    var delegate: CoordinatorDelegate? { get set }
+
     func start()
 }
 
-class AppCoordinator: Coordinator {
+extension Coordinator {
+    func addChildCoordinator(_ coordinator: Coordinator) {
+        childCoordinators.append(coordinator)
+    }
 
-    private (set) var childCoordinators = [Coordinator]()
+    func removeChildCoordinator(_ coordinator: Coordinator) {
+        childCoordinators = childCoordinators.filter { $0 !== coordinator }
+    }
+}
+
+class AppCoordinator: Coordinator, CoordinatorDelegate {
+
+    var childCoordinators = [Coordinator]()
+    var delegate: CoordinatorDelegate?
 
     private let testing = true
 
@@ -35,8 +52,16 @@ class AppCoordinator: Coordinator {
     func start() {
         if testing {
             window?.rootViewController = UIStoryboard(name: "Main", bundle: nil).instantiateInitialViewController() as! ViewController
+            delegate?.didStart(self, viewController: window!.rootViewController!)
         } else {
-//            window?.rootViewController = UITabBarController(nibName: nil, bundle: nil)
+            let guaXiangCoordinator = factory.makeGuaXiangCoordinator()
+            guaXiangCoordinator.delegate = self
+            guaXiangCoordinator.start()
+            addChildCoordinator(guaXiangCoordinator)
         }
+    }
+
+    func didStart(_ coordinator: Coordinator, viewController: UIViewController) {
+        window?.rootViewController = viewController
     }
 }

@@ -13,4 +13,12 @@ class AppFactory {
     func makeAppCoordinator(with window: UIWindow) -> AppCoordinator {
         return AppCoordinator(with: window, factory: self)
     }
+
+    func makeGuaXiangCoordinator() -> GuaXiangCoordinator {
+        return GuaXiangCoordinator(factory: self)
+    }
+
+    func makeGuaXiangViewController() -> GuaXiangViewController {
+        return GuaXiangViewController()
+    }
 }

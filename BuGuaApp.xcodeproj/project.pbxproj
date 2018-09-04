@@ -39,6 +39,7 @@
 		9BCB3611213E150500F7FDDE /* GuaXiangViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 9BCB3610213E150500F7FDDE /* GuaXiangViewController.xib */; };
 		9BCB3614213E234000F7FDDE /* AppCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9BCB3613213E234000F7FDDE /* AppCoordinator.swift */; };
 		9BCB3616213E254900F7FDDE /* AppFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9BCB3615213E254900F7FDDE /* AppFactory.swift */; };
+		9BCB3618213E2A5800F7FDDE /* GuaXiangCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9BCB3617213E2A5800F7FDDE /* GuaXiangCoordinator.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -120,6 +121,7 @@
 		9BCB3610213E150500F7FDDE /* GuaXiangViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = GuaXiangViewController.xib; sourceTree = "<group>"; };
 		9BCB3613213E234000F7FDDE /* AppCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppCoordinator.swift; sourceTree = "<group>"; };
 		9BCB3615213E254900F7FDDE /* AppFactory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppFactory.swift; sourceTree = "<group>"; };
+		9BCB3617213E2A5800F7FDDE /* GuaXiangCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GuaXiangCoordinator.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -262,6 +264,7 @@
 			isa = PBXGroup;
 			children = (
 				9BCB3613213E234000F7FDDE /* AppCoordinator.swift */,
+				9BCB3617213E2A5800F7FDDE /* GuaXiangCoordinator.swift */,
 			);
 			name = Coordinators;
 			sourceTree = "<group>";
@@ -437,6 +440,7 @@
 				9BCB3616213E254900F7FDDE /* AppFactory.swift in Sources */,
 				9B933F772137A8C3004DCD3F /* YaoView.swift in Sources */,
 				9BCB3609213E011800F7FDDE /* String+Vertical.swift in Sources */,
+				9BCB3618213E2A5800F7FDDE /* GuaXiangCoordinator.swift in Sources */,
 				9BCB360D213E148200F7FDDE /* GuaXiangViewController.swift in Sources */,
 				9B933F6D2136537A004DCD3F /* UIView+Layout.swift in Sources */,
 				9B933EF32134E529004DCD3F /* ViewController.swift in Sources */,
