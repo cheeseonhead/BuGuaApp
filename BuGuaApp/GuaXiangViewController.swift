@@ -7,16 +7,40 @@
 //
 
 import Foundation
+import RxSwift
+import RxCocoa
 import UIKit
 
 class GuaXiangViewController: UIViewController {
 
     @IBOutlet weak var guaXiangView: GuaXiangView!
-    init() {
+
+    let viewModel: GuaXiangViewModel
+
+    // MARK: - Private Rx
+    private let bag = DisposeBag()
+
+    // MARK: - Init
+    init(viewModel: GuaXiangViewModel) {
+        self.viewModel = viewModel
         super.init(nibName: nil, bundle: nil)
     }
 
     required init?(coder aDecoder: NSCoder) {
         fatalError("init(coder:) has not been implemented")
+    }
+
+    // MARK: - Lifecycle
+    override func viewDidLoad() {
+        super.viewDidLoad()
+
+        bindings()
+    }
+}
+
+// MARK: - Setup
+private extension GuaXiangViewController {
+    func bindings() {
+        viewModel.guaXiangRelay.bind(to: guaXiangView.guaXiangRelay).disposed(by: bag)
     }
 }
