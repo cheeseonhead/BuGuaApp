@@ -14,7 +14,7 @@ class GuaXiangCoordinator: Coordinator {
     var delegate: CoordinatorDelegate?
     var childCoordinators = [Coordinator]()
 
-    private var viewController: UIViewController!
+    private var viewController: GuaXiangViewController!
     private let factory: AppFactory
 
     init(factory: AppFactory) {
@@ -22,7 +22,8 @@ class GuaXiangCoordinator: Coordinator {
     }
 
     func start() {
-        viewController = factory.makeGuaXiangViewController()
+        let viewModel = GuaXiangViewModel()
+        viewController = factory.makeGuaXiangViewController(viewModel: viewModel)
 
         delegate?.didStart(self, viewController: viewController)
     }

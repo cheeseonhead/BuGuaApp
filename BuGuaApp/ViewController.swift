@@ -37,7 +37,7 @@ class ViewController: UIViewController {
         print("\(guaXiang.originalGua.innerGua.character) \(guaXiang.originalGua.outerGua.character)")
         guaXiangView.guaXiangRelay.accept(guaXiang)
 
-        present(GuaXiangViewController(), animated: true, completion: nil)
+//        present(GuaXiangViewController(), animated: true, completion: nil)
 
     }
 

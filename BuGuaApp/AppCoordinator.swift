@@ -35,7 +35,7 @@ class AppCoordinator: Coordinator, CoordinatorDelegate {
     var childCoordinators = [Coordinator]()
     var delegate: CoordinatorDelegate?
 
-    private let testing = true
+    private let testing = false
 
     private weak var window: UIWindow?
     private let factory: AppFactory

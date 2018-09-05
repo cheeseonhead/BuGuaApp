@@ -6,4 +6,14 @@
 //  Copyright © 2018 Jeffrey Wu. All rights reserved.
 //
 
+import BuGuaKit
 import Foundation
+import RxSwift
+import RxCocoa
+
+class GuaXiangViewModel {
+
+    // MARK: - Public Rx
+    let guaXiangRelay = BehaviorRelay<LiuYaoGuaXiang>(value: .default)
+
+}

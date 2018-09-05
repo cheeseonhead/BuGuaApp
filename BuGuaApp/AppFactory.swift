@@ -18,7 +18,7 @@ class AppFactory {
         return GuaXiangCoordinator(factory: self)
     }
 
-    func makeGuaXiangViewController() -> GuaXiangViewController {
-        return GuaXiangViewController()
+    func makeGuaXiangViewController(viewModel: GuaXiangViewModel) -> GuaXiangViewController {
+        return GuaXiangViewController(viewModel: viewModel)
     }
 }
