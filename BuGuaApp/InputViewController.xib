@@ -14,8 +14,14 @@
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="InputViewController" customModule="BuGuaApp" customModuleProvider="target">
             <connections>
                 <outlet property="finishButton" destination="PBC-iU-hiY" id="gQq-Fj-8oW"/>
+                <outlet property="firstField" destination="pb3-EF-daQ" id="3fZ-H3-Icb"/>
+                <outlet property="secondField" destination="V9o-47-mmg" id="mh0-hj-n0c"/>
+                <outlet property="thirdField" destination="PGx-AP-gnK" id="Mkc-wh-8zr"/>
                 <outlet property="titleLabel" destination="ee4-a4-ViZ" id="c5v-CN-XkY"/>
                 <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
+                <outletCollection property="fields" destination="pb3-EF-daQ" collectionClass="NSMutableArray" id="c9D-jD-l1Y"/>
+                <outletCollection property="fields" destination="V9o-47-mmg" collectionClass="NSMutableArray" id="mzk-sR-X4U"/>
+                <outletCollection property="fields" destination="PGx-AP-gnK" collectionClass="NSMutableArray" id="d8q-yC-0PT"/>
             </connections>
         </placeholder>
         <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
@@ -27,7 +33,7 @@
                     <rect key="frame" x="0.0" y="0.0" width="450" height="44"/>
                     <subviews>
                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="輸入卜卦數字" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ee4-a4-ViZ">
-                            <rect key="frame" x="173" y="11.5" width="104" height="21"/>
+                            <rect key="frame" x="173" y="12" width="104" height="20.5"/>
                             <fontDescription key="fontDescription" type="system" pointSize="17"/>
                             <nil key="textColor"/>
                             <nil key="highlightedColor"/>
@@ -37,7 +43,7 @@
                             <state key="normal" title="完成"/>
                         </button>
                     </subviews>
-                    <color key="backgroundColor" cocoaTouchSystemColor="groupTableViewBackgroundColor"/>
+                    <color key="backgroundColor" cocoaTouchSystemColor="lightTextColor"/>
                     <constraints>
                         <constraint firstAttribute="trailing" secondItem="PBC-iU-hiY" secondAttribute="trailing" constant="8" id="APl-Z8-zF3"/>
                         <constraint firstItem="PBC-iU-hiY" firstAttribute="centerY" secondItem="aWZ-Pa-hTb" secondAttribute="centerY" id="JKt-lV-q73"/>
@@ -46,12 +52,37 @@
                         <constraint firstItem="ee4-a4-ViZ" firstAttribute="centerY" secondItem="aWZ-Pa-hTb" secondAttribute="centerY" id="j7K-n2-9n2"/>
                     </constraints>
                 </view>
+                <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="QwJ-5h-6Yp">
+                    <rect key="frame" x="178.5" y="160" width="93" height="130"/>
+                    <subviews>
+                        <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="第一個" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="pb3-EF-daQ">
+                            <rect key="frame" x="0.0" y="0.0" width="93" height="38"/>
+                            <nil key="textColor"/>
+                            <fontDescription key="fontDescription" name="PingFangTC-Regular" family="PingFang TC" pointSize="24"/>
+                            <textInputTraits key="textInputTraits" autocorrectionType="no" spellCheckingType="no" keyboardType="numberPad" smartDashesType="no" smartInsertDeleteType="no" smartQuotesType="no"/>
+                        </textField>
+                        <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="第二個" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="V9o-47-mmg">
+                            <rect key="frame" x="0.0" y="46" width="93" height="38"/>
+                            <nil key="textColor"/>
+                            <fontDescription key="fontDescription" name="PingFangTC-Regular" family="PingFang TC" pointSize="24"/>
+                            <textInputTraits key="textInputTraits" autocorrectionType="no" spellCheckingType="no" keyboardType="numberPad" smartDashesType="no" smartInsertDeleteType="no" smartQuotesType="no"/>
+                        </textField>
+                        <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="第三個" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="PGx-AP-gnK">
+                            <rect key="frame" x="0.0" y="92" width="93" height="38"/>
+                            <nil key="textColor"/>
+                            <fontDescription key="fontDescription" name="PingFangTC-Regular" family="PingFang TC" pointSize="24"/>
+                            <textInputTraits key="textInputTraits" autocorrectionType="no" spellCheckingType="no" keyboardType="numberPad" smartDashesType="no" smartInsertDeleteType="no" smartQuotesType="no"/>
+                        </textField>
+                    </subviews>
+                </stackView>
             </subviews>
             <color key="backgroundColor" name="Baige"/>
             <color key="tintColor" red="0.94117647058823528" green="0.50196078431372548" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
             <constraints>
+                <constraint firstItem="QwJ-5h-6Yp" firstAttribute="centerX" secondItem="i5M-Pr-FkT" secondAttribute="centerX" id="6Ec-UV-gO3"/>
                 <constraint firstItem="aWZ-Pa-hTb" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" id="DCr-o0-e8n"/>
                 <constraint firstItem="aWZ-Pa-hTb" firstAttribute="top" secondItem="fnl-2z-Ty3" secondAttribute="top" id="EAo-BP-FRd"/>
+                <constraint firstItem="QwJ-5h-6Yp" firstAttribute="centerY" secondItem="i5M-Pr-FkT" secondAttribute="centerY" id="Pen-YL-INL"/>
                 <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="aWZ-Pa-hTb" secondAttribute="trailing" id="rZq-wf-Jse"/>
             </constraints>
             <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
