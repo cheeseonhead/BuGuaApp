@@ -25,4 +25,8 @@ extension UIColor {
     static var baige: UIColor {
         return UIColor(named: "Baige")!
     }
+    
+    static var scarlet: UIColor {
+        return UIColor(named: "Scarlet")!
+    }
 }
