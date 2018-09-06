@@ -13,7 +13,14 @@ import RxCocoa
 
 class GuaXiangViewModel {
 
-    // MARK: - Public Rx
+    // MARK: - Obervable Rx
+    let bag = DisposeBag()
+    lazy private (set) var onInputSignal = onInputRelay.asSignal()
+    
+    // MARK: - Observer Rx
+    let onInputRelay = PublishRelay<()>()
+    
+    // MARK: - View Rx
     let guaXiangRelay = BehaviorRelay<LiuYaoGuaXiang>(value: .default)
 
 }
