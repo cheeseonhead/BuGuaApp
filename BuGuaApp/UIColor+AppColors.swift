@@ -13,4 +13,16 @@ extension UIColor {
     static var spaceGrey: UIColor {
         return UIColor(named: "SpaceGrey")!
     }
+    
+    static var sunset: UIColor {
+        return UIColor(named: "Sunset")!
+    }
+    
+    static var mars: UIColor {
+        return UIColor(named: "Mars")!
+    }
+    
+    static var baige: UIColor {
+        return UIColor(named: "Baige")!
+    }
 }
