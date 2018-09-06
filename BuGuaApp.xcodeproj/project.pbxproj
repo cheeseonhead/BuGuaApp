@@ -7,6 +7,9 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		3413A55D2140BF4B00245C46 /* InputViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3413A55B2140BF4B00245C46 /* InputViewController.swift */; };
+		3413A55E2140BF4B00245C46 /* InputViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 3413A55C2140BF4B00245C46 /* InputViewController.xib */; };
+		3413A5602140BFB900245C46 /* InputViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3413A55F2140BFB900245C46 /* InputViewModel.swift */; };
 		9B273D3321390ABD00BDFBE3 /* SnapKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9B273D3221390ABD00BDFBE3 /* SnapKit.framework */; };
 		9B933EF12134E529004DCD3F /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9B933EF02134E529004DCD3F /* AppDelegate.swift */; };
 		9B933EF32134E529004DCD3F /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9B933EF22134E529004DCD3F /* ViewController.swift */; };
@@ -86,6 +89,9 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
+		3413A55B2140BF4B00245C46 /* InputViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InputViewController.swift; sourceTree = "<group>"; };
+		3413A55C2140BF4B00245C46 /* InputViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = InputViewController.xib; sourceTree = "<group>"; };
+		3413A55F2140BFB900245C46 /* InputViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InputViewModel.swift; sourceTree = "<group>"; };
 		9B273D3221390ABD00BDFBE3 /* SnapKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SnapKit.framework; path = Carthage/Build/iOS/SnapKit.framework; sourceTree = "<group>"; };
 		9B933EED2134E529004DCD3F /* BuGuaApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = BuGuaApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		9B933EF02134E529004DCD3F /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -259,6 +265,9 @@
 				9BCB360C213E148200F7FDDE /* GuaXiangViewController.swift */,
 				9BCB3610213E150500F7FDDE /* GuaXiangViewController.xib */,
 				9BCB3619213E30D700F7FDDE /* GuaXiangViewModel.swift */,
+				3413A55B2140BF4B00245C46 /* InputViewController.swift */,
+				3413A55C2140BF4B00245C46 /* InputViewController.xib */,
+				3413A55F2140BFB900245C46 /* InputViewModel.swift */,
 			);
 			name = ViewController;
 			sourceTree = "<group>";
@@ -383,6 +392,7 @@
 				9B933F712137976C004DCD3F /* Colors.xcassets in Resources */,
 				9B933EFB2134E52A004DCD3F /* LaunchScreen.storyboard in Resources */,
 				9BCB3611213E150500F7FDDE /* GuaXiangViewController.xib in Resources */,
+				3413A55E2140BF4B00245C46 /* InputViewController.xib in Resources */,
 				9B933F412134F054004DCD3F /* FuXiBaGuaView.xib in Resources */,
 				9B933EF82134E52A004DCD3F /* Assets.xcassets in Resources */,
 				9B933EF62134E529004DCD3F /* Main.storyboard in Resources */,
@@ -470,9 +480,11 @@
 				9B933F7D2138DF75004DCD3F /* CGSize+Points.swift in Sources */,
 				9B933F73213797A2004DCD3F /* UIColor+AppColors.swift in Sources */,
 				9B933F5B2135A8B0004DCD3F /* GuaXiangView.swift in Sources */,
+				3413A55D2140BF4B00245C46 /* InputViewController.swift in Sources */,
 				9BCB3614213E234000F7FDDE /* AppCoordinator.swift in Sources */,
 				9B933EF12134E529004DCD3F /* AppDelegate.swift in Sources */,
 				9B933F7B2138DF3B004DCD3F /* CGRect+Points.swift in Sources */,
+				3413A5602140BFB900245C46 /* InputViewModel.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
