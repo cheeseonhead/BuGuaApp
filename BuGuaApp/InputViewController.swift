@@ -46,7 +46,7 @@ private extension InputViewController {
         
         let numberDelegate = NumericTextFieldDelegate()
         let autoNextDelegate = AutoNextTextFieldDelegate(textFields: [firstField, secondField, thirdField])
-        textFieldDelegate = ComposedTextFieldDelegate(delegates: [numberDelegate, autoNextDelegate])
+        textFieldDelegate = ComposedTextFieldDelegate(delegates: [numberDelegate, autoNextDelegate], &&)
         
         fields.forEach { field in
             field.font = .headline
