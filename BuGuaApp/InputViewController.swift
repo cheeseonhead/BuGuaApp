@@ -13,6 +13,10 @@ class InputViewController: UIViewController {
     // MARK: - Views
     @IBOutlet weak var titleLabel: UILabel!
     @IBOutlet weak var finishButton: UIButton!
+    @IBOutlet weak var firstField: UITextField!
+    @IBOutlet weak var secondField: UITextField!
+    @IBOutlet weak var thirdField: UITextField!
+    @IBOutlet var fields: [UITextField]!
     
     // MARK: - Private properties
     private let viewModel: InputViewModel
@@ -28,15 +32,19 @@ class InputViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        
-        titleLabel.textColor = .spaceGrey
-        titleLabel.font = .title2
-        finishButton.titleLabel?.font = .title1
     }
 }
 
 private extension InputViewController {
-    
+    func styling() {
+        titleLabel.textColor = .spaceGrey
+        titleLabel.font = .title2
+        finishButton.titleLabel?.font = .title1
+        
+        fields.forEach { field in
+            field.font = .headline
+        }
+    }
 }
 
 extension AppFactory {
