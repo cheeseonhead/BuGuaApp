@@ -25,21 +25,6 @@ extension UIFont {
     static let appFontBold = "PingFangTC-Semibold"
 //    static let appFontBoldItalic = ""
 
-    @available(*, deprecated, message: "Will be removed as part of the app redesign")
-    class func appFont(ofSize fontSize: CGFloat) -> UIFont {
-        return systemFont(ofSize: fontSize)
-    }
-
-    @available(*, deprecated, message: "Will be removed as part of the app redesign")
-    class func appFont(ofSize fontSize: CGFloat, weight: UIFont.Weight) -> UIFont {
-        return systemFont(ofSize: fontSize, weight: weight)
-    }
-
-    @available(*, deprecated, message: "Will be removed as part of the app redesign")
-    class func boldAppFont(ofSize fontSize: CGFloat) -> UIFont {
-        return boldSystemFont(ofSize: fontSize)
-    }
-
     static var headline: UIFont {
         guard let customFont = UIFont(name: appFontMedium, size: 24) else { fatalError(messageFailedToLoadFont(appFontMedium)) }
 
