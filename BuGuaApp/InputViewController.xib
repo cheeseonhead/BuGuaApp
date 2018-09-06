@@ -6,21 +6,61 @@
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14283.9"/>
+        <capability name="Named colors" minToolsVersion="9.0"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="InputViewController" customModule="BuGuaApp" customModuleProvider="target">
             <connections>
+                <outlet property="finishButton" destination="PBC-iU-hiY" id="gQq-Fj-8oW"/>
+                <outlet property="titleLabel" destination="ee4-a4-ViZ" id="c5v-CN-XkY"/>
                 <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
             </connections>
         </placeholder>
         <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
         <view clearsContextBeforeDrawing="NO" contentMode="scaleToFill" id="i5M-Pr-FkT">
-            <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+            <rect key="frame" x="0.0" y="0.0" width="450" height="450"/>
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-            <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+            <subviews>
+                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="aWZ-Pa-hTb">
+                    <rect key="frame" x="0.0" y="0.0" width="450" height="44"/>
+                    <subviews>
+                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="輸入卜卦數字" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ee4-a4-ViZ">
+                            <rect key="frame" x="173" y="11.5" width="104" height="21"/>
+                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                            <nil key="textColor"/>
+                            <nil key="highlightedColor"/>
+                        </label>
+                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="PBC-iU-hiY">
+                            <rect key="frame" x="411" y="7" width="31" height="30"/>
+                            <state key="normal" title="完成"/>
+                        </button>
+                    </subviews>
+                    <color key="backgroundColor" cocoaTouchSystemColor="groupTableViewBackgroundColor"/>
+                    <constraints>
+                        <constraint firstAttribute="trailing" secondItem="PBC-iU-hiY" secondAttribute="trailing" constant="8" id="APl-Z8-zF3"/>
+                        <constraint firstItem="PBC-iU-hiY" firstAttribute="centerY" secondItem="aWZ-Pa-hTb" secondAttribute="centerY" id="JKt-lV-q73"/>
+                        <constraint firstItem="ee4-a4-ViZ" firstAttribute="centerX" secondItem="aWZ-Pa-hTb" secondAttribute="centerX" id="NmV-WY-h1F"/>
+                        <constraint firstAttribute="height" constant="44" id="d0j-UM-iGB"/>
+                        <constraint firstItem="ee4-a4-ViZ" firstAttribute="centerY" secondItem="aWZ-Pa-hTb" secondAttribute="centerY" id="j7K-n2-9n2"/>
+                    </constraints>
+                </view>
+            </subviews>
+            <color key="backgroundColor" name="Baige"/>
+            <color key="tintColor" red="0.94117647058823528" green="0.50196078431372548" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+            <constraints>
+                <constraint firstItem="aWZ-Pa-hTb" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" id="DCr-o0-e8n"/>
+                <constraint firstItem="aWZ-Pa-hTb" firstAttribute="top" secondItem="fnl-2z-Ty3" secondAttribute="top" id="EAo-BP-FRd"/>
+                <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="aWZ-Pa-hTb" secondAttribute="trailing" id="rZq-wf-Jse"/>
+            </constraints>
+            <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
             <viewLayoutGuide key="safeArea" id="fnl-2z-Ty3"/>
         </view>
     </objects>
+    <resources>
+        <namedColor name="Baige">
+            <color red="1" green="0.94117647058823528" blue="0.87450980392156863" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
+    </resources>
 </document>
