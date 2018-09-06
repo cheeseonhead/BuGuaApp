@@ -20,6 +20,7 @@ class InputViewController: UIViewController {
     
     // MARK: - Private properties
     private let viewModel: InputViewModel
+    private var textFieldDelegate: UITextFieldDelegate!
     
     init(viewModel: InputViewModel) {
         self.viewModel = viewModel
@@ -32,6 +33,8 @@ class InputViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        styling()
     }
 }
 
@@ -41,8 +44,13 @@ private extension InputViewController {
         titleLabel.font = .title2
         finishButton.titleLabel?.font = .title1
         
+        let numberDelegate = NumericTextFieldDelegate()
+        let autoNextDelegate = AutoNextTextFieldDelegate(textFields: [firstField, secondField, thirdField])
+        textFieldDelegate = ComposedTextFieldDelegate(delegates: [numberDelegate, autoNextDelegate])
+        
         fields.forEach { field in
             field.font = .headline
+            field.delegate = textFieldDelegate
         }
     }
 }
