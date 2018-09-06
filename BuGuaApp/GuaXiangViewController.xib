@@ -14,6 +14,7 @@
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="GuaXiangViewController" customModule="BuGuaApp" customModuleProvider="target">
             <connections>
                 <outlet property="guaXiangView" destination="EAP-eb-Wtr" id="LYO-jS-zbY"/>
+                <outlet property="inputButton" destination="ZWj-me-6Xp" id="OLy-f4-PMH"/>
                 <outlet property="view" destination="iN0-l3-epB" id="9Re-KG-bDn"/>
             </connections>
         </placeholder>

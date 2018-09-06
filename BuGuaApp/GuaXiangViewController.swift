@@ -14,7 +14,8 @@ import UIKit
 class GuaXiangViewController: UIViewController {
 
     @IBOutlet weak var guaXiangView: GuaXiangView!
-
+    @IBOutlet weak var inputButton: UIButton!
+    
     let viewModel: GuaXiangViewModel
 
     // MARK: - Private Rx
@@ -42,5 +43,7 @@ class GuaXiangViewController: UIViewController {
 private extension GuaXiangViewController {
     func bindings() {
         viewModel.guaXiangRelay.bind(to: guaXiangView.guaXiangRelay).disposed(by: bag)
+        
+        inputButton.rx.tap.bind(to: viewModel.onInputRelay).disposed(by: bag)
     }
 }

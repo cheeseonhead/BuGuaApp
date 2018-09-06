@@ -23,8 +23,17 @@ class GuaXiangCoordinator: Coordinator {
 
     func start() {
         let viewModel = GuaXiangViewModel()
+        
+        viewModel.onInputSignal.throttle(0.5).emit(onNext: { [unowned self] _ in
+            self.showInputViewController()
+        }).disposed(by: viewModel.bag)
+        
         viewController = factory.makeGuaXiangViewController(viewModel: viewModel)
 
         delegate?.didStart(self, viewController: viewController)
+    }
+    
+    func showInputViewController() {
+        
     }
 }
