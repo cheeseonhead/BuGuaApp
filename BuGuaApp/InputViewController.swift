@@ -10,7 +10,12 @@ import UIKit
 
 class InputViewController: UIViewController {
 
-    let viewModel: InputViewModel
+    // MARK: - Views
+    @IBOutlet weak var titleLabel: UILabel!
+    @IBOutlet weak var finishButton: UIButton!
+    
+    // MARK: - Private properties
+    private let viewModel: InputViewModel
     
     init(viewModel: InputViewModel) {
         self.viewModel = viewModel
@@ -23,5 +28,19 @@ class InputViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        titleLabel.textColor = .spaceGrey
+        titleLabel.font = .title2
+        finishButton.titleLabel?.font = .title1
+    }
+}
+
+private extension InputViewController {
+    
+}
+
+extension AppFactory {
+    func makeInputViewController(viewModel: InputViewModel) -> InputViewController {
+        return InputViewController(viewModel: viewModel)
     }
 }
