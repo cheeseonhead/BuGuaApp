@@ -34,13 +34,20 @@ class GuaXiangViewController: UIViewController {
     // MARK: - Lifecycle
     override func viewDidLoad() {
         super.viewDidLoad()
-
+        
+        styles()
         bindings()
     }
 }
 
 // MARK: - Setup
 private extension GuaXiangViewController {
+    
+    func styles() {
+        view.tintColor = .mars
+        inputButton.titleLabel?.font = .title1
+    }
+    
     func bindings() {
         viewModel.guaXiangRelay.bind(to: guaXiangView.guaXiangRelay).disposed(by: bag)
         
