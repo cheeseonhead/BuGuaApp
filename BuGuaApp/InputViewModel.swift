@@ -6,6 +6,7 @@
 //  Copyright © 2018 Jeffrey Wu. All rights reserved.
 //
 
+import BuGuaKit
 import Foundation
 import RxSwift
 import RxCocoa
@@ -16,48 +17,55 @@ enum Result<T> {
 
 class InputViewModel {
     
-    struct Input<T> {
-        let field1: T
-        let field2: T
-        let field3: T
-        
-        func map<R>(_ transform: (T) throws -> R) throws -> Input<R> {
-            return try Input<R>(field1: transform(field1),
-                            field2: transform(field2),
-                            field3: transform(field3))
-        }
-    }
-    
     // MARK: - Public
     let bag = DisposeBag()
     
     // MARK: - Input Rx
-    let inputRelay = PublishRelay<Input<String?>>()
+    let guaIntRelay = PublishRelay<(String?, String?)>()
+    let unstableYaoIntRelay = PublishRelay<[String?]>()
 
     // MARK: - Output Rx
-    let resultRelay = PublishRelay<Result<Input<Int>>>()
+    let resultRelay = PublishRelay<Result<LiuYaoGuaXiang>>()
     
     init() {
-        inputRelay.map { stringInput -> Result<Input<Int>> in
-            do {
-                return .success(try stringInput.map(InputViewModel.getInt))
-            } catch {
-                return .error(error)
-            }
-        }.bind(to: resultRelay)
-        .disposed(by: bag)
-    }
-    
-    static func getInt(from str: String?) throws -> Int {
+        let guaIntSubscription = guaIntRelay.flatMap { tup -> Observable<Event<(Int, Int)>> in
+            let (innerStr, outerStr) = tup
+            
+            return Observable.just(()).map { try (Int(str: innerStr), Int(str: outerStr)) }.materialize()
+        }.
+//        let guaIntObservation = guaIntRelay.map { tup -> (Int, Int) in
+//            let (innerStr, outerStr) = tup
+//
+//            return try (Int(str: innerStr), Int(str: outerStr))
+//        }
         
-        guard let str = str, !str.isEmpty else {
-            throw "空字串並非整數"
+        let unstableSubscription = unstableYaoIntRelay.flatMap { unstableStrs in
+            return Observable.just(()).map { _ -> [String] in
+                return unstableStrs.filter { $0 != nil }.map { $0! }
+            }.map { try $0.map { try Int(str: $0) } }.materialize()
+        }
+
+        Observable.combineLatest(guaIntSubscription, unstableSubscription) { guaEvent, unstableEvent in
+            
         }
         
-        guard let result = Int(str) else {
-            throw "\"\(str)\" 不是一個整數"
-        }
-        return result
+//        Observable.combineLatest(guaIntObservation, unstableObservation) { guaInts, unstableInts -> Result<LiuYaoGuaXiang> in
+//            let converter = IntegerGuaXiangConverter()
+//            converter.innerGuaInt = guaInts.0
+//            converter.outerGuaInt = guaInts.1
+//            converter.unstableYaoInts = Set(unstableInts)
+//
+//            return try .success(converter.convert())
+//        }.bind(to: resultRelay)
+//        .disposed(by: bag)
+//        inputRelay.map { stringInput -> Result<Input<Int>> in
+//            do {
+//                return .success(try stringInput.map(Int.init))
+//            } catch {
+//                return .error(error)
+//            }
+//        }.bind(to: resultRelay)
+//        .disposed(by: bag)
     }
 }
 
