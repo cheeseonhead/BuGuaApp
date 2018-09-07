@@ -16,6 +16,7 @@
 		3413A5692140E0D600245C46 /* ComposableTextfieldDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3413A5682140E0D600245C46 /* ComposableTextfieldDelegate.swift */; };
 		34A13D4B21421F1E00D77D98 /* Observable+Ex.swift in Sources */ = {isa = PBXBuildFile; fileRef = 34A13D4A21421F1E00D77D98 /* Observable+Ex.swift */; };
 		34A13D4D214222E700D77D98 /* IntegerGuaXiangConverter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 34A13D4C214222E700D77D98 /* IntegerGuaXiangConverter.swift */; };
+		34A13D4F2142294D00D77D98 /* Int+Conversion.swift in Sources */ = {isa = PBXBuildFile; fileRef = 34A13D4E2142294D00D77D98 /* Int+Conversion.swift */; };
 		9B273D3321390ABD00BDFBE3 /* SnapKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9B273D3221390ABD00BDFBE3 /* SnapKit.framework */; };
 		9B933EF12134E529004DCD3F /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9B933EF02134E529004DCD3F /* AppDelegate.swift */; };
 		9B933EF32134E529004DCD3F /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9B933EF22134E529004DCD3F /* ViewController.swift */; };
@@ -104,6 +105,7 @@
 		3413A5682140E0D600245C46 /* ComposableTextfieldDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ComposableTextfieldDelegate.swift; sourceTree = "<group>"; };
 		34A13D4A21421F1E00D77D98 /* Observable+Ex.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Observable+Ex.swift"; sourceTree = "<group>"; };
 		34A13D4C214222E700D77D98 /* IntegerGuaXiangConverter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IntegerGuaXiangConverter.swift; sourceTree = "<group>"; };
+		34A13D4E2142294D00D77D98 /* Int+Conversion.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Int+Conversion.swift"; sourceTree = "<group>"; };
 		9B273D3221390ABD00BDFBE3 /* SnapKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SnapKit.framework; path = Carthage/Build/iOS/SnapKit.framework; sourceTree = "<group>"; };
 		9B933EED2134E529004DCD3F /* BuGuaApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = BuGuaApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		9B933EF02134E529004DCD3F /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -268,6 +270,7 @@
 				9B933F3E2134EBBE004DCD3F /* UIView+NibLoadable.swift */,
 				3413A5642140D89900245C46 /* CharacterSet+MoreSets.swift */,
 				34A13D4A21421F1E00D77D98 /* Observable+Ex.swift */,
+				34A13D4E2142294D00D77D98 /* Int+Conversion.swift */,
 			);
 			name = Extensions;
 			sourceTree = "<group>";
@@ -504,6 +507,7 @@
 				9BCB3616213E254900F7FDDE /* AppFactory.swift in Sources */,
 				9B933F772137A8C3004DCD3F /* YaoView.swift in Sources */,
 				9BCB361A213E30D700F7FDDE /* GuaXiangViewModel.swift in Sources */,
+				34A13D4F2142294D00D77D98 /* Int+Conversion.swift in Sources */,
 				9BCB3609213E011800F7FDDE /* String+Vertical.swift in Sources */,
 				9BCB3618213E2A5800F7FDDE /* GuaXiangCoordinator.swift in Sources */,
 				9BCB360D213E148200F7FDDE /* GuaXiangViewController.swift in Sources */,
