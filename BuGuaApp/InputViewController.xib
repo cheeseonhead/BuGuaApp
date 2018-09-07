@@ -13,10 +13,11 @@
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="InputViewController" customModule="BuGuaApp" customModuleProvider="target">
             <connections>
+                <outlet property="errorLabel" destination="tzu-6u-1Yt" id="hcT-WO-BZl"/>
+                <outlet property="field1" destination="pb3-EF-daQ" id="3fZ-H3-Icb"/>
+                <outlet property="field2" destination="V9o-47-mmg" id="mh0-hj-n0c"/>
+                <outlet property="field3" destination="PGx-AP-gnK" id="Mkc-wh-8zr"/>
                 <outlet property="finishButton" destination="PBC-iU-hiY" id="gQq-Fj-8oW"/>
-                <outlet property="firstField" destination="pb3-EF-daQ" id="3fZ-H3-Icb"/>
-                <outlet property="secondField" destination="V9o-47-mmg" id="mh0-hj-n0c"/>
-                <outlet property="thirdField" destination="PGx-AP-gnK" id="Mkc-wh-8zr"/>
                 <outlet property="titleLabel" destination="ee4-a4-ViZ" id="c5v-CN-XkY"/>
                 <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
                 <outletCollection property="fields" destination="pb3-EF-daQ" collectionClass="NSMutableArray" id="c9D-jD-l1Y"/>
@@ -75,6 +76,12 @@
                         </textField>
                     </subviews>
                 </stackView>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="tzu-6u-1Yt">
+                    <rect key="frame" x="204" y="298" width="42" height="20.5"/>
+                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                    <nil key="textColor"/>
+                    <nil key="highlightedColor"/>
+                </label>
             </subviews>
             <color key="backgroundColor" name="Baige"/>
             <color key="tintColor" red="0.94117647058823528" green="0.50196078431372548" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
@@ -82,7 +89,10 @@
                 <constraint firstItem="QwJ-5h-6Yp" firstAttribute="centerX" secondItem="i5M-Pr-FkT" secondAttribute="centerX" id="6Ec-UV-gO3"/>
                 <constraint firstItem="aWZ-Pa-hTb" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" id="DCr-o0-e8n"/>
                 <constraint firstItem="aWZ-Pa-hTb" firstAttribute="top" secondItem="fnl-2z-Ty3" secondAttribute="top" id="EAo-BP-FRd"/>
+                <constraint firstItem="tzu-6u-1Yt" firstAttribute="centerX" secondItem="i5M-Pr-FkT" secondAttribute="centerX" id="ICw-LO-cQb"/>
+                <constraint firstItem="tzu-6u-1Yt" firstAttribute="width" relation="lessThanOrEqual" secondItem="i5M-Pr-FkT" secondAttribute="width" id="IQA-yR-QB9"/>
                 <constraint firstItem="QwJ-5h-6Yp" firstAttribute="centerY" secondItem="i5M-Pr-FkT" secondAttribute="centerY" id="Pen-YL-INL"/>
+                <constraint firstItem="tzu-6u-1Yt" firstAttribute="top" secondItem="QwJ-5h-6Yp" secondAttribute="bottom" constant="8" id="a5M-OX-7Al"/>
                 <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="aWZ-Pa-hTb" secondAttribute="trailing" id="rZq-wf-Jse"/>
             </constraints>
             <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
