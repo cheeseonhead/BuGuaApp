@@ -14,6 +14,13 @@ class IntegerGuaXiangConverter {
     enum Error: LocalizedError {
         case missingInnerGuaInt
         case missingOuterGuaInt
+        
+        var errorDescription: String? {
+            switch self {
+            case .missingInnerGuaInt: return NSLocalizedString("內掛數不可留空", comment: "")
+            case .missingOuterGuaInt: return NSLocalizedString("外掛數不可留空", comment: "")
+            }
+        }
     }
     
     var innerGuaInt: Int?
