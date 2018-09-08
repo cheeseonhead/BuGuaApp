@@ -7,16 +7,22 @@
 //
 
 import UIKit
+import RxSwift
+import RxSwiftExt
 
 class InputViewController: UIViewController {
 
     // MARK: - Views
     @IBOutlet weak var titleLabel: UILabel!
     @IBOutlet weak var finishButton: UIButton!
-    @IBOutlet weak var firstField: UITextField!
-    @IBOutlet weak var secondField: UITextField!
-    @IBOutlet weak var thirdField: UITextField!
+    @IBOutlet weak var field1: UITextField!
+    @IBOutlet weak var field2: UITextField!
+    @IBOutlet weak var field3: UITextField!
     @IBOutlet var fields: [UITextField]!
+    @IBOutlet weak var errorLabel: UILabel!
+    
+    // MARK: - Rx
+    let bag = DisposeBag()
     
     // MARK: - Private properties
     private let viewModel: InputViewModel
@@ -34,24 +40,61 @@ class InputViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        setupDelegate()
         styling()
+        bindings()
     }
 }
 
 private extension InputViewController {
+    func setupDelegate() {
+        let numberDelegate = NumericTextFieldDelegate()
+        let autoNextDelegate = AutoNextTextFieldDelegate(textFields: [field1, field2, field3])
+        textFieldDelegate = ComposedTextFieldDelegate(delegates: [numberDelegate, autoNextDelegate], &&)
+        
+        let strs = Observable.combineLatest(field1.rx.text, field2.rx.text, field3.rx.text) { (($0, $1), [$2]) }
+        
+        autoNextDelegate.finishRelay.withLatestFrom(strs)
+            .map { $0.0 }
+            .bind(to: viewModel.guaStrRelay)
+            .disposed(by: bag)
+        
+        autoNextDelegate.finishRelay.withLatestFrom(strs).map { $0.1 }
+            .bind(to: viewModel.unstableYaoStrRelay)
+            .disposed(by: bag)
+    }
+    
     func styling() {
         titleLabel.textColor = .spaceGrey
         titleLabel.font = .title2
         finishButton.titleLabel?.font = .title1
         
-        let numberDelegate = NumericTextFieldDelegate()
-        let autoNextDelegate = AutoNextTextFieldDelegate(textFields: [firstField, secondField, thirdField])
-        textFieldDelegate = ComposedTextFieldDelegate(delegates: [numberDelegate, autoNextDelegate], &&)
+        errorLabel.textColor = .scarlet
+        errorLabel.font = .title1
+        errorLabel.isHidden = true
+        
+        field1.placeholder = "內掛數"
+        field2.placeholder = "外掛數"
+        field3.placeholder = "動爻數"
         
         fields.forEach { field in
             field.font = .headline
             field.delegate = textFieldDelegate
         }
+    }
+    
+    func bindings() {
+        
+        viewModel.guaXiangSignal.asObservable().elements()
+            .mapTo(true)
+            .bind(to: errorLabel.rx.isHidden)
+            .disposed(by: bag)
+        
+        let errorStr = viewModel.guaXiangSignal.asObservable().errors()
+            .mapAt(\.localizedDescription)
+            
+        errorStr.mapTo(false).bind(to: errorLabel.rx.isHidden).disposed(by: bag)
+        errorStr.bind(to: errorLabel.rx.text).disposed(by: bag)
     }
 }
 
