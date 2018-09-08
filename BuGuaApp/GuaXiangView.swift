@@ -22,6 +22,7 @@ class GuaXiangView: UIView {
     var diZhiLabels: [UILabel]!
     var liuQinLabels: [UILabel]!
     var headerLabels: [UILabel]!
+    var guaGongLabel: UILabel!
 
     // MARK: - Properties
     let guaXiangRelay = PublishRelay<LiuYaoGuaXiang>()
@@ -67,6 +68,7 @@ private extension GuaXiangView {
         setupDiZhiLabels()
         setupLiuQinLabels()
         setupHeaderLabels()
+        setupGuaGongLabel()
     }
 
     func createConstraints() {
@@ -76,6 +78,7 @@ private extension GuaXiangView {
         diZhiConstraints()
         liuQinConstraints()
         headerLabelConstraints()
+        guaGongLabelConstraints()
     }
 
     func bindings() {
@@ -83,12 +86,31 @@ private extension GuaXiangView {
     }
 
     func setStyle() {
-        (diZhiLabels + shiYingLabels + liuQinLabels).forEach { label in
+        (diZhiLabels
+            + shiYingLabels
+            + liuQinLabels
+            + [guaGongLabel]).forEach { label in
             label.font = .headline
             label.textColor = .spaceGrey
         }
 
         headerLabels.forEach { $0.textColor = .spaceGrey }
+    }
+}
+
+// MARK: - GuaGong Label
+private extension GuaXiangView {
+    func setupGuaGongLabel() {
+        guaGongLabel = UILabel(frame: .zero)
+        addSubview(guaGongLabel)
+        
+        guaXiangRelay.map { $0.originalGua.guaGong.character }
+            .bind(to: guaGongLabel.rx.text)
+            .disposed(by: bag)
+    }
+    
+    func guaGongLabelConstraints() {
+        GuaXiangViewLayout.layoutGuaGong(guaGongLabel, topLiuQin: liuQinLabels.last!)
     }
 }
 
