@@ -6,7 +6,9 @@
 //  Copyright © 2018 Jeffrey Wu. All rights reserved.
 //
 
+import BuGuaKit
 import Foundation
+import RxSwift
 import UIKit
 
 class GuaXiangCoordinator: Coordinator {
@@ -39,7 +41,7 @@ class GuaXiangCoordinator: Coordinator {
 }
 
 // MARK: - Present Methods
-extension GuaXiangCoordinator {
+private extension GuaXiangCoordinator {
     func showInputViewController() {
         let viewModel = InputViewModel()
         
@@ -47,6 +49,12 @@ extension GuaXiangCoordinator {
         inputVC.preferredContentSize = CGSize(width: 450, height: 450)
         inputVC.modalPresentationStyle = .formSheet
         
+        viewModel.guaXiangSignal.asObservable().elements()
+            .do(onNext: { [unowned inputVC] _ in
+                inputVC.dismiss(animated: true, completion: nil)
+            }).bind(to: viewController.viewModel.guaXiangRelay)
+            .disposed(by: viewModel.bag)
+    
         viewController.present(inputVC, animated: true, completion: nil)
     }
 }
