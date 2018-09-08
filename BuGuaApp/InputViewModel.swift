@@ -12,10 +12,6 @@ import RxSwift
 import RxSwiftExt
 import RxCocoa
 
-enum Result<T> {
-    case success(T), error(Error)
-}
-
 class InputViewModel {
     
     // MARK: - Public
