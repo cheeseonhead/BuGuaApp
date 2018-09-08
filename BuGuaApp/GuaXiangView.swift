@@ -117,7 +117,7 @@ private extension GuaXiangView {
         zip(alignLabels, headerLabels).forEach { alignLabel, header in
             header.snp.makeConstraints { make in
                 make.top.equalToSuperview().offset(8)
-                make.bottom.equalTo(horizontalDividers.first!.snp.top)
+                make.bottom.equalTo(horizontalDividers.last!.snp.top)
                 make.centerX.equalTo(alignLabel.snp.centerX)
             }
         }
@@ -223,11 +223,11 @@ private extension GuaXiangView {
     }
 
     func horizontalDividerConstraints() {
-        horizontalDividers.first!.snp.makeConstraints { make in
+        horizontalDividers.last!.snp.makeConstraints { make in
             make.bottom.equalTo(shiYingLabels.last!.snp.top).offset(-8)
         }
 
-        zip(horizontalDividers.suffix(6), yaoViews.reversed()).forEach { belowDivider, yaoView in
+        zip(horizontalDividers.prefix(6), yaoViews).forEach { belowDivider, yaoView in
             belowDivider.snp.makeConstraints { make in
                 make.top.equalTo(yaoView.snp.bottom).offset(8)
             }
@@ -268,13 +268,13 @@ private extension GuaXiangView {
                 make.centerX.equalToSuperview()
             })
         }
-        zip(horizontalDividers.prefix(6), cellSpacers.reversed()).forEach { above, spacer in
+        zip(horizontalDividers.suffix(6), cellSpacers).forEach { above, spacer in
             spacer.snp.makeConstraints { make in
                 make.top.equalTo(above.snp.bottom)
             }
         }
 
-        zip(horizontalDividers.suffix(6), cellSpacers.reversed()).forEach { below, spacer in
+        zip(horizontalDividers.prefix(6), cellSpacers).forEach { below, spacer in
             spacer.snp.makeConstraints { make in
                 make.bottom.equalTo(below.snp.top)
             }
