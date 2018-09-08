@@ -8,6 +8,7 @@
 
 import UIKit
 import RxSwift
+import RxSwiftExt
 
 class InputViewController: UIViewController {
 
@@ -51,10 +52,15 @@ private extension InputViewController {
         let autoNextDelegate = AutoNextTextFieldDelegate(textFields: [field1, field2, field3])
         textFieldDelegate = ComposedTextFieldDelegate(delegates: [numberDelegate, autoNextDelegate], &&)
         
-        autoNextDelegate.finishRelay.withLatestFrom(Observable.combineLatest(field1.rx.text, field2.rx.text, field3.rx.text))
-            .map { str1, str2, str3 in
-                return InputViewModel.Input<String?>(field1: str1, field2: str2, field3: str3)
-            }.bind(to: viewModel.inputRelay)
+        let strs = Observable.combineLatest(field1.rx.text, field2.rx.text, field3.rx.text) { (($0, $1), [$2]) }
+        
+        autoNextDelegate.finishRelay.withLatestFrom(strs)
+            .map { $0.0 }
+            .bind(to: viewModel.guaStrRelay)
+            .disposed(by: bag)
+        
+        autoNextDelegate.finishRelay.withLatestFrom(strs).map { $0.1 }
+            .bind(to: viewModel.unstableYaoStrRelay)
             .disposed(by: bag)
     }
     
@@ -78,21 +84,17 @@ private extension InputViewController {
     }
     
     func bindings() {
-        viewModel.resultRelay.map { result in
-            switch result {
-            case .success: return true
-            case .error: return false
-            }
-        }.bind(to: errorLabel.rx.isHidden)
-        .disposed(by: bag)
         
-        viewModel.resultRelay.map { result -> String? in
-            switch result {
-            case .success: return nil
-            case .error(let error): return error.localizedDescription
-            }
-        }.bind(to: errorLabel.rx.text)
-        .disposed(by: bag)
+        viewModel.guaXiangSignal.asObservable().elements()
+            .mapTo(true)
+            .bind(to: errorLabel.rx.isHidden)
+            .disposed(by: bag)
+        
+        let errorStr = viewModel.guaXiangSignal.asObservable().errors()
+            .mapAt(\.localizedDescription)
+            
+        errorStr.mapTo(false).bind(to: errorLabel.rx.isHidden).disposed(by: bag)
+        errorStr.bind(to: errorLabel.rx.text).disposed(by: bag)
     }
 }
 
