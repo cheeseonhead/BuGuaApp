@@ -6,8 +6,10 @@
 //  Copyright © 2018 Jeffrey Wu. All rights reserved.
 //
 
+import BuGuaKit
 import Foundation
 import RxSwift
+import RxSwiftExt
 import RxCocoa
 
 enum Result<T> {
@@ -16,54 +18,34 @@ enum Result<T> {
 
 class InputViewModel {
     
-    struct Input<T> {
-        let field1: T
-        let field2: T
-        let field3: T
-        
-        func map<R>(_ transform: (T) throws -> R) throws -> Input<R> {
-            return try Input<R>(field1: transform(field1),
-                            field2: transform(field2),
-                            field3: transform(field3))
-        }
-    }
-    
     // MARK: - Public
     let bag = DisposeBag()
     
     // MARK: - Input Rx
-    let inputRelay = PublishRelay<Input<String?>>()
+    let guaStrRelay = PublishRelay<(String?, String?)>()
+    let unstableYaoStrRelay = PublishRelay<[String?]>()
+
 
     // MARK: - Output Rx
-    let resultRelay = PublishRelay<Result<Input<Int>>>()
+    let guaXiangSignal: Signal<Event<LiuYaoGuaXiang>>
     
     init() {
-        inputRelay.map { stringInput -> Result<Input<Int>> in
-            do {
-                return .success(try stringInput.map(InputViewModel.getInt))
-            } catch {
-                return .error(error)
-            }
-        }.bind(to: resultRelay)
-        .disposed(by: bag)
-    }
-    
-    static func getInt(from str: String?) throws -> Int {
         
-        guard let str = str, !str.isEmpty else {
-            throw "空字串並非整數"
-        }
-        
-        guard let result = Int(str) else {
-            throw "\"\(str)\" 不是一個整數"
-        }
-        return result
+        guaXiangSignal = PublishRelay.combineLatest(guaStrRelay, unstableYaoStrRelay).flatMap { guaStrs, unstableStrs in
+            return Observable.just(()).map {
+                try InputViewModel.convertGuaXiang(guaStrs: guaStrs, unstableStrs: unstableStrs)
+            }.materialize()
+        }.share().asSignal(onErrorSignalWith: .never())
     }
 }
 
-extension String: LocalizedError {
-    public var errorDescription: String? {
-        return self
+private extension InputViewModel {
+    static func convertGuaXiang(guaStrs: (String?, String?), unstableStrs: [String?]) throws -> LiuYaoGuaXiang {
+        let converter = IntegerGuaXiangConverter()
+        converter.innerGuaInt = try Int(str: guaStrs.0)
+        converter.outerGuaInt = try Int(str: guaStrs.1)
+        converter.unstableYaoInts = try Set(unstableStrs.map(Int.init))
+        
+        return try converter.convert()
     }
 }
-
