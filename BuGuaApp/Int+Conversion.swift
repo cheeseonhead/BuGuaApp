@@ -13,7 +13,7 @@ extension Int {
         case stringEmpty
         case notValidInteger(String)
         
-        var errorDescription: String? {
+        var localizedDescription: String {
             switch self {
             case .stringEmpty:
                 return NSLocalizedString("空字串不是整數", comment: "")
