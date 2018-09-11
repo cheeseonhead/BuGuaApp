@@ -27,6 +27,6 @@ class AutoNextTextFieldDelegate: NSObject, UITextFieldDelegate {
             finishRelay.accept(())
         }
         
-        return true
+        return false
     }
 }
