@@ -31,4 +31,12 @@ class GuaXiangViewLayout {
             }
         }
     }
+    
+    static func alignHeader(_ headerView: HeaderLabelView, columns: [UIView]) {
+        zip(headerView.headerLabels, columns).forEach { header, column in
+            header.snp.makeConstraints({ make in
+                make.centerX.equalTo(column)
+            })
+        }
+    }
 }

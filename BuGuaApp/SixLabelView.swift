@@ -43,13 +43,13 @@ private extension SixLabelView {
     }
     
     func setupLabels() {
-        labels = (1...6).map { makeDiZhiLabel(at: $0) }.map { label in
+        labels = (1...6).map { makeLabel(at: $0) }.map { label in
             addSubview(label)
             return label
         }
     }
     
-    func makeDiZhiLabel(at position: Int) -> UILabel {
+    func makeLabel(at position: Int) -> UILabel {
         let label = UILabel(frame: .zero)
         label.numberOfLines = 0
         label.text = "-"
@@ -64,11 +64,11 @@ private extension SixLabelView {
     
     func constraints() {
         labels.last!.snp.makeConstraints { make in
-            make.top.equalTo(safeAreaLayoutGuide)
+            make.top.leading.trailing.equalTo(safeAreaLayoutGuide)
         }
         
         labels.first!.snp.makeConstraints { make in
-            make.bottom.equalTo(safeAreaLayoutGuide)
+            make.bottom.leading.trailing.equalTo(safeAreaLayoutGuide)
         }
         
         labels.forEach {
