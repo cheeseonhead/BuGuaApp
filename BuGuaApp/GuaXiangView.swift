@@ -97,7 +97,12 @@ private extension GuaXiangView {
     func setupDiZhiView() {
         diZhiView = SixLabelView(frame: .zero)
         
-        guaXiangRelay.map { $0.originalGua.yaoZhi.map { $0.character } }
+        func ganZhi(_ liuShiSiGua: LiuShiSiGua) -> [String] {
+            return zip(liuShiSiGua.tianGan, liuShiSiGua.yaoZhi).lazy
+                .map { ($0.0.character + $0.1.character).vertical }
+        }
+        
+        guaXiangRelay.map { ganZhi($0.originalGua) }
             .bind(to: diZhiView.dataRelay)
             .disposed(by: bag)
         
