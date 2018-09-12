@@ -18,6 +18,7 @@
 		341EE5C32143A94A00CB7D53 /* GuaXiangViewLayout.swift in Sources */ = {isa = PBXBuildFile; fileRef = 341EE5C22143A94A00CB7D53 /* GuaXiangViewLayout.swift */; };
 		346334462148A52F001D462B /* Array+Convert.swift in Sources */ = {isa = PBXBuildFile; fileRef = 346334452148A52F001D462B /* Array+Convert.swift */; };
 		346334482148A66E001D462B /* Container+Operator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 346334472148A66E001D462B /* Container+Operator.swift */; };
+		3463344B2148A914001D462B /* ShiYingYaoView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3463344A2148A914001D462B /* ShiYingYaoView.swift */; };
 		34A13D4D214222E700D77D98 /* IntegerGuaXiangConverter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 34A13D4C214222E700D77D98 /* IntegerGuaXiangConverter.swift */; };
 		34A13D4F2142294D00D77D98 /* Int+Conversion.swift in Sources */ = {isa = PBXBuildFile; fileRef = 34A13D4E2142294D00D77D98 /* Int+Conversion.swift */; };
 		9B273D3321390ABD00BDFBE3 /* SnapKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9B273D3221390ABD00BDFBE3 /* SnapKit.framework */; };
@@ -110,6 +111,7 @@
 		341EE5C22143A94A00CB7D53 /* GuaXiangViewLayout.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GuaXiangViewLayout.swift; sourceTree = "<group>"; };
 		346334452148A52F001D462B /* Array+Convert.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Array+Convert.swift"; sourceTree = "<group>"; };
 		346334472148A66E001D462B /* Container+Operator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Container+Operator.swift"; sourceTree = "<group>"; };
+		3463344A2148A914001D462B /* ShiYingYaoView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShiYingYaoView.swift; sourceTree = "<group>"; };
 		34A13D4C214222E700D77D98 /* IntegerGuaXiangConverter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IntegerGuaXiangConverter.swift; sourceTree = "<group>"; };
 		34A13D4E2142294D00D77D98 /* Int+Conversion.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Int+Conversion.swift"; sourceTree = "<group>"; };
 		9B273D3221390ABD00BDFBE3 /* SnapKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SnapKit.framework; path = Carthage/Build/iOS/SnapKit.framework; sourceTree = "<group>"; };
@@ -194,6 +196,16 @@
 			name = Components;
 			sourceTree = "<group>";
 		};
+		346334492148A89B001D462B /* GuaXiang */ = {
+			isa = PBXGroup;
+			children = (
+				9B933F5A2135A8B0004DCD3F /* GuaXiangView.swift */,
+				341EE5C22143A94A00CB7D53 /* GuaXiangViewLayout.swift */,
+				3463344A2148A914001D462B /* ShiYingYaoView.swift */,
+			);
+			name = GuaXiang;
+			sourceTree = "<group>";
+		};
 		9B933EE42134E529004DCD3F = {
 			isa = PBXGroup;
 			children = (
@@ -256,10 +268,9 @@
 		9B933F3C2134EB58004DCD3F /* Views */ = {
 			isa = PBXGroup;
 			children = (
+				346334492148A89B001D462B /* GuaXiang */,
 				9B933F3A2134EB01004DCD3F /* FuXiBaGuaView.swift */,
 				9B933F402134F054004DCD3F /* FuXiBaGuaView.xib */,
-				9B933F5A2135A8B0004DCD3F /* GuaXiangView.swift */,
-				341EE5C22143A94A00CB7D53 /* GuaXiangViewLayout.swift */,
 				9B933F762137A8C3004DCD3F /* YaoView.swift */,
 			);
 			name = Views;
@@ -524,6 +535,7 @@
 				9BCB3609213E011800F7FDDE /* String+Vertical.swift in Sources */,
 				9BCB3618213E2A5800F7FDDE /* GuaXiangCoordinator.swift in Sources */,
 				9BCB360D213E148200F7FDDE /* GuaXiangViewController.swift in Sources */,
+				3463344B2148A914001D462B /* ShiYingYaoView.swift in Sources */,
 				9B933F6D2136537A004DCD3F /* UIView+Layout.swift in Sources */,
 				9B933EF32134E529004DCD3F /* ViewController.swift in Sources */,
 				9B933F7D2138DF75004DCD3F /* CGSize+Points.swift in Sources */,
