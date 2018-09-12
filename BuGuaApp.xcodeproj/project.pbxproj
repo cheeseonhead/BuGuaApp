@@ -16,6 +16,8 @@
 		3413A5692140E0D600245C46 /* ComposableTextfieldDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3413A5682140E0D600245C46 /* ComposableTextfieldDelegate.swift */; };
 		341EE5C12143957C00CB7D53 /* RxSwiftExt.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 341EE5C02143957C00CB7D53 /* RxSwiftExt.framework */; };
 		341EE5C32143A94A00CB7D53 /* GuaXiangViewLayout.swift in Sources */ = {isa = PBXBuildFile; fileRef = 341EE5C22143A94A00CB7D53 /* GuaXiangViewLayout.swift */; };
+		346334462148A52F001D462B /* Array+Convert.swift in Sources */ = {isa = PBXBuildFile; fileRef = 346334452148A52F001D462B /* Array+Convert.swift */; };
+		346334482148A66E001D462B /* Container+Operator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 346334472148A66E001D462B /* Container+Operator.swift */; };
 		34A13D4D214222E700D77D98 /* IntegerGuaXiangConverter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 34A13D4C214222E700D77D98 /* IntegerGuaXiangConverter.swift */; };
 		34A13D4F2142294D00D77D98 /* Int+Conversion.swift in Sources */ = {isa = PBXBuildFile; fileRef = 34A13D4E2142294D00D77D98 /* Int+Conversion.swift */; };
 		9B273D3321390ABD00BDFBE3 /* SnapKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9B273D3221390ABD00BDFBE3 /* SnapKit.framework */; };
@@ -106,6 +108,8 @@
 		3413A5682140E0D600245C46 /* ComposableTextfieldDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ComposableTextfieldDelegate.swift; sourceTree = "<group>"; };
 		341EE5C02143957C00CB7D53 /* RxSwiftExt.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = RxSwiftExt.framework; path = Carthage/Build/iOS/RxSwiftExt.framework; sourceTree = "<group>"; };
 		341EE5C22143A94A00CB7D53 /* GuaXiangViewLayout.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GuaXiangViewLayout.swift; sourceTree = "<group>"; };
+		346334452148A52F001D462B /* Array+Convert.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Array+Convert.swift"; sourceTree = "<group>"; };
+		346334472148A66E001D462B /* Container+Operator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Container+Operator.swift"; sourceTree = "<group>"; };
 		34A13D4C214222E700D77D98 /* IntegerGuaXiangConverter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IntegerGuaXiangConverter.swift; sourceTree = "<group>"; };
 		34A13D4E2142294D00D77D98 /* Int+Conversion.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Int+Conversion.swift"; sourceTree = "<group>"; };
 		9B273D3221390ABD00BDFBE3 /* SnapKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SnapKit.framework; path = Carthage/Build/iOS/SnapKit.framework; sourceTree = "<group>"; };
@@ -264,16 +268,18 @@
 		9B933F3D2134EB64004DCD3F /* Extensions */ = {
 			isa = PBXGroup;
 			children = (
+				346334452148A52F001D462B /* Array+Convert.swift */,
 				9B933F782138DEE2004DCD3F /* CGPoint+Math.swift */,
 				9B933F7A2138DF3B004DCD3F /* CGRect+Points.swift */,
 				9B933F7C2138DF75004DCD3F /* CGSize+Points.swift */,
+				3413A5642140D89900245C46 /* CharacterSet+MoreSets.swift */,
+				34A13D4E2142294D00D77D98 /* Int+Conversion.swift */,
 				9BCB3608213E011800F7FDDE /* String+Vertical.swift */,
 				9B933F72213797A2004DCD3F /* UIColor+AppColors.swift */,
 				9B933F6E213794F7004DCD3F /* UIFont+AppFont.swift */,
 				9B933F6C2136537A004DCD3F /* UIView+Layout.swift */,
 				9B933F3E2134EBBE004DCD3F /* UIView+NibLoadable.swift */,
-				3413A5642140D89900245C46 /* CharacterSet+MoreSets.swift */,
-				34A13D4E2142294D00D77D98 /* Int+Conversion.swift */,
+				346334472148A66E001D462B /* Container+Operator.swift */,
 			);
 			name = Extensions;
 			sourceTree = "<group>";
@@ -508,6 +514,7 @@
 				3413A5672140E0BC00245C46 /* AutoNextTextFieldDelegate.swift in Sources */,
 				9B933F792138DEE2004DCD3F /* CGPoint+Math.swift in Sources */,
 				3413A5652140D89900245C46 /* CharacterSet+MoreSets.swift in Sources */,
+				346334482148A66E001D462B /* Container+Operator.swift in Sources */,
 				9B933F3B2134EB01004DCD3F /* FuXiBaGuaView.swift in Sources */,
 				3413A5692140E0D600245C46 /* ComposableTextfieldDelegate.swift in Sources */,
 				9BCB3616213E254900F7FDDE /* AppFactory.swift in Sources */,
@@ -525,6 +532,7 @@
 				3413A55D2140BF4B00245C46 /* InputViewController.swift in Sources */,
 				9BCB3614213E234000F7FDDE /* AppCoordinator.swift in Sources */,
 				9B933EF12134E529004DCD3F /* AppDelegate.swift in Sources */,
+				346334462148A52F001D462B /* Array+Convert.swift in Sources */,
 				9B933F7B2138DF3B004DCD3F /* CGRect+Points.swift in Sources */,
 				3413A5602140BFB900245C46 /* InputViewModel.swift in Sources */,
 			);
