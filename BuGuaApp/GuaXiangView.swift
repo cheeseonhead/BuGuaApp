@@ -15,6 +15,7 @@ import UIKit
 class GuaXiangView: UIView {
 
     // MARK: - Views
+    var headerView: HeaderLabelView!
     var shiYingYaoView: ShiYingYaoView!
     var diZhiView: SixLabelView!
     var liuQinView: SixLabelView!
@@ -57,6 +58,7 @@ private extension GuaXiangView {
         setupShiYingYaoView()
         setupDiZhiView()
         setupLiuQinView()
+        setupHeaderView()
     }
 
     func createConstraints() {
@@ -72,6 +74,9 @@ private extension GuaXiangView {
         
         liuQinView.snp.makeConstraints { $0.trailing.equalTo(shiYingYaoView.snp.leading).offset(-16) }
         GuaXiangViewLayout.verticalAlignSixLabelView(liuQinView, shiYingYaoView: shiYingYaoView)
+        
+        headerView.snp.makeConstraints { $0.bottom.equalTo(shiYingYaoView.snp.top).offset(-8) }
+        GuaXiangViewLayout.alignHeader(headerView, columns: [liuQinView, shiYingYaoView, diZhiView])
     }
 
     func bindings() {
@@ -107,5 +112,11 @@ private extension GuaXiangView {
             .disposed(by: bag)
         
         addSubview(liuQinView)
+    }
+    
+    func setupHeaderView() {
+        headerView = HeaderLabelView(frame: .zero)
+        
+        addSubview(headerView)
     }
 }
