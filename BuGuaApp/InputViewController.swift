@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import RxCocoa
 import RxSwift
 import RxSwiftExt
 
@@ -27,6 +28,7 @@ class InputViewController: UIViewController {
     // MARK: - Private properties
     private let viewModel: InputViewModel
     private var textFieldDelegate: UITextFieldDelegate!
+    private let finishRelay = PublishRelay<()>()
     
     init(viewModel: InputViewModel) {
         self.viewModel = viewModel
@@ -52,15 +54,8 @@ private extension InputViewController {
         let autoNextDelegate = AutoNextTextFieldDelegate(textFields: [field1, field2, field3])
         textFieldDelegate = ComposedTextFieldDelegate(delegates: [numberDelegate, autoNextDelegate], &&)
         
-        let strs = Observable.combineLatest(field1.rx.text, field2.rx.text, field3.rx.text) { (($0, $1), [$2]) }
-        
-        autoNextDelegate.finishRelay.withLatestFrom(strs)
-            .map { $0.0 }
-            .bind(to: viewModel.guaStrRelay)
-            .disposed(by: bag)
-        
-        autoNextDelegate.finishRelay.withLatestFrom(strs).map { $0.1 }
-            .bind(to: viewModel.unstableYaoStrRelay)
+        autoNextDelegate.finishRelay
+            .bind(to: finishRelay)
             .disposed(by: bag)
     }
     
@@ -95,6 +90,21 @@ private extension InputViewController {
             
         errorStr.mapTo(false).bind(to: errorLabel.rx.isHidden).disposed(by: bag)
         errorStr.bind(to: errorLabel.rx.text).disposed(by: bag)
+        
+        let strs = Observable.combineLatest(field1.rx.text, field2.rx.text, field3.rx.text) { (($0, $1), [$2]) }
+        
+        finishRelay.withLatestFrom(strs)
+            .map { $0.0 }
+            .bind(to: viewModel.guaStrRelay)
+            .disposed(by: bag)
+        
+        finishRelay.withLatestFrom(strs).map { $0.1 }
+            .bind(to: viewModel.unstableYaoStrRelay)
+            .disposed(by: bag)
+        
+        finishButton.rx.tap
+            .bind(to: finishRelay)
+            .disposed(by: bag)
     }
 }
 
