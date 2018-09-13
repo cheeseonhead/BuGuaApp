@@ -56,7 +56,13 @@ private extension SixLabelView {
         
         dataRelay.map { $0[position - 1] }
             .bind { str in
-                label.text = str
+                if str.isEmpty {
+                    label.text = "嗨"
+                    label.alpha = 0
+                } else {
+                    label.text = str
+                    label.alpha = 1
+                }
             }.disposed(by: bag)
         
         return label
