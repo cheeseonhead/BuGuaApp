@@ -71,22 +71,19 @@ private extension GuaXiangView {
 //            make.bottom.equalTo(safeAreaLayoutGuide).offset(-8)
         }
         
-        diZhiView.snp.makeConstraints { make in
-            make.leading.equalTo(shiYingYaoView.snp.trailing).offset(16)
-        }
-        GuaXiangViewLayout.verticalAlignSixLabelView(diZhiView, shiYingYaoView: shiYingYaoView)
-        
         liuQinView.snp.makeConstraints { $0.trailing.equalTo(shiYingYaoView.snp.leading).offset(-16) }
+        diZhiView.snp.makeConstraints { $0.leading.equalTo(shiYingYaoView.snp.trailing).offset(16) }
+        hiddenGanZhiView.snp.makeConstraints { $0.leading.equalTo(diZhiView.snp.trailing).offset(16) }
+        
+        GuaXiangViewLayout.verticalAlignSixLabelView(diZhiView, shiYingYaoView: shiYingYaoView)
         GuaXiangViewLayout.verticalAlignSixLabelView(liuQinView, shiYingYaoView: shiYingYaoView)
+        GuaXiangViewLayout.verticalAlignSixLabelView(hiddenGanZhiView, shiYingYaoView: shiYingYaoView)
         
         headerView.snp.makeConstraints { $0.bottom.equalTo(shiYingYaoView.snp.top).offset(-8) }
         GuaXiangViewLayout.alignHeader(headerView, columns: [liuQinView, shiYingYaoView, diZhiView, hiddenGanZhiView])
         
         horizontalDividerView.snp.makeConstraints { $0.leading.trailing.equalToSuperview() }
         GuaXiangViewLayout.alignHorizontalDividers(horizontalDividerView, shiYingYaoView: shiYingYaoView, headerView: headerView)
-        
-        hiddenGanZhiView.snp.makeConstraints { $0.leading.equalTo(diZhiView.snp.trailing).offset(16) }
-        GuaXiangViewLayout.verticalAlignSixLabelView(hiddenGanZhiView, shiYingYaoView: shiYingYaoView)
     }
 
     func bindings() {
