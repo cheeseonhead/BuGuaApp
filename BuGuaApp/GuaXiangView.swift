@@ -20,6 +20,7 @@ class GuaXiangView: UIView {
     var diZhiView: SixLabelView!
     var liuQinView: SixLabelView!
     var horizontalDividerView: HorizontalDividersView!
+    var hiddenGanZhiView: SixLabelView!
 
     // MARK: - Properties
     let guaXiangRelay = PublishRelay<LiuYaoGuaXiang>()
@@ -61,6 +62,7 @@ private extension GuaXiangView {
         setupLiuQinView()
         setupHeaderView()
         setupHorizontalDivders()
+        setupHiddenGanZhiView()
     }
 
     func createConstraints() {
@@ -78,10 +80,13 @@ private extension GuaXiangView {
         GuaXiangViewLayout.verticalAlignSixLabelView(liuQinView, shiYingYaoView: shiYingYaoView)
         
         headerView.snp.makeConstraints { $0.bottom.equalTo(shiYingYaoView.snp.top).offset(-8) }
-        GuaXiangViewLayout.alignHeader(headerView, columns: [liuQinView, shiYingYaoView, diZhiView])
+        GuaXiangViewLayout.alignHeader(headerView, columns: [liuQinView, shiYingYaoView, diZhiView, hiddenGanZhiView])
         
         horizontalDividerView.snp.makeConstraints { $0.leading.trailing.equalToSuperview() }
         GuaXiangViewLayout.alignHorizontalDividers(horizontalDividerView, shiYingYaoView: shiYingYaoView, headerView: headerView)
+        
+        hiddenGanZhiView.snp.makeConstraints { $0.leading.equalTo(diZhiView.snp.trailing).offset(16) }
+        GuaXiangViewLayout.verticalAlignSixLabelView(hiddenGanZhiView, shiYingYaoView: shiYingYaoView)
     }
 
     func bindings() {
@@ -134,5 +139,29 @@ private extension GuaXiangView {
         horizontalDividerView = HorizontalDividersView(frame: .zero)
         
         addSubview(horizontalDividerView)
+    }
+    
+    func setupHiddenGanZhiView() {
+        hiddenGanZhiView = SixLabelView(frame: .zero)
+        
+        guaXiangRelay.map(hiddenGanZhi)
+            .bind(to: hiddenGanZhiView.dataRelay)
+            .disposed(by: bag)
+        
+        addSubview(hiddenGanZhiView)
+    }
+}
+
+// MARK: - Presentation Helpers
+private extension GuaXiangView {
+    func hiddenGanZhi(from guaXiang: LiuYaoGuaXiang) -> [String] {
+        let controller = FuShenController(guaXiang: guaXiang)
+        
+        let tianGan = controller.hiddenTianGan().map { $0?.character ?? "" }
+        let diZhi = controller.hiddenDiZhi().map { $0?.character ?? "" }
+        
+        return zip(tianGan, diZhi).map {
+            return ($0 + $1).vertical
+        }
     }
 }
