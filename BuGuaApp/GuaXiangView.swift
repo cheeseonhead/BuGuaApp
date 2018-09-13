@@ -19,6 +19,7 @@ class GuaXiangView: UIView {
     var shiYingYaoView: ShiYingYaoView!
     var diZhiView: SixLabelView!
     var liuQinView: SixLabelView!
+    var horizontalDividerView: HorizontalDividersView!
 
     // MARK: - Properties
     let guaXiangRelay = PublishRelay<LiuYaoGuaXiang>()
@@ -59,12 +60,13 @@ private extension GuaXiangView {
         setupDiZhiView()
         setupLiuQinView()
         setupHeaderView()
+        setupHorizontalDivders()
     }
 
     func createConstraints() {
         shiYingYaoView.snp.makeConstraints { make in
-            make.centerX.equalTo(safeAreaLayoutGuide)
-            make.bottom.equalTo(safeAreaLayoutGuide).offset(-8)
+            make.centerX.centerY.equalTo(safeAreaLayoutGuide)
+//            make.bottom.equalTo(safeAreaLayoutGuide).offset(-8)
         }
         
         diZhiView.snp.makeConstraints { make in
@@ -77,6 +79,9 @@ private extension GuaXiangView {
         
         headerView.snp.makeConstraints { $0.bottom.equalTo(shiYingYaoView.snp.top).offset(-8) }
         GuaXiangViewLayout.alignHeader(headerView, columns: [liuQinView, shiYingYaoView, diZhiView])
+        
+        horizontalDividerView.snp.makeConstraints { $0.leading.trailing.equalToSuperview() }
+        GuaXiangViewLayout.alignHorizontalDividers(horizontalDividerView, shiYingYaoView: shiYingYaoView, headerView: headerView)
     }
 
     func bindings() {
@@ -123,5 +128,11 @@ private extension GuaXiangView {
         headerView = HeaderLabelView(frame: .zero)
         
         addSubview(headerView)
+    }
+    
+    func setupHorizontalDivders() {
+        horizontalDividerView = HorizontalDividersView(frame: .zero)
+        
+        addSubview(horizontalDividerView)
     }
 }
