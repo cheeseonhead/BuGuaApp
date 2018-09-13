@@ -17,4 +17,26 @@ class GuaXiangViewLayout {
             make.centerY.equalTo(topLiuQin.snp.centerY)
         }
     }
+    
+    static func verticalAlignSixLabelView(_ sixLabelView: SixLabelView, shiYingYaoView: ShiYingYaoView) {
+        zip(sixLabelView.labels, shiYingYaoView.yaoViews).forEach { label, yao in
+            label.snp.makeConstraints { make in
+                make.bottom.equalTo(yao)
+            }
+        }
+        
+        zip(sixLabelView.labels, shiYingYaoView.shiYingLabels).forEach { label, shiYingLabel in
+            label.snp.makeConstraints { make in
+                make.top.equalTo(shiYingLabel)
+            }
+        }
+    }
+    
+    static func alignHeader(_ headerView: HeaderLabelView, columns: [UIView]) {
+        zip(headerView.headerLabels, columns).forEach { header, column in
+            header.snp.makeConstraints({ make in
+                make.centerX.equalTo(column)
+            })
+        }
+    }
 }
