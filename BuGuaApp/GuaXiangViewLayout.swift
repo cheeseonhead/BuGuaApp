@@ -39,4 +39,23 @@ class GuaXiangViewLayout {
             })
         }
     }
+    
+    static func alignHorizontalDividers(_ dividerView: HorizontalDividersView, shiYingYaoView: ShiYingYaoView, headerView: HeaderLabelView) {
+        headerView.snp.makeConstraints { make in
+            make.top.equalTo(dividerView.headers.top.snp.bottom)
+            make.bottom.equalTo(dividerView.headers.bottom.snp.top)
+        }
+        
+        zip(shiYingYaoView.yaoViews.lazy.reversed(), dividerView.belowYao).forEach { yaoView, belowYao in
+            belowYao.snp.makeConstraints({ make in
+                make.top.equalTo(yaoView.snp.bottom)
+            })
+        }
+        
+        zip(shiYingYaoView.shiYingLabels.lazy.reversed().suffix(5), dividerView.belowYao.prefix(5)).forEach { shiYingLabel, aboveLabel in
+            aboveLabel.snp.makeConstraints({ make in
+                make.bottom.equalTo(shiYingLabel.snp.top)
+            })
+        }
+    }
 }
