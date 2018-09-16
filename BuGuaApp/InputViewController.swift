@@ -14,13 +14,13 @@ import RxSwiftExt
 class InputViewController: UIViewController {
 
     // MARK: - Views
-    @IBOutlet weak var titleLabel: UILabel!
-    @IBOutlet weak var finishButton: UIButton!
     @IBOutlet weak var field1: UITextField!
     @IBOutlet weak var field2: UITextField!
     @IBOutlet weak var field3: UITextField!
     @IBOutlet var fields: [UITextField]!
     @IBOutlet weak var errorLabel: UILabel!
+    var finishBarButton: UIBarButtonItem!
+    var titleLabel: UILabel!
     
     // MARK: - Rx
     let bag = DisposeBag()
@@ -41,7 +41,8 @@ class InputViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        
+
+        createViews()
         setupDelegate()
         styling()
         bindings()
@@ -49,6 +50,17 @@ class InputViewController: UIViewController {
 }
 
 private extension InputViewController {
+
+    func createViews() {
+        finishBarButton = UIBarButtonItem(title: NSLocalizedString("下一個", comment: ""),
+                                          style: .plain, target: nil, action: nil)
+        navigationItem.rightBarButtonItem = finishBarButton
+
+        titleLabel = UILabel(frame: .zero)
+        titleLabel.text = NSLocalizedString("輸入卜卦數字", comment: "")
+        navigationItem.titleView = titleLabel
+    }
+
     func setupDelegate() {
         let numberDelegate = NumericTextFieldDelegate()
         let autoNextDelegate = AutoNextTextFieldDelegate(textFields: [field1, field2, field3])
@@ -61,9 +73,8 @@ private extension InputViewController {
     
     func styling() {
         titleLabel.textColor = .spaceGrey
-        titleLabel.font = .title2
-        finishButton.titleLabel?.font = .title1
-        
+        titleLabel.font = .title1
+
         errorLabel.textColor = .scarlet
         errorLabel.font = .title1
         errorLabel.isHidden = true
@@ -80,12 +91,12 @@ private extension InputViewController {
     
     func bindings() {
         
-        viewModel.guaXiangSignal.asObservable().elements()
+        viewModel.yaoTypeSignal.asObservable().elements()
             .mapTo(true)
             .bind(to: errorLabel.rx.isHidden)
             .disposed(by: bag)
         
-        let errorStr = viewModel.guaXiangSignal.asObservable().errors()
+        let errorStr = viewModel.yaoTypeSignal.asObservable().errors()
             .mapAt(\.localizedDescription)
             
         errorStr.mapTo(false).bind(to: errorLabel.rx.isHidden).disposed(by: bag)
@@ -101,8 +112,8 @@ private extension InputViewController {
         finishRelay.withLatestFrom(strs).map { $0.1 }
             .bind(to: viewModel.unstableYaoStrRelay)
             .disposed(by: bag)
-        
-        finishButton.rx.tap
+
+        finishBarButton.rx.tap
             .bind(to: finishRelay)
             .disposed(by: bag)
     }
