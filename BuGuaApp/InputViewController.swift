@@ -80,12 +80,12 @@ private extension InputViewController {
     
     func bindings() {
         
-        viewModel.guaXiangSignal.asObservable().elements()
+        viewModel.yaoTypeSignal.asObservable().elements()
             .mapTo(true)
             .bind(to: errorLabel.rx.isHidden)
             .disposed(by: bag)
         
-        let errorStr = viewModel.guaXiangSignal.asObservable().errors()
+        let errorStr = viewModel.yaoTypeSignal.asObservable().errors()
             .mapAt(\.localizedDescription)
             
         errorStr.mapTo(false).bind(to: errorLabel.rx.isHidden).disposed(by: bag)
