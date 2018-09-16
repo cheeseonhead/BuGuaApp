@@ -39,7 +39,7 @@ private extension InputViewModel {
         let converter = IntegerLiuYaoConverter()
         converter.innerGuaInt = try Int(str: guaStrs.0)
         converter.outerGuaInt = try Int(str: guaStrs.1)
-        converter.unstableYaoInts = try unstableStrs.unwrap().filter { !$0.isEmpty }.map(Int.init).toSet()
+        converter.unstableYaoInts = try unstableStrs.map(Int.init).unwrap().toSet()
         
         return try converter.convert()
     }
