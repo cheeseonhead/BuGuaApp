@@ -9,6 +9,7 @@
 import BuGuaKit
 import Foundation
 import RxSwift
+import RxSwiftExt
 import RxCocoa
 import UIKit
 
@@ -46,7 +47,10 @@ private extension GuaXiangInputCoordinator {
         let vm = factory.makeInputViewModel()
         let vc = factory.makeInputViewController(viewModel: vm)
 
-//        vm.yaoTypeSignal.emit
+        vm.yaoTypeSignal.asObservable().elements()
+            .subscribe(onNext: { [unowned self] liuYao in
+                self.model.setLiuYao(liuYao)
+            }).disposed(by: vm.bag)
 
         return vc
     }
