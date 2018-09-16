@@ -60,6 +60,7 @@
 		9BCB361A213E30D700F7FDDE /* GuaXiangViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9BCB3619213E30D700F7FDDE /* GuaXiangViewModel.swift */; };
 		9BCE8861214EF5220024FEF7 /* GuaXiangInputCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9BCE8860214EF5220024FEF7 /* GuaXiangInputCoordinator.swift */; };
 		9BCE8863214F0A590024FEF7 /* GuaXiangInputCoordinatorModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9BCE8862214F0A590024FEF7 /* GuaXiangInputCoordinatorModel.swift */; };
+		9BCE8867214F11960024FEF7 /* Coordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9BCE8866214F11960024FEF7 /* Coordinator.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -162,6 +163,7 @@
 		9BCB3619213E30D700F7FDDE /* GuaXiangViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GuaXiangViewModel.swift; sourceTree = "<group>"; };
 		9BCE8860214EF5220024FEF7 /* GuaXiangInputCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GuaXiangInputCoordinator.swift; sourceTree = "<group>"; };
 		9BCE8862214F0A590024FEF7 /* GuaXiangInputCoordinatorModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GuaXiangInputCoordinatorModel.swift; sourceTree = "<group>"; };
+		9BCE8866214F11960024FEF7 /* Coordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Coordinator.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -247,8 +249,8 @@
 				9BCB3615213E254900F7FDDE /* AppFactory.swift */,
 				9B933EF22134E529004DCD3F /* ViewController.swift */,
 				9B933EF42134E529004DCD3F /* Main.storyboard */,
+				9BCE8865214F11330024FEF7 /* GuaXiangFlow */,
 				9BCB3612213E227700F7FDDE /* Coordinators */,
-				9BCB360B213E147000F7FDDE /* ViewController */,
 				9B933F3C2134EB58004DCD3F /* Views */,
 				3413A5612140D6E700245C46 /* Components */,
 				9B933F3D2134EB64004DCD3F /* Extensions */,
@@ -322,28 +324,37 @@
 			name = Frameworks;
 			sourceTree = "<group>";
 		};
-		9BCB360B213E147000F7FDDE /* ViewController */ = {
+		9BCB3612213E227700F7FDDE /* Coordinators */ = {
 			isa = PBXGroup;
 			children = (
-				9BCB360C213E148200F7FDDE /* GuaXiangViewController.swift */,
-				9BCB3610213E150500F7FDDE /* GuaXiangViewController.xib */,
-				9BCB3619213E30D700F7FDDE /* GuaXiangViewModel.swift */,
+				9BCE8866214F11960024FEF7 /* Coordinator.swift */,
+				9BCB3613213E234000F7FDDE /* AppCoordinator.swift */,
+			);
+			name = Coordinators;
+			sourceTree = "<group>";
+		};
+		9BCE8864214F11010024FEF7 /* GuaXiangInputFlow */ = {
+			isa = PBXGroup;
+			children = (
+				9BCE8860214EF5220024FEF7 /* GuaXiangInputCoordinator.swift */,
+				9BCE8862214F0A590024FEF7 /* GuaXiangInputCoordinatorModel.swift */,
 				3413A55B2140BF4B00245C46 /* InputViewController.swift */,
 				3413A55C2140BF4B00245C46 /* InputViewController.xib */,
 				3413A55F2140BFB900245C46 /* InputViewModel.swift */,
 			);
-			name = ViewController;
+			name = GuaXiangInputFlow;
 			sourceTree = "<group>";
 		};
-		9BCB3612213E227700F7FDDE /* Coordinators */ = {
+		9BCE8865214F11330024FEF7 /* GuaXiangFlow */ = {
 			isa = PBXGroup;
 			children = (
-				9BCB3613213E234000F7FDDE /* AppCoordinator.swift */,
 				9BCB3617213E2A5800F7FDDE /* GuaXiangCoordinator.swift */,
-				9BCE8860214EF5220024FEF7 /* GuaXiangInputCoordinator.swift */,
-				9BCE8862214F0A590024FEF7 /* GuaXiangInputCoordinatorModel.swift */,
+				9BCB360C213E148200F7FDDE /* GuaXiangViewController.swift */,
+				9BCB3610213E150500F7FDDE /* GuaXiangViewController.xib */,
+				9BCB3619213E30D700F7FDDE /* GuaXiangViewModel.swift */,
+				9BCE8864214F11010024FEF7 /* GuaXiangInputFlow */,
 			);
-			name = Coordinators;
+			name = GuaXiangFlow;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -559,6 +570,7 @@
 				9B933F3F2134EBBE004DCD3F /* UIView+NibLoadable.swift in Sources */,
 				3413A5672140E0BC00245C46 /* AutoNextTextFieldDelegate.swift in Sources */,
 				9B933F792138DEE2004DCD3F /* CGPoint+Math.swift in Sources */,
+				9BCE8867214F11960024FEF7 /* Coordinator.swift in Sources */,
 				3467E8872149EB0200955D69 /* HorizontalDividersView.swift in Sources */,
 				3413A5652140D89900245C46 /* CharacterSet+MoreSets.swift in Sources */,
 				346334482148A66E001D462B /* Container+Operator.swift in Sources */,
