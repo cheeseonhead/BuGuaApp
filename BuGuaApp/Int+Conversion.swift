@@ -23,11 +23,11 @@ extension Int {
         }
     }
     
-    init(str: String?) throws {
+    init?(str: String?) throws {
         guard let str = str, !str.isEmpty else {
-            throw Error.stringEmpty
+            return nil
         }
-        
+
         guard let integer = Int(str) else {
             throw Error.notValidInteger(str)
         }
