@@ -21,18 +21,26 @@ class GuaXiangInputCoordinator: Coordinator {
     // MARK: - Private Rx
     private var navigationController: UINavigationController!
     private let didStartRelay = PublishRelay<UIViewController>()
+    private let factory: AppFactory
+
+    // MARK: - Init
+    init(factory: AppFactory) {
+        self.factory = factory
+    }
 
     // MARK: - Lifecycle
     func start() {
-        let vc = UIViewController(nibName: nil, bundle: nil)
-
-        vc.view.backgroundColor = .red
-        vc.preferredContentSize = CGSize(width: 200, height: 200)
-
-        vc.preferredContentSizeDidChange(forChildContentContainer: vc)
+        let vm = factory.makeInputViewModel()
+        let vc = factory.makeInputViewController(viewModel: vm)
 
         navigationController = UINavigationController(rootViewController: vc)
 
         didStartRelay.accept(navigationController)
+    }
+}
+
+extension AppFactory {
+    func makeGuaXiangInputCoordinator() -> GuaXiangInputCoordinator {
+        return GuaXiangInputCoordinator(factory: self)
     }
 }

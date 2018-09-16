@@ -44,3 +44,9 @@ private extension InputViewModel {
         return try converter.convert()
     }
 }
+
+extension AppFactory {
+    func makeInputViewModel() -> InputViewModel {
+        return InputViewModel()
+    }
+}
