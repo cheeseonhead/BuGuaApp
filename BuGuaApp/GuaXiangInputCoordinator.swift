@@ -19,10 +19,20 @@ class GuaXiangInputCoordinator: Coordinator {
     lazy private (set) var didStartSignal = didStartRelay.asSignal()
 
     // MARK: - Private Rx
-    let didStartRelay = PublishRelay<UIViewController>()
+    private var navigationController: UINavigationController!
+    private let didStartRelay = PublishRelay<UIViewController>()
 
     // MARK: - Lifecycle
     func start() {
-        
+        let vc = UIViewController(nibName: nil, bundle: nil)
+
+        vc.view.backgroundColor = .red
+        vc.preferredContentSize = CGSize(width: 200, height: 200)
+
+        vc.preferredContentSizeDidChange(forChildContentContainer: vc)
+
+        navigationController = UINavigationController(rootViewController: vc)
+
+        didStartRelay.accept(navigationController)
     }
 }
