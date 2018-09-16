@@ -64,6 +64,7 @@
 		9BCE8869214F133F0024FEF7 /* DateInputViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9BCE8868214F133F0024FEF7 /* DateInputViewController.swift */; };
 		9BCE886C214F13780024FEF7 /* DateInputViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9BCE886B214F13780024FEF7 /* DateInputViewModel.swift */; };
 		9BCE886E214F13820024FEF7 /* DateInputViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 9BCE886D214F13820024FEF7 /* DateInputViewController.xib */; };
+		9BCE8871214F16930024FEF7 /* GregorianDate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9BCE8870214F16930024FEF7 /* GregorianDate.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -170,6 +171,7 @@
 		9BCE8868214F133F0024FEF7 /* DateInputViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DateInputViewController.swift; sourceTree = "<group>"; };
 		9BCE886B214F13780024FEF7 /* DateInputViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DateInputViewModel.swift; sourceTree = "<group>"; };
 		9BCE886D214F13820024FEF7 /* DateInputViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = DateInputViewController.xib; sourceTree = "<group>"; };
+		9BCE8870214F16930024FEF7 /* GregorianDate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GregorianDate.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -211,6 +213,7 @@
 				3413A5662140E0BC00245C46 /* AutoNextTextFieldDelegate.swift */,
 				3413A5682140E0D600245C46 /* ComposableTextfieldDelegate.swift */,
 				34A13D4C214222E700D77D98 /* IntegerLiuYaoConverter.swift */,
+				9BCE8870214F16930024FEF7 /* GregorianDate.swift */,
 			);
 			name = Components;
 			sourceTree = "<group>";
@@ -617,6 +620,7 @@
 				9B933EF12134E529004DCD3F /* AppDelegate.swift in Sources */,
 				346334462148A52F001D462B /* Array+Convert.swift in Sources */,
 				9B933F7B2138DF3B004DCD3F /* CGRect+Points.swift in Sources */,
+				9BCE8871214F16930024FEF7 /* GregorianDate.swift in Sources */,
 				3413A5602140BFB900245C46 /* InputViewModel.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
