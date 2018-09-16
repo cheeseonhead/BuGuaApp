@@ -52,7 +52,7 @@ private extension GuaXiangCoordinator {
         modalViewController.preferredContentSize = CGSize(width: 450, height: 450)
         modalViewController.modalPresentationStyle = .formSheet
 
-        let inputCoordinator = GuaXiangInputCoordinator()
+        let inputCoordinator = factory.makeGuaXiangInputCoordinator()
         inputCoordinator.didStartSignal.emit(onNext: { [unowned self, modalViewController] vc in
             self.viewController.present(modalViewController, animated: true, completion: nil)
             modalViewController.add(vc)
