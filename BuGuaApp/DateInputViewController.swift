@@ -7,3 +7,28 @@
 //
 
 import Foundation
+import RxCocoa
+import RxSwift
+import RxSwiftExt
+import UIKit
+
+class DateInputViewController: UIViewController {
+
+    // MARK: - Views
+    @IBOutlet var datePicker: UIDatePicker!
+
+    let viewModel: DateInputViewModel
+
+    // MARK: - Private Rx
+    private let bag = DisposeBag()
+
+    // MARK: - Init
+    init(viewModel: DateInputViewModel) {
+        self.viewModel = viewModel
+        super.init(nibName: nil, bundle: nil)
+    }
+
+    required init?(coder aDecoder: NSCoder) {
+        fatalError("init(coder:) has not been implemented")
+    }
+}
