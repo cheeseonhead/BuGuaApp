@@ -8,8 +8,9 @@
 
 import BuGuaKit
 import Foundation
-import RxSwift
 import RxCocoa
+import RxSwift
+import RxSwiftExt
 import SnapKit
 import UIKit
 
