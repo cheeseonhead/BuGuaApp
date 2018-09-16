@@ -22,7 +22,7 @@
 		3463344D2148B147001D462B /* SixLabelView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3463344C2148B147001D462B /* SixLabelView.swift */; };
 		3463344F2148BD4B001D462B /* HeaderLabelView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3463344E2148BD4B001D462B /* HeaderLabelView.swift */; };
 		3467E8872149EB0200955D69 /* HorizontalDividersView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3467E8862149EB0200955D69 /* HorizontalDividersView.swift */; };
-		34A13D4D214222E700D77D98 /* IntegerGuaXiangConverter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 34A13D4C214222E700D77D98 /* IntegerGuaXiangConverter.swift */; };
+		34A13D4D214222E700D77D98 /* IntegerLiuYaoConverter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 34A13D4C214222E700D77D98 /* IntegerLiuYaoConverter.swift */; };
 		34A13D4F2142294D00D77D98 /* Int+Conversion.swift in Sources */ = {isa = PBXBuildFile; fileRef = 34A13D4E2142294D00D77D98 /* Int+Conversion.swift */; };
 		9B273D3321390ABD00BDFBE3 /* SnapKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9B273D3221390ABD00BDFBE3 /* SnapKit.framework */; };
 		9B933EF12134E529004DCD3F /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9B933EF02134E529004DCD3F /* AppDelegate.swift */; };
@@ -58,6 +58,8 @@
 		9BCB3616213E254900F7FDDE /* AppFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9BCB3615213E254900F7FDDE /* AppFactory.swift */; };
 		9BCB3618213E2A5800F7FDDE /* GuaXiangCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9BCB3617213E2A5800F7FDDE /* GuaXiangCoordinator.swift */; };
 		9BCB361A213E30D700F7FDDE /* GuaXiangViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9BCB3619213E30D700F7FDDE /* GuaXiangViewModel.swift */; };
+		9BCE8861214EF5220024FEF7 /* GuaXiangInputCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9BCE8860214EF5220024FEF7 /* GuaXiangInputCoordinator.swift */; };
+		9BCE8863214F0A590024FEF7 /* GuaXiangInputCoordinatorModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9BCE8862214F0A590024FEF7 /* GuaXiangInputCoordinatorModel.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -118,7 +120,7 @@
 		3463344C2148B147001D462B /* SixLabelView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SixLabelView.swift; sourceTree = "<group>"; };
 		3463344E2148BD4B001D462B /* HeaderLabelView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HeaderLabelView.swift; sourceTree = "<group>"; };
 		3467E8862149EB0200955D69 /* HorizontalDividersView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HorizontalDividersView.swift; sourceTree = "<group>"; };
-		34A13D4C214222E700D77D98 /* IntegerGuaXiangConverter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IntegerGuaXiangConverter.swift; sourceTree = "<group>"; };
+		34A13D4C214222E700D77D98 /* IntegerLiuYaoConverter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IntegerLiuYaoConverter.swift; sourceTree = "<group>"; };
 		34A13D4E2142294D00D77D98 /* Int+Conversion.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Int+Conversion.swift"; sourceTree = "<group>"; };
 		9B273D3221390ABD00BDFBE3 /* SnapKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SnapKit.framework; path = Carthage/Build/iOS/SnapKit.framework; sourceTree = "<group>"; };
 		9B933EED2134E529004DCD3F /* BuGuaApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = BuGuaApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -158,6 +160,8 @@
 		9BCB3615213E254900F7FDDE /* AppFactory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppFactory.swift; sourceTree = "<group>"; };
 		9BCB3617213E2A5800F7FDDE /* GuaXiangCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GuaXiangCoordinator.swift; sourceTree = "<group>"; };
 		9BCB3619213E30D700F7FDDE /* GuaXiangViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GuaXiangViewModel.swift; sourceTree = "<group>"; };
+		9BCE8860214EF5220024FEF7 /* GuaXiangInputCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GuaXiangInputCoordinator.swift; sourceTree = "<group>"; };
+		9BCE8862214F0A590024FEF7 /* GuaXiangInputCoordinatorModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GuaXiangInputCoordinatorModel.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -197,7 +201,7 @@
 				3413A5622140D6FB00245C46 /* NumericTextfieldDelegate.swift */,
 				3413A5662140E0BC00245C46 /* AutoNextTextFieldDelegate.swift */,
 				3413A5682140E0D600245C46 /* ComposableTextfieldDelegate.swift */,
-				34A13D4C214222E700D77D98 /* IntegerGuaXiangConverter.swift */,
+				34A13D4C214222E700D77D98 /* IntegerLiuYaoConverter.swift */,
 			);
 			name = Components;
 			sourceTree = "<group>";
@@ -336,6 +340,8 @@
 			children = (
 				9BCB3613213E234000F7FDDE /* AppCoordinator.swift */,
 				9BCB3617213E2A5800F7FDDE /* GuaXiangCoordinator.swift */,
+				9BCE8860214EF5220024FEF7 /* GuaXiangInputCoordinator.swift */,
+				9BCE8862214F0A590024FEF7 /* GuaXiangInputCoordinatorModel.swift */,
 			);
 			name = Coordinators;
 			sourceTree = "<group>";
@@ -547,7 +553,8 @@
 			files = (
 				9B933F6F213794F7004DCD3F /* UIFont+AppFont.swift in Sources */,
 				3413A5632140D6FB00245C46 /* NumericTextfieldDelegate.swift in Sources */,
-				34A13D4D214222E700D77D98 /* IntegerGuaXiangConverter.swift in Sources */,
+				9BCE8863214F0A590024FEF7 /* GuaXiangInputCoordinatorModel.swift in Sources */,
+				34A13D4D214222E700D77D98 /* IntegerLiuYaoConverter.swift in Sources */,
 				341EE5C32143A94A00CB7D53 /* GuaXiangViewLayout.swift in Sources */,
 				9B933F3F2134EBBE004DCD3F /* UIView+NibLoadable.swift in Sources */,
 				3413A5672140E0BC00245C46 /* AutoNextTextFieldDelegate.swift in Sources */,
@@ -574,6 +581,7 @@
 				9B933F5B2135A8B0004DCD3F /* GuaXiangView.swift in Sources */,
 				3413A55D2140BF4B00245C46 /* InputViewController.swift in Sources */,
 				9BCB3614213E234000F7FDDE /* AppCoordinator.swift in Sources */,
+				9BCE8861214EF5220024FEF7 /* GuaXiangInputCoordinator.swift in Sources */,
 				9B933EF12134E529004DCD3F /* AppDelegate.swift in Sources */,
 				346334462148A52F001D462B /* Array+Convert.swift in Sources */,
 				9B933F7B2138DF3B004DCD3F /* CGRect+Points.swift in Sources */,

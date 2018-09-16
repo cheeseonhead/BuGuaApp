@@ -23,25 +23,30 @@ class InputViewModel {
 
 
     // MARK: - Output Rx
-    let guaXiangSignal: Signal<Event<LiuYaoGuaXiang>>
+    let yaoTypeSignal: Signal<Event<[YaoType]>>
     
     init() {
-        
-        guaXiangSignal = PublishRelay.combineLatest(guaStrRelay, unstableYaoStrRelay).flatMap { guaStrs, unstableStrs in
+        yaoTypeSignal = PublishRelay.combineLatest(guaStrRelay, unstableYaoStrRelay).flatMap { guaStrs, unstableStrs in
             return Observable.just(()).map {
-                try InputViewModel.convertGuaXiang(guaStrs: guaStrs, unstableStrs: unstableStrs)
+                try InputViewModel.convertYaoTypes(guaStrs: guaStrs, unstableStrs: unstableStrs)
             }.materialize()
         }.share().asSignal(onErrorSignalWith: .never())
     }
 }
 
 private extension InputViewModel {
-    static func convertGuaXiang(guaStrs: (String?, String?), unstableStrs: [String?]) throws -> LiuYaoGuaXiang {
-        let converter = IntegerGuaXiangConverter()
+    static func convertYaoTypes(guaStrs: (String?, String?), unstableStrs: [String?]) throws -> [YaoType] {
+        let converter = IntegerLiuYaoConverter()
         converter.innerGuaInt = try Int(str: guaStrs.0)
         converter.outerGuaInt = try Int(str: guaStrs.1)
-        converter.unstableYaoInts = try unstableStrs.unwrap().filter { !$0.isEmpty }.map(Int.init).toSet()
+        converter.unstableYaoInts = try unstableStrs.map(Int.init).unwrap().toSet()
         
         return try converter.convert()
+    }
+}
+
+extension AppFactory {
+    func makeInputViewModel() -> InputViewModel {
+        return InputViewModel()
     }
 }

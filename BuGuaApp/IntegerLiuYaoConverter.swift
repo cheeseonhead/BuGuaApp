@@ -9,7 +9,7 @@
 import BuGuaKit
 import Foundation
 
-class IntegerGuaXiangConverter {
+class IntegerLiuYaoConverter {
     
     enum Error: LocalizedError {
         case missingInnerGuaInt
@@ -27,7 +27,7 @@ class IntegerGuaXiangConverter {
     var outerGuaInt: Int?
     var unstableYaoInts = Set<Int>()
     
-    func convert() throws -> LiuYaoGuaXiang {
+    func convert() throws -> [YaoType] {
         let (inner, outer) = try validate()
         
         let pureYaos = getPureYao(from: inner, outer: outer)
@@ -43,12 +43,12 @@ class IntegerGuaXiangConverter {
             }
         }
         
-        return LiuYaoGuaXiang(liuYao: yaoTypes)
+        return yaoTypes
     }
 }
 
 // MARK: - Helper
-private extension IntegerGuaXiangConverter {
+private extension IntegerLiuYaoConverter {
     func validate() throws -> (innerInt: Int, outerInt: Int) {
         guard let inner = innerGuaInt else {
             throw Error.missingInnerGuaInt
