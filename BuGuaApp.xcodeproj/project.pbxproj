@@ -58,6 +58,7 @@
 		9BCB3616213E254900F7FDDE /* AppFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9BCB3615213E254900F7FDDE /* AppFactory.swift */; };
 		9BCB3618213E2A5800F7FDDE /* GuaXiangCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9BCB3617213E2A5800F7FDDE /* GuaXiangCoordinator.swift */; };
 		9BCB361A213E30D700F7FDDE /* GuaXiangViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9BCB3619213E30D700F7FDDE /* GuaXiangViewModel.swift */; };
+		9BCE8861214EF5220024FEF7 /* GuaXiangInputCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9BCE8860214EF5220024FEF7 /* GuaXiangInputCoordinator.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -158,6 +159,7 @@
 		9BCB3615213E254900F7FDDE /* AppFactory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppFactory.swift; sourceTree = "<group>"; };
 		9BCB3617213E2A5800F7FDDE /* GuaXiangCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GuaXiangCoordinator.swift; sourceTree = "<group>"; };
 		9BCB3619213E30D700F7FDDE /* GuaXiangViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GuaXiangViewModel.swift; sourceTree = "<group>"; };
+		9BCE8860214EF5220024FEF7 /* GuaXiangInputCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GuaXiangInputCoordinator.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -336,6 +338,7 @@
 			children = (
 				9BCB3613213E234000F7FDDE /* AppCoordinator.swift */,
 				9BCB3617213E2A5800F7FDDE /* GuaXiangCoordinator.swift */,
+				9BCE8860214EF5220024FEF7 /* GuaXiangInputCoordinator.swift */,
 			);
 			name = Coordinators;
 			sourceTree = "<group>";
@@ -574,6 +577,7 @@
 				9B933F5B2135A8B0004DCD3F /* GuaXiangView.swift in Sources */,
 				3413A55D2140BF4B00245C46 /* InputViewController.swift in Sources */,
 				9BCB3614213E234000F7FDDE /* AppCoordinator.swift in Sources */,
+				9BCE8861214EF5220024FEF7 /* GuaXiangInputCoordinator.swift in Sources */,
 				9B933EF12134E529004DCD3F /* AppDelegate.swift in Sources */,
 				346334462148A52F001D462B /* Array+Convert.swift in Sources */,
 				9B933F7B2138DF3B004DCD3F /* CGRect+Points.swift in Sources */,

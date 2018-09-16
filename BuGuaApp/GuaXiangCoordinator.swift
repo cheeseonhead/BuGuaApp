@@ -9,17 +9,20 @@
 import BuGuaKit
 import Foundation
 import RxSwift
+import RxCocoa
 import UIKit
 
 class GuaXiangCoordinator: Coordinator {
 
     // MARK: - Coordinator
-    var delegate: CoordinatorDelegate?
     var childCoordinators = [Coordinator]()
+    lazy private (set) var didStartSignal = didStartRelay.asSignal()
+    var bag = DisposeBag()
 
     // MARK: - Private properties
     private var viewController: GuaXiangViewController!
     private let factory: AppFactory
+    private let didStartRelay = PublishRelay<UIViewController>()
 
     // MARK: - Init
     init(factory: AppFactory) {
@@ -36,12 +39,17 @@ class GuaXiangCoordinator: Coordinator {
         
         viewController = factory.makeGuaXiangViewController(viewModel: viewModel)
 
-        delegate?.didStart(self, viewController: viewController)
+        didStartRelay.accept(viewController)
     }
 }
 
 // MARK: - Present Methods
 private extension GuaXiangCoordinator {
+
+    func showGuaXiangInputFlow() {
+        
+    }
+
     func showInputViewController() {
         let viewModel = InputViewModel()
         
