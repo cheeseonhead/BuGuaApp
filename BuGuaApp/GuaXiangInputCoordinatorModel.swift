@@ -21,6 +21,10 @@ class GuaXiangInputCoordinatorModel {
     func setDateGanZhi(_ ganZhi: DateGanZhi) {
         builder.withDateGanZhi(ganZhi)
     }
+
+    func liuYaoGuaXiang() -> LiuYaoGuaXiang {
+        return builder.build()
+    }
 }
 
 extension AppFactory {
