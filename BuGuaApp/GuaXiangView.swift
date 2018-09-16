@@ -109,7 +109,7 @@ private extension GuaXiangView {
         diZhiView = SixLabelView(frame: .zero)
         
         func ganZhi(_ liuShiSiGua: LiuShiSiGua) -> [String] {
-            return zip(liuShiSiGua.tianGan, liuShiSiGua.yaoZhi).lazy
+            return zip(liuShiSiGua.tianGan, liuShiSiGua.diZhi).lazy
                 .map { ($0.0.character + $0.1.character).vertical }
         }
         
