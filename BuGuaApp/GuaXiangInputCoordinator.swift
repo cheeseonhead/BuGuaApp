@@ -20,6 +20,9 @@ class GuaXiangInputCoordinator: Coordinator {
     var childCoordinators: [Coordinator] = []
     lazy private (set) var didStartSignal = didStartRelay.asSignal()
 
+    // MARK: - Ouput Rx
+    let guaXiangRelay = PublishRelay<LiuYaoGuaXiang>()
+
     // MARK: - Private Rx
     private var navigationController: UINavigationController!
     private let didStartRelay = PublishRelay<UIViewController>()
@@ -48,9 +51,11 @@ private extension GuaXiangInputCoordinator {
         let vc = factory.makeInputViewController(viewModel: vm)
 
         vm.yaoTypeSignal.asObservable().elements()
-            .subscribe(onNext: { [unowned self] liuYao in
+            .map { [unowned self] liuYao in
                 self.model.setLiuYao(liuYao)
-            }).disposed(by: vm.bag)
+                return self.model.liuYaoGuaXiang()
+            }.bind(to: guaXiangRelay)
+            .disposed(by: vm.bag)
 
         return vc
     }
