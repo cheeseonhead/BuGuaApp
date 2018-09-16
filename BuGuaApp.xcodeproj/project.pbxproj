@@ -59,6 +59,7 @@
 		9BCB3618213E2A5800F7FDDE /* GuaXiangCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9BCB3617213E2A5800F7FDDE /* GuaXiangCoordinator.swift */; };
 		9BCB361A213E30D700F7FDDE /* GuaXiangViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9BCB3619213E30D700F7FDDE /* GuaXiangViewModel.swift */; };
 		9BCE8861214EF5220024FEF7 /* GuaXiangInputCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9BCE8860214EF5220024FEF7 /* GuaXiangInputCoordinator.swift */; };
+		9BCE8863214F0A590024FEF7 /* GuaXiangInputCoordinatorModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9BCE8862214F0A590024FEF7 /* GuaXiangInputCoordinatorModel.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -160,6 +161,7 @@
 		9BCB3617213E2A5800F7FDDE /* GuaXiangCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GuaXiangCoordinator.swift; sourceTree = "<group>"; };
 		9BCB3619213E30D700F7FDDE /* GuaXiangViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GuaXiangViewModel.swift; sourceTree = "<group>"; };
 		9BCE8860214EF5220024FEF7 /* GuaXiangInputCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GuaXiangInputCoordinator.swift; sourceTree = "<group>"; };
+		9BCE8862214F0A590024FEF7 /* GuaXiangInputCoordinatorModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GuaXiangInputCoordinatorModel.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -339,6 +341,7 @@
 				9BCB3613213E234000F7FDDE /* AppCoordinator.swift */,
 				9BCB3617213E2A5800F7FDDE /* GuaXiangCoordinator.swift */,
 				9BCE8860214EF5220024FEF7 /* GuaXiangInputCoordinator.swift */,
+				9BCE8862214F0A590024FEF7 /* GuaXiangInputCoordinatorModel.swift */,
 			);
 			name = Coordinators;
 			sourceTree = "<group>";
@@ -550,6 +553,7 @@
 			files = (
 				9B933F6F213794F7004DCD3F /* UIFont+AppFont.swift in Sources */,
 				3413A5632140D6FB00245C46 /* NumericTextfieldDelegate.swift in Sources */,
+				9BCE8863214F0A590024FEF7 /* GuaXiangInputCoordinatorModel.swift in Sources */,
 				34A13D4D214222E700D77D98 /* IntegerLiuYaoConverter.swift in Sources */,
 				341EE5C32143A94A00CB7D53 /* GuaXiangViewLayout.swift in Sources */,
 				9B933F3F2134EBBE004DCD3F /* UIView+NibLoadable.swift in Sources */,
