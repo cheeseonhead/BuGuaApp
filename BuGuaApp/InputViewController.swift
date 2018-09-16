@@ -52,7 +52,7 @@ class InputViewController: UIViewController {
 private extension InputViewController {
 
     func createViews() {
-        finishBarButton = UIBarButtonItem(title: NSLocalizedString("完成", comment: ""),
+        finishBarButton = UIBarButtonItem(title: NSLocalizedString("下一個", comment: ""),
                                           style: .plain, target: nil, action: nil)
         navigationItem.rightBarButtonItem = finishBarButton
 
