@@ -51,6 +51,7 @@ private extension GuaXiangCoordinator {
         let modalViewController = UIViewController(nibName: nil, bundle: nil)
         modalViewController.preferredContentSize = CGSize(width: 450, height: 450)
         modalViewController.modalPresentationStyle = .formSheet
+        modalViewController.view.tintColor = viewController.view.tintColor
 
         let inputCoordinator = factory.makeGuaXiangInputCoordinator()
         inputCoordinator.didStartSignal.emit(onNext: { [unowned self, modalViewController] vc in
