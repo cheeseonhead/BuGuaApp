@@ -53,7 +53,9 @@ private extension GuaXiangCoordinator {
         modalViewController.modalPresentationStyle = .formSheet
         modalViewController.view.tintColor = viewController.view.tintColor
 
-        let inputCoordinator = factory.makeGuaXiangInputCoordinator()
+        let model = factory.makeGuaXiangInputCoordinatorModel()
+
+        let inputCoordinator = factory.makeGuaXiangInputCoordinator(model: model)
         inputCoordinator.didStartSignal.emit(onNext: { [unowned self, modalViewController] vc in
             self.viewController.present(modalViewController, animated: true, completion: nil)
             modalViewController.add(vc)
