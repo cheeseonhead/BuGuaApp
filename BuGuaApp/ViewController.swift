@@ -15,6 +15,8 @@ class ViewController: UIViewController {
 
     @IBOutlet weak var guaXiangView: GuaXiangView!
 
+    let guaXiangBuilder = LiuYaoGuaXiangBuilder()
+
     override func viewDidLoad() {
         super.viewDidLoad()
     }
@@ -22,7 +24,7 @@ class ViewController: UIViewController {
     override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(animated)
 
-        let guaXiang = LiuYaoGuaXiang(liuYao: [.youngYin, .oldYang, .youngYang, .youngYang, .oldYin, .youngYang])
+        let guaXiang = guaXiangBuilder.build()
         guaXiangView.guaXiangRelay.accept(guaXiang)
     }
 
@@ -32,7 +34,8 @@ class ViewController: UIViewController {
     }
 
     @IBAction func tapped(_ sender: Any) {
-        let guaXiang = LiuYaoGuaXiang(liuYao: randomYao())
+        guaXiangBuilder.setLiuYao(randomYao())
+        let guaXiang = guaXiangBuilder.build()
 
         print("\(guaXiang.originalGua.innerGua.character) \(guaXiang.originalGua.outerGua.character)")
         guaXiangView.guaXiangRelay.accept(guaXiang)
