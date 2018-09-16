@@ -61,6 +61,9 @@
 		9BCE8861214EF5220024FEF7 /* GuaXiangInputCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9BCE8860214EF5220024FEF7 /* GuaXiangInputCoordinator.swift */; };
 		9BCE8863214F0A590024FEF7 /* GuaXiangInputCoordinatorModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9BCE8862214F0A590024FEF7 /* GuaXiangInputCoordinatorModel.swift */; };
 		9BCE8867214F11960024FEF7 /* Coordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9BCE8866214F11960024FEF7 /* Coordinator.swift */; };
+		9BCE8869214F133F0024FEF7 /* DateInputViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9BCE8868214F133F0024FEF7 /* DateInputViewController.swift */; };
+		9BCE886C214F13780024FEF7 /* DateInputViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9BCE886B214F13780024FEF7 /* DateInputViewModel.swift */; };
+		9BCE886E214F13820024FEF7 /* DateInputViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 9BCE886D214F13820024FEF7 /* DateInputViewController.xib */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -164,6 +167,9 @@
 		9BCE8860214EF5220024FEF7 /* GuaXiangInputCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GuaXiangInputCoordinator.swift; sourceTree = "<group>"; };
 		9BCE8862214F0A590024FEF7 /* GuaXiangInputCoordinatorModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GuaXiangInputCoordinatorModel.swift; sourceTree = "<group>"; };
 		9BCE8866214F11960024FEF7 /* Coordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Coordinator.swift; sourceTree = "<group>"; };
+		9BCE8868214F133F0024FEF7 /* DateInputViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DateInputViewController.swift; sourceTree = "<group>"; };
+		9BCE886B214F13780024FEF7 /* DateInputViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DateInputViewModel.swift; sourceTree = "<group>"; };
+		9BCE886D214F13820024FEF7 /* DateInputViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = DateInputViewController.xib; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -200,6 +206,7 @@
 		3413A5612140D6E700245C46 /* Components */ = {
 			isa = PBXGroup;
 			children = (
+				9BCE886A214F13450024FEF7 /* ViewControllers */,
 				3413A5622140D6FB00245C46 /* NumericTextfieldDelegate.swift */,
 				3413A5662140E0BC00245C46 /* AutoNextTextFieldDelegate.swift */,
 				3413A5682140E0D600245C46 /* ComposableTextfieldDelegate.swift */,
@@ -357,6 +364,16 @@
 			name = GuaXiangFlow;
 			sourceTree = "<group>";
 		};
+		9BCE886A214F13450024FEF7 /* ViewControllers */ = {
+			isa = PBXGroup;
+			children = (
+				9BCE8868214F133F0024FEF7 /* DateInputViewController.swift */,
+				9BCE886B214F13780024FEF7 /* DateInputViewModel.swift */,
+				9BCE886D214F13820024FEF7 /* DateInputViewController.xib */,
+			);
+			name = ViewControllers;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -470,6 +487,7 @@
 				9B933EFB2134E52A004DCD3F /* LaunchScreen.storyboard in Resources */,
 				9BCB3611213E150500F7FDDE /* GuaXiangViewController.xib in Resources */,
 				3413A55E2140BF4B00245C46 /* InputViewController.xib in Resources */,
+				9BCE886E214F13820024FEF7 /* DateInputViewController.xib in Resources */,
 				9B933F412134F054004DCD3F /* FuXiBaGuaView.xib in Resources */,
 				9B933EF82134E52A004DCD3F /* Assets.xcassets in Resources */,
 				9B933EF62134E529004DCD3F /* Main.storyboard in Resources */,
@@ -565,6 +583,7 @@
 				9B933F6F213794F7004DCD3F /* UIFont+AppFont.swift in Sources */,
 				3413A5632140D6FB00245C46 /* NumericTextfieldDelegate.swift in Sources */,
 				9BCE8863214F0A590024FEF7 /* GuaXiangInputCoordinatorModel.swift in Sources */,
+				9BCE886C214F13780024FEF7 /* DateInputViewModel.swift in Sources */,
 				34A13D4D214222E700D77D98 /* IntegerLiuYaoConverter.swift in Sources */,
 				341EE5C32143A94A00CB7D53 /* GuaXiangViewLayout.swift in Sources */,
 				9B933F3F2134EBBE004DCD3F /* UIView+NibLoadable.swift in Sources */,
@@ -583,6 +602,7 @@
 				34A13D4F2142294D00D77D98 /* Int+Conversion.swift in Sources */,
 				9BCB3609213E011800F7FDDE /* String+Vertical.swift in Sources */,
 				9BCB3618213E2A5800F7FDDE /* GuaXiangCoordinator.swift in Sources */,
+				9BCE8869214F133F0024FEF7 /* DateInputViewController.swift in Sources */,
 				9BCB360D213E148200F7FDDE /* GuaXiangViewController.swift in Sources */,
 				3463344B2148A914001D462B /* ShiYingYaoView.swift in Sources */,
 				9B933F6D2136537A004DCD3F /* UIView+Layout.swift in Sources */,
