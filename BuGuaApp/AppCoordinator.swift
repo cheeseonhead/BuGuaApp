@@ -63,7 +63,7 @@ class AppCoordinator: Coordinator {
                 .do(onNext: { [unowned self] vc in
                     self.window?.rootViewController = vc
                 }).emit(to: didStartRelay)
-                .disposed(by: bag)
+                .disposed(by: guaXiangCoordinator.bag)
 
             addChildCoordinator(guaXiangCoordinator)
             guaXiangCoordinator.start()
