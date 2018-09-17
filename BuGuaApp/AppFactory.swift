@@ -10,6 +10,9 @@ import Foundation
 import UIKit
 
 class AppFactory {
+
+    let timeZone = TimeZone.autoupdatingCurrent
+
     func makeAppCoordinator(with window: UIWindow) -> AppCoordinator {
         return AppCoordinator(with: window, factory: self)
     }

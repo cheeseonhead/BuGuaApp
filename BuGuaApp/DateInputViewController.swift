@@ -31,4 +31,17 @@ class DateInputViewController: UIViewController {
     required init?(coder aDecoder: NSCoder) {
         fatalError("init(coder:) has not been implemented")
     }
+
+    // MARK: - Lifecycle
+    override func viewDidLoad() {
+        super.viewDidLoad()
+
+        bindings()
+    }
+
+    func bindings() {
+        datePicker.rx.date
+            .bind(to: viewModel.dateRelay)
+            .disposed(by: bag)
+    }
 }

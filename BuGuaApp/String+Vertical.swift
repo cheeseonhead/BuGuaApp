@@ -10,9 +10,6 @@ import Foundation
 
 extension String {
     var vertical: String {
-        forEach { c in
-            print(c)
-        }
         return lazy.map { String($0) }.joined(separator: "\n")
     }
 }
