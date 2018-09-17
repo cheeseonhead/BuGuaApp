@@ -15,7 +15,13 @@ import RxSwiftExt
 class DateGanZhiViewModel {
 
     // MARK: - Output Rx
-    let previewDriver: Driver<Event<String>>
+    private(set) lazy var previewDriver: Driver<Event<String>> = {
+        gregorianDateRelay.flatMap { [unowned self] gregorianDate in
+            return Observable.just(()).map {
+                try self.previewString(for: gregorianDate)
+            }.materialize()
+        }.share().asDriver(onErrorDriveWith: .never())
+    }()
 
     // MARK: - Input Rx
     let gregorianDateRelay = BehaviorRelay(value: GregorianDate.zero)
@@ -25,23 +31,24 @@ class DateGanZhiViewModel {
 
     // MARK: - Private
     private let factory: AppFactory
+    private lazy var solarTermCalculator = factory.makeSolarTermCalculator()
 
     fileprivate init(factory: AppFactory) {
         self.factory = factory
-
-        let calculator = factory.makeSolarTermCalculator()
-
-        previewDriver = gregorianDateRelay.flatMap { gregorianDate in
-            return Observable.just(()).map {
-                let dateGanZhi = try calculator.ganZhi(for: gregorianDate)
-                return dateGanZhi.year.character + dateGanZhi.month.character + dateGanZhi.day.character
-            }.materialize()
-        }.share().asDriver(onErrorDriveWith: .never())
     }
 }
 
 private extension DateGanZhiViewModel {
+    func previewString(for gregorianDate: GregorianDate) throws -> String {
+        let dateGanZhi = try solarTermCalculator.ganZhi(for: gregorianDate)
+        return formatDateGanZhi(dateGanZhi)
+    }
 
+    func formatDateGanZhi(_ dateGanZhi: DateGanZhi) -> String {
+        let format = NSLocalizedString("%@年 %@月 %@日", comment: "")
+
+        return String(format: format, dateGanZhi.year.character, dateGanZhi.month.character, dateGanZhi.day.character)
+    }
 }
 
 extension AppFactory {
