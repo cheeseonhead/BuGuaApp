@@ -30,7 +30,7 @@ class InputViewModel {
     init(factory: AppFactory) {
         self.factory = factory
         
-        yaoTypeSignal = PublishRelay.combineLatest(guaStrRelay, unstableYaoStrRelay).flatMap { guaStrs, unstableStrs in
+        yaoTypeSignal = PublishRelay.zip(guaStrRelay, unstableYaoStrRelay).flatMap { guaStrs, unstableStrs in
             return Observable.just(()).map {
                 try InputViewModel.convertYaoTypes(guaStrs: guaStrs, unstableStrs: unstableStrs)
             }.materialize()
