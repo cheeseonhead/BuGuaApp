@@ -51,13 +51,19 @@ private extension GuaXiangInputCoordinator {
         let vc = factory.makeInputViewController(viewModel: vm)
 
         vm.yaoTypeSignal.asObservable().elements()
-            .map { [unowned self] liuYao in
+            .bind(onNext: { [unowned self] liuYao in
                 self.model.setLiuYao(liuYao)
-                return self.model.liuYaoGuaXiang()
-            }.bind(to: guaXiangRelay)
-            .disposed(by: vm.bag)
+                self.showDateInput()
+            }).disposed(by: vm.bag)
 
         return vc
+    }
+
+    func showDateInput() {
+        let vm = factory.makeDateGanZhiViewModel()
+        let vc = factory.makeDateGanZhiViewController(viewModel: vm)
+
+        navigationController.pushViewController(vc, animated: true)
     }
 }
 
