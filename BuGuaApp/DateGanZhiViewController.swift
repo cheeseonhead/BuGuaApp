@@ -90,7 +90,7 @@ private extension DateGanZhiViewController {
             .bind(to: ganZhiPreviewLabel.rx.text)
             .disposed(by: bag)
 
-        viewModel.previewDriver.debug().asObservable().errors()
+        viewModel.previewDriver.asObservable().errors()
             .map { $0.localizedDescription }
             .bind(to: ganZhiPreviewLabel.rx.text)
             .disposed(by: bag)
