@@ -6,6 +6,9 @@
 //  Copyright © 2018 Jeffrey Wu. All rights reserved.
 //
 
+import RxCocoa
+import RxSwift
+import RxSwiftExt
 import SnapKit
 import UIKit
 
@@ -21,6 +24,7 @@ class DateGanZhiViewController: UIViewController {
     var dateInputViewController: DateInputViewController!
 
     // MARK - Public Properties
+    let bag = DisposeBag()
     let viewModel: DateGanZhiViewModel
 
     // MARK: - Private
@@ -76,15 +80,46 @@ private extension DateGanZhiViewController {
     func styling() {
         titleLabel.font = .title1
         titleLabel.textColor = .spaceGrey
+
+        ganZhiPreviewLabel.font = .title2
+        ganZhiPreviewLabel.textColor = .spaceGrey
     }
 
     func bindings() {
+        viewModel.previewDriver.asObservable().elements()
+            .bind(to: ganZhiPreviewLabel.rx.text)
+            .disposed(by: bag)
 
+        viewModel.previewDriver.debug().asObservable().errors()
+            .map { $0.localizedDescription }
+            .bind(to: ganZhiPreviewLabel.rx.text)
+            .disposed(by: bag)
+
+        viewModel.previewDriver.map { event -> UIColor in
+            switch event {
+            case .next: return .spaceGrey
+            case .error: return .scarlet
+            default: return .spaceGrey
+            }
+        }.drive(ganZhiPreviewLabel.rx.textColor)
+        .disposed(by: bag)
+
+        dateInputViewController.viewModel.gregorianDateDriver
+            .drive(viewModel.gregorianDateRelay)
+            .disposed(by: bag)
     }
 }
 
 extension AppFactory {
     func makeDateGanZhiViewController(viewModel: DateGanZhiViewModel) -> DateGanZhiViewController {
         return DateGanZhiViewController(factory: self, viewModel: viewModel)
+    }
+}
+
+private extension Reactive where Base == UILabel {
+    var textColor: Binder<UIColor> {
+        return Binder(self.base) { label, color in
+            label.textColor = color
+        }
     }
 }
