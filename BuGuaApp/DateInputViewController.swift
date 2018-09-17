@@ -45,3 +45,9 @@ class DateInputViewController: UIViewController {
             .disposed(by: bag)
     }
 }
+
+extension AppFactory {
+    func makeDateInputViewController(viewModel: DateInputViewModel) -> DateInputViewController {
+        return DateInputViewController(viewModel: viewModel)
+    }
+}
