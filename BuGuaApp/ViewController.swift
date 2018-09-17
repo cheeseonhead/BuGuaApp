@@ -19,6 +19,16 @@ class ViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
+
+        let dateInputVM = DateInputViewModel(timeZoneGetter: { TimeZone.autoupdatingCurrent })
+        let dateInputVC = DateInputViewController(viewModel: dateInputVM)
+
+        add(dateInputVC)
+
+//        dateInputVM.gregorianDateDriver
+//            .drive(onNext: { date in
+//                print("Got date! \(date)")
+//            })
     }
 
     override func viewDidAppear(_ animated: Bool) {
