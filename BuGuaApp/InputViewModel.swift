@@ -21,12 +21,16 @@ class InputViewModel {
     let guaStrRelay = PublishRelay<(String?, String?)>()
     let unstableYaoStrRelay = PublishRelay<[String?]>()
 
-
     // MARK: - Output Rx
     let yaoTypeSignal: Signal<Event<[YaoType]>>
+
+    // MARK: - Private properties
+    private let factory: AppFactory
     
-    init() {
-        yaoTypeSignal = PublishRelay.combineLatest(guaStrRelay, unstableYaoStrRelay).flatMap { guaStrs, unstableStrs in
+    init(factory: AppFactory) {
+        self.factory = factory
+        
+        yaoTypeSignal = PublishRelay.zip(guaStrRelay, unstableYaoStrRelay).flatMap { guaStrs, unstableStrs in
             return Observable.just(()).map {
                 try InputViewModel.convertYaoTypes(guaStrs: guaStrs, unstableStrs: unstableStrs)
             }.materialize()
@@ -47,6 +51,6 @@ private extension InputViewModel {
 
 extension AppFactory {
     func makeInputViewModel() -> InputViewModel {
-        return InputViewModel()
+        return InputViewModel(factory: self)
     }
 }

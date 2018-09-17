@@ -109,7 +109,8 @@ private extension InputViewController {
             .bind(to: viewModel.guaStrRelay)
             .disposed(by: bag)
         
-        finishRelay.withLatestFrom(strs).map { $0.1 }
+        finishRelay.withLatestFrom(strs)
+            .map { $0.1 }
             .bind(to: viewModel.unstableYaoStrRelay)
             .disposed(by: bag)
 
