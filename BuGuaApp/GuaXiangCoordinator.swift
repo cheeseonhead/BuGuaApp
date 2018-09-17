@@ -73,7 +73,7 @@ private extension GuaXiangCoordinator {
     }
 
     func showInputViewController() {
-        let viewModel = InputViewModel()
+        let viewModel = factory.makeInputViewModel()
         
         let inputVC = factory.makeInputViewController(viewModel: viewModel)
         inputVC.preferredContentSize = CGSize(width: 450, height: 450)

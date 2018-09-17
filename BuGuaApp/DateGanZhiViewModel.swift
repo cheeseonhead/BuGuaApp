@@ -11,3 +11,9 @@ import Foundation
 class DateGanZhiViewModel {
     
 }
+
+extension AppFactory {
+    func makeDateGanZhiViewModel() -> DateGanZhiViewModel {
+        return DateGanZhiViewModel()
+    }
+}
