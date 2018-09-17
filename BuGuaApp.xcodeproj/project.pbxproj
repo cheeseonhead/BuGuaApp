@@ -65,6 +65,9 @@
 		9BCE886C214F13780024FEF7 /* DateInputViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9BCE886B214F13780024FEF7 /* DateInputViewModel.swift */; };
 		9BCE886E214F13820024FEF7 /* DateInputViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 9BCE886D214F13820024FEF7 /* DateInputViewController.xib */; };
 		9BCE8871214F16930024FEF7 /* GregorianDate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9BCE8870214F16930024FEF7 /* GregorianDate.swift */; };
+		9BCE8874214F2E220024FEF7 /* DateGanZhiViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9BCE8872214F2E220024FEF7 /* DateGanZhiViewController.swift */; };
+		9BCE8875214F2E220024FEF7 /* DateGanZhiViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 9BCE8873214F2E220024FEF7 /* DateGanZhiViewController.xib */; };
+		9BCE8877214F2EB10024FEF7 /* DateGanZhiViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9BCE8876214F2EB10024FEF7 /* DateGanZhiViewModel.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -172,6 +175,9 @@
 		9BCE886B214F13780024FEF7 /* DateInputViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DateInputViewModel.swift; sourceTree = "<group>"; };
 		9BCE886D214F13820024FEF7 /* DateInputViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = DateInputViewController.xib; sourceTree = "<group>"; };
 		9BCE8870214F16930024FEF7 /* GregorianDate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GregorianDate.swift; sourceTree = "<group>"; };
+		9BCE8872214F2E220024FEF7 /* DateGanZhiViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DateGanZhiViewController.swift; sourceTree = "<group>"; };
+		9BCE8873214F2E220024FEF7 /* DateGanZhiViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = DateGanZhiViewController.xib; sourceTree = "<group>"; };
+		9BCE8876214F2EB10024FEF7 /* DateGanZhiViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DateGanZhiViewModel.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -351,6 +357,9 @@
 				3413A55B2140BF4B00245C46 /* InputViewController.swift */,
 				3413A55C2140BF4B00245C46 /* InputViewController.xib */,
 				3413A55F2140BFB900245C46 /* InputViewModel.swift */,
+				9BCE8872214F2E220024FEF7 /* DateGanZhiViewController.swift */,
+				9BCE8873214F2E220024FEF7 /* DateGanZhiViewController.xib */,
+				9BCE8876214F2EB10024FEF7 /* DateGanZhiViewModel.swift */,
 			);
 			name = GuaXiangInputFlow;
 			sourceTree = "<group>";
@@ -493,6 +502,7 @@
 				9BCE886E214F13820024FEF7 /* DateInputViewController.xib in Resources */,
 				9B933F412134F054004DCD3F /* FuXiBaGuaView.xib in Resources */,
 				9B933EF82134E52A004DCD3F /* Assets.xcassets in Resources */,
+				9BCE8875214F2E220024FEF7 /* DateGanZhiViewController.xib in Resources */,
 				9B933EF62134E529004DCD3F /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -598,6 +608,7 @@
 				346334482148A66E001D462B /* Container+Operator.swift in Sources */,
 				9B933F3B2134EB01004DCD3F /* FuXiBaGuaView.swift in Sources */,
 				3463344D2148B147001D462B /* SixLabelView.swift in Sources */,
+				9BCE8874214F2E220024FEF7 /* DateGanZhiViewController.swift in Sources */,
 				3413A5692140E0D600245C46 /* ComposableTextfieldDelegate.swift in Sources */,
 				9BCB3616213E254900F7FDDE /* AppFactory.swift in Sources */,
 				9B933F772137A8C3004DCD3F /* YaoView.swift in Sources */,
@@ -606,6 +617,7 @@
 				9BCB3609213E011800F7FDDE /* String+Vertical.swift in Sources */,
 				9BCB3618213E2A5800F7FDDE /* GuaXiangCoordinator.swift in Sources */,
 				9BCE8869214F133F0024FEF7 /* DateInputViewController.swift in Sources */,
+				9BCE8877214F2EB10024FEF7 /* DateGanZhiViewModel.swift in Sources */,
 				9BCB360D213E148200F7FDDE /* GuaXiangViewController.swift in Sources */,
 				3463344B2148A914001D462B /* ShiYingYaoView.swift in Sources */,
 				9B933F6D2136537A004DCD3F /* UIView+Layout.swift in Sources */,
