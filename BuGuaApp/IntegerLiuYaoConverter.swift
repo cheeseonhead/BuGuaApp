@@ -68,3 +68,9 @@ private extension IntegerLiuYaoConverter {
         return (innerYaos + outerYaos).map { $0.yaoType }
     }
 }
+
+extension AppFactory {
+    func makeIntegerLiuYaoConverter() -> IntegerLiuYaoConverter {
+        return IntegerLiuYaoConverter()
+    }
+}

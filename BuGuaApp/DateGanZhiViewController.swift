@@ -10,6 +10,9 @@ import UIKit
 
 class DateGanZhiViewController: UIViewController {
 
+    @IBOutlet var dateInputHolder: UIView!
+    @IBOutlet var ganZhiPreviewLabel: UILabel!
+
     // MARK - Public Properties
     let viewModel: DateGanZhiViewModel
 
@@ -27,5 +30,11 @@ class DateGanZhiViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
 
+    }
+}
+
+extension AppFactory {
+    func makeDateGanZhiViewController(viewModel: DateGanZhiViewModel) -> DateGanZhiViewController {
+        return DateGanZhiViewController(viewModel: viewModel)
     }
 }
