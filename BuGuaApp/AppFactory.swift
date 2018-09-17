@@ -6,6 +6,7 @@
 //  Copyright © 2018 Jeffrey Wu. All rights reserved.
 //
 
+import BuGuaKit
 import Foundation
 import UIKit
 
@@ -23,5 +24,9 @@ class AppFactory {
 
     func makeGuaXiangViewController(viewModel: GuaXiangViewModel) -> GuaXiangViewController {
         return GuaXiangViewController(viewModel: viewModel)
+    }
+
+    func makeSolarTermCalculator() -> SolarTermCalculator {
+        return SolarTermCalculator.make()
     }
 }
