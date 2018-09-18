@@ -63,6 +63,12 @@ private extension GuaXiangInputCoordinator {
         let vm = factory.makeDateGanZhiViewModel()
         let vc = factory.makeDateGanZhiViewController(viewModel: vm)
 
+        vm.finalDateGanZhiDriver.asObservable().elements()
+            .map { [unowned self] dateGanZhi in
+                self.model.setDateGanZhi(dateGanZhi)
+                return self.model.liuYaoGuaXiang()
+            }.bind(to: guaXiangRelay)
+            .disposed(by: vm.bag)
         navigationController.pushViewController(vc, animated: true)
     }
 }
