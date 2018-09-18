@@ -24,6 +24,7 @@
 		3467E8872149EB0200955D69 /* HorizontalDividersView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3467E8862149EB0200955D69 /* HorizontalDividersView.swift */; };
 		34A13D4D214222E700D77D98 /* IntegerLiuYaoConverter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 34A13D4C214222E700D77D98 /* IntegerLiuYaoConverter.swift */; };
 		34A13D4F2142294D00D77D98 /* Int+Conversion.swift in Sources */ = {isa = PBXBuildFile; fileRef = 34A13D4E2142294D00D77D98 /* Int+Conversion.swift */; };
+		34F3E4F92150945C00A9BA2B /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = 34F3E4FB2150945C00A9BA2B /* Localizable.strings */; };
 		9B273D3321390ABD00BDFBE3 /* SnapKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9B273D3221390ABD00BDFBE3 /* SnapKit.framework */; };
 		9B933EF12134E529004DCD3F /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9B933EF02134E529004DCD3F /* AppDelegate.swift */; };
 		9B933EF32134E529004DCD3F /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9B933EF22134E529004DCD3F /* ViewController.swift */; };
@@ -129,6 +130,10 @@
 		3467E8862149EB0200955D69 /* HorizontalDividersView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HorizontalDividersView.swift; sourceTree = "<group>"; };
 		34A13D4C214222E700D77D98 /* IntegerLiuYaoConverter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IntegerLiuYaoConverter.swift; sourceTree = "<group>"; };
 		34A13D4E2142294D00D77D98 /* Int+Conversion.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Int+Conversion.swift"; sourceTree = "<group>"; };
+		34F3E4F52150926E00A9BA2B /* zh-Hant */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "zh-Hant"; path = "zh-Hant.lproj/Main.strings"; sourceTree = "<group>"; };
+		34F3E4F62150926F00A9BA2B /* zh-Hant */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "zh-Hant"; path = "zh-Hant.lproj/LaunchScreen.strings"; sourceTree = "<group>"; };
+		34F3E4FA2150945C00A9BA2B /* zh-Hant */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "zh-Hant"; path = "zh-Hant.lproj/Localizable.strings"; sourceTree = "<group>"; };
+		34F3E4FD2150953800A9BA2B /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/Localizable.strings; sourceTree = "<group>"; };
 		9B273D3221390ABD00BDFBE3 /* SnapKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SnapKit.framework; path = Carthage/Build/iOS/SnapKit.framework; sourceTree = "<group>"; };
 		9B933EED2134E529004DCD3F /* BuGuaApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = BuGuaApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		9B933EF02134E529004DCD3F /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -271,6 +276,7 @@
 				9B933F702137976C004DCD3F /* Colors.xcassets */,
 				9B933EF92134E52A004DCD3F /* LaunchScreen.storyboard */,
 				9B933EFC2134E52A004DCD3F /* Info.plist */,
+				34F3E4FB2150945C00A9BA2B /* Localizable.strings */,
 			);
 			path = BuGuaApp;
 			sourceTree = "<group>";
@@ -469,9 +475,10 @@
 			};
 			buildConfigurationList = 9B933EE82134E529004DCD3F /* Build configuration list for PBXProject "BuGuaApp" */;
 			compatibilityVersion = "Xcode 9.3";
-			developmentRegion = en;
+			developmentRegion = zh_tw;
 			hasScannedForEncodings = 0;
 			knownRegions = (
+				zh_tw,
 				en,
 				Base,
 			);
@@ -497,6 +504,7 @@
 				9BCB3611213E150500F7FDDE /* GuaXiangViewController.xib in Resources */,
 				3413A55E2140BF4B00245C46 /* InputViewController.xib in Resources */,
 				9BCE886E214F13820024FEF7 /* DateInputViewController.xib in Resources */,
+				34F3E4F92150945C00A9BA2B /* Localizable.strings in Resources */,
 				9B933F412134F054004DCD3F /* FuXiBaGuaView.xib in Resources */,
 				9B933EF82134E52A004DCD3F /* Assets.xcassets in Resources */,
 				9BCE8875214F2E220024FEF7 /* DateGanZhiViewController.xib in Resources */,
@@ -665,10 +673,20 @@
 /* End PBXTargetDependency section */
 
 /* Begin PBXVariantGroup section */
+		34F3E4FB2150945C00A9BA2B /* Localizable.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				34F3E4FA2150945C00A9BA2B /* zh-Hant */,
+				34F3E4FD2150953800A9BA2B /* en */,
+			);
+			name = Localizable.strings;
+			sourceTree = "<group>";
+		};
 		9B933EF42134E529004DCD3F /* Main.storyboard */ = {
 			isa = PBXVariantGroup;
 			children = (
 				9B933EF52134E529004DCD3F /* Base */,
+				34F3E4F52150926E00A9BA2B /* zh-Hant */,
 			);
 			name = Main.storyboard;
 			sourceTree = "<group>";
@@ -677,6 +695,7 @@
 			isa = PBXVariantGroup;
 			children = (
 				9B933EFA2134E52A004DCD3F /* Base */,
+				34F3E4F62150926F00A9BA2B /* zh-Hant */,
 			);
 			name = LaunchScreen.storyboard;
 			sourceTree = "<group>";
@@ -688,6 +707,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_LOCALIZABILITY_NONLOCALIZED = YES;
 				CLANG_ANALYZER_NONNULL = YES;
 				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
 				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
@@ -749,6 +769,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_LOCALIZABILITY_NONLOCALIZED = YES;
 				CLANG_ANALYZER_NONNULL = YES;
 				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
 				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
