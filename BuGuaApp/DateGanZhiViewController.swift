@@ -91,7 +91,7 @@ private extension DateGanZhiViewController {
     func bindings() {
         previewLabelBinding()
         
-        viewModel.dateGanZhiEventDriver.asObservable().filterMap {
+        viewModel.previewDriver.asObservable().filterMap {
             switch $0 {
             case .next: return .map(true)
             case .error: return .map(false)
@@ -102,6 +102,10 @@ private extension DateGanZhiViewController {
         
         dateInputViewController.viewModel.gregorianDateDriver
             .drive(viewModel.gregorianDateRelay)
+            .disposed(by: bag)
+        
+        finishBarButton.rx.tap
+            .bind(to: viewModel.finishRelay)
             .disposed(by: bag)
     }
     
@@ -135,19 +139,5 @@ private extension Reactive where Base == UILabel {
         return Binder(self.base) { label, color in
             label.textColor = color
         }
-    }
-}
-
-private extension ObservableType where Self.E : EventConvertible {
-    func stringify(_ transform: @escaping (E.ElementType) -> String) -> Observable<String> {
-        let result = filterMap { e -> FilterMap<String> in
-            switch e.event {
-            case .next(let value): return .map(transform(value))
-            case .error(let error): return .map(error.localizedDescription)
-            default: return .ignore
-            }
-        }
-        
-        return result
     }
 }

@@ -15,19 +15,14 @@ import RxSwiftExt
 class DateGanZhiViewModel {
 
     // MARK: - Output Rx
-    private(set) lazy var previewDriver = dateGanZhiEventDriver.map { [unowned self] event -> Event<String> in
+    private(set) lazy var previewDriver = dateGanZhiEventDriver.map { [unowned self] event in
         event.map { self.formatDateGanZhi($0) }
     }
-    private(set) lazy var dateGanZhiEventDriver: Driver<Event<DateGanZhi>> = {
-        gregorianDateRelay.flatMap { [unowned self] gregorianDate in
-            return Observable.just(()).map {
-                try self.solarTermCalculator.ganZhi(for: gregorianDate)
-                }.materialize()
-            }.share().asDriver(onErrorDriveWith: .never())
-    }()
+    private (set) lazy var finalDateGanZhiDriver = finishRelay.withLatestFrom(dateGanZhiEventDriver)
 
     // MARK: - Input Rx
     let gregorianDateRelay = BehaviorRelay(value: GregorianDate.zero)
+    let finishRelay = PublishRelay<()>()
 
     // MARK: - Public
     let bag = DisposeBag()
@@ -35,6 +30,15 @@ class DateGanZhiViewModel {
     // MARK: - Private
     private let factory: AppFactory
     private lazy var solarTermCalculator = factory.makeSolarTermCalculator()
+    private lazy var dateGanZhiEventDriver: Driver<Event<DateGanZhi>> = {
+        gregorianDateRelay.flatMap { [unowned self] gregorianDate in
+            return Observable.just(()).map {
+                try self.solarTermCalculator.ganZhi(for: gregorianDate)
+                }.materialize()
+            }.share()
+            .elementsAndErrors()
+            .asDriver(onErrorDriveWith: .never())
+    }()
 
     fileprivate init(factory: AppFactory) {
         self.factory = factory
@@ -59,3 +63,4 @@ extension AppFactory {
         return DateGanZhiViewModel(factory: self)
     }
 }
+
