@@ -15,12 +15,15 @@ import RxSwiftExt
 class DateGanZhiViewModel {
 
     // MARK: - Output Rx
-    private(set) lazy var previewDriver: Driver<Event<String>> = {
+    private(set) lazy var previewDriver = dateGanZhiEventDriver.map { [unowned self] event -> Event<String> in
+        event.map { self.formatDateGanZhi($0) }
+    }
+    private(set) lazy var dateGanZhiEventDriver: Driver<Event<DateGanZhi>> = {
         gregorianDateRelay.flatMap { [unowned self] gregorianDate in
             return Observable.just(()).map {
-                try self.previewString(for: gregorianDate)
-            }.materialize()
-        }.share().asDriver(onErrorDriveWith: .never())
+                try self.solarTermCalculator.ganZhi(for: gregorianDate)
+                }.materialize()
+            }.share().asDriver(onErrorDriveWith: .never())
     }()
 
     // MARK: - Input Rx
