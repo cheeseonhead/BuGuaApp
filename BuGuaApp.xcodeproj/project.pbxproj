@@ -25,6 +25,7 @@
 		34A13D4D214222E700D77D98 /* IntegerLiuYaoConverter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 34A13D4C214222E700D77D98 /* IntegerLiuYaoConverter.swift */; };
 		34A13D4F2142294D00D77D98 /* Int+Conversion.swift in Sources */ = {isa = PBXBuildFile; fileRef = 34A13D4E2142294D00D77D98 /* Int+Conversion.swift */; };
 		34F3E4F92150945C00A9BA2B /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = 34F3E4FB2150945C00A9BA2B /* Localizable.strings */; };
+		34F3E4FF2150A84F00A9BA2B /* Rx+Operators.swift in Sources */ = {isa = PBXBuildFile; fileRef = 34F3E4FE2150A84F00A9BA2B /* Rx+Operators.swift */; };
 		9B273D3321390ABD00BDFBE3 /* SnapKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9B273D3221390ABD00BDFBE3 /* SnapKit.framework */; };
 		9B933EF12134E529004DCD3F /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9B933EF02134E529004DCD3F /* AppDelegate.swift */; };
 		9B933EF32134E529004DCD3F /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9B933EF22134E529004DCD3F /* ViewController.swift */; };
@@ -134,6 +135,7 @@
 		34F3E4F62150926F00A9BA2B /* zh-Hant */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "zh-Hant"; path = "zh-Hant.lproj/LaunchScreen.strings"; sourceTree = "<group>"; };
 		34F3E4FA2150945C00A9BA2B /* zh-Hant */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "zh-Hant"; path = "zh-Hant.lproj/Localizable.strings"; sourceTree = "<group>"; };
 		34F3E4FD2150953800A9BA2B /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/Localizable.strings; sourceTree = "<group>"; };
+		34F3E4FE2150A84F00A9BA2B /* Rx+Operators.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Rx+Operators.swift"; sourceTree = "<group>"; };
 		9B273D3221390ABD00BDFBE3 /* SnapKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SnapKit.framework; path = Carthage/Build/iOS/SnapKit.framework; sourceTree = "<group>"; };
 		9B933EED2134E529004DCD3F /* BuGuaApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = BuGuaApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		9B933EF02134E529004DCD3F /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -325,6 +327,7 @@
 				9B933F6C2136537A004DCD3F /* UIView+Layout.swift */,
 				9B933F3E2134EBBE004DCD3F /* UIView+NibLoadable.swift */,
 				346334472148A66E001D462B /* Container+Operator.swift */,
+				34F3E4FE2150A84F00A9BA2B /* Rx+Operators.swift */,
 			);
 			name = Extensions;
 			sourceTree = "<group>";
@@ -611,6 +614,7 @@
 				3467E8872149EB0200955D69 /* HorizontalDividersView.swift in Sources */,
 				3413A5652140D89900245C46 /* CharacterSet+MoreSets.swift in Sources */,
 				346334482148A66E001D462B /* Container+Operator.swift in Sources */,
+				34F3E4FF2150A84F00A9BA2B /* Rx+Operators.swift in Sources */,
 				9B933F3B2134EB01004DCD3F /* FuXiBaGuaView.swift in Sources */,
 				3463344D2148B147001D462B /* SixLabelView.swift in Sources */,
 				9BCE8874214F2E220024FEF7 /* DateGanZhiViewController.swift in Sources */,
