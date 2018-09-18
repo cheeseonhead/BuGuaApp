@@ -84,29 +84,43 @@ private extension DateGanZhiViewController {
         ganZhiPreviewLabel.font = .title2
         ganZhiPreviewLabel.textColor = .spaceGrey
     }
+}
 
+// MARK: - Bindings
+private extension DateGanZhiViewController {
     func bindings() {
-        viewModel.previewDriver.asObservable().elements()
-            .bind(to: ganZhiPreviewLabel.rx.text)
-            .disposed(by: bag)
-
-        viewModel.previewDriver.asObservable().errors()
-            .map { $0.localizedDescription }
-            .bind(to: ganZhiPreviewLabel.rx.text)
-            .disposed(by: bag)
-
-        viewModel.previewDriver.map { event -> UIColor in
-            switch event {
-            case .next: return .spaceGrey
-            case .error: return .scarlet
-            default: return .spaceGrey
+        previewLabelBinding()
+        
+        viewModel.dateGanZhiEventDriver.asObservable().filterMap {
+            switch $0 {
+            case .next: return .map(true)
+            case .error: return .map(false)
+            default: return .ignore
             }
-        }.drive(ganZhiPreviewLabel.rx.textColor)
+        }.bind(to: finishBarButton.rx.isEnabled)
         .disposed(by: bag)
-
+        
         dateInputViewController.viewModel.gregorianDateDriver
             .drive(viewModel.gregorianDateRelay)
             .disposed(by: bag)
+    }
+    
+    func previewLabelBinding() {
+        viewModel.previewDriver.asObservable().stringify(String.init)
+            .bind(to: ganZhiPreviewLabel.rx.text)
+            .disposed(by: bag)
+        
+        viewModel.previewDriver.map(previewLabelColor)
+            .drive(ganZhiPreviewLabel.rx.textColor)
+            .disposed(by: bag)
+    }
+    
+    func previewLabelColor(_ event: Event<String>) -> UIColor {
+        switch event {
+        case .next: return .spaceGrey
+        case .error: return .scarlet
+        default: return .spaceGrey
+        }
     }
 }
 
@@ -121,5 +135,19 @@ private extension Reactive where Base == UILabel {
         return Binder(self.base) { label, color in
             label.textColor = color
         }
+    }
+}
+
+private extension ObservableType where Self.E : EventConvertible {
+    func stringify(_ transform: @escaping (E.ElementType) -> String) -> Observable<String> {
+        let result = filterMap { e -> FilterMap<String> in
+            switch e.event {
+            case .next(let value): return .map(transform(value))
+            case .error(let error): return .map(error.localizedDescription)
+            default: return .ignore
+            }
+        }
+        
+        return result
     }
 }
