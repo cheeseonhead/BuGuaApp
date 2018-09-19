@@ -28,10 +28,12 @@ class DateGanZhiViewController: UIViewController {
     let viewModel: DateGanZhiViewModel
 
     // MARK: - Private
+    private let styler: AppStyler
     private let factory: AppFactory
 
     // MARK; - Init
-    init(factory: AppFactory, viewModel: DateGanZhiViewModel) {
+    init(factory: AppFactory, styler: AppStyler, viewModel: DateGanZhiViewModel) {
+        self.styler = styler
         self.viewModel = viewModel
         self.factory = factory
         super.init(nibName: nil, bundle: nil)
@@ -58,11 +60,12 @@ private extension DateGanZhiViewController {
         
         titleLabel = UILabel(frame: .zero)
         titleLabel.text = NSLocalizedString("輸入日期", comment: "")
+        styler.navigationTitlize(titleLabel)
         navigationItem.titleView = titleLabel
 
         finishBarButton = UIBarButtonItem(title: NSLocalizedString("完成", comment: ""),
                                           style: .done, target: nil, action: nil)
-        finishBarButton.setTitleTextAttributes([.font: UIFont.title1], for: UIControl.State())
+        styler.navigationBarItemize(finishBarButton)
         navigationItem.rightBarButtonItem = finishBarButton
     }
 
@@ -79,11 +82,8 @@ private extension DateGanZhiViewController {
     }
 
     func styling() {
-        titleLabel.font = .title1
-        titleLabel.textColor = .spaceGrey
-
         ganZhiPreviewLabel.font = .title2
-        ganZhiPreviewLabel.textColor = .spaceGrey
+        styler.appTintize(ganZhiPreviewLabel)
     }
 }
 
@@ -131,7 +131,7 @@ private extension DateGanZhiViewController {
 
 extension AppFactory {
     func makeDateGanZhiViewController(viewModel: DateGanZhiViewModel) -> DateGanZhiViewController {
-        return DateGanZhiViewController(factory: self, viewModel: viewModel)
+        return DateGanZhiViewController(factory: self, styler: styler, viewModel: viewModel)
     }
 }
 
