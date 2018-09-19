@@ -54,6 +54,7 @@ private extension InputViewController {
     func createViews() {
         finishBarButton = UIBarButtonItem(title: NSLocalizedString("下一個", comment: ""),
                                           style: .plain, target: nil, action: nil)
+        finishBarButton.setTitleTextAttributes([.font: UIFont.title1], for: UIControl.State())
         navigationItem.rightBarButtonItem = finishBarButton
 
         titleLabel = UILabel(frame: .zero)

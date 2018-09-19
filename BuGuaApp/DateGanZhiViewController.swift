@@ -55,13 +55,14 @@ class DateGanZhiViewController: UIViewController {
 private extension DateGanZhiViewController {
     func creation() {
         createDateInput()
-
+        
         titleLabel = UILabel(frame: .zero)
         titleLabel.text = NSLocalizedString("輸入日期", comment: "")
         navigationItem.titleView = titleLabel
 
         finishBarButton = UIBarButtonItem(title: NSLocalizedString("完成", comment: ""),
                                           style: .done, target: nil, action: nil)
+        finishBarButton.setTitleTextAttributes([.font: UIFont.title1], for: UIControl.State())
         navigationItem.rightBarButtonItem = finishBarButton
     }
 

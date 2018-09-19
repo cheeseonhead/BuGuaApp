@@ -22,6 +22,7 @@ class GuaXiangCoordinator: Coordinator {
     var bag = DisposeBag()
 
     // MARK: - Private properties
+    private var navigationController: UINavigationController!
     private var viewController: GuaXiangViewController!
     private let factory: AppFactory
     private let didStartRelay = PublishRelay<UIViewController>()
@@ -41,7 +42,10 @@ class GuaXiangCoordinator: Coordinator {
         
         viewController = factory.makeGuaXiangViewController(viewModel: viewModel)
 
-        didStartRelay.accept(viewController)
+        navigationController = UINavigationController(rootViewController: viewController)
+        navigationController.view.tintColor = viewController.view.tintColor
+        
+        didStartRelay.accept(navigationController)
     }
 }
 
