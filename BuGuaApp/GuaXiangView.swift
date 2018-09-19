@@ -98,7 +98,11 @@ private extension GuaXiangView {
         headerView.snp.makeConstraints { $0.bottom.equalTo(shiYingYaoView.snp.top).offset(-8) }
         GuaXiangViewLayout.alignHeader(headerView, columns: [fuShenView, changedLiuQinView, liuQinView, shiYingYaoView, diZhiView, changedGanZhiView, hiddenGanZhiView])
         
-        horizontalDividerView.snp.makeConstraints { $0.leading.trailing.equalToSuperview() }
+        horizontalDividerView.snp.makeConstraints {
+            $0.leading.trailing.equalToSuperview()
+            $0.top.greaterThanOrEqualToSuperview()
+            $0.bottom.lessThanOrEqualToSuperview()
+        }
         GuaXiangViewLayout.alignHorizontalDividers(horizontalDividerView, shiYingYaoView: shiYingYaoView, headerView: headerView)
     }
 
