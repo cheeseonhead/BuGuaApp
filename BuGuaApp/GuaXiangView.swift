@@ -161,7 +161,7 @@ private extension GuaXiangView {
     func setupHiddenGanZhiView() {
         hiddenGanZhiView = SixLabelView(frame: .zero)
         
-        guaXiangRelay.map(hiddenGanZhi)
+        guaXiangRelay.map(GuaXiangView.hiddenGanZhi)
             .bind(to: hiddenGanZhiView.dataRelay)
             .disposed(by: bag)
         
@@ -171,7 +171,7 @@ private extension GuaXiangView {
     func setupFuShenView() {
         fuShenView = SixLabelView(frame: .zero)
         
-        guaXiangRelay.map(fuShen)
+        guaXiangRelay.map(GuaXiangView.fuShen)
             .bind(to: fuShenView.dataRelay)
             .disposed(by: bag)
         
@@ -181,7 +181,7 @@ private extension GuaXiangView {
     func setupChangedGanZhiView() {
         changedGanZhiView = SixLabelView(frame: .zero)
         
-        guaXiangRelay.map(changeGanZhi)
+        guaXiangRelay.map(GuaXiangView.changeGanZhi)
             .bind(to: changedGanZhiView.dataRelay)
             .disposed(by: bag)
         
@@ -191,7 +191,7 @@ private extension GuaXiangView {
     func setupChangedLiuQinView() {
         changedLiuQinView = SixLabelView(frame: .zero)
         
-        guaXiangRelay.map(changeLiuQin)
+        guaXiangRelay.map(GuaXiangView.changeLiuQin)
             .bind(to: changedLiuQinView.dataRelay)
             .disposed(by: bag)
         
@@ -201,7 +201,7 @@ private extension GuaXiangView {
 
 // MARK: - Presentation Helpers
 private extension GuaXiangView {
-    func hiddenGanZhi(from guaXiang: LiuYaoGuaXiang) -> [String] {
+    static func hiddenGanZhi(from guaXiang: LiuYaoGuaXiang) -> [String] {
         let controller = FuShenController(guaXiang: guaXiang)
         
         let tianGan = controller.hiddenTianGan().map { $0?.character ?? "" }
@@ -212,13 +212,13 @@ private extension GuaXiangView {
         }
     }
     
-    func fuShen(from guaXiang: LiuYaoGuaXiang) -> [String] {
+    static func fuShen(from guaXiang: LiuYaoGuaXiang) -> [String] {
         let controller = FuShenController(guaXiang: guaXiang)
         
         return controller.fuShen().map { $0?.character.vertical ?? "" }
     }
     
-    func changeGanZhi(from guaXiang: LiuYaoGuaXiang) -> [String] {
+    static func changeGanZhi(from guaXiang: LiuYaoGuaXiang) -> [String] {
         let tianGan = guaXiang.changedTianGan.lazy.map { $0?.character ?? "" }
         let diZhi = guaXiang.changedDiZhi.lazy.map { $0?.character ?? "" }
         
@@ -227,7 +227,7 @@ private extension GuaXiangView {
         }
     }
     
-    func changeLiuQin(from guaXiang: LiuYaoGuaXiang) -> [String] {
+    static func changeLiuQin(from guaXiang: LiuYaoGuaXiang) -> [String] {
         return guaXiang.changedLiuQin.map {
             $0?.character.vertical ?? ""
         }

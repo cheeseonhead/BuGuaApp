@@ -116,7 +116,7 @@ private extension DateGanZhiViewController {
             .bind(to: ganZhiPreviewLabel.rx.text)
             .disposed(by: bag)
         
-        viewModel.previewDriver.map(previewLabelColor)
+        viewModel.previewDriver.map { [unowned self] in self.previewLabelColor($0) }
             .drive(ganZhiPreviewLabel.rx.textColor)
             .disposed(by: bag)
     }
