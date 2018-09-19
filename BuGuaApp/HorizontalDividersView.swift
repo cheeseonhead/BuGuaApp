@@ -65,6 +65,12 @@ private extension HorizontalDividersView {
                 make.leading.trailing.equalToSuperview()
             }
         }
+        
+        dividers.forEach { divider in
+            divider.snp.makeConstraints({ (make) in
+                make.height.equalTo(dividers.first!)
+            })
+        }
     }
     
     func makeWrapper(weight: Int) -> UIView {

@@ -106,6 +106,19 @@ private extension ShiYingYaoView {
             make.top.equalTo(safeAreaLayoutGuide)
         }
         
+        // Equal to eachother
+        yaoViews.suffix(5).forEach { yaoView in
+            yaoView.snp.makeConstraints({ make in
+                make.height.equalTo(yaoViews.first!)
+            })
+        }
+        
+        shiYingLabels.suffix(5).forEach { shiYingLabel in
+            shiYingLabel.snp.makeConstraints({ make in
+                make.height.equalTo(shiYingLabels.first!)
+            })
+        }
+        
         // Between same yao and shi ying
         zip(yaoViews, shiYingLabels).forEach { yaoView, shiYingLabel in
             shiYingLabel.snp.makeConstraints { make in
