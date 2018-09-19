@@ -22,10 +22,14 @@ class GuaXiangView: UIView {
     var horizontalDividerView: HorizontalDividersView!
     var hiddenGanZhiView: SixLabelView!
     var fuShenView: SixLabelView!
-
+    var changedGanZhiView: SixLabelView!
+    
     // MARK: - Properties
     let guaXiangRelay = PublishRelay<LiuYaoGuaXiang>()
 
+    // MARK: - Private Constants
+    private let columnSpacing = 16
+    
     // MARK: - Private
     let bag = DisposeBag()
 
@@ -65,6 +69,7 @@ private extension GuaXiangView {
         setupHorizontalDivders()
         setupHiddenGanZhiView()
         setupFuShenView()
+        setupChangedGanZhiView()
     }
 
     func createConstraints() {
@@ -73,18 +78,22 @@ private extension GuaXiangView {
 //            make.bottom.equalTo(safeAreaLayoutGuide).offset(-8)
         }
         
-        liuQinView.snp.makeConstraints { $0.trailing.equalTo(shiYingYaoView.snp.leading).offset(-16) }
-        diZhiView.snp.makeConstraints { $0.leading.equalTo(shiYingYaoView.snp.trailing).offset(16) }
-        hiddenGanZhiView.snp.makeConstraints { $0.leading.equalTo(diZhiView.snp.trailing).offset(16) }
-        fuShenView.snp.makeConstraints { $0.trailing.equalTo(liuQinView.snp.leading).offset(-16) }
+        liuQinView.snp.makeConstraints { $0.trailing.equalTo(shiYingYaoView.snp.leading).offset(-columnSpacing) }
+        fuShenView.snp.makeConstraints { $0.trailing.equalTo(liuQinView.snp.leading).offset(-columnSpacing) }
+        
+        diZhiView.snp.makeConstraints { $0.leading.equalTo(shiYingYaoView.snp.trailing).offset(columnSpacing) }
+        changedGanZhiView.snp.makeConstraints { $0.leading.equalTo(diZhiView.snp.trailing).offset(columnSpacing) }
+        hiddenGanZhiView.snp.makeConstraints { $0.leading.equalTo(changedGanZhiView.snp.trailing).offset(columnSpacing) }
         
         GuaXiangViewLayout.verticalAlignSixLabelView(diZhiView, shiYingYaoView: shiYingYaoView)
         GuaXiangViewLayout.verticalAlignSixLabelView(liuQinView, shiYingYaoView: shiYingYaoView)
         GuaXiangViewLayout.verticalAlignSixLabelView(hiddenGanZhiView, shiYingYaoView: shiYingYaoView)
         GuaXiangViewLayout.verticalAlignSixLabelView(fuShenView, shiYingYaoView: shiYingYaoView)
+        GuaXiangViewLayout.verticalAlignSixLabelView(changedGanZhiView, shiYingYaoView: shiYingYaoView)
+        
         
         headerView.snp.makeConstraints { $0.bottom.equalTo(shiYingYaoView.snp.top).offset(-8) }
-        GuaXiangViewLayout.alignHeader(headerView, columns: [fuShenView, liuQinView, shiYingYaoView, diZhiView, hiddenGanZhiView])
+        GuaXiangViewLayout.alignHeader(headerView, columns: [fuShenView, liuQinView, shiYingYaoView, diZhiView, changedGanZhiView, hiddenGanZhiView])
         
         horizontalDividerView.snp.makeConstraints { $0.leading.trailing.equalToSuperview() }
         GuaXiangViewLayout.alignHorizontalDividers(horizontalDividerView, shiYingYaoView: shiYingYaoView, headerView: headerView)
@@ -161,6 +170,16 @@ private extension GuaXiangView {
         
         addSubview(fuShenView)
     }
+    
+    func setupChangedGanZhiView() {
+        changedGanZhiView = SixLabelView(frame: .zero)
+        
+        guaXiangRelay.map(changeGanZhi)
+            .bind(to: changedGanZhiView.dataRelay)
+            .disposed(by: bag)
+        
+        addSubview(changedGanZhiView)
+    }
 }
 
 // MARK: - Presentation Helpers
@@ -180,5 +199,14 @@ private extension GuaXiangView {
         let controller = FuShenController(guaXiang: guaXiang)
         
         return controller.fuShen().map { $0?.character.vertical ?? "" }
+    }
+    
+    func changeGanZhi(from guaXiang: LiuYaoGuaXiang) -> [String] {
+        let tianGan = guaXiang.changedTianGan.lazy.map { $0?.character ?? "" }
+        let diZhi = guaXiang.changedDiZhi.lazy.map { $0?.character ?? "" }
+        
+        return zip(tianGan, diZhi).map {
+            return ($0 + $1).vertical
+        }
     }
 }
