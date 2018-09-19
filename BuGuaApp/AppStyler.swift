@@ -18,4 +18,14 @@ class AppStyler {
         label.textColor = bodyColor
         label.font = .title1
     }
+
+    func errorize(_ label: UILabel) {
+        label.textColor = .scarlet
+        label.font = .body2
+    }
+
+    // MARK: - Buttons
+    func navigationBarItemize(_ barItem: UIBarItem) {
+        barItem.setTitleTextAttributes([.font: UIFont.title1], for: UIControl.State())
+    }
 }

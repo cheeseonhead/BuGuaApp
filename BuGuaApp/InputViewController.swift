@@ -58,7 +58,7 @@ private extension InputViewController {
     func createViews() {
         finishBarButton = UIBarButtonItem(title: NSLocalizedString("下一個", comment: ""),
                                           style: .plain, target: nil, action: nil)
-        finishBarButton.setTitleTextAttributes([.font: UIFont.title1], for: UIControl.State())
+        styler.navigationBarItemize(finishBarButton)
         navigationItem.rightBarButtonItem = finishBarButton
 
         titleLabel = UILabel(frame: .zero)
@@ -78,8 +78,7 @@ private extension InputViewController {
     }
     
     func styling() {
-        errorLabel.textColor = .scarlet
-        errorLabel.font = .title1
+        styler.errorize(errorLabel)
         errorLabel.isHidden = true
         
         field1.placeholder = "內掛數"
@@ -87,6 +86,7 @@ private extension InputViewController {
         field3.placeholder = "動爻數"
         
         fields.forEach { field in
+            field.textColor = .spaceGrey
             field.font = .headline
             field.delegate = textFieldDelegate
         }
