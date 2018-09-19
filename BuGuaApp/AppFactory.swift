@@ -13,6 +13,7 @@ import UIKit
 class AppFactory {
 
     let timeZone = TimeZone.autoupdatingCurrent
+    let styler = AppStyler()
 
     func makeAppCoordinator(with window: UIWindow) -> AppCoordinator {
         return AppCoordinator(with: window, factory: self)

@@ -25,13 +25,17 @@ class InputViewController: UIViewController {
     // MARK: - Rx
     let bag = DisposeBag()
     
-    // MARK: - Private properties
+    // MARK: - Private UI
+    private let finishRelay = PublishRelay<()>()
+    private let styler: AppStyler
+
+    // MARK: - Private Model
     private let viewModel: InputViewModel
     private var textFieldDelegate: UITextFieldDelegate!
-    private let finishRelay = PublishRelay<()>()
     
-    init(viewModel: InputViewModel) {
+    init(viewModel: InputViewModel, styler: AppStyler) {
         self.viewModel = viewModel
+        self.styler = styler
         super.init(nibName: nil, bundle: nil)
     }
     
@@ -59,6 +63,7 @@ private extension InputViewController {
 
         titleLabel = UILabel(frame: .zero)
         titleLabel.text = NSLocalizedString("輸入卜卦數字", comment: "")
+        styler.navigationTitlize(titleLabel)
         navigationItem.titleView = titleLabel
     }
 
@@ -73,9 +78,6 @@ private extension InputViewController {
     }
     
     func styling() {
-        titleLabel.textColor = .spaceGrey
-        titleLabel.font = .title1
-
         errorLabel.textColor = .scarlet
         errorLabel.font = .title1
         errorLabel.isHidden = true
@@ -123,6 +125,6 @@ private extension InputViewController {
 
 extension AppFactory {
     func makeInputViewController(viewModel: InputViewModel) -> InputViewController {
-        return InputViewController(viewModel: viewModel)
+        return InputViewController(viewModel: viewModel, styler: styler)
     }
 }

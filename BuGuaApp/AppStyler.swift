@@ -14,8 +14,8 @@ class AppStyler {
     let bodyColor = UIColor.spaceGrey
 
     // MARK: - Labels
-    func navigationTitle(_ label: UILabel) {
+    func navigationTitlize(_ label: UILabel) {
         label.textColor = bodyColor
-        label.font = .title2
+        label.font = .title1
     }
 }
