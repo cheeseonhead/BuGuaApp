@@ -15,7 +15,7 @@ class HeaderLabelView: UIView {
     var headerLabels: [UILabel]!
     
     // MARK: - Private Constants
-    private let headerText = ["伏", "六親", "爻象世應", "干支", "變", "伏"]
+    private let headerText = ["伏", "變", "六親", "爻象世應", "干支", "變", "伏"]
     
     // MARK: - Init
     override init(frame: CGRect) {
