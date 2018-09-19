@@ -85,6 +85,10 @@ private extension DateGanZhiViewController {
         ganZhiPreviewLabel.font = .title2
         styler.appColorize(ganZhiPreviewLabel)
         styler.appThemize(view)
+
+        if let back = navigationItem.backBarButtonItem {
+            styler.navigationBarItemize(back)
+        }
     }
 }
 
