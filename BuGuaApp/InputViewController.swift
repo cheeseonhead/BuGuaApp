@@ -78,6 +78,8 @@ private extension InputViewController {
     }
     
     func styling() {
+        styler.appThemize(view)
+
         styler.errorize(errorLabel)
         errorLabel.isHidden = true
         

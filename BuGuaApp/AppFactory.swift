@@ -23,10 +23,6 @@ class AppFactory {
         return GuaXiangCoordinator(factory: self)
     }
 
-    func makeGuaXiangViewController(viewModel: GuaXiangViewModel) -> GuaXiangViewController {
-        return GuaXiangViewController(viewModel: viewModel)
-    }
-
     func makeSolarTermCalculator() -> SolarTermCalculator {
         return SolarTermCalculator.make()
     }

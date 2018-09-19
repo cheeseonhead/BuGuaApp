@@ -11,10 +11,18 @@ import UIKit
 
 class AppStyler {
 
-    let bodyColor = UIColor.spaceGrey
+    private let appTintColor = UIColor.mars
+    private let backgroundColor = UIColor.baige
+    private let bodyColor = UIColor.spaceGrey
+
+    // MARK: - UIView
+    func appThemize(_ view: UIView) {
+        view.tintColor = appTintColor
+        view.backgroundColor = backgroundColor
+    }
 
     // MARK: - Labels
-    func appTintize(_ label: UILabel) {
+    func appColorize(_ label: UILabel) {
         label.textColor = bodyColor
     }
 

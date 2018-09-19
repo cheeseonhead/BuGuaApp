@@ -83,7 +83,8 @@ private extension DateGanZhiViewController {
 
     func styling() {
         ganZhiPreviewLabel.font = .title2
-        styler.appTintize(ganZhiPreviewLabel)
+        styler.appColorize(ganZhiPreviewLabel)
+        styler.appThemize(view)
     }
 }
 

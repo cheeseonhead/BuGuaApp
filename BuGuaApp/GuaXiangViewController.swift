@@ -22,9 +22,13 @@ class GuaXiangViewController: UIViewController {
     // MARK: - Private Rx
     private let bag = DisposeBag()
 
+    // MARK: - Private UI
+    private let styler: AppStyler
+
     // MARK: - Init
-    init(viewModel: GuaXiangViewModel) {
+    init(viewModel: GuaXiangViewModel, styler: AppStyler) {
         self.viewModel = viewModel
+        self.styler = styler
         super.init(nibName: nil, bundle: nil)
     }
 
@@ -47,17 +51,23 @@ private extension GuaXiangViewController {
     
     func createViews() {
         inputButton = UIBarButtonItem(title: NSLocalizedString("輸入", comment: ""), style: .plain, target: nil, action: nil)
-        inputButton.setTitleTextAttributes([.font: UIFont.title1], for: UIControl.State())
+        styler.navigationBarItemize(inputButton)
         navigationItem.rightBarButtonItem = inputButton
     }
     
     func styles() {
-        view.tintColor = .mars
+        styler.appThemize(view)
     }
     
     func bindings() {
         viewModel.guaXiangRelay.bind(to: guaXiangView.guaXiangRelay).disposed(by: bag)
         
         inputButton.rx.tap.bind(to: viewModel.onInputRelay).disposed(by: bag)
+    }
+}
+
+extension AppFactory {
+    func makeGuaXiangViewController(viewModel: GuaXiangViewModel) -> GuaXiangViewController {
+        return GuaXiangViewController(viewModel: viewModel, styler: styler)
     }
 }
