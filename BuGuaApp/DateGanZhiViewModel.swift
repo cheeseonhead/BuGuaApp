@@ -29,7 +29,7 @@ class DateGanZhiViewModel {
 
     // MARK: - Private
     private let factory: AppFactory
-    private lazy var solarTermCalculator = factory.makeSolarTermCalculator()
+    private lazy var solarTermCalculator = try! factory.makeSolarTermCalculator()
     private lazy var dateGanZhiEventDriver: Driver<Event<DateGanZhi>> = {
         gregorianDateRelay.flatMap { [unowned self] gregorianDate in
             return Observable.just(()).map {

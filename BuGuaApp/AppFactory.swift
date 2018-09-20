@@ -32,7 +32,7 @@ class AppFactory {
         return GuaXiangViewController(viewModel: viewModel)
     }
 
-    func makeSolarTermCalculator() -> SolarTermCalculator {
-        return SolarTermCalculator.make()
+    func makeSolarTermCalculator() throws -> SolarTermCalculator {
+        return try SolarTermCalculator.make()
     }
 }
