@@ -17,7 +17,6 @@ class DateGanZhiViewController: UIViewController {
     // MARK: - Views
     @IBOutlet var dateInputHolder: UIView!
     @IBOutlet var ganZhiPreviewLabel: UILabel!
-    var titleLabel: UILabel!
     var finishBarButton: UIBarButtonItem!
 
     // MARK: - Child VCs
@@ -56,9 +55,7 @@ private extension DateGanZhiViewController {
     func creation() {
         createDateInput()
         
-        titleLabel = UILabel(frame: .zero)
-        titleLabel.text = NSLocalizedString("輸入日期", comment: "")
-        navigationItem.titleView = titleLabel
+        navigationItem.title = NSLocalizedString("輸入日期", comment: "")
 
         finishBarButton = UIBarButtonItem(title: NSLocalizedString("完成", comment: ""),
                                           style: .done, target: nil, action: nil)
@@ -79,8 +76,6 @@ private extension DateGanZhiViewController {
     }
 
     func styling() {
-        titleLabel.font = .title1
-
         ganZhiPreviewLabel.font = .title2
     }
 }

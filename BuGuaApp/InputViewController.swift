@@ -20,7 +20,6 @@ class InputViewController: UIViewController {
     @IBOutlet var fields: [UITextField]!
     @IBOutlet weak var errorLabel: UILabel!
     var finishBarButton: UIBarButtonItem!
-    var titleLabel: UILabel!
     
     // MARK: - Rx
     let bag = DisposeBag()
@@ -57,9 +56,7 @@ private extension InputViewController {
         finishBarButton.setTitleTextAttributes([.font: UIFont.title1], for: UIControl.State())
         navigationItem.rightBarButtonItem = finishBarButton
 
-        titleLabel = UILabel(frame: .zero)
-        titleLabel.text = NSLocalizedString("輸入卜卦數字", comment: "")
-        navigationItem.titleView = titleLabel
+        navigationItem.title = NSLocalizedString("輸入卜卦數字", comment: "")
     }
 
     func setupDelegate() {
@@ -73,8 +70,6 @@ private extension InputViewController {
     }
     
     func styling() {
-        titleLabel.font = .title1
-
         errorLabel.textColor = .scarlet
         errorLabel.font = .title1
         errorLabel.isHidden = true

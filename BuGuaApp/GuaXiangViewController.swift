@@ -37,7 +37,6 @@ class GuaXiangViewController: UIViewController {
         super.viewDidLoad()
         
         createViews()
-        styles()
         bindings()
     }
 }
@@ -49,10 +48,6 @@ private extension GuaXiangViewController {
         inputButton = UIBarButtonItem(title: NSLocalizedString("輸入", comment: ""), style: .plain, target: nil, action: nil)
         inputButton.setTitleTextAttributes([.font: UIFont.title1], for: UIControl.State())
         navigationItem.rightBarButtonItem = inputButton
-    }
-    
-    func styles() {
-        view.tintColor = .mars
     }
     
     func bindings() {
