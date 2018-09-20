@@ -118,11 +118,11 @@ private extension DateGanZhiViewController {
             .disposed(by: bag)
     }
     
-    func previewLabelColor(_ event: Event<String>) -> UIColor {
+    func previewLabelColor(_ event: Event<String>) -> UIColor? {
         switch event {
-        case .next: return .spaceGrey
+        case .next: return UILabel.appearance().textColor
         case .error: return .scarlet
-        default: return .spaceGrey
+        default: return UILabel.appearance().textColor
         }
     }
 }
@@ -134,7 +134,7 @@ extension AppFactory {
 }
 
 private extension Reactive where Base == UILabel {
-    var textColor: Binder<UIColor> {
+    var textColor: Binder<UIColor?> {
         return Binder(self.base) { label, color in
             label.textColor = color
         }
