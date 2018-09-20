@@ -46,7 +46,6 @@ private extension GuaXiangViewController {
     
     func createViews() {
         inputButton = UIBarButtonItem(title: NSLocalizedString("輸入", comment: ""), style: .plain, target: nil, action: nil)
-        inputButton.setTitleTextAttributes([.font: UIFont.title1], for: UIControl.State())
         navigationItem.rightBarButtonItem = inputButton
     }
     
