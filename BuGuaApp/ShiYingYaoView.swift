@@ -147,7 +147,6 @@ private extension ShiYingYaoView {
     func styling() {
         shiYingLabels.forEach { label in
             label.font = .headline
-            label.textColor = .spaceGrey
         }
     }
 }
