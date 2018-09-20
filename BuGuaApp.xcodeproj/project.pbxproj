@@ -25,6 +25,8 @@
 		34A13D4D214222E700D77D98 /* IntegerLiuYaoConverter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 34A13D4C214222E700D77D98 /* IntegerLiuYaoConverter.swift */; };
 		34A13D4F2142294D00D77D98 /* Int+Conversion.swift in Sources */ = {isa = PBXBuildFile; fileRef = 34A13D4E2142294D00D77D98 /* Int+Conversion.swift */; };
 		34EC158A2153426B00378758 /* ThemeManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 34EC15892153426B00378758 /* ThemeManager.swift */; };
+		34EC158D21534ECA00378758 /* Theme.swift in Sources */ = {isa = PBXBuildFile; fileRef = 34EC158C21534ECA00378758 /* Theme.swift */; };
+		34EC158F21534EF700378758 /* ShallowThemeStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = 34EC158E21534EF700378758 /* ShallowThemeStore.swift */; };
 		34F3E4F92150945C00A9BA2B /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = 34F3E4FB2150945C00A9BA2B /* Localizable.strings */; };
 		34F3E4FF2150A84F00A9BA2B /* Rx+Operators.swift in Sources */ = {isa = PBXBuildFile; fileRef = 34F3E4FE2150A84F00A9BA2B /* Rx+Operators.swift */; };
 		9B273D3321390ABD00BDFBE3 /* SnapKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9B273D3221390ABD00BDFBE3 /* SnapKit.framework */; };
@@ -133,6 +135,8 @@
 		34A13D4C214222E700D77D98 /* IntegerLiuYaoConverter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IntegerLiuYaoConverter.swift; sourceTree = "<group>"; };
 		34A13D4E2142294D00D77D98 /* Int+Conversion.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Int+Conversion.swift"; sourceTree = "<group>"; };
 		34EC15892153426B00378758 /* ThemeManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ThemeManager.swift; sourceTree = "<group>"; };
+		34EC158C21534ECA00378758 /* Theme.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Theme.swift; sourceTree = "<group>"; };
+		34EC158E21534EF700378758 /* ShallowThemeStore.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShallowThemeStore.swift; sourceTree = "<group>"; };
 		34F3E4F52150926E00A9BA2B /* zh-Hant */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "zh-Hant"; path = "zh-Hant.lproj/Main.strings"; sourceTree = "<group>"; };
 		34F3E4F62150926F00A9BA2B /* zh-Hant */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "zh-Hant"; path = "zh-Hant.lproj/LaunchScreen.strings"; sourceTree = "<group>"; };
 		34F3E4FA2150945C00A9BA2B /* zh-Hant */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "zh-Hant"; path = "zh-Hant.lproj/Localizable.strings"; sourceTree = "<group>"; };
@@ -243,6 +247,16 @@
 			name = GuaXiang;
 			sourceTree = "<group>";
 		};
+		34EC158B21534EBC00378758 /* Theme */ = {
+			isa = PBXGroup;
+			children = (
+				34EC15892153426B00378758 /* ThemeManager.swift */,
+				34EC158C21534ECA00378758 /* Theme.swift */,
+				34EC158E21534EF700378758 /* ShallowThemeStore.swift */,
+			);
+			name = Theme;
+			sourceTree = "<group>";
+		};
 		9B933EE42134E529004DCD3F = {
 			isa = PBXGroup;
 			children = (
@@ -306,11 +320,11 @@
 		9B933F3C2134EB58004DCD3F /* Views */ = {
 			isa = PBXGroup;
 			children = (
+				34EC158B21534EBC00378758 /* Theme */,
 				346334492148A89B001D462B /* GuaXiang */,
 				9B933F3A2134EB01004DCD3F /* FuXiBaGuaView.swift */,
 				9B933F402134F054004DCD3F /* FuXiBaGuaView.xib */,
 				9B933F762137A8C3004DCD3F /* YaoView.swift */,
-				34EC15892153426B00378758 /* ThemeManager.swift */,
 			);
 			name = Views;
 			sourceTree = "<group>";
@@ -632,8 +646,10 @@
 				9BCE8877214F2EB10024FEF7 /* DateGanZhiViewModel.swift in Sources */,
 				9BCB360D213E148200F7FDDE /* GuaXiangViewController.swift in Sources */,
 				3463344B2148A914001D462B /* ShiYingYaoView.swift in Sources */,
+				34EC158F21534EF700378758 /* ShallowThemeStore.swift in Sources */,
 				9B933F6D2136537A004DCD3F /* UIView+Layout.swift in Sources */,
 				3463344F2148BD4B001D462B /* HeaderLabelView.swift in Sources */,
+				34EC158D21534ECA00378758 /* Theme.swift in Sources */,
 				9B933EF32134E529004DCD3F /* ViewController.swift in Sources */,
 				9B933F7D2138DF75004DCD3F /* CGSize+Points.swift in Sources */,
 				9B933F73213797A2004DCD3F /* UIColor+AppColors.swift in Sources */,

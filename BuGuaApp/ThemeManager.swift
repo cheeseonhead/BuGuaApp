@@ -11,40 +11,6 @@ import RxSwift
 import RxCocoa
 import UIKit
 
-enum Theme {
-    case light
-    
-    var bodyText: UIColor {
-        switch self {
-        case .light: return .scarlet
-        }
-    }
-    
-    var tint: UIColor {
-        switch self {
-        case .light: return .green
-        }
-    }
-    
-    var background: UIColor {
-        switch self {
-        case .light: return .blue
-        }
-    }
-    
-    var navigationBarTint: UIColor {
-        switch self {
-        case .light: return .purple
-        }
-    }
-    
-    var navigationBarStyle: UIBarStyle {
-        switch self {
-        case .light: return .default
-        }
-    }
-}
-
 protocol ThemeStoring {
     var currentSeq: Driver<Theme> { get }
 }
