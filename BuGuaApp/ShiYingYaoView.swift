@@ -20,6 +20,7 @@ class ShiYingYaoView: UIView {
     // MARK: - Input Rx
     let bag = DisposeBag()
     let guaXiangRelay = PublishRelay<LiuYaoGuaXiang>()
+    let stylerRelay = PublishRelay<AppStyler>()
     
     // MARK: - Init
     override init(frame: CGRect) {
@@ -145,9 +146,10 @@ private extension ShiYingYaoView {
     }
     
     func styling() {
-        shiYingLabels.forEach { label in
-            label.font = .headline
-            label.textColor = .spaceGrey
-        }
+        stylerRelay.bind { [unowned self] styler in
+            self.shiYingLabels.forEach { label in
+                styler.guaXiangMain(label)
+            }
+        }.disposed(by: bag)
     }
 }

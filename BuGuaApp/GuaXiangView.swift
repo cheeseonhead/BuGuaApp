@@ -27,6 +27,7 @@ class GuaXiangView: UIView {
     
     // MARK: - Properties
     let guaXiangRelay = PublishRelay<LiuYaoGuaXiang>()
+    let stylerRelay = PublishRelay<AppStyler>()
 
     // MARK: - Private Constants
     private let columnSpacing = 16
@@ -118,6 +119,8 @@ private extension GuaXiangView {
 private extension GuaXiangView {
     func setupShiYingYaoView() {
         shiYingYaoView = ShiYingYaoView(frame: .zero)
+        stylerRelay.bind(to: shiYingYaoView.stylerRelay)
+            .disposed(by: bag)
         
         guaXiangRelay.bind(to: shiYingYaoView.guaXiangRelay)
             .disposed(by: bag)

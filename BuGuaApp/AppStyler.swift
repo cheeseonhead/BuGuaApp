@@ -7,13 +7,19 @@
 //
 
 import Foundation
+import RxCocoa
+import RxSwift
+import RxSwiftExt
 import UIKit
 
 class AppStyler {
 
-    private let appTintColor = UIColor.mars
-    private let backgroundColor = UIColor.baige
-    private let bodyColor = UIColor.spaceGrey
+    let changedRelay = BehaviorRelay<()>(value: ())
+
+    let appTintColor = UIColor.mars
+    let backgroundColor = UIColor.baige
+    let bodyColor = UIColor.spaceGrey
+    let errorColor = UIColor.scarlet
 
     // MARK: - UIView
     func appThemize(_ view: UIView) {
@@ -34,6 +40,12 @@ class AppStyler {
     func errorize(_ label: UILabel) {
         label.textColor = .scarlet
         label.font = .body2
+    }
+
+    // MARK: - Gua Xiang View
+    func guaXiangMain(_ label: UILabel) {
+        label.textColor = bodyColor
+        label.font = .headline
     }
 
     // MARK: - Buttons

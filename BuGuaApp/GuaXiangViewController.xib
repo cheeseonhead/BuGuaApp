@@ -12,8 +12,14 @@
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="GuaXiangViewController" customModule="BuGuaApp" customModuleProvider="target">
             <connections>
+                <outlet property="changedGuaName" destination="xKG-Yu-qb3" id="btt-5o-Ygo"/>
+                <outlet property="guaGongLabel" destination="a2u-eS-2aK" id="uNh-KP-jBu"/>
                 <outlet property="guaXiangView" destination="EAP-eb-Wtr" id="LYO-jS-zbY"/>
+                <outlet property="originalGuaName" destination="tpW-H4-fIg" id="trB-Mj-QIk"/>
                 <outlet property="view" destination="iN0-l3-epB" id="9Re-KG-bDn"/>
+                <outletCollection property="mainLabels" destination="a2u-eS-2aK" collectionClass="NSMutableArray" id="6Ph-Oh-b8u"/>
+                <outletCollection property="mainLabels" destination="tpW-H4-fIg" collectionClass="NSMutableArray" id="7jd-Dk-Qom"/>
+                <outletCollection property="mainLabels" destination="xKG-Yu-qb3" collectionClass="NSMutableArray" id="2PG-ae-7yF"/>
             </connections>
         </placeholder>
         <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
@@ -29,10 +35,35 @@
                         <constraint firstAttribute="width" constant="454" placeholder="YES" id="NVf-xw-gaO"/>
                     </constraints>
                 </view>
+                <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="521-Ml-Dgm">
+                    <rect key="frame" x="747" y="230" width="42" height="77.5"/>
+                    <subviews>
+                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="a2u-eS-2aK">
+                            <rect key="frame" x="0.0" y="0.0" width="42" height="20.5"/>
+                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                            <nil key="textColor"/>
+                            <nil key="highlightedColor"/>
+                        </label>
+                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="tpW-H4-fIg">
+                            <rect key="frame" x="0.0" y="28.5" width="42" height="20.5"/>
+                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                            <nil key="textColor"/>
+                            <nil key="highlightedColor"/>
+                        </label>
+                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="xKG-Yu-qb3">
+                            <rect key="frame" x="0.0" y="57" width="42" height="20.5"/>
+                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                            <nil key="textColor"/>
+                            <nil key="highlightedColor"/>
+                        </label>
+                    </subviews>
+                </stackView>
             </subviews>
             <constraints>
+                <constraint firstItem="521-Ml-Dgm" firstAttribute="leading" secondItem="EAP-eb-Wtr" secondAttribute="trailing" constant="8" id="K7W-bW-Pom"/>
                 <constraint firstItem="EAP-eb-Wtr" firstAttribute="centerX" secondItem="vUN-kp-3ea" secondAttribute="centerX" id="Wfr-zK-uhS"/>
                 <constraint firstItem="EAP-eb-Wtr" firstAttribute="centerY" secondItem="vUN-kp-3ea" secondAttribute="centerY" id="Xfe-mW-LUa"/>
+                <constraint firstItem="521-Ml-Dgm" firstAttribute="top" secondItem="EAP-eb-Wtr" secondAttribute="top" id="xeI-wa-C59"/>
             </constraints>
             <simulatedNavigationBarMetrics key="simulatedTopBarMetrics" prompted="NO"/>
             <viewLayoutGuide key="safeArea" id="vUN-kp-3ea"/>

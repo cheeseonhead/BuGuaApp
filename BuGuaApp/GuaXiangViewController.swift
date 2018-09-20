@@ -15,6 +15,10 @@ class GuaXiangViewController: UIViewController {
 
     // MARK: - Views
     @IBOutlet weak var guaXiangView: GuaXiangView!
+    @IBOutlet weak var guaGongLabel: UILabel!
+    @IBOutlet weak var originalGuaName: UILabel!
+    @IBOutlet weak var changedGuaName: UILabel!
+    @IBOutlet var mainLabels: [UILabel]!
     var inputButton: UIBarButtonItem!
     
     let viewModel: GuaXiangViewModel
@@ -57,12 +61,24 @@ private extension GuaXiangViewController {
     
     func styles() {
         styler.appThemize(view)
+        mainLabels.forEach { label in
+            styler.guaXiangMain(label)
+        }
     }
     
     func bindings() {
         viewModel.guaXiangRelay.bind(to: guaXiangView.guaXiangRelay).disposed(by: bag)
+        viewModel.guaXiangRelay.map { "卦宮: " + $0.originalGua.guaGong.character }.bind(to: guaGongLabel.rx.text).disposed(by: bag)
+//        viewModel.guaXiangRelay.map { "本卦: " + $0.originalGua. }
+
         
+
         inputButton.rx.tap.bind(to: viewModel.onInputRelay).disposed(by: bag)
+
+        styler.changedRelay.map { [unowned self] _ in
+            self.styler
+        }.bind(to: guaXiangView.stylerRelay)
+        .disposed(by: bag)
     }
 }
 

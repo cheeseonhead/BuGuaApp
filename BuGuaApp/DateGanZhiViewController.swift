@@ -120,17 +120,14 @@ private extension DateGanZhiViewController {
             .bind(to: ganZhiPreviewLabel.rx.text)
             .disposed(by: bag)
         
-        viewModel.previewDriver.map { [unowned self] in self.previewLabelColor($0) }
-            .drive(ganZhiPreviewLabel.rx.textColor)
-            .disposed(by: bag)
-    }
-    
-    func previewLabelColor(_ event: Event<String>) -> UIColor {
-        switch event {
-        case .next: return .spaceGrey
-        case .error: return .scarlet
-        default: return .spaceGrey
-        }
+        viewModel.previewDriver.map { [unowned self] event in
+            switch event {
+            case .next: return self.styler.bodyColor
+            case .error: return self.styler.errorColor
+            default: return .spaceGrey
+            }
+        }.drive(ganZhiPreviewLabel.rx.textColor)
+        .disposed(by: bag)
     }
 }
 
