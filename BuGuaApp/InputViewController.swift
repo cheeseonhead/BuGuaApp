@@ -41,7 +41,7 @@ class InputViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-
+        
         createViews()
         setupDelegate()
         styling()
@@ -73,7 +73,6 @@ private extension InputViewController {
     }
     
     func styling() {
-        titleLabel.textColor = .spaceGrey
         titleLabel.font = .title1
 
         errorLabel.textColor = .scarlet

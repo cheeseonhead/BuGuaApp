@@ -80,10 +80,8 @@ private extension DateGanZhiViewController {
 
     func styling() {
         titleLabel.font = .title1
-        titleLabel.textColor = .spaceGrey
 
         ganZhiPreviewLabel.font = .title2
-        ganZhiPreviewLabel.textColor = .spaceGrey
     }
 }
 
