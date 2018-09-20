@@ -12,6 +12,7 @@ import RxCocoa
 import UIKit
 
 class BackgroundView: UIView {}
+class BodyLabel: UILabel {}
 
 protocol ThemeStoring {
     var currentSeq: Driver<Theme> { get }
@@ -32,11 +33,13 @@ class ThemeManager {
         
         applyBackgroundView(theme)
         applyNavigationBar(theme)
+        applyBodyLabel(theme)
         applyGuaXiangView(theme)
         applyYaoView(theme)
         
         resetViews()
     }
+    
     func applyBackgroundView(_ theme: Theme) {
         BackgroundView.appearance().backgroundColor = theme.background
     }
@@ -47,6 +50,10 @@ class ThemeManager {
         navBarAppearance.barStyle = theme.navigationBarStyle
         navBarAppearance.barTintColor = theme.navigationBarTint
         navBarAppearance.titleTextAttributes = [.font: UIFont.title2, .foregroundColor: theme.bodyText]
+    }
+    
+    func applyBodyLabel(_ theme: Theme) {
+        BodyLabel.appearance().textColor = theme.bodyText
     }
     
     func applyGuaXiangView(_ theme: Theme) {
