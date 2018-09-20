@@ -16,7 +16,7 @@ class DateGanZhiViewController: UIViewController {
 
     // MARK: - Views
     @IBOutlet var dateInputHolder: UIView!
-    @IBOutlet var ganZhiPreviewLabel: UILabel!
+    @IBOutlet var ganZhiPreviewLabel: BodyLabel!
     var finishBarButton: UIBarButtonItem!
 
     // MARK: - Child VCs
@@ -115,9 +115,9 @@ private extension DateGanZhiViewController {
     
     func previewLabelColor(_ event: Event<String>) -> UIColor? {
         switch event {
-        case .next: return UILabel.appearance().textColor
+        case .next: return BodyLabel.appearance().textColor
         case .error: return .scarlet
-        default: return UILabel.appearance().textColor
+        default: return BodyLabel.appearance().textColor
         }
     }
 }
@@ -128,7 +128,7 @@ extension AppFactory {
     }
 }
 
-private extension Reactive where Base == UILabel {
+private extension Reactive where Base: UILabel {
     var textColor: Binder<UIColor?> {
         return Binder(self.base) { label, color in
             label.textColor = color
