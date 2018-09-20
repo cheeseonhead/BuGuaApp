@@ -24,6 +24,7 @@
 		3467E8872149EB0200955D69 /* HorizontalDividersView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3467E8862149EB0200955D69 /* HorizontalDividersView.swift */; };
 		34A13D4D214222E700D77D98 /* IntegerLiuYaoConverter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 34A13D4C214222E700D77D98 /* IntegerLiuYaoConverter.swift */; };
 		34A13D4F2142294D00D77D98 /* Int+Conversion.swift in Sources */ = {isa = PBXBuildFile; fileRef = 34A13D4E2142294D00D77D98 /* Int+Conversion.swift */; };
+		34EC158A2153426B00378758 /* ThemeManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 34EC15892153426B00378758 /* ThemeManager.swift */; };
 		34F3E4F92150945C00A9BA2B /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = 34F3E4FB2150945C00A9BA2B /* Localizable.strings */; };
 		34F3E4FF2150A84F00A9BA2B /* Rx+Operators.swift in Sources */ = {isa = PBXBuildFile; fileRef = 34F3E4FE2150A84F00A9BA2B /* Rx+Operators.swift */; };
 		9B273D3321390ABD00BDFBE3 /* SnapKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9B273D3221390ABD00BDFBE3 /* SnapKit.framework */; };
@@ -131,6 +132,7 @@
 		3467E8862149EB0200955D69 /* HorizontalDividersView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HorizontalDividersView.swift; sourceTree = "<group>"; };
 		34A13D4C214222E700D77D98 /* IntegerLiuYaoConverter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IntegerLiuYaoConverter.swift; sourceTree = "<group>"; };
 		34A13D4E2142294D00D77D98 /* Int+Conversion.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Int+Conversion.swift"; sourceTree = "<group>"; };
+		34EC15892153426B00378758 /* ThemeManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ThemeManager.swift; sourceTree = "<group>"; };
 		34F3E4F52150926E00A9BA2B /* zh-Hant */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "zh-Hant"; path = "zh-Hant.lproj/Main.strings"; sourceTree = "<group>"; };
 		34F3E4F62150926F00A9BA2B /* zh-Hant */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "zh-Hant"; path = "zh-Hant.lproj/LaunchScreen.strings"; sourceTree = "<group>"; };
 		34F3E4FA2150945C00A9BA2B /* zh-Hant */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "zh-Hant"; path = "zh-Hant.lproj/Localizable.strings"; sourceTree = "<group>"; };
@@ -308,6 +310,7 @@
 				9B933F3A2134EB01004DCD3F /* FuXiBaGuaView.swift */,
 				9B933F402134F054004DCD3F /* FuXiBaGuaView.xib */,
 				9B933F762137A8C3004DCD3F /* YaoView.swift */,
+				34EC15892153426B00378758 /* ThemeManager.swift */,
 			);
 			name = Views;
 			sourceTree = "<group>";
@@ -642,6 +645,7 @@
 				346334462148A52F001D462B /* Array+Convert.swift in Sources */,
 				9B933F7B2138DF3B004DCD3F /* CGRect+Points.swift in Sources */,
 				3413A5602140BFB900245C46 /* InputViewModel.swift in Sources */,
+				34EC158A2153426B00378758 /* ThemeManager.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
