@@ -19,6 +19,11 @@ class YaoView: UIView {
 
     // MARK: - Public Rx
     let yaoRelay = PublishRelay<YaoType>()
+    @objc dynamic var color: UIColor = .spaceGrey {
+        didSet {
+            layerDelegate.color = color
+        }
+    }
 
     // MARK: - Private properties
     private var yaoLayer: CALayer!
@@ -77,6 +82,7 @@ private extension YaoView {
 
 private class YaoLayerDelegate: NSObject, CALayerDelegate {
 
+    var color: UIColor = .spaceGrey
     var yaoType: YaoType = .oldYang
 
     func draw(_ layer: CALayer, in ctx: CGContext) {
@@ -101,7 +107,7 @@ private class YaoLayerDelegate: NSObject, CALayerDelegate {
         ctx.beginPath()
         ctx.addLines(between: [frameToDrawIn.origin, frameToDrawIn.bottomRight])
 
-        ctx.setStrokeColor(UIColor.spaceGrey.cgColor)
+        ctx.setStrokeColor(color.cgColor)
         ctx.setLineWidth(strokeWidth)
         ctx.setLineCap(.round)
         ctx.drawPath(using: .stroke)
@@ -120,7 +126,7 @@ private class YaoLayerDelegate: NSObject, CALayerDelegate {
         ctx.addLines(between: [leftFrame.origin, leftFrame.bottomRight])
         ctx.addLines(between: [rightFrame.origin, rightFrame.bottomRight])
 
-        ctx.setStrokeColor(UIColor.spaceGrey.cgColor)
+        ctx.setStrokeColor(color.cgColor)
         ctx.setLineWidth(strokeWidth)
         ctx.setLineCap(.round)
         ctx.drawPath(using: .stroke)
@@ -136,7 +142,7 @@ private class YaoLayerDelegate: NSObject, CALayerDelegate {
         ctx.beginPath()
         ctx.addEllipse(in: frameToDrawIn)
 
-        ctx.setStrokeColor(UIColor.spaceGrey.cgColor)
+        ctx.setStrokeColor(color.cgColor)
         ctx.setLineWidth(strokeWidth)
         ctx.setLineCap(.round)
         ctx.drawPath(using: .stroke)
@@ -155,7 +161,7 @@ private class YaoLayerDelegate: NSObject, CALayerDelegate {
         ctx.move(to: frameToDrawIn.topRight + CGPoint(x: -inset, y: inset))
         ctx.addLine(to: frameToDrawIn.bottomLeft - CGPoint(x: -inset, y: inset))
 
-        ctx.setStrokeColor(UIColor.spaceGrey.cgColor)
+        ctx.setStrokeColor(color.cgColor)
         ctx.setLineWidth(strokeWidth)
         ctx.setLineCap(.round)
         ctx.drawPath(using: .stroke)

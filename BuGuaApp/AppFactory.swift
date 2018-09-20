@@ -13,6 +13,12 @@ import UIKit
 class AppFactory {
 
     let timeZone = TimeZone.autoupdatingCurrent
+    let themeStore = ShallowThemeStore(initialTheme: .light)
+    let themeManager: ThemeManager
+    
+    init() {
+        themeManager = ThemeManager(store: themeStore)
+    }
 
     func makeAppCoordinator(with window: UIWindow) -> AppCoordinator {
         return AppCoordinator(with: window, factory: self)

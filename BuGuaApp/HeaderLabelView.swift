@@ -58,7 +58,6 @@ private extension HeaderLabelView {
         let label = UILabel(frame: .zero)
         label.text = text
         label.font = .body2
-        label.textColor = .spaceGrey
         
         return label
     }

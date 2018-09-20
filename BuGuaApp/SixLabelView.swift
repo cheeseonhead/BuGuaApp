@@ -87,7 +87,6 @@ private extension SixLabelView {
     func styling() {
         labels.forEach { label in
             label.font = .headline
-            label.textColor = .spaceGrey
         }
     }
 }

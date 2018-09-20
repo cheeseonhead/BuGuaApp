@@ -16,8 +16,7 @@ class DateGanZhiViewController: UIViewController {
 
     // MARK: - Views
     @IBOutlet var dateInputHolder: UIView!
-    @IBOutlet var ganZhiPreviewLabel: UILabel!
-    var titleLabel: UILabel!
+    @IBOutlet var ganZhiPreviewLabel: BodyLabel!
     var finishBarButton: UIBarButtonItem!
 
     // MARK: - Child VCs
@@ -56,13 +55,10 @@ private extension DateGanZhiViewController {
     func creation() {
         createDateInput()
         
-        titleLabel = UILabel(frame: .zero)
-        titleLabel.text = NSLocalizedString("輸入日期", comment: "")
-        navigationItem.titleView = titleLabel
+        navigationItem.title = NSLocalizedString("輸入日期", comment: "")
 
         finishBarButton = UIBarButtonItem(title: NSLocalizedString("完成", comment: ""),
                                           style: .done, target: nil, action: nil)
-        finishBarButton.setTitleTextAttributes([.font: UIFont.title1], for: UIControl.State())
         navigationItem.rightBarButtonItem = finishBarButton
     }
 
@@ -79,11 +75,7 @@ private extension DateGanZhiViewController {
     }
 
     func styling() {
-        titleLabel.font = .title1
-        titleLabel.textColor = .spaceGrey
-
         ganZhiPreviewLabel.font = .title2
-        ganZhiPreviewLabel.textColor = .spaceGrey
     }
 }
 
@@ -120,11 +112,11 @@ private extension DateGanZhiViewController {
             .disposed(by: bag)
     }
     
-    func previewLabelColor(_ event: Event<String>) -> UIColor {
+    func previewLabelColor(_ event: Event<String>) -> UIColor? {
         switch event {
-        case .next: return .spaceGrey
+        case .next: return BodyLabel.appearance().textColor
         case .error: return .scarlet
-        default: return .spaceGrey
+        default: return BodyLabel.appearance().textColor
         }
     }
 }
@@ -135,8 +127,8 @@ extension AppFactory {
     }
 }
 
-private extension Reactive where Base == UILabel {
-    var textColor: Binder<UIColor> {
+private extension Reactive where Base: UILabel {
+    var textColor: Binder<UIColor?> {
         return Binder(self.base) { label, color in
             label.textColor = color
         }

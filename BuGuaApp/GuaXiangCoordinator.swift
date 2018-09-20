@@ -43,7 +43,6 @@ class GuaXiangCoordinator: Coordinator {
         viewController = factory.makeGuaXiangViewController(viewModel: viewModel)
 
         navigationController = UINavigationController(rootViewController: viewController)
-        navigationController.view.tintColor = viewController.view.tintColor
         
         didStartRelay.accept(navigationController)
     }
@@ -56,7 +55,6 @@ private extension GuaXiangCoordinator {
         let modalViewController = UIViewController(nibName: nil, bundle: nil)
         modalViewController.preferredContentSize = CGSize(width: 450, height: 450)
         modalViewController.modalPresentationStyle = .formSheet
-        modalViewController.view.tintColor = viewController.view.tintColor
 
         let model = factory.makeGuaXiangInputCoordinatorModel()
 
