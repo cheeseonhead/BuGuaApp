@@ -14,25 +14,25 @@ enum Theme {
     
     var bodyText: UIColor {
         switch self {
-        case .light: return .scarlet
+        case .light: return .spaceGrey
         }
     }
     
     var tint: UIColor {
         switch self {
-        case .light: return .green
+        case .light: return .mars
         }
     }
     
     var background: UIColor {
         switch self {
-        case .light: return .blue
+        case .light: return .baige
         }
     }
     
     var navigationBarTint: UIColor {
         switch self {
-        case .light: return .purple
+        case .light: return .white
         }
     }
     
