@@ -11,6 +11,9 @@ import RxSwift
 import RxCocoa
 import UIKit
 
+class BackgroundView: UIView {
+}
+
 protocol ThemeStoring {
     var currentSeq: Driver<Theme> { get }
 }
@@ -28,9 +31,21 @@ class ThemeManager {
     func apply(_ theme: Theme) {
         UIApplication.shared.delegate?.window??.tintColor = theme.tint
         
+        applyBackgroundView(theme)
+        applyLabel(theme)
         applyNavigationBar(theme)
+        applyYaoView(theme)
         
         resetViews()
+    }
+    func applyBackgroundView(_ theme: Theme) {
+        BackgroundView.appearance().backgroundColor = theme.background
+    }
+    
+    func applyLabel(_ theme: Theme) {
+        let labelAppearance = UILabel.appearance()
+
+        labelAppearance.textColor = theme.bodyText
     }
     
     func applyNavigationBar(_ theme: Theme) {
@@ -38,7 +53,9 @@ class ThemeManager {
         navBarAppearance.isTranslucent = false
         navBarAppearance.barStyle = theme.navigationBarStyle
         navBarAppearance.barTintColor = theme.navigationBarTint
-        
+    }
+    
+    func applyYaoView(_ theme: Theme) {
         let yaoViewAppearance = YaoView.appearance()
         yaoViewAppearance.color = theme.bodyText
     }
@@ -52,4 +69,5 @@ class ThemeManager {
                 window.addSubview(v)
             }
         }
-    }}
+    }
+}
