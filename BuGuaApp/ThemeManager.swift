@@ -49,7 +49,11 @@ class ThemeManager {
         navBarAppearance.isTranslucent = false
         navBarAppearance.barStyle = theme.navigationBarStyle
         navBarAppearance.barTintColor = theme.navigationBarTint
-        navBarAppearance.titleTextAttributes = [.font: UIFont.title2, .foregroundColor: theme.bodyText]
+        navBarAppearance.titleTextAttributes = [.font: UIFont.title1, .foregroundColor: theme.bodyText]
+        
+        [UIControl.State.normal, .disabled, .highlighted].forEach {
+            UIBarButtonItem.appearance().setTitleTextAttributes([.font: UIFont.title1], for: $0)
+        }
     }
     
     func applyBodyLabel(_ theme: Theme) {
