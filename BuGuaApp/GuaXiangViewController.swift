@@ -6,6 +6,7 @@
 //  Copyright © 2018 Jeffrey Wu. All rights reserved.
 //
 
+import BuGuaKit
 import Foundation
 import RxSwift
 import RxCocoa
@@ -56,13 +57,29 @@ private extension GuaXiangViewController {
 
     func styling() {
         infoLabels.forEach { label in
-            label.font = .title2
+            label.font = .scaled(.title2)
         }
     }
 
     func bindings() {
         viewModel.guaXiangRelay.bind(to: guaXiangView.guaXiangRelay).disposed(by: bag)
+
+        viewModel.guaXiangRelay
+            .formatGuaGong()
+            .bind(to: guaGongLabel.rx.text)
+            .disposed(by: bag)
         
         inputButton.rx.tap.bind(to: viewModel.onInputRelay).disposed(by: bag)
+    }
+}
+
+private extension BehaviorRelay where Element == LiuYaoGuaXiang {
+    func formatGuaGong() -> Observable<String> {
+        return map {
+            return ($0.originalGua.guaGong.character, $0.originalGua.guaGong.wuXing.character)
+        }.map {
+            let format = NSLocalizedString("卦宮: %@(%@)", comment: "")
+            return String(format: format, $0.0, $0.1)
+        }
     }
 }
