@@ -75,38 +75,29 @@ private extension GuaXiangView {
     }
 
     func createConstraints() {
-        shiYingYaoView.snp.makeConstraints { make in
-            make.centerX.centerY.equalTo(safeAreaLayoutGuide)
-//            make.bottom.equalTo(safeAreaLayoutGuide).offset(-8)
+        horizontalDividerView.snp.makeConstraints { make in
+            make.edges.equalToSuperview()
         }
-        
-        liuQinView.snp.makeConstraints { $0.trailing.equalTo(shiYingYaoView.snp.leading).offset(-columnSpacing) }
-        changedLiuQinView.snp.makeConstraints { $0.trailing.equalTo(liuQinView.snp.leading).offset(-columnSpacing) }
-        fuShenView.snp.makeConstraints { $0.trailing.equalTo(changedLiuQinView.snp.leading).offset(-columnSpacing) }
-        
-        diZhiView.snp.makeConstraints { $0.leading.equalTo(shiYingYaoView.snp.trailing).offset(columnSpacing) }
-        changedGanZhiView.snp.makeConstraints { $0.leading.equalTo(diZhiView.snp.trailing).offset(columnSpacing) }
-        hiddenGanZhiView.snp.makeConstraints { $0.leading.equalTo(changedGanZhiView.snp.trailing).offset(columnSpacing) }
 
         let columnViews: [UIView] = [fuShenView, changedLiuQinView, liuQinView, shiYingYaoView, diZhiView, changedGanZhiView, hiddenGanZhiView]
+        for i in 0..<columnViews.count - 1 {
+            let left = columnViews[i]
+            let right = columnViews[i+1]
+
+            left.snp.makeConstraints { $0.trailing.equalTo(right.snp.leading).offset(-columnSpacing) }
+        }
         columnViews.first!.snp.makeConstraints { $0.leading.equalToSuperview().offset(columnSpacing) }
         columnViews.last!.snp.makeConstraints { $0.trailing.equalToSuperview().offset(-columnSpacing) }
 
-        GuaXiangViewLayout.verticalAlignSixLabelView(diZhiView, shiYingYaoView: shiYingYaoView)
-        GuaXiangViewLayout.verticalAlignSixLabelView(liuQinView, shiYingYaoView: shiYingYaoView)
-        GuaXiangViewLayout.verticalAlignSixLabelView(hiddenGanZhiView, shiYingYaoView: shiYingYaoView)
-        GuaXiangViewLayout.verticalAlignSixLabelView(fuShenView, shiYingYaoView: shiYingYaoView)
-        GuaXiangViewLayout.verticalAlignSixLabelView(changedGanZhiView, shiYingYaoView: shiYingYaoView)
-        GuaXiangViewLayout.verticalAlignSixLabelView(changedLiuQinView, shiYingYaoView: shiYingYaoView)
-        
+        for column in columnViews {
+            guard let column = column as? SixLabelView else { continue }
+
+            GuaXiangViewLayout.verticalAlignSixLabelView(column, shiYingYaoView: shiYingYaoView)
+        }
+
         headerView.snp.makeConstraints { $0.bottom.equalTo(shiYingYaoView.snp.top).offset(-8) }
         GuaXiangViewLayout.alignHeader(headerView, columns: columnViews)
 
-        horizontalDividerView.snp.makeConstraints {
-            $0.leading.trailing.equalToSuperview()
-            $0.top.greaterThanOrEqualToSuperview()
-            $0.bottom.lessThanOrEqualToSuperview()
-        }
         GuaXiangViewLayout.alignHorizontalDividers(horizontalDividerView, shiYingYaoView: shiYingYaoView, headerView: headerView)
     }
 
