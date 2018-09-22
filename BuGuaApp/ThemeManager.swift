@@ -11,6 +11,10 @@ import RxSwift
 import RxCocoa
 import UIKit
 
+enum BGStyle {
+    static let standardMargin: CGFloat = 16
+}
+
 class BackgroundView: UIView {}
 class BodyLabel: UILabel {}
 
