@@ -12,7 +12,7 @@ import UIKit
 class HeaderLabelView: UIView {
     
     // MARK: - Views
-    var headerLabels: [UILabel]!
+    var headerLabels: [BodyLabel]!
     
     // MARK: - Private Constants
     private let headerText = ["伏", "變", "六親", "爻象世應", "干支", "變", "伏"]
@@ -54,10 +54,10 @@ private extension HeaderLabelView {
         }
     }
     
-    func makeHeaderLabel(_ text: String) -> UILabel {
-        let label = UILabel(frame: .zero)
+    func makeHeaderLabel(_ text: String) -> BodyLabel {
+        let label = BodyLabel(frame: .zero)
         label.text = text
-        label.font = .body2
+        label.font = .scaled(.body2)
         
         return label
     }

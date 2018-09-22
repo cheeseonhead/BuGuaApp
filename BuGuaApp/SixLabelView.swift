@@ -14,7 +14,7 @@ import UIKit
 class SixLabelView: UIView {
     
     // MARK: - Views
-    var labels: [UILabel]!
+    var labels: [BodyLabel]!
     
     // MARK: - Input Rx
     let bag = DisposeBag()
@@ -49,8 +49,8 @@ private extension SixLabelView {
         }
     }
     
-    func makeLabel(at position: Int) -> UILabel {
-        let label = UILabel(frame: .zero)
+    func makeLabel(at position: Int) -> BodyLabel {
+        let label = BodyLabel(frame: .zero)
         label.numberOfLines = 0
         label.text = "-"
         
@@ -86,7 +86,7 @@ private extension SixLabelView {
     
     func styling() {
         labels.forEach { label in
-            label.font = .headline
+            label.font = .scaled(.headline)
         }
     }
 }
