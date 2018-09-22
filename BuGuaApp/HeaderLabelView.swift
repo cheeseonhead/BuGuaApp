@@ -57,7 +57,7 @@ private extension HeaderLabelView {
     func makeHeaderLabel(_ text: String) -> BodyLabel {
         let label = BodyLabel(frame: .zero)
         label.text = text
-        label.font = .scaled(.body2)
+        label.font = .scaled(.body1)
         
         return label
     }

@@ -11,6 +11,10 @@ import RxSwift
 import RxCocoa
 import UIKit
 
+private enum Style {
+    static let font = UIFont.scaled(.body3Medium)
+}
+
 class SixLabelView: UIView {
     
     // MARK: - Views
@@ -86,7 +90,7 @@ private extension SixLabelView {
     
     func styling() {
         labels.forEach { label in
-            label.font = .scaled(.headline)
+            label.font = Style.font
         }
     }
 }

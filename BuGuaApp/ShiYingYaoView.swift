@@ -146,7 +146,7 @@ private extension ShiYingYaoView {
     
     func styling() {
         shiYingLabels.forEach { label in
-            label.font = .scaled(.headline)
+            label.font = .scaled(.body3Medium)
         }
     }
 }
