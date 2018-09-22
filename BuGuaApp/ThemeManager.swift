@@ -58,10 +58,10 @@ class ThemeManager {
     
     func applyBodyLabel(_ theme: Theme) {
         BodyLabel.appearance().textColor = theme.bodyText
+        BodyLabel.appearance().adjustsFontForContentSizeCategory = true
     }
     
     func applyGuaXiangView(_ theme: Theme) {
-        UILabel.appearance(whenContainedInInstancesOf: [GuaXiangView.self]).textColor = theme.bodyText
     }
     
     func applyYaoView(_ theme: Theme) {

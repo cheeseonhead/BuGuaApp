@@ -15,7 +15,7 @@ import UIKit
 class ShiYingYaoView: UIView {
     // MARK: - Views
     var yaoViews: [YaoView]!
-    var shiYingLabels: [UILabel]!
+    var shiYingLabels: [BodyLabel]!
     
     // MARK: - Input Rx
     let bag = DisposeBag()
@@ -78,8 +78,8 @@ private extension ShiYingYaoView {
         }
     }
     
-    func makeShiYingLabel(at position: Int) -> UILabel {
-        let label = UILabel(frame: .zero)
+    func makeShiYingLabel(at position: Int) -> BodyLabel {
+        let label = BodyLabel(frame: .zero)
         label.text = " "
         
         guaXiangRelay.map { ($0.originalGua.shi, $0.originalGua.ying) }
@@ -146,7 +146,7 @@ private extension ShiYingYaoView {
     
     func styling() {
         shiYingLabels.forEach { label in
-            label.font = .headline
+            label.font = .scaled(.headline)
         }
     }
 }
