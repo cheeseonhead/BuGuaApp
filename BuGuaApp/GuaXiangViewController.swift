@@ -9,6 +9,7 @@
 import BuGuaKit
 import Foundation
 import RxSwift
+import RxSwiftExt
 import RxCocoa
 import UIKit
 
@@ -68,7 +69,16 @@ private extension GuaXiangViewController {
             .formatGuaGong()
             .bind(to: guaGongLabel.rx.text)
             .disposed(by: bag)
-        
+
+        viewModel.guaXiangRelay.formatOriginalGuaName()
+            .bind(to: originalGuaNameLabel.rx.text)
+            .disposed(by: bag)
+
+        viewModel.guaXiangRelay.formatChangedGuaName()
+            .bind(to: changedGuaNameLabel.rx.text)
+            .disposed(by: bag)
+
+
         inputButton.rx.tap.bind(to: viewModel.onInputRelay).disposed(by: bag)
     }
 }
@@ -80,6 +90,20 @@ private extension BehaviorRelay where Element == LiuYaoGuaXiang {
         }.map {
             let format = NSLocalizedString("卦宮: %@(%@)", comment: "")
             return String(format: format, $0.0, $0.1)
+        }
+    }
+
+    func formatOriginalGuaName() -> Observable<String> {
+        return map {
+            let format = NSLocalizedString("主卦: %@", comment: "")
+            return String(format: format, $0.originalGua.character)
+        }
+    }
+
+    func formatChangedGuaName() -> Observable<String> {
+        return map {
+            let format = NSLocalizedString("變卦: %@", comment: "")
+            return String(format: format, $0.changedGua.character)
         }
     }
 }
