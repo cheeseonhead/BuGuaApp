@@ -12,8 +12,14 @@
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="GuaXiangViewController" customModule="BuGuaApp" customModuleProvider="target">
             <connections>
+                <outlet property="changedGuaNameLabel" destination="6FE-C5-qq2" id="3lM-fj-vfy"/>
+                <outlet property="guaGongLabel" destination="T3k-4w-c5P" id="ieH-jH-Ezt"/>
                 <outlet property="guaXiangView" destination="EAP-eb-Wtr" id="LYO-jS-zbY"/>
+                <outlet property="originalGuaNameLabel" destination="GBU-mc-xuL" id="C7W-VE-fMo"/>
                 <outlet property="view" destination="iN0-l3-epB" id="9Re-KG-bDn"/>
+                <outletCollection property="infoLabels" destination="T3k-4w-c5P" collectionClass="NSMutableArray" id="vFX-CP-pzn"/>
+                <outletCollection property="infoLabels" destination="GBU-mc-xuL" collectionClass="NSMutableArray" id="zt9-0j-snc"/>
+                <outletCollection property="infoLabels" destination="6FE-C5-qq2" collectionClass="NSMutableArray" id="EKs-M5-Czi"/>
             </connections>
         </placeholder>
         <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
@@ -29,10 +35,35 @@
                         <constraint firstAttribute="width" constant="454" placeholder="YES" id="NVf-xw-gaO"/>
                     </constraints>
                 </view>
+                <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="13" translatesAutoresizingMaskIntoConstraints="NO" id="K6R-fd-Jyf">
+                    <rect key="frame" x="747" y="375.5" width="52" height="87.5"/>
+                    <subviews>
+                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="我我我" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="T3k-4w-c5P" customClass="BodyLabel" customModule="BuGuaApp" customModuleProvider="target">
+                            <rect key="frame" x="0.0" y="0.0" width="52" height="20.5"/>
+                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                            <nil key="textColor"/>
+                            <nil key="highlightedColor"/>
+                        </label>
+                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="我我我" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="GBU-mc-xuL" customClass="BodyLabel" customModule="BuGuaApp" customModuleProvider="target">
+                            <rect key="frame" x="0.0" y="33.5" width="52" height="20.5"/>
+                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                            <nil key="textColor"/>
+                            <nil key="highlightedColor"/>
+                        </label>
+                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="我我我" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="6FE-C5-qq2" customClass="BodyLabel" customModule="BuGuaApp" customModuleProvider="target">
+                            <rect key="frame" x="0.0" y="67" width="52" height="20.5"/>
+                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                            <nil key="textColor"/>
+                            <nil key="highlightedColor"/>
+                        </label>
+                    </subviews>
+                </stackView>
             </subviews>
             <constraints>
                 <constraint firstItem="EAP-eb-Wtr" firstAttribute="centerX" secondItem="vUN-kp-3ea" secondAttribute="centerX" id="Wfr-zK-uhS"/>
                 <constraint firstItem="EAP-eb-Wtr" firstAttribute="centerY" secondItem="vUN-kp-3ea" secondAttribute="centerY" id="Xfe-mW-LUa"/>
+                <constraint firstItem="K6R-fd-Jyf" firstAttribute="centerY" secondItem="EAP-eb-Wtr" secondAttribute="centerY" id="qga-en-FA4"/>
+                <constraint firstItem="K6R-fd-Jyf" firstAttribute="leading" secondItem="EAP-eb-Wtr" secondAttribute="trailing" constant="8" id="rHP-7S-vtD"/>
             </constraints>
             <simulatedNavigationBarMetrics key="simulatedTopBarMetrics" prompted="NO"/>
             <viewLayoutGuide key="safeArea" id="vUN-kp-3ea"/>

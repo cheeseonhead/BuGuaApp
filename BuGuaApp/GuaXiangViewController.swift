@@ -15,6 +15,10 @@ class GuaXiangViewController: UIViewController {
 
     // MARK: - Views
     @IBOutlet weak var guaXiangView: GuaXiangView!
+    @IBOutlet weak var guaGongLabel: BodyLabel!
+    @IBOutlet weak var originalGuaNameLabel: BodyLabel!
+    @IBOutlet weak var changedGuaNameLabel: BodyLabel!
+    @IBOutlet var infoLabels: [BodyLabel]!
     var inputButton: UIBarButtonItem!
     
     let viewModel: GuaXiangViewModel
@@ -37,6 +41,7 @@ class GuaXiangViewController: UIViewController {
         super.viewDidLoad()
         
         createViews()
+        styling()
         bindings()
     }
 }
@@ -48,7 +53,13 @@ private extension GuaXiangViewController {
         inputButton = UIBarButtonItem(title: NSLocalizedString("輸入", comment: ""), style: .plain, target: nil, action: nil)
         navigationItem.rightBarButtonItem = inputButton
     }
-    
+
+    func styling() {
+        infoLabels.forEach { label in
+            label.font = .title2
+        }
+    }
+
     func bindings() {
         viewModel.guaXiangRelay.bind(to: guaXiangView.guaXiangRelay).disposed(by: bag)
         
