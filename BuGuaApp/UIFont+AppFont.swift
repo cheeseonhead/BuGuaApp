@@ -25,6 +25,10 @@ extension UIFont {
     static let appFontBold = "PingFangTC-Semibold"
 //    static let appFontBoldItalic = ""
 
+    static func scaled(_ font: UIFont) -> UIFont {
+        return UIFontMetrics.default.scaledFont(for: font)
+    }
+
     static var headline: UIFont {
         guard let customFont = UIFont(name: appFontMedium, size: 24) else { fatalError(messageFailedToLoadFont(appFontMedium)) }
 
