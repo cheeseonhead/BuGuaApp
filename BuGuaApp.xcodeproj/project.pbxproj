@@ -30,6 +30,7 @@
 		34F3E4F92150945C00A9BA2B /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = 34F3E4FB2150945C00A9BA2B /* Localizable.strings */; };
 		34F3E4FF2150A84F00A9BA2B /* Rx+Operators.swift in Sources */ = {isa = PBXBuildFile; fileRef = 34F3E4FE2150A84F00A9BA2B /* Rx+Operators.swift */; };
 		9B273D3321390ABD00BDFBE3 /* SnapKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9B273D3221390ABD00BDFBE3 /* SnapKit.framework */; };
+		9B2AFBA62156EC9100DF9A5E /* GuaXiangRow.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9B2AFBA52156EC9100DF9A5E /* GuaXiangRow.swift */; };
 		9B933EF12134E529004DCD3F /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9B933EF02134E529004DCD3F /* AppDelegate.swift */; };
 		9B933EF32134E529004DCD3F /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9B933EF22134E529004DCD3F /* ViewController.swift */; };
 		9B933EF62134E529004DCD3F /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 9B933EF42134E529004DCD3F /* Main.storyboard */; };
@@ -143,6 +144,7 @@
 		34F3E4FD2150953800A9BA2B /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/Localizable.strings; sourceTree = "<group>"; };
 		34F3E4FE2150A84F00A9BA2B /* Rx+Operators.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Rx+Operators.swift"; sourceTree = "<group>"; };
 		9B273D3221390ABD00BDFBE3 /* SnapKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SnapKit.framework; path = Carthage/Build/iOS/SnapKit.framework; sourceTree = "<group>"; };
+		9B2AFBA52156EC9100DF9A5E /* GuaXiangRow.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GuaXiangRow.swift; sourceTree = "<group>"; };
 		9B933EED2134E529004DCD3F /* BuGuaApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = BuGuaApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		9B933EF02134E529004DCD3F /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		9B933EF22134E529004DCD3F /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -243,6 +245,7 @@
 				3463344C2148B147001D462B /* SixLabelView.swift */,
 				3463344E2148BD4B001D462B /* HeaderLabelView.swift */,
 				3467E8862149EB0200955D69 /* HorizontalDividersView.swift */,
+				9B2AFBA52156EC9100DF9A5E /* GuaXiangRow.swift */,
 			);
 			name = GuaXiang;
 			sourceTree = "<group>";
@@ -623,6 +626,7 @@
 				9BCE8863214F0A590024FEF7 /* GuaXiangInputCoordinatorModel.swift in Sources */,
 				9BCE886C214F13780024FEF7 /* DateInputViewModel.swift in Sources */,
 				34A13D4D214222E700D77D98 /* IntegerLiuYaoConverter.swift in Sources */,
+				9B2AFBA62156EC9100DF9A5E /* GuaXiangRow.swift in Sources */,
 				341EE5C32143A94A00CB7D53 /* GuaXiangViewLayout.swift in Sources */,
 				9B933F3F2134EBBE004DCD3F /* UIView+NibLoadable.swift in Sources */,
 				3413A5672140E0BC00245C46 /* AutoNextTextFieldDelegate.swift in Sources */,
