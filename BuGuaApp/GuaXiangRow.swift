@@ -14,8 +14,8 @@ import Foundation
 import UIKit
 
 private enum Style {
-    static let stackViewInset = BGStyle.standardMargin
     static let stackViewSpacing = BGStyle.standardMargin
+    static let padding = stackViewSpacing / 8
 
     static let labelFont = UIFont.scaled(.body3Medium)
 }
@@ -32,6 +32,13 @@ class GuaXiangRow: UIView {
 
     // MARK: - Other views
     let shiYaoView = ShiYaoView(frame: .zero)
+    private (set) lazy var viewStack = [fuShenLabel,
+                                        changedLiuQinLabel,
+                                        liuQinLabel,
+                                        shiYaoView,
+                                        ganZhiLabel,
+                                        changedGanZhiLabel,
+                                        hiddenGanZhiLabel]
 
     // MARK: - Inputs
     let bag = DisposeBag()
@@ -61,33 +68,25 @@ private extension GuaXiangRow {
     }
 
     func constraints() {
-        let views = [fuShenLabel,
-                     changedLiuQinLabel,
-                     liuQinLabel,
-                     shiYaoView,
-                     ganZhiLabel,
-                     changedGanZhiLabel,
-                     hiddenGanZhiLabel]
+        addSubviews(viewStack)
 
-        addSubviews(views)
-
-        views.first!.snp.makeConstraints { make in
-            make.leading.equalToSuperview()
+        viewStack.first!.snp.makeConstraints { make in
+            make.leading.equalToSuperview().offset(Style.padding)
         }
 
-        views.last!.snp.makeConstraints { (make) in
-            make.trailing.equalToSuperview()
+        viewStack.last!.snp.makeConstraints { (make) in
+            make.trailing.equalToSuperview().offset(-Style.padding)
         }
 
-        views.forEach {
+        viewStack.forEach {
             $0.snp.makeConstraints({ make in
-                make.top.bottom.equalToSuperview()
+                make.top.bottom.equalToSuperview().inset(Style.padding)
             })
         }
 
-        for i in 0..<views.count - 1 {
-            let left = views[i]
-            let right = views[i+1]
+        for i in 0..<viewStack.count - 1 {
+            let left = viewStack[i]
+            let right = viewStack[i+1]
 
             left.snp.makeConstraints { (make) in
                 make.trailing.equalTo(right.snp.leading).offset(-Style.stackViewSpacing)
@@ -142,6 +141,7 @@ private extension GuaXiangRow {
     static func makeLabel() -> BodyLabel {
         let label = BodyLabel(frame: .zero)
 
+        label.text = "甲\n子"
         label.font = Style.labelFont
         label.numberOfLines = 2
         return label

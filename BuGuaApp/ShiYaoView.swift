@@ -15,8 +15,6 @@ import UIKit
 
 private enum Style {
     static let labelFont = UIFont.scaled(.body3Medium)
-
-    static let yaoViewSize = CGSize(width: 56, height: 36)
 }
 
 class ShiYaoView: UIView {
@@ -80,7 +78,7 @@ private extension ShiYaoView {
         }
 
         yaoView.snp.makeConstraints { (make) in
-            make.size.equalTo(Style.yaoViewSize)
+            make.size.equalTo(yaoView.preferredSize)
         }
     }
 
