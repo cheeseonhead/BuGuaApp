@@ -142,6 +142,7 @@ private extension GuaXiangRow {
     static func makeLabel() -> BodyLabel {
         let label = BodyLabel(frame: .zero)
 
+        label.text = "甲\n子"
         label.font = Style.labelFont
         label.numberOfLines = 2
         return label
