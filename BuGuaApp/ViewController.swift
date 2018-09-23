@@ -13,17 +13,16 @@ var testingCGFloat: CGFloat = 0
 
 class ViewController: UIViewController {
 
-    @IBOutlet weak var guaXiangView: GuaXiangView!
-
     let guaXiangBuilder = LiuYaoGuaXiangBuilder()
+    @IBOutlet weak var row: GuaXiangRow!
 
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        let dateInputVM = DateInputViewModel(timeZoneGetter: { TimeZone.autoupdatingCurrent })
-        let dateInputVC = DateInputViewController(viewModel: dateInputVM)
-
-        add(dateInputVC)
+//        let dateInputVM = DateInputViewModel(timeZoneGetter: { TimeZone.autoupdatingCurrent })
+//        let dateInputVC = DateInputViewController(viewModel: dateInputVM)
+//
+//        add(dateInputVC)
 
 //        dateInputVM.gregorianDateDriver
 //            .drive(onNext: { date in
@@ -35,7 +34,7 @@ class ViewController: UIViewController {
         super.viewDidAppear(animated)
 
         let guaXiang = guaXiangBuilder.build()
-        guaXiangView.guaXiangRelay.accept(guaXiang)
+        row.guaXiangRelay.accept((guaXiang, 1))
     }
 
     @IBAction func changed(_ sender: UISlider) {
@@ -48,8 +47,8 @@ class ViewController: UIViewController {
         let guaXiang = guaXiangBuilder.build()
 
         print("\(guaXiang.originalGua.innerGua.character) \(guaXiang.originalGua.outerGua.character)")
-        guaXiangView.guaXiangRelay.accept(guaXiang)
 
+        row.guaXiangRelay.accept((guaXiang, 1))
 //        present(GuaXiangViewController(), animated: true, completion: nil)
 
     }
