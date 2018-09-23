@@ -88,6 +88,8 @@ private extension GuaXiangView {
         ]
 
         stitchVertically(viewStack)
+
+        GuaXiangViewLayout.alignHeader(headerView, firstRow: guaXiangRows[5])
     }
 
     func stitchVertically(_ views: [UIView]) {
