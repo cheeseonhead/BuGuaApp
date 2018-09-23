@@ -14,8 +14,8 @@ import Foundation
 import UIKit
 
 private enum Style {
-    static let stackViewInset = BGStyle.standardMargin
     static let stackViewSpacing = BGStyle.standardMargin
+    static let padding = stackViewSpacing / 8
 
     static let labelFont = UIFont.scaled(.body3Medium)
 }
@@ -71,16 +71,16 @@ private extension GuaXiangRow {
         addSubviews(viewStack)
 
         viewStack.first!.snp.makeConstraints { make in
-            make.leading.equalToSuperview()
+            make.leading.equalToSuperview().offset(Style.padding)
         }
 
         viewStack.last!.snp.makeConstraints { (make) in
-            make.trailing.equalToSuperview()
+            make.trailing.equalToSuperview().offset(-Style.padding)
         }
 
         viewStack.forEach {
             $0.snp.makeConstraints({ make in
-                make.top.bottom.equalToSuperview()
+                make.top.bottom.equalToSuperview().inset(Style.padding)
             })
         }
 
