@@ -1,11 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14313.13.2" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14313.18" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
     <device id="ipad9_7" orientation="landscape">
         <adaptation id="fullscreen"/>
     </device>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14283.9"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14283.14"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
@@ -18,9 +18,6 @@
                         <rect key="frame" x="0.0" y="0.0" width="1024" height="768"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="9r5-kL-w1T" customClass="GuaXiangView" customModule="BuGuaApp" customModuleProvider="target">
-                                <rect key="frame" x="0.0" y="84" width="1024" height="684"/>
-                            </view>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="0Vu-q8-Atc">
                                 <rect key="frame" x="485.5" y="28" width="53" height="30"/>
                                 <state key="normal" title="Change"/>
@@ -28,20 +25,26 @@
                                     <action selector="tapped:" destination="BYZ-38-t0r" eventType="touchUpInside" id="xby-Em-WEj"/>
                                 </connections>
                             </button>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="iv4-Rd-dp6" customClass="GuaXiangRow" customModule="BuGuaApp" customModuleProvider="target">
+                                <rect key="frame" x="392" y="320" width="240" height="128"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="240" placeholder="YES" id="DRw-zG-Php"/>
+                                    <constraint firstAttribute="height" constant="128" placeholder="YES" id="yUm-Di-GiM"/>
+                                </constraints>
+                            </view>
                         </subviews>
                         <color key="backgroundColor" red="1" green="0.94117647058823528" blue="0.87450980392156863" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
-                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="9r5-kL-w1T" secondAttribute="trailing" id="9hY-bk-HaO"/>
-                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="9r5-kL-w1T" secondAttribute="bottom" id="Icn-RF-hnN"/>
+                            <constraint firstItem="iv4-Rd-dp6" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="8gf-Fp-sCf"/>
+                            <constraint firstItem="iv4-Rd-dp6" firstAttribute="centerY" secondItem="8bC-Xf-vdC" secondAttribute="centerY" id="Bsf-Go-LEr"/>
                             <constraint firstItem="0Vu-q8-Atc" firstAttribute="centerX" secondItem="6Tk-OE-BBY" secondAttribute="centerX" id="ZQb-Gh-F6b"/>
-                            <constraint firstItem="9r5-kL-w1T" firstAttribute="top" secondItem="0Vu-q8-Atc" secondAttribute="bottom" constant="26" id="eA3-oc-Uen"/>
-                            <constraint firstItem="9r5-kL-w1T" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="is8-ej-Mhe"/>
                             <constraint firstItem="0Vu-q8-Atc" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="8" id="us2-Tr-QOU"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                     </view>
                     <connections>
-                        <outlet property="guaXiangView" destination="9r5-kL-w1T" id="14G-fy-oex"/>
+                        <outlet property="row" destination="iv4-Rd-dp6" id="pmg-Px-8cV"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>

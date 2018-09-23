@@ -199,8 +199,8 @@ private extension GuaXiangView {
     func hiddenGanZhi(from guaXiang: LiuYaoGuaXiang) -> [String] {
         let controller = FuShenController(guaXiang: guaXiang)
         
-        let tianGan = controller.hiddenTianGan().map { $0?.character ?? "" }
-        let diZhi = controller.hiddenDiZhi().map { $0?.character ?? "" }
+        let tianGan = controller.hiddenTianGan.map { $0?.character ?? "" }
+        let diZhi = controller.hiddenDiZhi.map { $0?.character ?? "" }
         
         return zip(tianGan, diZhi).map {
             return ($0 + $1).vertical
@@ -210,7 +210,7 @@ private extension GuaXiangView {
     func fuShen(from guaXiang: LiuYaoGuaXiang) -> [String] {
         let controller = FuShenController(guaXiang: guaXiang)
         
-        return controller.fuShen().map { $0?.character.vertical ?? "" }
+        return controller.fuShen.map { $0?.character.vertical ?? "" }
     }
     
     func changeGanZhi(from guaXiang: LiuYaoGuaXiang) -> [String] {
