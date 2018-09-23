@@ -110,6 +110,11 @@ private extension GuaXiangView {
     }
 
     func bindings() {
+        (1...6).forEach { position in
+            guaXiangRelay.map { ($0, position) }
+                .bind(to: guaXiangRows[position - 1].guaXiangRelay)
+                .disposed(by: bag)
+        }
     }
 }
 
