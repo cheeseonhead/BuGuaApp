@@ -15,7 +15,7 @@ import UIKit
 class YaoView: UIView {
 
     // MARK: - Constants
-    let preferredSize = CGSize(width: 48, height: 36)
+    let preferredSize = CGSize(width: 40, height: 36)
 
     // MARK: - Public Rx
     let yaoRelay = BehaviorRelay<YaoType>(value: .oldYin)
@@ -123,7 +123,7 @@ private class YaoLayerDelegate: NSObject, CALayerDelegate {
     // MARK: - Draw Young Yin
     private func drawYoungYin(_ layer: CALayer, in ctx: CGContext) {
         let strokeWidth: CGFloat = 8
-        let spacing: CGFloat = 16.797642409801483
+        let spacing: CGFloat = 10.797642409801483
         let frameToDrawIn = frame(in: layer.bounds, widthOverHeight: 0.7897838950157166).scaledAtCenter(scaleX: 0.3, scaleY: 0.3)
 
         let leftFrame = frameToDrawIn.applying(.init(translationX: -spacing, y: 0))

@@ -58,6 +58,7 @@ private extension HeaderLabelView {
         let label = BodyLabel(frame: .zero)
         label.text = text
         label.font = .scaled(.body1)
+        label.textAlignment = .center
         
         return label
     }
