@@ -18,7 +18,7 @@ class YaoView: UIView {
     let preferredSize = CGSize(width: 48, height: 36)
 
     // MARK: - Public Rx
-    let yaoRelay = PublishRelay<YaoType>()
+    let yaoRelay = BehaviorRelay<YaoType>(value: .oldYin)
     @objc dynamic var color: UIColor = .spaceGrey {
         didSet {
             layerDelegate.color = color
@@ -53,12 +53,19 @@ class YaoView: UIView {
 
         yaoLayer?.setNeedsDisplay()
     }
+
+    override func draw(_ rect: CGRect) {
+        yaoLayer.bounds = bounds
+
+        super.draw(rect)
+    }
 }
 
 // MARK: - Setup
 private extension YaoView {
     func setup() {
         backgroundColor = nil
+        isOpaque = false
 
         addYaoLayer()
 
