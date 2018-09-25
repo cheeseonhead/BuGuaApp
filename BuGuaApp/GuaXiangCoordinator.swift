@@ -72,24 +72,6 @@ private extension GuaXiangCoordinator {
         addChildCoordinator(inputCoordinator)
         inputCoordinator.start()
     }
-
-    func showInputViewController() {
-        let viewModel = factory.makeInputViewModel()
-        
-        let inputVC = factory.makeInputViewController(viewModel: viewModel)
-        inputVC.preferredContentSize = CGSize(width: 450, height: 450)
-        inputVC.modalPresentationStyle = .formSheet
-        
-//        viewModel.yaoTypeSignal.asObservable().elements()
-//            .do(onNext: { [unowned inputVC] _ in
-//                inputVC.dismiss(animated: true, completion: nil)
-//            }).map { yaoTypes in
-//                return LiuYaoGuaXiangBuilder().setLiuYao(yaoTypes).build()
-//            }.bind(to: viewController.viewModel.guaXiangRelay)
-//            .disposed(by: viewModel.bag)
-    
-        viewController.present(inputVC, animated: true, completion: nil)
-    }
 }
 
 extension UIViewController {
