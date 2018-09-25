@@ -47,7 +47,7 @@ class GuaXiangView: UIView {
 private extension GuaXiangView {
 
     func setupViews() {
-        backgroundColor = nil
+        backgroundColor = .spaceGrey
 
         addViews()
         createConstraints()
@@ -63,10 +63,10 @@ private extension GuaXiangView {
 
     func createConstraints() {
         dividers.first!.snp.makeConstraints { (make) in
-            make.leading.trailing.top.equalToSuperview()
+            make.leading.trailing.top.equalTo(safeAreaLayoutGuide)
         }
         dividers.last!.snp.makeConstraints { (make) in
-            make.leading.trailing.bottom.equalToSuperview()
+            make.leading.trailing.bottom.equalTo(safeAreaLayoutGuide)
         }
 
         let viewStack = [
