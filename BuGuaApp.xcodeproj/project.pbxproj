@@ -24,6 +24,8 @@
 		3467E8872149EB0200955D69 /* HorizontalDividersView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3467E8862149EB0200955D69 /* HorizontalDividersView.swift */; };
 		34A13D4D214222E700D77D98 /* IntegerLiuYaoConverter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 34A13D4C214222E700D77D98 /* IntegerLiuYaoConverter.swift */; };
 		34A13D4F2142294D00D77D98 /* Int+Conversion.swift in Sources */ = {isa = PBXBuildFile; fileRef = 34A13D4E2142294D00D77D98 /* Int+Conversion.swift */; };
+		34BE79962159D25400B5010A /* BuGuaEntryViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 34BE79952159D25400B5010A /* BuGuaEntryViewController.swift */; };
+		34BE79982159D26200B5010A /* BuGuaEntryViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 34BE79972159D26200B5010A /* BuGuaEntryViewModel.swift */; };
 		34EC158A2153426B00378758 /* ThemeManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 34EC15892153426B00378758 /* ThemeManager.swift */; };
 		34EC158D21534ECA00378758 /* Theme.swift in Sources */ = {isa = PBXBuildFile; fileRef = 34EC158C21534ECA00378758 /* Theme.swift */; };
 		34EC158F21534EF700378758 /* ShallowThemeStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = 34EC158E21534EF700378758 /* ShallowThemeStore.swift */; };
@@ -138,6 +140,8 @@
 		3467E8862149EB0200955D69 /* HorizontalDividersView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HorizontalDividersView.swift; sourceTree = "<group>"; };
 		34A13D4C214222E700D77D98 /* IntegerLiuYaoConverter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IntegerLiuYaoConverter.swift; sourceTree = "<group>"; };
 		34A13D4E2142294D00D77D98 /* Int+Conversion.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Int+Conversion.swift"; sourceTree = "<group>"; };
+		34BE79952159D25400B5010A /* BuGuaEntryViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BuGuaEntryViewController.swift; sourceTree = "<group>"; };
+		34BE79972159D26200B5010A /* BuGuaEntryViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BuGuaEntryViewModel.swift; sourceTree = "<group>"; };
 		34EC15892153426B00378758 /* ThemeManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ThemeManager.swift; sourceTree = "<group>"; };
 		34EC158C21534ECA00378758 /* Theme.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Theme.swift; sourceTree = "<group>"; };
 		34EC158E21534EF700378758 /* ShallowThemeStore.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShallowThemeStore.swift; sourceTree = "<group>"; };
@@ -403,6 +407,8 @@
 			isa = PBXGroup;
 			children = (
 				9BCB3617213E2A5800F7FDDE /* GuaXiangCoordinator.swift */,
+				34BE79952159D25400B5010A /* BuGuaEntryViewController.swift */,
+				34BE79972159D26200B5010A /* BuGuaEntryViewModel.swift */,
 				9BCB360C213E148200F7FDDE /* GuaXiangViewController.swift */,
 				9BCB3610213E150500F7FDDE /* GuaXiangViewController.xib */,
 				9BCB3619213E30D700F7FDDE /* GuaXiangViewModel.swift */,
@@ -668,11 +674,13 @@
 				34EC158D21534ECA00378758 /* Theme.swift in Sources */,
 				9B933EF32134E529004DCD3F /* ViewController.swift in Sources */,
 				9B933F7D2138DF75004DCD3F /* CGSize+Points.swift in Sources */,
+				34BE79962159D25400B5010A /* BuGuaEntryViewController.swift in Sources */,
 				9B933F73213797A2004DCD3F /* UIColor+AppColors.swift in Sources */,
 				9B933F5B2135A8B0004DCD3F /* GuaXiangView.swift in Sources */,
 				3413A55D2140BF4B00245C46 /* InputViewController.swift in Sources */,
 				9BCB3614213E234000F7FDDE /* AppCoordinator.swift in Sources */,
 				9BCE8861214EF5220024FEF7 /* GuaXiangInputCoordinator.swift in Sources */,
+				34BE79982159D26200B5010A /* BuGuaEntryViewModel.swift in Sources */,
 				9B933EF12134E529004DCD3F /* AppDelegate.swift in Sources */,
 				346334462148A52F001D462B /* Array+Convert.swift in Sources */,
 				9B933F7B2138DF3B004DCD3F /* CGRect+Points.swift in Sources */,
