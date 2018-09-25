@@ -79,10 +79,6 @@ extension UIViewController {
         addChild(child)
         view.addSubview(child.view)
 
-        child.view.snp.makeConstraints { make in
-            make.edges.equalToSuperview()
-        }
-
         child.didMove(toParent: self)
     }
     func remove() {
