@@ -23,7 +23,7 @@ class GuaXiangCoordinator: Coordinator {
 
     // MARK: - Private properties
     private var navigationController: UINavigationController!
-    private var viewController: GuaXiangViewController!
+    private var viewController: BuGuaEntryViewController!
     private let factory: AppFactory
     private let didStartRelay = PublishRelay<UIViewController>()
 
@@ -34,13 +34,12 @@ class GuaXiangCoordinator: Coordinator {
 
     // MARK: - Lifecycle
     func start() {
-        let viewModel = GuaXiangViewModel()
+        let viewModel = factory.makeBuGuaEntryViewModel()
+        viewController = factory.makeBuGuaEntryViewController(viewModel: viewModel)
         
-        viewModel.onInputSignal.throttle(0.5).emit(onNext: { [unowned self] _ in
+        viewController.inputButton.rx.tap.bind(onNext: { [unowned self] _ in
             self.showGuaXiangInputFlow()
-        }).disposed(by: viewModel.bag)
-        
-        viewController = factory.makeGuaXiangViewController(viewModel: viewModel)
+        }).disposed(by: viewController.bag)
 
         navigationController = UINavigationController(rootViewController: viewController)
         
@@ -64,11 +63,11 @@ private extension GuaXiangCoordinator {
             modalViewController.add(vc)
         }).disposed(by: inputCoordinator.bag)
 
-        inputCoordinator.guaXiangRelay.take(1)
-            .do(onNext: { [unowned modalViewController] _ in
-                modalViewController.dismiss(animated: true, completion: nil)
-            }).bind(to: viewController.viewModel.guaXiangRelay)
-            .disposed(by: inputCoordinator.bag)
+//        inputCoordinator.guaXiangRelay.take(1)
+//            .do(onNext: { [unowned modalViewController] _ in
+//                modalViewController.dismiss(animated: true, completion: nil)
+//            }).bind(to: viewController.viewModel.guaXiangRelay)
+//            .disposed(by: inputCoordinator.bag)
 
         addChildCoordinator(inputCoordinator)
         inputCoordinator.start()
@@ -81,13 +80,13 @@ private extension GuaXiangCoordinator {
         inputVC.preferredContentSize = CGSize(width: 450, height: 450)
         inputVC.modalPresentationStyle = .formSheet
         
-        viewModel.yaoTypeSignal.asObservable().elements()
-            .do(onNext: { [unowned inputVC] _ in
-                inputVC.dismiss(animated: true, completion: nil)
-            }).map { yaoTypes in
-                return LiuYaoGuaXiangBuilder().setLiuYao(yaoTypes).build()
-            }.bind(to: viewController.viewModel.guaXiangRelay)
-            .disposed(by: viewModel.bag)
+//        viewModel.yaoTypeSignal.asObservable().elements()
+//            .do(onNext: { [unowned inputVC] _ in
+//                inputVC.dismiss(animated: true, completion: nil)
+//            }).map { yaoTypes in
+//                return LiuYaoGuaXiangBuilder().setLiuYao(yaoTypes).build()
+//            }.bind(to: viewController.viewModel.guaXiangRelay)
+//            .disposed(by: viewModel.bag)
     
         viewController.present(inputVC, animated: true, completion: nil)
     }
