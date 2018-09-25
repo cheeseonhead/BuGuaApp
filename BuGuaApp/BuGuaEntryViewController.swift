@@ -26,6 +26,7 @@ class BuGuaEntryViewController: UIViewController {
     init(viewModel: BuGuaEntryViewModel) {
         self.viewModel = viewModel
         super.init(nibName: nil, bundle: nil)
+        createViews()
     }
     
     required init?(coder aDecoder: NSCoder) {
@@ -36,6 +37,7 @@ class BuGuaEntryViewController: UIViewController {
 // MARK: - Setup
 private extension BuGuaEntryViewController {
     func createViews() {
+        view = BackgroundView(frame: .zero)
         inputButton = UIBarButtonItem(title: NSLocalizedString("輸入", comment: ""), style: .plain, target: nil, action: nil)
         navigationItem.rightBarButtonItem = inputButton
     }
