@@ -11,3 +11,9 @@ import Foundation
 class BuGuaEntryViewModel {
     
 }
+
+extension AppFactory {
+    func makeBuGuaEntryViewModel() -> BuGuaEntryViewModel {
+        return BuGuaEntryViewModel()
+    }
+}
