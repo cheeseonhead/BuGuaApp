@@ -23,7 +23,7 @@ class GuaXiangCoordinator: Coordinator {
 
     // MARK: - Private properties
     private var navigationController: UINavigationController!
-    private var viewController: GuaXiangViewController!
+    private var viewController: BuGuaEntryViewController!
     private let factory: AppFactory
     private let didStartRelay = PublishRelay<UIViewController>()
 
@@ -34,13 +34,12 @@ class GuaXiangCoordinator: Coordinator {
 
     // MARK: - Lifecycle
     func start() {
-        let viewModel = GuaXiangViewModel()
+        let viewModel = factory.makeBuGuaEntryViewModel()
+        viewController = factory.makeBuGuaEntryViewController(viewModel: viewModel)
         
-        viewModel.onInputSignal.throttle(0.5).emit(onNext: { [unowned self] _ in
+        viewController.inputButton.rx.tap.bind(onNext: { [unowned self] _ in
             self.showGuaXiangInputFlow()
-        }).disposed(by: viewModel.bag)
-        
-        viewController = factory.makeGuaXiangViewController(viewModel: viewModel)
+        }).disposed(by: viewController.bag)
 
         navigationController = UINavigationController(rootViewController: viewController)
         
@@ -67,29 +66,17 @@ private extension GuaXiangCoordinator {
         inputCoordinator.guaXiangRelay.take(1)
             .do(onNext: { [unowned modalViewController] _ in
                 modalViewController.dismiss(animated: true, completion: nil)
-            }).bind(to: viewController.viewModel.guaXiangRelay)
+            }).map { guaXiang -> BuGuaEntry in
+                return BuGuaEntryBuilder()
+                    .setGuaXiang(guaXiang)
+                    .setDate(.zero)
+                    .setTime(.zero)
+                    .build()
+            }.bind(to: viewController.viewModel.entryRelay)
             .disposed(by: inputCoordinator.bag)
 
         addChildCoordinator(inputCoordinator)
         inputCoordinator.start()
-    }
-
-    func showInputViewController() {
-        let viewModel = factory.makeInputViewModel()
-        
-        let inputVC = factory.makeInputViewController(viewModel: viewModel)
-        inputVC.preferredContentSize = CGSize(width: 450, height: 450)
-        inputVC.modalPresentationStyle = .formSheet
-        
-        viewModel.yaoTypeSignal.asObservable().elements()
-            .do(onNext: { [unowned inputVC] _ in
-                inputVC.dismiss(animated: true, completion: nil)
-            }).map { yaoTypes in
-                return LiuYaoGuaXiangBuilder().setLiuYao(yaoTypes).build()
-            }.bind(to: viewController.viewModel.guaXiangRelay)
-            .disposed(by: viewModel.bag)
-    
-        viewController.present(inputVC, animated: true, completion: nil)
     }
 }
 
@@ -97,10 +84,6 @@ extension UIViewController {
     func add(_ child: UIViewController) {
         addChild(child)
         view.addSubview(child.view)
-
-        child.view.snp.makeConstraints { make in
-            make.edges.equalToSuperview()
-        }
 
         child.didMove(toParent: self)
     }

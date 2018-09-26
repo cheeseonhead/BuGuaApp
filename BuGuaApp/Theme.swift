@@ -30,6 +30,12 @@ enum Theme {
         }
     }
     
+    var cardBackground: UIColor {
+        switch self {
+        case .light: return .white
+        }
+    }
+    
     var navigationBarTint: UIColor {
         switch self {
         case .light: return .white
