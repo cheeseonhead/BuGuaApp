@@ -24,3 +24,9 @@ class GuaXiangViewModel {
     let guaXiangRelay = BehaviorRelay<LiuYaoGuaXiang>(value: .default)
 
 }
+
+extension AppFactory {
+    func makeGuaXiangViewModel() -> GuaXiangViewModel {
+        return GuaXiangViewModel()
+    }
+}
