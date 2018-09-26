@@ -104,8 +104,12 @@ private extension GuaXiangView {
 
         views.forEach { v in
             v.snp.makeConstraints({ (make) in
-                make.leading.trailing.equalToSuperview()
+                make.centerX.equalToSuperview()
             })
+        }
+        
+        dividers.makeConstraints { make in
+            make.leading.trailing.equalToSuperview()
         }
     }
 
@@ -125,6 +129,16 @@ private extension GuaXiangView {
 
         return types.map { type in
             return WideDivider(style: type)
+        }
+    }
+}
+
+extension Array where Element: UIView {
+    func makeConstraints(_ closure: (ConstraintMaker) -> Void) {
+        forEach { element in
+            element.snp.makeConstraints({ make in
+                closure(make)
+            })
         }
     }
 }
