@@ -63,11 +63,17 @@ private extension GuaXiangCoordinator {
             modalViewController.add(vc)
         }).disposed(by: inputCoordinator.bag)
 
-//        inputCoordinator.guaXiangRelay.take(1)
-//            .do(onNext: { [unowned modalViewController] _ in
-//                modalViewController.dismiss(animated: true, completion: nil)
-//            }).bind(to: viewController.viewModel.guaXiangRelay)
-//            .disposed(by: inputCoordinator.bag)
+        inputCoordinator.guaXiangRelay.take(1)
+            .do(onNext: { [unowned modalViewController] _ in
+                modalViewController.dismiss(animated: true, completion: nil)
+            }).map { guaXiang -> BuGuaEntry in
+                return BuGuaEntryBuilder()
+                    .setGuaXiang(guaXiang)
+                    .setDate(.zero)
+                    .setTime(.zero)
+                    .build()
+            }.bind(to: viewController.viewModel.entryRelay)
+            .disposed(by: inputCoordinator.bag)
 
         addChildCoordinator(inputCoordinator)
         inputCoordinator.start()
