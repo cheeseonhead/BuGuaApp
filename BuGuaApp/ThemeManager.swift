@@ -16,6 +16,7 @@ enum BGStyle {
 }
 
 class BackgroundView: UIView {}
+class CardBackground: UIView {}
 class BodyLabel: UILabel {}
 
 protocol ThemeStoring {
@@ -46,6 +47,7 @@ class ThemeManager {
     
     func applyBackgroundView(_ theme: Theme) {
         BackgroundView.appearance().backgroundColor = theme.background
+        CardBackground.appearance().backgroundColor = theme.cardBackground
     }
     
     func applyNavigationBar(_ theme: Theme) {
