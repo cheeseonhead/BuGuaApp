@@ -12,6 +12,10 @@ import RxSwiftExt
 import RxCocoa
 import UIKit
 
+private enum Style {
+    static let guaXiangWidth = CGFloat(400)
+}
+
 class BuGuaEntryViewController: UIViewController {
     // MARK: - Views
     let inputButton = UIBarButtonItem(title: NSLocalizedString("輸入", comment: ""), style: .plain, target: nil, action: nil)
@@ -67,14 +71,20 @@ private extension BuGuaEntryViewController {
         guaXiangVC.view.snp.makeConstraints { make in
             make.trailing.equalTo(view.snp.centerX)
             make.centerY.equalTo(view.safeAreaLayoutGuide)
+            make.width.equalTo(Style.guaXiangWidth)
         }
     }
     
     func styling() {
+        guaXiangVC.view.layer.cornerRadius = 10
+        guaXiangVC.view.clipsToBounds = true
+        guaXiangVC.additionalSafeAreaInsets = UIEdgeInsets(top: 10, left: 0, bottom: 10, right: 0)
     }
     
     func bindings() {
-        
+        viewModel.entryRelay.map { $0.guaXiang }
+            .bind(to: guaXiangVC.viewModel.guaXiangRelay)
+            .disposed(by: bag)
     }
 }
 
