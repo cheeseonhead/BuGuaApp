@@ -14,14 +14,18 @@ import UIKit
 
 class BuGuaInfoViewController: UIViewController {
     // MARK - Views
-    let tableView = UITableView(frame: .zero)
+    let tableView = UITableView(frame: .zero, style: .plain)
     
     // MARK: - Input Rx
     let bag = DisposeBag()
     let entryRelay = PublishRelay<BuGuaEntry>()
     
     // MARK: - Private
-    var currentEntry: BuGuaEntry?
+    var currentEntry: BuGuaEntry? {
+        didSet {
+            tableView.reloadData()
+        }
+    }
     
     init() {
         super.init(nibName: nil, bundle: nil)
@@ -46,27 +50,44 @@ extension BuGuaInfoViewController: UITableViewDelegate, UITableViewDataSource {
     }
 
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = UITableViewCell(style: ., reuseIdentifier: <#T##String?#>)
-        
-    }
+        let cell = DetailCell(reuseIdentifier: "")
 
-    
+        cell.masterLabel.text = "姓名"
+        cell.detailLabel.text = "吳孟洋"
+
+        return cell
+    }
 }
 
 // MARK: - Setup
 private extension BuGuaInfoViewController {
     func setup() {
         createViews()
+        constraints()
         binding()
         styling()
     }
     
     func createViews() {
-//        tableView.register(UITableViewCell.self, forCellReuseIdentifier: "SingleLineCell")
+        let cardView = CardBackground(frame: .zero)
+        view = cardView
+
+        let inset = cardView.cornerRadius
+        additionalSafeAreaInsets = UIEdgeInsets(top: inset, left: 0, bottom: inset, right: 0)
+
         tableView.dataSource = self
         tableView.delegate = self
+        tableView.insetsContentViewsToSafeArea = true
+
+        view.addSubview(tableView)
     }
-    
+
+    func constraints() {
+        tableView.snp.makeConstraints { make in
+            make.edges.equalToSuperview()
+        }
+    }
+
     func binding() {
         entryRelay.bind(onNext: { [unowned self] entry in
             self.currentEntry = entry
@@ -74,7 +95,6 @@ private extension BuGuaInfoViewController {
     }
     
     func styling() {
-        
     }
 }
 
