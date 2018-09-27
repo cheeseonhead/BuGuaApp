@@ -16,7 +16,7 @@ private enum Style {
     static let padding = BGStyle.standardMargin / 2
 }
 
-class DetailCell: UITableViewCell {
+class MasterDetailCell: UITableViewCell {
     // MARK: - Views
     let masterLabel = BodyLabel(frame: .zero)
     let detailLabel = BodyLabel(frame: .zero)
@@ -36,7 +36,7 @@ class DetailCell: UITableViewCell {
 }
 
 // MARK: - Setup
-private extension DetailCell {
+private extension MasterDetailCell {
     func setup() {
         masterLabel.textAlignment = .right
         masterLabel.font = Style.masterFont
@@ -48,7 +48,7 @@ private extension DetailCell {
 
         masterLabel.snp.makeConstraints { make in
             make.top.leading.bottom.equalToSuperview().inset(Style.padding)
-            make.width.equalTo(DetailCell.appearance().masterLabelWidth)
+            make.width.equalTo(MasterDetailCell.appearance().masterLabelWidth)
         }
 
         detailLabel.snp.makeConstraints { make in
