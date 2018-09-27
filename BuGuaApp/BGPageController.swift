@@ -17,7 +17,11 @@ class BGPageController: UIViewController {
 
     // MARK: - Config
 
-    var minSize = CGSize.zero {
+    var minimumMultiPageWidth = CGFloat(0) {
+        didSet { view.setNeedsLayout() }
+    }
+
+    var maxSize = CGSize(width: CGFloat.greatestFiniteMagnitude, height: CGFloat.greatestFiniteMagnitude) {
         didSet { view.setNeedsLayout() }
     }
 
@@ -52,6 +56,9 @@ class BGPageController: UIViewController {
     }
 
     override func viewDidLayoutSubviews() {
+        super.viewDidLayoutSubviews()
+
+        layoutScrollView()
     }
 }
 
@@ -60,9 +67,18 @@ class BGPageController: UIViewController {
 private extension BGPageController {
     func setup() {
         view.addSubview(scrollView)
+    }
+}
 
-        scrollView.snp.makeConstraints { make in
-            make.edges.equalTo(view.safeAreaInsets)
-        }
+// MARK: - ScrollView
+
+private extension BGPageController {
+    func layoutScrollView() {
+        let layout = BGPageControllerLayout(horizontalInset: Style.horizontalContentInset,
+                                            contentSpacing: Style.contentSpacing,
+                                            maxContentSize: maxSize,
+                                            minimumMultipageWidth: minimumMultiPageWidth)
+
+        scrollView.frame = layout.scrollViewFrame()
     }
 }
