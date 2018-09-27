@@ -13,7 +13,9 @@ import RxCocoa
 import UIKit
 
 private enum Style {
-    static let guaXiangWidth = CGFloat(400)
+    static let verticalInset = BGStyle.standardMargin
+    static let horizontalSpacing = BGStyle.standardMargin
+    static let cardSpacing = horizontalSpacing
 }
 
 class BuGuaEntryViewController: UIViewController {
@@ -22,6 +24,7 @@ class BuGuaEntryViewController: UIViewController {
     
     // MARK: - View Controllers
     var guaXiangVC: GuaXiangViewController!
+    var entryInfoVC: BuGuaInfoViewController!
     
     // MARK: - Rx
     let bag = DisposeBag()
@@ -48,8 +51,11 @@ class BuGuaEntryViewController: UIViewController {
         
         let viewModel = factory.makeGuaXiangViewModel()
         guaXiangVC = factory.makeGuaXiangViewController(viewModel: viewModel)
-        
+
+        entryInfoVC = factory.makeBuGuaInfoViewController()
+
         add(guaXiangVC)
+        add(entryInfoVC)
         
         setup()
     }
@@ -69,16 +75,19 @@ private extension BuGuaEntryViewController {
     
     func constraints() {
         guaXiangVC.view.snp.makeConstraints { make in
-            make.trailing.equalTo(view.snp.centerX)
+            make.leading.equalTo(view.snp.leading).inset(Style.horizontalSpacing)
+            make.trailing.equalTo(view.snp.centerX).offset(-Style.cardSpacing / 2)
+            make.top.bottom.equalTo(view.safeAreaInsets).inset(Style.verticalInset)
+        }
+
+        entryInfoVC.view.snp.makeConstraints { make in
+            make.leading.equalTo(view.snp.centerX).offset(Style.cardSpacing / 2)
             make.centerY.equalTo(view.safeAreaLayoutGuide)
-            make.width.equalTo(Style.guaXiangWidth)
+            make.size.equalTo(guaXiangVC.view)
         }
     }
     
     func styling() {
-        guaXiangVC.view.layer.cornerRadius = 10
-        guaXiangVC.view.clipsToBounds = true
-        guaXiangVC.additionalSafeAreaInsets = UIEdgeInsets(top: 10, left: 0, bottom: 10, right: 0)
     }
     
     func bindings() {
