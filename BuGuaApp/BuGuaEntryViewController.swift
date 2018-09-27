@@ -22,6 +22,7 @@ class BuGuaEntryViewController: UIViewController {
     
     // MARK: - View Controllers
     var guaXiangVC: GuaXiangViewController!
+    var entryInfoVC: BuGuaInfoViewController!
     
     // MARK: - Rx
     let bag = DisposeBag()
@@ -48,8 +49,11 @@ class BuGuaEntryViewController: UIViewController {
         
         let viewModel = factory.makeGuaXiangViewModel()
         guaXiangVC = factory.makeGuaXiangViewController(viewModel: viewModel)
-        
+
+        entryInfoVC = factory.makeBuGuaInfoViewController()
+
         add(guaXiangVC)
+        add(entryInfoVC)
         
         setup()
     }
@@ -73,12 +77,15 @@ private extension BuGuaEntryViewController {
             make.centerY.equalTo(view.safeAreaLayoutGuide)
             make.width.equalTo(Style.guaXiangWidth)
         }
+
+        entryInfoVC.view.snp.makeConstraints { make in
+            make.leading.equalTo(view.snp.centerX).offset(BGStyle.standardMargin)
+            make.centerY.equalTo(view.safeAreaLayoutGuide)
+            make.size.equalTo(guaXiangVC.view)
+        }
     }
     
     func styling() {
-        guaXiangVC.view.layer.cornerRadius = 10
-        guaXiangVC.view.clipsToBounds = true
-        guaXiangVC.additionalSafeAreaInsets = UIEdgeInsets(top: 10, left: 0, bottom: 10, right: 0)
     }
     
     func bindings() {
