@@ -14,8 +14,8 @@ import Foundation
 import UIKit
 
 private enum Style {
-    static let stackViewSpacing = BGStyle.standardMargin
-    static let padding = stackViewSpacing / 8
+    static let stackViewSpacing = BGStyle.standardMargin * 1.5
+    static let padding = 0
 
     static let labelFont = UIFont.scaled(.body3Medium)
 }

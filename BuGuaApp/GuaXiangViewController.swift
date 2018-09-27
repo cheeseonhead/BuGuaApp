@@ -52,6 +52,8 @@ class GuaXiangViewController: UIViewController {
 private extension GuaXiangViewController {
     
     func createViews() {
+        additionalSafeAreaInsets = UIEdgeInsets(top: 10, left: 0, bottom: 10, right: 0)
+
         inputButton = UIBarButtonItem(title: NSLocalizedString("輸入", comment: ""), style: .plain, target: nil, action: nil)
         navigationItem.rightBarButtonItem = inputButton
     }
