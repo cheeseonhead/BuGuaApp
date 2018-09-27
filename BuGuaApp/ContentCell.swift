@@ -26,6 +26,7 @@ class ContentCell: UITableViewCell {
 // MARK: - Setup
 private extension ContentCell {
     func setup() {
+        selectionStyle = .none
         contentLabel.font = Style.font
     }
 }

@@ -38,6 +38,8 @@ class MasterDetailCell: UITableViewCell {
 // MARK: - Setup
 private extension MasterDetailCell {
     func setup() {
+        selectionStyle = .none
+
         masterLabel.textAlignment = .right
         masterLabel.font = Style.masterFont
 
