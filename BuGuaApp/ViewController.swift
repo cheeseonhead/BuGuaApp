@@ -20,6 +20,8 @@ class ViewController: UIViewController {
         let pageController = BGPageController(viewControllers: [])
         add(pageController)
 
+        pageController.contentRatio = 672 / 488
+        pageController.minimumMultiPageWidth = 488
         pageController.view.snp.makeConstraints { make in
             make.edges.equalToSuperview()
         }
