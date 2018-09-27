@@ -50,7 +50,7 @@ extension BuGuaInfoViewController: UITableViewDelegate, UITableViewDataSource {
     }
 
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = DetailCell(reuseIdentifier: "")
+        let cell = MasterDetailCell(reuseIdentifier: "")
 
         cell.masterLabel.text = "姓名"
         cell.detailLabel.text = "吳孟洋"

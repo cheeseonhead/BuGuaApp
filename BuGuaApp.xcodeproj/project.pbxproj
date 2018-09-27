@@ -37,7 +37,7 @@
 		9B2AFBA82157011800DF9A5E /* ShiYaoView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9B2AFBA72157011800DF9A5E /* ShiYaoView.swift */; };
 		9B2AFBAA215701FB00DF9A5E /* UIView+Convenience.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9B2AFBA9215701FB00DF9A5E /* UIView+Convenience.swift */; };
 		9B2AFBAC2157347200DF9A5E /* WideDivider.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9B2AFBAB2157347200DF9A5E /* WideDivider.swift */; };
-		9B8B4F03215C4339009FBCD2 /* DetailCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9B8B4F02215C4339009FBCD2 /* DetailCell.swift */; };
+		9B8B4F03215C4339009FBCD2 /* MasterDetailCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9B8B4F02215C4339009FBCD2 /* MasterDetailCell.swift */; };
 		9B933EF12134E529004DCD3F /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9B933EF02134E529004DCD3F /* AppDelegate.swift */; };
 		9B933EF32134E529004DCD3F /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9B933EF22134E529004DCD3F /* ViewController.swift */; };
 		9B933EF62134E529004DCD3F /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 9B933EF42134E529004DCD3F /* Main.storyboard */; };
@@ -158,7 +158,7 @@
 		9B2AFBA72157011800DF9A5E /* ShiYaoView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShiYaoView.swift; sourceTree = "<group>"; };
 		9B2AFBA9215701FB00DF9A5E /* UIView+Convenience.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIView+Convenience.swift"; sourceTree = "<group>"; };
 		9B2AFBAB2157347200DF9A5E /* WideDivider.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WideDivider.swift; sourceTree = "<group>"; };
-		9B8B4F02215C4339009FBCD2 /* DetailCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailCell.swift; sourceTree = "<group>"; };
+		9B8B4F02215C4339009FBCD2 /* MasterDetailCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MasterDetailCell.swift; sourceTree = "<group>"; };
 		9B933EED2134E529004DCD3F /* BuGuaApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = BuGuaApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		9B933EF02134E529004DCD3F /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		9B933EF22134E529004DCD3F /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -279,7 +279,7 @@
 		9B8B4F01215C431B009FBCD2 /* Cell */ = {
 			isa = PBXGroup;
 			children = (
-				9B8B4F02215C4339009FBCD2 /* DetailCell.swift */,
+				9B8B4F02215C4339009FBCD2 /* MasterDetailCell.swift */,
 			);
 			name = Cell;
 			sourceTree = "<group>";
@@ -652,7 +652,7 @@
 			files = (
 				9B933F6F213794F7004DCD3F /* UIFont+AppFont.swift in Sources */,
 				3413A5632140D6FB00245C46 /* NumericTextfieldDelegate.swift in Sources */,
-				9B8B4F03215C4339009FBCD2 /* DetailCell.swift in Sources */,
+				9B8B4F03215C4339009FBCD2 /* MasterDetailCell.swift in Sources */,
 				9BCE8863214F0A590024FEF7 /* GuaXiangInputCoordinatorModel.swift in Sources */,
 				9BCE886C214F13780024FEF7 /* DateInputViewModel.swift in Sources */,
 				34A13D4D214222E700D77D98 /* IntegerLiuYaoConverter.swift in Sources */,

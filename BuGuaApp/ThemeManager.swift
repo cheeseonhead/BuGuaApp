@@ -96,8 +96,8 @@ class ThemeManager {
     }
 
     func applyDetailCell(_ theme: Theme) {
-        DetailCell.appearance().masterLabelWidth = BGStyle.standardMargin * 4
-        DetailCell.appearance().backgroundColor = nil
+        MasterDetailCell.appearance().masterLabelWidth = BGStyle.standardMargin * 4
+        MasterDetailCell.appearance().backgroundColor = nil
     }
 
     func resetViews() {
