@@ -50,6 +50,15 @@ extension BuGuaInfoViewController: UITableViewDelegate, UITableViewDataSource {
     }
 
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+
+        if indexPath.row == 3 {
+            let cell = tableView.dequeueReusableCell(withIdentifier: "Content") as! ContentCell
+
+            cell.contentLabel.text = "詳細說明"
+
+            return cell
+        }
+
         let cell = MasterDetailCell(reuseIdentifier: "")
 
         cell.masterLabel.text = "姓名"
@@ -78,6 +87,7 @@ private extension BuGuaInfoViewController {
         tableView.dataSource = self
         tableView.delegate = self
         tableView.insetsContentViewsToSafeArea = true
+        tableView.register(UINib(nibName: "ContentCell", bundle: nil), forCellReuseIdentifier: "Content")
 
         view.addSubview(tableView)
     }
