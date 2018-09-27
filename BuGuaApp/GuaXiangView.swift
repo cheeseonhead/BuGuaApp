@@ -18,6 +18,23 @@ class GuaXiangView: UIView {
     let guaXiangRows = (1...6).map { _ in return GuaXiangRow(frame: .zero) }
     let dividers = GuaXiangView.makeDividers()
     let headerView = HeaderLabelView(frame: .zero)
+    lazy var viewStack = [
+            dividers[0],
+            headerView,
+            dividers[1],
+            guaXiangRows[5],
+            dividers[2],
+            guaXiangRows[4],
+            dividers[3],
+            guaXiangRows[3],
+            dividers[4],
+            guaXiangRows[2],
+            dividers[5],
+            guaXiangRows[1],
+            dividers[6],
+            guaXiangRows[0],
+            dividers[7]
+        ]
 
     // MARK: - Properties
     let guaXiangRelay = PublishRelay<LiuYaoGuaXiang>()
@@ -27,6 +44,7 @@ class GuaXiangView: UIView {
     
     // MARK: - Private
     let bag = DisposeBag()
+    private var spacingConstraints: [Constraint] = []
 
     // MARK: - Initializers
 
@@ -40,6 +58,12 @@ class GuaXiangView: UIView {
         super.init(coder: aDecoder)
 
         setupViews()
+    }
+
+    override func layoutSubviews() {
+        super.layoutSubviews()
+
+        adjustRows()
     }
 }
 
@@ -61,63 +85,80 @@ private extension GuaXiangView {
         addSubview(headerView)
     }
 
-    func createConstraints() {
-        dividers.first!.snp.makeConstraints { (make) in
-            make.leading.trailing.top.equalToSuperview()
-        }
-        dividers.last!.snp.makeConstraints { (make) in
-            make.leading.trailing.bottom.equalToSuperview()
-        }
-
-        let viewStack = [
-            dividers[0],
-            headerView,
-            dividers[1],
-            guaXiangRows[5],
-            dividers[2],
-            guaXiangRows[4],
-            dividers[3],
-            guaXiangRows[3],
-            dividers[4],
-            guaXiangRows[2],
-            dividers[5],
-            guaXiangRows[1],
-            dividers[6],
-            guaXiangRows[0],
-            dividers[7]
-        ]
-
-        stitchVertically(viewStack)
-
-        GuaXiangViewLayout.alignHeader(headerView, firstRow: guaXiangRows[5])
-    }
-
-    func stitchVertically(_ views: [UIView]) {
-        for i in 0..<views.count - 1 {
-            let top = views[i]
-            let down = views[i+1]
-
-            top.snp.makeConstraints { (make) in
-                make.bottom.equalTo(down.snp.top)
-            }
-        }
-
-        views.forEach { v in
-            v.snp.makeConstraints({ (make) in
-                make.centerX.equalToSuperview()
-            })
-        }
-        
-        dividers.makeConstraints { make in
-            make.leading.trailing.equalToSuperview()
-        }
-    }
-
     func bindings() {
         (1...6).forEach { position in
             guaXiangRelay.map { ($0, position) }
                 .bind(to: guaXiangRows[position - 1].guaXiangRelay)
                 .disposed(by: bag)
+        }
+    }
+}
+
+// MARK: - Constraints
+private extension GuaXiangView {
+    func createConstraints() {
+        stitchHeaderAndDividers()
+        dividersEdgeToEdge()
+
+        centerAllViews(viewStack)
+
+        let headerViewBelow = Array(viewStack[2...])
+        stitchAllBelowHeaderView(headerViewBelow)
+
+        GuaXiangViewLayout.alignHeader(headerView, firstRow: guaXiangRows[5])
+    }
+
+    func stitchHeaderAndDividers() {
+        dividers.first!.snp.makeConstraints { (make) in
+            make.leading.trailing.top.equalToSuperview()
+            make.bottom.equalTo(headerView.snp.top)
+        }
+
+        headerView.snp.makeConstraints { (make) in
+            make.bottom.equalTo(dividers[1].snp.top)
+        }
+    }
+
+    func dividersEdgeToEdge() {
+        dividers.makeConstraints { make in
+            make.leading.trailing.equalToSuperview()
+        }
+    }
+
+    func centerAllViews(_ views: [UIView]) {
+        views.forEach { v in
+            v.snp.makeConstraints({ (make) in
+                make.centerX.equalToSuperview()
+            })
+        }
+    }
+
+    func stitchAllBelowHeaderView(_ views: [UIView]) {
+        for i in 0..<views.count - 1 {
+            let top = views[i]
+            let down = views[i+1]
+
+            top.snp.makeConstraints { (make) in
+                spacingConstraints.append(make.bottom.equalTo(down.snp.top).constraint)
+            }
+        }
+    }
+
+    // MARK: - Adjustment
+    func adjustRows() {
+        let bottomDivider = dividers.last!
+        let bottomY = bottomDivider.frame.bottomLeft.y
+
+        let extraSpace = frame.bottomLeft.y - bottomY
+        let spacing = extraSpace / 12
+
+        let topRowBelow = Array(viewStack[3...])
+
+        var pos = dividers[1].frame.bottomLeft.y
+        for v in topRowBelow {
+            pos += spacing
+            v.frame = CGRect(x: v.frame.origin.x, y: pos, width: v.frame.size.width, height: v.frame.size.height)
+            pos += v.frame.height
         }
     }
 }
