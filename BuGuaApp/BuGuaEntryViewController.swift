@@ -13,7 +13,9 @@ import RxCocoa
 import UIKit
 
 private enum Style {
-    static let guaXiangWidth = CGFloat(400)
+    static let verticalInset = BGStyle.standardMargin
+    static let horizontalSpacing = BGStyle.standardMargin
+    static let cardSpacing = horizontalSpacing
 }
 
 class BuGuaEntryViewController: UIViewController {
@@ -73,13 +75,13 @@ private extension BuGuaEntryViewController {
     
     func constraints() {
         guaXiangVC.view.snp.makeConstraints { make in
-            make.trailing.equalTo(view.snp.centerX)
-            make.centerY.equalTo(view.safeAreaLayoutGuide)
-            make.width.equalTo(Style.guaXiangWidth)
+            make.leading.equalTo(view.snp.leading).inset(Style.horizontalSpacing)
+            make.trailing.equalTo(view.snp.centerX).offset(-Style.cardSpacing / 2)
+            make.top.bottom.equalTo(view.safeAreaInsets).inset(Style.verticalInset)
         }
 
         entryInfoVC.view.snp.makeConstraints { make in
-            make.leading.equalTo(view.snp.centerX).offset(BGStyle.standardMargin)
+            make.leading.equalTo(view.snp.centerX).offset(Style.cardSpacing / 2)
             make.centerY.equalTo(view.safeAreaLayoutGuide)
             make.size.equalTo(guaXiangVC.view)
         }
