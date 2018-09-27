@@ -17,15 +17,12 @@ class ViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
 
-//        let dateInputVM = DateInputViewModel(timeZoneGetter: { TimeZone.autoupdatingCurrent })
-//        let dateInputVC = DateInputViewController(viewModel: dateInputVM)
-//
-//        add(dateInputVC)
+        let pageController = BGPageController(viewControllers: [])
+        add(pageController)
 
-//        dateInputVM.gregorianDateDriver
-//            .drive(onNext: { date in
-//                print("Got date! \(date)")
-//            })
+        pageController.view.snp.makeConstraints { make in
+            make.edges.equalToSuperview()
+        }
     }
 
     override func viewDidAppear(_ animated: Bool) {
