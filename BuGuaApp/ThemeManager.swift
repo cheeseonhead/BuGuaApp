@@ -16,7 +16,20 @@ enum BGStyle {
 }
 
 class BackgroundView: UIView {}
-class CardBackground: UIView {}
+class CardBackground: UIView {
+    @objc dynamic var cornerRadius = CGFloat(10)
+
+    override init(frame: CGRect) {
+        super.init(frame: frame)
+
+        layer.cornerRadius = cornerRadius
+    }
+
+    required init?(coder aDecoder: NSCoder) {
+        fatalError("init(coder:) has not been implemented")
+    }
+}
+
 class BodyLabel: UILabel {}
 
 protocol ThemeStoring {
@@ -41,6 +54,8 @@ class ThemeManager {
         applyBodyLabel(theme)
         applyGuaXiangView(theme)
         applyYaoView(theme)
+        applyTableView(theme)
+        applyDetailCell(theme)
         
         resetViews()
     }
@@ -74,7 +89,17 @@ class ThemeManager {
         let yaoViewAppearance = YaoView.appearance()
         yaoViewAppearance.color = theme.bodyText
     }
-    
+
+    func applyTableView(_ theme: Theme) {
+        UITableView.appearance().backgroundColor = nil
+        UITableView.appearance().separatorStyle = .none
+    }
+
+    func applyDetailCell(_ theme: Theme) {
+        DetailCell.appearance().masterLabelWidth = BGStyle.standardMargin * 4
+        DetailCell.appearance().backgroundColor = nil
+    }
+
     func resetViews() {
         let windows = UIApplication.shared.windows as [UIWindow]
         for window in windows {
