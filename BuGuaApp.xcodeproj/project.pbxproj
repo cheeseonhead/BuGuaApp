@@ -37,6 +37,9 @@
 		9B2AFBA82157011800DF9A5E /* ShiYaoView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9B2AFBA72157011800DF9A5E /* ShiYaoView.swift */; };
 		9B2AFBAA215701FB00DF9A5E /* UIView+Convenience.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9B2AFBA9215701FB00DF9A5E /* UIView+Convenience.swift */; };
 		9B2AFBAC2157347200DF9A5E /* WideDivider.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9B2AFBAB2157347200DF9A5E /* WideDivider.swift */; };
+		9B8B4F03215C4339009FBCD2 /* MasterDetailCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9B8B4F02215C4339009FBCD2 /* MasterDetailCell.swift */; };
+		9B8B4F06215C5872009FBCD2 /* ContentCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9B8B4F04215C5872009FBCD2 /* ContentCell.swift */; };
+		9B8B4F07215C5872009FBCD2 /* ContentCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 9B8B4F05215C5872009FBCD2 /* ContentCell.xib */; };
 		9B933EF12134E529004DCD3F /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9B933EF02134E529004DCD3F /* AppDelegate.swift */; };
 		9B933EF32134E529004DCD3F /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9B933EF22134E529004DCD3F /* ViewController.swift */; };
 		9B933EF62134E529004DCD3F /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 9B933EF42134E529004DCD3F /* Main.storyboard */; };
@@ -157,6 +160,9 @@
 		9B2AFBA72157011800DF9A5E /* ShiYaoView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShiYaoView.swift; sourceTree = "<group>"; };
 		9B2AFBA9215701FB00DF9A5E /* UIView+Convenience.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIView+Convenience.swift"; sourceTree = "<group>"; };
 		9B2AFBAB2157347200DF9A5E /* WideDivider.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WideDivider.swift; sourceTree = "<group>"; };
+		9B8B4F02215C4339009FBCD2 /* MasterDetailCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MasterDetailCell.swift; sourceTree = "<group>"; };
+		9B8B4F04215C5872009FBCD2 /* ContentCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentCell.swift; sourceTree = "<group>"; };
+		9B8B4F05215C5872009FBCD2 /* ContentCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ContentCell.xib; sourceTree = "<group>"; };
 		9B933EED2134E529004DCD3F /* BuGuaApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = BuGuaApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		9B933EF02134E529004DCD3F /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		9B933EF22134E529004DCD3F /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -274,6 +280,16 @@
 			name = Theme;
 			sourceTree = "<group>";
 		};
+		9B8B4F01215C431B009FBCD2 /* Cell */ = {
+			isa = PBXGroup;
+			children = (
+				9B8B4F02215C4339009FBCD2 /* MasterDetailCell.swift */,
+				9B8B4F04215C5872009FBCD2 /* ContentCell.swift */,
+				9B8B4F05215C5872009FBCD2 /* ContentCell.xib */,
+			);
+			name = Cell;
+			sourceTree = "<group>";
+		};
 		9B933EE42134E529004DCD3F = {
 			isa = PBXGroup;
 			children = (
@@ -337,6 +353,7 @@
 		9B933F3C2134EB58004DCD3F /* Views */ = {
 			isa = PBXGroup;
 			children = (
+				9B8B4F01215C431B009FBCD2 /* Cell */,
 				34EC158B21534EBC00378758 /* Theme */,
 				346334492148A89B001D462B /* GuaXiang */,
 				9B933F3A2134EB01004DCD3F /* FuXiBaGuaView.swift */,
@@ -546,6 +563,7 @@
 				3413A55E2140BF4B00245C46 /* InputViewController.xib in Resources */,
 				9BCE886E214F13820024FEF7 /* DateInputViewController.xib in Resources */,
 				34F3E4F92150945C00A9BA2B /* Localizable.strings in Resources */,
+				9B8B4F07215C5872009FBCD2 /* ContentCell.xib in Resources */,
 				9B933F412134F054004DCD3F /* FuXiBaGuaView.xib in Resources */,
 				9B933EF82134E52A004DCD3F /* Assets.xcassets in Resources */,
 				9BCE8875214F2E220024FEF7 /* DateGanZhiViewController.xib in Resources */,
@@ -641,6 +659,7 @@
 			files = (
 				9B933F6F213794F7004DCD3F /* UIFont+AppFont.swift in Sources */,
 				3413A5632140D6FB00245C46 /* NumericTextfieldDelegate.swift in Sources */,
+				9B8B4F03215C4339009FBCD2 /* MasterDetailCell.swift in Sources */,
 				9BCE8863214F0A590024FEF7 /* GuaXiangInputCoordinatorModel.swift in Sources */,
 				9BCE886C214F13780024FEF7 /* DateInputViewModel.swift in Sources */,
 				34A13D4D214222E700D77D98 /* IntegerLiuYaoConverter.swift in Sources */,
@@ -662,6 +681,7 @@
 				3413A5692140E0D600245C46 /* ComposableTextfieldDelegate.swift in Sources */,
 				9BCB3616213E254900F7FDDE /* AppFactory.swift in Sources */,
 				9B933F772137A8C3004DCD3F /* YaoView.swift in Sources */,
+				9B8B4F06215C5872009FBCD2 /* ContentCell.swift in Sources */,
 				9BCB361A213E30D700F7FDDE /* GuaXiangViewModel.swift in Sources */,
 				34A13D4F2142294D00D77D98 /* Int+Conversion.swift in Sources */,
 				9BCB3609213E011800F7FDDE /* String+Vertical.swift in Sources */,

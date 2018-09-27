@@ -7,17 +7,17 @@
 //
 
 import Foundation
-import RxSwift
 import RxCocoa
+import RxSwift
 import UIKit
 
 class AppCoordinator: Coordinator {
-
     var childCoordinators = [Coordinator]()
-    lazy private (set) var didStartSignal = didStartRelay.asSignal()
+    private(set) lazy var didStartSignal = didStartRelay.asSignal()
     let bag = DisposeBag()
 
     // MARK: - Private Rx
+
     private let didStartRelay = PublishRelay<UIViewController>()
 
     private let testing = false
