@@ -7,9 +7,9 @@
 //
 
 import Foundation
+import RxCocoa
 import RxSwift
 import RxSwiftExt
-import RxCocoa
 import UIKit
 
 private enum Style {
@@ -19,77 +19,80 @@ private enum Style {
 }
 
 class BuGuaEntryViewController: UIViewController {
+
     // MARK: - Views
+
     let inputButton = UIBarButtonItem(title: NSLocalizedString("輸入", comment: ""), style: .plain, target: nil, action: nil)
-    
+
     // MARK: - View Controllers
+
+    var pageController: BGPageController!
     var guaXiangVC: GuaXiangViewController!
     var entryInfoVC: BuGuaInfoViewController!
-    
+
     // MARK: - Rx
+
     let bag = DisposeBag()
-    
+
     // MARK: - Properties
+
     let factory: AppFactory
     let viewModel: BuGuaEntryViewModel
-    
+
     // MARK: - Inits
+
     init(factory: AppFactory, viewModel: BuGuaEntryViewModel) {
         self.factory = factory
         self.viewModel = viewModel
         super.init(nibName: nil, bundle: nil)
-        
-        createViews()
     }
-    
-    required init?(coder aDecoder: NSCoder) {
+
+    required init?(coder _: NSCoder) {
         fatalError("init(coder:) has not been implemented")
     }
-    
+
     override func viewDidLoad() {
         view = BackgroundView(frame: .zero)
-        
-        let viewModel = factory.makeGuaXiangViewModel()
-        guaXiangVC = factory.makeGuaXiangViewController(viewModel: viewModel)
 
-        entryInfoVC = factory.makeBuGuaInfoViewController()
-
-        add(guaXiangVC)
-        add(entryInfoVC)
-        
         setup()
     }
 }
 
 // MARK: - Setup
+
 private extension BuGuaEntryViewController {
     func setup() {
+        createViews()
         constraints()
         bindings()
         styling()
     }
-    
+
     func createViews() {
+        let viewModel = factory.makeGuaXiangViewModel()
+        guaXiangVC = factory.makeGuaXiangViewController(viewModel: viewModel)
+
+        entryInfoVC = factory.makeBuGuaInfoViewController()
+
+        pageController = BGPageController(viewControllers: [guaXiangVC, entryInfoVC])
+        pageController.minimumMultiPageWidth = 400
+        pageController.inset = 24
+        pageController.minimumPageSpacing = 16
+
+        add(pageController)
+
         navigationItem.rightBarButtonItem = inputButton
     }
-    
-    func constraints() {
-        guaXiangVC.view.snp.makeConstraints { make in
-            make.leading.equalTo(view.snp.leading).inset(Style.horizontalSpacing)
-            make.trailing.equalTo(view.snp.centerX).offset(-Style.cardSpacing / 2)
-            make.top.bottom.equalTo(view.safeAreaInsets).inset(Style.verticalInset)
-        }
 
-        entryInfoVC.view.snp.makeConstraints { make in
-            make.leading.equalTo(view.snp.centerX).offset(Style.cardSpacing / 2)
-            make.centerY.equalTo(view.safeAreaLayoutGuide)
-            make.size.equalTo(guaXiangVC.view)
+    func constraints() {
+        pageController.view.snp.makeConstraints { make in
+            make.edges.equalTo(view.safeAreaLayoutGuide)
         }
     }
-    
+
     func styling() {
     }
-    
+
     func bindings() {
         viewModel.entryRelay.map { $0.guaXiang }
             .bind(to: guaXiangVC.viewModel.guaXiangRelay)

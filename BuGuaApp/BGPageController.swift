@@ -75,6 +75,10 @@ private extension BGPageController {
         view.addSubview(scrollView)
         scrollView.addSubview(contentView)
 
+        viewControllers.forEach { vc in
+            addChild(vc)
+        }
+
         contentView.addSubviews(viewControllers.map { $0.view })
 
         scrollView.clipsToBounds = false
