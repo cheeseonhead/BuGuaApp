@@ -26,6 +26,20 @@ class BGPageControllerLayout {
         self.totalNumberOfPages = totalNumberOfPages
     }
 
+    private(set) lazy var pageFrames: [CGRect] = {
+        var currentLeft = contentSpacing / 2
+        let top = contentSpacing
+
+        var frames = [CGRect]()
+        for _ in 1 ... totalNumberOfPages {
+            let frame = CGRect(origin: CGPoint(x: currentLeft, y: top), size: fittingPageSize)
+            frames.append(frame)
+            currentLeft += fittingPageSize.width + contentSpacing
+        }
+
+        return frames
+    }()
+
     private(set) lazy var scrollViewFrame: CGRect = {
         let viewsWidth = fittingPageSize.width * CGFloat(numberOfPagesAtOnce)
         let totalSpacingWidth = contentSpacing + actualInterPageSpacing * CGFloat(numberOfPagesAtOnce - 1)
