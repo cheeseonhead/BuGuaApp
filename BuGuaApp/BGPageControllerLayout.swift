@@ -11,30 +11,30 @@ import UIKit
 
 class BGPageControllerLayout {
     let bounds: CGRect
-    let horizontalInset: CGFloat
-    let contentSpacing: CGFloat
+    let inset: CGFloat
+    let minimumContentSpacing: CGFloat
     let maxContentSize: CGSize
     let minimumMultipageWidth: CGFloat
     let totalNumberOfPages: Int
 
     init(bounds: CGRect, horizontalInset: CGFloat, contentSpacing: CGFloat, maxContentSize: CGSize, minimumMultipageWidth: CGFloat, totalNumberOfPages: Int) {
         self.bounds = bounds
-        self.horizontalInset = horizontalInset
-        self.contentSpacing = contentSpacing
+        inset = horizontalInset
+        minimumContentSpacing = contentSpacing
         self.maxContentSize = maxContentSize
         self.minimumMultipageWidth = minimumMultipageWidth
         self.totalNumberOfPages = totalNumberOfPages
     }
 
     private(set) lazy var pageFrames: [CGRect] = {
-        var currentLeft = contentSpacing / 2
-        let top = contentSpacing
+        var currentLeft = actualInterPageSpacing / 2
+        let top = minimumContentSpacing
 
         var frames = [CGRect]()
         for _ in 1 ... totalNumberOfPages {
             let frame = CGRect(origin: CGPoint(x: currentLeft, y: top), size: fittingPageSize)
             frames.append(frame)
-            currentLeft += fittingPageSize.width + contentSpacing
+            currentLeft += fittingPageSize.width + actualInterPageSpacing
         }
 
         return frames
@@ -42,7 +42,7 @@ class BGPageControllerLayout {
 
     private(set) lazy var scrollViewFrame: CGRect = {
         let viewsWidth = fittingPageSize.width * CGFloat(numberOfPagesAtOnce)
-        let totalSpacingWidth = contentSpacing + actualInterPageSpacing * CGFloat(numberOfPagesAtOnce - 1)
+        let totalSpacingWidth = actualInterPageSpacing * CGFloat(numberOfPagesAtOnce)
         let finalWidth = viewsWidth + totalSpacingWidth
 
         let finalHeight = scrollViewHeight
@@ -54,14 +54,14 @@ class BGPageControllerLayout {
 
     private(set) lazy var scrollViewContentSize: CGSize = {
         let finalHeight = scrollViewHeight
-        let finalWidth = fittingPageSize.width * CGFloat(totalNumberOfPages) + contentSpacing * CGFloat(totalNumberOfPages)
+        let finalWidth = fittingPageSize.width * CGFloat(totalNumberOfPages) + minimumContentSpacing * CGFloat(totalNumberOfPages)
 
         return CGSize(width: finalWidth, height: finalHeight)
     }()
 
     private(set) lazy var actualInterPageSpacing: CGFloat = {
         let totalWidth = bounds.width
-        let horizontalOccupiedByPages = horizontalInset * 2 + fittingPageSize.width * CGFloat(numberOfPagesAtOnce)
+        let horizontalOccupiedByPages = inset * 2 + fittingPageSize.width * CGFloat(numberOfPagesAtOnce)
         let numberOfSpaces = numberOfPagesAtOnce + 1
 
         let blankLength = totalWidth - horizontalOccupiedByPages
@@ -70,7 +70,7 @@ class BGPageControllerLayout {
     }()
 
     private(set) lazy var scrollViewHeight: CGFloat = {
-        contentSpacing * 2 + fittingPageSize.height
+        minimumContentSpacing * 2 + fittingPageSize.height
     }()
 
     /// The actual size the embedded view controllers will have, derived from the maximum possible one and the given
@@ -80,7 +80,7 @@ class BGPageControllerLayout {
 
         let fittingWidth = min(maxPossibleWidth, maxContentSize.width)
 
-        let maxPossibleHeight = bounds.height - contentSpacing * 2
+        let maxPossibleHeight = bounds.height - minimumContentSpacing * 2
 
         let fittingHeight = min(maxPossibleHeight, maxContentSize.height)
 
@@ -103,7 +103,7 @@ class BGPageControllerLayout {
 
     func pageWidth(numberOfPages number: Int) -> CGFloat {
         let totalWidth = bounds.size.width
-        let totalSpacings = 2 * horizontalInset + CGFloat(number + 1) * contentSpacing
+        let totalSpacings = 2 * inset + CGFloat(number + 1) * minimumContentSpacing
 
         let totalAvailableWidth = totalWidth - totalSpacings
         let widthPerContent = totalAvailableWidth / CGFloat(number)
