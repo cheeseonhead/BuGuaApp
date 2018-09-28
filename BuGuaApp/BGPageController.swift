@@ -71,6 +71,9 @@ private extension BGPageController {
         scrollView.addSubview(contentView)
 
         contentView.addSubviews(viewControllers.map { $0.view })
+
+        scrollView.clipsToBounds = false
+        scrollView.isPagingEnabled = true
     }
 }
 
