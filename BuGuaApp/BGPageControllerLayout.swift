@@ -10,12 +10,14 @@ import Foundation
 import UIKit
 
 class BGPageControllerLayout {
+    let bounds: CGRect
     let horizontalInset: CGFloat
     let contentSpacing: CGFloat
     let maxContentSize: CGSize
     let minimumMultipageWidth: CGFloat
 
-    init(horizontalInset: CGFloat, contentSpacing: CGFloat, maxContentSize: CGSize, minimumMultipageWidth: CGFloat) {
+    init(bounds: CGRect, horizontalInset: CGFloat, contentSpacing: CGFloat, maxContentSize: CGSize, minimumMultipageWidth: CGFloat) {
+        self.bounds = bounds
         self.horizontalInset = horizontalInset
         self.contentSpacing = contentSpacing
         self.maxContentSize = maxContentSize
@@ -26,11 +28,11 @@ class BGPageControllerLayout {
         return .zero
     }
 
-    func calculateNumberOfPages(for bounds: CGRect) -> Int {
+    func calculateNumberOfPages() -> Int {
         var numberOfPages = 1
 
         for n in 2 ... 10000 {
-            if contentWidth(numberOfPages: n, in: bounds) < minimumMultipageWidth {
+            if contentWidth(numberOfPages: n) < minimumMultipageWidth {
                 break
             }
             numberOfPages = n
@@ -39,7 +41,7 @@ class BGPageControllerLayout {
         return numberOfPages
     }
 
-    func contentWidth(numberOfPages number: Int, in bounds: CGRect) -> CGFloat {
+    func contentWidth(numberOfPages number: Int) -> CGFloat {
         let totalWidth = bounds.size.width
         let totalSpacings = 2 * horizontalInset + CGFloat(number + 1) * contentSpacing
 
