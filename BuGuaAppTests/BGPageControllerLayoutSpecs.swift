@@ -22,6 +22,7 @@ class BGPageControllerLayoutSpecs: QuickSpec {
                 builder.contentSpacing = 16
                 builder.maxContentSize = CGSize(width: 500, height: 500)
                 builder.minimumMultipageWidth = 488
+                builder.totalNumberOfPages = 10
             }
 
             context("regular iPad size") {
@@ -32,14 +33,14 @@ class BGPageControllerLayoutSpecs: QuickSpec {
                 it("right fitting size") {
                     let sut = builder.build()
 
-                    expect(sut.fittingContentSize.width) == 500
-                    expect(sut.fittingContentSize.height) == 500
+                    expect(sut.fittingPageSize.width) == 500
+                    expect(sut.fittingPageSize.height) == 500
                 }
 
                 it("right width for 1 view") {
                     let sut = builder.build()
 
-                    let result = sut.contentWidth(numberOfPages: 1)
+                    let result = sut.pageWidth(numberOfPages: 1)
 
                     expect(result) == 976
                 }
@@ -47,7 +48,7 @@ class BGPageControllerLayoutSpecs: QuickSpec {
                 it("right width for 2 views") {
                     let sut = builder.build()
 
-                    let result = sut.contentWidth(numberOfPages: 2)
+                    let result = sut.pageWidth(numberOfPages: 2)
 
                     expect(result) == 480
                 }
@@ -55,7 +56,7 @@ class BGPageControllerLayoutSpecs: QuickSpec {
                 it("should select right page count") {
                     let sut = builder.build()
 
-                    let result = sut.numberOfPages
+                    let result = sut.numberOfPagesAtOnce
 
                     expect(result) == 1
                 }
@@ -64,7 +65,7 @@ class BGPageControllerLayoutSpecs: QuickSpec {
                     builder.minimumMultipageWidth = 480
                     let sut = builder.build()
 
-                    let result = sut.numberOfPages
+                    let result = sut.numberOfPagesAtOnce
 
                     expect(result) == 2
                 }
@@ -77,8 +78,8 @@ class BGPageControllerLayoutSpecs: QuickSpec {
                     it("right fitting size") {
                         let sut = builder.build()
 
-                        expect(sut.fittingContentSize.width) == 976
-                        expect(sut.fittingContentSize.height) == 708
+                        expect(sut.fittingPageSize.width) == 976
+                        expect(sut.fittingPageSize.height) == 708
                     }
                 }
             }
@@ -92,8 +93,9 @@ private class Builder {
     var contentSpacing: CGFloat = 0
     var maxContentSize: CGSize = .zero
     var minimumMultipageWidth: CGFloat = 0
+    var totalNumberOfPages: Int = 1
 
     func build() -> BGPageControllerLayout {
-        return BGPageControllerLayout(bounds: bounds, horizontalInset: horizontalInset, contentSpacing: contentSpacing, maxContentSize: maxContentSize, minimumMultipageWidth: minimumMultipageWidth)
+        return BGPageControllerLayout(bounds: bounds, horizontalInset: horizontalInset, contentSpacing: contentSpacing, maxContentSize: maxContentSize, minimumMultipageWidth: minimumMultipageWidth, totalNumberOfPages: totalNumberOfPages)
     }
 }
