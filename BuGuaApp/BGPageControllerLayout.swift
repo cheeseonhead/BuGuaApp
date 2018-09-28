@@ -28,9 +28,8 @@ class BGPageControllerLayout {
         return .zero
     }
 
-    func calculateFittingContentSize() -> CGSize {
-        let numberOfPagesToDisplay = calculateNumberOfPages()
-        let maxPossibleWidth = contentWidth(numberOfPages: numberOfPagesToDisplay)
+    private(set) lazy var fittingContentSize: CGSize = {
+        let maxPossibleWidth = contentWidth(numberOfPages: numberOfPages)
 
         let fittingWidth = min(maxPossibleWidth, maxContentSize.width)
 
@@ -39,9 +38,9 @@ class BGPageControllerLayout {
         let fittingHeight = min(maxPossibleHeight, maxContentSize.height)
 
         return CGSize(width: fittingWidth, height: fittingHeight)
-    }
+    }()
 
-    func calculateNumberOfPages() -> Int {
+    private(set) lazy var numberOfPages: Int = {
         var numberOfPages = 1
 
         for n in 2 ... 10000 {
@@ -52,7 +51,7 @@ class BGPageControllerLayout {
         }
 
         return numberOfPages
-    }
+    }()
 
     func contentWidth(numberOfPages number: Int) -> CGFloat {
         let totalWidth = bounds.size.width
