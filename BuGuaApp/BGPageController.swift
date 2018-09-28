@@ -8,11 +8,6 @@
 
 import UIKit
 
-private enum Style {
-    static let contentSpacing = BGStyle.standardMargin / 2
-    static let horizontalContentInset = contentSpacing
-}
-
 class BGPageController: UIViewController {
 
     // MARK: - Config
