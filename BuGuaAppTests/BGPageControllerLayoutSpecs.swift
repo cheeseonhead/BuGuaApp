@@ -32,8 +32,8 @@ class BGPageControllerLayoutSpecs: QuickSpec {
                 it("right fitting size") {
                     let sut = builder.build()
 
-                    expect(sut.calculateFittingContentSize().width) == 500
-                    expect(sut.calculateFittingContentSize().height) == 500
+                    expect(sut.fittingContentSize.width) == 500
+                    expect(sut.fittingContentSize.height) == 500
                 }
 
                 it("right width for 1 view") {
@@ -55,7 +55,7 @@ class BGPageControllerLayoutSpecs: QuickSpec {
                 it("should select right page count") {
                     let sut = builder.build()
 
-                    let result = sut.calculateNumberOfPages()
+                    let result = sut.numberOfPages
 
                     expect(result) == 1
                 }
@@ -64,7 +64,7 @@ class BGPageControllerLayoutSpecs: QuickSpec {
                     builder.minimumMultipageWidth = 480
                     let sut = builder.build()
 
-                    let result = sut.calculateNumberOfPages()
+                    let result = sut.numberOfPages
 
                     expect(result) == 2
                 }
@@ -77,8 +77,8 @@ class BGPageControllerLayoutSpecs: QuickSpec {
                     it("right fitting size") {
                         let sut = builder.build()
 
-                        expect(sut.calculateFittingContentSize().width) == 976
-                        expect(sut.calculateFittingContentSize().height) == 708
+                        expect(sut.fittingContentSize.width) == 976
+                        expect(sut.fittingContentSize.height) == 708
                     }
                 }
             }
