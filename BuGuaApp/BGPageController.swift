@@ -74,7 +74,8 @@ private extension BGPageController {
 
 private extension BGPageController {
     func layoutScrollView() {
-        let layout = BGPageControllerLayout(horizontalInset: Style.horizontalContentInset,
+        let layout = BGPageControllerLayout(bounds: view.bounds,
+                                            horizontalInset: Style.horizontalContentInset,
                                             contentSpacing: Style.contentSpacing,
                                             maxContentSize: maxSize,
                                             minimumMultipageWidth: minimumMultiPageWidth)
