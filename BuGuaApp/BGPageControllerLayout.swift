@@ -103,7 +103,7 @@ class BGPageControllerLayout {
     private(set) lazy var numberOfPagesAtOnce: Int = {
         var numberOfPages = 1
 
-        for n in 2 ... 10000 {
+        for n in 2 ... totalNumberOfPages {
             if pageWidth(numberOfPages: n) < minimumMultipageWidth {
                 break
             }
@@ -123,9 +123,4 @@ class BGPageControllerLayout {
 
         return widthPerContent
     }
-}
-
-infix operator =>
-private func => <T, U>(_ input: T, closure: (T) -> U) -> U {
-    return closure(input)
 }
