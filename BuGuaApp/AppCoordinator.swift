@@ -20,7 +20,7 @@ class AppCoordinator: Coordinator {
 
     private let didStartRelay = PublishRelay<UIViewController>()
 
-    private let testing = false
+    private let testing = true
 
     private weak var window: UIWindow?
     private let factory: AppFactory
