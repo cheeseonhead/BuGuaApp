@@ -29,6 +29,13 @@ class BGPageControllerLayoutSpecs: QuickSpec {
                     builder.bounds = CGRect(x: 0, y: 0, width: 1024, height: 740)
                 }
 
+                it("right fitting size") {
+                    let sut = builder.build()
+
+                    expect(sut.calculateFittingContentSize().width) == 500
+                    expect(sut.calculateFittingContentSize().height) == 500
+                }
+
                 it("right width for 1 view") {
                     let sut = builder.build()
 
@@ -60,6 +67,19 @@ class BGPageControllerLayoutSpecs: QuickSpec {
                     let result = sut.calculateNumberOfPages()
 
                     expect(result) == 2
+                }
+
+                context("larger max content size") {
+                    beforeEach {
+                        builder.maxContentSize = CGSize(width: 2000, height: 2000)
+                    }
+
+                    it("right fitting size") {
+                        let sut = builder.build()
+
+                        expect(sut.calculateFittingContentSize().width) == 976
+                        expect(sut.calculateFittingContentSize().height) == 708
+                    }
                 }
             }
         }
