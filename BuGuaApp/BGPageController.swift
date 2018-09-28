@@ -80,8 +80,6 @@ private extension BGPageController {
         scrollView.isPagingEnabled = true
         scrollView.showsVerticalScrollIndicator = false
         scrollView.showsHorizontalScrollIndicator = false
-
-        contentView.backgroundColor = .blue
     }
 }
 

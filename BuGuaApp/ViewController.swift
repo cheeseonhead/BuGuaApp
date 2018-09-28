@@ -17,21 +17,30 @@ class ViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        let pageController = BGPageController(viewControllers: [])
+        func makeVC() -> UIViewController {
+            let vc = UIViewController()
+            vc.view.backgroundColor = .red
+
+            return vc
+        }
+
+        let pageController = BGPageController(viewControllers: [makeVC(), makeVC()])
         add(pageController)
 
-        pageController.contentRatio = 672 / 488
-        pageController.maxSize = CGSize(width: 488, height: 672)
+        pageController.inset = 8
+        pageController.minimumPageSpacing = 8
+        pageController.maxSize = CGSize(width: 634.4, height: 873.6)
         pageController.minimumMultiPageWidth = 488
         pageController.view.snp.makeConstraints { make in
+//            make.center.equalToSuperview()
+//            make.size.equalTo(CGSize(width: 500, height: 500))
             make.edges.equalToSuperview()
         }
+        pageController.view.clipsToBounds = true
     }
 
     override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(animated)
-
-        let guaXiang = guaXiangBuilder.build()
     }
 
     @IBAction func changed(_ sender: UISlider) {
