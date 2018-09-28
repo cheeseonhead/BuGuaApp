@@ -32,6 +32,7 @@ class BGPageController: UIViewController {
     // MARK: - Views
 
     let scrollView = UIScrollView(frame: .zero)
+    let contentView = UIView(frame: .zero)
 
     // MARK: - Properties
 
@@ -67,6 +68,9 @@ class BGPageController: UIViewController {
 private extension BGPageController {
     func setup() {
         view.addSubview(scrollView)
+        scrollView.addSubview(contentView)
+
+        contentView.addSubviews(viewControllers.map { $0.view })
     }
 }
 
@@ -83,5 +87,10 @@ private extension BGPageController {
 
         scrollView.frame = layout.scrollViewFrame
         scrollView.contentSize = layout.scrollViewContentSize
+        contentView.frame = CGRect(origin: .zero, size: layout.scrollViewContentSize)
+
+        zip(viewControllers.map { $0.view }, layout.pageFrames).forEach { view, frame in
+            view.frame = frame
+        }
     }
 }
