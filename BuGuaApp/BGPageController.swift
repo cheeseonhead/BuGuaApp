@@ -17,18 +17,24 @@ class BGPageController: UIViewController {
 
     // MARK: - Config
 
+    /// This is the minimum page width when more than one page is going to fit on the screen. It is ignored when
+    /// only one page can fit.
     var minimumMultiPageWidth = CGFloat(0) {
         didSet { view.setNeedsLayout() }
     }
 
+    /// The maximum of either dimension for a page. This prevents the page from growing too big on larger screens.
     var maxSize = CGSize(width: CGFloat.greatestFiniteMagnitude, height: CGFloat.greatestFiniteMagnitude) {
         didSet { view.setNeedsLayout() }
     }
 
+    /// This is used for insetting the top and bottom of the pages. As well as deciding how much of the next page to
+    /// "peek" out
     var inset = CGFloat(8) {
         didSet { view.setNeedsLayout() }
     }
 
+    /// The minimum amount of spacing between two pages
     var minimumPageSpacing = CGFloat(8) {
         didSet { view.setNeedsLayout() }
     }
@@ -80,6 +86,8 @@ private extension BGPageController {
         scrollView.isPagingEnabled = true
         scrollView.showsVerticalScrollIndicator = false
         scrollView.showsHorizontalScrollIndicator = false
+
+        view.addGestureRecognizer(scrollView.panGestureRecognizer)
     }
 }
 
