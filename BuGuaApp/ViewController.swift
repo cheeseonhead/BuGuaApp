@@ -21,6 +21,7 @@ class ViewController: UIViewController {
         add(pageController)
 
         pageController.contentRatio = 672 / 488
+        pageController.maxSize = CGSize(width: 488, height: 672)
         pageController.minimumMultiPageWidth = 488
         pageController.view.snp.makeConstraints { make in
             make.edges.equalToSuperview()

@@ -27,10 +27,15 @@ extension CGRect {
     }
 
     func scaledAtCenter(scaleX: CGFloat, scaleY: CGFloat) -> CGRect {
-
         let scaled = CGRect(origin: origin, size: CGSize(width: width * scaleX, height: height * scaleY))
         let translation = center - scaled.center
 
         return scaled.applying(.init(translationX: translation.x, y: translation.y))
+    }
+
+    func centeredAt(_ center: CGPoint) -> CGRect {
+        let translation = center - self.center
+
+        return applying(.init(translationX: translation.x, y: translation.y))
     }
 }
