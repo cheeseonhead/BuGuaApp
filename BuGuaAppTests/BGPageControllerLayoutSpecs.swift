@@ -18,8 +18,8 @@ class BGPageControllerLayoutSpecs: QuickSpec {
         describe("BGPageControllerLayout") {
             beforeEach {
                 builder = Builder()
-                builder.horizontalInset = 8
-                builder.contentSpacing = 16
+                builder.inset = 8
+                builder.minimumPageSpacing = 16
                 builder.maxContentSize = CGSize(width: 500, height: 500)
                 builder.minimumMultipageWidth = 488
                 builder.totalNumberOfPages = 10
@@ -79,7 +79,7 @@ class BGPageControllerLayoutSpecs: QuickSpec {
                         let sut = builder.build()
 
                         expect(sut.fittingPageSize.width) == 976
-                        expect(sut.fittingPageSize.height) == 708
+                        expect(sut.fittingPageSize.height) == 724
                     }
                 }
             }
@@ -89,13 +89,13 @@ class BGPageControllerLayoutSpecs: QuickSpec {
 
 private class Builder {
     var bounds: CGRect = .zero
-    var horizontalInset: CGFloat = 0
-    var contentSpacing: CGFloat = 0
+    var inset: CGFloat = 0
+    var minimumPageSpacing: CGFloat = 0
     var maxContentSize: CGSize = .zero
     var minimumMultipageWidth: CGFloat = 0
     var totalNumberOfPages: Int = 1
 
     func build() -> BGPageControllerLayout {
-        return BGPageControllerLayout(bounds: bounds, inset: horizontalInset, minimumPageSpacing: contentSpacing, maxContentSize: maxContentSize, minimumMultipageWidth: minimumMultipageWidth, totalNumberOfPages: totalNumberOfPages)
+        return BGPageControllerLayout(bounds: bounds, inset: inset, minimumPageSpacing: minimumPageSpacing, maxContentSize: maxContentSize, minimumMultipageWidth: minimumMultipageWidth, totalNumberOfPages: totalNumberOfPages)
     }
 }
