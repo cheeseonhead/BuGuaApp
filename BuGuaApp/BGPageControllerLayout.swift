@@ -69,6 +69,8 @@ class BGPageControllerLayout {
         return CGSize(width: finalWidth, height: finalHeight)
     }()
 
+    /// The actual spacing that gets calculated after page size has been determined. Might be larger than minimumPageSpacing
+    /// because peeking the right value is more important.
     private(set) lazy var actualInterPageSpacing: CGFloat = {
         let totalWidth = bounds.width
         let horizontalOccupiedByPages = inset * 2 + fittingPageSize.width * CGFloat(numberOfPagesAtOnce)
@@ -111,6 +113,7 @@ class BGPageControllerLayout {
         return numberOfPages
     }()
 
+    /// The widest a page can be given the minimum spacing and current bounds.
     func pageWidth(numberOfPages number: Int) -> CGFloat {
         let totalWidth = bounds.size.width
         let totalSpacings = 2 * inset + CGFloat(number + 1) * minimumPageSpacing
