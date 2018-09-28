@@ -96,6 +96,6 @@ private class Builder {
     var totalNumberOfPages: Int = 1
 
     func build() -> BGPageControllerLayout {
-        return BGPageControllerLayout(bounds: bounds, horizontalInset: horizontalInset, contentSpacing: contentSpacing, maxContentSize: maxContentSize, minimumMultipageWidth: minimumMultipageWidth, totalNumberOfPages: totalNumberOfPages)
+        return BGPageControllerLayout(bounds: bounds, inset: horizontalInset, minimumPageSpacing: contentSpacing, maxContentSize: maxContentSize, minimumMultipageWidth: minimumMultipageWidth, totalNumberOfPages: totalNumberOfPages)
     }
 }

@@ -25,7 +25,11 @@ class BGPageController: UIViewController {
         didSet { view.setNeedsLayout() }
     }
 
-    var contentRatio = CGFloat(1) {
+    var inset = CGFloat(8) {
+        didSet { view.setNeedsLayout() }
+    }
+
+    var minimumPageSpacing = CGFloat(8) {
         didSet { view.setNeedsLayout() }
     }
 
@@ -74,6 +78,10 @@ private extension BGPageController {
 
         scrollView.clipsToBounds = false
         scrollView.isPagingEnabled = true
+        scrollView.showsVerticalScrollIndicator = false
+        scrollView.showsHorizontalScrollIndicator = false
+
+        contentView.backgroundColor = .blue
     }
 }
 
@@ -82,8 +90,8 @@ private extension BGPageController {
 private extension BGPageController {
     func layoutScrollView() {
         let layout = BGPageControllerLayout(bounds: view.bounds,
-                                            horizontalInset: Style.horizontalContentInset,
-                                            contentSpacing: Style.contentSpacing,
+                                            inset: inset,
+                                            minimumPageSpacing: minimumPageSpacing,
                                             maxContentSize: maxSize,
                                             minimumMultipageWidth: minimumMultiPageWidth,
                                             totalNumberOfPages: viewControllers.count)
