@@ -27,10 +27,10 @@ class ViewController: UIViewController {
         let pageController = BGPageController(viewControllers: [makeVC(), makeVC()])
         add(pageController)
 
-        pageController.inset = 8
+        pageController.inset = 16
         pageController.minimumPageSpacing = 8
         pageController.maxSize = CGSize(width: 634.4, height: 873.6)
-        pageController.minimumMultiPageWidth = 488
+        pageController.minimumMultiPageWidth = 430
         pageController.view.snp.makeConstraints { make in
 //            make.center.equalToSuperview()
 //            make.size.equalTo(CGSize(width: 500, height: 500))
