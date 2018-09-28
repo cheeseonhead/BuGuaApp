@@ -17,21 +17,30 @@ class ViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
 
-//        let dateInputVM = DateInputViewModel(timeZoneGetter: { TimeZone.autoupdatingCurrent })
-//        let dateInputVC = DateInputViewController(viewModel: dateInputVM)
-//
-//        add(dateInputVC)
+        func makeVC() -> UIViewController {
+            let vc = UIViewController()
+            vc.view.backgroundColor = .red
 
-//        dateInputVM.gregorianDateDriver
-//            .drive(onNext: { date in
-//                print("Got date! \(date)")
-//            })
+            return vc
+        }
+
+        let pageController = BGPageController(viewControllers: [makeVC(), makeVC()])
+        add(pageController)
+
+        pageController.inset = 16
+        pageController.minimumPageSpacing = 8
+        pageController.maxSize = CGSize(width: 634.4, height: 873.6)
+        pageController.minimumMultiPageWidth = 430
+        pageController.view.snp.makeConstraints { make in
+//            make.center.equalToSuperview()
+//            make.size.equalTo(CGSize(width: 500, height: 500))
+            make.edges.equalToSuperview()
+        }
+        pageController.view.clipsToBounds = true
     }
 
     override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(animated)
-
-        let guaXiang = guaXiangBuilder.build()
     }
 
     @IBAction func changed(_ sender: UISlider) {

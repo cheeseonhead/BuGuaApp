@@ -37,9 +37,11 @@
 		9B2AFBA82157011800DF9A5E /* ShiYaoView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9B2AFBA72157011800DF9A5E /* ShiYaoView.swift */; };
 		9B2AFBAA215701FB00DF9A5E /* UIView+Convenience.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9B2AFBA9215701FB00DF9A5E /* UIView+Convenience.swift */; };
 		9B2AFBAC2157347200DF9A5E /* WideDivider.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9B2AFBAB2157347200DF9A5E /* WideDivider.swift */; };
+		9B88E500215DA605004985A6 /* BGPageControllerLayoutSpecs.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9B88E4FF215DA605004985A6 /* BGPageControllerLayoutSpecs.swift */; };
 		9B8B4F03215C4339009FBCD2 /* MasterDetailCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9B8B4F02215C4339009FBCD2 /* MasterDetailCell.swift */; };
 		9B8B4F06215C5872009FBCD2 /* ContentCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9B8B4F04215C5872009FBCD2 /* ContentCell.swift */; };
 		9B8B4F07215C5872009FBCD2 /* ContentCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 9B8B4F05215C5872009FBCD2 /* ContentCell.xib */; };
+		9B8B4F0A215C870F009FBCD2 /* BGPageControllerLayout.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9B8B4F09215C870E009FBCD2 /* BGPageControllerLayout.swift */; };
 		9B933EF12134E529004DCD3F /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9B933EF02134E529004DCD3F /* AppDelegate.swift */; };
 		9B933EF32134E529004DCD3F /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9B933EF22134E529004DCD3F /* ViewController.swift */; };
 		9B933EF62134E529004DCD3F /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 9B933EF42134E529004DCD3F /* Main.storyboard */; };
@@ -82,6 +84,7 @@
 		9BCE8874214F2E220024FEF7 /* DateGanZhiViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9BCE8872214F2E220024FEF7 /* DateGanZhiViewController.swift */; };
 		9BCE8875214F2E220024FEF7 /* DateGanZhiViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 9BCE8873214F2E220024FEF7 /* DateGanZhiViewController.xib */; };
 		9BCE8877214F2EB10024FEF7 /* DateGanZhiViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9BCE8876214F2EB10024FEF7 /* DateGanZhiViewModel.swift */; };
+		9BCEE3A5215D844C000B50EC /* BGPageController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9BCEE3A4215D844C000B50EC /* BGPageController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -160,9 +163,11 @@
 		9B2AFBA72157011800DF9A5E /* ShiYaoView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShiYaoView.swift; sourceTree = "<group>"; };
 		9B2AFBA9215701FB00DF9A5E /* UIView+Convenience.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIView+Convenience.swift"; sourceTree = "<group>"; };
 		9B2AFBAB2157347200DF9A5E /* WideDivider.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WideDivider.swift; sourceTree = "<group>"; };
+		9B88E4FF215DA605004985A6 /* BGPageControllerLayoutSpecs.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BGPageControllerLayoutSpecs.swift; sourceTree = "<group>"; };
 		9B8B4F02215C4339009FBCD2 /* MasterDetailCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MasterDetailCell.swift; sourceTree = "<group>"; };
 		9B8B4F04215C5872009FBCD2 /* ContentCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentCell.swift; sourceTree = "<group>"; };
 		9B8B4F05215C5872009FBCD2 /* ContentCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ContentCell.xib; sourceTree = "<group>"; };
+		9B8B4F09215C870E009FBCD2 /* BGPageControllerLayout.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BGPageControllerLayout.swift; sourceTree = "<group>"; };
 		9B933EED2134E529004DCD3F /* BuGuaApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = BuGuaApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		9B933EF02134E529004DCD3F /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		9B933EF22134E529004DCD3F /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -209,6 +214,7 @@
 		9BCE8872214F2E220024FEF7 /* DateGanZhiViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DateGanZhiViewController.swift; sourceTree = "<group>"; };
 		9BCE8873214F2E220024FEF7 /* DateGanZhiViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = DateGanZhiViewController.xib; sourceTree = "<group>"; };
 		9BCE8876214F2EB10024FEF7 /* DateGanZhiViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DateGanZhiViewModel.swift; sourceTree = "<group>"; };
+		9BCEE3A4215D844C000B50EC /* BGPageController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BGPageController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -245,6 +251,7 @@
 		3413A5612140D6E700245C46 /* Components */ = {
 			isa = PBXGroup;
 			children = (
+				9B8B4F08215C8591009FBCD2 /* Components */,
 				9BCE886A214F13450024FEF7 /* ViewControllers */,
 				3413A5622140D6FB00245C46 /* NumericTextfieldDelegate.swift */,
 				3413A5662140E0BC00245C46 /* AutoNextTextFieldDelegate.swift */,
@@ -288,6 +295,15 @@
 				9B8B4F05215C5872009FBCD2 /* ContentCell.xib */,
 			);
 			name = Cell;
+			sourceTree = "<group>";
+		};
+		9B8B4F08215C8591009FBCD2 /* Components */ = {
+			isa = PBXGroup;
+			children = (
+				9B8B4F09215C870E009FBCD2 /* BGPageControllerLayout.swift */,
+				9BCEE3A4215D844C000B50EC /* BGPageController.swift */,
+			);
+			name = Components;
 			sourceTree = "<group>";
 		};
 		9B933EE42134E529004DCD3F = {
@@ -336,6 +352,7 @@
 			isa = PBXGroup;
 			children = (
 				9B933F052134E52A004DCD3F /* BuGuaAppTests.swift */,
+				9B88E4FF215DA605004985A6 /* BGPageControllerLayoutSpecs.swift */,
 				9B933F072134E52A004DCD3F /* Info.plist */,
 			);
 			path = BuGuaAppTests;
@@ -715,6 +732,7 @@
 				9BCB360D213E148200F7FDDE /* GuaXiangViewController.swift in Sources */,
 				3463344B2148A914001D462B /* ShiYingYaoView.swift in Sources */,
 				34EC158F21534EF700378758 /* ShallowThemeStore.swift in Sources */,
+				9B8B4F0A215C870F009FBCD2 /* BGPageControllerLayout.swift in Sources */,
 				9B933F6D2136537A004DCD3F /* UIView+Layout.swift in Sources */,
 				3463344F2148BD4B001D462B /* HeaderLabelView.swift in Sources */,
 				34EC158D21534ECA00378758 /* Theme.swift in Sources */,
@@ -727,6 +745,7 @@
 				9BCB3614213E234000F7FDDE /* AppCoordinator.swift in Sources */,
 				9BCE8861214EF5220024FEF7 /* GuaXiangInputCoordinator.swift in Sources */,
 				34BE79982159D26200B5010A /* BuGuaEntryViewModel.swift in Sources */,
+				9BCEE3A5215D844C000B50EC /* BGPageController.swift in Sources */,
 				9B933EF12134E529004DCD3F /* AppDelegate.swift in Sources */,
 				346334462148A52F001D462B /* Array+Convert.swift in Sources */,
 				9B933F7B2138DF3B004DCD3F /* CGRect+Points.swift in Sources */,
@@ -740,6 +759,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				9B88E500215DA605004985A6 /* BGPageControllerLayoutSpecs.swift in Sources */,
 				9B933F062134E52A004DCD3F /* BuGuaAppTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
