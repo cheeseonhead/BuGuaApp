@@ -78,8 +78,10 @@ private extension BGPageController {
                                             horizontalInset: Style.horizontalContentInset,
                                             contentSpacing: Style.contentSpacing,
                                             maxContentSize: maxSize,
-                                            minimumMultipageWidth: minimumMultiPageWidth)
+                                            minimumMultipageWidth: minimumMultiPageWidth,
+                                            totalNumberOfPages: viewControllers.count)
 
         scrollView.frame = layout.scrollViewFrame
+        scrollView.contentSize = layout.scrollViewContentSize
     }
 }
