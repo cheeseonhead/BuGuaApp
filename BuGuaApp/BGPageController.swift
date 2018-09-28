@@ -80,6 +80,6 @@ private extension BGPageController {
                                             maxContentSize: maxSize,
                                             minimumMultipageWidth: minimumMultiPageWidth)
 
-        scrollView.frame = layout.scrollViewFrame()
+        scrollView.frame = layout.scrollViewFrame
     }
 }

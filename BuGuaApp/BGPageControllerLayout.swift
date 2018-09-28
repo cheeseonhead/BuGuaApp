@@ -24,10 +24,30 @@ class BGPageControllerLayout {
         self.minimumMultipageWidth = minimumMultipageWidth
     }
 
-    func scrollViewFrame() -> CGRect {
-        return .zero
-    }
+    private(set) lazy var scrollViewFrame: CGRect = {
+        let viewsWidth = fittingContentSize.width * CGFloat(numberOfPages)
+        let totalSpacingWidth = contentSpacing + actualInterPageSpacing * CGFloat(numberOfPages - 1)
+        let finalWidth = viewsWidth + totalSpacingWidth
 
+        let finalHeight = contentSpacing * 2 + fittingContentSize.height
+
+        let finalBounds = CGRect(x: 0, y: 0, width: finalWidth, height: finalHeight)
+
+        return finalBounds.centeredAt(bounds.center)
+    }()
+
+    private(set) lazy var actualInterPageSpacing: CGFloat = {
+        let totalWidth = bounds.width
+        let horizontalOccupiedByPages = horizontalInset * 2 + fittingContentSize.width * CGFloat(numberOfPages)
+        let numberOfSpaces = numberOfPages + 1
+
+        let blankLength = totalWidth - horizontalOccupiedByPages
+
+        return blankLength / CGFloat(numberOfPages)
+    }()
+
+    /// The actual size the embedded view controllers will have, derived from the maximum possible one and the given
+    /// preferred maximum.
     private(set) lazy var fittingContentSize: CGSize = {
         let maxPossibleWidth = contentWidth(numberOfPages: numberOfPages)
 
@@ -40,6 +60,7 @@ class BGPageControllerLayout {
         return CGSize(width: fittingWidth, height: fittingHeight)
     }()
 
+    /// The number of pages the controller will display at once
     private(set) lazy var numberOfPages: Int = {
         var numberOfPages = 1
 
