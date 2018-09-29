@@ -97,6 +97,10 @@ private extension BuGuaEntryViewController {
         viewModel.entryRelay.map { $0.guaXiang }
             .bind(to: guaXiangVC.viewModel.guaXiangRelay)
             .disposed(by: bag)
+
+        viewModel.entryRelay
+            .bind(to: entryInfoVC.entryRelay)
+            .disposed(by: bag)
     }
 }
 
