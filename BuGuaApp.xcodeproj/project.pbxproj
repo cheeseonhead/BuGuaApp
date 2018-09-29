@@ -37,6 +37,7 @@
 		9B2AFBA82157011800DF9A5E /* ShiYaoView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9B2AFBA72157011800DF9A5E /* ShiYaoView.swift */; };
 		9B2AFBAA215701FB00DF9A5E /* UIView+Convenience.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9B2AFBA9215701FB00DF9A5E /* UIView+Convenience.swift */; };
 		9B2AFBAC2157347200DF9A5E /* WideDivider.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9B2AFBAB2157347200DF9A5E /* WideDivider.swift */; };
+		9B390A81215F092C00AC778C /* GregorianDateFormatter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9B390A80215F092C00AC778C /* GregorianDateFormatter.swift */; };
 		9B88E500215DA605004985A6 /* BGPageControllerLayoutSpecs.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9B88E4FF215DA605004985A6 /* BGPageControllerLayoutSpecs.swift */; };
 		9B8B4F03215C4339009FBCD2 /* MasterDetailCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9B8B4F02215C4339009FBCD2 /* MasterDetailCell.swift */; };
 		9B8B4F06215C5872009FBCD2 /* ContentCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9B8B4F04215C5872009FBCD2 /* ContentCell.swift */; };
@@ -163,6 +164,7 @@
 		9B2AFBA72157011800DF9A5E /* ShiYaoView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShiYaoView.swift; sourceTree = "<group>"; };
 		9B2AFBA9215701FB00DF9A5E /* UIView+Convenience.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIView+Convenience.swift"; sourceTree = "<group>"; };
 		9B2AFBAB2157347200DF9A5E /* WideDivider.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WideDivider.swift; sourceTree = "<group>"; };
+		9B390A80215F092C00AC778C /* GregorianDateFormatter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GregorianDateFormatter.swift; sourceTree = "<group>"; };
 		9B88E4FF215DA605004985A6 /* BGPageControllerLayoutSpecs.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BGPageControllerLayoutSpecs.swift; sourceTree = "<group>"; };
 		9B8B4F02215C4339009FBCD2 /* MasterDetailCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MasterDetailCell.swift; sourceTree = "<group>"; };
 		9B8B4F04215C5872009FBCD2 /* ContentCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentCell.swift; sourceTree = "<group>"; };
@@ -248,7 +250,7 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
-		3413A5612140D6E700245C46 /* Components */ = {
+		3413A5612140D6E700245C46 /* Utilities */ = {
 			isa = PBXGroup;
 			children = (
 				9B8B4F08215C8591009FBCD2 /* Components */,
@@ -258,7 +260,7 @@
 				3413A5682140E0D600245C46 /* ComposableTextfieldDelegate.swift */,
 				34A13D4C214222E700D77D98 /* IntegerLiuYaoConverter.swift */,
 			);
-			name = Components;
+			name = Utilities;
 			sourceTree = "<group>";
 		};
 		346334492148A89B001D462B /* GuaXiang */ = {
@@ -302,6 +304,7 @@
 			children = (
 				9B8B4F09215C870E009FBCD2 /* BGPageControllerLayout.swift */,
 				9BCEE3A4215D844C000B50EC /* BGPageController.swift */,
+				9B390A80215F092C00AC778C /* GregorianDateFormatter.swift */,
 			);
 			name = Components;
 			sourceTree = "<group>";
@@ -337,7 +340,7 @@
 				9BCE8865214F11330024FEF7 /* GuaXiangFlow */,
 				9BCB3612213E227700F7FDDE /* Coordinators */,
 				9B933F3C2134EB58004DCD3F /* Views */,
-				3413A5612140D6E700245C46 /* Components */,
+				3413A5612140D6E700245C46 /* Utilities */,
 				9B933F3D2134EB64004DCD3F /* Extensions */,
 				9B933EF72134E52A004DCD3F /* Assets.xcassets */,
 				9B933F702137976C004DCD3F /* Colors.xcassets */,
@@ -704,6 +707,7 @@
 				9BCE886C214F13780024FEF7 /* DateInputViewModel.swift in Sources */,
 				34A13D4D214222E700D77D98 /* IntegerLiuYaoConverter.swift in Sources */,
 				9B2AFBAA215701FB00DF9A5E /* UIView+Convenience.swift in Sources */,
+				9B390A81215F092C00AC778C /* GregorianDateFormatter.swift in Sources */,
 				9B2AFBA62156EC9100DF9A5E /* GuaXiangRow.swift in Sources */,
 				341EE5C32143A94A00CB7D53 /* GuaXiangViewLayout.swift in Sources */,
 				9B2AFBA82157011800DF9A5E /* ShiYaoView.swift in Sources */,
