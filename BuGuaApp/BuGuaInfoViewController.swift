@@ -13,62 +13,113 @@ import RxSwift
 import UIKit
 
 class BuGuaInfoViewController: UIViewController {
-    // MARK - Views
+    enum ContentType {
+        case name, timeStamp, question, notes
+
+        var masterText: String {
+            switch self {
+            case .name: return NSLocalizedString("姓名", comment: "")
+            case .timeStamp: return NSLocalizedString("日期", comment: "")
+            case .question: return NSLocalizedString("問事", comment: "")
+            default: return ""
+            }
+        }
+    }
+
+    // MARK: - Views
+
     let tableView = UITableView(frame: .zero, style: .plain)
-    
+
     // MARK: - Input Rx
+
     let bag = DisposeBag()
     let entryRelay = PublishRelay<BuGuaEntry>()
-    
+
+    // MARK: - Private Constants
+
+    let masterDetailIdentifier = "masterDetailCell"
+    let contentIdentifier = "contentIdentifier"
+
     // MARK: - Private
+
+    let factory: AppFactory
     var currentEntry: BuGuaEntry? {
         didSet {
             tableView.reloadData()
         }
     }
-    
-    init() {
+
+    init(factory: AppFactory) {
+        self.factory = factory
         super.init(nibName: nil, bundle: nil)
     }
-    
-    required init?(coder aDecoder: NSCoder) {
-        super.init(nibName: nil, bundle: nil)
+
+    required init?(coder _: NSCoder) {
+        fatalError("Not implemented")
     }
-    
+
     override func viewDidLoad() {
         super.viewDidLoad()
-        
+
         setup()
     }
 }
 
 // MARK: - UITableViewDataSource
-extension BuGuaInfoViewController: UITableViewDelegate, UITableViewDataSource {
 
-    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+extension BuGuaInfoViewController: UITableViewDelegate, UITableViewDataSource {
+    func tableView(_: UITableView, numberOfRowsInSection _: Int) -> Int {
         return 4
     }
 
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        if isDetailRow(indexPath) {
+            let contentType = detailType(for: indexPath.row)
 
-        if indexPath.row == 3 {
+            let cell = MasterDetailCell(reuseIdentifier: masterDetailIdentifier)
+
+            cell.masterLabel.text = contentType.masterText
+
+            guard let currentEntry = currentEntry else { return cell }
+
+            switch contentType {
+            case .name:
+                cell.detailLabel.text = currentEntry.name
+            case .timeStamp:
+                cell.detailLabel.text = formatDate(currentEntry.date, time: currentEntry.time)
+            default: fatalError()
+            }
+
+            return cell
+        } else if indexPath.row == 3 {
             let cell = tableView.dequeueReusableCell(withIdentifier: "Content") as! ContentCell
 
-            cell.contentLabel.text = "詳細說明"
+            guard let currentEntry = currentEntry else { return cell }
+
+            cell.contentLabel.text = currentEntry.notes
 
             return cell
         }
 
-        let cell = MasterDetailCell(reuseIdentifier: "")
+        fatalError("Should not get here")
+    }
 
-        cell.masterLabel.text = "姓名"
-        cell.detailLabel.text = "吳孟洋"
+    func isDetailRow(_ indexPath: IndexPath) -> Bool {
+        return indexPath.row <= 2
+    }
 
-        return cell
+    func detailType(for row: Int) -> ContentType {
+        switch row {
+        case 0: return .name
+        case 1: return .timeStamp
+        case 2: return .question
+        default: fatalError()
+        }
     }
 }
 
 // MARK: - Setup
+
 private extension BuGuaInfoViewController {
     func setup() {
         createViews()
@@ -76,7 +127,7 @@ private extension BuGuaInfoViewController {
         binding()
         styling()
     }
-    
+
     func createViews() {
         let cardView = CardBackground(frame: .zero)
         view = cardView
@@ -103,13 +154,23 @@ private extension BuGuaInfoViewController {
             self.currentEntry = entry
         }).disposed(by: bag)
     }
-    
+
     func styling() {
+    }
+}
+
+// MARK: - Helpers
+
+private extension BuGuaInfoViewController {
+    func formatDate(_ date: GregorianDate, time: GregorianTime) -> String {
+        let formatter = factory.makeGregorianDateFormatter(style: .positional)
+
+        return formatter.formatGregorianDate(date, time: time)
     }
 }
 
 extension AppFactory {
     func makeBuGuaInfoViewController() -> BuGuaInfoViewController {
-        return BuGuaInfoViewController()
+        return BuGuaInfoViewController(factory: self)
     }
 }
