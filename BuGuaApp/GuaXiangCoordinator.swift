@@ -63,19 +63,10 @@ private extension GuaXiangCoordinator {
             modalViewController.add(vc)
         }).disposed(by: inputCoordinator.bag)
 
-        inputCoordinator.guaXiangRelay.take(1)
+        inputCoordinator.buGuaEntryRelay.take(1)
             .do(onNext: { [unowned modalViewController] _ in
                 modalViewController.dismiss(animated: true, completion: nil)
-            }).map { guaXiang -> BuGuaEntry in
-                return BuGuaEntryBuilder()
-                    .setGuaXiang(guaXiang)
-                    .setDate(.zero)
-                    .setTime(.zero)
-                    .setName("吳孟洋")
-                    .setQuestion("今年會不會今年會不會今年會不會今年會不會今年會不會今年會不會今年會不會今年會不會今年會不會")
-                    .setNotes("你要知道你要知道你要知道")
-                    .build()
-            }.bind(to: viewController.viewModel.entryRelay)
+            }).bind(to: viewController.viewModel.entryRelay)
             .disposed(by: inputCoordinator.bag)
 
         addChildCoordinator(inputCoordinator)

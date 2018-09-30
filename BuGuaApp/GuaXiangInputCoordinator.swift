@@ -21,7 +21,7 @@ class GuaXiangInputCoordinator: Coordinator {
     lazy private (set) var didStartSignal = didStartRelay.asSignal()
 
     // MARK: - Ouput Rx
-    let guaXiangRelay = PublishRelay<LiuYaoGuaXiang>()
+    let buGuaEntryRelay = PublishRelay<BuGuaEntry>()
 
     // MARK: - Private Rx
     private var navigationController: UINavigationController!
@@ -63,13 +63,31 @@ private extension GuaXiangInputCoordinator {
         let vm = factory.makeDateGanZhiViewModel()
         let vc = factory.makeDateGanZhiViewController(viewModel: vm)
 
-        vm.finalDateGanZhiDriver.asObservable().elements()
-            .map { [unowned self] dateGanZhi in
-                self.model.setDateGanZhi(dateGanZhi)
-                return self.model.liuYaoGuaXiang()
-            }.bind(to: guaXiangRelay)
-            .disposed(by: vm.bag)
+        let dateViewControllerOutput = Observable.zip(vm.finalDateGanZhiDriver, vm.finalGregorianDateDriver)
+
+        dateViewControllerOutput.bind { [unowned self] (dateGanZhi, gregorianDate) in
+            self.model.setDateGanZhi(dateGanZhi)
+            self.model.setGregorianDate(gregorianDate)
+            self.showTimeInput()
+        }.disposed(by: vm.bag)
+
         navigationController.pushViewController(vc, animated: true)
+    }
+
+    func showTimeInput() {
+        let vm = factory.makeTimeGanZhiViewModel()
+        let vc = factory.makeTimeGanZhiViewController(viewModel: vm)
+
+        vm.finalTimeOutput.bind { [unowned self] time in
+            self.model.setGregorianTime(time)
+            self.finishFlow()
+        }.disposed(by: bag)
+
+        navigationController.pushViewController(vc, animated: true)
+    }
+
+    func finishFlow() {
+        buGuaEntryRelay.accept(model.buGuaEntry())
     }
 }
 

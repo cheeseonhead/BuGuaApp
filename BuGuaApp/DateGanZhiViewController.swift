@@ -57,7 +57,7 @@ private extension DateGanZhiViewController {
         
         navigationItem.title = NSLocalizedString("輸入日期", comment: "")
 
-        finishBarButton = UIBarButtonItem(title: NSLocalizedString("完成", comment: ""),
+        finishBarButton = UIBarButtonItem(title: NSLocalizedString("下一個", comment: ""),
                                           style: .done, target: nil, action: nil)
         navigationItem.rightBarButtonItem = finishBarButton
     }
@@ -107,12 +107,12 @@ private extension DateGanZhiViewController {
             .bind(to: ganZhiPreviewLabel.rx.text)
             .disposed(by: bag)
         
-        viewModel.previewDriver.map(previewLabelColor)
+        viewModel.previewDriver.map(DateGanZhiViewController.previewLabelColor)
             .drive(ganZhiPreviewLabel.rx.textColor)
             .disposed(by: bag)
     }
     
-    func previewLabelColor(_ event: Event<String>) -> UIColor? {
+    static func previewLabelColor(_ event: Event<String>) -> UIColor? {
         switch event {
         case .next: return BodyLabel.appearance().textColor
         case .error: return .scarlet

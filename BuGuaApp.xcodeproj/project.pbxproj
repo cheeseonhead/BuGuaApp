@@ -33,6 +33,12 @@
 		34F3E4F92150945C00A9BA2B /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = 34F3E4FB2150945C00A9BA2B /* Localizable.strings */; };
 		34F3E4FF2150A84F00A9BA2B /* Rx+Operators.swift in Sources */ = {isa = PBXBuildFile; fileRef = 34F3E4FE2150A84F00A9BA2B /* Rx+Operators.swift */; };
 		9B19592D21615AA500AA320A /* UITableViewCell+Nib.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9B19592C21615AA500AA320A /* UITableViewCell+Nib.swift */; };
+		9B19593421616BA000AA320A /* TimeInputViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9B19593321616BA000AA320A /* TimeInputViewController.swift */; };
+		9B19593621616C0300AA320A /* TimeInputViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9B19593521616C0300AA320A /* TimeInputViewModel.swift */; };
+		9B19593821616C1D00AA320A /* TimeInputViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 9B19593721616C1D00AA320A /* TimeInputViewController.xib */; };
+		9B19593C2161708900AA320A /* TimeGanZhiViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9B19593A2161708900AA320A /* TimeGanZhiViewController.swift */; };
+		9B19593D2161708900AA320A /* TimeGanZhiViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 9B19593B2161708900AA320A /* TimeGanZhiViewController.xib */; };
+		9B19593F2161709D00AA320A /* TimeGanZhiViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9B19593E2161709D00AA320A /* TimeGanZhiViewModel.swift */; };
 		9B273D3321390ABD00BDFBE3 /* SnapKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9B273D3221390ABD00BDFBE3 /* SnapKit.framework */; };
 		9B2AFBA62156EC9100DF9A5E /* GuaXiangRow.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9B2AFBA52156EC9100DF9A5E /* GuaXiangRow.swift */; };
 		9B2AFBA82157011800DF9A5E /* ShiYaoView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9B2AFBA72157011800DF9A5E /* ShiYaoView.swift */; };
@@ -160,6 +166,12 @@
 		34F3E4FD2150953800A9BA2B /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/Localizable.strings; sourceTree = "<group>"; };
 		34F3E4FE2150A84F00A9BA2B /* Rx+Operators.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Rx+Operators.swift"; sourceTree = "<group>"; };
 		9B19592C21615AA500AA320A /* UITableViewCell+Nib.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UITableViewCell+Nib.swift"; sourceTree = "<group>"; };
+		9B19593321616BA000AA320A /* TimeInputViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TimeInputViewController.swift; sourceTree = "<group>"; };
+		9B19593521616C0300AA320A /* TimeInputViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TimeInputViewModel.swift; sourceTree = "<group>"; };
+		9B19593721616C1D00AA320A /* TimeInputViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = TimeInputViewController.xib; sourceTree = "<group>"; };
+		9B19593A2161708900AA320A /* TimeGanZhiViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TimeGanZhiViewController.swift; sourceTree = "<group>"; };
+		9B19593B2161708900AA320A /* TimeGanZhiViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = TimeGanZhiViewController.xib; sourceTree = "<group>"; };
+		9B19593E2161709D00AA320A /* TimeGanZhiViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TimeGanZhiViewModel.swift; sourceTree = "<group>"; };
 		9B273D3221390ABD00BDFBE3 /* SnapKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SnapKit.framework; path = Carthage/Build/iOS/SnapKit.framework; sourceTree = "<group>"; };
 		9B2AFBA52156EC9100DF9A5E /* GuaXiangRow.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GuaXiangRow.swift; sourceTree = "<group>"; };
 		9B2AFBA72157011800DF9A5E /* ShiYaoView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShiYaoView.swift; sourceTree = "<group>"; };
@@ -287,6 +299,65 @@
 				34EC158E21534EF700378758 /* ShallowThemeStore.swift */,
 			);
 			name = Theme;
+			sourceTree = "<group>";
+		};
+		9B19592E2161617600AA320A /* Coordinator */ = {
+			isa = PBXGroup;
+			children = (
+				9BCE8860214EF5220024FEF7 /* GuaXiangInputCoordinator.swift */,
+				9BCE8862214F0A590024FEF7 /* GuaXiangInputCoordinatorModel.swift */,
+			);
+			name = Coordinator;
+			sourceTree = "<group>";
+		};
+		9B19592F2161618000AA320A /* Input */ = {
+			isa = PBXGroup;
+			children = (
+				3413A55B2140BF4B00245C46 /* InputViewController.swift */,
+				3413A55C2140BF4B00245C46 /* InputViewController.xib */,
+				3413A55F2140BFB900245C46 /* InputViewModel.swift */,
+			);
+			name = Input;
+			sourceTree = "<group>";
+		};
+		9B1959302161618F00AA320A /* Date */ = {
+			isa = PBXGroup;
+			children = (
+				9BCE8872214F2E220024FEF7 /* DateGanZhiViewController.swift */,
+				9BCE8873214F2E220024FEF7 /* DateGanZhiViewController.xib */,
+				9BCE8876214F2EB10024FEF7 /* DateGanZhiViewModel.swift */,
+			);
+			name = Date;
+			sourceTree = "<group>";
+		};
+		9B19593121616B5600AA320A /* DateInput */ = {
+			isa = PBXGroup;
+			children = (
+				9BCE8868214F133F0024FEF7 /* DateInputViewController.swift */,
+				9BCE886B214F13780024FEF7 /* DateInputViewModel.swift */,
+				9BCE886D214F13820024FEF7 /* DateInputViewController.xib */,
+			);
+			name = DateInput;
+			sourceTree = "<group>";
+		};
+		9B19593221616B8800AA320A /* TimeInput */ = {
+			isa = PBXGroup;
+			children = (
+				9B19593321616BA000AA320A /* TimeInputViewController.swift */,
+				9B19593521616C0300AA320A /* TimeInputViewModel.swift */,
+				9B19593721616C1D00AA320A /* TimeInputViewController.xib */,
+			);
+			name = TimeInput;
+			sourceTree = "<group>";
+		};
+		9B1959392161704E00AA320A /* Time */ = {
+			isa = PBXGroup;
+			children = (
+				9B19593A2161708900AA320A /* TimeGanZhiViewController.swift */,
+				9B19593B2161708900AA320A /* TimeGanZhiViewController.xib */,
+				9B19593E2161709D00AA320A /* TimeGanZhiViewModel.swift */,
+			);
+			name = Time;
 			sourceTree = "<group>";
 		};
 		9B8B4F01215C431B009FBCD2 /* Cell */ = {
@@ -430,14 +501,10 @@
 		9BCE8864214F11010024FEF7 /* GuaXiangInputFlow */ = {
 			isa = PBXGroup;
 			children = (
-				9BCE8860214EF5220024FEF7 /* GuaXiangInputCoordinator.swift */,
-				9BCE8862214F0A590024FEF7 /* GuaXiangInputCoordinatorModel.swift */,
-				3413A55B2140BF4B00245C46 /* InputViewController.swift */,
-				3413A55C2140BF4B00245C46 /* InputViewController.xib */,
-				3413A55F2140BFB900245C46 /* InputViewModel.swift */,
-				9BCE8872214F2E220024FEF7 /* DateGanZhiViewController.swift */,
-				9BCE8873214F2E220024FEF7 /* DateGanZhiViewController.xib */,
-				9BCE8876214F2EB10024FEF7 /* DateGanZhiViewModel.swift */,
+				9B19592E2161617600AA320A /* Coordinator */,
+				9B19592F2161618000AA320A /* Input */,
+				9B1959302161618F00AA320A /* Date */,
+				9B1959392161704E00AA320A /* Time */,
 			);
 			name = GuaXiangInputFlow;
 			sourceTree = "<group>";
@@ -460,9 +527,8 @@
 		9BCE886A214F13450024FEF7 /* ViewControllers */ = {
 			isa = PBXGroup;
 			children = (
-				9BCE8868214F133F0024FEF7 /* DateInputViewController.swift */,
-				9BCE886B214F13780024FEF7 /* DateInputViewModel.swift */,
-				9BCE886D214F13820024FEF7 /* DateInputViewController.xib */,
+				9B19593221616B8800AA320A /* TimeInput */,
+				9B19593121616B5600AA320A /* DateInput */,
 			);
 			name = ViewControllers;
 			sourceTree = "<group>";
@@ -578,12 +644,14 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				9B19593D2161708900AA320A /* TimeGanZhiViewController.xib in Resources */,
 				9B933F712137976C004DCD3F /* Colors.xcassets in Resources */,
 				9B933EFB2134E52A004DCD3F /* LaunchScreen.storyboard in Resources */,
 				9BCB3611213E150500F7FDDE /* GuaXiangViewController.xib in Resources */,
 				3413A55E2140BF4B00245C46 /* InputViewController.xib in Resources */,
 				9BCE886E214F13820024FEF7 /* DateInputViewController.xib in Resources */,
 				34F3E4F92150945C00A9BA2B /* Localizable.strings in Resources */,
+				9B19593821616C1D00AA320A /* TimeInputViewController.xib in Resources */,
 				9B8B4F07215C5872009FBCD2 /* ContentCell.xib in Resources */,
 				9B933F412134F054004DCD3F /* FuXiBaGuaView.xib in Resources */,
 				9B933EF82134E52A004DCD3F /* Assets.xcassets in Resources */,
@@ -719,6 +787,7 @@
 				3413A5652140D89900245C46 /* CharacterSet+MoreSets.swift in Sources */,
 				346334482148A66E001D462B /* Container+Operator.swift in Sources */,
 				34F3E4FF2150A84F00A9BA2B /* Rx+Operators.swift in Sources */,
+				9B19593F2161709D00AA320A /* TimeGanZhiViewModel.swift in Sources */,
 				9B933F3B2134EB01004DCD3F /* FuXiBaGuaView.swift in Sources */,
 				3463344D2148B147001D462B /* SixLabelView.swift in Sources */,
 				9BCE8874214F2E220024FEF7 /* DateGanZhiViewController.swift in Sources */,
@@ -735,6 +804,7 @@
 				9BCE8877214F2EB10024FEF7 /* DateGanZhiViewModel.swift in Sources */,
 				9BCB360D213E148200F7FDDE /* GuaXiangViewController.swift in Sources */,
 				3463344B2148A914001D462B /* ShiYingYaoView.swift in Sources */,
+				9B19593421616BA000AA320A /* TimeInputViewController.swift in Sources */,
 				34EC158F21534EF700378758 /* ShallowThemeStore.swift in Sources */,
 				9B8B4F0A215C870F009FBCD2 /* BGPageControllerLayout.swift in Sources */,
 				9B933F6D2136537A004DCD3F /* UIView+Layout.swift in Sources */,
@@ -750,7 +820,9 @@
 				9BCE8861214EF5220024FEF7 /* GuaXiangInputCoordinator.swift in Sources */,
 				34BE79982159D26200B5010A /* BuGuaEntryViewModel.swift in Sources */,
 				9BCEE3A5215D844C000B50EC /* BGPageController.swift in Sources */,
+				9B19593C2161708900AA320A /* TimeGanZhiViewController.swift in Sources */,
 				9B933EF12134E529004DCD3F /* AppDelegate.swift in Sources */,
+				9B19593621616C0300AA320A /* TimeInputViewModel.swift in Sources */,
 				346334462148A52F001D462B /* Array+Convert.swift in Sources */,
 				9B933F7B2138DF3B004DCD3F /* CGRect+Points.swift in Sources */,
 				3413A5602140BFB900245C46 /* InputViewModel.swift in Sources */,
