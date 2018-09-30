@@ -32,6 +32,7 @@
 		34EC158F21534EF700378758 /* ShallowThemeStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = 34EC158E21534EF700378758 /* ShallowThemeStore.swift */; };
 		34F3E4F92150945C00A9BA2B /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = 34F3E4FB2150945C00A9BA2B /* Localizable.strings */; };
 		34F3E4FF2150A84F00A9BA2B /* Rx+Operators.swift in Sources */ = {isa = PBXBuildFile; fileRef = 34F3E4FE2150A84F00A9BA2B /* Rx+Operators.swift */; };
+		9B19592D21615AA500AA320A /* UITableViewCell+Nib.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9B19592C21615AA500AA320A /* UITableViewCell+Nib.swift */; };
 		9B273D3321390ABD00BDFBE3 /* SnapKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9B273D3221390ABD00BDFBE3 /* SnapKit.framework */; };
 		9B2AFBA62156EC9100DF9A5E /* GuaXiangRow.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9B2AFBA52156EC9100DF9A5E /* GuaXiangRow.swift */; };
 		9B2AFBA82157011800DF9A5E /* ShiYaoView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9B2AFBA72157011800DF9A5E /* ShiYaoView.swift */; };
@@ -158,6 +159,7 @@
 		34F3E4FA2150945C00A9BA2B /* zh-Hant */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "zh-Hant"; path = "zh-Hant.lproj/Localizable.strings"; sourceTree = "<group>"; };
 		34F3E4FD2150953800A9BA2B /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/Localizable.strings; sourceTree = "<group>"; };
 		34F3E4FE2150A84F00A9BA2B /* Rx+Operators.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Rx+Operators.swift"; sourceTree = "<group>"; };
+		9B19592C21615AA500AA320A /* UITableViewCell+Nib.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UITableViewCell+Nib.swift"; sourceTree = "<group>"; };
 		9B273D3221390ABD00BDFBE3 /* SnapKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SnapKit.framework; path = Carthage/Build/iOS/SnapKit.framework; sourceTree = "<group>"; };
 		9B2AFBA52156EC9100DF9A5E /* GuaXiangRow.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GuaXiangRow.swift; sourceTree = "<group>"; };
 		9B2AFBA72157011800DF9A5E /* ShiYaoView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShiYaoView.swift; sourceTree = "<group>"; };
@@ -248,7 +250,7 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
-		3413A5612140D6E700245C46 /* Components */ = {
+		3413A5612140D6E700245C46 /* Utilities */ = {
 			isa = PBXGroup;
 			children = (
 				9B8B4F08215C8591009FBCD2 /* Components */,
@@ -258,7 +260,7 @@
 				3413A5682140E0D600245C46 /* ComposableTextfieldDelegate.swift */,
 				34A13D4C214222E700D77D98 /* IntegerLiuYaoConverter.swift */,
 			);
-			name = Components;
+			name = Utilities;
 			sourceTree = "<group>";
 		};
 		346334492148A89B001D462B /* GuaXiang */ = {
@@ -337,7 +339,7 @@
 				9BCE8865214F11330024FEF7 /* GuaXiangFlow */,
 				9BCB3612213E227700F7FDDE /* Coordinators */,
 				9B933F3C2134EB58004DCD3F /* Views */,
-				3413A5612140D6E700245C46 /* Components */,
+				3413A5612140D6E700245C46 /* Utilities */,
 				9B933F3D2134EB64004DCD3F /* Extensions */,
 				9B933EF72134E52A004DCD3F /* Assets.xcassets */,
 				9B933F702137976C004DCD3F /* Colors.xcassets */,
@@ -394,6 +396,7 @@
 				9BCB3608213E011800F7FDDE /* String+Vertical.swift */,
 				9B933F72213797A2004DCD3F /* UIColor+AppColors.swift */,
 				9B933F6E213794F7004DCD3F /* UIFont+AppFont.swift */,
+				9B19592C21615AA500AA320A /* UITableViewCell+Nib.swift */,
 				9B2AFBA9215701FB00DF9A5E /* UIView+Convenience.swift */,
 				9B933F6C2136537A004DCD3F /* UIView+Layout.swift */,
 				9B933F3E2134EBBE004DCD3F /* UIView+NibLoadable.swift */,
@@ -698,6 +701,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				9B933F6F213794F7004DCD3F /* UIFont+AppFont.swift in Sources */,
+				9B19592D21615AA500AA320A /* UITableViewCell+Nib.swift in Sources */,
 				3413A5632140D6FB00245C46 /* NumericTextfieldDelegate.swift in Sources */,
 				9B8B4F03215C4339009FBCD2 /* MasterDetailCell.swift in Sources */,
 				9BCE8863214F0A590024FEF7 /* GuaXiangInputCoordinatorModel.swift in Sources */,
