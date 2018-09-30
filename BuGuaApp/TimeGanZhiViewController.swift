@@ -27,6 +27,7 @@ class TimeGanZhiViewController: UIViewController {
 
     // MARK: - Child VCs
     var timePickerViewController: TimeInputViewController!
+    var timePickerViewModel: TimeInputViewModel!
 
     // MARK: - Rx
     let bag = DisposeBag()
@@ -65,7 +66,7 @@ extension TimeGanZhiViewController {
     }
 
     func createTimePicker() {
-        let timePickerViewModel = factory.makeTimeInputViewModel()
+        timePickerViewModel = factory.makeTimeInputViewModel()
         timePickerViewController = factory.makeTimeInputViewController(viewModel: timePickerViewModel)
 
         addChild(timePickerViewController)
@@ -93,6 +94,10 @@ extension TimeGanZhiViewController {
             .disposed(by: bag)
 
         finishBarButton.rx.tap.bind(to: viewModel.finishInput).disposed(by: bag)
+
+        todayButton.rx.tap.map { [unowned self] _ in self.currentDate() }
+            .bind(to: timePickerViewController.timePicker.rx.date)
+            .disposed(by: bag)
     }
 
     func styling() {
