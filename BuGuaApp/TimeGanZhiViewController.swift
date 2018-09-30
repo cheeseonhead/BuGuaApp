@@ -26,8 +26,8 @@ class TimeGanZhiViewController: UIViewController {
     let finishBarButton: UIBarButtonItem = UIBarButtonItem(title: NSLocalizedString("完成", comment: ""), style: .done, target: nil, action: nil)
 
     // MARK: - Child VCs
-    var timePickerViewController: TimeInputViewController!
-    var timePickerViewModel: TimeInputViewModel!
+    var timePickerViewController: TimePickerViewController!
+    var timePickerViewModel: TimePickerViewModel!
 
     // MARK: - Rx
     let bag = DisposeBag()
@@ -66,8 +66,8 @@ extension TimeGanZhiViewController {
     }
 
     func createTimePicker() {
-        timePickerViewModel = factory.makeTimeInputViewModel()
-        timePickerViewController = factory.makeTimeInputViewController(viewModel: timePickerViewModel)
+        timePickerViewModel = factory.makeTimePickerViewModel()
+        timePickerViewController = factory.makeTimePickerViewController(viewModel: timePickerViewModel)
 
         addChild(timePickerViewController)
         timePickerHolder.addSubview(timePickerViewController.view)

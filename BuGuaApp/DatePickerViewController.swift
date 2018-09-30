@@ -12,18 +12,18 @@ import RxSwift
 import RxSwiftExt
 import UIKit
 
-class DateInputViewController: UIViewController {
+class DatePickerViewController: UIViewController {
 
     // MARK: - Views
     @IBOutlet var datePicker: UIDatePicker!
 
-    let viewModel: DateInputViewModel
+    let viewModel: DatePickerViewModel
 
     // MARK: - Private Rx
     private let bag = DisposeBag()
 
     // MARK: - Init
-    init(viewModel: DateInputViewModel) {
+    init(viewModel: DatePickerViewModel) {
         self.viewModel = viewModel
         super.init(nibName: nil, bundle: nil)
     }
@@ -47,7 +47,7 @@ class DateInputViewController: UIViewController {
 }
 
 extension AppFactory {
-    func makeDateInputViewController(viewModel: DateInputViewModel) -> DateInputViewController {
-        return DateInputViewController(viewModel: viewModel)
+    func makeDatePickerViewController(viewModel: DatePickerViewModel) -> DatePickerViewController {
+        return DatePickerViewController(viewModel: viewModel)
     }
 }

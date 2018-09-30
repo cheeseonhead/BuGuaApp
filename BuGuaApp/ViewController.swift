@@ -19,8 +19,8 @@ class ViewController: UIViewController {
 
         let factory = AppFactory()
 
-        let vm = factory.makeTimeInputViewModel()
-        let vc = factory.makeTimeInputViewController(viewModel: vm)
+        let vm = factory.makeTimePickerViewModel()
+        let vc = factory.makeTimePickerViewController(viewModel: vm)
 
         add(vc)
 
