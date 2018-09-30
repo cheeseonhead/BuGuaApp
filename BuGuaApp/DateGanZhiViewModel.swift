@@ -18,7 +18,8 @@ class DateGanZhiViewModel {
     private(set) lazy var previewDriver = dateGanZhiEventDriver.map { [unowned self] event in
         event.map { self.formatDateGanZhi($0) }
     }
-    private (set) lazy var finalDateGanZhiDriver = finishRelay.withLatestFrom(dateGanZhiEventDriver)
+    private (set) lazy var finalDateGanZhiDriver = finishRelay.withLatestFrom(dateGanZhiEventDriver).elements()
+    private (set) lazy var finalGregorianDateDriver = finishRelay.withLatestFrom(gregorianDateRelay)
 
     // MARK: - Input Rx
     let gregorianDateRelay = BehaviorRelay(value: GregorianDate.zero)
