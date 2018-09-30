@@ -13,9 +13,9 @@ import RxSwiftExt
 import UIKit
 
 private enum Style {
-    static let verticalInset = BGStyle.standardMargin
-    static let horizontalSpacing = BGStyle.standardMargin
-    static let cardSpacing = horizontalSpacing
+    static let edgeInset = BGStyle.standardMargin * 1.5
+    static let minimumPageSpacing = BGStyle.standardMargin
+    static let minimumMultipageWidth = CGFloat(400)
 }
 
 class BuGuaEntryViewController: UIViewController {
@@ -74,9 +74,9 @@ private extension BuGuaEntryViewController {
         entryInfoVC = factory.makeBuGuaInfoViewController()
 
         pageController = BGPageController(viewControllers: [guaXiangVC, entryInfoVC])
-        pageController.minimumMultiPageWidth = 400
-        pageController.inset = 24
-        pageController.minimumPageSpacing = 16
+        pageController.minimumMultiPageWidth = Style.minimumMultipageWidth
+        pageController.inset = Style.edgeInset
+        pageController.minimumPageSpacing = Style.minimumPageSpacing
 
         add(pageController)
 
