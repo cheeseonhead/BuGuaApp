@@ -17,26 +17,20 @@ class ViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        func makeVC() -> UIViewController {
-            let vc = UIViewController()
-            vc.view.backgroundColor = .red
+        let factory = AppFactory()
 
-            return vc
-        }
+        let vm = factory.makeTimeInputViewModel()
+        let vc = factory.makeTimeInputViewController(viewModel: vm)
 
-        let pageController = BGPageController(viewControllers: [makeVC(), makeVC()])
-        add(pageController)
+        add(vc)
 
-        pageController.inset = 16
-        pageController.minimumPageSpacing = 8
-        pageController.maxSize = CGSize(width: 634.4, height: 873.6)
-        pageController.minimumMultiPageWidth = 430
-        pageController.view.snp.makeConstraints { make in
-//            make.center.equalToSuperview()
-//            make.size.equalTo(CGSize(width: 500, height: 500))
+        vc.view.snp.makeConstraints { (make) in
             make.edges.equalToSuperview()
         }
-        pageController.view.clipsToBounds = true
+
+//        vm.gregorianTimeRelay.drive(onNext: { (time) in
+//            print(time)
+//        })
     }
 
     override func viewDidAppear(_ animated: Bool) {
