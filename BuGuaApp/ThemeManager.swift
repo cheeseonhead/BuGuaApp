@@ -53,7 +53,7 @@ class ThemeManager {
         
         applyBackgroundView(theme)
         applyNavigationBar(theme)
-        applyBodyLabel(theme)
+        applyBodyStyle(theme)
         applyGuaXiangView(theme)
         applyYaoView(theme)
         applyTableView(theme)
@@ -79,7 +79,7 @@ class ThemeManager {
         }
     }
     
-    func applyBodyLabel(_ theme: Theme) {
+    func applyBodyStyle(_ theme: Theme) {
         BodyLabel.appearance().textColor = theme.bodyText
         BodyLabel.appearance().adjustsFontForContentSizeCategory = true
     }
