@@ -80,6 +80,8 @@ extension TimeGanZhiViewController {
     }
 
     func setupData() {
+        navigationItem.title = NSLocalizedString("輸入時間", comment: "")
+
         todayButton.setTitle(NSLocalizedString("現在", comment: ""), for: .normal)
 
         navigationItem.rightBarButtonItem = finishBarButton
