@@ -6,15 +6,29 @@
 //  Copyright © 2018 Jeffrey Wu. All rights reserved.
 //
 
+import RxCocoa
+import RxSwift
+import RxSwiftExt
 import UIKit
+
+private enum Style {
+    static let bodyButtonFont = UIFont.body3
+
+    static let previewLabelFont = UIFont.scaled(.title2)
+}
 
 class TimeGanZhiViewController: UIViewController {
 
     // MARK: - Views
-    @IBOutlet var timePickerHolder: UIView!
+    @IBOutlet weak var timePickerHolder: UIView!
+    @IBOutlet weak var previewLabel: BodyLabel!
+    @IBOutlet weak var todayButton: UIButton!
 
     // MARK: - Child VCs
     var timePickerViewController: TimeInputViewController!
+
+    // MARK: - Rx
+    let bag = DisposeBag()
 
     // MARK: - Logic
     let factory: AppFactory
@@ -43,6 +57,9 @@ class TimeGanZhiViewController: UIViewController {
 extension TimeGanZhiViewController {
     func setup() {
         createTimePicker()
+        setupTodayButton()
+
+        styling()
     }
 
     func createTimePicker() {
@@ -53,6 +70,19 @@ extension TimeGanZhiViewController {
         timePickerViewController.view.snp.makeConstraints { make in
             make.edges.equalToSuperview()
         }
+
+        timePickerViewModel.gregorianTimeRelay.map { $0.diZhi.character }
+            .drive(previewLabel.rx.text).disposed(by: bag)
+    }
+
+    func setupTodayButton() {
+        todayButton.setTitle(NSLocalizedString("現在", comment: ""), for: .normal)
+    }
+
+    func styling() {
+        todayButton.titleLabel?.font = Style.bodyButtonFont
+
+        previewLabel.font = Style.previewLabelFont
     }
 }
 
