@@ -59,6 +59,7 @@ extension TimeGanZhiViewController {
         createTimePicker()
         setupTodayButton()
 
+        binding()
         styling()
     }
 
@@ -71,12 +72,19 @@ extension TimeGanZhiViewController {
             make.edges.equalToSuperview()
         }
 
-        timePickerViewModel.gregorianTimeRelay.map { $0.diZhi.character }
-            .drive(previewLabel.rx.text).disposed(by: bag)
+        timePickerViewModel.gregorianTimeRelay
+            .drive(viewModel.gregorianTimeInput)
+            .disposed(by: bag)
     }
 
     func setupTodayButton() {
         todayButton.setTitle(NSLocalizedString("現在", comment: ""), for: .normal)
+    }
+
+    func binding() {
+        viewModel.previewTextOutput
+            .bind(to: previewLabel.rx.text)
+            .disposed(by: bag)
     }
 
     func styling() {
