@@ -17,5 +17,31 @@ class TimeInputViewController: UIViewController {
     // MARK: - Views
     @IBOutlet weak var timePicker: UIDatePicker!
 
-    
+    let viewModel: TimeInputViewModel
+
+    // MARK: - Private Rx
+    private let bag = DisposeBag()
+
+    // MARK: - Init
+    init(viewModel: TimeInputViewModel) {
+        self.viewModel = viewModel
+        super.init(nibName: nil, bundle: nil)
+    }
+
+    required init?(coder aDecoder: NSCoder) {
+        fatalError("init(coder:) has not been implemented")
+    }
+
+    // MARK: - Lifecycle
+    override func viewDidLoad() {
+        super.viewDidLoad()
+
+        bindings()
+    }
+
+    func bindings() {
+        timePicker.rx.date
+            .bind(to: viewModel.dateRelay)
+            .disposed(by: bag)
+    }
 }
