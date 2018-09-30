@@ -87,6 +87,8 @@ extension BuGuaInfoViewController: UITableViewDelegate, UITableViewDataSource {
                 cell.detailLabel.text = currentEntry.name
             case .timeStamp:
                 cell.detailLabel.text = formatDate(currentEntry.date, time: currentEntry.time)
+            case .question:
+                cell.detailLabel.text = currentEntry.question
             default: fatalError()
             }
 
@@ -163,7 +165,7 @@ private extension BuGuaInfoViewController {
 
 private extension BuGuaInfoViewController {
     func formatDate(_ date: GregorianDate, time: GregorianTime) -> String {
-        let formatter = factory.makeGregorianDateFormatter(style: .positional)
+        let formatter = factory.makeGregorianFormatter(dateStyle: .medium, timeStyle: .short)
 
         return formatter.formatGregorianDate(date, time: time)
     }
