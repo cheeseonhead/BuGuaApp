@@ -23,8 +23,8 @@ class AppFactory {
         return AppCoordinator(with: window, factory: self)
     }
 
-    func makeGuaXiangCoordinator() -> GuaXiangCoordinator {
-        return GuaXiangCoordinator(factory: self)
+    func makeBuGuaEntryCoordinator() -> BuGuaEntryCoordinator {
+        return BuGuaEntryCoordinator(factory: self)
     }
 
     func makeGuaXiangViewController(viewModel: GuaXiangViewModel) -> GuaXiangViewController {

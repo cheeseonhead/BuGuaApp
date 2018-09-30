@@ -20,7 +20,7 @@ class DateGanZhiViewController: UIViewController {
     var finishBarButton: UIBarButtonItem!
 
     // MARK: - Child VCs
-    var dateInputViewController: DateInputViewController!
+    var dateInputViewController: DatePickerViewController!
 
     // MARK - Public Properties
     let bag = DisposeBag()
@@ -63,8 +63,8 @@ private extension DateGanZhiViewController {
     }
 
     func createDateInput() {
-        let viewModel = factory.makeDateInputViewModel()
-        dateInputViewController = factory.makeDateInputViewController(viewModel: viewModel)
+        let viewModel = factory.makeDatePickerViewModel()
+        dateInputViewController = factory.makeDatePickerViewController(viewModel: viewModel)
 
         addChild(dateInputViewController)
         dateInputHolder.addSubview(dateInputViewController.view)
