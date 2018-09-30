@@ -16,6 +16,7 @@ class TimeGanZhiViewModel {
 
     // MARK: - Output
     private (set) lazy var previewTextOutput = gregorianTimeInput.map(TimeGanZhiViewModel.preview)
+    private (set) lazy var finalTimeOutput = finishInput.withLatestFrom(gregorianTimeInput)
 
     // MARK: - Input
     let gregorianTimeInput = BehaviorRelay(value: GregorianTime.zero)
