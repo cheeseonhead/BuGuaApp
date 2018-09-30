@@ -12,6 +12,7 @@
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="TimeGanZhiViewController" customModule="BuGuaApp" customModuleProvider="target">
             <connections>
+                <outlet property="timePickerHolder" destination="4O3-Oo-dpp" id="zdR-3i-FoX"/>
                 <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
             </connections>
         </placeholder>
