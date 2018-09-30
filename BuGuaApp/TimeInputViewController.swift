@@ -19,8 +19,9 @@ class TimeInputViewController: UIViewController {
 
     let viewModel: TimeInputViewModel
 
-    // MARK: - Private Rx
-    private let bag = DisposeBag()
+    // MARK: - Input Rx
+    let bag = DisposeBag()
+    let timeInput = PublishRelay<Date>()
 
     // MARK: - Init
     init(viewModel: TimeInputViewModel) {
@@ -42,6 +43,12 @@ class TimeInputViewController: UIViewController {
     func bindings() {
         timePicker.rx.date
             .bind(to: viewModel.dateRelay)
+            .disposed(by: bag)
+
+        timeInput.bind(to: viewModel.dateRelay)
+            .disposed(by: bag)
+
+        timeInput.bind(to: timePicker.rx.date)
             .disposed(by: bag)
     }
 }

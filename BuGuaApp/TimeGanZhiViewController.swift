@@ -96,7 +96,7 @@ extension TimeGanZhiViewController {
         finishBarButton.rx.tap.bind(to: viewModel.finishInput).disposed(by: bag)
 
         todayButton.rx.tap.map { [unowned self] _ in self.currentDate() }
-            .bind(to: timePickerViewController.timePicker.rx.date)
+            .bind(to: timePickerViewController.timeInput)
             .disposed(by: bag)
     }
 
