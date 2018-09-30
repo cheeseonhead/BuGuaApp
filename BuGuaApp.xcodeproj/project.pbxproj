@@ -37,7 +37,6 @@
 		9B2AFBA82157011800DF9A5E /* ShiYaoView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9B2AFBA72157011800DF9A5E /* ShiYaoView.swift */; };
 		9B2AFBAA215701FB00DF9A5E /* UIView+Convenience.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9B2AFBA9215701FB00DF9A5E /* UIView+Convenience.swift */; };
 		9B2AFBAC2157347200DF9A5E /* WideDivider.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9B2AFBAB2157347200DF9A5E /* WideDivider.swift */; };
-		9B390A81215F092C00AC778C /* GregorianDateFormatter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9B390A80215F092C00AC778C /* GregorianDateFormatter.swift */; };
 		9B88E500215DA605004985A6 /* BGPageControllerLayoutSpecs.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9B88E4FF215DA605004985A6 /* BGPageControllerLayoutSpecs.swift */; };
 		9B8B4F03215C4339009FBCD2 /* MasterDetailCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9B8B4F02215C4339009FBCD2 /* MasterDetailCell.swift */; };
 		9B8B4F06215C5872009FBCD2 /* ContentCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9B8B4F04215C5872009FBCD2 /* ContentCell.swift */; };
@@ -164,7 +163,6 @@
 		9B2AFBA72157011800DF9A5E /* ShiYaoView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShiYaoView.swift; sourceTree = "<group>"; };
 		9B2AFBA9215701FB00DF9A5E /* UIView+Convenience.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIView+Convenience.swift"; sourceTree = "<group>"; };
 		9B2AFBAB2157347200DF9A5E /* WideDivider.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WideDivider.swift; sourceTree = "<group>"; };
-		9B390A80215F092C00AC778C /* GregorianDateFormatter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GregorianDateFormatter.swift; sourceTree = "<group>"; };
 		9B88E4FF215DA605004985A6 /* BGPageControllerLayoutSpecs.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BGPageControllerLayoutSpecs.swift; sourceTree = "<group>"; };
 		9B8B4F02215C4339009FBCD2 /* MasterDetailCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MasterDetailCell.swift; sourceTree = "<group>"; };
 		9B8B4F04215C5872009FBCD2 /* ContentCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentCell.swift; sourceTree = "<group>"; };
@@ -304,7 +302,6 @@
 			children = (
 				9B8B4F09215C870E009FBCD2 /* BGPageControllerLayout.swift */,
 				9BCEE3A4215D844C000B50EC /* BGPageController.swift */,
-				9B390A80215F092C00AC778C /* GregorianDateFormatter.swift */,
 			);
 			name = Components;
 			sourceTree = "<group>";
@@ -707,7 +704,6 @@
 				9BCE886C214F13780024FEF7 /* DateInputViewModel.swift in Sources */,
 				34A13D4D214222E700D77D98 /* IntegerLiuYaoConverter.swift in Sources */,
 				9B2AFBAA215701FB00DF9A5E /* UIView+Convenience.swift in Sources */,
-				9B390A81215F092C00AC778C /* GregorianDateFormatter.swift in Sources */,
 				9B2AFBA62156EC9100DF9A5E /* GuaXiangRow.swift in Sources */,
 				341EE5C32143A94A00CB7D53 /* GuaXiangViewLayout.swift in Sources */,
 				9B2AFBA82157011800DF9A5E /* ShiYaoView.swift in Sources */,
