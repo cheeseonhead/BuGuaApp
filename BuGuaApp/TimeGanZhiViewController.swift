@@ -23,6 +23,7 @@ class TimeGanZhiViewController: UIViewController {
     @IBOutlet weak var timePickerHolder: UIView!
     @IBOutlet weak var previewLabel: BodyLabel!
     @IBOutlet weak var todayButton: UIButton!
+    let finishBarButton: UIBarButtonItem = UIBarButtonItem(title: NSLocalizedString("完成", comment: ""), style: .done, target: nil, action: nil)
 
     // MARK: - Child VCs
     var timePickerViewController: TimeInputViewController!
@@ -57,7 +58,7 @@ class TimeGanZhiViewController: UIViewController {
 extension TimeGanZhiViewController {
     func setup() {
         createTimePicker()
-        setupTodayButton()
+        setupData()
 
         binding()
         styling()
@@ -67,6 +68,7 @@ extension TimeGanZhiViewController {
         let timePickerViewModel = factory.makeTimeInputViewModel()
         timePickerViewController = factory.makeTimeInputViewController(viewModel: timePickerViewModel)
 
+        addChild(timePickerViewController)
         timePickerHolder.addSubview(timePickerViewController.view)
         timePickerViewController.view.snp.makeConstraints { make in
             make.edges.equalToSuperview()
@@ -77,14 +79,18 @@ extension TimeGanZhiViewController {
             .disposed(by: bag)
     }
 
-    func setupTodayButton() {
+    func setupData() {
         todayButton.setTitle(NSLocalizedString("現在", comment: ""), for: .normal)
+
+        navigationItem.rightBarButtonItem = finishBarButton
     }
 
     func binding() {
         viewModel.previewTextOutput
             .bind(to: previewLabel.rx.text)
             .disposed(by: bag)
+
+        finishBarButton.rx.tap.bind(to: viewModel.finishInput).disposed(by: bag)
     }
 
     func styling() {
