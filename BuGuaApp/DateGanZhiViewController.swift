@@ -63,7 +63,7 @@ private extension DateGanZhiViewController {
     }
 
     func createDateInput() {
-        let viewModel = factory.makeDateInputViewModel()
+        let viewModel = factory.makeDatePickerViewModel()
         dateInputViewController = factory.makeDatePickerViewController(viewModel: viewModel)
 
         addChild(dateInputViewController)

@@ -12,19 +12,19 @@ import RxSwift
 import RxSwiftExt
 import UIKit
 
-class TimeInputViewController: UIViewController {
+class TimePickerViewController: UIViewController {
 
     // MARK: - Views
     @IBOutlet weak var timePicker: UIDatePicker!
 
-    let viewModel: TimeInputViewModel
+    let viewModel: TimePickerViewModel
 
     // MARK: - Input Rx
     let bag = DisposeBag()
     let timeInput = PublishRelay<Date>()
 
     // MARK: - Init
-    init(viewModel: TimeInputViewModel) {
+    init(viewModel: TimePickerViewModel) {
         self.viewModel = viewModel
         super.init(nibName: nil, bundle: nil)
     }
@@ -54,7 +54,7 @@ class TimeInputViewController: UIViewController {
 }
 
 extension AppFactory {
-    func makeTimeInputViewController(viewModel: TimeInputViewModel) -> TimeInputViewController {
-        return TimeInputViewController(viewModel: viewModel)
+    func makeTimePickerViewController(viewModel: TimePickerViewModel) -> TimePickerViewController {
+        return TimePickerViewController(viewModel: viewModel)
     }
 }
