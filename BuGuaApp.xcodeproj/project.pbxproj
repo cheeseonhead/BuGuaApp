@@ -289,6 +289,35 @@
 			name = Theme;
 			sourceTree = "<group>";
 		};
+		9B19592E2161617600AA320A /* Coordinator */ = {
+			isa = PBXGroup;
+			children = (
+				9BCE8860214EF5220024FEF7 /* GuaXiangInputCoordinator.swift */,
+				9BCE8862214F0A590024FEF7 /* GuaXiangInputCoordinatorModel.swift */,
+			);
+			name = Coordinator;
+			sourceTree = "<group>";
+		};
+		9B19592F2161618000AA320A /* Input */ = {
+			isa = PBXGroup;
+			children = (
+				3413A55B2140BF4B00245C46 /* InputViewController.swift */,
+				3413A55C2140BF4B00245C46 /* InputViewController.xib */,
+				3413A55F2140BFB900245C46 /* InputViewModel.swift */,
+			);
+			name = Input;
+			sourceTree = "<group>";
+		};
+		9B1959302161618F00AA320A /* Date */ = {
+			isa = PBXGroup;
+			children = (
+				9BCE8872214F2E220024FEF7 /* DateGanZhiViewController.swift */,
+				9BCE8873214F2E220024FEF7 /* DateGanZhiViewController.xib */,
+				9BCE8876214F2EB10024FEF7 /* DateGanZhiViewModel.swift */,
+			);
+			name = Date;
+			sourceTree = "<group>";
+		};
 		9B8B4F01215C431B009FBCD2 /* Cell */ = {
 			isa = PBXGroup;
 			children = (
@@ -430,14 +459,9 @@
 		9BCE8864214F11010024FEF7 /* GuaXiangInputFlow */ = {
 			isa = PBXGroup;
 			children = (
-				9BCE8860214EF5220024FEF7 /* GuaXiangInputCoordinator.swift */,
-				9BCE8862214F0A590024FEF7 /* GuaXiangInputCoordinatorModel.swift */,
-				3413A55B2140BF4B00245C46 /* InputViewController.swift */,
-				3413A55C2140BF4B00245C46 /* InputViewController.xib */,
-				3413A55F2140BFB900245C46 /* InputViewModel.swift */,
-				9BCE8872214F2E220024FEF7 /* DateGanZhiViewController.swift */,
-				9BCE8873214F2E220024FEF7 /* DateGanZhiViewController.xib */,
-				9BCE8876214F2EB10024FEF7 /* DateGanZhiViewModel.swift */,
+				9B19592E2161617600AA320A /* Coordinator */,
+				9B19592F2161618000AA320A /* Input */,
+				9B1959302161618F00AA320A /* Date */,
 			);
 			name = GuaXiangInputFlow;
 			sourceTree = "<group>";
