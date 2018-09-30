@@ -19,10 +19,12 @@ class TimeGanZhiViewController: UIViewController {
     // MARK: - Logic
     let factory: AppFactory
     let viewModel: TimeGanZhiViewModel
+    let currentDate: () -> Date
 
-    init(factory: AppFactory, viewModel: TimeGanZhiViewModel) {
+    init(factory: AppFactory, viewModel: TimeGanZhiViewModel, currentDate: @escaping () -> Date) {
         self.viewModel = viewModel
         self.factory = factory
+        self.currentDate = currentDate
         super.init(nibName: nil, bundle: nil)
     }
 
@@ -56,6 +58,6 @@ extension TimeGanZhiViewController {
 
 extension AppFactory {
     func makeTimeGanZhiViewController(viewModel: TimeGanZhiViewModel) -> TimeGanZhiViewController {
-        return TimeGanZhiViewController(factory: self, viewModel: viewModel)
+        return TimeGanZhiViewController(factory: self, viewModel: viewModel, currentDate: { Date() })
     }
 }
