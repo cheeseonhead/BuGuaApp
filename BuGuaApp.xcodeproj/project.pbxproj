@@ -33,8 +33,8 @@
 		34F3E4F92150945C00A9BA2B /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = 34F3E4FB2150945C00A9BA2B /* Localizable.strings */; };
 		34F3E4FF2150A84F00A9BA2B /* Rx+Operators.swift in Sources */ = {isa = PBXBuildFile; fileRef = 34F3E4FE2150A84F00A9BA2B /* Rx+Operators.swift */; };
 		9B19592D21615AA500AA320A /* UITableViewCell+Nib.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9B19592C21615AA500AA320A /* UITableViewCell+Nib.swift */; };
-		9B19593421616BA000AA320A /* TimeInputViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9B19593321616BA000AA320A /* TimeInputViewController.swift */; };
-		9B19593621616C0300AA320A /* TimeInputViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9B19593521616C0300AA320A /* TimeInputViewModel.swift */; };
+		9B19593421616BA000AA320A /* TimePickerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9B19593321616BA000AA320A /* TimePickerViewController.swift */; };
+		9B19593621616C0300AA320A /* TimePickerViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9B19593521616C0300AA320A /* TimePickerViewModel.swift */; };
 		9B19593821616C1D00AA320A /* TimeInputViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 9B19593721616C1D00AA320A /* TimeInputViewController.xib */; };
 		9B19593C2161708900AA320A /* TimeGanZhiViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9B19593A2161708900AA320A /* TimeGanZhiViewController.swift */; };
 		9B19593D2161708900AA320A /* TimeGanZhiViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 9B19593B2161708900AA320A /* TimeGanZhiViewController.xib */; };
@@ -166,8 +166,8 @@
 		34F3E4FD2150953800A9BA2B /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/Localizable.strings; sourceTree = "<group>"; };
 		34F3E4FE2150A84F00A9BA2B /* Rx+Operators.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Rx+Operators.swift"; sourceTree = "<group>"; };
 		9B19592C21615AA500AA320A /* UITableViewCell+Nib.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UITableViewCell+Nib.swift"; sourceTree = "<group>"; };
-		9B19593321616BA000AA320A /* TimeInputViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TimeInputViewController.swift; sourceTree = "<group>"; };
-		9B19593521616C0300AA320A /* TimeInputViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TimeInputViewModel.swift; sourceTree = "<group>"; };
+		9B19593321616BA000AA320A /* TimePickerViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TimePickerViewController.swift; sourceTree = "<group>"; };
+		9B19593521616C0300AA320A /* TimePickerViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TimePickerViewModel.swift; sourceTree = "<group>"; };
 		9B19593721616C1D00AA320A /* TimeInputViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = TimeInputViewController.xib; sourceTree = "<group>"; };
 		9B19593A2161708900AA320A /* TimeGanZhiViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TimeGanZhiViewController.swift; sourceTree = "<group>"; };
 		9B19593B2161708900AA320A /* TimeGanZhiViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = TimeGanZhiViewController.xib; sourceTree = "<group>"; };
@@ -343,8 +343,8 @@
 		9B19593221616B8800AA320A /* TimeInput */ = {
 			isa = PBXGroup;
 			children = (
-				9B19593321616BA000AA320A /* TimeInputViewController.swift */,
-				9B19593521616C0300AA320A /* TimeInputViewModel.swift */,
+				9B19593321616BA000AA320A /* TimePickerViewController.swift */,
+				9B19593521616C0300AA320A /* TimePickerViewModel.swift */,
 				9B19593721616C1D00AA320A /* TimeInputViewController.xib */,
 			);
 			name = TimeInput;
@@ -804,7 +804,7 @@
 				9BCE8877214F2EB10024FEF7 /* DateGanZhiViewModel.swift in Sources */,
 				9BCB360D213E148200F7FDDE /* GuaXiangViewController.swift in Sources */,
 				3463344B2148A914001D462B /* ShiYingYaoView.swift in Sources */,
-				9B19593421616BA000AA320A /* TimeInputViewController.swift in Sources */,
+				9B19593421616BA000AA320A /* TimePickerViewController.swift in Sources */,
 				34EC158F21534EF700378758 /* ShallowThemeStore.swift in Sources */,
 				9B8B4F0A215C870F009FBCD2 /* BGPageControllerLayout.swift in Sources */,
 				9B933F6D2136537A004DCD3F /* UIView+Layout.swift in Sources */,
@@ -822,7 +822,7 @@
 				9BCEE3A5215D844C000B50EC /* BGPageController.swift in Sources */,
 				9B19593C2161708900AA320A /* TimeGanZhiViewController.swift in Sources */,
 				9B933EF12134E529004DCD3F /* AppDelegate.swift in Sources */,
-				9B19593621616C0300AA320A /* TimeInputViewModel.swift in Sources */,
+				9B19593621616C0300AA320A /* TimePickerViewModel.swift in Sources */,
 				346334462148A52F001D462B /* Array+Convert.swift in Sources */,
 				9B933F7B2138DF3B004DCD3F /* CGRect+Points.swift in Sources */,
 				3413A5602140BFB900245C46 /* InputViewModel.swift in Sources */,

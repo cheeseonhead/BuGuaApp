@@ -31,7 +31,7 @@ class DatePickerViewModel {
 }
 
 extension AppFactory {
-    func makeDateInputViewModel() -> DatePickerViewModel {
+    func makeDatePickerViewModel() -> DatePickerViewModel {
         return DatePickerViewModel(timeZoneGetter: { [unowned self] in self.timeZone })
     }
 }
