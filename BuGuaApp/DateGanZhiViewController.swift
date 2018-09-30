@@ -107,12 +107,12 @@ private extension DateGanZhiViewController {
             .bind(to: ganZhiPreviewLabel.rx.text)
             .disposed(by: bag)
         
-        viewModel.previewDriver.map(previewLabelColor)
+        viewModel.previewDriver.map(DateGanZhiViewController.previewLabelColor)
             .drive(ganZhiPreviewLabel.rx.textColor)
             .disposed(by: bag)
     }
     
-    func previewLabelColor(_ event: Event<String>) -> UIColor? {
+    static func previewLabelColor(_ event: Event<String>) -> UIColor? {
         switch event {
         case .next: return BodyLabel.appearance().textColor
         case .error: return .scarlet
