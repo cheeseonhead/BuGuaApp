@@ -45,3 +45,9 @@ class TimeInputViewController: UIViewController {
             .disposed(by: bag)
     }
 }
+
+extension AppFactory {
+    func makeTimeInputViewController(viewModel: TimeInputViewModel) -> TimeInputViewController {
+        return TimeInputViewController(viewModel: viewModel)
+    }
+}
