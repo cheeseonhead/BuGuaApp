@@ -93,8 +93,8 @@ extension BuGuaInfoViewController: UITableViewDelegate, UITableViewDataSource {
             }
 
             return cell
-        } else if indexPath.row == 3 {
-            let cell = tableView.dequeueReusableCell(withIdentifier: "Content") as! ContentCell
+        } else {
+            let cell = tableView.dequeueReusableCell(withIdentifier: contentIdentifier) as! ContentCell
 
             guard let currentEntry = currentEntry else { return cell }
 
@@ -102,8 +102,6 @@ extension BuGuaInfoViewController: UITableViewDelegate, UITableViewDataSource {
 
             return cell
         }
-
-        fatalError("Should not get here")
     }
 
     func isDetailRow(_ indexPath: IndexPath) -> Bool {
@@ -140,7 +138,7 @@ private extension BuGuaInfoViewController {
         tableView.dataSource = self
         tableView.delegate = self
         tableView.insetsContentViewsToSafeArea = true
-        tableView.register(UINib(nibName: "ContentCell", bundle: nil), forCellReuseIdentifier: "Content")
+        tableView.register(ContentCell.nib(), forCellReuseIdentifier: contentIdentifier)
 
         view.addSubview(tableView)
     }
