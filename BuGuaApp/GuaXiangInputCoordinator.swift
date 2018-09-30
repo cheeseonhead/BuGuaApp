@@ -75,7 +75,10 @@ private extension GuaXiangInputCoordinator {
     }
 
     func showTimeInput() {
+        let vm = factory.makeTimeGanZhiViewModel()
+        let vc = factory.makeTimeGanZhiViewController(viewModel: vm)
 
+        navigationController.pushViewController(vc, animated: true)
     }
 
     func finishFlow() {
