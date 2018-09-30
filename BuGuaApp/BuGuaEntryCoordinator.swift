@@ -14,7 +14,7 @@ import RxSwiftExt
 import SnapKit
 import UIKit
 
-class GuaXiangCoordinator: Coordinator {
+class BuGuaEntryCoordinator: Coordinator {
 
     // MARK: - Coordinator
     var childCoordinators = [Coordinator]()
@@ -48,7 +48,7 @@ class GuaXiangCoordinator: Coordinator {
 }
 
 // MARK: - Present Methods
-private extension GuaXiangCoordinator {
+private extension BuGuaEntryCoordinator {
 
     func showGuaXiangInputFlow() {
         let modalViewController = UIViewController(nibName: nil, bundle: nil)

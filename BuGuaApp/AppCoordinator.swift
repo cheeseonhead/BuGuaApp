@@ -39,7 +39,7 @@ class AppCoordinator: Coordinator {
             window?.rootViewController = UIStoryboard(name: "Main", bundle: nil).instantiateInitialViewController() as! ViewController
             didStartRelay.accept(window!.rootViewController!)
         } else {
-            let guaXiangCoordinator = factory.makeGuaXiangCoordinator()
+            let guaXiangCoordinator = factory.makeBuGuaEntryCoordinator()
 
             guaXiangCoordinator.didStartSignal
                 .do(onNext: { [unowned self] vc in
