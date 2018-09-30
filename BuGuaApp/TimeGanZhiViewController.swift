@@ -10,10 +10,19 @@ import UIKit
 
 class TimeGanZhiViewController: UIViewController {
 
+    // MARK: - Views
+    @IBOutlet var timePickerHolder: UIView!
+
+    // MARK: - Child VCs
+    var timePickerViewController: TimeInputViewController!
+
+    // MARK: - Logic
+    let factory: AppFactory
     let viewModel: TimeGanZhiViewModel
 
-    init(viewModel: TimeGanZhiViewModel) {
+    init(factory: AppFactory, viewModel: TimeGanZhiViewModel) {
         self.viewModel = viewModel
+        self.factory = factory
         super.init(nibName: nil, bundle: nil)
     }
 
@@ -24,12 +33,29 @@ class TimeGanZhiViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        // Do any additional setup after loading the view.
+        setup()
+    }
+}
+
+// MARK: - Setup
+extension TimeGanZhiViewController {
+    func setup() {
+        createTimePicker()
+    }
+
+    func createTimePicker() {
+        let timePickerViewModel = factory.makeTimeInputViewModel()
+        timePickerViewController = factory.makeTimeInputViewController(viewModel: timePickerViewModel)
+
+        timePickerHolder.addSubview(timePickerViewController.view)
+        timePickerViewController.view.snp.makeConstraints { make in
+            make.edges.equalToSuperview()
+        }
     }
 }
 
 extension AppFactory {
     func makeTimeGanZhiViewController(viewModel: TimeGanZhiViewModel) -> TimeGanZhiViewController {
-        return TimeGanZhiViewController(viewModel: viewModel)
+        return TimeGanZhiViewController(factory: self, viewModel: viewModel)
     }
 }
