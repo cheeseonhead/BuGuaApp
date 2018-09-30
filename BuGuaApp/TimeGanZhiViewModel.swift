@@ -9,5 +9,11 @@
 import Foundation
 
 class TimeGanZhiViewModel {
-    
+
+}
+
+extension AppFactory {
+    func makeTimeGanZhiViewModel() -> TimeGanZhiViewModel {
+        return TimeGanZhiViewModel()
+    }
 }
