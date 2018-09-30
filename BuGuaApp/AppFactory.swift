@@ -11,11 +11,10 @@ import Foundation
 import UIKit
 
 class AppFactory {
-
     let timeZone = TimeZone.autoupdatingCurrent
     let themeStore = ShallowThemeStore(initialTheme: .light)
     let themeManager: ThemeManager
-    
+
     init() {
         themeManager = ThemeManager(store: themeStore)
     }
@@ -34,5 +33,9 @@ class AppFactory {
 
     func makeSolarTermCalculator() throws -> SolarTermCalculator {
         return try SolarTermCalculator.make()
+    }
+
+    func makeGregorianFormatter(dateStyle: DateFormatter.Style, timeStyle: DateFormatter.Style) -> GregorianFormatter {
+        return GregorianFormatter(calendar: Calendar.autoupdatingCurrent, dateStyle: dateStyle, timeStyle: timeStyle)
     }
 }
