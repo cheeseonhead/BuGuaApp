@@ -85,7 +85,7 @@
 		9BCE8861214EF5220024FEF7 /* GuaXiangInputCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9BCE8860214EF5220024FEF7 /* GuaXiangInputCoordinator.swift */; };
 		9BCE8863214F0A590024FEF7 /* GuaXiangInputCoordinatorModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9BCE8862214F0A590024FEF7 /* GuaXiangInputCoordinatorModel.swift */; };
 		9BCE8867214F11960024FEF7 /* Coordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9BCE8866214F11960024FEF7 /* Coordinator.swift */; };
-		9BCE8869214F133F0024FEF7 /* DateInputViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9BCE8868214F133F0024FEF7 /* DateInputViewController.swift */; };
+		9BCE8869214F133F0024FEF7 /* DatePickerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9BCE8868214F133F0024FEF7 /* DatePickerViewController.swift */; };
 		9BCE886C214F13780024FEF7 /* DateInputViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9BCE886B214F13780024FEF7 /* DateInputViewModel.swift */; };
 		9BCE886E214F13820024FEF7 /* DateInputViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 9BCE886D214F13820024FEF7 /* DateInputViewController.xib */; };
 		9BCE8874214F2E220024FEF7 /* DateGanZhiViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9BCE8872214F2E220024FEF7 /* DateGanZhiViewController.swift */; };
@@ -222,7 +222,7 @@
 		9BCE8860214EF5220024FEF7 /* GuaXiangInputCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GuaXiangInputCoordinator.swift; sourceTree = "<group>"; };
 		9BCE8862214F0A590024FEF7 /* GuaXiangInputCoordinatorModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GuaXiangInputCoordinatorModel.swift; sourceTree = "<group>"; };
 		9BCE8866214F11960024FEF7 /* Coordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Coordinator.swift; sourceTree = "<group>"; };
-		9BCE8868214F133F0024FEF7 /* DateInputViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DateInputViewController.swift; sourceTree = "<group>"; };
+		9BCE8868214F133F0024FEF7 /* DatePickerViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DatePickerViewController.swift; sourceTree = "<group>"; };
 		9BCE886B214F13780024FEF7 /* DateInputViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DateInputViewModel.swift; sourceTree = "<group>"; };
 		9BCE886D214F13820024FEF7 /* DateInputViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = DateInputViewController.xib; sourceTree = "<group>"; };
 		9BCE8872214F2E220024FEF7 /* DateGanZhiViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DateGanZhiViewController.swift; sourceTree = "<group>"; };
@@ -333,7 +333,7 @@
 		9B19593121616B5600AA320A /* DateInput */ = {
 			isa = PBXGroup;
 			children = (
-				9BCE8868214F133F0024FEF7 /* DateInputViewController.swift */,
+				9BCE8868214F133F0024FEF7 /* DatePickerViewController.swift */,
 				9BCE886B214F13780024FEF7 /* DateInputViewModel.swift */,
 				9BCE886D214F13820024FEF7 /* DateInputViewController.xib */,
 			);
@@ -799,7 +799,7 @@
 				34A13D4F2142294D00D77D98 /* Int+Conversion.swift in Sources */,
 				9BCB3609213E011800F7FDDE /* String+Vertical.swift in Sources */,
 				9BCB3618213E2A5800F7FDDE /* GuaXiangCoordinator.swift in Sources */,
-				9BCE8869214F133F0024FEF7 /* DateInputViewController.swift in Sources */,
+				9BCE8869214F133F0024FEF7 /* DatePickerViewController.swift in Sources */,
 				9B2AFBAC2157347200DF9A5E /* WideDivider.swift in Sources */,
 				9BCE8877214F2EB10024FEF7 /* DateGanZhiViewModel.swift in Sources */,
 				9BCB360D213E148200F7FDDE /* GuaXiangViewController.swift in Sources */,

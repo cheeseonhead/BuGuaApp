@@ -20,7 +20,7 @@ class DateGanZhiViewController: UIViewController {
     var finishBarButton: UIBarButtonItem!
 
     // MARK: - Child VCs
-    var dateInputViewController: DateInputViewController!
+    var dateInputViewController: DatePickerViewController!
 
     // MARK - Public Properties
     let bag = DisposeBag()
