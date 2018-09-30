@@ -57,7 +57,7 @@ private extension DateGanZhiViewController {
         
         navigationItem.title = NSLocalizedString("輸入日期", comment: "")
 
-        finishBarButton = UIBarButtonItem(title: NSLocalizedString("完成", comment: ""),
+        finishBarButton = UIBarButtonItem(title: NSLocalizedString("下一個", comment: ""),
                                           style: .done, target: nil, action: nil)
         navigationItem.rightBarButtonItem = finishBarButton
     }
