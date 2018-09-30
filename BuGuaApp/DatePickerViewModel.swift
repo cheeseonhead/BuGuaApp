@@ -12,7 +12,7 @@ import RxCocoa
 import RxSwift
 import RxSwiftExt
 
-class DateInputViewModel {
+class DatePickerViewModel {
 
     // MARK: - Input Rx
     let dateRelay = BehaviorRelay<Date>(value: Date())
@@ -31,7 +31,7 @@ class DateInputViewModel {
 }
 
 extension AppFactory {
-    func makeDateInputViewModel() -> DateInputViewModel {
-        return DateInputViewModel(timeZoneGetter: { [unowned self] in self.timeZone })
+    func makeDateInputViewModel() -> DatePickerViewModel {
+        return DatePickerViewModel(timeZoneGetter: { [unowned self] in self.timeZone })
     }
 }
