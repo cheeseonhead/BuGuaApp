@@ -19,7 +19,6 @@ private enum Style {
 }
 
 class BuGuaEntryViewController: UIViewController {
-
     // MARK: - Views
 
     let inputButton = UIBarButtonItem(title: NSLocalizedString("輸入", comment: ""), style: .plain, target: nil, action: nil)
@@ -90,8 +89,7 @@ private extension BuGuaEntryViewController {
         }
     }
 
-    func styling() {
-    }
+    func styling() {}
 
     func bindings() {
         viewModel.entryRelay.map { $0.guaXiang }
