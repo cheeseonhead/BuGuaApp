@@ -21,7 +21,7 @@ class GuaXiangInputCoordinator: Coordinator {
     lazy private (set) var didStartSignal = didStartRelay.asSignal()
 
     // MARK: - Ouput Rx
-    let guaXiangRelay = PublishRelay<LiuYaoGuaXiang>()
+    let buGuaEntryRelay = PublishRelay<BuGuaEntry>()
 
     // MARK: - Private Rx
     private var navigationController: UINavigationController!
@@ -76,6 +76,10 @@ private extension GuaXiangInputCoordinator {
 
     func showTimeInput() {
 
+    }
+
+    func finishFlow() {
+        buGuaEntryRelay.accept(model.buGuaEntry())
     }
 }
 

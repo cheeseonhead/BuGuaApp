@@ -27,8 +27,10 @@ class GuaXiangInputCoordinatorModel {
         buGuaEntryBuilder.setDate(date)
     }
 
-    func liuYaoGuaXiang() -> LiuYaoGuaXiang {
-        return guaXiangBuilder.build()
+    func buGuaEntry() -> BuGuaEntry {
+
+        return buGuaEntryBuilder.setGuaXiang(guaXiangBuilder.build())
+            .build()
     }
 }
 
