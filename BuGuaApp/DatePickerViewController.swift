@@ -12,7 +12,7 @@ import RxSwift
 import RxSwiftExt
 import UIKit
 
-class DateInputViewController: UIViewController {
+class DatePickerViewController: UIViewController {
 
     // MARK: - Views
     @IBOutlet var datePicker: UIDatePicker!
@@ -47,7 +47,7 @@ class DateInputViewController: UIViewController {
 }
 
 extension AppFactory {
-    func makeDateInputViewController(viewModel: DateInputViewModel) -> DateInputViewController {
-        return DateInputViewController(viewModel: viewModel)
+    func makeDateInputViewController(viewModel: DateInputViewModel) -> DatePickerViewController {
+        return DatePickerViewController(viewModel: viewModel)
     }
 }
