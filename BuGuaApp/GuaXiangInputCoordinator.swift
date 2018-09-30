@@ -65,7 +65,7 @@ private extension GuaXiangInputCoordinator {
 
         let dateViewControllerOutput = Observable.zip(vm.finalDateGanZhiDriver, vm.finalGregorianDateDriver)
 
-        dateViewControllerOutput.bind { (dateGanZhi, gregorianDate) in
+        dateViewControllerOutput.bind { [unowned self] (dateGanZhi, gregorianDate) in
             self.model.setDateGanZhi(dateGanZhi)
             self.model.setGregorianDate(gregorianDate)
             self.showTimeInput()
@@ -77,6 +77,11 @@ private extension GuaXiangInputCoordinator {
     func showTimeInput() {
         let vm = factory.makeTimeGanZhiViewModel()
         let vc = factory.makeTimeGanZhiViewController(viewModel: vm)
+
+        vm.finalTimeOutput.bind { [unowned self] time in
+            self.model.setGregorianTime(time)
+            self.finishFlow()
+        }.disposed(by: bag)
 
         navigationController.pushViewController(vc, animated: true)
     }
