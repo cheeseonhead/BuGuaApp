@@ -12,18 +12,23 @@ import Foundation
 class GuaXiangInputCoordinatorModel {
 
     // MARK: - Private properties
-    private let builder = LiuYaoGuaXiangBuilder()
+    private let guaXiangBuilder = LiuYaoGuaXiangBuilder()
+    private let buGuaEntryBuilder = BuGuaEntryBuilder()
 
     func setLiuYao(_ liuYao: [YaoType]) {
-        builder.setLiuYao(liuYao)
+        guaXiangBuilder.setLiuYao(liuYao)
     }
 
     func setDateGanZhi(_ ganZhi: DateGanZhi) {
-        builder.withDateGanZhi(ganZhi)
+        guaXiangBuilder.withDateGanZhi(ganZhi)
+    }
+
+    func setGregorianDate(_ date: GregorianDate) {
+        buGuaEntryBuilder.setDate(date)
     }
 
     func liuYaoGuaXiang() -> LiuYaoGuaXiang {
-        return builder.build()
+        return guaXiangBuilder.build()
     }
 }
 
