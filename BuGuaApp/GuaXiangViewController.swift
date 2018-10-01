@@ -20,6 +20,7 @@ class GuaXiangViewController: UIViewController {
     @IBOutlet weak var guaGongLabel: BodyLabel!
     @IBOutlet weak var originalGuaNameLabel: BodyLabel!
     @IBOutlet weak var changedGuaNameLabel: BodyLabel!
+    @IBOutlet weak var dateGanZhiLabel: BodyLabel!
     @IBOutlet var infoLabels: [BodyLabel]!
     var inputButton: UIBarButtonItem!
     
