@@ -13,6 +13,10 @@ import RxSwiftExt
 import RxCocoa
 import UIKit
 
+private enum Style {
+    static let infoLabelFont = UIFont.scaled(.title2)
+}
+
 class GuaXiangViewController: UIViewController {
 
     // MARK: - Views
@@ -62,7 +66,7 @@ private extension GuaXiangViewController {
 
     func styling() {
         infoLabels.forEach { label in
-            label.font = .scaled(.title2)
+            label.font = Style.infoLabelFont
         }
     }
 
