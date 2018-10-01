@@ -18,6 +18,7 @@ enum BGStyle {
 class BackgroundView: UIView {}
 class CardBackground: UIView {
     @objc dynamic var cornerRadius = CGFloat(10)
+    @objc dynamic private (set) lazy var preferredSafeAreaInset = UIEdgeInsets(top: cornerRadius, left: 0, bottom: cornerRadius, right: 0)
 
     override init(frame: CGRect) {
         super.init(frame: frame)
