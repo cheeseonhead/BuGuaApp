@@ -13,6 +13,10 @@ import RxSwiftExt
 import RxCocoa
 import UIKit
 
+private enum Style {
+    static let infoLabelFont = UIFont.scaled(.title2)
+}
+
 class GuaXiangViewController: UIViewController {
 
     // MARK: - Views
@@ -20,6 +24,7 @@ class GuaXiangViewController: UIViewController {
     @IBOutlet weak var guaGongLabel: BodyLabel!
     @IBOutlet weak var originalGuaNameLabel: BodyLabel!
     @IBOutlet weak var changedGuaNameLabel: BodyLabel!
+    @IBOutlet weak var dateGanZhiLabel: BodyLabel!
     @IBOutlet var infoLabels: [BodyLabel]!
     var inputButton: UIBarButtonItem!
     
@@ -44,7 +49,8 @@ class GuaXiangViewController: UIViewController {
         
         createViews()
         styling()
-        bindings()
+        reactiveBinding()
+        activeBinding()
     }
 }
 
@@ -60,11 +66,11 @@ private extension GuaXiangViewController {
 
     func styling() {
         infoLabels.forEach { label in
-            label.font = .scaled(.title2)
+            label.font = Style.infoLabelFont
         }
     }
 
-    func bindings() {
+    func reactiveBinding() {
         viewModel.guaXiangRelay.bind(to: guaXiangView.guaXiangRelay).disposed(by: bag)
 
         viewModel.guaXiangRelay
@@ -80,7 +86,12 @@ private extension GuaXiangViewController {
             .bind(to: changedGuaNameLabel.rx.text)
             .disposed(by: bag)
 
+        viewModel.guaXiangRelay.formatDateGanZhi()
+            .bind(to: dateGanZhiLabel.rx.text)
+            .disposed(by: bag)
+    }
 
+    func activeBinding() {
         inputButton.rx.tap.bind(to: viewModel.onInputRelay).disposed(by: bag)
     }
 }
@@ -106,6 +117,14 @@ private extension BehaviorRelay where Element == LiuYaoGuaXiang {
         return map {
             let format = NSLocalizedString("變卦: %@", comment: "")
             return String(format: format, $0.changedGua.character)
+        }
+    }
+
+    func formatDateGanZhi() -> Observable<String> {
+        return map {
+            let format = NSLocalizedString("%@年 %@月 %@日", comment: "")
+            return String(format: format, $0.dateGanZhi.year.character,
+                          $0.dateGanZhi.month.character, $0.dateGanZhi.day.character)
         }
     }
 }

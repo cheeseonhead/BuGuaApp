@@ -29,6 +29,8 @@ class GuaXiangInputCoordinatorModel {
 
     func setGregorianTime(_ time: GregorianTime) {
         buGuaEntryBuilder.setTime(time)
+
+        guaXiangBuilder.setTimeDiZhi(time.diZhi)
     }
 
     func buGuaEntry() -> BuGuaEntry {
