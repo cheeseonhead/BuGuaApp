@@ -25,8 +25,8 @@ class GuaXiangViewController: UIViewController {
     @IBOutlet weak var originalGuaNameLabel: BodyLabel!
     @IBOutlet weak var changedGuaNameLabel: BodyLabel!
     @IBOutlet weak var dateGanZhiLabel: BodyLabel!
+    @IBOutlet weak var timeGanZhiLabel: BodyLabel!
     @IBOutlet var infoLabels: [BodyLabel]!
-    var inputButton: UIBarButtonItem!
     
     let viewModel: GuaXiangViewModel
 
@@ -58,7 +58,7 @@ class GuaXiangViewController: UIViewController {
 private extension GuaXiangViewController {
     
     func createViews() {
-        additionalSafeAreaInsets = CardBackground.appearance().preferredSafeAreaInset
+        additionalSafeAreaInsets = CardBackground.preferredEdgeInsets
     }
 
     func styling() {
@@ -86,10 +86,13 @@ private extension GuaXiangViewController {
         viewModel.guaXiangRelay.formatDateGanZhi()
             .bind(to: dateGanZhiLabel.rx.text)
             .disposed(by: bag)
+
+        viewModel.guaXiangRelay.formatTimeGanZhi()
+            .bind(to: timeGanZhiLabel.rx.text)
+            .disposed(by: bag)
     }
 
     func activeBinding() {
-        inputButton.rx.tap.bind(to: viewModel.onInputRelay).disposed(by: bag)
     }
 }
 
@@ -119,9 +122,16 @@ private extension BehaviorRelay where Element == LiuYaoGuaXiang {
 
     func formatDateGanZhi() -> Observable<String> {
         return map {
-            let format = NSLocalizedString("%@年 %@月 %@日", comment: "")
+            let format = NSLocalizedString("%@年 %@月 %@日", comment: "日期地支")
             return String(format: format, $0.dateGanZhi.year.character,
                           $0.dateGanZhi.month.character, $0.dateGanZhi.day.character)
+        }
+    }
+
+    func formatTimeGanZhi() -> Observable<String> {
+        return map {
+            let format = NSLocalizedString("%@時", comment: "時間地支")
+            return String(format: format, $0.timeDiZhi.character)
         }
     }
 }
