@@ -73,7 +73,7 @@
 		9B933F7B2138DF3B004DCD3F /* CGRect+Points.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9B933F7A2138DF3B004DCD3F /* CGRect+Points.swift */; };
 		9B933F7D2138DF75004DCD3F /* CGSize+Points.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9B933F7C2138DF75004DCD3F /* CGSize+Points.swift */; };
 		9BA40D50216574720048EDDE /* StorageManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9BA40D4F216574720048EDDE /* StorageManager.swift */; };
-		9BA40D53216575590048EDDE /* BuGuaEntryObject.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9BA40D52216575590048EDDE /* BuGuaEntryObject.swift */; };
+		9BA40D56216576460048EDDE /* BuGuaApp.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 9BA40D54216576460048EDDE /* BuGuaApp.xcdatamodeld */; };
 		9BCB3609213E011800F7FDDE /* String+Vertical.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9BCB3608213E011800F7FDDE /* String+Vertical.swift */; };
 		9BCB360D213E148200F7FDDE /* GuaXiangViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9BCB360C213E148200F7FDDE /* GuaXiangViewController.swift */; };
 		9BCB3611213E150500F7FDDE /* GuaXiangViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 9BCB3610213E150500F7FDDE /* GuaXiangViewController.xib */; };
@@ -209,7 +209,7 @@
 		9B933F7A2138DF3B004DCD3F /* CGRect+Points.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "CGRect+Points.swift"; sourceTree = "<group>"; };
 		9B933F7C2138DF75004DCD3F /* CGSize+Points.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "CGSize+Points.swift"; sourceTree = "<group>"; };
 		9BA40D4F216574720048EDDE /* StorageManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StorageManager.swift; sourceTree = "<group>"; };
-		9BA40D52216575590048EDDE /* BuGuaEntryObject.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BuGuaEntryObject.swift; sourceTree = "<group>"; };
+		9BA40D55216576460048EDDE /* BuGuaApp.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = BuGuaApp.xcdatamodel; sourceTree = "<group>"; };
 		9BCB3608213E011800F7FDDE /* String+Vertical.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "String+Vertical.swift"; sourceTree = "<group>"; };
 		9BCB360C213E148200F7FDDE /* GuaXiangViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GuaXiangViewController.swift; sourceTree = "<group>"; };
 		9BCB3610213E150500F7FDDE /* GuaXiangViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = GuaXiangViewController.xib; sourceTree = "<group>"; };
@@ -499,6 +499,7 @@
 			children = (
 				9BA40D51216575190048EDDE /* ManagedObjects */,
 				9BA40D4F216574720048EDDE /* StorageManager.swift */,
+				9BA40D54216576460048EDDE /* BuGuaApp.xcdatamodeld */,
 			);
 			name = Models;
 			sourceTree = "<group>";
@@ -506,7 +507,6 @@
 		9BA40D51216575190048EDDE /* ManagedObjects */ = {
 			isa = PBXGroup;
 			children = (
-				9BA40D52216575590048EDDE /* BuGuaEntryObject.swift */,
 			);
 			name = ManagedObjects;
 			sourceTree = "<group>";
@@ -807,7 +807,6 @@
 				9BCE8867214F11960024FEF7 /* Coordinator.swift in Sources */,
 				3413A5652140D89900245C46 /* CharacterSet+MoreSets.swift in Sources */,
 				346334482148A66E001D462B /* Container+Operator.swift in Sources */,
-				9BA40D53216575590048EDDE /* BuGuaEntryObject.swift in Sources */,
 				34F3E4FF2150A84F00A9BA2B /* Rx+Operators.swift in Sources */,
 				9B19593F2161709D00AA320A /* TimeGanZhiViewModel.swift in Sources */,
 				9B933F3B2134EB01004DCD3F /* FuXiBaGuaView.swift in Sources */,
@@ -831,6 +830,7 @@
 				3463344F2148BD4B001D462B /* HeaderLabelView.swift in Sources */,
 				34EC158D21534ECA00378758 /* Theme.swift in Sources */,
 				9B933EF32134E529004DCD3F /* ViewController.swift in Sources */,
+				9BA40D56216576460048EDDE /* BuGuaApp.xcdatamodeld in Sources */,
 				9B933F7D2138DF75004DCD3F /* CGSize+Points.swift in Sources */,
 				34BE79962159D25400B5010A /* BuGuaEntryViewController.swift in Sources */,
 				9B933F73213797A2004DCD3F /* UIColor+AppColors.swift in Sources */,
@@ -1210,6 +1210,19 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCVersionGroup section */
+		9BA40D54216576460048EDDE /* BuGuaApp.xcdatamodeld */ = {
+			isa = XCVersionGroup;
+			children = (
+				9BA40D55216576460048EDDE /* BuGuaApp.xcdatamodel */,
+			);
+			currentVersion = 9BA40D55216576460048EDDE /* BuGuaApp.xcdatamodel */;
+			path = BuGuaApp.xcdatamodeld;
+			sourceTree = "<group>";
+			versionGroupType = wrapper.xcdatamodel;
+		};
+/* End XCVersionGroup section */
 	};
 	rootObject = 9B933EE52134E529004DCD3F /* Project object */;
 }
