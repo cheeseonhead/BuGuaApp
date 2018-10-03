@@ -73,11 +73,12 @@
 		9B933F7B2138DF3B004DCD3F /* CGRect+Points.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9B933F7A2138DF3B004DCD3F /* CGRect+Points.swift */; };
 		9B933F7D2138DF75004DCD3F /* CGSize+Points.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9B933F7C2138DF75004DCD3F /* CGSize+Points.swift */; };
 		9BA40D50216574720048EDDE /* StorageManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9BA40D4F216574720048EDDE /* StorageManager.swift */; };
-		9BA40D56216576460048EDDE /* BuGuaApp.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 9BA40D54216576460048EDDE /* BuGuaApp.xcdatamodeld */; };
+		9BA40D56216576460048EDDE /* BuGuaAppModel.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 9BA40D54216576460048EDDE /* BuGuaAppModel.xcdatamodeld */; };
 		9BA40D5B216577E70048EDDE /* GregorianDateObject+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9BA40D57216577E70048EDDE /* GregorianDateObject+CoreDataClass.swift */; };
 		9BA40D5C216577E70048EDDE /* GregorianDateObject+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9BA40D58216577E70048EDDE /* GregorianDateObject+CoreDataProperties.swift */; };
 		9BA40D5D216577E70048EDDE /* BuGuaEntryObject+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9BA40D59216577E70048EDDE /* BuGuaEntryObject+CoreDataClass.swift */; };
 		9BA40D5E216577E70048EDDE /* BuGuaEntryObject+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9BA40D5A216577E70048EDDE /* BuGuaEntryObject+CoreDataProperties.swift */; };
+		9BA40D61216578B90048EDDE /* BuGuaEntryMediator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9BA40D60216578B90048EDDE /* BuGuaEntryMediator.swift */; };
 		9BCB3609213E011800F7FDDE /* String+Vertical.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9BCB3608213E011800F7FDDE /* String+Vertical.swift */; };
 		9BCB360D213E148200F7FDDE /* GuaXiangViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9BCB360C213E148200F7FDDE /* GuaXiangViewController.swift */; };
 		9BCB3611213E150500F7FDDE /* GuaXiangViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 9BCB3610213E150500F7FDDE /* GuaXiangViewController.xib */; };
@@ -218,6 +219,7 @@
 		9BA40D58216577E70048EDDE /* GregorianDateObject+CoreDataProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "GregorianDateObject+CoreDataProperties.swift"; sourceTree = "<group>"; };
 		9BA40D59216577E70048EDDE /* BuGuaEntryObject+CoreDataClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "BuGuaEntryObject+CoreDataClass.swift"; sourceTree = "<group>"; };
 		9BA40D5A216577E70048EDDE /* BuGuaEntryObject+CoreDataProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "BuGuaEntryObject+CoreDataProperties.swift"; sourceTree = "<group>"; };
+		9BA40D60216578B90048EDDE /* BuGuaEntryMediator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BuGuaEntryMediator.swift; sourceTree = "<group>"; };
 		9BCB3608213E011800F7FDDE /* String+Vertical.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "String+Vertical.swift"; sourceTree = "<group>"; };
 		9BCB360C213E148200F7FDDE /* GuaXiangViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GuaXiangViewController.swift; sourceTree = "<group>"; };
 		9BCB3610213E150500F7FDDE /* GuaXiangViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = GuaXiangViewController.xib; sourceTree = "<group>"; };
@@ -505,9 +507,10 @@
 		9BA40D4E216574240048EDDE /* Models */ = {
 			isa = PBXGroup;
 			children = (
+				9BA40D5F216578A10048EDDE /* Mediators */,
 				9BA40D51216575190048EDDE /* ManagedObjects */,
 				9BA40D4F216574720048EDDE /* StorageManager.swift */,
-				9BA40D54216576460048EDDE /* BuGuaApp.xcdatamodeld */,
+				9BA40D54216576460048EDDE /* BuGuaAppModel.xcdatamodeld */,
 			);
 			name = Models;
 			sourceTree = "<group>";
@@ -521,6 +524,14 @@
 				9BA40D5A216577E70048EDDE /* BuGuaEntryObject+CoreDataProperties.swift */,
 			);
 			name = ManagedObjects;
+			sourceTree = "<group>";
+		};
+		9BA40D5F216578A10048EDDE /* Mediators */ = {
+			isa = PBXGroup;
+			children = (
+				9BA40D60216578B90048EDDE /* BuGuaEntryMediator.swift */,
+			);
+			name = Mediators;
 			sourceTree = "<group>";
 		};
 		9BCB3612213E227700F7FDDE /* Coordinators */ = {
@@ -815,6 +826,7 @@
 				9B2AFBA62156EC9100DF9A5E /* GuaXiangRow.swift in Sources */,
 				341EE5C32143A94A00CB7D53 /* GuaXiangViewLayout.swift in Sources */,
 				9B2AFBA82157011800DF9A5E /* ShiYaoView.swift in Sources */,
+				9BA40D61216578B90048EDDE /* BuGuaEntryMediator.swift in Sources */,
 				9B933F3F2134EBBE004DCD3F /* UIView+NibLoadable.swift in Sources */,
 				3413A5672140E0BC00245C46 /* AutoNextTextFieldDelegate.swift in Sources */,
 				9B933F792138DEE2004DCD3F /* CGPoint+Math.swift in Sources */,
@@ -846,7 +858,7 @@
 				3463344F2148BD4B001D462B /* HeaderLabelView.swift in Sources */,
 				34EC158D21534ECA00378758 /* Theme.swift in Sources */,
 				9B933EF32134E529004DCD3F /* ViewController.swift in Sources */,
-				9BA40D56216576460048EDDE /* BuGuaApp.xcdatamodeld in Sources */,
+				9BA40D56216576460048EDDE /* BuGuaAppModel.xcdatamodeld in Sources */,
 				9B933F7D2138DF75004DCD3F /* CGSize+Points.swift in Sources */,
 				34BE79962159D25400B5010A /* BuGuaEntryViewController.swift in Sources */,
 				9B933F73213797A2004DCD3F /* UIColor+AppColors.swift in Sources */,
@@ -1228,13 +1240,13 @@
 /* End XCConfigurationList section */
 
 /* Begin XCVersionGroup section */
-		9BA40D54216576460048EDDE /* BuGuaApp.xcdatamodeld */ = {
+		9BA40D54216576460048EDDE /* BuGuaAppModel.xcdatamodeld */ = {
 			isa = XCVersionGroup;
 			children = (
 				9BA40D55216576460048EDDE /* BuGuaApp.xcdatamodel */,
 			);
 			currentVersion = 9BA40D55216576460048EDDE /* BuGuaApp.xcdatamodel */;
-			path = BuGuaApp.xcdatamodeld;
+			path = BuGuaAppModel.xcdatamodeld;
 			sourceTree = "<group>";
 			versionGroupType = wrapper.xcdatamodel;
 		};
