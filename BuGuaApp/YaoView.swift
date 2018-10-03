@@ -15,7 +15,7 @@ import UIKit
 class YaoView: UIView {
 
     // MARK: - Constants
-    let preferredSize = CGSize(width: 32, height: 28.8)
+    let preferredSize = CGSize(width: 40, height: 28.8)
 
     // MARK: - Public Rx
     let yaoRelay = BehaviorRelay<YaoType>(value: .oldYin)
