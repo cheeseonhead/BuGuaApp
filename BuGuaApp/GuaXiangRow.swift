@@ -23,6 +23,7 @@ private enum Style {
 class GuaXiangRow: UIView {
 
     // MARK: - Labels
+    let liuShouLabel = GuaXiangRow.makeLabel()
     let fuShenLabel = GuaXiangRow.makeLabel()
     let changedLiuQinLabel = GuaXiangRow.makeLabel()
     let liuQinLabel = GuaXiangRow.makeLabel()
@@ -32,7 +33,8 @@ class GuaXiangRow: UIView {
 
     // MARK: - Other views
     let shiYaoView = ShiYaoView(frame: .zero)
-    private (set) lazy var viewStack = [fuShenLabel,
+    private (set) lazy var viewStack = [liuShouLabel,
+                                        fuShenLabel,
                                         changedLiuQinLabel,
                                         liuQinLabel,
                                         shiYaoView,
@@ -95,12 +97,13 @@ private extension GuaXiangRow {
     }
 
     func bindings() {
-        bindLabel(getFushen, fuShenLabel)
-        bindLabel(getChangedLiuQin, changedLiuQinLabel)
-        bindLabel(getLiuQin, liuQinLabel)
-        bindLabel(getGanZhi, ganZhiLabel)
-        bindLabel(getChangedGanZhi, changedGanZhiLabel)
-        bindLabel(getHiddenGanZhi, hiddenGanZhiLabel)
+        bindLabel(GuaXiangRow.getLiuShou, liuShouLabel)
+        bindLabel(GuaXiangRow.getFushen, fuShenLabel)
+        bindLabel(GuaXiangRow.getChangedLiuQin, changedLiuQinLabel)
+        bindLabel(GuaXiangRow.getLiuQin, liuQinLabel)
+        bindLabel(GuaXiangRow.getGanZhi, ganZhiLabel)
+        bindLabel(GuaXiangRow.getChangedGanZhi, changedGanZhiLabel)
+        bindLabel(GuaXiangRow.getHiddenGanZhi, hiddenGanZhiLabel)
 
         guaXiangRelay.map { $0.0.yao(at: $0.1) }
             .bind(to: shiYaoView.yaoTypeRelay)
@@ -153,39 +156,45 @@ private extension GuaXiangRow {
 
     typealias GuaXiangDescription = (Observable<(LiuYaoGuaXiang, Int)>) -> Observable<String>
 
-    func getFushen(_ guaXiangRelay: Observable<(LiuYaoGuaXiang, Int)>) -> Observable<String> {
+    static func getFushen(_ guaXiangRelay: Observable<(LiuYaoGuaXiang, Int)>) -> Observable<String> {
         return guaXiangRelay.map {
             return $0.0.fuShenController.fuShen(at: $0.1)?.character.vertical ?? ""
         }
     }
 
-    func getChangedLiuQin(_ guaXiangRelay: Observable<(LiuYaoGuaXiang, Int)>) -> Observable<String> {
+    static func getChangedLiuQin(_ guaXiangRelay: Observable<(LiuYaoGuaXiang, Int)>) -> Observable<String> {
         return guaXiangRelay.map { guaXiang, position in
             return guaXiang.changedLiuQin(at: position)?.character.vertical ?? ""
         }
     }
 
-    func getLiuQin(_ guaXiangRelay: Observable<(LiuYaoGuaXiang, Int)>) -> Observable<String> {
+    static func getLiuQin(_ guaXiangRelay: Observable<(LiuYaoGuaXiang, Int)>) -> Observable<String> {
         return guaXiangRelay.map { guaXiang, position in
             return guaXiang.originalGua.liuQin(at: position).character.vertical
         }
     }
 
-    func getGanZhi(_ guaXiangRelay: Observable<(LiuYaoGuaXiang, Int)>) -> Observable<String> {
+    static func getGanZhi(_ guaXiangRelay: Observable<(LiuYaoGuaXiang, Int)>) -> Observable<String> {
         return guaXiangRelay.map { guaXiang, position in
             return guaXiang.originalGua.ganZhi(at: position).character.vertical
         }
     }
 
-    func getChangedGanZhi(_ guaXiangRelay: Observable<(LiuYaoGuaXiang, Int)>) -> Observable<String> {
+    static func getChangedGanZhi(_ guaXiangRelay: Observable<(LiuYaoGuaXiang, Int)>) -> Observable<String> {
         return guaXiangRelay.map {
             return $0.0.changedGanZhi(at: $0.1)?.character.vertical ?? ""
         }
     }
 
-    func getHiddenGanZhi(_ guaXiangRelay: Observable<(LiuYaoGuaXiang, Int)>) -> Observable<String> {
+    static func getHiddenGanZhi(_ guaXiangRelay: Observable<(LiuYaoGuaXiang, Int)>) -> Observable<String> {
         return guaXiangRelay.map { guaXiang, position in
             return guaXiang.fuShenController.hiddenGanZhi(at: position)?.character.vertical ?? ""
+        }
+    }
+    
+    static func getLiuShou(_ guaXiangRelay: Observable<(LiuYaoGuaXiang, Int)>) -> Observable<String> {
+        return guaXiangRelay.map { guaXiang, position in
+            return guaXiang.liuShouController.liuShou(at: position).character.vertical
         }
     }
 }
