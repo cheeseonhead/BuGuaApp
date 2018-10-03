@@ -7,7 +7,14 @@
 //
 
 import Foundation
+import CoreData
 
 class StorageManager {
-    
+    let container: NSPersistentContainer
+    let context: NSManagedObjectContext
+
+    init(container: NSPersistentContainer, context: NSManagedObjectContext) {
+        self.container = container
+        self.context = context
+    }
 }
