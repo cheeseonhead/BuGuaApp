@@ -30,6 +30,7 @@ class GuaXiangRow: UIView {
     let ganZhiLabel = GuaXiangRow.makeLabel()
     let changedGanZhiLabel = GuaXiangRow.makeLabel()
     let hiddenGanZhiLabel = GuaXiangRow.makeLabel()
+    let guaShenLabel = GuaXiangRow.makeLabel()
 
     // MARK: - Other views
     let shiYaoView = ShiYaoView(frame: .zero)
@@ -40,7 +41,8 @@ class GuaXiangRow: UIView {
                                         shiYaoView,
                                         ganZhiLabel,
                                         changedGanZhiLabel,
-                                        hiddenGanZhiLabel]
+                                        hiddenGanZhiLabel,
+                                        guaShenLabel]
 
     // MARK: - Inputs
     let bag = DisposeBag()
@@ -104,6 +106,7 @@ private extension GuaXiangRow {
         bindLabel(GuaXiangRow.getGanZhi, ganZhiLabel)
         bindLabel(GuaXiangRow.getChangedGanZhi, changedGanZhiLabel)
         bindLabel(GuaXiangRow.getHiddenGanZhi, hiddenGanZhiLabel)
+        bindLabel(GuaXiangRow.getGuaShen, guaShenLabel)
 
         guaXiangRelay.map { $0.0.yao(at: $0.1) }
             .bind(to: shiYaoView.yaoTypeRelay)
@@ -195,6 +198,12 @@ private extension GuaXiangRow {
     static func getLiuShou(_ guaXiangRelay: Observable<(LiuYaoGuaXiang, Int)>) -> Observable<String> {
         return guaXiangRelay.map { guaXiang, position in
             return guaXiang.liuShouController.liuShou(at: position).character.vertical
+        }
+    }
+    
+    static func getGuaShen(_ guaXiangRelay: Observable<(LiuYaoGuaXiang, Int)>) -> Observable<String> {
+        return guaXiangRelay.map { guaXiang, position in
+            return guaXiang.guaShenController.guaShen(at: position)?.character ?? ""
         }
     }
 }
