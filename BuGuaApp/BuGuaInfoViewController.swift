@@ -84,11 +84,13 @@ extension BuGuaInfoViewController: UITableViewDelegate, UITableViewDataSource {
 
             switch contentType {
             case .name:
-                cell.detailLabel.text = currentEntry.name
+//                cell.detailLabel.text = currentEntry.name
+                cell.detailLabel.text = "尚未完工"
             case .timeStamp:
                 cell.detailLabel.text = formatDate(currentEntry.date, time: currentEntry.time)
             case .question:
-                cell.detailLabel.text = currentEntry.question
+//                cell.detailLabel.text = currentEntry.question
+                cell.detailLabel.text = "尚未完工"
             default: fatalError()
             }
 
@@ -96,9 +98,10 @@ extension BuGuaInfoViewController: UITableViewDelegate, UITableViewDataSource {
         } else {
             let cell = tableView.dequeueReusableCell(withIdentifier: contentIdentifier) as! ContentCell
 
-            guard let currentEntry = currentEntry else { return cell }
+//            guard let currentEntry = currentEntry else { return cell }
 
-            cell.contentLabel.text = currentEntry.notes
+            cell.contentLabel.text = "尚未完工"
+//            cell.contentLabel.text = currentEntry.notes
 
             return cell
         }
