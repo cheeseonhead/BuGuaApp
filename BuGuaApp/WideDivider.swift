@@ -12,6 +12,10 @@ import RxSwift
 import RxSwiftExt
 import UIKit
 
+private enum ViewStyle {
+    static let backgroundAlpha = CGFloat(0.5)
+}
+
 class WideDivider: UIView {
 
     enum Style {
@@ -39,6 +43,6 @@ class WideDivider: UIView {
     }
 
     override func tintColorDidChange() {
-        backgroundColor = tintColor
+        backgroundColor = tintColor.withAlphaComponent(ViewStyle.backgroundAlpha)
     }
 }
