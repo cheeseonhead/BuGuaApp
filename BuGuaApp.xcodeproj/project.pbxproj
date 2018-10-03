@@ -18,8 +18,6 @@
 		341EE5C32143A94A00CB7D53 /* GuaXiangViewLayout.swift in Sources */ = {isa = PBXBuildFile; fileRef = 341EE5C22143A94A00CB7D53 /* GuaXiangViewLayout.swift */; };
 		346334462148A52F001D462B /* Array+Convert.swift in Sources */ = {isa = PBXBuildFile; fileRef = 346334452148A52F001D462B /* Array+Convert.swift */; };
 		346334482148A66E001D462B /* Container+Operator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 346334472148A66E001D462B /* Container+Operator.swift */; };
-		3463344B2148A914001D462B /* ShiYingYaoView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3463344A2148A914001D462B /* ShiYingYaoView.swift */; };
-		3463344D2148B147001D462B /* SixLabelView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3463344C2148B147001D462B /* SixLabelView.swift */; };
 		3463344F2148BD4B001D462B /* HeaderLabelView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3463344E2148BD4B001D462B /* HeaderLabelView.swift */; };
 		34A13D4D214222E700D77D98 /* IntegerLiuYaoConverter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 34A13D4C214222E700D77D98 /* IntegerLiuYaoConverter.swift */; };
 		34A13D4F2142294D00D77D98 /* Int+Conversion.swift in Sources */ = {isa = PBXBuildFile; fileRef = 34A13D4E2142294D00D77D98 /* Int+Conversion.swift */; };
@@ -147,8 +145,6 @@
 		341EE5C22143A94A00CB7D53 /* GuaXiangViewLayout.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GuaXiangViewLayout.swift; sourceTree = "<group>"; };
 		346334452148A52F001D462B /* Array+Convert.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Array+Convert.swift"; sourceTree = "<group>"; };
 		346334472148A66E001D462B /* Container+Operator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Container+Operator.swift"; sourceTree = "<group>"; };
-		3463344A2148A914001D462B /* ShiYingYaoView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShiYingYaoView.swift; sourceTree = "<group>"; };
-		3463344C2148B147001D462B /* SixLabelView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SixLabelView.swift; sourceTree = "<group>"; };
 		3463344E2148BD4B001D462B /* HeaderLabelView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HeaderLabelView.swift; sourceTree = "<group>"; };
 		34A13D4C214222E700D77D98 /* IntegerLiuYaoConverter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IntegerLiuYaoConverter.swift; sourceTree = "<group>"; };
 		34A13D4E2142294D00D77D98 /* Int+Conversion.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Int+Conversion.swift"; sourceTree = "<group>"; };
@@ -278,8 +274,6 @@
 			children = (
 				9B933F5A2135A8B0004DCD3F /* GuaXiangView.swift */,
 				341EE5C22143A94A00CB7D53 /* GuaXiangViewLayout.swift */,
-				3463344A2148A914001D462B /* ShiYingYaoView.swift */,
-				3463344C2148B147001D462B /* SixLabelView.swift */,
 				3463344E2148BD4B001D462B /* HeaderLabelView.swift */,
 				9B2AFBA52156EC9100DF9A5E /* GuaXiangRow.swift */,
 				9B2AFBA72157011800DF9A5E /* ShiYaoView.swift */,
@@ -793,7 +787,6 @@
 				34F3E4FF2150A84F00A9BA2B /* Rx+Operators.swift in Sources */,
 				9B19593F2161709D00AA320A /* TimeGanZhiViewModel.swift in Sources */,
 				9B933F3B2134EB01004DCD3F /* FuXiBaGuaView.swift in Sources */,
-				3463344D2148B147001D462B /* SixLabelView.swift in Sources */,
 				9BCE8874214F2E220024FEF7 /* DateGanZhiViewController.swift in Sources */,
 				3413A5692140E0D600245C46 /* ComposableTextfieldDelegate.swift in Sources */,
 				9BCB3616213E254900F7FDDE /* AppFactory.swift in Sources */,
@@ -807,7 +800,6 @@
 				9B2AFBAC2157347200DF9A5E /* WideDivider.swift in Sources */,
 				9BCE8877214F2EB10024FEF7 /* DateGanZhiViewModel.swift in Sources */,
 				9BCB360D213E148200F7FDDE /* GuaXiangViewController.swift in Sources */,
-				3463344B2148A914001D462B /* ShiYingYaoView.swift in Sources */,
 				9B19593421616BA000AA320A /* TimePickerViewController.swift in Sources */,
 				34EC158F21534EF700378758 /* ShallowThemeStore.swift in Sources */,
 				9B8B4F0A215C870F009FBCD2 /* BGPageControllerLayout.swift in Sources */,
