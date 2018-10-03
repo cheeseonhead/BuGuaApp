@@ -22,6 +22,7 @@ class GuaXiangInputCoordinator: Coordinator {
 
     // MARK: - Ouput Rx
     let buGuaEntryRelay = PublishRelay<BuGuaEntry>()
+    let cancelOutput = PublishRelay<()>()
 
     // MARK: - Private Rx
     private var navigationController: UINavigationController!
@@ -56,6 +57,10 @@ private extension GuaXiangInputCoordinator {
                 self.showDateInput()
             }).disposed(by: vm.bag)
 
+        vc.cancelOutput
+            .bind(to: cancelOutput)
+            .disposed(by: vc.bag)
+        
         return vc
     }
 
@@ -81,7 +86,7 @@ private extension GuaXiangInputCoordinator {
         vm.finalTimeOutput.bind { [unowned self] time in
             self.model.setGregorianTime(time)
             self.finishFlow()
-        }.disposed(by: bag)
+        }.disposed(by: vm.bag)
 
         navigationController.pushViewController(vc, animated: true)
     }

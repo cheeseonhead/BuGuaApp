@@ -58,11 +58,16 @@ private extension BuGuaEntryCoordinator {
         let model = factory.makeGuaXiangInputCoordinatorModel()
 
         let inputCoordinator = factory.makeGuaXiangInputCoordinator(model: model)
+        
         inputCoordinator.didStartSignal.emit(onNext: { [unowned self, modalViewController] vc in
             self.viewController.present(modalViewController, animated: true, completion: nil)
             modalViewController.add(vc)
         }).disposed(by: inputCoordinator.bag)
 
+        inputCoordinator.cancelOutput.bind { [unowned modalViewController] _ in
+            modalViewController.dismiss(animated: true, completion: nil)
+        }.disposed(by: inputCoordinator.bag)
+        
         inputCoordinator.buGuaEntryRelay.take(1)
             .do(onNext: { [unowned modalViewController] _ in
                 modalViewController.dismiss(animated: true, completion: nil)

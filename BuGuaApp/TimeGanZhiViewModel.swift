@@ -19,6 +19,7 @@ class TimeGanZhiViewModel {
     private (set) lazy var finalTimeOutput = finishInput.withLatestFrom(gregorianTimeInput)
 
     // MARK: - Input
+    let bag = DisposeBag()
     let gregorianTimeInput = BehaviorRelay(value: GregorianTime.zero)
     let finishInput = PublishRelay<()>()
 }

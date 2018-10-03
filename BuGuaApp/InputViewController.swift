@@ -19,10 +19,12 @@ class InputViewController: UIViewController {
     @IBOutlet weak var field3: UITextField!
     @IBOutlet var fields: [UITextField]!
     @IBOutlet weak var errorLabel: UILabel!
+    let cancelBarButton = UIBarButtonItem(title: NSLocalizedString("取消", comment: ""), style: .plain, target: nil, action: nil)
     var finishBarButton: UIBarButtonItem!
     
     // MARK: - Rx
     let bag = DisposeBag()
+    private (set) lazy var cancelOutput = cancelBarButton.rx.tap
     
     // MARK: - Private properties
     private let viewModel: InputViewModel
@@ -44,7 +46,8 @@ class InputViewController: UIViewController {
         createViews()
         setupDelegate()
         styling()
-        bindings()
+        activeBinding()
+        reactiveBindings()
     }
 }
 
@@ -54,6 +57,7 @@ private extension InputViewController {
         finishBarButton = UIBarButtonItem(title: NSLocalizedString("下一個", comment: ""),
                                           style: .plain, target: nil, action: nil)
         navigationItem.rightBarButtonItem = finishBarButton
+        navigationItem.leftBarButtonItem = cancelBarButton
 
         navigationItem.title = NSLocalizedString("輸入卜卦數字", comment: "")
     }
@@ -83,18 +87,10 @@ private extension InputViewController {
         }
     }
     
-    func bindings() {
-        
-        viewModel.yaoTypeSignal.asObservable().elements()
-            .mapTo(true)
-            .bind(to: errorLabel.rx.isHidden)
+    func activeBinding() {
+        finishBarButton.rx.tap
+            .bind(to: finishRelay)
             .disposed(by: bag)
-        
-        let errorStr = viewModel.yaoTypeSignal.asObservable().errors()
-            .mapAt(\.localizedDescription)
-            
-        errorStr.mapTo(false).bind(to: errorLabel.rx.isHidden).disposed(by: bag)
-        errorStr.bind(to: errorLabel.rx.text).disposed(by: bag)
         
         let strs = Observable.combineLatest(field1.rx.text, field2.rx.text, field3.rx.text) { (($0, $1), [$2]) }
         
@@ -107,10 +103,20 @@ private extension InputViewController {
             .map { $0.1 }
             .bind(to: viewModel.unstableYaoStrRelay)
             .disposed(by: bag)
-
-        finishBarButton.rx.tap
-            .bind(to: finishRelay)
+    }
+    
+    func reactiveBindings() {
+        
+        viewModel.yaoTypeSignal.asObservable().elements()
+            .mapTo(true)
+            .bind(to: errorLabel.rx.isHidden)
             .disposed(by: bag)
+        
+        let errorStr = viewModel.yaoTypeSignal.asObservable().errors()
+            .mapAt(\.localizedDescription)
+            
+        errorStr.mapTo(false).bind(to: errorLabel.rx.isHidden).disposed(by: bag)
+        errorStr.bind(to: errorLabel.rx.text).disposed(by: bag)
     }
 }
 
