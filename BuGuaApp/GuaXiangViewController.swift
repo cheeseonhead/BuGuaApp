@@ -27,7 +27,6 @@ class GuaXiangViewController: UIViewController {
     @IBOutlet weak var dateGanZhiLabel: BodyLabel!
     @IBOutlet weak var timeGanZhiLabel: BodyLabel!
     @IBOutlet weak var kongWangLabel: BodyLabel!
-    @IBOutlet weak var guaShenLabel: BodyLabel!
     @IBOutlet var infoLabels: [BodyLabel]!
     
     let viewModel: GuaXiangViewModel
@@ -96,10 +95,6 @@ private extension GuaXiangViewController {
         viewModel.guaXiangRelay.formatKongWang()
             .bind(to: kongWangLabel.rx.text)
             .disposed(by: bag)
-        
-        viewModel.guaXiangRelay.formatGuaShen()
-            .bind(to: guaShenLabel.rx.text)
-            .disposed(by: bag)
     }
 
     func activeBinding() {
@@ -149,13 +144,6 @@ private extension BehaviorRelay where Element == LiuYaoGuaXiang {
         return map {
             let format = NSLocalizedString("空亡: %@", comment: "")
             return String(format: format, $0.kongWangController.kongWang.character)
-        }
-    }
-    
-    func formatGuaShen() -> Observable<String> {
-        return map {
-            let format = NSLocalizedString("卦身: %@", comment: "")
-            return String(format: format, $0.guaShenController.guaShen.character)
         }
     }
 }
