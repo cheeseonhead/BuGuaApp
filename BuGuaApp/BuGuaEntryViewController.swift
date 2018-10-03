@@ -16,6 +16,7 @@ private enum Style {
     static let edgeInset = BGStyle.standardMargin * 1.5
     static let minimumPageSpacing = BGStyle.standardMargin
     static let minimumMultipageWidth = CGFloat(400)
+    static let maxCardSize = CGSize(width: 635, height: 906)
 }
 
 class BuGuaEntryViewController: UIViewController {
@@ -77,6 +78,7 @@ private extension BuGuaEntryViewController {
         pageController.minimumMultiPageWidth = Style.minimumMultipageWidth
         pageController.inset = Style.edgeInset
         pageController.minimumPageSpacing = Style.minimumPageSpacing
+        pageController.maxSize = Style.maxCardSize
 
         add(pageController)
 

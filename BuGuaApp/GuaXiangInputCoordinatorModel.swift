@@ -20,7 +20,7 @@ class GuaXiangInputCoordinatorModel {
     }
 
     func setDateGanZhi(_ ganZhi: DateGanZhi) {
-        guaXiangBuilder.withDateGanZhi(ganZhi)
+        guaXiangBuilder.setDateGanZhi(ganZhi)
     }
 
     func setGregorianDate(_ date: GregorianDate) {
