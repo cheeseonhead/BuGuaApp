@@ -12,5 +12,4 @@ import CoreData
 
 @objc(BuGuaEntryObject)
 public class BuGuaEntryObject: NSManagedObject {
-
 }

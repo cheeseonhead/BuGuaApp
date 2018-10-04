@@ -8,6 +8,7 @@
 
 import BuGuaKit
 import CoreData
+import CloudKit
 import Foundation
 import RxCocoa
 import RxSwift
@@ -41,6 +42,8 @@ extension BuGuaEntry: Migratable {
     static func build(from object: BuGuaEntryObject) -> BuGuaEntry? {
         let builder = BuGuaEntryBuilder()
 
+        // TODO: Set other properties
+
         builder.setDate(GregorianDate(year: Int(object.date!.year), month: Int(object.date!.month), day: Int(object.date!.day)))
         builder.setName(object.name!)
         builder.setGuaXiang(.default)
@@ -66,6 +69,7 @@ extension BuGuaEntry: Migratable {
 class BuGuaEntryMediator: Mediator {
     typealias StructElement = BuGuaEntry
 
+    let bag = DisposeBag()
     let input = PublishRelay<BuGuaEntry>()
     private (set) lazy var output = buGuaEntryOutput.asDriver()
 
@@ -78,18 +82,34 @@ class BuGuaEntryMediator: Mediator {
         buGuaEntryObject = structElement.export(toContext: storageManager.context)
         self.storageManager = storageManager
 
-        update(obj: buGuaEntryObject)
+        sendUpdateNotification()
     }
 
     required init(object: BuGuaEntryObject, storageManager: StorageManager) {
         self.buGuaEntryObject = object
         self.storageManager = storageManager
 
-        update(obj: buGuaEntryObject)
+        sendUpdateNotification()
     }
 
-    func update(obj: BuGuaEntryObject) {
-        buGuaEntryOutput.accept(BuGuaEntry.build(from: obj)!)
+    func reactiveBinding() {
+        input.bind { [unowned self] entry in
+            self.update(with: entry)
+        }.disposed(by: bag)
+    }
+
+    func update(with structure: BuGuaEntry) {
+        buGuaEntryObject.managedObjectContext?.perform { [unowned self] in
+            self.buGuaEntryObject.update(with: structure)
+            self.sendUpdateNotification()
+        }
+    }
+
+    func sendUpdateNotification() {
+        print(buGuaEntryObject.objectID.uriRepresentation())
+//        let test = CKRecord(recordType: "Test", recordID: .init(recordName: obj.objectID))
+
+        buGuaEntryOutput.accept(BuGuaEntry.build(from: buGuaEntryObject)!)
     }
 }
 
@@ -107,4 +127,19 @@ extension BuGuaEntry {
             .setGuaXiang(.default)
             .build()
     }()
+}
+
+extension GregorianDateObject {
+    func update(with gregorianDate: GregorianDate) {
+        year = Int64(gregorianDate.year)
+        month = Int64(gregorianDate.month)
+        day = Int64(gregorianDate.day)
+    }
+}
+
+extension BuGuaEntryObject {
+    func update(with entry: BuGuaEntry) {
+        name = entry.name
+        date?.update(with: entry.date)
+    }
 }
