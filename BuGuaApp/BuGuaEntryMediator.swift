@@ -18,7 +18,7 @@ protocol Migratable: Equatable {
     associatedtype Context
 
     static func build(from: Counterpart) -> Self?
-    func export(toContext:Context) throws -> Counterpart
+    func export(toContext:Context) -> Counterpart
 //    static func delete(counterpart:Counterpart, fromContext:Context) throws
 }
 
@@ -42,7 +42,7 @@ extension BuGuaEntry: Migratable {
         return BuGuaEntry.default
     }
 
-    func export(toContext: NSManagedObjectContext) throws -> BuGuaEntryObject {
+    func export(toContext: NSManagedObjectContext) -> BuGuaEntryObject {
         return BuGuaEntryObject(context: toContext)
     }
 
@@ -59,14 +59,20 @@ class BuGuaEntryMediator: Mediator {
 
     private let buGuaEntryOutput = BehaviorRelay<BuGuaEntry>(value: .default)
 
-    required init(structElement: BuGuaEntry, storageManager: StorageManager) throws {
-        buGuaEntryObject = try structElement.export(toContext: storageManager.context)
+    required init(structElement: BuGuaEntry, storageManager: StorageManager) {
+        buGuaEntryObject = structElement.export(toContext: storageManager.context)
         self.storageManager = storageManager
     }
 
     required init(object: BuGuaEntryObject, storageManager: StorageManager) {
         self.buGuaEntryObject = object
         self.storageManager = storageManager
+    }
+}
+
+extension AppFactory {
+    func makeBuGuaEntryMediator(_ structElement: BuGuaEntry) -> BuGuaEntryMediator {
+        return BuGuaEntryMediator(structElement: structElement, storageManager: storageManager)
     }
 }
 
