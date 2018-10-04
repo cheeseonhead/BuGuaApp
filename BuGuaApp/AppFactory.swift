@@ -14,6 +14,7 @@ import UIKit
 class AppFactory {
     let container: NSPersistentContainer
     let context: NSManagedObjectContext
+    let storageManager: StorageManager
     let timeZone = TimeZone.autoupdatingCurrent
     let themeStore = ShallowThemeStore(initialTheme: .light)
     let themeManager: ThemeManager
@@ -22,6 +23,7 @@ class AppFactory {
         themeManager = ThemeManager(store: themeStore)
         self.container = container
         self.context = context
+        self.storageManager = StorageManager(container: container, context: context)
     }
 
     func makeAppCoordinator(with window: UIWindow) -> AppCoordinator {
