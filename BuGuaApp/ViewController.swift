@@ -17,16 +17,16 @@ class ViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        let factory = AppFactory()
-
-        let vm = factory.makeTimePickerViewModel()
-        let vc = factory.makeTimePickerViewController(viewModel: vm)
-
-        add(vc)
-
-        vc.view.snp.makeConstraints { (make) in
-            make.edges.equalToSuperview()
-        }
+//        let factory = AppFactory()
+//
+//        let vm = factory.makeTimePickerViewModel()
+//        let vc = factory.makeTimePickerViewController(viewModel: vm)
+//
+//        add(vc)
+//
+//        vc.view.snp.makeConstraints { (make) in
+//            make.edges.equalToSuperview()
+//        }
 
 //        vm.gregorianTimeRelay.drive(onNext: { (time) in
 //            print(time)
