@@ -94,15 +94,17 @@ private extension BuGuaEntryViewController {
     func styling() {}
 
     func bindings() {
-        viewModel.entryRelay.flatMap {
+        viewModel.entryRelay.map {
             $0.output
-        }.map { $0.guaXiang }
+        }.switchLatest()
+        .map { $0.guaXiang }
         .bind(to: guaXiangVC.viewModel.guaXiangRelay)
         .disposed(by: bag)
 
-        viewModel.entryRelay.flatMap {
+        viewModel.entryRelay.map {
             $0.output
-        }.bind(to: entryInfoVC.entryRelay)
+        }.switchLatest()
+        .bind(to: entryInfoVC.entryRelay)
         .disposed(by: bag)
     }
 }
