@@ -6,8 +6,14 @@
 //  Copyright © 2018 Jeffrey Wu. All rights reserved.
 //
 
+import CloudKit
 import Foundation
 
 class CloudKitManager {
-    
+
+    let container: CKContainer
+
+    init(container: CKContainer) {
+        self.container = container
+    }
 }

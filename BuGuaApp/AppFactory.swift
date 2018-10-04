@@ -7,6 +7,7 @@
 //
 
 import BuGuaKit
+import CloudKit
 import CoreData
 import Foundation
 import UIKit
@@ -24,7 +25,7 @@ class AppFactory {
         themeManager = ThemeManager(store: themeStore)
         self.container = container
         self.context = context
-        cloudManager = CloudKitManager()
+        cloudManager = CloudKitManager(container: CKContainer.default())
         self.storageManager = StorageManager(container: container, context: context, cloudManager: cloudManager)
     }
 
