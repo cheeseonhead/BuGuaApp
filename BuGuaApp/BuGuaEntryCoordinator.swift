@@ -73,7 +73,7 @@ private extension BuGuaEntryCoordinator {
                 modalViewController.dismiss(animated: true, completion: nil)
             }).map { [unowned self] entry in
                 return self.factory.makeBuGuaEntryMediator(entry)
-            }.bind(to: viewController.viewModel.entryRelay)
+            }.bind(to: viewController.viewModel.entryMediatorRelay)
             .disposed(by: inputCoordinator.bag)
 
         addChildCoordinator(inputCoordinator)

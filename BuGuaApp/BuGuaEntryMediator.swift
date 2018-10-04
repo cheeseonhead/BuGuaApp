@@ -38,12 +38,27 @@ extension BuGuaEntry: Migratable {
     typealias Context = NSManagedObjectContext
 
 
-    static func build(from: BuGuaEntryObject) -> BuGuaEntry? {
-        return BuGuaEntry.default
+    static func build(from object: BuGuaEntryObject) -> BuGuaEntry? {
+        let builder = BuGuaEntryBuilder()
+
+        builder.setDate(GregorianDate(year: Int(object.date!.year), month: Int(object.date!.month), day: Int(object.date!.day)))
+        builder.setName(object.name!)
+        builder.setGuaXiang(.default)
+        builder.setTime(.zero)
+
+        return builder.build()
     }
 
     func export(toContext: NSManagedObjectContext) -> BuGuaEntryObject {
-        return BuGuaEntryObject(context: toContext)
+        let object = BuGuaEntryObject(context: toContext)
+        let dateObject = GregorianDateObject(context: toContext)
+        dateObject.year = Int64(date.year)
+        dateObject.month = Int64(date.month)
+        dateObject.day = Int64(date.day)
+        object.name = name
+        object.date = dateObject
+
+        return object
     }
 
 }
@@ -62,11 +77,19 @@ class BuGuaEntryMediator: Mediator {
     required init(structElement: BuGuaEntry, storageManager: StorageManager) {
         buGuaEntryObject = structElement.export(toContext: storageManager.context)
         self.storageManager = storageManager
+
+        update(obj: buGuaEntryObject)
     }
 
     required init(object: BuGuaEntryObject, storageManager: StorageManager) {
         self.buGuaEntryObject = object
         self.storageManager = storageManager
+
+        update(obj: buGuaEntryObject)
+    }
+
+    func update(obj: BuGuaEntryObject) {
+        buGuaEntryOutput.accept(BuGuaEntry.build(from: obj)!)
     }
 }
 

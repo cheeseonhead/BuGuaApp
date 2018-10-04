@@ -14,7 +14,7 @@ import RxCocoa
 class BuGuaEntryViewModel {
     // MARK: - Relays
     let bag = DisposeBag()
-    let entryRelay = PublishRelay<BuGuaEntryMediator>()
+    let entryMediatorRelay = PublishRelay<BuGuaEntryMediator>()
 }
 
 extension AppFactory {
