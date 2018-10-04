@@ -75,6 +75,7 @@
 		9BA40D50216574720048EDDE /* StorageManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9BA40D4F216574720048EDDE /* StorageManager.swift */; };
 		9BA40D56216576460048EDDE /* BuGuaAppModel.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 9BA40D54216576460048EDDE /* BuGuaAppModel.xcdatamodeld */; };
 		9BA40D61216578B90048EDDE /* BuGuaEntryMediator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9BA40D60216578B90048EDDE /* BuGuaEntryMediator.swift */; };
+		9BA9D7EA2166DC800038239C /* CloudKitManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9BA9D7E92166DC800038239C /* CloudKitManager.swift */; };
 		9BCB3609213E011800F7FDDE /* String+Vertical.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9BCB3608213E011800F7FDDE /* String+Vertical.swift */; };
 		9BCB360D213E148200F7FDDE /* GuaXiangViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9BCB360C213E148200F7FDDE /* GuaXiangViewController.swift */; };
 		9BCB3611213E150500F7FDDE /* GuaXiangViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 9BCB3610213E150500F7FDDE /* GuaXiangViewController.xib */; };
@@ -217,6 +218,7 @@
 		9BA40D59216577E70048EDDE /* BuGuaEntryObject+CoreDataClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "BuGuaEntryObject+CoreDataClass.swift"; sourceTree = "<group>"; };
 		9BA40D5A216577E70048EDDE /* BuGuaEntryObject+CoreDataProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "BuGuaEntryObject+CoreDataProperties.swift"; sourceTree = "<group>"; };
 		9BA40D60216578B90048EDDE /* BuGuaEntryMediator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BuGuaEntryMediator.swift; sourceTree = "<group>"; };
+		9BA9D7E92166DC800038239C /* CloudKitManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CloudKitManager.swift; sourceTree = "<group>"; };
 		9BCB3608213E011800F7FDDE /* String+Vertical.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "String+Vertical.swift"; sourceTree = "<group>"; };
 		9BCB360C213E148200F7FDDE /* GuaXiangViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GuaXiangViewController.swift; sourceTree = "<group>"; };
 		9BCB3610213E150500F7FDDE /* GuaXiangViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = GuaXiangViewController.xib; sourceTree = "<group>"; };
@@ -509,6 +511,7 @@
 				9BA40D5F216578A10048EDDE /* Mediators */,
 				9BA40D51216575190048EDDE /* ManagedObjects */,
 				9BA40D4F216574720048EDDE /* StorageManager.swift */,
+				9BA9D7E92166DC800038239C /* CloudKitManager.swift */,
 				9BA40D54216576460048EDDE /* BuGuaAppModel.xcdatamodeld */,
 			);
 			name = Models;
@@ -859,6 +862,7 @@
 				34EC158F21534EF700378758 /* ShallowThemeStore.swift in Sources */,
 				9B8B4F0A215C870F009FBCD2 /* BGPageControllerLayout.swift in Sources */,
 				9B933F6D2136537A004DCD3F /* UIView+Layout.swift in Sources */,
+				9BA9D7EA2166DC800038239C /* CloudKitManager.swift in Sources */,
 				3463344F2148BD4B001D462B /* HeaderLabelView.swift in Sources */,
 				34EC158D21534ECA00378758 /* Theme.swift in Sources */,
 				9B933EF32134E529004DCD3F /* ViewController.swift in Sources */,
