@@ -77,6 +77,8 @@
 		9BA40D61216578B90048EDDE /* BuGuaEntryMediator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9BA40D60216578B90048EDDE /* BuGuaEntryMediator.swift */; };
 		9BA9D7EA2166DC800038239C /* CloudKitManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9BA9D7E92166DC800038239C /* CloudKitManager.swift */; };
 		9BA9D7ED2166DE290038239C /* CloudKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9BA9D7EC2166DE290038239C /* CloudKit.framework */; };
+		9BA9D7F02166DF930038239C /* GregorianDateExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9BA9D7EF2166DF930038239C /* GregorianDateExtensions.swift */; };
+		9BA9D7F22166DF9E0038239C /* BuGuaEntryExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9BA9D7F12166DF9E0038239C /* BuGuaEntryExtensions.swift */; };
 		9BCB3609213E011800F7FDDE /* String+Vertical.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9BCB3608213E011800F7FDDE /* String+Vertical.swift */; };
 		9BCB360D213E148200F7FDDE /* GuaXiangViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9BCB360C213E148200F7FDDE /* GuaXiangViewController.swift */; };
 		9BCB3611213E150500F7FDDE /* GuaXiangViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 9BCB3610213E150500F7FDDE /* GuaXiangViewController.xib */; };
@@ -222,6 +224,8 @@
 		9BA9D7E92166DC800038239C /* CloudKitManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CloudKitManager.swift; sourceTree = "<group>"; };
 		9BA9D7EB2166DE240038239C /* BuGuaApp.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = BuGuaApp.entitlements; sourceTree = "<group>"; };
 		9BA9D7EC2166DE290038239C /* CloudKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CloudKit.framework; path = System/Library/Frameworks/CloudKit.framework; sourceTree = SDKROOT; };
+		9BA9D7EF2166DF930038239C /* GregorianDateExtensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GregorianDateExtensions.swift; sourceTree = "<group>"; };
+		9BA9D7F12166DF9E0038239C /* BuGuaEntryExtensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BuGuaEntryExtensions.swift; sourceTree = "<group>"; };
 		9BCB3608213E011800F7FDDE /* String+Vertical.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "String+Vertical.swift"; sourceTree = "<group>"; };
 		9BCB360C213E148200F7FDDE /* GuaXiangViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GuaXiangViewController.swift; sourceTree = "<group>"; };
 		9BCB3610213E150500F7FDDE /* GuaXiangViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = GuaXiangViewController.xib; sourceTree = "<group>"; };
@@ -516,6 +520,7 @@
 				9BE7519F216597F400F86395 /* Fetchers */,
 				9BA40D5F216578A10048EDDE /* Mediators */,
 				9BA40D51216575190048EDDE /* ManagedObjects */,
+				9BA9D7EE2166DF7F0038239C /* ObjectExtensions */,
 				9BA40D4F216574720048EDDE /* StorageManager.swift */,
 				9BA9D7E92166DC800038239C /* CloudKitManager.swift */,
 				9BA40D54216576460048EDDE /* BuGuaAppModel.xcdatamodeld */,
@@ -540,6 +545,15 @@
 				9BA40D60216578B90048EDDE /* BuGuaEntryMediator.swift */,
 			);
 			name = Mediators;
+			sourceTree = "<group>";
+		};
+		9BA9D7EE2166DF7F0038239C /* ObjectExtensions */ = {
+			isa = PBXGroup;
+			children = (
+				9BA9D7EF2166DF930038239C /* GregorianDateExtensions.swift */,
+				9BA9D7F12166DF9E0038239C /* BuGuaEntryExtensions.swift */,
+			);
+			name = ObjectExtensions;
 			sourceTree = "<group>";
 		};
 		9BCB3612213E227700F7FDDE /* Coordinators */ = {
@@ -845,7 +859,9 @@
 				9BCE886C214F13780024FEF7 /* DatePickerViewModel.swift in Sources */,
 				34A13D4D214222E700D77D98 /* IntegerLiuYaoConverter.swift in Sources */,
 				9B2AFBAA215701FB00DF9A5E /* UIView+Convenience.swift in Sources */,
+				9BA9D7F02166DF930038239C /* GregorianDateExtensions.swift in Sources */,
 				9B2AFBA62156EC9100DF9A5E /* GuaXiangRow.swift in Sources */,
+				9BA9D7F22166DF9E0038239C /* BuGuaEntryExtensions.swift in Sources */,
 				341EE5C32143A94A00CB7D53 /* GuaXiangViewLayout.swift in Sources */,
 				9B2AFBA82157011800DF9A5E /* ShiYaoView.swift in Sources */,
 				9BA40D61216578B90048EDDE /* BuGuaEntryMediator.swift in Sources */,
