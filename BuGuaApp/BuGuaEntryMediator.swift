@@ -129,17 +129,3 @@ extension BuGuaEntry {
     }()
 }
 
-extension GregorianDateObject {
-    func update(with gregorianDate: GregorianDate) {
-        year = Int64(gregorianDate.year)
-        month = Int64(gregorianDate.month)
-        day = Int64(gregorianDate.day)
-    }
-}
-
-extension BuGuaEntryObject {
-    func update(with entry: BuGuaEntry) {
-        name = entry.name
-        date?.update(with: entry.date)
-    }
-}
