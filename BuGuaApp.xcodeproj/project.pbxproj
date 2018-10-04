@@ -92,6 +92,7 @@
 		9BCE8875214F2E220024FEF7 /* DateGanZhiViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 9BCE8873214F2E220024FEF7 /* DateGanZhiViewController.xib */; };
 		9BCE8877214F2EB10024FEF7 /* DateGanZhiViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9BCE8876214F2EB10024FEF7 /* DateGanZhiViewModel.swift */; };
 		9BCEE3A5215D844C000B50EC /* BGPageController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9BCEE3A4215D844C000B50EC /* BGPageController.swift */; };
+		9BE751A12165981400F86395 /* BuGuaEntryFetcher.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9BE751A02165981400F86395 /* BuGuaEntryFetcher.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -233,6 +234,7 @@
 		9BCE8873214F2E220024FEF7 /* DateGanZhiViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = DateGanZhiViewController.xib; sourceTree = "<group>"; };
 		9BCE8876214F2EB10024FEF7 /* DateGanZhiViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DateGanZhiViewModel.swift; sourceTree = "<group>"; };
 		9BCEE3A4215D844C000B50EC /* BGPageController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BGPageController.swift; sourceTree = "<group>"; };
+		9BE751A02165981400F86395 /* BuGuaEntryFetcher.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BuGuaEntryFetcher.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -503,6 +505,7 @@
 		9BA40D4E216574240048EDDE /* Models */ = {
 			isa = PBXGroup;
 			children = (
+				9BE7519F216597F400F86395 /* Fetchers */,
 				9BA40D5F216578A10048EDDE /* Mediators */,
 				9BA40D51216575190048EDDE /* ManagedObjects */,
 				9BA40D4F216574720048EDDE /* StorageManager.swift */,
@@ -571,6 +574,14 @@
 				9B19593121616B5600AA320A /* DateInput */,
 			);
 			name = ViewControllers;
+			sourceTree = "<group>";
+		};
+		9BE7519F216597F400F86395 /* Fetchers */ = {
+			isa = PBXGroup;
+			children = (
+				9BE751A02165981400F86395 /* BuGuaEntryFetcher.swift */,
+			);
+			name = Fetchers;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -829,6 +840,7 @@
 				346334482148A66E001D462B /* Container+Operator.swift in Sources */,
 				34F3E4FF2150A84F00A9BA2B /* Rx+Operators.swift in Sources */,
 				9B19593F2161709D00AA320A /* TimeGanZhiViewModel.swift in Sources */,
+				9BE751A12165981400F86395 /* BuGuaEntryFetcher.swift in Sources */,
 				9B933F3B2134EB01004DCD3F /* FuXiBaGuaView.swift in Sources */,
 				9BCE8874214F2E220024FEF7 /* DateGanZhiViewController.swift in Sources */,
 				3413A5692140E0D600245C46 /* ComposableTextfieldDelegate.swift in Sources */,
