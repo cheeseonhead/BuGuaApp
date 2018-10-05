@@ -26,7 +26,7 @@ class AppFactory {
         self.container = container
         self.context = context
 
-        let updateContext = container.newBackgroundContext()
+        let updateContext = NSManagedObjectContext(concurrencyType: .privateQueueConcurrencyType)
         updateContext.parent = self.context
 
         cloudManager = CloudKitManager(container: CKContainer.default(), zone: CKRecordZone(zoneName: "Test"), context: updateContext)

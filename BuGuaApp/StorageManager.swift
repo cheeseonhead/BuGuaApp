@@ -12,9 +12,25 @@ import CoreData
 
 protocol CloudKitManagedObject {
     var recordType: String { get }
+
+    func ckRecord(zoneID: CKRecordZone.ID) -> CKRecord
 }
 
-extension NSManagedObject: CloudKitManagedObject {
+extension BuGuaEntryObject: CloudKitManagedObject {
+
+    var recordType: String {
+        return "BuGuaEntryObject"
+    }
+
+    func ckRecord(zoneID: CKRecordZone.ID) -> CKRecord {
+        let cloudRecord = cloudKitRecord(zoneID: zoneID)
+        cloudRecord["name"] = name as CKRecordValue?
+
+        return cloudRecord
+    }
+}
+
+extension CloudKitManagedObject where Self: NSManagedObject {
 
     var recordType: String {
         fatalError("Please implement this")
@@ -45,7 +61,9 @@ class StorageManager {
 
             let insertedObjects = self.context.insertedObjects
             let modifiedObjects = self.context.updatedObjects
-            let deletedRecordIDs = self.context.deletedObjects.map { $0.cloudKitRecordID(zoneID: self.cloudManager.zone.zoneID) }
+            let deletedRecordIDs = self.context.deletedObjects.map {
+                ($0 as! CloudKitManagedObject & NSManagedObject).cloudKitRecordID(zoneID: self.cloudManager.zone.zoneID)
+            }
 
             do {
                 try self.context.save()
