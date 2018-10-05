@@ -8,6 +8,7 @@
 
 import Foundation
 
+// MARK: - String
 extension Int {
     enum Error: LocalizedError {
         case stringEmpty
@@ -33,5 +34,18 @@ extension Int {
         }
         
         self = integer
+    }
+}
+
+// MARK: - Int64
+extension Int {
+    var int64: Int64 {
+        return Int64(self)
+    }
+}
+
+extension Int64 {
+    var int: Int {
+        return Int(self)
     }
 }
