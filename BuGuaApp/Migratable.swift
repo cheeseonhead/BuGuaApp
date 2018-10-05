@@ -12,7 +12,7 @@ protocol ImmutableConvertable: Equatable {
     associatedtype ImmutableType
     associatedtype Context
 
-    init(immutable: ImmutableType)
+    static func build(from immutable: ImmutableType, inContext: Context) -> Self
 
     func immutable() -> ImmutableType
     //    static func delete(counterpart:Counterpart, fromContext:Context) throws
