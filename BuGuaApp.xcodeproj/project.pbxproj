@@ -99,6 +99,7 @@
 		9BEF01232167C8D7007C6C7C /* GregorianDateObject+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9BA40D58216577E70048EDDE /* GregorianDateObject+CoreDataProperties.swift */; };
 		9BEF01242167C8D7007C6C7C /* BuGuaEntryObject+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9BA40D59216577E70048EDDE /* BuGuaEntryObject+CoreDataClass.swift */; };
 		9BEF01252167C8D7007C6C7C /* BuGuaEntryObject+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9BA40D5A216577E70048EDDE /* BuGuaEntryObject+CoreDataProperties.swift */; };
+		9BF12B6421681F5100021249 /* Migratable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9BF12B6321681F5100021249 /* Migratable.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -244,6 +245,7 @@
 		9BCE8876214F2EB10024FEF7 /* DateGanZhiViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DateGanZhiViewModel.swift; sourceTree = "<group>"; };
 		9BCEE3A4215D844C000B50EC /* BGPageController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BGPageController.swift; sourceTree = "<group>"; };
 		9BE751A02165981400F86395 /* BuGuaEntryFetcher.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BuGuaEntryFetcher.swift; sourceTree = "<group>"; };
+		9BF12B6321681F5100021249 /* Migratable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Migratable.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -522,6 +524,7 @@
 				9BA40D51216575190048EDDE /* ManagedObjects */,
 				9BA40D4F216574720048EDDE /* StorageManager.swift */,
 				9BA9D7E92166DC800038239C /* CloudKitManager.swift */,
+				9BF12B6321681F5100021249 /* Migratable.swift */,
 				9BA40D54216576460048EDDE /* BuGuaAppModel.xcdatamodeld */,
 			);
 			name = Models;
@@ -896,6 +899,7 @@
 				9BCB3614213E234000F7FDDE /* AppCoordinator.swift in Sources */,
 				9BCE8861214EF5220024FEF7 /* GuaXiangInputCoordinator.swift in Sources */,
 				34BE79982159D26200B5010A /* BuGuaEntryViewModel.swift in Sources */,
+				9BF12B6421681F5100021249 /* Migratable.swift in Sources */,
 				9BCEE3A5215D844C000B50EC /* BGPageController.swift in Sources */,
 				9B19593C2161708900AA320A /* TimeGanZhiViewController.swift in Sources */,
 				9B933EF12134E529004DCD3F /* AppDelegate.swift in Sources */,

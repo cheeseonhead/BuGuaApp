@@ -14,15 +14,6 @@ import RxCocoa
 import RxSwift
 import RxSwiftExt
 
-protocol Migratable: Equatable {
-    associatedtype Counterpart
-    associatedtype Context
-
-    static func build(from: Counterpart) -> Self?
-    func export(toContext:Context) -> Counterpart
-//    static func delete(counterpart:Counterpart, fromContext:Context) throws
-}
-
 protocol Mediator {
     associatedtype ManagedObject
     associatedtype StructElement: Migratable where StructElement.Counterpart == ManagedObject
