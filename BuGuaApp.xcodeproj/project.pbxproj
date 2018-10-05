@@ -97,6 +97,10 @@
 		9BCE8877214F2EB10024FEF7 /* DateGanZhiViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9BCE8876214F2EB10024FEF7 /* DateGanZhiViewModel.swift */; };
 		9BCEE3A5215D844C000B50EC /* BGPageController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9BCEE3A4215D844C000B50EC /* BGPageController.swift */; };
 		9BE751A12165981400F86395 /* BuGuaEntryFetcher.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9BE751A02165981400F86395 /* BuGuaEntryFetcher.swift */; };
+		9BEF01222167C8D7007C6C7C /* GregorianDateObject+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9BA40D57216577E70048EDDE /* GregorianDateObject+CoreDataClass.swift */; };
+		9BEF01232167C8D7007C6C7C /* GregorianDateObject+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9BA40D58216577E70048EDDE /* GregorianDateObject+CoreDataProperties.swift */; };
+		9BEF01242167C8D7007C6C7C /* BuGuaEntryObject+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9BA40D59216577E70048EDDE /* BuGuaEntryObject+CoreDataClass.swift */; };
+		9BEF01252167C8D7007C6C7C /* BuGuaEntryObject+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9BA40D5A216577E70048EDDE /* BuGuaEntryObject+CoreDataProperties.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -869,6 +873,7 @@
 				3413A5672140E0BC00245C46 /* AutoNextTextFieldDelegate.swift in Sources */,
 				9B933F792138DEE2004DCD3F /* CGPoint+Math.swift in Sources */,
 				9BCE8867214F11960024FEF7 /* Coordinator.swift in Sources */,
+				9BEF01232167C8D7007C6C7C /* GregorianDateObject+CoreDataProperties.swift in Sources */,
 				3413A5652140D89900245C46 /* CharacterSet+MoreSets.swift in Sources */,
 				346334482148A66E001D462B /* Container+Operator.swift in Sources */,
 				34F3E4FF2150A84F00A9BA2B /* Rx+Operators.swift in Sources */,
@@ -885,6 +890,7 @@
 				9BCB3609213E011800F7FDDE /* String+Vertical.swift in Sources */,
 				9BCB3618213E2A5800F7FDDE /* BuGuaEntryCoordinator.swift in Sources */,
 				9BCE8869214F133F0024FEF7 /* DatePickerViewController.swift in Sources */,
+				9BEF01222167C8D7007C6C7C /* GregorianDateObject+CoreDataClass.swift in Sources */,
 				9B2AFBAC2157347200DF9A5E /* WideDivider.swift in Sources */,
 				9BCE8877214F2EB10024FEF7 /* DateGanZhiViewModel.swift in Sources */,
 				9BCB360D213E148200F7FDDE /* GuaXiangViewController.swift in Sources */,
@@ -900,6 +906,7 @@
 				9B933F7D2138DF75004DCD3F /* CGSize+Points.swift in Sources */,
 				34BE79962159D25400B5010A /* BuGuaEntryViewController.swift in Sources */,
 				9B933F73213797A2004DCD3F /* UIColor+AppColors.swift in Sources */,
+				9BEF01252167C8D7007C6C7C /* BuGuaEntryObject+CoreDataProperties.swift in Sources */,
 				9B933F5B2135A8B0004DCD3F /* GuaXiangView.swift in Sources */,
 				3413A55D2140BF4B00245C46 /* InputViewController.swift in Sources */,
 				9BCB3614213E234000F7FDDE /* AppCoordinator.swift in Sources */,
@@ -910,6 +917,7 @@
 				9B933EF12134E529004DCD3F /* AppDelegate.swift in Sources */,
 				9B19593621616C0300AA320A /* TimePickerViewModel.swift in Sources */,
 				346334462148A52F001D462B /* Array+Convert.swift in Sources */,
+				9BEF01242167C8D7007C6C7C /* BuGuaEntryObject+CoreDataClass.swift in Sources */,
 				9B933F7B2138DF3B004DCD3F /* CGRect+Points.swift in Sources */,
 				3413A5602140BFB900245C46 /* InputViewModel.swift in Sources */,
 				34BE799A2159D33A00B5010A /* BuGuaInfoViewController.swift in Sources */,
