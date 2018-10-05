@@ -2,7 +2,7 @@
 //  BuGuaEntryObject+CoreDataProperties.swift
 //  BuGuaApp
 //
-//  Created by Jeffrey Wu on 2018-10-03.
+//  Created by Jeffrey Wu on 2018-10-05.
 //  Copyright © 2018 Jeffrey Wu. All rights reserved.
 //
 //
@@ -17,7 +17,7 @@ extension BuGuaEntryObject {
         return NSFetchRequest<BuGuaEntryObject>(entityName: "BuGuaEntryObject")
     }
 
-    @NSManaged public var name: String?
-    @NSManaged public var date: GregorianDateObject?
+    @NSManaged public var name: String
+    @NSManaged public var date: GregorianDateObject
 
 }

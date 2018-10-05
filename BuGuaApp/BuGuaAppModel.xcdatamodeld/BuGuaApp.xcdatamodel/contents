@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8" standalone="yes"?>
 <model type="com.apple.IDECoreDataModeler.DataModel" documentVersion="1.0" lastSavedToolsVersion="14460.14.2" systemVersion="17G65" minimumToolsVersion="Automatic" sourceLanguage="Swift" userDefinedModelVersionIdentifier="">
     <entity name="BuGuaEntryObject" representedClassName="BuGuaEntryObject" syncable="YES">
-        <attribute name="name" attributeType="String" syncable="YES"/>
+        <attribute name="name" attributeType="String" defaultValueString=" " syncable="YES"/>
         <relationship name="date" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="GregorianDateObject" inverseName="buGuaEntry" inverseEntity="GregorianDateObject" syncable="YES"/>
     </entity>
     <entity name="GregorianDateObject" representedClassName="GregorianDateObject" syncable="YES">

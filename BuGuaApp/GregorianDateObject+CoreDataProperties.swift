@@ -2,7 +2,7 @@
 //  GregorianDateObject+CoreDataProperties.swift
 //  BuGuaApp
 //
-//  Created by Jeffrey Wu on 2018-10-03.
+//  Created by Jeffrey Wu on 2018-10-05.
 //  Copyright © 2018 Jeffrey Wu. All rights reserved.
 //
 //
@@ -17,9 +17,9 @@ extension GregorianDateObject {
         return NSFetchRequest<GregorianDateObject>(entityName: "GregorianDateObject")
     }
 
-    @NSManaged public var year: Int64
-    @NSManaged public var month: Int64
     @NSManaged public var day: Int64
-    @NSManaged public var buGuaEntry: BuGuaEntryObject?
+    @NSManaged public var month: Int64
+    @NSManaged public var year: Int64
+    @NSManaged public var buGuaEntry: BuGuaEntryObject
 
 }
