@@ -7,9 +7,14 @@
 //
 //
 
+import BuGuaKit
 import Foundation
 import CoreData
 
 @objc(BuGuaEntryObject)
 public class BuGuaEntryObject: NSManagedObject {
+    func update(with entry: BuGuaEntry) {
+        name = entry.name
+        date?.update(with: entry.date)
+    }
 }
