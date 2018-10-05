@@ -7,13 +7,22 @@
 //
 
 import CloudKit
+import CoreData
 import Foundation
 
 class CloudKitManager {
 
     let container: CKContainer
+    let zone: CKRecordZone
+    let context: NSManagedObjectContext
 
-    init(container: CKContainer) {
+    init(container: CKContainer, zone: CKRecordZone, context: NSManagedObjectContext) {
         self.container = container
+        self.zone = zone
+        self.context = context
+    }
+
+    func update(addedIds: [NSManagedObjectID], modifiedIds: [NSManagedObjectID], deleted: [CKRecord.ID]) {
+
     }
 }

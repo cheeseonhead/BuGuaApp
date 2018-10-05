@@ -6,8 +6,28 @@
 //  Copyright © 2018 Jeffrey Wu. All rights reserved.
 //
 
+import CloudKit
 import Foundation
 import CoreData
+
+protocol CloudKitManagedObject {
+    var recordType: String { get }
+}
+
+extension NSManagedObject: CloudKitManagedObject {
+
+    var recordType: String {
+        fatalError("Please implement this")
+    }
+
+    func cloudKitRecord(zoneID: CKRecordZone.ID) -> CKRecord {
+        return CKRecord(recordType: recordType, recordID: cloudKitRecordID(zoneID: zoneID))
+    }
+
+    func cloudKitRecordID(zoneID: CKRecordZone.ID) -> CKRecord.ID {
+        return CKRecord.ID(recordName: objectID.uriRepresentation().absoluteString, zoneID: zoneID)
+    }
+}
 
 class StorageManager {
     let cloudManager: CloudKitManager
@@ -22,13 +42,20 @@ class StorageManager {
 
     func saveContext() {
         context.perform { [unowned self] in
+
+            let insertedObjects = self.context.insertedObjects
+            let modifiedObjects = self.context.updatedObjects
+            let deletedRecordIDs = self.context.deletedObjects.map { $0.cloudKitRecordID(zoneID: self.cloudManager.zone.zoneID) }
+
             do {
                 try self.context.save()
             } catch {
                 fatalError(error.localizedDescription)
             }
 
-
+            let insertedObjectIDs = insertedObjects.map { $0.objectID }
+            let modifiedObjectIDs = modifiedObjects.map { $0.objectID }
+            self.cloudManager.update(addedIds: insertedObjectIDs, modifiedIds: modifiedObjectIDs, deleted: deletedRecordIDs)
         }
     }
 }

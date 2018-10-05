@@ -25,7 +25,11 @@ class AppFactory {
         themeManager = ThemeManager(store: themeStore)
         self.container = container
         self.context = context
-        cloudManager = CloudKitManager(container: CKContainer.default())
+
+        let updateContext = container.newBackgroundContext()
+        updateContext.parent = self.context
+
+        cloudManager = CloudKitManager(container: CKContainer.default(), zone: CKRecordZone(zoneName: "Test"), context: updateContext)
         self.storageManager = StorageManager(container: container, context: context, cloudManager: cloudManager)
     }
 
