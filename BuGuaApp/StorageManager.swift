@@ -10,25 +10,6 @@ import CloudKit
 import Foundation
 import CoreData
 
-protocol CloudKitManagedObject {
-    var recordType: String { get }
-}
-
-extension NSManagedObject: CloudKitManagedObject {
-
-    var recordType: String {
-        fatalError("Please implement this")
-    }
-
-    func cloudKitRecord(zoneID: CKRecordZone.ID) -> CKRecord {
-        return CKRecord(recordType: recordType, recordID: cloudKitRecordID(zoneID: zoneID))
-    }
-
-    func cloudKitRecordID(zoneID: CKRecordZone.ID) -> CKRecord.ID {
-        return CKRecord.ID(recordName: objectID.uriRepresentation().absoluteString, zoneID: zoneID)
-    }
-}
-
 class StorageManager {
     private let cloudManager: CloudKitManager
     private let container: NSPersistentContainer
@@ -49,7 +30,7 @@ class StorageManager {
 
             let insertedObjects = self.context.insertedObjects
             let modifiedObjects = self.context.updatedObjects
-            let deletedRecordIDs = self.context.deletedObjects.map { self.cloudManager.cloudRecordId(for: $0) }
+            let deletedRecordIDs = self.context.deletedObjects.map { $0.objectID }
 
             if self.context.hasChanges {
                 do {
@@ -60,7 +41,7 @@ class StorageManager {
 
                 let insertedObjectIDs = insertedObjects.map { $0.objectID }
                 let modifiedObjectIDs = modifiedObjects.map { $0.objectID }
-                self.cloudManager.update(saveIds: insertedObjectIDs + modifiedObjectIDs, deleteIds: deletedRecordIDs)
+                self.cloudManager.update(ids: insertedObjectIDs + modifiedObjectIDs + deletedRecordIDs)
             }
         }
     }

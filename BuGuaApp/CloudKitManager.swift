@@ -10,6 +10,25 @@ import CloudKit
 import CoreData
 import Foundation
 
+protocol CloudKitManagedObject {
+    var recordType: String { get }
+}
+
+extension NSManagedObject: CloudKitManagedObject {
+
+    var recordType: String {
+        fatalError("Please implement this")
+    }
+
+    func cloudKitRecord(zoneID: CKRecordZone.ID) -> CKRecord {
+        return CKRecord(recordType: recordType, recordID: cloudKitRecordID(zoneID: zoneID))
+    }
+
+    func cloudKitRecordID(zoneID: CKRecordZone.ID) -> CKRecord.ID {
+        return CKRecord.ID(recordName: objectID.uriRepresentation().absoluteString, zoneID: zoneID)
+    }
+}
+
 class CloudKitManager {
 
     private let container: CKContainer
@@ -24,12 +43,8 @@ class CloudKitManager {
         self.dateGenerator = dateGenerator
     }
 
-    func cloudRecordId(for managedObject: NSManagedObject) -> CKRecord.ID {
-        return managedObject.cloudKitRecordID(zoneID: zone.zoneID)
-    }
-
-    func update(saveIds: [NSManagedObjectID], deleteIds: [CKRecord.ID]) {
-        let strIds = saveIds.map { $0.uriRepresentation().absoluteString }
+    func update(ids: [NSManagedObjectID]) {
+        let strIds = ids.map { $0.uriRepresentation().absoluteString }
 
         context.perform { [unowned self] in
 
