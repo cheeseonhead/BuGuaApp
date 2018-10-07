@@ -13,13 +13,17 @@ import Foundation
 import UIKit
 
 class AppFactory {
-    let container: NSPersistentContainer
-    let context: NSManagedObjectContext
+
+    // MARK: - Managers
     let storageManager: StorageManager
     let cloudManager: CloudKitManager
+    let themeManager: ThemeManager
+    let cacheManager: CacheManager
+
+    let container: NSPersistentContainer
+    let context: NSManagedObjectContext
     let timeZone = TimeZone.autoupdatingCurrent
     let themeStore = ShallowThemeStore(initialTheme: .light)
-    let themeManager: ThemeManager
 
     init(container: NSPersistentContainer, context: NSManagedObjectContext) {
         themeManager = ThemeManager(store: themeStore)
@@ -29,7 +33,11 @@ class AppFactory {
         let uploadContext = container.newBackgroundContext()
 
         cloudManager = CloudKitManager(container: CKContainer.default(), zone: CKRecordZone(zoneName: "Test"), context: uploadContext, dateGenerator: { Date() as NSDate })
-        self.storageManager = StorageManager(container: container, context: context, cloudManager: cloudManager)
+
+        let cacheContext = container.newBackgroundContext()
+        cacheManager = CacheManager(context: cacheContext, dateGenerator: { Date() as NSDate })
+
+        self.storageManager = StorageManager(container: container, context: context, cacheManager: cacheManager)
     }
 
     func makeAppCoordinator(with window: UIWindow) -> AppCoordinator {

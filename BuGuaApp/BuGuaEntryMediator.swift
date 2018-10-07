@@ -57,7 +57,6 @@ class BuGuaEntryMediator: Mediator {
     }
 
     func sendUpdateNotification() {
-        print(buGuaEntryObject.objectID.uriRepresentation())
 //        let test = CKRecord(recordType: "Test", recordID: .init(recordName: obj.objectID))
 
         buGuaEntryOutput.accept(buGuaEntryObject.immutable())

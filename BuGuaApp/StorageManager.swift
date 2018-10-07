@@ -11,14 +11,14 @@ import Foundation
 import CoreData
 
 class StorageManager {
-    private let cloudManager: CloudKitManager
+    private let cacheManager: CacheManager
     private let container: NSPersistentContainer
     private let context: NSManagedObjectContext
 
-    init(container: NSPersistentContainer, context: NSManagedObjectContext, cloudManager: CloudKitManager) {
+    init(container: NSPersistentContainer, context: NSManagedObjectContext, cacheManager: CacheManager) {
         self.container = container
         self.context = context
-        self.cloudManager = cloudManager
+        self.cacheManager = cacheManager
     }
 
     func makeObject<Immutable>(from immutable: Immutable) -> Immutable.ObjectType where Immutable: ManagedConvertable, Immutable.Context == NSManagedObjectContext {
@@ -41,7 +41,7 @@ class StorageManager {
 
                 let insertedObjectIDs = insertedObjects.map { $0.objectID }
                 let modifiedObjectIDs = modifiedObjects.map { $0.objectID }
-                self.cloudManager.update(ids: insertedObjectIDs + modifiedObjectIDs + deletedRecordIDs)
+                self.cacheManager.update(ids: insertedObjectIDs + modifiedObjectIDs + deletedRecordIDs)
             }
         }
     }
