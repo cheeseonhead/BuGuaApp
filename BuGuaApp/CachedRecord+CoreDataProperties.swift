@@ -17,7 +17,7 @@ extension CachedRecord {
         return NSFetchRequest<CachedRecord>(entityName: "CachedRecord")
     }
 
-    @NSManaged public var modifiedObjectId: UUID?
-    @NSManaged public var nextTryTimestamp: NSDate?
+    @NSManaged public var modifiedObjectId: String
+    @NSManaged public var nextTryTimestamp: NSDate
 
 }

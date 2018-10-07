@@ -5,7 +5,7 @@
         <relationship name="date" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="GregorianDateObject" inverseName="buGuaEntry" inverseEntity="GregorianDateObject" syncable="YES"/>
     </entity>
     <entity name="CachedRecord" representedClassName="CachedRecord" syncable="YES">
-        <attribute name="modifiedObjectId" attributeType="UUID" usesScalarValueType="NO" syncable="YES"/>
+        <attribute name="modifiedObjectId" attributeType="String" syncable="YES"/>
         <attribute name="nextTryTimestamp" attributeType="Date" defaultDateTimeInterval="-31604400" usesScalarValueType="NO" syncable="YES"/>
     </entity>
     <entity name="GregorianDateObject" representedClassName="GregorianDateObject" syncable="YES">
