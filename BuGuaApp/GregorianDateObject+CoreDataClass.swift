@@ -36,4 +36,10 @@ extension GregorianDateObject: ImmutableConvertable {
     func immutable() -> GregorianDate {
         return GregorianDate(year: year.int, month: month.int, day: day.int)
     }
+
+    func update(with immutable: GregorianDate) {
+        year = immutable.year.int64
+        month = immutable.month.int64
+        day = immutable.day.int64
+    }
 }

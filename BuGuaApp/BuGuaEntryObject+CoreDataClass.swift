@@ -36,4 +36,8 @@ extension BuGuaEntryObject: ImmutableConvertable {
             .setDate(date.immutable())
             .build()
     }
+
+    func update(with immutable: BuGuaEntry) {
+        date.update(with: immutable.date)
+    }
 }
