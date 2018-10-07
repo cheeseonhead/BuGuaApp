@@ -1,5 +1,5 @@
 //
-//  BuGuaEntry+CoreDataClass.swift
+//  BuGuaEntryObject+CoreDataClass.swift
 //  BuGuaApp
 //
 //  Created by Jeffrey Wu on 2018-10-07.
@@ -10,7 +10,7 @@
 import Foundation
 import CoreData
 
-@objc(BuGuaEntry)
-public class BuGuaEntry: NSManagedObject {
+@objc(BuGuaEntryObject)
+public class BuGuaEntryObject: NSManagedObject {
 
 }

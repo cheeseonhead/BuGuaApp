@@ -1,5 +1,5 @@
 //
-//  GregorianDate+CoreDataClass.swift
+//  GregorianDateObject+CoreDataClass.swift
 //  BuGuaApp
 //
 //  Created by Jeffrey Wu on 2018-10-07.
@@ -10,7 +10,7 @@
 import Foundation
 import CoreData
 
-@objc(GregorianDate)
-public class GregorianDate: NSManagedObject {
+@objc(GregorianDateObject)
+public class GregorianDateObject: NSManagedObject {
 
 }
