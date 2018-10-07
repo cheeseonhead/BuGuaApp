@@ -105,6 +105,7 @@
 		9BF12B752169936200021249 /* CachedRecord+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9BF12B732169936200021249 /* CachedRecord+CoreDataClass.swift */; };
 		9BF12B762169936200021249 /* CachedRecord+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9BF12B742169936200021249 /* CachedRecord+CoreDataProperties.swift */; };
 		9BF12B782169A0A200021249 /* CacheManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9BF12B772169A0A200021249 /* CacheManager.swift */; };
+		9BF12B7A2169A47A00021249 /* RepeatedTimer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9BF12B792169A47A00021249 /* RepeatedTimer.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -256,6 +257,7 @@
 		9BF12B732169936200021249 /* CachedRecord+CoreDataClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "CachedRecord+CoreDataClass.swift"; sourceTree = "<group>"; };
 		9BF12B742169936200021249 /* CachedRecord+CoreDataProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "CachedRecord+CoreDataProperties.swift"; sourceTree = "<group>"; };
 		9BF12B772169A0A200021249 /* CacheManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CacheManager.swift; sourceTree = "<group>"; };
+		9BF12B792169A47A00021249 /* RepeatedTimer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RepeatedTimer.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -299,6 +301,7 @@
 				3413A5662140E0BC00245C46 /* AutoNextTextFieldDelegate.swift */,
 				3413A5682140E0D600245C46 /* ComposableTextfieldDelegate.swift */,
 				34A13D4C214222E700D77D98 /* IntegerLiuYaoConverter.swift */,
+				9BF12B792169A47A00021249 /* RepeatedTimer.swift */,
 			);
 			name = Utilities;
 			sourceTree = "<group>";
@@ -884,6 +887,7 @@
 				34F3E4FF2150A84F00A9BA2B /* Rx+Operators.swift in Sources */,
 				9B19593F2161709D00AA320A /* TimeGanZhiViewModel.swift in Sources */,
 				9BE751A12165981400F86395 /* BuGuaEntryFetcher.swift in Sources */,
+				9BF12B7A2169A47A00021249 /* RepeatedTimer.swift in Sources */,
 				9B933F3B2134EB01004DCD3F /* FuXiBaGuaView.swift in Sources */,
 				9BCE8874214F2E220024FEF7 /* DateGanZhiViewController.swift in Sources */,
 				9BF12B782169A0A200021249 /* CacheManager.swift in Sources */,
