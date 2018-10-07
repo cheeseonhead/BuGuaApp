@@ -4,8 +4,8 @@
         <relationship name="date" maxCount="1" deletionRule="Nullify" destinationEntity="GregorianDateObject" inverseName="buGuaEntry" inverseEntity="GregorianDateObject" syncable="YES"/>
     </entity>
     <entity name="CacheRecord" representedClassName="CacheRecord" syncable="YES">
-        <attribute name="managedObjectId" optional="YES" attributeType="URI" syncable="YES"/>
-        <attribute name="nextTryTimestamp" optional="YES" attributeType="Date" usesScalarValueType="NO" syncable="YES"/>
+        <attribute name="managedObjectId" attributeType="URI" syncable="YES"/>
+        <attribute name="nextTryTimestamp" attributeType="Date" usesScalarValueType="NO" syncable="YES"/>
     </entity>
     <entity name="GregorianDateObject" representedClassName="GregorianDateObject" syncable="YES">
         <attribute name="day" attributeType="Integer 64" defaultValueString="0" usesScalarValueType="YES" syncable="YES"/>
