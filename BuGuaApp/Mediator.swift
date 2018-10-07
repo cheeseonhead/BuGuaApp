@@ -10,8 +10,11 @@ import RxCocoa
 import RxSwift
 import RxSwiftExt
 
+/// Mediators associate usually with one instance of ManagedObject. It's responsible for taking in an immutable version
+/// of that object and saving its changes.
 protocol Mediator {
     associatedtype ManagedObject: ImmutableConvertable
+
     init(immutable: ManagedObject.ImmutableType, storageManager: StorageManager)
     init(object: ManagedObject, storageManager: StorageManager)
     var input: PublishRelay<ManagedObject.ImmutableType> { get }
