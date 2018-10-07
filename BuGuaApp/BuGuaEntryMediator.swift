@@ -14,6 +14,7 @@ import RxCocoa
 import RxSwift
 import RxSwiftExt
 
+
 class BuGuaEntryMediator: Mediator {
     typealias ManagedObject = BuGuaEntryObject
 
