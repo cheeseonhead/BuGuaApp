@@ -51,15 +51,17 @@ class StorageManager {
             let modifiedObjects = self.context.updatedObjects
             let deletedRecordIDs = self.context.deletedObjects.map { $0.cloudKitRecordID(zoneID: self.cloudManager.zone.zoneID) }
 
-            do {
-                try self.context.save()
-            } catch {
-                fatalError(error.localizedDescription)
-            }
+            if self.context.hasChanges {
+                do {
+                    try self.context.save()
+                } catch {
+                    fatalError(error.localizedDescription)
+                }
 
-            let insertedObjectIDs = insertedObjects.map { $0.objectID }
-            let modifiedObjectIDs = modifiedObjects.map { $0.objectID }
-            self.cloudManager.update(addedIds: insertedObjectIDs, modifiedIds: modifiedObjectIDs, deleted: deletedRecordIDs)
+                let insertedObjectIDs = insertedObjects.map { $0.objectID }
+                let modifiedObjectIDs = modifiedObjects.map { $0.objectID }
+                self.cloudManager.update(addedIds: insertedObjectIDs, modifiedIds: modifiedObjectIDs, deleted: deletedRecordIDs)
+            }
         }
     }
 }

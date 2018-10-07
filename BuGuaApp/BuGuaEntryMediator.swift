@@ -49,6 +49,8 @@ class BuGuaEntryMediator: Mediator {
     func update(with structure: BuGuaEntry) {
         buGuaEntryObject.managedObjectContext?.perform { [unowned self] in
             self.buGuaEntryObject.update(with: structure)
+
+            self.storageManager.saveContext()
             self.sendUpdateNotification()
         }
     }
