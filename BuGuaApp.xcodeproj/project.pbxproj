@@ -106,6 +106,8 @@
 		9BF12B762169936200021249 /* CachedRecord+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9BF12B742169936200021249 /* CachedRecord+CoreDataProperties.swift */; };
 		9BF12B782169A0A200021249 /* CacheManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9BF12B772169A0A200021249 /* CacheManager.swift */; };
 		9BF12B7A2169A47A00021249 /* RepeatingTimer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9BF12B792169A47A00021249 /* RepeatingTimer.swift */; };
+		9BF12B7D2169BE7B00021249 /* CloudRecord+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9BF12B7B2169BE7B00021249 /* CloudRecord+CoreDataClass.swift */; };
+		9BF12B7E2169BE7B00021249 /* CloudRecord+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9BF12B7C2169BE7B00021249 /* CloudRecord+CoreDataProperties.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -258,6 +260,8 @@
 		9BF12B742169936200021249 /* CachedRecord+CoreDataProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "CachedRecord+CoreDataProperties.swift"; sourceTree = "<group>"; };
 		9BF12B772169A0A200021249 /* CacheManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CacheManager.swift; sourceTree = "<group>"; };
 		9BF12B792169A47A00021249 /* RepeatingTimer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RepeatingTimer.swift; sourceTree = "<group>"; };
+		9BF12B7B2169BE7B00021249 /* CloudRecord+CoreDataClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "CloudRecord+CoreDataClass.swift"; sourceTree = "<group>"; };
+		9BF12B7C2169BE7B00021249 /* CloudRecord+CoreDataProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "CloudRecord+CoreDataProperties.swift"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -554,6 +558,8 @@
 				9BA40D5A216577E70048EDDE /* BuGuaEntryObject+CoreDataProperties.swift */,
 				9BF12B732169936200021249 /* CachedRecord+CoreDataClass.swift */,
 				9BF12B742169936200021249 /* CachedRecord+CoreDataProperties.swift */,
+				9BF12B7B2169BE7B00021249 /* CloudRecord+CoreDataClass.swift */,
+				9BF12B7C2169BE7B00021249 /* CloudRecord+CoreDataProperties.swift */,
 			);
 			name = ManagedObjects;
 			sourceTree = "<group>";
@@ -883,6 +889,7 @@
 				9BCE8867214F11960024FEF7 /* Coordinator.swift in Sources */,
 				9BEF01232167C8D7007C6C7C /* GregorianDateObject+CoreDataProperties.swift in Sources */,
 				3413A5652140D89900245C46 /* CharacterSet+MoreSets.swift in Sources */,
+				9BF12B7D2169BE7B00021249 /* CloudRecord+CoreDataClass.swift in Sources */,
 				346334482148A66E001D462B /* Container+Operator.swift in Sources */,
 				34F3E4FF2150A84F00A9BA2B /* Rx+Operators.swift in Sources */,
 				9B19593F2161709D00AA320A /* TimeGanZhiViewModel.swift in Sources */,
@@ -934,6 +941,7 @@
 				3413A5602140BFB900245C46 /* InputViewModel.swift in Sources */,
 				34BE799A2159D33A00B5010A /* BuGuaInfoViewController.swift in Sources */,
 				34EC158A2153426B00378758 /* ThemeManager.swift in Sources */,
+				9BF12B7E2169BE7B00021249 /* CloudRecord+CoreDataProperties.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

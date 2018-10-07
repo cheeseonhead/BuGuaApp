@@ -11,17 +11,22 @@ import CoreData
 import Foundation
 
 protocol CloudKitManagedObject {
-    var recordType: String { get }
+    func recordType() -> String
+    func fillCloudRecord(_ record: CKRecord)
+    func cloudKitRecord(zoneID: CKRecordZone.ID) -> CKRecord
+    func cloudKitRecordID(zoneID: CKRecordZone.ID) -> CKRecord.ID
 }
 
-extension NSManagedObject: CloudKitManagedObject {
+extension CloudKitManagedObject where Self: NSManagedObject {
 
-    var recordType: String {
-        fatalError("Please implement this")
+    func recordType() -> String {
+        return String(describing: type(of: self))
     }
 
     func cloudKitRecord(zoneID: CKRecordZone.ID) -> CKRecord {
-        return CKRecord(recordType: recordType, recordID: cloudKitRecordID(zoneID: zoneID))
+        let record = CKRecord(recordType: recordType(), recordID: cloudKitRecordID(zoneID: zoneID))
+        fillCloudRecord(record)
+        return record
     }
 
     func cloudKitRecordID(zoneID: CKRecordZone.ID) -> CKRecord.ID {
@@ -59,7 +64,7 @@ class CloudKitManager {
         self.zone = zone
         self.cacheManager = cacheManager
 
-        timer = RepeatingTimer(timeInterval: 15)
+        timer = RepeatingTimer(timeInterval: 5)
         timer.eventHandler = { [unowned self] in
             self.loop()
         }
@@ -73,7 +78,7 @@ class CloudKitManager {
         case .initialized: checkLoginStatus()
         case .loggedIn: addZone()
         case .notLoggedIn, .couldNotDetermine, .restricted, .loginError: checkLoginStatus()
-        case .zoneAdded: return
+        case .zoneAdded: uploadCache()
         }
     }
 
@@ -86,6 +91,7 @@ class CloudKitManager {
                 switch status {
                 case .available:
                     self.state = .loggedIn
+                    self.addZone()
                 case .noAccount:
                     self.state = .notLoggedIn
                 case .couldNotDetermine:
@@ -110,5 +116,23 @@ class CloudKitManager {
         }
 
         zoneOperation.start()
+    }
+
+    func uploadCache() {
+        cacheManager.getCached { [unowned self] objects in
+            let records = objects.map {
+                $0.cloudKitRecord(zoneID: self.zone.zoneID)
+            }
+
+            let recordOperation = CKModifyRecordsOperation(recordsToSave: records, recordIDsToDelete: nil)
+            recordOperation.configuration.container = self.container
+            recordOperation.database = self.container.privateCloudDatabase
+            recordOperation.perRecordCompletionBlock = { record, error in
+                print(error?.localizedDescription)
+                print(record)
+            }
+
+            recordOperation.start()
+        }
     }
 }

@@ -8,6 +8,10 @@
         <attribute name="modifiedObjectId" attributeType="String" syncable="YES"/>
         <attribute name="nextTryTimestamp" attributeType="Date" defaultDateTimeInterval="-31604400" usesScalarValueType="NO" syncable="YES"/>
     </entity>
+    <entity name="CloudRecord" representedClassName="CloudRecord" syncable="YES">
+        <attribute name="ckRecordName" attributeType="String" syncable="YES"/>
+        <attribute name="cloudRecord" attributeType="Binary" syncable="YES"/>
+    </entity>
     <entity name="GregorianDateObject" representedClassName="GregorianDateObject" syncable="YES">
         <attribute name="day" attributeType="Integer 64" defaultValueString="0" usesScalarValueType="YES" syncable="YES"/>
         <attribute name="month" attributeType="Integer 64" defaultValueString="0" usesScalarValueType="YES" syncable="YES"/>
@@ -18,5 +22,6 @@
         <element name="BuGuaEntryObject" positionX="-458.41796875" positionY="-12.4453125" width="128" height="75"/>
         <element name="GregorianDateObject" positionX="-252.4765625" positionY="10.75" width="128" height="105"/>
         <element name="CachedRecord" positionX="-351" positionY="36" width="128" height="75"/>
+        <element name="CloudRecord" positionX="-342" positionY="45" width="128" height="75"/>
     </elements>
 </model>

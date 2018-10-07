@@ -7,12 +7,14 @@
 //
 //
 
+import CloudKit
 import BuGuaKit
 import Foundation
 import CoreData
 
 @objc(GregorianDateObject)
 public final class GregorianDateObject: NSManagedObject {
+
     func update(with gregorianDate: GregorianDate) {
         year = Int64(gregorianDate.year)
         month = Int64(gregorianDate.month)
@@ -44,4 +46,27 @@ extension GregorianDateObject: ImmutableConvertable {
         return GregorianDate(year: year.int, month: month.int, day: day.int)
     }
 
+}
+
+extension GregorianDateObject: CloudKitManagedObject {
+    func fillCloudRecord(_ record: CKRecord) {
+        record[.year] = year
+        record[.month] = month
+        record[.day] = day
+    }
+}
+
+private extension CKRecord {
+    enum Key: String {
+        case year, month, day
+    }
+
+    subscript(key: Key) -> Any? {
+        get {
+            return self[key.rawValue]
+        }
+        set {
+            self[key.rawValue] = newValue as? CKRecordValue
+        }
+    }
 }

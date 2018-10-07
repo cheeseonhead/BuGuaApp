@@ -33,4 +33,35 @@ class CacheManager {
             try! self.context.save()
         }
     }
+
+    func getCached(_ completion: @escaping ([CloudKitManagedObject]) -> Void) {
+        let request = NSFetchRequest<CachedRecord>(entityName: "CachedRecord")
+        request.predicate = NSPredicate(format: "\(#keyPath(CachedRecord.nextTryTimestamp)) < %@", NSDate())
+        request.fetchLimit = 1
+        request.sortDescriptors = [NSSortDescriptor(key: #keyPath(CachedRecord.nextTryTimestamp), ascending: true)]
+
+        context.perform { [unowned self] in
+            let records = try! self.context.fetch(request)
+            let ids = records.map { $0.modifiedObjectId }
+            let objectIds = ids.map { (strId) -> NSManagedObjectID in
+                let url = URL(string: strId)!
+                return self.context.persistentStoreCoordinator!.managedObjectID(forURIRepresentation: url)!
+            }
+
+            var objects = [CloudKitManagedObject]()
+
+            for id in objectIds {
+                // TODO: handle the delete case
+                guard let obj = try? self.context.existingObject(with: id) else {
+                    continue
+                }
+
+                if let ckObj = obj as? CloudKitManagedObject {
+                    objects.append(ckObj)
+                }
+            }
+
+            completion(objects)
+        }
+    }
 }
