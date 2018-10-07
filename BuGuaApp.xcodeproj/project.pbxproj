@@ -403,7 +403,6 @@
 		9B933EEF2134E529004DCD3F /* BuGuaApp */ = {
 			isa = PBXGroup;
 			children = (
-				9B1959402161968400AA320A /* Playground */,
 				9B933EF02134E529004DCD3F /* AppDelegate.swift */,
 				9BCB3615213E254900F7FDDE /* AppFactory.swift */,
 				9BCB3613213E234000F7FDDE /* AppCoordinator.swift */,
@@ -412,6 +411,7 @@
 				9B933F3C2134EB58004DCD3F /* Views */,
 				3413A5612140D6E700245C46 /* Utilities */,
 				9B933F3D2134EB64004DCD3F /* Extensions */,
+				9B1959402161968400AA320A /* Playground */,
 				9B933EF72134E52A004DCD3F /* Assets.xcassets */,
 				9B933F702137976C004DCD3F /* Colors.xcassets */,
 				9B933EF92134E52A004DCD3F /* LaunchScreen.storyboard */,
