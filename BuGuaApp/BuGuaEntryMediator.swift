@@ -30,7 +30,7 @@ class BuGuaEntryMediator: Mediator {
         self.buGuaEntryObject = storageManager.makeObject(from: structElement)
         self.storageManager = storageManager
 
-        sendUpdateNotification()
+        update(with: structElement)
     }
 
     required init(object: BuGuaEntryObject, storageManager: StorageManager) {
@@ -47,7 +47,7 @@ class BuGuaEntryMediator: Mediator {
     }
 
     func update(with structure: BuGuaEntry) {
-        buGuaEntryObject.managedObjectContext?.perform { [unowned self] in
+        buGuaEntryObject.managedObjectContext?.perform {
             self.buGuaEntryObject.update(with: structure)
 
             self.storageManager.saveContext()

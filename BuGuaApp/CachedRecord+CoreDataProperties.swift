@@ -19,5 +19,4 @@ extension CachedRecord {
 
     @NSManaged public var modifiedObjectId: String
     @NSManaged public var nextTryTimestamp: NSDate
-
 }

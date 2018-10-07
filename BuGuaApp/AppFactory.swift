@@ -28,7 +28,7 @@ class AppFactory {
 
         let uploadContext = container.newBackgroundContext()
 
-        cloudManager = CloudKitManager(container: CKContainer.default(), zone: CKRecordZone(zoneName: "Test"), context: uploadContext)
+        cloudManager = CloudKitManager(container: CKContainer.default(), zone: CKRecordZone(zoneName: "Test"), context: uploadContext, dateGenerator: { Date() as NSDate })
         self.storageManager = StorageManager(container: container, context: context, cloudManager: cloudManager)
     }
 
