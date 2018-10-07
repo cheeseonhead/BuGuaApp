@@ -100,6 +100,8 @@
 		9BEF01242167C8D7007C6C7C /* BuGuaEntryObject+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9BA40D59216577E70048EDDE /* BuGuaEntryObject+CoreDataClass.swift */; };
 		9BEF01252167C8D7007C6C7C /* BuGuaEntryObject+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9BA40D5A216577E70048EDDE /* BuGuaEntryObject+CoreDataProperties.swift */; };
 		9BF12B6421681F5100021249 /* Migratable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9BF12B6321681F5100021249 /* Migratable.swift */; };
+		9BF12B702168304100021249 /* ManagedConvertable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9BF12B6F2168304100021249 /* ManagedConvertable.swift */; };
+		9BF12B7221698B8D00021249 /* Mediator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9BF12B7121698B8D00021249 /* Mediator.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -246,6 +248,8 @@
 		9BCEE3A4215D844C000B50EC /* BGPageController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BGPageController.swift; sourceTree = "<group>"; };
 		9BE751A02165981400F86395 /* BuGuaEntryFetcher.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BuGuaEntryFetcher.swift; sourceTree = "<group>"; };
 		9BF12B6321681F5100021249 /* Migratable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Migratable.swift; sourceTree = "<group>"; };
+		9BF12B6F2168304100021249 /* ManagedConvertable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ManagedConvertable.swift; sourceTree = "<group>"; };
+		9BF12B7121698B8D00021249 /* Mediator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Mediator.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -525,6 +529,7 @@
 				9BA40D4F216574720048EDDE /* StorageManager.swift */,
 				9BA9D7E92166DC800038239C /* CloudKitManager.swift */,
 				9BF12B6321681F5100021249 /* Migratable.swift */,
+				9BF12B6F2168304100021249 /* ManagedConvertable.swift */,
 				9BA40D54216576460048EDDE /* BuGuaAppModel.xcdatamodeld */,
 			);
 			name = Models;
@@ -544,6 +549,7 @@
 		9BA40D5F216578A10048EDDE /* Mediators */ = {
 			isa = PBXGroup;
 			children = (
+				9BF12B7121698B8D00021249 /* Mediator.swift */,
 				9BA40D60216578B90048EDDE /* BuGuaEntryMediator.swift */,
 			);
 			name = Mediators;
@@ -849,6 +855,7 @@
 				9B8B4F03215C4339009FBCD2 /* MasterDetailCell.swift in Sources */,
 				9BCE8863214F0A590024FEF7 /* GuaXiangInputCoordinatorModel.swift in Sources */,
 				9BA40D50216574720048EDDE /* StorageManager.swift in Sources */,
+				9BF12B7221698B8D00021249 /* Mediator.swift in Sources */,
 				9BCE886C214F13780024FEF7 /* DatePickerViewModel.swift in Sources */,
 				34A13D4D214222E700D77D98 /* IntegerLiuYaoConverter.swift in Sources */,
 				9B2AFBAA215701FB00DF9A5E /* UIView+Convenience.swift in Sources */,
@@ -892,6 +899,7 @@
 				9BA40D56216576460048EDDE /* BuGuaAppModel.xcdatamodeld in Sources */,
 				9B933F7D2138DF75004DCD3F /* CGSize+Points.swift in Sources */,
 				34BE79962159D25400B5010A /* BuGuaEntryViewController.swift in Sources */,
+				9BF12B702168304100021249 /* ManagedConvertable.swift in Sources */,
 				9B933F73213797A2004DCD3F /* UIColor+AppColors.swift in Sources */,
 				9BEF01252167C8D7007C6C7C /* BuGuaEntryObject+CoreDataProperties.swift in Sources */,
 				9B933F5B2135A8B0004DCD3F /* GuaXiangView.swift in Sources */,

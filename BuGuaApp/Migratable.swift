@@ -9,7 +9,7 @@
 import Foundation
 
 protocol ImmutableConvertable: Equatable {
-    associatedtype ImmutableType
+    associatedtype ImmutableType: ManagedConvertable
     associatedtype Context
 
     static func build(from immutable: ImmutableType, inContext: Context) -> Self

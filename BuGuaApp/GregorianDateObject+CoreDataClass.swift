@@ -20,6 +20,11 @@ public final class GregorianDateObject: NSManagedObject {
     }
 }
 
+extension GregorianDate: ManagedConvertable {
+    typealias Context = NSManagedObjectContext
+    typealias ObjectType = GregorianDateObject
+}
+
 extension GregorianDateObject: ImmutableConvertable {
     typealias ImmutableType = GregorianDate
     typealias Context = NSManagedObjectContext
