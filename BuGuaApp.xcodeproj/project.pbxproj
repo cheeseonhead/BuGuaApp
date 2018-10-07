@@ -97,6 +97,8 @@
 		9BF12B99216ABBD300021249 /* GregorianDateObject+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9BF12B95216ABBD300021249 /* GregorianDateObject+CoreDataProperties.swift */; };
 		9BF12B9A216ABBD300021249 /* BuGuaEntryObject+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9BF12B96216ABBD300021249 /* BuGuaEntryObject+CoreDataClass.swift */; };
 		9BF12B9B216ABBD300021249 /* BuGuaEntryObject+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9BF12B97216ABBD300021249 /* BuGuaEntryObject+CoreDataProperties.swift */; };
+		9BF12B9E216ABCD100021249 /* CacheRecord+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9BF12B9C216ABCD100021249 /* CacheRecord+CoreDataClass.swift */; };
+		9BF12B9F216ABCD100021249 /* CacheRecord+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9BF12B9D216ABCD100021249 /* CacheRecord+CoreDataProperties.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -239,6 +241,8 @@
 		9BF12B95216ABBD300021249 /* GregorianDateObject+CoreDataProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "GregorianDateObject+CoreDataProperties.swift"; sourceTree = "<group>"; };
 		9BF12B96216ABBD300021249 /* BuGuaEntryObject+CoreDataClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "BuGuaEntryObject+CoreDataClass.swift"; sourceTree = "<group>"; };
 		9BF12B97216ABBD300021249 /* BuGuaEntryObject+CoreDataProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "BuGuaEntryObject+CoreDataProperties.swift"; sourceTree = "<group>"; };
+		9BF12B9C216ABCD100021249 /* CacheRecord+CoreDataClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "CacheRecord+CoreDataClass.swift"; sourceTree = "<group>"; };
+		9BF12B9D216ABCD100021249 /* CacheRecord+CoreDataProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "CacheRecord+CoreDataProperties.swift"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -562,10 +566,12 @@
 		9BF12B8C216AB8B800021249 /* ManagedObjects */ = {
 			isa = PBXGroup;
 			children = (
-				9BF12B94216ABBD300021249 /* GregorianDateObject+CoreDataClass.swift */,
-				9BF12B95216ABBD300021249 /* GregorianDateObject+CoreDataProperties.swift */,
 				9BF12B96216ABBD300021249 /* BuGuaEntryObject+CoreDataClass.swift */,
 				9BF12B97216ABBD300021249 /* BuGuaEntryObject+CoreDataProperties.swift */,
+				9BF12B9C216ABCD100021249 /* CacheRecord+CoreDataClass.swift */,
+				9BF12B9D216ABCD100021249 /* CacheRecord+CoreDataProperties.swift */,
+				9BF12B94216ABBD300021249 /* GregorianDateObject+CoreDataClass.swift */,
+				9BF12B95216ABBD300021249 /* GregorianDateObject+CoreDataProperties.swift */,
 			);
 			name = ManagedObjects;
 			sourceTree = "<group>";
@@ -846,6 +852,7 @@
 				9B933F772137A8C3004DCD3F /* YaoView.swift in Sources */,
 				9B8B4F06215C5872009FBCD2 /* ContentCell.swift in Sources */,
 				9BCB361A213E30D700F7FDDE /* GuaXiangViewModel.swift in Sources */,
+				9BF12B9F216ABCD100021249 /* CacheRecord+CoreDataProperties.swift in Sources */,
 				34A13D4F2142294D00D77D98 /* Int+Conversion.swift in Sources */,
 				9BCB3609213E011800F7FDDE /* String+Vertical.swift in Sources */,
 				9BCB3618213E2A5800F7FDDE /* BuGuaEntryCoordinator.swift in Sources */,
@@ -856,6 +863,7 @@
 				9B19593421616BA000AA320A /* TimePickerViewController.swift in Sources */,
 				34EC158F21534EF700378758 /* ShallowThemeStore.swift in Sources */,
 				9B8B4F0A215C870F009FBCD2 /* BGPageControllerLayout.swift in Sources */,
+				9BF12B9E216ABCD100021249 /* CacheRecord+CoreDataClass.swift in Sources */,
 				9B933F6D2136537A004DCD3F /* UIView+Layout.swift in Sources */,
 				3463344F2148BD4B001D462B /* HeaderLabelView.swift in Sources */,
 				34EC158D21534ECA00378758 /* Theme.swift in Sources */,
