@@ -19,7 +19,7 @@ class CacheManager {
         self.dateGenerator = dateGenerator
     }
 
-    func update(ids: [NSManagedObjectID]) {
+    func cacheUpdate(ids: [NSManagedObjectID]) {
         let strIds = ids.map { $0.uriRepresentation().absoluteString }
 
         context.perform { [unowned self] in

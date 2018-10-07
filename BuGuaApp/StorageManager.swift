@@ -41,7 +41,7 @@ class StorageManager {
 
                 let insertedObjectIDs = insertedObjects.map { $0.objectID }
                 let modifiedObjectIDs = modifiedObjects.map { $0.objectID }
-                self.cacheManager.update(ids: insertedObjectIDs + modifiedObjectIDs + deletedRecordIDs)
+                self.cacheManager.cacheUpdate(ids: insertedObjectIDs + modifiedObjectIDs + deletedRecordIDs)
             }
         }
     }
