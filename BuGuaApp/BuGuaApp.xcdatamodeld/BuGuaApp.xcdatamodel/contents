@@ -1,13 +1,13 @@
 <?xml version="1.0" encoding="UTF-8" standalone="yes"?>
 <model type="com.apple.IDECoreDataModeler.DataModel" documentVersion="1.0" lastSavedToolsVersion="14460.14.2" systemVersion="17G65" minimumToolsVersion="Automatic" sourceLanguage="Swift" userDefinedModelVersionIdentifier="">
-    <entity name="BuGuaEntry" representedClassName="BuGuaEntry" syncable="YES" codeGenerationType="class">
-        <relationship name="date" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="GregorianDate" inverseName="buGuaEntry" inverseEntity="GregorianDate" syncable="YES"/>
+    <entity name="BuGuaEntry" representedClassName="BuGuaEntry" syncable="YES">
+        <relationship name="date" maxCount="1" deletionRule="Nullify" destinationEntity="GregorianDate" inverseName="buGuaEntry" inverseEntity="GregorianDate" syncable="YES"/>
     </entity>
     <entity name="GregorianDate" representedClassName="GregorianDate" syncable="YES">
-        <attribute name="day" optional="YES" attributeType="Integer 64" defaultValueString="0" usesScalarValueType="YES" syncable="YES"/>
-        <attribute name="month" optional="YES" attributeType="Integer 64" defaultValueString="0" usesScalarValueType="YES" syncable="YES"/>
-        <attribute name="year" optional="YES" attributeType="Integer 64" defaultValueString="0" usesScalarValueType="YES" syncable="YES"/>
-        <relationship name="buGuaEntry" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="BuGuaEntry" inverseName="date" inverseEntity="BuGuaEntry" syncable="YES"/>
+        <attribute name="day" attributeType="Integer 64" defaultValueString="0" usesScalarValueType="YES" syncable="YES"/>
+        <attribute name="month" attributeType="Integer 64" defaultValueString="0" usesScalarValueType="YES" syncable="YES"/>
+        <attribute name="year" attributeType="Integer 64" defaultValueString="0" usesScalarValueType="YES" syncable="YES"/>
+        <relationship name="buGuaEntry" maxCount="1" deletionRule="Nullify" destinationEntity="BuGuaEntry" inverseName="date" inverseEntity="BuGuaEntry" syncable="YES"/>
     </entity>
     <elements>
         <element name="GregorianDate" positionX="-45" positionY="0" width="128" height="105"/>
