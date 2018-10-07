@@ -9,5 +9,9 @@
 import UIKit
 
 class CloudKitManager {
+    private let cacheManager: CacheManager
 
+    init(cacheManager: CacheManager) {
+        self.cacheManager = cacheManager
+    }
 }
