@@ -26,10 +26,10 @@ class AppFactory {
         self.container = container
         self.context = context
 
-        let updateContext = container.newBackgroundContext()
-        updateContext.parent = self.context
+        let uploadContext = container.newBackgroundContext()
+        uploadContext.parent = self.context
 
-        cloudManager = CloudKitManager(container: CKContainer.default(), zone: CKRecordZone(zoneName: "Test"), context: updateContext)
+        cloudManager = CloudKitManager(container: CKContainer.default(), zone: CKRecordZone(zoneName: "Test"), context: uploadContext)
         self.storageManager = StorageManager(container: container, context: context, cloudManager: cloudManager)
     }
 

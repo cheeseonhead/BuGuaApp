@@ -30,9 +30,9 @@ extension NSManagedObject: CloudKitManagedObject {
 }
 
 class StorageManager {
-    let cloudManager: CloudKitManager
-    let container: NSPersistentContainer
-    let context: NSManagedObjectContext
+    private let cloudManager: CloudKitManager
+    private let container: NSPersistentContainer
+    private let context: NSManagedObjectContext
 
     init(container: NSPersistentContainer, context: NSManagedObjectContext, cloudManager: CloudKitManager) {
         self.container = container

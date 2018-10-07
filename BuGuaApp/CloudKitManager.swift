@@ -12,9 +12,9 @@ import Foundation
 
 class CloudKitManager {
 
-    let container: CKContainer
-    let zone: CKRecordZone
-    let context: NSManagedObjectContext
+    private let container: CKContainer
+    private let zone: CKRecordZone
+    private let context: NSManagedObjectContext
 
     init(container: CKContainer, zone: CKRecordZone, context: NSManagedObjectContext) {
         self.container = container
@@ -27,6 +27,6 @@ class CloudKitManager {
     }
 
     func update(saveIds: [NSManagedObjectID], deleteIds: [CKRecord.ID]) {
-        
+
     }
 }
