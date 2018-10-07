@@ -1,5 +1,5 @@
 //
-//  Migratable.swift
+//  ImmutableConvertable.swift
 //  BuGuaApp
 //
 //  Created by Jeffrey Wu on 2018-10-05.

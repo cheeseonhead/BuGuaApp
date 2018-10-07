@@ -102,7 +102,7 @@
 		9BF12BA2216ABD6B00021249 /* BuGuaEntryMediator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9BF12BA1216ABD6B00021249 /* BuGuaEntryMediator.swift */; };
 		9BF12BA4216ABDEF00021249 /* Mediator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9BF12BA3216ABDEF00021249 /* Mediator.swift */; };
 		9BF12BA7216ABE2400021249 /* ManagedConvertable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9BF12BA6216ABE2400021249 /* ManagedConvertable.swift */; };
-		9BF12BA9216ABE4D00021249 /* Migratable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9BF12BA8216ABE4D00021249 /* Migratable.swift */; };
+		9BF12BA9216ABE4D00021249 /* ImmutableConvertable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9BF12BA8216ABE4D00021249 /* ImmutableConvertable.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -250,7 +250,7 @@
 		9BF12BA1216ABD6B00021249 /* BuGuaEntryMediator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BuGuaEntryMediator.swift; sourceTree = "<group>"; };
 		9BF12BA3216ABDEF00021249 /* Mediator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Mediator.swift; sourceTree = "<group>"; };
 		9BF12BA6216ABE2400021249 /* ManagedConvertable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ManagedConvertable.swift; sourceTree = "<group>"; };
-		9BF12BA8216ABE4D00021249 /* Migratable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Migratable.swift; sourceTree = "<group>"; };
+		9BF12BA8216ABE4D00021249 /* ImmutableConvertable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImmutableConvertable.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -609,7 +609,7 @@
 			children = (
 				9BF12BA3216ABDEF00021249 /* Mediator.swift */,
 				9BF12BA6216ABE2400021249 /* ManagedConvertable.swift */,
-				9BF12BA8216ABE4D00021249 /* Migratable.swift */,
+				9BF12BA8216ABE4D00021249 /* ImmutableConvertable.swift */,
 			);
 			name = Protocols;
 			sourceTree = "<group>";
@@ -892,7 +892,7 @@
 				9BCB360D213E148200F7FDDE /* GuaXiangViewController.swift in Sources */,
 				9B19593421616BA000AA320A /* TimePickerViewController.swift in Sources */,
 				34EC158F21534EF700378758 /* ShallowThemeStore.swift in Sources */,
-				9BF12BA9216ABE4D00021249 /* Migratable.swift in Sources */,
+				9BF12BA9216ABE4D00021249 /* ImmutableConvertable.swift in Sources */,
 				9B8B4F0A215C870F009FBCD2 /* BGPageControllerLayout.swift in Sources */,
 				9BF12B9E216ABCD100021249 /* CacheRecord+CoreDataClass.swift in Sources */,
 				9B933F6D2136537A004DCD3F /* UIView+Layout.swift in Sources */,
