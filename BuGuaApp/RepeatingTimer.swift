@@ -1,5 +1,5 @@
 //
-//  RepeatedTimer.swift
+//  RepeatingTimer.swift
 //  BuGuaApp
 //
 //  Created by Jeffrey Wu on 2018-10-06.
