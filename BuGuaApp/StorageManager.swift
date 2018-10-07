@@ -17,4 +17,8 @@ class StorageManager {
         self.cacheManager = cacheManager
         self.context = context
     }
+
+    func makeObject<Immutable>(from immutable: Immutable) -> Immutable.ObjectType where Immutable: ManagedConvertable, Immutable.Context == NSManagedObjectContext {
+        return immutable.managedObject(inConext: context)
+    }
 }
