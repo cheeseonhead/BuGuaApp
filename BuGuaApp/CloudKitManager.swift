@@ -27,6 +27,6 @@ class CloudKitManager {
     }
 
     func update(saveIds: [NSManagedObjectID], deleteIds: [CKRecord.ID]) {
-
+        
     }
 }
