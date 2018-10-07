@@ -33,28 +33,11 @@ class CloudKitManager {
 
     private let container: CKContainer
     private let zone: CKRecordZone
-    private let context: NSManagedObjectContext
-    private let dateGenerator: () -> NSDate
+    private let cacheManager: CacheManager
 
-    init(container: CKContainer, zone: CKRecordZone, context: NSManagedObjectContext, dateGenerator: @escaping () -> NSDate) {
+    init(container: CKContainer, zone: CKRecordZone, cacheManager: CacheManager) {
         self.container = container
         self.zone = zone
-        self.context = context
-        self.dateGenerator = dateGenerator
-    }
-
-    func update(ids: [NSManagedObjectID]) {
-        let strIds = ids.map { $0.uriRepresentation().absoluteString }
-
-        context.perform { [unowned self] in
-
-            strIds.forEach { [unowned self] in
-                let cacheObject = CachedRecord(context: self.context)
-                cacheObject.modifiedObjectId = $0
-                cacheObject.nextTryTimestamp = self.dateGenerator()
-            }
-
-            try! self.context.save()
-        }
+        self.cacheManager = cacheManager
     }
 }
