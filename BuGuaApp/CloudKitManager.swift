@@ -71,14 +71,15 @@ class CloudKitManager {
     func loop() {
         switch state {
         case .initialized: checkLoginStatus()
-        case .loggedIn: print("LoggedIn!"); return
+        case .loggedIn: addZone()
         case .notLoggedIn, .couldNotDetermine, .restricted, .loginError: checkLoginStatus()
         case .zoneAdded: return
         }
     }
 
+    /// Should be called when at states before loggedIn.
     func checkLoginStatus() {
-        container.accountStatus { (status, error) in
+        container.accountStatus { [unowned self] (status, error) in
             if let error = error {
                 self.state = .loginError(error)
             } else {
@@ -94,5 +95,20 @@ class CloudKitManager {
                 }
             }
         }
+    }
+
+    func addZone() {
+        let zonesToSave = [zone]
+        let zoneOperation = CKModifyRecordZonesOperation(recordZonesToSave: zonesToSave, recordZoneIDsToDelete: nil)
+
+        zoneOperation.configuration.container = container
+
+        zoneOperation.modifyRecordZonesCompletionBlock = { [unowned self] savedZones, _, error in
+            if savedZones?.contains(self.zone) ?? false {
+                self.state = .zoneAdded
+            }
+        }
+
+        zoneOperation.start()
     }
 }
