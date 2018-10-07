@@ -27,7 +27,7 @@ class BuGuaEntryMediator: Mediator {
     private let buGuaEntryOutput = BehaviorRelay<BuGuaEntry>(value: .default)
 
     required init(immutable structElement: BuGuaEntry, storageManager: StorageManager) {
-        self.buGuaEntryObject = structElement.managedObject(inConext: storageManager.context)
+        self.buGuaEntryObject = storageManager.makeObject(from: structElement)
         self.storageManager = storageManager
 
         sendUpdateNotification()

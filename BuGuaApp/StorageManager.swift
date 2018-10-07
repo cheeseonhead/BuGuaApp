@@ -40,6 +40,10 @@ class StorageManager {
         self.cloudManager = cloudManager
     }
 
+    func makeObject<Immutable>(from immutable: Immutable) -> Immutable.ObjectType where Immutable: ManagedConvertable, Immutable.Context == NSManagedObjectContext {
+        return immutable.managedObject(inConext: context)
+    }
+
     func saveContext() {
         context.perform { [unowned self] in
 
