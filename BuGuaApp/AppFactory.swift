@@ -7,16 +7,36 @@
 //
 
 import BuGuaKit
+import CoreData
 import Foundation
 import UIKit
 
 class AppFactory {
     let timeZone = TimeZone.autoupdatingCurrent
     let themeStore = ShallowThemeStore(initialTheme: .light)
-    let themeManager: ThemeManager
 
-    init() {
+    // MARK: - Managers
+
+    let themeManager: ThemeManager
+    let storageManager: StorageManager
+    let cacheManager: CacheManager
+    let cloudManager: CloudKitManager
+
+    // MARK: - CoreData
+
+    let container: NSPersistentContainer
+
+    init(container: NSPersistentContainer) {
+        self.container = container
+
         themeManager = ThemeManager(store: themeStore)
+
+        let cacheContext = container.newBackgroundContext()
+        cacheManager = CacheManager(context: cacheContext, dateGenerator: { Date() as NSDate })
+
+        storageManager = StorageManager(cacheManager: cacheManager, context: container.viewContext)
+
+        cloudManager = CloudKitManager(cacheManager: cacheManager)
     }
 
     func makeAppCoordinator(with window: UIWindow) -> AppCoordinator {
