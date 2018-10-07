@@ -99,6 +99,7 @@
 		9BF12B9B216ABBD300021249 /* BuGuaEntryObject+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9BF12B97216ABBD300021249 /* BuGuaEntryObject+CoreDataProperties.swift */; };
 		9BF12B9E216ABCD100021249 /* CacheRecord+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9BF12B9C216ABCD100021249 /* CacheRecord+CoreDataClass.swift */; };
 		9BF12B9F216ABCD100021249 /* CacheRecord+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9BF12B9D216ABCD100021249 /* CacheRecord+CoreDataProperties.swift */; };
+		9BF12BA2216ABD6B00021249 /* BuGuaEntryMediator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9BF12BA1216ABD6B00021249 /* BuGuaEntryMediator.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -243,6 +244,7 @@
 		9BF12B97216ABBD300021249 /* BuGuaEntryObject+CoreDataProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "BuGuaEntryObject+CoreDataProperties.swift"; sourceTree = "<group>"; };
 		9BF12B9C216ABCD100021249 /* CacheRecord+CoreDataClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "CacheRecord+CoreDataClass.swift"; sourceTree = "<group>"; };
 		9BF12B9D216ABCD100021249 /* CacheRecord+CoreDataProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "CacheRecord+CoreDataProperties.swift"; sourceTree = "<group>"; };
+		9BF12BA1216ABD6B00021249 /* BuGuaEntryMediator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BuGuaEntryMediator.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -556,6 +558,7 @@
 		9BF12B80216AB7F100021249 /* Persistent */ = {
 			isa = PBXGroup;
 			children = (
+				9BF12BA0216ABD5900021249 /* Mediators */,
 				9BF12B8D216AB9BB00021249 /* Managers */,
 				9BF12B8C216AB8B800021249 /* ManagedObjects */,
 				9BF12B81216AB81000021249 /* BuGuaApp.xcdatamodeld */,
@@ -584,6 +587,14 @@
 				9BF12B92216ABA3C00021249 /* StorageManager.swift */,
 			);
 			name = Managers;
+			sourceTree = "<group>";
+		};
+		9BF12BA0216ABD5900021249 /* Mediators */ = {
+			isa = PBXGroup;
+			children = (
+				9BF12BA1216ABD6B00021249 /* BuGuaEntryMediator.swift */,
+			);
+			name = Mediators;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -867,6 +878,7 @@
 				9B933F6D2136537A004DCD3F /* UIView+Layout.swift in Sources */,
 				3463344F2148BD4B001D462B /* HeaderLabelView.swift in Sources */,
 				34EC158D21534ECA00378758 /* Theme.swift in Sources */,
+				9BF12BA2216ABD6B00021249 /* BuGuaEntryMediator.swift in Sources */,
 				9B933EF32134E529004DCD3F /* ViewController.swift in Sources */,
 				9B933F7D2138DF75004DCD3F /* CGSize+Points.swift in Sources */,
 				34BE79962159D25400B5010A /* BuGuaEntryViewController.swift in Sources */,
