@@ -31,13 +31,68 @@ extension NSManagedObject: CloudKitManagedObject {
 
 class CloudKitManager {
 
+    enum State {
+        case initialized
+
+        case loggedIn, loginError(Error), notLoggedIn, couldNotDetermine, restricted
+
+        case zoneAdded
+    }
+
+    // MARK: - Public
+    private (set) var state = State.initialized {
+        didSet {
+            print(String(describing: state))
+        }
+    }
+
+    // MARK: - Dependencies
     private let container: CKContainer
     private let zone: CKRecordZone
     private let cacheManager: CacheManager
+
+    // MARK: - Private
+    private let timer: RepeatingTimer
 
     init(container: CKContainer, zone: CKRecordZone, cacheManager: CacheManager) {
         self.container = container
         self.zone = zone
         self.cacheManager = cacheManager
+
+        timer = RepeatingTimer(timeInterval: 15)
+        timer.eventHandler = { [unowned self] in
+            self.loop()
+        }
+        timer.resume()
+
+        loop()
+    }
+
+    func loop() {
+        switch state {
+        case .initialized: checkLoginStatus()
+        case .loggedIn: print("LoggedIn!"); return
+        case .notLoggedIn, .couldNotDetermine, .restricted, .loginError: checkLoginStatus()
+        case .zoneAdded: return
+        }
+    }
+
+    func checkLoginStatus() {
+        container.accountStatus { (status, error) in
+            if let error = error {
+                self.state = .loginError(error)
+            } else {
+                switch status {
+                case .available:
+                    self.state = .loggedIn
+                case .noAccount:
+                    self.state = .notLoggedIn
+                case .couldNotDetermine:
+                    self.state = .couldNotDetermine
+                case .restricted:
+                    self.state = .restricted
+                }
+            }
+        }
     }
 }
