@@ -27,7 +27,6 @@ class AppFactory {
         self.context = context
 
         let uploadContext = container.newBackgroundContext()
-        uploadContext.parent = self.context
 
         cloudManager = CloudKitManager(container: CKContainer.default(), zone: CKRecordZone(zoneName: "Test"), context: uploadContext)
         self.storageManager = StorageManager(container: container, context: context, cloudManager: cloudManager)
