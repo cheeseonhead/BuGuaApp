@@ -22,7 +22,11 @@ class CloudKitManager {
         self.context = context
     }
 
-    func update(addedIds: [NSManagedObjectID], modifiedIds: [NSManagedObjectID], deleted: [CKRecord.ID]) {
+    func cloudRecordId(for managedObject: NSManagedObject) -> CKRecord.ID {
+        return managedObject.cloudKitRecordID(zoneID: zone.zoneID)
+    }
 
+    func update(saveIds: [NSManagedObjectID], deleteIds: [CKRecord.ID]) {
+        
     }
 }

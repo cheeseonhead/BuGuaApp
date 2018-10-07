@@ -49,7 +49,7 @@ class StorageManager {
 
             let insertedObjects = self.context.insertedObjects
             let modifiedObjects = self.context.updatedObjects
-            let deletedRecordIDs = self.context.deletedObjects.map { $0.cloudKitRecordID(zoneID: self.cloudManager.zone.zoneID) }
+            let deletedRecordIDs = self.context.deletedObjects.map { self.cloudManager.cloudRecordId(for: $0) }
 
             if self.context.hasChanges {
                 do {
@@ -60,7 +60,7 @@ class StorageManager {
 
                 let insertedObjectIDs = insertedObjects.map { $0.objectID }
                 let modifiedObjectIDs = modifiedObjects.map { $0.objectID }
-                self.cloudManager.update(addedIds: insertedObjectIDs, modifiedIds: modifiedObjectIDs, deleted: deletedRecordIDs)
+                self.cloudManager.update(saveIds: insertedObjectIDs + modifiedObjectIDs, deleteIds: deletedRecordIDs)
             }
         }
     }
