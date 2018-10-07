@@ -19,7 +19,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         window = UIWindow(frame: UIScreen.main.bounds)
         window?.rootViewController = UIViewController()
 
-        let container = NSPersistentContainer(name: "BuGuaAppModel")
+        let container = NSPersistentContainer(name: "BuGuaApp")
         container.loadPersistentStores { [unowned self, container] _, _ in
             // TODO: Handle Error
             let factory = AppFactory(container: container)
