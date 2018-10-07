@@ -71,7 +71,9 @@ private extension BuGuaEntryCoordinator {
         inputCoordinator.buGuaEntryRelay.take(1)
             .do(onNext: { [unowned modalViewController] _ in
                 modalViewController.dismiss(animated: true, completion: nil)
-            }).bind(to: viewController.viewModel.entryRelay)
+            }).map { [unowned self] entry in
+                return self.factory.makeBuGuaEntryMediator(entry)
+            }.bind(to: viewController.viewModel.entryMediatorRelay)
             .disposed(by: inputCoordinator.bag)
 
         addChildCoordinator(inputCoordinator)

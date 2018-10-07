@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<model type="com.apple.IDECoreDataModeler.DataModel" documentVersion="1.0" lastSavedToolsVersion="14460.14.2" systemVersion="17G65" minimumToolsVersion="Automatic" sourceLanguage="Swift" userDefinedModelVersionIdentifier="">
+    <entity name="BuGuaEntryObject" representedClassName="BuGuaEntryObject" syncable="YES">
+        <attribute name="name" attributeType="String" defaultValueString=" " syncable="YES"/>
+        <relationship name="date" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="GregorianDateObject" inverseName="buGuaEntry" inverseEntity="GregorianDateObject" syncable="YES"/>
+    </entity>
+    <entity name="CachedRecord" representedClassName="CachedRecord" syncable="YES">
+        <attribute name="modifiedObjectId" attributeType="String" syncable="YES"/>
+        <attribute name="nextTryTimestamp" attributeType="Date" defaultDateTimeInterval="-31604400" usesScalarValueType="NO" syncable="YES"/>
+    </entity>
+    <entity name="CloudRecord" representedClassName="CloudRecord" syncable="YES">
+        <attribute name="ckRecordName" attributeType="String" syncable="YES"/>
+        <attribute name="cloudRecord" attributeType="Binary" syncable="YES"/>
+    </entity>
+    <entity name="GregorianDateObject" representedClassName="GregorianDateObject" syncable="YES">
+        <attribute name="day" attributeType="Integer 64" defaultValueString="0" usesScalarValueType="YES" syncable="YES"/>
+        <attribute name="month" attributeType="Integer 64" defaultValueString="0" usesScalarValueType="YES" syncable="YES"/>
+        <attribute name="year" attributeType="Integer 64" defaultValueString="0" usesScalarValueType="YES" syncable="YES"/>
+        <relationship name="buGuaEntry" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="BuGuaEntryObject" inverseName="date" inverseEntity="BuGuaEntryObject" syncable="YES"/>
+    </entity>
+    <elements>
+        <element name="BuGuaEntryObject" positionX="-458.41796875" positionY="-12.4453125" width="128" height="75"/>
+        <element name="GregorianDateObject" positionX="-252.4765625" positionY="10.75" width="128" height="105"/>
+        <element name="CachedRecord" positionX="-351" positionY="36" width="128" height="75"/>
+        <element name="CloudRecord" positionX="-342" positionY="45" width="128" height="75"/>
+    </elements>
+</model>

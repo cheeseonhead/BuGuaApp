@@ -6,6 +6,7 @@
 //  Copyright © 2018 Jeffrey Wu. All rights reserved.
 //
 
+import CoreData
 import UIKit
 
 @UIApplicationMain
@@ -20,9 +21,17 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         window = UIWindow(frame: UIScreen.main.bounds)
         window?.rootViewController = UIViewController()
 
-        let factory = AppFactory()
-        appCoordinator = factory.makeAppCoordinator(with: window!)
-        appCoordinator?.start()
+        let container = NSPersistentContainer(name: "BuGuaAppModel")
+
+        container.loadPersistentStores { [unowned self, container] (desc, error) in
+
+            // TODO: Handle Error
+
+            let factory = AppFactory(container: container, context: container.viewContext)
+
+            self.appCoordinator = factory.makeAppCoordinator(with: self.window!)
+            self.appCoordinator?.start()
+        }
         window?.makeKeyAndVisible()
         return true
     }
