@@ -103,6 +103,7 @@
 		9BF12BA4216ABDEF00021249 /* Mediator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9BF12BA3216ABDEF00021249 /* Mediator.swift */; };
 		9BF12BA7216ABE2400021249 /* ManagedConvertable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9BF12BA6216ABE2400021249 /* ManagedConvertable.swift */; };
 		9BF12BA9216ABE4D00021249 /* ImmutableConvertable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9BF12BA8216ABE4D00021249 /* ImmutableConvertable.swift */; };
+		9BF12BAB216C264800021249 /* CKRecordConvertable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9BF12BAA216C264800021249 /* CKRecordConvertable.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -251,6 +252,7 @@
 		9BF12BA3216ABDEF00021249 /* Mediator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Mediator.swift; sourceTree = "<group>"; };
 		9BF12BA6216ABE2400021249 /* ManagedConvertable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ManagedConvertable.swift; sourceTree = "<group>"; };
 		9BF12BA8216ABE4D00021249 /* ImmutableConvertable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImmutableConvertable.swift; sourceTree = "<group>"; };
+		9BF12BAA216C264800021249 /* CKRecordConvertable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CKRecordConvertable.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -610,6 +612,7 @@
 				9BF12BA3216ABDEF00021249 /* Mediator.swift */,
 				9BF12BA6216ABE2400021249 /* ManagedConvertable.swift */,
 				9BF12BA8216ABE4D00021249 /* ImmutableConvertable.swift */,
+				9BF12BAA216C264800021249 /* CKRecordConvertable.swift */,
 			);
 			name = Protocols;
 			sourceTree = "<group>";
@@ -855,6 +858,7 @@
 				9B8B4F03215C4339009FBCD2 /* MasterDetailCell.swift in Sources */,
 				9BCE8863214F0A590024FEF7 /* GuaXiangInputCoordinatorModel.swift in Sources */,
 				9BCE886C214F13780024FEF7 /* DatePickerViewModel.swift in Sources */,
+				9BF12BAB216C264800021249 /* CKRecordConvertable.swift in Sources */,
 				9BF12BA4216ABDEF00021249 /* Mediator.swift in Sources */,
 				34A13D4D214222E700D77D98 /* IntegerLiuYaoConverter.swift in Sources */,
 				9BF12B9B216ABBD300021249 /* BuGuaEntryObject+CoreDataProperties.swift in Sources */,
