@@ -47,13 +47,15 @@ class CacheManager {
             var objects = [CKRecordConvertable]()
 
             for id in objectIds {
-                // TODO: handle the delete case
-                guard let obj = try? self.context.existingObject(with: id) else {
-                    continue
-                }
+                if let obj = try? self.context.existingObject(with: id) {
+                    guard let ckObj = obj as? CKRecordConvertable else {
+                        fatalError("Attempting to upload an entity that's not compatible with CloudKit")
+                    }
 
-                if let ckObj = obj as? CKRecordConvertable {
                     objects.append(ckObj)
+                } else {
+                    // TODO: handle the delete case
+                    continue
                 }
             }
 
