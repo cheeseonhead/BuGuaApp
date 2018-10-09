@@ -7,6 +7,7 @@
 //
 
 import BuGuaKit
+import CloudKit
 import CoreData
 import Foundation
 import UIKit
@@ -36,7 +37,7 @@ class AppFactory {
 
         storageManager = StorageManager(cacheManager: cacheManager, context: container.viewContext)
 
-        cloudManager = CloudKitManager(cacheManager: cacheManager)
+        cloudManager = CloudKitManager(container: CKContainer.default(), zone: CKRecordZone(zoneName: "Test"), cacheManager: cacheManager)
     }
 
     func makeAppCoordinator(with window: UIWindow) -> AppCoordinator {

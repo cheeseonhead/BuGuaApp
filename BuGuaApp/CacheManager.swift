@@ -32,7 +32,7 @@ class CacheManager {
     }
 
     func getCached(_ completion: @escaping ([CKRecordConvertable]) -> Void) {
-        let request = NSFetchRequest<CacheRecord>(entityName: "CachedRecord")
+        let request = NSFetchRequest<CacheRecord>(entityName: CacheRecord.entityName)
         request.predicate = NSPredicate(format: "\(#keyPath(CacheRecord.nextTryTimestamp)) < %@", NSDate())
         request.fetchLimit = 1
         request.sortDescriptors = [NSSortDescriptor(key: #keyPath(CacheRecord.nextTryTimestamp), ascending: true)]
