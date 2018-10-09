@@ -20,4 +20,5 @@ extension GregorianDateObject {
     @NSManaged public var year: Int64
     @NSManaged public var ckData: NSData?
     @NSManaged public var buGuaEntry: BuGuaEntryObject
+    @NSManaged public var ckRecordName: String?
 }

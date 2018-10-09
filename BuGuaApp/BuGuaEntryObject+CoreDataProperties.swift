@@ -16,5 +16,6 @@ extension BuGuaEntryObject {
     }
 
     @NSManaged public var ckData: NSData?
+    @NSManaged public var ckRecordName: String?
     @NSManaged public var date: GregorianDateObject
 }
