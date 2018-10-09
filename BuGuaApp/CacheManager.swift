@@ -30,4 +30,34 @@ class CacheManager {
             try! self.context.save()
         }
     }
+
+    func getCached(_ completion: @escaping ([CKRecordConvertable]) -> Void) {
+        let request = NSFetchRequest<CacheRecord>(entityName: "CachedRecord")
+        request.predicate = NSPredicate(format: "\(#keyPath(CacheRecord.nextTryTimestamp)) < %@", NSDate())
+        request.fetchLimit = 1
+        request.sortDescriptors = [NSSortDescriptor(key: #keyPath(CacheRecord.nextTryTimestamp), ascending: true)]
+
+        context.perform { [unowned self] in
+            let records = try! self.context.fetch(request)
+            let urls = records.map { $0.managedObjectId }
+            let objectIds = urls.map { (url) -> NSManagedObjectID in
+                return self.context.persistentStoreCoordinator!.managedObjectID(forURIRepresentation: url)!
+            }
+
+            var objects = [CKRecordConvertable]()
+
+            for id in objectIds {
+                // TODO: handle the delete case
+                guard let obj = try? self.context.existingObject(with: id) else {
+                    continue
+                }
+
+                if let ckObj = obj as? CKRecordConvertable {
+                    objects.append(ckObj)
+                }
+            }
+
+            completion(objects)
+        }
+    }
 }
