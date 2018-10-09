@@ -1,6 +1,7 @@
 <?xml version="1.0" encoding="UTF-8" standalone="yes"?>
 <model type="com.apple.IDECoreDataModeler.DataModel" documentVersion="1.0" lastSavedToolsVersion="14460.14.2" systemVersion="17G65" minimumToolsVersion="Automatic" sourceLanguage="Swift" userDefinedModelVersionIdentifier="">
     <entity name="BuGuaEntryObject" representedClassName="BuGuaEntryObject" syncable="YES">
+        <attribute name="ckData" optional="YES" attributeType="Binary" syncable="YES"/>
         <relationship name="date" maxCount="1" deletionRule="Nullify" destinationEntity="GregorianDateObject" inverseName="buGuaEntry" inverseEntity="GregorianDateObject" syncable="YES"/>
     </entity>
     <entity name="CacheRecord" representedClassName="CacheRecord" syncable="YES">
@@ -8,14 +9,15 @@
         <attribute name="nextTryTimestamp" attributeType="Date" usesScalarValueType="NO" syncable="YES"/>
     </entity>
     <entity name="GregorianDateObject" representedClassName="GregorianDateObject" syncable="YES">
+        <attribute name="ckData" optional="YES" attributeType="Binary" syncable="YES"/>
         <attribute name="day" attributeType="Integer 64" defaultValueString="0" usesScalarValueType="YES" syncable="YES"/>
         <attribute name="month" attributeType="Integer 64" defaultValueString="0" usesScalarValueType="YES" syncable="YES"/>
         <attribute name="year" attributeType="Integer 64" defaultValueString="0" usesScalarValueType="YES" syncable="YES"/>
         <relationship name="buGuaEntry" maxCount="1" deletionRule="Nullify" destinationEntity="BuGuaEntryObject" inverseName="date" inverseEntity="BuGuaEntryObject" syncable="YES"/>
     </entity>
     <elements>
-        <element name="GregorianDateObject" positionX="-45" positionY="0" width="128" height="105"/>
-        <element name="BuGuaEntryObject" positionX="-18" positionY="54" width="128" height="60"/>
+        <element name="BuGuaEntryObject" positionX="-18" positionY="54" width="128" height="75"/>
         <element name="CacheRecord" positionX="9" positionY="81" width="128" height="75"/>
+        <element name="GregorianDateObject" positionX="-45" positionY="0" width="128" height="120"/>
     </elements>
 </model>
