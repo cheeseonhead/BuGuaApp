@@ -105,7 +105,7 @@ class CloudKitManager {
             recordOperation.configuration.container = self.container
             recordOperation.database = self.container.privateCloudDatabase
             recordOperation.perRecordCompletionBlock = { record, error in
-                print(error?.localizedDescription)
+                print(error?.localizedDescription ?? "")
                 print(record)
             }
 
