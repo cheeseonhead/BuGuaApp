@@ -24,9 +24,22 @@ extension CKRecordConvertable where Self: NSManagedObject {
     }
 
     func cloudKitRecord(zoneID: CKRecordZone.ID) -> CKRecord {
-        let record = CKRecord(recordType: recordType(), recordID: cloudKitRecordID(zoneID: zoneID))
-        fillCloudRecord(record)
-        return record
+        if let ckData = ckData {
+            // set up the CKRecord with its metadata
+            let coder = NSKeyedUnarchiver(forReadingWith: ckData as Data)
+            coder.requiresSecureCoding = true
+            let record = CKRecord(coder: coder)!
+            coder.finishDecoding()
+
+            fillCloudRecord(record)
+
+            return record
+
+        } else {
+            let record = CKRecord(recordType: recordType(), recordID: cloudKitRecordID(zoneID: zoneID))
+            fillCloudRecord(record)
+            return record
+        }
     }
 
     func cloudKitRecordID(zoneID: CKRecordZone.ID) -> CKRecord.ID {
