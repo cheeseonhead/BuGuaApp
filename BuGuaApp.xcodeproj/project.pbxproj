@@ -104,6 +104,7 @@
 		9BF12BA7216ABE2400021249 /* ManagedConvertable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9BF12BA6216ABE2400021249 /* ManagedConvertable.swift */; };
 		9BF12BA9216ABE4D00021249 /* ImmutableConvertable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9BF12BA8216ABE4D00021249 /* ImmutableConvertable.swift */; };
 		9BF12BAB216C264800021249 /* CKRecordConvertable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9BF12BAA216C264800021249 /* CKRecordConvertable.swift */; };
+		9BF12BB1216C311500021249 /* RepeatingTimer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9BF12BB0216C311500021249 /* RepeatingTimer.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -253,6 +254,7 @@
 		9BF12BA6216ABE2400021249 /* ManagedConvertable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ManagedConvertable.swift; sourceTree = "<group>"; };
 		9BF12BA8216ABE4D00021249 /* ImmutableConvertable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImmutableConvertable.swift; sourceTree = "<group>"; };
 		9BF12BAA216C264800021249 /* CKRecordConvertable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CKRecordConvertable.swift; sourceTree = "<group>"; };
+		9BF12BB0216C311500021249 /* RepeatingTimer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RepeatingTimer.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -295,6 +297,7 @@
 				3413A5662140E0BC00245C46 /* AutoNextTextFieldDelegate.swift */,
 				3413A5682140E0D600245C46 /* ComposableTextfieldDelegate.swift */,
 				34A13D4C214222E700D77D98 /* IntegerLiuYaoConverter.swift */,
+				9BF12BB0216C311500021249 /* RepeatingTimer.swift */,
 			);
 			name = Utilities;
 			sourceTree = "<group>";
@@ -878,6 +881,7 @@
 				346334482148A66E001D462B /* Container+Operator.swift in Sources */,
 				34F3E4FF2150A84F00A9BA2B /* Rx+Operators.swift in Sources */,
 				9B19593F2161709D00AA320A /* TimeGanZhiViewModel.swift in Sources */,
+				9BF12BB1216C311500021249 /* RepeatingTimer.swift in Sources */,
 				9B933F3B2134EB01004DCD3F /* FuXiBaGuaView.swift in Sources */,
 				9BCE8874214F2E220024FEF7 /* DateGanZhiViewController.swift in Sources */,
 				3413A5692140E0D600245C46 /* ComposableTextfieldDelegate.swift in Sources */,
