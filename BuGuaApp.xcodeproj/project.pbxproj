@@ -106,6 +106,7 @@
 		9BF12BAB216C264800021249 /* CKRecordConvertable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9BF12BAA216C264800021249 /* CKRecordConvertable.swift */; };
 		9BF12BB1216C311500021249 /* RepeatingTimer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9BF12BB0216C311500021249 /* RepeatingTimer.swift */; };
 		9BF12BB4216C318000021249 /* CloudKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9BF12BB3216C318000021249 /* CloudKit.framework */; };
+		9BF12BB6216C31DC00021249 /* NSManagedObject+Data.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9BF12BB5216C31DC00021249 /* NSManagedObject+Data.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -258,6 +259,7 @@
 		9BF12BB0216C311500021249 /* RepeatingTimer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RepeatingTimer.swift; sourceTree = "<group>"; };
 		9BF12BB2216C317D00021249 /* BuGuaApp.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = BuGuaApp.entitlements; sourceTree = "<group>"; };
 		9BF12BB3216C318000021249 /* CloudKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CloudKit.framework; path = System/Library/Frameworks/CloudKit.framework; sourceTree = SDKROOT; };
+		9BF12BB5216C31DC00021249 /* NSManagedObject+Data.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "NSManagedObject+Data.swift"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -502,6 +504,7 @@
 				3413A5642140D89900245C46 /* CharacterSet+MoreSets.swift */,
 				346334472148A66E001D462B /* Container+Operator.swift */,
 				34A13D4E2142294D00D77D98 /* Int+Conversion.swift */,
+				9BF12BB5216C31DC00021249 /* NSManagedObject+Data.swift */,
 				34F3E4FE2150A84F00A9BA2B /* Rx+Operators.swift */,
 				9BCB3608213E011800F7FDDE /* String+Vertical.swift */,
 				9B933F72213797A2004DCD3F /* UIColor+AppColors.swift */,
@@ -902,6 +905,7 @@
 				9BCB3616213E254900F7FDDE /* AppFactory.swift in Sources */,
 				9B933F772137A8C3004DCD3F /* YaoView.swift in Sources */,
 				9B8B4F06215C5872009FBCD2 /* ContentCell.swift in Sources */,
+				9BF12BB6216C31DC00021249 /* NSManagedObject+Data.swift in Sources */,
 				9BCB361A213E30D700F7FDDE /* GuaXiangViewModel.swift in Sources */,
 				9BF12B9F216ABCD100021249 /* CacheRecord+CoreDataProperties.swift in Sources */,
 				34A13D4F2142294D00D77D98 /* Int+Conversion.swift in Sources */,
