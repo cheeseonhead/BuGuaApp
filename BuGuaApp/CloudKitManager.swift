@@ -108,6 +108,9 @@ class CloudKitManager {
                 print(error?.localizedDescription ?? "")
                 print(record)
             }
+            recordOperation.modifyRecordsCompletionBlock = { _, _, _ in
+                // TODO: Handle error
+            }
 
             recordOperation.start()
         }

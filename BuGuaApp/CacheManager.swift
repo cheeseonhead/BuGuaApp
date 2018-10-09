@@ -6,6 +6,7 @@
 //  Copyright © 2018 Jeffrey Wu. All rights reserved.
 //
 
+import CloudKit
 import CoreData
 import Foundation
 
@@ -61,5 +62,17 @@ class CacheManager {
 
             completion(objects)
         }
+    }
+
+    func saveUpdates(ckRecords: [CKRecord], deletedIds _: [CKRecord.ID]) {
+        let recordNames = ckRecords.map {
+            $0.recordID.recordName
+        }
+
+        context.perform {
+            for recordName in recordNames {}
+        }
+
+        // TODO: Handle deletion
     }
 }
