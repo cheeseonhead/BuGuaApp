@@ -10,8 +10,9 @@ import CloudKit
 import CoreData
 import Foundation
 
-protocol CKRecordConvertable {
-    var ckData: NSData? { get set }
+protocol CKRecordConvertable: class {
+    var recordData: NSData? { get set }
+    var recordName: String? { get set }
 
     func cloudKitRecord(zoneID: CKRecordZone.ID) -> CKRecord
 
@@ -24,9 +25,9 @@ extension CKRecordConvertable where Self: NSManagedObject {
     }
 
     func cloudKitRecord(zoneID: CKRecordZone.ID) -> CKRecord {
-        if let ckData = ckData {
+        if let recordData = recordData {
             // set up the CKRecord with its metadata
-            let coder = NSKeyedUnarchiver(forReadingWith: ckData as Data)
+            let coder = NSKeyedUnarchiver(forReadingWith: recordData as Data)
             coder.requiresSecureCoding = true
             let record = CKRecord(coder: coder)!
             coder.finishDecoding()
@@ -36,13 +37,29 @@ extension CKRecordConvertable where Self: NSManagedObject {
             return record
 
         } else {
-            let record = CKRecord(recordType: recordType(), recordID: cloudKitRecordID(zoneID: zoneID))
+            let record = CKRecord(recordType: recordType(), recordID: generateRecordID(zoneID: zoneID))
+
+            // obtain the metadata from the CKRecord
+            let data = NSMutableData()
+            let coder = NSKeyedArchiver(forWritingWith: data)
+            coder.requiresSecureCoding = true
+            record.encodeSystemFields(with: coder)
+            coder.finishEncoding()
+
+            // store this metadata on your local object
+            recordData = data
+
+            recordName = record.recordID.recordName
+
             fillCloudRecord(record)
             return record
         }
     }
 
-    func cloudKitRecordID(zoneID: CKRecordZone.ID) -> CKRecord.ID {
-        return CKRecord.ID(recordName: objectID.uriRepresentation().absoluteString, zoneID: zoneID)
+    func generateRecordID(zoneID: CKRecordZone.ID) -> CKRecord.ID {
+        let uuid = UUID()
+        let recordName = recordType() + "." + uuid.uuidString
+
+        return CKRecord.ID(recordName: recordName, zoneID: zoneID)
     }
 }

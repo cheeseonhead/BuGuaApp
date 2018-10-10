@@ -15,7 +15,7 @@ extension BuGuaEntryObject {
         return NSFetchRequest<BuGuaEntryObject>(entityName: "BuGuaEntryObject")
     }
 
-    @NSManaged public var ckData: NSData?
-    @NSManaged public var ckRecordName: String?
+    @NSManaged public var recordData: NSData?
+    @NSManaged public var recordName: String?
     @NSManaged public var date: GregorianDateObject
 }
