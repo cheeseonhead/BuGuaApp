@@ -51,6 +51,12 @@ extension GregorianDateObject: CKRecordConvertable {
         record[.month] = month
         record[.day] = day
     }
+
+    func updateDetails(with record: CKRecord) {
+        year = record[.year] as! Int64
+        month = record[.month] as! Int64
+        day = record[.day] as! Int64
+    }
 }
 
 private extension CKRecord {

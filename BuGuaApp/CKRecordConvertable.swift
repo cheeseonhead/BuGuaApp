@@ -17,6 +17,8 @@ protocol CKRecordConvertable: class {
     func cloudKitRecord(zoneID: CKRecordZone.ID) -> CKRecord
 
     func fillCloudRecord(_ record: CKRecord)
+    func updateWithRecord(_ record: CKRecord)
+    func updateDetails(with record: CKRecord)
 }
 
 extension CKRecordConvertable where Self: NSManagedObject {
@@ -54,6 +56,18 @@ extension CKRecordConvertable where Self: NSManagedObject {
             fillCloudRecord(record)
             return record
         }
+    }
+
+    func updateWithRecord(_ record: CKRecord) {
+        let data = NSMutableData()
+        let coder = NSKeyedArchiver(forWritingWith: data)
+        coder.requiresSecureCoding = true
+        record.encodeSystemFields(with: coder)
+        coder.finishEncoding()
+
+        recordData = data
+
+        updateDetails(with: record)
     }
 
     func generateRecordID(zoneID: CKRecordZone.ID) -> CKRecord.ID {
