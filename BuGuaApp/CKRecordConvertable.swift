@@ -14,17 +14,19 @@ protocol CKRecordConvertable: class {
     var recordData: NSData? { get set }
     var recordName: String? { get set }
 
-    func cloudKitRecord(zoneID: CKRecordZone.ID) -> CKRecord
+    // MARK: - Send to Cloud
 
+    func cloudKitRecord(zoneID: CKRecordZone.ID) -> CKRecord
     func fillCloudRecord(_ record: CKRecord)
+
+    // MARK: - Update from Cloud
+
     func updateWithRecord(_ record: CKRecord)
     func updateDetails(with record: CKRecord)
 }
 
 extension CKRecordConvertable where Self: NSManagedObject {
-    func recordType() -> String {
-        return String(describing: type(of: self))
-    }
+    // MARK: - Send to Cloud
 
     func cloudKitRecord(zoneID: CKRecordZone.ID) -> CKRecord {
         if let recordData = recordData {
@@ -41,16 +43,8 @@ extension CKRecordConvertable where Self: NSManagedObject {
         } else {
             let record = CKRecord(recordType: recordType(), recordID: generateRecordID(zoneID: zoneID))
 
-            // obtain the metadata from the CKRecord
-            let data = NSMutableData()
-            let coder = NSKeyedArchiver(forWritingWith: data)
-            coder.requiresSecureCoding = true
-            record.encodeSystemFields(with: coder)
-            coder.finishEncoding()
-
             // store this metadata on your local object
-            recordData = data
-
+            recordData = systemFieldData(for: record)
             recordName = record.recordID.recordName
 
             fillCloudRecord(record)
@@ -58,22 +52,34 @@ extension CKRecordConvertable where Self: NSManagedObject {
         }
     }
 
-    func updateWithRecord(_ record: CKRecord) {
-        let data = NSMutableData()
-        let coder = NSKeyedArchiver(forWritingWith: data)
-        coder.requiresSecureCoding = true
-        record.encodeSystemFields(with: coder)
-        coder.finishEncoding()
+    // MARK: - Update from Cloud
 
-        recordData = data
+    func updateWithRecord(_ record: CKRecord) {
+        recordData = systemFieldData(for: record)
 
         updateDetails(with: record)
     }
+
+    // MARK: - Helpers
 
     func generateRecordID(zoneID: CKRecordZone.ID) -> CKRecord.ID {
         let uuid = UUID()
         let recordName = recordType() + "." + uuid.uuidString
 
         return CKRecord.ID(recordName: recordName, zoneID: zoneID)
+    }
+
+    func systemFieldData(for record: CKRecord) -> NSData {
+        let data = NSMutableData()
+        let coder = NSKeyedArchiver(forWritingWith: data)
+        coder.requiresSecureCoding = true
+        record.encodeSystemFields(with: coder)
+        coder.finishEncoding()
+
+        return data
+    }
+
+    func recordType() -> String {
+        return String(describing: type(of: self))
     }
 }
