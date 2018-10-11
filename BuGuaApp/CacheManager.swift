@@ -53,7 +53,7 @@ class CacheManager {
             for id in objectIds {
                 if let obj = try? self.context.existingObject(with: id) {
                     guard let ckObj = obj as? CKRecordConvertable else {
-                        fatalError("Attempting to upload an entity that's not compatible with CloudKit")
+                        fatalError("Attempting to upload an entity (\(obj.entity.name!)) that's not compatible with CloudKit")
                     }
 
                     objects.append(ckObj)
@@ -68,7 +68,7 @@ class CacheManager {
     }
 
     /// Call this method to save the changes from Cloud
-    func saveUpdates(ckRecords: [CKRecord], deletedIds _: [CKRecord.ID]) {
+    func saveUpdates(ckRecords: [CKRecord], deletedIds _: [CKRecord.ID], removeCache: Bool) {
         context.perform {
             for record in ckRecords {
                 guard let correspondingObject = self.retrieveObject(for: record.recordID.recordName) else {
@@ -76,6 +76,15 @@ class CacheManager {
                 }
 
                 correspondingObject.updateWithRecord(record)
+
+                if removeCache, let managedObject = correspondingObject as? NSManagedObject {
+                    let request = NSFetchRequest<CacheRecord>(entityName: CacheRecord.entityName)
+                    request.predicate = NSPredicate(format: "\(#keyPath(CacheRecord.managedObjectId)) == %@", managedObject.objectID.uriRepresentation() as CVarArg)
+
+                    try! self.context.fetch(request).forEach { cacheRecord in
+                        self.context.delete(cacheRecord)
+                    }
+                }
             }
 
             try! self.context.save()

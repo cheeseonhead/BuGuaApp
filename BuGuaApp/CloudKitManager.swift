@@ -102,8 +102,6 @@ class CloudKitManager {
             }
 
             let recordOperation = CKModifyRecordsOperation(recordsToSave: records, recordIDsToDelete: nil)
-            recordOperation.configuration.container = self.container
-            recordOperation.database = self.container.privateCloudDatabase
             recordOperation.perRecordCompletionBlock = { record, error in
                 print(error?.localizedDescription ?? "")
                 print(record)
@@ -115,10 +113,10 @@ class CloudKitManager {
                 }
 
                 // TODO: Handle Deletion
-                self.cacheManager.saveUpdates(ckRecords: modifiedRecords ?? [], deletedIds: deletedIds ?? [])
+                self.cacheManager.saveUpdates(ckRecords: modifiedRecords ?? [], deletedIds: deletedIds ?? [], removeCache: true)
             }
 
-            recordOperation.start()
+            self.container.privateCloudDatabase.add(recordOperation)
         }
     }
 }
