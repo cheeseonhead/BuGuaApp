@@ -76,3 +76,20 @@ class CacheManager {
         // TODO: Handle deletion
     }
 }
+
+private extension CacheManager {
+    func retrieveObject(for recordName: String) -> CKRecordConvertable? {
+        guard let dotIndex = recordName.index(of: ".") else { return nil }
+        let entityName = String(recordName.prefix(upTo: dotIndex))
+        
+        let request = NSFetchRequest<NSManagedObject>(entityName: entityName)
+        request.predicate = NSPredicate(format: "recordName == %@", recordName)
+        
+        do {
+            guard let r = try context.fetch(request)[0] as? CKRecordConvertable else { return nil }
+            return r
+        } catch {
+            fatalError(error.localizedDescription)
+        }
+    }
+}
