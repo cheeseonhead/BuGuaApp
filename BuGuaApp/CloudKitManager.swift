@@ -108,8 +108,14 @@ class CloudKitManager {
                 print(error?.localizedDescription ?? "")
                 print(record)
             }
-            recordOperation.modifyRecordsCompletionBlock = { _, _, _ in
+            recordOperation.modifyRecordsCompletionBlock = { modifiedRecords, deletedIds, error in
                 // TODO: Handle error
+                guard error == nil else {
+                    return
+                }
+
+                // TODO: Handle Deletion
+                self.cacheManager.saveUpdates(ckRecords: modifiedRecords ?? [], deletedIds: deletedIds ?? [])
             }
 
             recordOperation.start()
