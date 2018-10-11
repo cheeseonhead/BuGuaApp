@@ -113,7 +113,7 @@ class CloudKitManager {
                 }
 
                 // TODO: Handle Deletion
-                self.cacheManager.saveUpdates(ckRecords: modifiedRecords ?? [], deletedIds: deletedIds ?? [], removeCache: true)
+                self.cacheManager.handleCacheUpdates(ckRecords: modifiedRecords ?? [], deletedIds: deletedIds ?? [])
             }
 
             self.container.privateCloudDatabase.add(recordOperation)

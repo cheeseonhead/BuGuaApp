@@ -36,17 +36,12 @@ class CacheManager {
 
     /// Call this method to get all the objects that are waiting to be uploaded
     func getCached(_ completion: @escaping ([CKRecordConvertable]) -> Void) {
-        let request = NSFetchRequest<CacheRecord>(entityName: CacheRecord.entityName)
-        request.predicate = NSPredicate(format: "\(#keyPath(CacheRecord.nextTryTimestamp)) < %@", NSDate())
-        request.fetchLimit = 1
-        request.sortDescriptors = [NSSortDescriptor(key: #keyPath(CacheRecord.nextTryTimestamp), ascending: true)]
-
         context.perform { [unowned self] in
-            let records = try! self.context.fetch(request)
-            let urls = records.map { $0.managedObjectId }
-            let objectIds = urls.map { (url) -> NSManagedObjectID in
-                return self.context.persistentStoreCoordinator!.managedObjectID(forURIRepresentation: url)!
-            }
+            let objectIds = self.fetchAllMatureCacheRecords()
+                .map { $0.managedObjectId }
+                .map { (url) -> NSManagedObjectID in
+                    return self.context.persistentStoreCoordinator!.managedObjectID(forURIRepresentation: url)!
+                }
 
             var objects = [CKRecordConvertable]()
 
@@ -68,7 +63,7 @@ class CacheManager {
     }
 
     /// Call this method to save the changes from Cloud
-    func saveUpdates(ckRecords: [CKRecord], deletedIds _: [CKRecord.ID], removeCache: Bool) {
+    func handleCacheUpdates(ckRecords: [CKRecord], deletedIds _: [CKRecord.ID]) {
         context.perform {
             for record in ckRecords {
                 guard let correspondingObject = self.retrieveObject(for: record.recordID.recordName) else {
@@ -77,13 +72,8 @@ class CacheManager {
 
                 correspondingObject.updateWithRecord(record)
 
-                if removeCache, let managedObject = correspondingObject as? NSManagedObject {
-                    let request = NSFetchRequest<CacheRecord>(entityName: CacheRecord.entityName)
-                    request.predicate = NSPredicate(format: "\(#keyPath(CacheRecord.managedObjectId)) == %@", managedObject.objectID.uriRepresentation() as CVarArg)
-
-                    try! self.context.fetch(request).forEach { cacheRecord in
-                        self.context.delete(cacheRecord)
-                    }
+                if let managedObject = correspondingObject as? NSManagedObject {
+                    self.deleteCache(for: managedObject)
                 }
             }
 
@@ -107,6 +97,24 @@ private extension CacheManager {
             return r
         } catch {
             fatalError(error.localizedDescription)
+        }
+    }
+
+    func fetchAllMatureCacheRecords() -> [CacheRecord] {
+        let request = NSFetchRequest<CacheRecord>(entityName: CacheRecord.entityName)
+        request.predicate = NSPredicate(format: "\(#keyPath(CacheRecord.nextTryTimestamp)) < %@", NSDate())
+        request.fetchLimit = 1
+        request.sortDescriptors = [NSSortDescriptor(key: #keyPath(CacheRecord.nextTryTimestamp), ascending: true)]
+
+        return try! context.fetch(request)
+    }
+
+    func deleteCache(for managedObject: NSManagedObject) {
+        let request = NSFetchRequest<CacheRecord>(entityName: CacheRecord.entityName)
+        request.predicate = NSPredicate(format: "\(#keyPath(CacheRecord.managedObjectId)) == %@", managedObject.objectID.uriRepresentation() as CVarArg)
+
+        try! context.fetch(request).forEach { cacheRecord in
+            self.context.delete(cacheRecord)
         }
     }
 }
