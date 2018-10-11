@@ -59,7 +59,7 @@ class CacheManager {
                     continue
                 }
             }
-
+            try! self.context.save()
             completion(objects)
         }
     }
