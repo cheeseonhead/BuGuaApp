@@ -19,6 +19,8 @@ class CacheManager {
         self.dateGenerator = dateGenerator
     }
 
+    /// Call this method if there are managed objects that have been modified and should be uploaded to the cloud at
+    /// a later time.
     func cacheUpdate(ids: [NSManagedObjectID]) {
         let uris = ids.map { $0.uriRepresentation() }
 
@@ -32,6 +34,7 @@ class CacheManager {
         }
     }
 
+    /// Call this method to get all the objects that are waiting to be uploaded
     func getCached(_ completion: @escaping ([CKRecordConvertable]) -> Void) {
         let request = NSFetchRequest<CacheRecord>(entityName: CacheRecord.entityName)
         request.predicate = NSPredicate(format: "\(#keyPath(CacheRecord.nextTryTimestamp)) < %@", NSDate())
@@ -64,6 +67,7 @@ class CacheManager {
         }
     }
 
+    /// Call this method to save the changes from Cloud
     func saveUpdates(ckRecords: [CKRecord], deletedIds _: [CKRecord.ID]) {
         context.perform {
             for record in ckRecords {
