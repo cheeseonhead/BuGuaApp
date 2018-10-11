@@ -65,12 +65,16 @@ class CacheManager {
     }
 
     func saveUpdates(ckRecords: [CKRecord], deletedIds _: [CKRecord.ID]) {
-        let recordNames = ckRecords.map {
-            $0.recordID.recordName
-        }
-
         context.perform {
-            for recordName in recordNames {}
+            for record in ckRecords {
+                guard let correspondingObject = self.retrieveObject(for: record.recordID.recordName) else {
+                    continue
+                }
+
+                correspondingObject.updateWithRecord(record)
+            }
+
+            try! self.context.save()
         }
 
         // TODO: Handle deletion
@@ -81,10 +85,10 @@ private extension CacheManager {
     func retrieveObject(for recordName: String) -> CKRecordConvertable? {
         guard let dotIndex = recordName.index(of: ".") else { return nil }
         let entityName = String(recordName.prefix(upTo: dotIndex))
-        
+
         let request = NSFetchRequest<NSManagedObject>(entityName: entityName)
         request.predicate = NSPredicate(format: "recordName == %@", recordName)
-        
+
         do {
             guard let r = try context.fetch(request)[0] as? CKRecordConvertable else { return nil }
             return r
