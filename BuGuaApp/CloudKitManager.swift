@@ -15,7 +15,7 @@ class CloudKitManager {
 
         case loggedIn, loginError(Error), notLoggedIn, couldNotDetermine, restricted
 
-        case zoneAdded
+        case inSync, serverOutdated, zoneOutdated
     }
 
     // MARK: - Public
@@ -55,7 +55,9 @@ class CloudKitManager {
         case .initialized: checkLoginStatus()
         case .loggedIn: addZone()
         case .notLoggedIn, .couldNotDetermine, .restricted, .loginError: checkLoginStatus()
-        case .zoneAdded: uploadCache()
+        case .serverOutdated: fetchUpdates()
+        case .zoneOutdated: return
+        case .inSync: uploadCache()
         }
     }
 
@@ -88,11 +90,89 @@ class CloudKitManager {
 
         zoneOperation.modifyRecordZonesCompletionBlock = { [unowned self] savedZones, _, _ in
             if savedZones?.contains(self.zone) ?? false {
-                self.state = .zoneAdded
+                self.state = .serverOutdated
             }
         }
 
         zoneOperation.start()
+    }
+
+    func fetchUpdates() {
+        var latestServerChangeToken = UserDefaults.standard.changeToken(forKey: "serverChangeToken")
+
+        let zoneChangesOperation = CKFetchDatabaseChangesOperation(previousServerChangeToken: latestServerChangeToken)
+
+        var changedZoneIDs: [CKRecordZone.ID] = []
+
+        zoneChangesOperation.recordZoneWithIDChangedBlock = {
+            changedZoneIDs.append($0)
+        }
+
+        zoneChangesOperation.changeTokenUpdatedBlock = {
+            print("New server token:\($0)")
+            latestServerChangeToken = $0
+        }
+
+        zoneChangesOperation.fetchDatabaseChangesCompletionBlock = { token, _, error in
+            if let error = error {
+                // TODO: Handler error
+                return
+            }
+
+            print("Final new server token:\(token)")
+            latestServerChangeToken = token
+
+            self.fetchZoneChanges(zoneIDs: changedZoneIDs, completion: {
+                UserDefaults.standard.setToken(latestServerChangeToken, forKey: "serverChangeToken")
+            })
+        }
+
+        container.privateCloudDatabase.add(zoneChangesOperation)
+    }
+
+    func fetchZoneChanges(zoneIDs: [CKRecordZone.ID], completion: @escaping () -> Void) {
+        // Look up the previous change token for each zone
+        var optionsByRecordZoneID = [CKRecordZone.ID: CKFetchRecordZoneChangesOperation.ZoneOptions]()
+        for zoneID in zoneIDs {
+            let options = CKFetchRecordZoneChangesOperation.ZoneOptions()
+            options.previousServerChangeToken = UserDefaults.standard.changeToken(forKey: "TestZoneChangeToken")
+            optionsByRecordZoneID[zoneID] = options
+        }
+        let operation = CKFetchRecordZoneChangesOperation(recordZoneIDs: zoneIDs, optionsByRecordZoneID: optionsByRecordZoneID)
+
+        operation.recordChangedBlock = { record in
+            print("Record changed:", record)
+            // Write this record change to memory
+        }
+
+        operation.recordWithIDWasDeletedBlock = { recordId, _ in
+            print("Record deleted:", recordId)
+            // Write this record deletion to memory
+        }
+
+//        operation.recordZoneChangeTokensUpdatedBlock = { (zoneId, token, data) in
+//            // Flush record changes and deletions for this zone to disk
+//            // Write this new zone change token to disk
+//            print("Zone: \(zoneId) Token:\(token)")
+//            UserDefaults.standard.set(token, forKey: "\(zoneId)serverChangeToken")
+//        }
+
+        operation.recordZoneFetchCompletionBlock = { zoneId, changeToken, _, _, error in
+            if let error = error {
+                return
+            }
+            print("Completion Zone: \(zoneId) Token:\(changeToken)")
+            UserDefaults.standard.setToken(changeToken, forKey: "TestZoneChangeToken")
+            // Flush record changes and deletions for this zone to disk
+            // Write this new zone change token to disk
+        }
+
+        operation.fetchRecordZoneChangesCompletionBlock = { error in
+            if let error = error {}
+            completion()
+        }
+
+        container.privateCloudDatabase.add(operation)
     }
 
     func uploadCache() {
@@ -118,5 +198,28 @@ class CloudKitManager {
 
             self.container.privateCloudDatabase.add(recordOperation)
         }
+    }
+}
+
+extension UserDefaults {
+    func setToken(_ token: CKServerChangeToken?, forKey key: String) {
+        guard let token = token else {
+            set(nil, forKey: key)
+            return
+        }
+        let data = NSKeyedArchiver.archivedData(withRootObject: token)
+        set(data, forKey: key)
+    }
+
+    func changeToken(forKey key: String) -> CKServerChangeToken? {
+        guard let data = data(forKey: key) else {
+            return nil
+        }
+
+        guard let token = NSKeyedUnarchiver.unarchiveObject(with: data) as? CKServerChangeToken else {
+            return nil
+        }
+
+        return token
     }
 }
