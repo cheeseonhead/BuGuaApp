@@ -143,6 +143,7 @@ class CloudKitManager {
         operation.recordChangedBlock = { record in
             print("Record changed:", record)
             // Write this record change to memory
+            self.cacheManager.recordUpdated(record)
         }
 
         operation.recordWithIDWasDeletedBlock = { recordId, _ in

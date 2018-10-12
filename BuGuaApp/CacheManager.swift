@@ -82,6 +82,21 @@ class CacheManager {
 
         // TODO: Handle deletion
     }
+
+    func recordUpdated(_ record: CKRecord) {
+        context.perform {
+            if let correspondingObject = self.retrieveObject(for: record.recordID.recordName) {
+                correspondingObject.updateWithRecord(record)
+            } else {
+                let newObject = NSEntityDescription.insertNewObject(forEntityName: record.recordType, into: self.context)
+
+                guard let r = newObject as? CKRecordConvertable else { return }
+                r.updateWithRecord(record)
+            }
+
+            try! self.context.save()
+        }
+    }
 }
 
 private extension CacheManager {
@@ -92,12 +107,10 @@ private extension CacheManager {
         let request = NSFetchRequest<NSManagedObject>(entityName: entityName)
         request.predicate = NSPredicate(format: "recordName == %@", recordName)
 
-        do {
-            guard let r = try context.fetch(request)[0] as? CKRecordConvertable else { return nil }
-            return r
-        } catch {
-            fatalError(error.localizedDescription)
-        }
+        let result = try! context.fetch(request)
+
+        guard result.count > 0, let r = result[0] as? CKRecordConvertable else { return nil }
+        return r
     }
 
     func fetchAllMatureCacheRecords() -> [CacheRecord] {
