@@ -124,6 +124,7 @@ class CloudKitManager {
 
             self.fetchZoneChanges(zoneIDs: changedZoneIDs, completion: {
                 UserDefaults.standard.setToken(latestServerChangeToken, forKey: "serverChangeToken")
+                self.state = .inSync
             })
         }
 
@@ -179,6 +180,8 @@ class CloudKitManager {
             let recordOperation = CKModifyRecordsOperation(recordsToSave: records, recordIDsToDelete: nil)
 
             recordOperation.perRecordCompletionBlock = { record, error in
+                // TODO: Handle out of date error
+
                 self.cacheManager.handleRecordUploadResult(record, error: error)
             }
 

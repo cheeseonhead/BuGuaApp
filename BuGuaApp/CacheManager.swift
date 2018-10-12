@@ -68,27 +68,6 @@ class CacheManager {
         }
     }
 
-    /// Call this method to save the changes from Cloud
-    func handleCacheUpdates(ckRecords: [CKRecord], deletedIds _: [CKRecord.ID]) {
-        context.perform {
-            for record in ckRecords {
-                guard let correspondingObject = self.retrieveObject(for: record.recordID.recordName) else {
-                    continue
-                }
-
-                correspondingObject.updateWithRecord(record)
-
-                if let managedObject = correspondingObject as? NSManagedObject {
-                    self.deleteCaches(for: managedObject)
-                }
-            }
-
-            try! self.context.save()
-        }
-
-        // TODO: Handle deletion
-    }
-
     /// This method is called when a record has been updated from the cloud
     func recordUpdated(_ record: CKRecord) {
         context.perform {
@@ -111,7 +90,7 @@ class CacheManager {
 
         context.perform {
             guard let correspondingObject = self.retrieveObject(for: record.recordID.recordName) else {
-                fatalError("Trying to handle a record uploaded doesn't exist locally")
+                fatalError("Trying to handle a record uploaded that doesn't exist locally")
             }
 
             correspondingObject.updateWithRecord(record)
