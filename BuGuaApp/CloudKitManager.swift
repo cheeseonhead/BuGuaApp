@@ -147,7 +147,7 @@ class CloudKitManager {
         operation.recordChangedBlock = { record in
             print("Record changed:", record)
             // Write this record change to memory
-            self.cacheManager.recordUpdated(record)
+            self.updateManager.recordUpdated(record)
         }
 
         operation.recordWithIDWasDeletedBlock = { recordId, _ in
@@ -185,6 +185,9 @@ class CloudKitManager {
             let recordOperation = CKModifyRecordsOperation(recordsToSave: recordsToUpload, recordIDsToDelete: idsToDelete)
 
             recordOperation.perRecordCompletionBlock = { record, error in
+                if error == nil {
+                    self.updateManager.recordUpdated(record)
+                }
                 // TODO: Handle out of date error
 
                 self.cacheManager.handleRecordUploadResult(record, error: error)

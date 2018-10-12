@@ -82,22 +82,6 @@ class CacheManager {
         }
     }
 
-    /// This method is called when a record has been updated from the cloud
-    func recordUpdated(_ record: CKRecord) {
-        context.perform {
-            if let correspondingObject = self.retrieveObject(for: record.recordID.recordName) {
-                correspondingObject.updateWithRecord(record)
-            } else {
-                let newObject = NSEntityDescription.insertNewObject(forEntityName: record.recordType, into: self.context)
-
-                guard let r = newObject as? CKRecordConvertable else { return }
-                r.updateWithRecord(record)
-            }
-
-            try! self.context.save()
-        }
-    }
-
     /// This method is called when a record upload result has come back
     func handleRecordUploadResult(_ record: CKRecord, error _: Error?) {
         // TODO: Handle error
@@ -106,8 +90,6 @@ class CacheManager {
             guard let correspondingObject = self.retrieveObject(for: record.recordID.recordName) else {
                 fatalError("Trying to handle a record uploaded that doesn't exist locally")
             }
-
-            correspondingObject.updateWithRecord(record)
 
             if let managedObject = correspondingObject as? NSManagedObject {
                 self.deleteCaches(for: managedObject)
