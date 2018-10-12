@@ -107,22 +107,27 @@ class CacheManager {
 
     /// This method is called when a record upload result has come back
     func handleRecordUploadResult(_ record: CKRecord, error _: Error?) {
-        // TODO: Handle deletion
+        // TODO: Handle error
 
-        guard let correspondingObject = self.retrieveObject(for: record.recordID.recordName) else {
-            fatalError("Trying to handle a record uploaded doesn't exist locally")
-        }
+        context.perform {
+            guard let correspondingObject = self.retrieveObject(for: record.recordID.recordName) else {
+                fatalError("Trying to handle a record uploaded doesn't exist locally")
+            }
 
-        correspondingObject.updateWithRecord(record)
+            correspondingObject.updateWithRecord(record)
 
-        if let managedObject = correspondingObject as? NSManagedObject {
-            deleteCaches(for: managedObject)
+            if let managedObject = correspondingObject as? NSManagedObject {
+                self.deleteCaches(for: managedObject)
+            }
+
+            try! self.context.save()
         }
     }
 
     /// This method is called when the whole operation finished
     func handleRecordDeletionResult(_: [CKRecord.ID]?, error _: Error?) {
         // TODO: Handle deletion
+        // If anything failed, just create another CacheRecord.
     }
 }
 
