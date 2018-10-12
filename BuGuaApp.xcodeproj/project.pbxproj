@@ -41,6 +41,11 @@
 		9B1D70492171473600E517F5 /* ImmutableConvertable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9B1D70482171473600E517F5 /* ImmutableConvertable.swift */; };
 		9B1D704B2171475900E517F5 /* ManagedConvertable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9B1D704A2171475900E517F5 /* ManagedConvertable.swift */; };
 		9B1D704D217147A200E517F5 /* RepeatingTimer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9B1D704C217147A200E517F5 /* RepeatingTimer.swift */; };
+		9B1D70552171674800E517F5 /* BuGuaApp.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 9B1D70532171674800E517F5 /* BuGuaApp.xcdatamodeld */; };
+		9B1D705A2171681F00E517F5 /* GregorianDateObject+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9B1D70562171681F00E517F5 /* GregorianDateObject+CoreDataClass.swift */; };
+		9B1D705B2171681F00E517F5 /* GregorianDateObject+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9B1D70572171681F00E517F5 /* GregorianDateObject+CoreDataProperties.swift */; };
+		9B1D705C2171681F00E517F5 /* BuGuaEntryObject+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9B1D70582171681F00E517F5 /* BuGuaEntryObject+CoreDataClass.swift */; };
+		9B1D705D2171681F00E517F5 /* BuGuaEntryObject+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9B1D70592171681F00E517F5 /* BuGuaEntryObject+CoreDataProperties.swift */; };
 		9B273D3321390ABD00BDFBE3 /* SnapKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9B273D3221390ABD00BDFBE3 /* SnapKit.framework */; };
 		9B2AFBA62156EC9100DF9A5E /* GuaXiangRow.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9B2AFBA52156EC9100DF9A5E /* GuaXiangRow.swift */; };
 		9B2AFBA82157011800DF9A5E /* ShiYaoView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9B2AFBA72157011800DF9A5E /* ShiYaoView.swift */; };
@@ -177,6 +182,11 @@
 		9B1D70482171473600E517F5 /* ImmutableConvertable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImmutableConvertable.swift; sourceTree = "<group>"; };
 		9B1D704A2171475900E517F5 /* ManagedConvertable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ManagedConvertable.swift; sourceTree = "<group>"; };
 		9B1D704C217147A200E517F5 /* RepeatingTimer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RepeatingTimer.swift; sourceTree = "<group>"; };
+		9B1D70542171674800E517F5 /* BuGuaApp.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = BuGuaApp.xcdatamodel; sourceTree = "<group>"; };
+		9B1D70562171681F00E517F5 /* GregorianDateObject+CoreDataClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "GregorianDateObject+CoreDataClass.swift"; sourceTree = "<group>"; };
+		9B1D70572171681F00E517F5 /* GregorianDateObject+CoreDataProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "GregorianDateObject+CoreDataProperties.swift"; sourceTree = "<group>"; };
+		9B1D70582171681F00E517F5 /* BuGuaEntryObject+CoreDataClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "BuGuaEntryObject+CoreDataClass.swift"; sourceTree = "<group>"; };
+		9B1D70592171681F00E517F5 /* BuGuaEntryObject+CoreDataProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "BuGuaEntryObject+CoreDataProperties.swift"; sourceTree = "<group>"; };
 		9B273D3221390ABD00BDFBE3 /* SnapKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SnapKit.framework; path = Carthage/Build/iOS/SnapKit.framework; sourceTree = "<group>"; };
 		9B2AFBA52156EC9100DF9A5E /* GuaXiangRow.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GuaXiangRow.swift; sourceTree = "<group>"; };
 		9B2AFBA72157011800DF9A5E /* ShiYaoView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShiYaoView.swift; sourceTree = "<group>"; };
@@ -377,6 +387,8 @@
 			isa = PBXGroup;
 			children = (
 				9B1D7045217146D700E517F5 /* Protocols */,
+				9B1D705E2171682E00E517F5 /* ManagedObject */,
+				9B1D70532171674800E517F5 /* BuGuaApp.xcdatamodeld */,
 			);
 			name = Persistent;
 			sourceTree = "<group>";
@@ -389,6 +401,17 @@
 				9B1D704A2171475900E517F5 /* ManagedConvertable.swift */,
 			);
 			name = Protocols;
+			sourceTree = "<group>";
+		};
+		9B1D705E2171682E00E517F5 /* ManagedObject */ = {
+			isa = PBXGroup;
+			children = (
+				9B1D70562171681F00E517F5 /* GregorianDateObject+CoreDataClass.swift */,
+				9B1D70572171681F00E517F5 /* GregorianDateObject+CoreDataProperties.swift */,
+				9B1D70582171681F00E517F5 /* BuGuaEntryObject+CoreDataClass.swift */,
+				9B1D70592171681F00E517F5 /* BuGuaEntryObject+CoreDataProperties.swift */,
+			);
+			name = ManagedObject;
 			sourceTree = "<group>";
 		};
 		9B8B4F01215C431B009FBCD2 /* Cell */ = {
@@ -810,6 +833,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				9B933F6F213794F7004DCD3F /* UIFont+AppFont.swift in Sources */,
+				9B1D705C2171681F00E517F5 /* BuGuaEntryObject+CoreDataClass.swift in Sources */,
 				9B19592D21615AA500AA320A /* UITableViewCell+Nib.swift in Sources */,
 				3413A5632140D6FB00245C46 /* NumericTextfieldDelegate.swift in Sources */,
 				9B8B4F03215C4339009FBCD2 /* MasterDetailCell.swift in Sources */,
@@ -829,8 +853,12 @@
 				346334482148A66E001D462B /* Container+Operator.swift in Sources */,
 				34F3E4FF2150A84F00A9BA2B /* Rx+Operators.swift in Sources */,
 				9B19593F2161709D00AA320A /* TimeGanZhiViewModel.swift in Sources */,
+				9B1D70552171674800E517F5 /* BuGuaApp.xcdatamodeld in Sources */,
+				9B1D705B2171681F00E517F5 /* GregorianDateObject+CoreDataProperties.swift in Sources */,
 				9B933F3B2134EB01004DCD3F /* FuXiBaGuaView.swift in Sources */,
+				9B1D705D2171681F00E517F5 /* BuGuaEntryObject+CoreDataProperties.swift in Sources */,
 				9BCE8874214F2E220024FEF7 /* DateGanZhiViewController.swift in Sources */,
+				9B1D705A2171681F00E517F5 /* GregorianDateObject+CoreDataClass.swift in Sources */,
 				3413A5692140E0D600245C46 /* ComposableTextfieldDelegate.swift in Sources */,
 				9BCB3616213E254900F7FDDE /* AppFactory.swift in Sources */,
 				9B933F772137A8C3004DCD3F /* YaoView.swift in Sources */,
@@ -1234,6 +1262,19 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCVersionGroup section */
+		9B1D70532171674800E517F5 /* BuGuaApp.xcdatamodeld */ = {
+			isa = XCVersionGroup;
+			children = (
+				9B1D70542171674800E517F5 /* BuGuaApp.xcdatamodel */,
+			);
+			currentVersion = 9B1D70542171674800E517F5 /* BuGuaApp.xcdatamodel */;
+			path = BuGuaApp.xcdatamodeld;
+			sourceTree = "<group>";
+			versionGroupType = wrapper.xcdatamodel;
+		};
+/* End XCVersionGroup section */
 	};
 	rootObject = 9B933EE52134E529004DCD3F /* Project object */;
 }
