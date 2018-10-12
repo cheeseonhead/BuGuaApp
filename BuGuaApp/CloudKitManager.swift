@@ -138,6 +138,7 @@ class CloudKitManager {
             options.previousServerChangeToken = UserDefaults.standard.changeToken(forKey: "TestZoneChangeToken")
             optionsByRecordZoneID[zoneID] = options
         }
+
         let operation = CKFetchRecordZoneChangesOperation(recordZoneIDs: zoneIDs, optionsByRecordZoneID: optionsByRecordZoneID)
 
         operation.recordChangedBlock = { record in
@@ -150,13 +151,6 @@ class CloudKitManager {
             print("Record deleted:", recordId)
             // Write this record deletion to memory
         }
-
-//        operation.recordZoneChangeTokensUpdatedBlock = { (zoneId, token, data) in
-//            // Flush record changes and deletions for this zone to disk
-//            // Write this new zone change token to disk
-//            print("Zone: \(zoneId) Token:\(token)")
-//            UserDefaults.standard.set(token, forKey: "\(zoneId)serverChangeToken")
-//        }
 
         operation.recordZoneFetchCompletionBlock = { zoneId, changeToken, _, _, error in
             if let error = error {
@@ -183,18 +177,18 @@ class CloudKitManager {
             }
 
             let recordOperation = CKModifyRecordsOperation(recordsToSave: records, recordIDsToDelete: nil)
+
             recordOperation.perRecordCompletionBlock = { record, error in
-                print(error?.localizedDescription ?? "")
-                print(record)
+                self.cacheManager.handleRecordUploadResult(record, error: error)
             }
-            recordOperation.modifyRecordsCompletionBlock = { modifiedRecords, deletedIds, error in
+
+            recordOperation.modifyRecordsCompletionBlock = { _, _, error in
                 // TODO: Handle error
                 guard error == nil else {
                     return
                 }
 
                 // TODO: Handle Deletion
-                self.cacheManager.handleCacheUpdates(ckRecords: modifiedRecords ?? [], deletedIds: deletedIds ?? [])
             }
 
             self.container.privateCloudDatabase.add(recordOperation)
