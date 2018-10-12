@@ -14,24 +14,7 @@ var testingCGFloat: CGFloat = 0
 class ViewController: UIViewController {
     let guaXiangBuilder = LiuYaoGuaXiangBuilder()
 
-    override func viewDidLoad() {
-        super.viewDidLoad()
-
-        let factory = AppFactory()
-
-        let vm = factory.makeTimePickerViewModel()
-        let vc = factory.makeTimePickerViewController(viewModel: vm)
-
-        add(vc)
-
-        vc.view.snp.makeConstraints { (make) in
-            make.edges.equalToSuperview()
-        }
-
-//        vm.gregorianTimeRelay.drive(onNext: { (time) in
-//            print(time)
-//        })
-    }
+    override func viewDidLoad() {}
 
     override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(animated)
