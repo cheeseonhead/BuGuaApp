@@ -37,6 +37,7 @@
 		9B19593D2161708900AA320A /* TimeGanZhiViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 9B19593B2161708900AA320A /* TimeGanZhiViewController.xib */; };
 		9B19593F2161709D00AA320A /* TimeGanZhiViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9B19593E2161709D00AA320A /* TimeGanZhiViewModel.swift */; };
 		9B1D70432171466C00E517F5 /* CloudKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9B1D70422171466C00E517F5 /* CloudKit.framework */; };
+		9B1D7047217146E100E517F5 /* CKRecordConvertable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9B1D7046217146E100E517F5 /* CKRecordConvertable.swift */; };
 		9B273D3321390ABD00BDFBE3 /* SnapKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9B273D3221390ABD00BDFBE3 /* SnapKit.framework */; };
 		9B2AFBA62156EC9100DF9A5E /* GuaXiangRow.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9B2AFBA52156EC9100DF9A5E /* GuaXiangRow.swift */; };
 		9B2AFBA82157011800DF9A5E /* ShiYaoView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9B2AFBA72157011800DF9A5E /* ShiYaoView.swift */; };
@@ -169,6 +170,7 @@
 		9B19593E2161709D00AA320A /* TimeGanZhiViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TimeGanZhiViewModel.swift; sourceTree = "<group>"; };
 		9B1D70412171466A00E517F5 /* BuGuaApp.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = BuGuaApp.entitlements; sourceTree = "<group>"; };
 		9B1D70422171466C00E517F5 /* CloudKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CloudKit.framework; path = System/Library/Frameworks/CloudKit.framework; sourceTree = SDKROOT; };
+		9B1D7046217146E100E517F5 /* CKRecordConvertable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CKRecordConvertable.swift; sourceTree = "<group>"; };
 		9B273D3221390ABD00BDFBE3 /* SnapKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SnapKit.framework; path = Carthage/Build/iOS/SnapKit.framework; sourceTree = "<group>"; };
 		9B2AFBA52156EC9100DF9A5E /* GuaXiangRow.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GuaXiangRow.swift; sourceTree = "<group>"; };
 		9B2AFBA72157011800DF9A5E /* ShiYaoView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShiYaoView.swift; sourceTree = "<group>"; };
@@ -364,6 +366,22 @@
 			name = Playground;
 			sourceTree = "<group>";
 		};
+		9B1D7044217146CB00E517F5 /* Persistent */ = {
+			isa = PBXGroup;
+			children = (
+				9B1D7045217146D700E517F5 /* Protocols */,
+			);
+			name = Persistent;
+			sourceTree = "<group>";
+		};
+		9B1D7045217146D700E517F5 /* Protocols */ = {
+			isa = PBXGroup;
+			children = (
+				9B1D7046217146E100E517F5 /* CKRecordConvertable.swift */,
+			);
+			name = Protocols;
+			sourceTree = "<group>";
+		};
 		9B8B4F01215C431B009FBCD2 /* Cell */ = {
 			isa = PBXGroup;
 			children = (
@@ -413,6 +431,7 @@
 				9BCE8865214F11330024FEF7 /* BuGuaEntryFlow */,
 				9BCB3612213E227700F7FDDE /* Coordinators */,
 				9B933F3C2134EB58004DCD3F /* Views */,
+				9B1D7044217146CB00E517F5 /* Persistent */,
 				3413A5612140D6E700245C46 /* Utilities */,
 				9B933F3D2134EB64004DCD3F /* Extensions */,
 				9B1959402161968400AA320A /* Playground */,
@@ -807,6 +826,7 @@
 				9B933F772137A8C3004DCD3F /* YaoView.swift in Sources */,
 				9B8B4F06215C5872009FBCD2 /* ContentCell.swift in Sources */,
 				9BCB361A213E30D700F7FDDE /* GuaXiangViewModel.swift in Sources */,
+				9B1D7047217146E100E517F5 /* CKRecordConvertable.swift in Sources */,
 				34A13D4F2142294D00D77D98 /* Int+Conversion.swift in Sources */,
 				9BCB3609213E011800F7FDDE /* String+Vertical.swift in Sources */,
 				9BCB3618213E2A5800F7FDDE /* BuGuaEntryCoordinator.swift in Sources */,
