@@ -269,7 +269,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				9BF12BB4216C318000021249 /* CloudKit.framework in Frameworks */,
+				9B1D70432171466C00E517F5 /* CloudKit.framework in Frameworks */,
 				341EE5C12143957C00CB7D53 /* RxSwiftExt.framework in Frameworks */,
 				9B273D3321390ABD00BDFBE3 /* SnapKit.framework in Frameworks */,
 				9B933F6521364AD4004DCD3F /* RxSwift.framework in Frameworks */,
@@ -401,6 +401,24 @@
 			name = Playground;
 			sourceTree = "<group>";
 		};
+		9B1D7044217146CB00E517F5 /* Persistent */ = {
+			isa = PBXGroup;
+			children = (
+				9B1D7045217146D700E517F5 /* Protocols */,
+			);
+			name = Persistent;
+			sourceTree = "<group>";
+		};
+		9B1D7045217146D700E517F5 /* Protocols */ = {
+			isa = PBXGroup;
+			children = (
+				9B1D7046217146E100E517F5 /* CKRecordConvertable.swift */,
+				9B1D70482171473600E517F5 /* ImmutableConvertable.swift */,
+				9B1D704A2171475900E517F5 /* ManagedConvertable.swift */,
+			);
+			name = Protocols;
+			sourceTree = "<group>";
+		};
 		9B8B4F01215C431B009FBCD2 /* Cell */ = {
 			isa = PBXGroup;
 			children = (
@@ -444,7 +462,6 @@
 		9B933EEF2134E529004DCD3F /* BuGuaApp */ = {
 			isa = PBXGroup;
 			children = (
-				9BF12BB2216C317D00021249 /* BuGuaApp.entitlements */,
 				9B933EF02134E529004DCD3F /* AppDelegate.swift */,
 				9BCB3615213E254900F7FDDE /* AppFactory.swift */,
 				9BCB3613213E234000F7FDDE /* AppCoordinator.swift */,
@@ -452,6 +469,7 @@
 				9BF12B80216AB7F100021249 /* Persistent */,
 				9BCB3612213E227700F7FDDE /* Coordinators */,
 				9B933F3C2134EB58004DCD3F /* Views */,
+				9B1D7044217146CB00E517F5 /* Persistent */,
 				3413A5612140D6E700245C46 /* Utilities */,
 				9B933F3D2134EB64004DCD3F /* Extensions */,
 				9B1959402161968400AA320A /* Playground */,
@@ -460,6 +478,7 @@
 				9B933EF92134E52A004DCD3F /* LaunchScreen.storyboard */,
 				9B933EFC2134E52A004DCD3F /* Info.plist */,
 				34F3E4FB2150945C00A9BA2B /* Localizable.strings */,
+				9B1D70412171466A00E517F5 /* BuGuaApp.entitlements */,
 			);
 			path = BuGuaApp;
 			sourceTree = "<group>";
@@ -522,7 +541,7 @@
 		9B933F472135008A004DCD3F /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
-				9BF12BB3216C318000021249 /* CloudKit.framework */,
+				9B1D70422171466C00E517F5 /* CloudKit.framework */,
 				341EE5C02143957C00CB7D53 /* RxSwiftExt.framework */,
 				9B273D3221390ABD00BDFBE3 /* SnapKit.framework */,
 				9B933F5E21364AD4004DCD3F /* RxBlocking.framework */,
@@ -880,6 +899,7 @@
 				3413A5632140D6FB00245C46 /* NumericTextfieldDelegate.swift in Sources */,
 				9B8B4F03215C4339009FBCD2 /* MasterDetailCell.swift in Sources */,
 				9BCE8863214F0A590024FEF7 /* GuaXiangInputCoordinatorModel.swift in Sources */,
+				9B1D70492171473600E517F5 /* ImmutableConvertable.swift in Sources */,
 				9BCE886C214F13780024FEF7 /* DatePickerViewModel.swift in Sources */,
 				9BF12BAB216C264800021249 /* CKRecordConvertable.swift in Sources */,
 				9BF12BA4216ABDEF00021249 /* Mediator.swift in Sources */,
@@ -908,6 +928,7 @@
 				3413A5692140E0D600245C46 /* ComposableTextfieldDelegate.swift in Sources */,
 				9BCB3616213E254900F7FDDE /* AppFactory.swift in Sources */,
 				9B933F772137A8C3004DCD3F /* YaoView.swift in Sources */,
+				9B1D704B2171475900E517F5 /* ManagedConvertable.swift in Sources */,
 				9B8B4F06215C5872009FBCD2 /* ContentCell.swift in Sources */,
 				9BF12BB6216C31DC00021249 /* NSManagedObject+Data.swift in Sources */,
 				9BCB361A213E30D700F7FDDE /* GuaXiangViewModel.swift in Sources */,
