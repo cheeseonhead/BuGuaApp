@@ -26,7 +26,11 @@ class StorageManager {
         context.perform { [unowned self] in
             let insertedObjects = self.context.insertedObjects
             let modifiedObjects = self.context.updatedObjects
-            let deletedRecordIDs = self.context.deletedObjects.map { $0.objectID }
+            let deletedRecordIDs = self.context.deletedObjects.map { obj -> NSData? in
+                guard let ckConvertable = obj as? CKRecordConvertable else { return nil }
+
+                return ckConvertable.recordData
+            }
 
             if self.context.hasChanges {
                 do {
@@ -37,7 +41,7 @@ class StorageManager {
 
                 let insertedObjectIDs = insertedObjects.map { $0.objectID }
                 let modifiedObjectIDs = modifiedObjects.map { $0.objectID }
-                self.cacheManager.cacheUpdate(ids: insertedObjectIDs + modifiedObjectIDs + deletedRecordIDs)
+                self.cacheManager.cacheUpdate(ids: insertedObjectIDs + modifiedObjectIDs, deleteIds: deletedRecordIDs)
             }
         }
     }

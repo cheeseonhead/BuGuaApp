@@ -27,13 +27,21 @@ class CacheManager {
 
     /// Call this method if there are managed objects that have been modified and should be uploaded to the cloud at
     /// a later time.
-    func cacheUpdate(ids: [NSManagedObjectID]) {
+    func cacheUpdate(ids: [NSManagedObjectID], deleteIds: [NSData?]) {
         let uris = ids.map { $0.uriRepresentation() }
 
         context.perform { [unowned self] in
             uris.forEach {
                 let cacheObject = CacheRecord(context: self.context)
                 cacheObject.managedObjectId = $0
+                cacheObject.nextTryTimestamp = self.dateGenerator()
+            }
+
+            deleteIds.forEach {
+                guard let id = $0 else { return }
+
+                let cacheObject = CacheRecord(context: self.context)
+                cacheObject.recordId = id
                 cacheObject.nextTryTimestamp = self.dateGenerator()
             }
             try! self.context.save()
