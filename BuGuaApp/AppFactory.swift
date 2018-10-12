@@ -22,6 +22,7 @@ class AppFactory {
     let storageManager: StorageManager
     let cacheManager: CacheManager
     let cloudManager: CloudKitManager
+    let updateManager: UpdateManager
 
     // MARK: - CoreData
 
@@ -37,7 +38,11 @@ class AppFactory {
 
         storageManager = StorageManager(cacheManager: cacheManager, context: container.viewContext)
 
-        cloudManager = CloudKitManager(container: CKContainer.default(), zone: CKRecordZone(zoneName: "Test"), cacheManager: cacheManager)
+        let updateContext = NSManagedObjectContext(concurrencyType: .privateQueueConcurrencyType)
+        updateContext.parent = self.container.viewContext
+        updateManager = UpdateManager(updateContext: updateContext)
+
+        cloudManager = CloudKitManager(container: CKContainer.default(), zone: CKRecordZone(zoneName: "Test"), cacheManager: cacheManager, updateManager: updateManager)
     }
 
     func makeAppCoordinator(with window: UIWindow) -> AppCoordinator {

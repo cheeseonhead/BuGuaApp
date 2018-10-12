@@ -31,15 +31,17 @@ class CloudKitManager {
     private let container: CKContainer
     private let zone: CKRecordZone
     private let cacheManager: CacheManager
+    private let updateManager: UpdateManager
 
     // MARK: - Private
 
     private let timer: RepeatingTimer
 
-    init(container: CKContainer, zone: CKRecordZone, cacheManager: CacheManager) {
+    init(container: CKContainer, zone: CKRecordZone, cacheManager: CacheManager, updateManager: UpdateManager) {
         self.container = container
         self.zone = zone
         self.cacheManager = cacheManager
+        self.updateManager = updateManager
 
         timer = RepeatingTimer(timeInterval: 5)
         timer.eventHandler = { [unowned self] in

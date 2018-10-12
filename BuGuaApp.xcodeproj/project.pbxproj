@@ -36,6 +36,7 @@
 		9B19593C2161708900AA320A /* TimeGanZhiViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9B19593A2161708900AA320A /* TimeGanZhiViewController.swift */; };
 		9B19593D2161708900AA320A /* TimeGanZhiViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 9B19593B2161708900AA320A /* TimeGanZhiViewController.xib */; };
 		9B19593F2161709D00AA320A /* TimeGanZhiViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9B19593E2161709D00AA320A /* TimeGanZhiViewModel.swift */; };
+		9B1D704021711E5300E517F5 /* UpdateManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9B1D703F21711E5300E517F5 /* UpdateManager.swift */; };
 		9B273D3321390ABD00BDFBE3 /* SnapKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9B273D3221390ABD00BDFBE3 /* SnapKit.framework */; };
 		9B2AFBA62156EC9100DF9A5E /* GuaXiangRow.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9B2AFBA52156EC9100DF9A5E /* GuaXiangRow.swift */; };
 		9B2AFBA82157011800DF9A5E /* ShiYaoView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9B2AFBA72157011800DF9A5E /* ShiYaoView.swift */; };
@@ -184,6 +185,7 @@
 		9B19593A2161708900AA320A /* TimeGanZhiViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TimeGanZhiViewController.swift; sourceTree = "<group>"; };
 		9B19593B2161708900AA320A /* TimeGanZhiViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = TimeGanZhiViewController.xib; sourceTree = "<group>"; };
 		9B19593E2161709D00AA320A /* TimeGanZhiViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TimeGanZhiViewModel.swift; sourceTree = "<group>"; };
+		9B1D703F21711E5300E517F5 /* UpdateManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UpdateManager.swift; sourceTree = "<group>"; };
 		9B273D3221390ABD00BDFBE3 /* SnapKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SnapKit.framework; path = Carthage/Build/iOS/SnapKit.framework; sourceTree = "<group>"; };
 		9B2AFBA52156EC9100DF9A5E /* GuaXiangRow.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GuaXiangRow.swift; sourceTree = "<group>"; };
 		9B2AFBA72157011800DF9A5E /* ShiYaoView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShiYaoView.swift; sourceTree = "<group>"; };
@@ -606,6 +608,7 @@
 				9BF12B8E216AB9D700021249 /* CacheManager.swift */,
 				9BF12B90216AB9FC00021249 /* CloudKitManager.swift */,
 				9BF12B92216ABA3C00021249 /* StorageManager.swift */,
+				9B1D703F21711E5300E517F5 /* UpdateManager.swift */,
 			);
 			name = Managers;
 			sourceTree = "<group>";
@@ -895,6 +898,7 @@
 				9B933F792138DEE2004DCD3F /* CGPoint+Math.swift in Sources */,
 				9BCE8867214F11960024FEF7 /* Coordinator.swift in Sources */,
 				3413A5652140D89900245C46 /* CharacterSet+MoreSets.swift in Sources */,
+				9B1D704021711E5300E517F5 /* UpdateManager.swift in Sources */,
 				346334482148A66E001D462B /* Container+Operator.swift in Sources */,
 				34F3E4FF2150A84F00A9BA2B /* Rx+Operators.swift in Sources */,
 				9B19593F2161709D00AA320A /* TimeGanZhiViewModel.swift in Sources */,
