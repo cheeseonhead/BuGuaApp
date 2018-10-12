@@ -40,6 +40,7 @@
 		9B1D7047217146E100E517F5 /* CKRecordConvertable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9B1D7046217146E100E517F5 /* CKRecordConvertable.swift */; };
 		9B1D70492171473600E517F5 /* ImmutableConvertable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9B1D70482171473600E517F5 /* ImmutableConvertable.swift */; };
 		9B1D704B2171475900E517F5 /* ManagedConvertable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9B1D704A2171475900E517F5 /* ManagedConvertable.swift */; };
+		9B1D704D217147A200E517F5 /* RepeatingTimer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9B1D704C217147A200E517F5 /* RepeatingTimer.swift */; };
 		9B273D3321390ABD00BDFBE3 /* SnapKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9B273D3221390ABD00BDFBE3 /* SnapKit.framework */; };
 		9B2AFBA62156EC9100DF9A5E /* GuaXiangRow.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9B2AFBA52156EC9100DF9A5E /* GuaXiangRow.swift */; };
 		9B2AFBA82157011800DF9A5E /* ShiYaoView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9B2AFBA72157011800DF9A5E /* ShiYaoView.swift */; };
@@ -175,6 +176,7 @@
 		9B1D7046217146E100E517F5 /* CKRecordConvertable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CKRecordConvertable.swift; sourceTree = "<group>"; };
 		9B1D70482171473600E517F5 /* ImmutableConvertable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImmutableConvertable.swift; sourceTree = "<group>"; };
 		9B1D704A2171475900E517F5 /* ManagedConvertable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ManagedConvertable.swift; sourceTree = "<group>"; };
+		9B1D704C217147A200E517F5 /* RepeatingTimer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RepeatingTimer.swift; sourceTree = "<group>"; };
 		9B273D3221390ABD00BDFBE3 /* SnapKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SnapKit.framework; path = Carthage/Build/iOS/SnapKit.framework; sourceTree = "<group>"; };
 		9B2AFBA52156EC9100DF9A5E /* GuaXiangRow.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GuaXiangRow.swift; sourceTree = "<group>"; };
 		9B2AFBA72157011800DF9A5E /* ShiYaoView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShiYaoView.swift; sourceTree = "<group>"; };
@@ -275,6 +277,7 @@
 				3413A5662140E0BC00245C46 /* AutoNextTextFieldDelegate.swift */,
 				3413A5682140E0D600245C46 /* ComposableTextfieldDelegate.swift */,
 				34A13D4C214222E700D77D98 /* IntegerLiuYaoConverter.swift */,
+				9B1D704C217147A200E517F5 /* RepeatingTimer.swift */,
 			);
 			name = Utilities;
 			sourceTree = "<group>";
@@ -845,6 +848,7 @@
 				9B19593421616BA000AA320A /* TimePickerViewController.swift in Sources */,
 				34EC158F21534EF700378758 /* ShallowThemeStore.swift in Sources */,
 				9B8B4F0A215C870F009FBCD2 /* BGPageControllerLayout.swift in Sources */,
+				9B1D704D217147A200E517F5 /* RepeatingTimer.swift in Sources */,
 				9B933F6D2136537A004DCD3F /* UIView+Layout.swift in Sources */,
 				3463344F2148BD4B001D462B /* HeaderLabelView.swift in Sources */,
 				34EC158D21534ECA00378758 /* Theme.swift in Sources */,
