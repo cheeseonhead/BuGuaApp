@@ -49,6 +49,7 @@
 		9B1D70662171690B00E517F5 /* StorageManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9B1D70652171690B00E517F5 /* StorageManager.swift */; };
 		9B1D70682171698100E517F5 /* Mediator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9B1D70672171698100E517F5 /* Mediator.swift */; };
 		9B1D706A217169B500E517F5 /* NSManagedObject+Data.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9B1D7069217169B500E517F5 /* NSManagedObject+Data.swift */; };
+		9B1D706C21716A1D00E517F5 /* BuGuaEntryMediator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9B1D706B21716A1D00E517F5 /* BuGuaEntryMediator.swift */; };
 		9B273D3321390ABD00BDFBE3 /* SnapKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9B273D3221390ABD00BDFBE3 /* SnapKit.framework */; };
 		9B2AFBA62156EC9100DF9A5E /* GuaXiangRow.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9B2AFBA52156EC9100DF9A5E /* GuaXiangRow.swift */; };
 		9B2AFBA82157011800DF9A5E /* ShiYaoView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9B2AFBA72157011800DF9A5E /* ShiYaoView.swift */; };
@@ -193,6 +194,7 @@
 		9B1D70652171690B00E517F5 /* StorageManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StorageManager.swift; sourceTree = "<group>"; };
 		9B1D70672171698100E517F5 /* Mediator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Mediator.swift; sourceTree = "<group>"; };
 		9B1D7069217169B500E517F5 /* NSManagedObject+Data.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "NSManagedObject+Data.swift"; sourceTree = "<group>"; };
+		9B1D706B21716A1D00E517F5 /* BuGuaEntryMediator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BuGuaEntryMediator.swift; sourceTree = "<group>"; };
 		9B273D3221390ABD00BDFBE3 /* SnapKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SnapKit.framework; path = Carthage/Build/iOS/SnapKit.framework; sourceTree = "<group>"; };
 		9B2AFBA52156EC9100DF9A5E /* GuaXiangRow.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GuaXiangRow.swift; sourceTree = "<group>"; };
 		9B2AFBA72157011800DF9A5E /* ShiYaoView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShiYaoView.swift; sourceTree = "<group>"; };
@@ -426,6 +428,7 @@
 		9B1D705F2171688C00E517F5 /* Mediators */ = {
 			isa = PBXGroup;
 			children = (
+				9B1D706B21716A1D00E517F5 /* BuGuaEntryMediator.swift */,
 			);
 			name = Mediators;
 			sourceTree = "<group>";
@@ -919,6 +922,7 @@
 				34BE79982159D26200B5010A /* BuGuaEntryViewModel.swift in Sources */,
 				9BCEE3A5215D844C000B50EC /* BGPageController.swift in Sources */,
 				9B19593C2161708900AA320A /* TimeGanZhiViewController.swift in Sources */,
+				9B1D706C21716A1D00E517F5 /* BuGuaEntryMediator.swift in Sources */,
 				9B933EF12134E529004DCD3F /* AppDelegate.swift in Sources */,
 				9B19593621616C0300AA320A /* TimePickerViewModel.swift in Sources */,
 				346334462148A52F001D462B /* Array+Convert.swift in Sources */,
