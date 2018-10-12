@@ -182,13 +182,13 @@ class CloudKitManager {
                 self.cacheManager.handleRecordUploadResult(record, error: error)
             }
 
-            recordOperation.modifyRecordsCompletionBlock = { _, _, error in
-                // TODO: Handle error
+            recordOperation.modifyRecordsCompletionBlock = { _, deletedIds, error in
+                // TODO: Handle out of date error
                 guard error == nil else {
                     return
                 }
 
-                // TODO: Handle Deletion
+                self.cacheManager.handleRecordDeletionResult(deletedIds, error: error)
             }
 
             self.container.privateCloudDatabase.add(recordOperation)
