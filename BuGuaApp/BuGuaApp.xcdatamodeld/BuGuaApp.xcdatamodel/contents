@@ -16,7 +16,7 @@
         <attribute name="recordData" optional="YES" attributeType="Binary" syncable="YES"/>
         <attribute name="recordName" optional="YES" attributeType="String" syncable="YES"/>
         <attribute name="year" attributeType="Integer 64" defaultValueString="0" usesScalarValueType="YES" syncable="YES"/>
-        <relationship name="buGuaEntry" maxCount="1" deletionRule="Nullify" destinationEntity="BuGuaEntryObject" inverseName="date" inverseEntity="BuGuaEntryObject" syncable="YES"/>
+        <relationship name="buGuaEntry" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="BuGuaEntryObject" inverseName="date" inverseEntity="BuGuaEntryObject" syncable="YES"/>
     </entity>
     <elements>
         <element name="BuGuaEntryObject" positionX="-18" positionY="54" width="128" height="90"/>

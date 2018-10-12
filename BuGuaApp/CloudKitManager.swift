@@ -126,7 +126,7 @@ class CloudKitManager {
 
             self.fetchZoneChanges(zoneIDs: changedZoneIDs, completion: {
                 UserDefaults.standard.setToken(latestServerChangeToken, forKey: "serverChangeToken")
-                self.state = .inSync
+                self.state = .serverOutdated
             })
         }
 
@@ -186,6 +186,7 @@ class CloudKitManager {
 
             recordOperation.perRecordCompletionBlock = { record, error in
                 if error == nil {
+                    print("Record uploaded successfully: \(record)")
                     self.updateManager.recordUpdated(record)
                 }
                 // TODO: Handle out of date error
