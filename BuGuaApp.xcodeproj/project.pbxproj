@@ -46,6 +46,7 @@
 		9B1D705B2171681F00E517F5 /* GregorianDateObject+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9B1D70572171681F00E517F5 /* GregorianDateObject+CoreDataProperties.swift */; };
 		9B1D705C2171681F00E517F5 /* BuGuaEntryObject+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9B1D70582171681F00E517F5 /* BuGuaEntryObject+CoreDataClass.swift */; };
 		9B1D705D2171681F00E517F5 /* BuGuaEntryObject+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9B1D70592171681F00E517F5 /* BuGuaEntryObject+CoreDataProperties.swift */; };
+		9B1D70662171690B00E517F5 /* StorageManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9B1D70652171690B00E517F5 /* StorageManager.swift */; };
 		9B273D3321390ABD00BDFBE3 /* SnapKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9B273D3221390ABD00BDFBE3 /* SnapKit.framework */; };
 		9B2AFBA62156EC9100DF9A5E /* GuaXiangRow.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9B2AFBA52156EC9100DF9A5E /* GuaXiangRow.swift */; };
 		9B2AFBA82157011800DF9A5E /* ShiYaoView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9B2AFBA72157011800DF9A5E /* ShiYaoView.swift */; };
@@ -187,6 +188,7 @@
 		9B1D70572171681F00E517F5 /* GregorianDateObject+CoreDataProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "GregorianDateObject+CoreDataProperties.swift"; sourceTree = "<group>"; };
 		9B1D70582171681F00E517F5 /* BuGuaEntryObject+CoreDataClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "BuGuaEntryObject+CoreDataClass.swift"; sourceTree = "<group>"; };
 		9B1D70592171681F00E517F5 /* BuGuaEntryObject+CoreDataProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "BuGuaEntryObject+CoreDataProperties.swift"; sourceTree = "<group>"; };
+		9B1D70652171690B00E517F5 /* StorageManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StorageManager.swift; sourceTree = "<group>"; };
 		9B273D3221390ABD00BDFBE3 /* SnapKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SnapKit.framework; path = Carthage/Build/iOS/SnapKit.framework; sourceTree = "<group>"; };
 		9B2AFBA52156EC9100DF9A5E /* GuaXiangRow.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GuaXiangRow.swift; sourceTree = "<group>"; };
 		9B2AFBA72157011800DF9A5E /* ShiYaoView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShiYaoView.swift; sourceTree = "<group>"; };
@@ -386,6 +388,8 @@
 		9B1D7044217146CB00E517F5 /* Persistent */ = {
 			isa = PBXGroup;
 			children = (
+				9B1D7064217168FE00E517F5 /* Managers */,
+				9B1D705F2171688C00E517F5 /* Mediators */,
 				9B1D7045217146D700E517F5 /* Protocols */,
 				9B1D705E2171682E00E517F5 /* ManagedObject */,
 				9B1D70532171674800E517F5 /* BuGuaApp.xcdatamodeld */,
@@ -412,6 +416,21 @@
 				9B1D70592171681F00E517F5 /* BuGuaEntryObject+CoreDataProperties.swift */,
 			);
 			name = ManagedObject;
+			sourceTree = "<group>";
+		};
+		9B1D705F2171688C00E517F5 /* Mediators */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = Mediators;
+			sourceTree = "<group>";
+		};
+		9B1D7064217168FE00E517F5 /* Managers */ = {
+			isa = PBXGroup;
+			children = (
+				9B1D70652171690B00E517F5 /* StorageManager.swift */,
+			);
+			name = Managers;
 			sourceTree = "<group>";
 		};
 		9B8B4F01215C431B009FBCD2 /* Cell */ = {
@@ -862,6 +881,7 @@
 				3413A5692140E0D600245C46 /* ComposableTextfieldDelegate.swift in Sources */,
 				9BCB3616213E254900F7FDDE /* AppFactory.swift in Sources */,
 				9B933F772137A8C3004DCD3F /* YaoView.swift in Sources */,
+				9B1D70662171690B00E517F5 /* StorageManager.swift in Sources */,
 				9B1D704B2171475900E517F5 /* ManagedConvertable.swift in Sources */,
 				9B8B4F06215C5872009FBCD2 /* ContentCell.swift in Sources */,
 				9BCB361A213E30D700F7FDDE /* GuaXiangViewModel.swift in Sources */,
