@@ -49,30 +49,36 @@ class CacheManager {
     }
 
     /// Call this method to get all the objects that are waiting to be uploaded
-    func getCached(_ completion: @escaping ([CKRecordConvertable]) -> Void) {
+    func getCached(_ completion: @escaping ([CKRecordConvertable], [NSData]) -> Void) {
         context.perform { [unowned self] in
-            let objectIds = self.fetchAllMatureCacheRecords()
-                .map { $0.managedObjectId }
-                .map { (url) -> NSManagedObjectID in
-                    return self.context.persistentStoreCoordinator!.managedObjectID(forURIRepresentation: url)!
+
+            let matureCacheRecords = self.fetchAllMatureCacheRecords()
+
+            var idsToUpload: [NSManagedObjectID] = []
+            var dataToDelete: [NSData] = []
+
+            for cache in matureCacheRecords {
+                if let url = cache.managedObjectId {
+                    idsToUpload.append(self.context.persistentStoreCoordinator!.managedObjectID(forURIRepresentation: url)!)
                 }
 
-            var objects = [CKRecordConvertable]()
-
-            for id in objectIds {
-                if let obj = try? self.context.existingObject(with: id) {
-                    guard let ckObj = obj as? CKRecordConvertable else {
-                        fatalError("Attempting to upload an entity (\(obj.entity.name!)) that's not compatible with CloudKit")
-                    }
-
-                    objects.append(ckObj)
-                } else {
-                    // TODO: handle the delete case
-                    continue
+                if let data = cache.recordId {
+                    dataToDelete.append(data)
                 }
             }
+
+            var objectsToUpload = [CKRecordConvertable]()
+
+            for id in idsToUpload {
+                let obj = try! self.context.existingObject(with: id)
+                guard let ckObj = obj as? CKRecordConvertable else {
+                    fatalError("Attempting to upload an entity (\(obj.entity.name!)) that's not compatible with CloudKit")
+                }
+
+                objectsToUpload.append(ckObj)
+            }
             try! self.context.save()
-            completion(objects)
+            completion(objectsToUpload, dataToDelete)
         }
     }
 

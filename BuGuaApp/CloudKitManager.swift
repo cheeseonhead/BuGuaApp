@@ -172,12 +172,15 @@ class CloudKitManager {
     }
 
     func uploadCache() {
-        cacheManager.getCached { [unowned self] objects in
-            let records = objects.map {
+        cacheManager.getCached { [unowned self] objectsToUpload, recordDataToDelete in
+            let recordsToUpload = objectsToUpload.map {
                 $0.cloudKitRecord(zoneID: self.zone.zoneID)
             }
+            let idsToDelete = recordDataToDelete.map {
+                NSKeyedUnarchiver.unarchiveObject(with: $0 as Data) as! CKRecord.ID
+            }
 
-            let recordOperation = CKModifyRecordsOperation(recordsToSave: records, recordIDsToDelete: nil)
+            let recordOperation = CKModifyRecordsOperation(recordsToSave: recordsToUpload, recordIDsToDelete: idsToDelete)
 
             recordOperation.perRecordCompletionBlock = { record, error in
                 // TODO: Handle out of date error
