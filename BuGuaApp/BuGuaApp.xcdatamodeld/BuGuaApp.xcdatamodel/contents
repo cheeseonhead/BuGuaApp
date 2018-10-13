@@ -5,7 +5,7 @@
         <attribute name="recordName" optional="YES" attributeType="String" syncable="YES"/>
         <relationship name="gregorianDate" maxCount="1" deletionRule="Nullify" destinationEntity="GregorianDateObject" inverseName="entry" inverseEntity="GregorianDateObject" syncable="YES"/>
     </entity>
-    <entity name="CacheRecord" representedClassName="CacheRecord" syncable="YES" codeGenerationType="class">
+    <entity name="CacheRecord" representedClassName="CacheRecord" syncable="YES">
         <attribute name="managedObjectId" optional="YES" attributeType="URI" syncable="YES"/>
         <attribute name="nextTryTimestamp" attributeType="Date" usesScalarValueType="NO" syncable="YES"/>
         <attribute name="recordID" optional="YES" attributeType="Binary" syncable="YES"/>

@@ -52,6 +52,7 @@
 		9B1D706C21716A1D00E517F5 /* BuGuaEntryMediator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9B1D706B21716A1D00E517F5 /* BuGuaEntryMediator.swift */; };
 		9B1D706F217174B600E517F5 /* CacheRecord+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9B1D706D217174B600E517F5 /* CacheRecord+CoreDataClass.swift */; };
 		9B1D7070217174B600E517F5 /* CacheRecord+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9B1D706E217174B600E517F5 /* CacheRecord+CoreDataProperties.swift */; };
+		9B1D7072217174F600E517F5 /* CacheManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9B1D7071217174F600E517F5 /* CacheManager.swift */; };
 		9B273D3321390ABD00BDFBE3 /* SnapKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9B273D3221390ABD00BDFBE3 /* SnapKit.framework */; };
 		9B2AFBA62156EC9100DF9A5E /* GuaXiangRow.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9B2AFBA52156EC9100DF9A5E /* GuaXiangRow.swift */; };
 		9B2AFBA82157011800DF9A5E /* ShiYaoView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9B2AFBA72157011800DF9A5E /* ShiYaoView.swift */; };
@@ -199,6 +200,7 @@
 		9B1D706B21716A1D00E517F5 /* BuGuaEntryMediator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BuGuaEntryMediator.swift; sourceTree = "<group>"; };
 		9B1D706D217174B600E517F5 /* CacheRecord+CoreDataClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "CacheRecord+CoreDataClass.swift"; sourceTree = "<group>"; };
 		9B1D706E217174B600E517F5 /* CacheRecord+CoreDataProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "CacheRecord+CoreDataProperties.swift"; sourceTree = "<group>"; };
+		9B1D7071217174F600E517F5 /* CacheManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CacheManager.swift; sourceTree = "<group>"; };
 		9B273D3221390ABD00BDFBE3 /* SnapKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SnapKit.framework; path = Carthage/Build/iOS/SnapKit.framework; sourceTree = "<group>"; };
 		9B2AFBA52156EC9100DF9A5E /* GuaXiangRow.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GuaXiangRow.swift; sourceTree = "<group>"; };
 		9B2AFBA72157011800DF9A5E /* ShiYaoView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShiYaoView.swift; sourceTree = "<group>"; };
@@ -443,6 +445,7 @@
 			isa = PBXGroup;
 			children = (
 				9B1D70652171690B00E517F5 /* StorageManager.swift */,
+				9B1D7071217174F600E517F5 /* CacheManager.swift */,
 			);
 			name = Managers;
 			sourceTree = "<group>";
@@ -936,6 +939,7 @@
 				9B933F7B2138DF3B004DCD3F /* CGRect+Points.swift in Sources */,
 				3413A5602140BFB900245C46 /* InputViewModel.swift in Sources */,
 				9B1D7070217174B600E517F5 /* CacheRecord+CoreDataProperties.swift in Sources */,
+				9B1D7072217174F600E517F5 /* CacheManager.swift in Sources */,
 				34BE799A2159D33A00B5010A /* BuGuaInfoViewController.swift in Sources */,
 				34EC158A2153426B00378758 /* ThemeManager.swift in Sources */,
 			);
