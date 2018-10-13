@@ -20,5 +20,6 @@ extension GregorianDateObject {
     @NSManaged public var year: Int64
     @NSManaged public var month: Int64
     @NSManaged public var day: Int64
+    // TODO: Change this back to required
     @NSManaged public var entry: BuGuaEntryObject?
 }

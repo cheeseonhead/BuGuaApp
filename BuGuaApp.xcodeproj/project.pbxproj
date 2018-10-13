@@ -417,10 +417,10 @@
 		9B1D705E2171682E00E517F5 /* ManagedObject */ = {
 			isa = PBXGroup;
 			children = (
-				9B1D70562171681F00E517F5 /* GregorianDateObject+CoreDataClass.swift */,
-				9B1D70572171681F00E517F5 /* GregorianDateObject+CoreDataProperties.swift */,
 				9B1D70582171681F00E517F5 /* BuGuaEntryObject+CoreDataClass.swift */,
 				9B1D70592171681F00E517F5 /* BuGuaEntryObject+CoreDataProperties.swift */,
+				9B1D70562171681F00E517F5 /* GregorianDateObject+CoreDataClass.swift */,
+				9B1D70572171681F00E517F5 /* GregorianDateObject+CoreDataProperties.swift */,
 			);
 			name = ManagedObject;
 			sourceTree = "<group>";
