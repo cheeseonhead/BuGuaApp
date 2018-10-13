@@ -9,6 +9,8 @@ import CloudKit
 import CoreData
 import Foundation
 
+typealias RawRecordID = NSData
+
 class CacheManager {
     // MARK: - Constant
 
@@ -26,7 +28,7 @@ class CacheManager {
 
     /// Call this method if there are managed objects that have been modified and should be uploaded to the cloud at
     /// a later time.
-    func cacheUpdate(ids: [NSManagedObjectID], deleteIds: [NSData?]) {
+    func cacheUpdate(ids: [NSManagedObjectID], deleteIds: [RawRecordID?]) {
         let uris = ids.map { $0.uriRepresentation() }
 
         context.perform { [unowned self] in
@@ -48,21 +50,21 @@ class CacheManager {
     }
 
     /// Call this method to get all the objects that are waiting to be uploaded
-    func getCached(_ completion: @escaping ([CKRecordConvertable], [NSData]) -> Void) {
+    func getCached(_ completion: @escaping ([CKRecordConvertable], [CKRecord.ID]) -> Void) {
         context.perform { [unowned self] in
 
             let matureCacheRecords = self.fetchAllMatureCacheRecords()
 
             var idsToUpload: [NSManagedObjectID] = []
-            var dataToDelete: [NSData] = []
+            var recordIdToDelete: [CKRecord.ID] = []
 
             for cache in matureCacheRecords {
                 if let url = cache.managedObjectId {
                     idsToUpload.append(self.context.persistentStoreCoordinator!.managedObjectID(forURIRepresentation: url)!)
                 }
 
-                if let data = cache.recordData {
-                    dataToDelete.append(data)
+                if let recordID = cache.recordID {
+                    recordIdToDelete.append(recordID)
                 }
             }
 
@@ -77,7 +79,7 @@ class CacheManager {
                 objectsToUpload.append(ckObj)
             }
             try! self.context.save()
-            completion(objectsToUpload, dataToDelete)
+            completion(objectsToUpload, recordIdToDelete)
         }
     }
 
