@@ -17,5 +17,5 @@ extension CacheRecord {
 
     @NSManaged public var managedObjectId: URL?
     @NSManaged public var nextTryTimestamp: NSDate
-    @NSManaged public var recordID: NSData?
+    @NSManaged public var recordData: NSData?
 }

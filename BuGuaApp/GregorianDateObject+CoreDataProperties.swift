@@ -16,7 +16,7 @@ extension GregorianDateObject {
     }
 
     @NSManaged public var recordName: String?
-    @NSManaged public var recordId: NSData?
+    @NSManaged public var recordData: NSData?
     @NSManaged public var year: Int64
     @NSManaged public var month: Int64
     @NSManaged public var day: Int64

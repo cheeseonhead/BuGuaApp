@@ -40,7 +40,7 @@ class CacheManager {
                 guard let id = $0 else { return }
 
                 let cacheObject = CacheRecord(context: self.context)
-                cacheObject.recordID = id
+                cacheObject.recordData = id
                 cacheObject.nextTryTimestamp = self.dateGenerator()
             }
             try! self.context.save()
@@ -61,7 +61,7 @@ class CacheManager {
                     idsToUpload.append(self.context.persistentStoreCoordinator!.managedObjectID(forURIRepresentation: url)!)
                 }
 
-                if let data = cache.recordID {
+                if let data = cache.recordData {
                     dataToDelete.append(data)
                 }
             }
