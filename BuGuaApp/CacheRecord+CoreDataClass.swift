@@ -7,8 +7,15 @@
 //
 //
 
+import CloudKit
 import CoreData
 import Foundation
 
 @objc(CacheRecord)
-public class CacheRecord: NSManagedObject {}
+public class CacheRecord: NSManagedObject {
+    var recordID: CKRecord.ID? {
+        guard let data = recordData else { return nil }
+
+        return (NSKeyedUnarchiver.unarchiveObject(with: data as Data) as! CKRecord.ID)
+    }
+}
