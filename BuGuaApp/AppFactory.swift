@@ -20,6 +20,7 @@ class AppFactory {
 
     let themeManager: ThemeManager
     let storageManager: StorageManager
+    let cacheManager: CacheManager
 
     // MARK: - CoreData
 
@@ -29,7 +30,10 @@ class AppFactory {
         self.container = container
         themeManager = ThemeManager(store: themeStore)
 
-        storageManager = StorageManager(context: container.viewContext)
+        let cacheContext = container.newBackgroundContext()
+        cacheManager = CacheManager(context: cacheContext, dateGenerator: { Date() as NSDate })
+
+        storageManager = StorageManager(cacheManager: cacheManager, context: container.viewContext)
     }
 
     func makeAppCoordinator(with window: UIWindow) -> AppCoordinator {
