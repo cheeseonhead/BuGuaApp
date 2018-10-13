@@ -5,6 +5,11 @@
         <attribute name="recordName" optional="YES" attributeType="String" syncable="YES"/>
         <relationship name="gregorianDate" maxCount="1" deletionRule="Nullify" destinationEntity="GregorianDateObject" inverseName="entry" inverseEntity="GregorianDateObject" syncable="YES"/>
     </entity>
+    <entity name="CacheRecord" representedClassName="CacheRecord" syncable="YES" codeGenerationType="class">
+        <attribute name="managedObjectId" optional="YES" attributeType="URI" syncable="YES"/>
+        <attribute name="nextTryTimestamp" attributeType="Date" usesScalarValueType="NO" syncable="YES"/>
+        <attribute name="recordID" optional="YES" attributeType="Binary" syncable="YES"/>
+    </entity>
     <entity name="GregorianDateObject" representedClassName="GregorianDateObject" syncable="YES">
         <attribute name="day" attributeType="Integer 64" defaultValueString="0" usesScalarValueType="YES" syncable="YES"/>
         <attribute name="month" attributeType="Integer 64" defaultValueString="0" usesScalarValueType="YES" syncable="YES"/>
@@ -16,5 +21,6 @@
     <elements>
         <element name="BuGuaEntryObject" positionX="-63" positionY="-18" width="128" height="90"/>
         <element name="GregorianDateObject" positionX="-54" positionY="-9" width="128" height="135"/>
+        <element name="CacheRecord" positionX="-45" positionY="54" width="128" height="90"/>
     </elements>
 </model>

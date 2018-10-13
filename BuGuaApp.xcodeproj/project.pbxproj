@@ -50,6 +50,8 @@
 		9B1D70682171698100E517F5 /* Mediator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9B1D70672171698100E517F5 /* Mediator.swift */; };
 		9B1D706A217169B500E517F5 /* NSManagedObject+Data.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9B1D7069217169B500E517F5 /* NSManagedObject+Data.swift */; };
 		9B1D706C21716A1D00E517F5 /* BuGuaEntryMediator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9B1D706B21716A1D00E517F5 /* BuGuaEntryMediator.swift */; };
+		9B1D706F217174B600E517F5 /* CacheRecord+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9B1D706D217174B600E517F5 /* CacheRecord+CoreDataClass.swift */; };
+		9B1D7070217174B600E517F5 /* CacheRecord+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9B1D706E217174B600E517F5 /* CacheRecord+CoreDataProperties.swift */; };
 		9B273D3321390ABD00BDFBE3 /* SnapKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9B273D3221390ABD00BDFBE3 /* SnapKit.framework */; };
 		9B2AFBA62156EC9100DF9A5E /* GuaXiangRow.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9B2AFBA52156EC9100DF9A5E /* GuaXiangRow.swift */; };
 		9B2AFBA82157011800DF9A5E /* ShiYaoView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9B2AFBA72157011800DF9A5E /* ShiYaoView.swift */; };
@@ -195,6 +197,8 @@
 		9B1D70672171698100E517F5 /* Mediator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Mediator.swift; sourceTree = "<group>"; };
 		9B1D7069217169B500E517F5 /* NSManagedObject+Data.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "NSManagedObject+Data.swift"; sourceTree = "<group>"; };
 		9B1D706B21716A1D00E517F5 /* BuGuaEntryMediator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BuGuaEntryMediator.swift; sourceTree = "<group>"; };
+		9B1D706D217174B600E517F5 /* CacheRecord+CoreDataClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "CacheRecord+CoreDataClass.swift"; sourceTree = "<group>"; };
+		9B1D706E217174B600E517F5 /* CacheRecord+CoreDataProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "CacheRecord+CoreDataProperties.swift"; sourceTree = "<group>"; };
 		9B273D3221390ABD00BDFBE3 /* SnapKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SnapKit.framework; path = Carthage/Build/iOS/SnapKit.framework; sourceTree = "<group>"; };
 		9B2AFBA52156EC9100DF9A5E /* GuaXiangRow.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GuaXiangRow.swift; sourceTree = "<group>"; };
 		9B2AFBA72157011800DF9A5E /* ShiYaoView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShiYaoView.swift; sourceTree = "<group>"; };
@@ -419,6 +423,8 @@
 			children = (
 				9B1D70582171681F00E517F5 /* BuGuaEntryObject+CoreDataClass.swift */,
 				9B1D70592171681F00E517F5 /* BuGuaEntryObject+CoreDataProperties.swift */,
+				9B1D706D217174B600E517F5 /* CacheRecord+CoreDataClass.swift */,
+				9B1D706E217174B600E517F5 /* CacheRecord+CoreDataProperties.swift */,
 				9B1D70562171681F00E517F5 /* GregorianDateObject+CoreDataClass.swift */,
 				9B1D70572171681F00E517F5 /* GregorianDateObject+CoreDataProperties.swift */,
 			);
@@ -868,6 +874,7 @@
 				9B1D706A217169B500E517F5 /* NSManagedObject+Data.swift in Sources */,
 				9BCE8863214F0A590024FEF7 /* GuaXiangInputCoordinatorModel.swift in Sources */,
 				9B1D70492171473600E517F5 /* ImmutableConvertable.swift in Sources */,
+				9B1D706F217174B600E517F5 /* CacheRecord+CoreDataClass.swift in Sources */,
 				9BCE886C214F13780024FEF7 /* DatePickerViewModel.swift in Sources */,
 				34A13D4D214222E700D77D98 /* IntegerLiuYaoConverter.swift in Sources */,
 				9B2AFBAA215701FB00DF9A5E /* UIView+Convenience.swift in Sources */,
@@ -928,6 +935,7 @@
 				346334462148A52F001D462B /* Array+Convert.swift in Sources */,
 				9B933F7B2138DF3B004DCD3F /* CGRect+Points.swift in Sources */,
 				3413A5602140BFB900245C46 /* InputViewModel.swift in Sources */,
+				9B1D7070217174B600E517F5 /* CacheRecord+CoreDataProperties.swift in Sources */,
 				34BE799A2159D33A00B5010A /* BuGuaInfoViewController.swift in Sources */,
 				34EC158A2153426B00378758 /* ThemeManager.swift in Sources */,
 			);
