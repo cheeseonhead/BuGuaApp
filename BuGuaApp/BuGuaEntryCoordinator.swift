@@ -15,41 +15,44 @@ import SnapKit
 import UIKit
 
 class BuGuaEntryCoordinator: Coordinator {
-
     // MARK: - Coordinator
+
     var childCoordinators = [Coordinator]()
-    lazy private (set) var didStartSignal = didStartRelay.asSignal()
+    private(set) lazy var didStartSignal = didStartRelay.asSignal()
     var bag = DisposeBag()
 
     // MARK: - Private properties
+
     private var navigationController: UINavigationController!
     private var viewController: BuGuaEntryViewController!
     private let factory: AppFactory
     private let didStartRelay = PublishRelay<UIViewController>()
 
     // MARK: - Init
+
     init(factory: AppFactory) {
         self.factory = factory
     }
 
     // MARK: - Lifecycle
+
     func start() {
         let viewModel = factory.makeBuGuaEntryViewModel()
         viewController = factory.makeBuGuaEntryViewController(viewModel: viewModel)
-        
+
         viewController.inputButton.rx.tap.bind(onNext: { [unowned self] _ in
             self.showGuaXiangInputFlow()
         }).disposed(by: viewController.bag)
 
         navigationController = UINavigationController(rootViewController: viewController)
-        
+
         didStartRelay.accept(navigationController)
     }
 }
 
 // MARK: - Present Methods
-private extension BuGuaEntryCoordinator {
 
+private extension BuGuaEntryCoordinator {
     func showGuaXiangInputFlow() {
         let modalViewController = UIViewController(nibName: nil, bundle: nil)
         modalViewController.preferredContentSize = CGSize(width: 450, height: 450)
@@ -58,7 +61,7 @@ private extension BuGuaEntryCoordinator {
         let model = factory.makeGuaXiangInputCoordinatorModel()
 
         let inputCoordinator = factory.makeGuaXiangInputCoordinator(model: model)
-        
+
         inputCoordinator.didStartSignal.emit(onNext: { [unowned self, modalViewController] vc in
             self.viewController.present(modalViewController, animated: true, completion: nil)
             modalViewController.add(vc)
@@ -67,11 +70,13 @@ private extension BuGuaEntryCoordinator {
         inputCoordinator.cancelOutput.bind { [unowned modalViewController] _ in
             modalViewController.dismiss(animated: true, completion: nil)
         }.disposed(by: inputCoordinator.bag)
-        
+
         inputCoordinator.buGuaEntryRelay.take(1)
             .do(onNext: { [unowned modalViewController] _ in
                 modalViewController.dismiss(animated: true, completion: nil)
-            }).bind(to: viewController.viewModel.entryRelay)
+            }).map { [unowned self] entry in
+                self.factory.makeBuGuaEntryMediator(entry)
+            }.bind(to: viewController.viewModel.entryMediatorRelay)
             .disposed(by: inputCoordinator.bag)
 
         addChildCoordinator(inputCoordinator)
@@ -86,6 +91,7 @@ extension UIViewController {
 
         child.didMove(toParent: self)
     }
+
     func remove() {
         guard parent != nil else {
             return
