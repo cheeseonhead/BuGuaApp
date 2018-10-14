@@ -8,9 +8,18 @@
 import CloudKit
 import CoreData
 import Foundation
+import RxCocoa
+import RxSwift
+import RxSwiftExt
 
 class UpdateManager {
-    let updateContext: NSManagedObjectContext
+    // MARK: - Output
+
+    let contextSaveOutput = PublishSubject<()>()
+
+    // MARK: - Dependencies
+
+    private let updateContext: NSManagedObjectContext
 
     init(updateContext: NSManagedObjectContext) {
         self.updateContext = updateContext
@@ -18,7 +27,11 @@ class UpdateManager {
 
     /// This method is called when a record has been updated from the cloud
     func recordChanged(_ record: CKRecord) {
+        print("Update: \(record.recordID.recordName) update received.\n")
+
         updateContext.perform {
+            print("Starting update: \(record.recordID.recordName)\n")
+
             if let correspondingObject = self.retrieveRecordConvertable(for: record.recordID.recordName) {
                 correspondingObject.updateWithRecord(record)
             } else {
@@ -27,8 +40,6 @@ class UpdateManager {
                 guard let r = newObject as? CKRecordConvertable else { return }
                 r.updateWithRecord(record)
             }
-
-            try! self.updateContext.save()
         }
     }
 
@@ -38,8 +49,16 @@ class UpdateManager {
             if let correspondingObject = self.retrieveObject(for: recordID.recordName) {
                 self.updateContext.delete(correspondingObject)
             }
+        }
+    }
 
+    func flushChanges() {
+        updateContext.perform {
             try! self.updateContext.save()
+
+            print("Will send save signal\n")
+            self.contextSaveOutput.onNext(())
+            print("Did send save signal\n")
         }
     }
 
