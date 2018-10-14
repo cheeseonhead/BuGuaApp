@@ -32,6 +32,11 @@ class CloudKitManager {
     private let cacheManager: CacheManager
     private let updateManager: UpdateManager
 
+    // MARK: - PriConstants
+
+    private let serverChangeTokenKey = "serverChangeToken"
+    private let customZoneTokenKey = "TestZoneChangeToken"
+
     // MARK: - Private
 
     private let timer: RepeatingTimer
@@ -100,7 +105,7 @@ class CloudKitManager {
 
     func fetchUpdates() {
         // TODO: Make UserDefaults injected
-        var latestServerChangeToken = UserDefaults.standard.changeToken(forKey: "serverChangeToken")
+        var latestServerChangeToken = UserDefaults.standard.changeToken(forKey: serverChangeTokenKey)
 
         let zoneChangesOperation = CKFetchDatabaseChangesOperation(previousServerChangeToken: latestServerChangeToken)
 
@@ -126,7 +131,7 @@ class CloudKitManager {
             latestServerChangeToken = token
 
             self.fetchZoneChanges(zoneIDs: changedZoneIDs) {
-                UserDefaults.standard.setToken(latestServerChangeToken, forKey: "serverChangeToken")
+                UserDefaults.standard.setToken(latestServerChangeToken, forKey: self.serverChangeTokenKey)
                 self.state = .serverOutdated
             }
         }
@@ -137,9 +142,10 @@ class CloudKitManager {
     func fetchZoneChanges(zoneIDs: [CKRecordZone.ID], completion: @escaping () -> Void) {
         // Look up the previous change token for each zone
         var optionsByRecordZoneID = [CKRecordZone.ID: CKFetchRecordZoneChangesOperation.ZoneOptions]()
+
         for zoneID in zoneIDs {
             let options = CKFetchRecordZoneChangesOperation.ZoneOptions()
-            options.previousServerChangeToken = UserDefaults.standard.changeToken(forKey: "TestZoneChangeToken")
+            options.previousServerChangeToken = UserDefaults.standard.changeToken(forKey: customZoneTokenKey)
             optionsByRecordZoneID[zoneID] = options
         }
 
@@ -161,7 +167,7 @@ class CloudKitManager {
             }
 
             print("zoneFetch Completed! Zone: \(zoneId) Token:\(changeToken!)")
-            UserDefaults.standard.setToken(changeToken, forKey: "TestZoneChangeToken")
+            UserDefaults.standard.setToken(changeToken, forKey: self.customZoneTokenKey)
         }
 
         operation.fetchRecordZoneChangesCompletionBlock = { error in
