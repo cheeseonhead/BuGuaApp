@@ -93,6 +93,7 @@
 		9B933F792138DEE2004DCD3F /* CGPoint+Math.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9B933F782138DEE2004DCD3F /* CGPoint+Math.swift */; };
 		9B933F7B2138DF3B004DCD3F /* CGRect+Points.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9B933F7A2138DF3B004DCD3F /* CGRect+Points.swift */; };
 		9B933F7D2138DF75004DCD3F /* CGSize+Points.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9B933F7C2138DF75004DCD3F /* CGSize+Points.swift */; };
+		9BADB6622172D184006D14D3 /* UpdateManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9BADB6612172D184006D14D3 /* UpdateManager.swift */; };
 		9BCB3609213E011800F7FDDE /* String+Vertical.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9BCB3608213E011800F7FDDE /* String+Vertical.swift */; };
 		9BCB360D213E148200F7FDDE /* GuaXiangViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9BCB360C213E148200F7FDDE /* GuaXiangViewController.swift */; };
 		9BCB3611213E150500F7FDDE /* GuaXiangViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 9BCB3610213E150500F7FDDE /* GuaXiangViewController.xib */; };
@@ -267,6 +268,7 @@
 		9B933F782138DEE2004DCD3F /* CGPoint+Math.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "CGPoint+Math.swift"; sourceTree = "<group>"; };
 		9B933F7A2138DF3B004DCD3F /* CGRect+Points.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "CGRect+Points.swift"; sourceTree = "<group>"; };
 		9B933F7C2138DF75004DCD3F /* CGSize+Points.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "CGSize+Points.swift"; sourceTree = "<group>"; };
+		9BADB6612172D184006D14D3 /* UpdateManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UpdateManager.swift; sourceTree = "<group>"; };
 		9BCB3608213E011800F7FDDE /* String+Vertical.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "String+Vertical.swift"; sourceTree = "<group>"; };
 		9BCB360C213E148200F7FDDE /* GuaXiangViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GuaXiangViewController.swift; sourceTree = "<group>"; };
 		9BCB3610213E150500F7FDDE /* GuaXiangViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = GuaXiangViewController.xib; sourceTree = "<group>"; };
@@ -488,6 +490,7 @@
 			children = (
 				9B1D70652171690B00E517F5 /* StorageManager.swift */,
 				9B1D7071217174F600E517F5 /* CacheManager.swift */,
+				9BADB6612172D184006D14D3 /* UpdateManager.swift */,
 			);
 			name = Managers;
 			sourceTree = "<group>";
@@ -1027,6 +1030,7 @@
 				9BF12BA2216ABD6B00021249 /* BuGuaEntryMediator.swift in Sources */,
 				9B933EF32134E529004DCD3F /* ViewController.swift in Sources */,
 				9B933F7D2138DF75004DCD3F /* CGSize+Points.swift in Sources */,
+				9BADB6622172D184006D14D3 /* UpdateManager.swift in Sources */,
 				34BE79962159D25400B5010A /* BuGuaEntryViewController.swift in Sources */,
 				9B933F73213797A2004DCD3F /* UIColor+AppColors.swift in Sources */,
 				9B933F5B2135A8B0004DCD3F /* GuaXiangView.swift in Sources */,
