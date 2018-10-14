@@ -34,6 +34,7 @@ class CloudKitManager {
 
     // MARK: - PriConstants
 
+    private let updateInterval = TimeInterval(60)
     private let serverChangeTokenKey = "serverChangeToken"
     private let customZoneTokenKey = "TestZoneChangeToken"
 
@@ -47,7 +48,7 @@ class CloudKitManager {
         self.cacheManager = cacheManager
         self.updateManager = updateManager
 
-        timer = RepeatingTimer(timeInterval: 5)
+        timer = RepeatingTimer(timeInterval: updateInterval)
         timer.eventHandler = { [unowned self] in
             self.loop()
         }
@@ -76,7 +77,7 @@ class CloudKitManager {
                 switch status {
                 case .available:
                     self.state = .loggedIn
-                    self.addZone()
+                    self.loop()
                 case .noAccount:
                     self.state = .notLoggedIn
                 case .couldNotDetermine:
