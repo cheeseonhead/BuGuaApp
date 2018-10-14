@@ -36,6 +36,9 @@
 		9B19593C2161708900AA320A /* TimeGanZhiViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9B19593A2161708900AA320A /* TimeGanZhiViewController.swift */; };
 		9B19593D2161708900AA320A /* TimeGanZhiViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 9B19593B2161708900AA320A /* TimeGanZhiViewController.xib */; };
 		9B19593F2161709D00AA320A /* TimeGanZhiViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9B19593E2161709D00AA320A /* TimeGanZhiViewModel.swift */; };
+<<<<<<< HEAD
+		9B1D704021711E5300E517F5 /* UpdateManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9B1D703F21711E5300E517F5 /* UpdateManager.swift */; };
+=======
 		9B1D70432171466C00E517F5 /* CloudKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9B1D70422171466C00E517F5 /* CloudKit.framework */; };
 		9B1D7047217146E100E517F5 /* CKRecordConvertable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9B1D7046217146E100E517F5 /* CKRecordConvertable.swift */; };
 		9B1D70492171473600E517F5 /* ImmutableConvertable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9B1D70482171473600E517F5 /* ImmutableConvertable.swift */; };
@@ -53,6 +56,7 @@
 		9B1D706F217174B600E517F5 /* CacheRecord+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9B1D706D217174B600E517F5 /* CacheRecord+CoreDataClass.swift */; };
 		9B1D7070217174B600E517F5 /* CacheRecord+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9B1D706E217174B600E517F5 /* CacheRecord+CoreDataProperties.swift */; };
 		9B1D7072217174F600E517F5 /* CacheManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9B1D7071217174F600E517F5 /* CacheManager.swift */; };
+>>>>>>> develop
 		9B273D3321390ABD00BDFBE3 /* SnapKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9B273D3221390ABD00BDFBE3 /* SnapKit.framework */; };
 		9B2AFBA62156EC9100DF9A5E /* GuaXiangRow.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9B2AFBA52156EC9100DF9A5E /* GuaXiangRow.swift */; };
 		9B2AFBA82157011800DF9A5E /* ShiYaoView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9B2AFBA72157011800DF9A5E /* ShiYaoView.swift */; };
@@ -107,6 +111,24 @@
 		9BCE8875214F2E220024FEF7 /* DateGanZhiViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 9BCE8873214F2E220024FEF7 /* DateGanZhiViewController.xib */; };
 		9BCE8877214F2EB10024FEF7 /* DateGanZhiViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9BCE8876214F2EB10024FEF7 /* DateGanZhiViewModel.swift */; };
 		9BCEE3A5215D844C000B50EC /* BGPageController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9BCEE3A4215D844C000B50EC /* BGPageController.swift */; };
+		9BF12B83216AB81000021249 /* BuGuaApp.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 9BF12B81216AB81000021249 /* BuGuaApp.xcdatamodeld */; };
+		9BF12B8F216AB9D700021249 /* CacheManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9BF12B8E216AB9D700021249 /* CacheManager.swift */; };
+		9BF12B91216AB9FC00021249 /* CloudKitManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9BF12B90216AB9FC00021249 /* CloudKitManager.swift */; };
+		9BF12B93216ABA3C00021249 /* StorageManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9BF12B92216ABA3C00021249 /* StorageManager.swift */; };
+		9BF12B98216ABBD300021249 /* GregorianDateObject+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9BF12B94216ABBD300021249 /* GregorianDateObject+CoreDataClass.swift */; };
+		9BF12B99216ABBD300021249 /* GregorianDateObject+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9BF12B95216ABBD300021249 /* GregorianDateObject+CoreDataProperties.swift */; };
+		9BF12B9A216ABBD300021249 /* BuGuaEntryObject+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9BF12B96216ABBD300021249 /* BuGuaEntryObject+CoreDataClass.swift */; };
+		9BF12B9B216ABBD300021249 /* BuGuaEntryObject+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9BF12B97216ABBD300021249 /* BuGuaEntryObject+CoreDataProperties.swift */; };
+		9BF12B9E216ABCD100021249 /* CacheRecord+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9BF12B9C216ABCD100021249 /* CacheRecord+CoreDataClass.swift */; };
+		9BF12B9F216ABCD100021249 /* CacheRecord+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9BF12B9D216ABCD100021249 /* CacheRecord+CoreDataProperties.swift */; };
+		9BF12BA2216ABD6B00021249 /* BuGuaEntryMediator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9BF12BA1216ABD6B00021249 /* BuGuaEntryMediator.swift */; };
+		9BF12BA4216ABDEF00021249 /* Mediator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9BF12BA3216ABDEF00021249 /* Mediator.swift */; };
+		9BF12BA7216ABE2400021249 /* ManagedConvertable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9BF12BA6216ABE2400021249 /* ManagedConvertable.swift */; };
+		9BF12BA9216ABE4D00021249 /* ImmutableConvertable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9BF12BA8216ABE4D00021249 /* ImmutableConvertable.swift */; };
+		9BF12BAB216C264800021249 /* CKRecordConvertable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9BF12BAA216C264800021249 /* CKRecordConvertable.swift */; };
+		9BF12BB1216C311500021249 /* RepeatingTimer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9BF12BB0216C311500021249 /* RepeatingTimer.swift */; };
+		9BF12BB4216C318000021249 /* CloudKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9BF12BB3216C318000021249 /* CloudKit.framework */; };
+		9BF12BB6216C31DC00021249 /* NSManagedObject+Data.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9BF12BB5216C31DC00021249 /* NSManagedObject+Data.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -184,6 +206,9 @@
 		9B19593A2161708900AA320A /* TimeGanZhiViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TimeGanZhiViewController.swift; sourceTree = "<group>"; };
 		9B19593B2161708900AA320A /* TimeGanZhiViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = TimeGanZhiViewController.xib; sourceTree = "<group>"; };
 		9B19593E2161709D00AA320A /* TimeGanZhiViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TimeGanZhiViewModel.swift; sourceTree = "<group>"; };
+<<<<<<< HEAD
+		9B1D703F21711E5300E517F5 /* UpdateManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UpdateManager.swift; sourceTree = "<group>"; };
+=======
 		9B1D70412171466A00E517F5 /* BuGuaApp.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = BuGuaApp.entitlements; sourceTree = "<group>"; };
 		9B1D70422171466C00E517F5 /* CloudKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CloudKit.framework; path = System/Library/Frameworks/CloudKit.framework; sourceTree = SDKROOT; };
 		9B1D7046217146E100E517F5 /* CKRecordConvertable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CKRecordConvertable.swift; sourceTree = "<group>"; };
@@ -202,6 +227,7 @@
 		9B1D706D217174B600E517F5 /* CacheRecord+CoreDataClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "CacheRecord+CoreDataClass.swift"; sourceTree = "<group>"; };
 		9B1D706E217174B600E517F5 /* CacheRecord+CoreDataProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "CacheRecord+CoreDataProperties.swift"; sourceTree = "<group>"; };
 		9B1D7071217174F600E517F5 /* CacheManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CacheManager.swift; sourceTree = "<group>"; };
+>>>>>>> develop
 		9B273D3221390ABD00BDFBE3 /* SnapKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SnapKit.framework; path = Carthage/Build/iOS/SnapKit.framework; sourceTree = "<group>"; };
 		9B2AFBA52156EC9100DF9A5E /* GuaXiangRow.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GuaXiangRow.swift; sourceTree = "<group>"; };
 		9B2AFBA72157011800DF9A5E /* ShiYaoView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShiYaoView.swift; sourceTree = "<group>"; };
@@ -260,6 +286,25 @@
 		9BCE8873214F2E220024FEF7 /* DateGanZhiViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = DateGanZhiViewController.xib; sourceTree = "<group>"; };
 		9BCE8876214F2EB10024FEF7 /* DateGanZhiViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DateGanZhiViewModel.swift; sourceTree = "<group>"; };
 		9BCEE3A4215D844C000B50EC /* BGPageController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BGPageController.swift; sourceTree = "<group>"; };
+		9BF12B82216AB81000021249 /* BuGuaApp.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = BuGuaApp.xcdatamodel; sourceTree = "<group>"; };
+		9BF12B8E216AB9D700021249 /* CacheManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CacheManager.swift; sourceTree = "<group>"; };
+		9BF12B90216AB9FC00021249 /* CloudKitManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CloudKitManager.swift; sourceTree = "<group>"; };
+		9BF12B92216ABA3C00021249 /* StorageManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StorageManager.swift; sourceTree = "<group>"; };
+		9BF12B94216ABBD300021249 /* GregorianDateObject+CoreDataClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "GregorianDateObject+CoreDataClass.swift"; sourceTree = "<group>"; };
+		9BF12B95216ABBD300021249 /* GregorianDateObject+CoreDataProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "GregorianDateObject+CoreDataProperties.swift"; sourceTree = "<group>"; };
+		9BF12B96216ABBD300021249 /* BuGuaEntryObject+CoreDataClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "BuGuaEntryObject+CoreDataClass.swift"; sourceTree = "<group>"; };
+		9BF12B97216ABBD300021249 /* BuGuaEntryObject+CoreDataProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "BuGuaEntryObject+CoreDataProperties.swift"; sourceTree = "<group>"; };
+		9BF12B9C216ABCD100021249 /* CacheRecord+CoreDataClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "CacheRecord+CoreDataClass.swift"; sourceTree = "<group>"; };
+		9BF12B9D216ABCD100021249 /* CacheRecord+CoreDataProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "CacheRecord+CoreDataProperties.swift"; sourceTree = "<group>"; };
+		9BF12BA1216ABD6B00021249 /* BuGuaEntryMediator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BuGuaEntryMediator.swift; sourceTree = "<group>"; };
+		9BF12BA3216ABDEF00021249 /* Mediator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Mediator.swift; sourceTree = "<group>"; };
+		9BF12BA6216ABE2400021249 /* ManagedConvertable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ManagedConvertable.swift; sourceTree = "<group>"; };
+		9BF12BA8216ABE4D00021249 /* ImmutableConvertable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImmutableConvertable.swift; sourceTree = "<group>"; };
+		9BF12BAA216C264800021249 /* CKRecordConvertable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CKRecordConvertable.swift; sourceTree = "<group>"; };
+		9BF12BB0216C311500021249 /* RepeatingTimer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RepeatingTimer.swift; sourceTree = "<group>"; };
+		9BF12BB2216C317D00021249 /* BuGuaApp.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = BuGuaApp.entitlements; sourceTree = "<group>"; };
+		9BF12BB3216C318000021249 /* CloudKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CloudKit.framework; path = System/Library/Frameworks/CloudKit.framework; sourceTree = SDKROOT; };
+		9BF12BB5216C31DC00021249 /* NSManagedObject+Data.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "NSManagedObject+Data.swift"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -303,7 +348,7 @@
 				3413A5662140E0BC00245C46 /* AutoNextTextFieldDelegate.swift */,
 				3413A5682140E0D600245C46 /* ComposableTextfieldDelegate.swift */,
 				34A13D4C214222E700D77D98 /* IntegerLiuYaoConverter.swift */,
-				9B1D704C217147A200E517F5 /* RepeatingTimer.swift */,
+				9BF12BB0216C311500021249 /* RepeatingTimer.swift */,
 			);
 			name = Utilities;
 			sourceTree = "<group>";
@@ -402,11 +447,7 @@
 		9B1D7044217146CB00E517F5 /* Persistent */ = {
 			isa = PBXGroup;
 			children = (
-				9B1D7064217168FE00E517F5 /* Managers */,
-				9B1D705F2171688C00E517F5 /* Mediators */,
 				9B1D7045217146D700E517F5 /* Protocols */,
-				9B1D705E2171682E00E517F5 /* ManagedObject */,
-				9B1D70532171674800E517F5 /* BuGuaApp.xcdatamodeld */,
 			);
 			name = Persistent;
 			sourceTree = "<group>";
@@ -417,11 +458,12 @@
 				9B1D7046217146E100E517F5 /* CKRecordConvertable.swift */,
 				9B1D70482171473600E517F5 /* ImmutableConvertable.swift */,
 				9B1D704A2171475900E517F5 /* ManagedConvertable.swift */,
-				9B1D70672171698100E517F5 /* Mediator.swift */,
 			);
 			name = Protocols;
 			sourceTree = "<group>";
 		};
+<<<<<<< HEAD
+=======
 		9B1D705E2171682E00E517F5 /* ManagedObject */ = {
 			isa = PBXGroup;
 			children = (
@@ -453,6 +495,7 @@
 			name = Managers;
 			sourceTree = "<group>";
 		};
+>>>>>>> develop
 		9B8B4F01215C431B009FBCD2 /* Cell */ = {
 			isa = PBXGroup;
 			children = (
@@ -500,6 +543,7 @@
 				9BCB3615213E254900F7FDDE /* AppFactory.swift */,
 				9BCB3613213E234000F7FDDE /* AppCoordinator.swift */,
 				9BCE8865214F11330024FEF7 /* BuGuaEntryFlow */,
+				9BF12B80216AB7F100021249 /* Persistent */,
 				9BCB3612213E227700F7FDDE /* Coordinators */,
 				9B933F3C2134EB58004DCD3F /* Views */,
 				9B1D7044217146CB00E517F5 /* Persistent */,
@@ -558,6 +602,7 @@
 				3413A5642140D89900245C46 /* CharacterSet+MoreSets.swift */,
 				346334472148A66E001D462B /* Container+Operator.swift */,
 				34A13D4E2142294D00D77D98 /* Int+Conversion.swift */,
+				9BF12BB5216C31DC00021249 /* NSManagedObject+Data.swift */,
 				34F3E4FE2150A84F00A9BA2B /* Rx+Operators.swift */,
 				9BCB3608213E011800F7FDDE /* String+Vertical.swift */,
 				9B933F72213797A2004DCD3F /* UIColor+AppColors.swift */,
@@ -566,7 +611,6 @@
 				9B2AFBA9215701FB00DF9A5E /* UIView+Convenience.swift */,
 				9B933F6C2136537A004DCD3F /* UIView+Layout.swift */,
 				9B933F3E2134EBBE004DCD3F /* UIView+NibLoadable.swift */,
-				9B1D7069217169B500E517F5 /* NSManagedObject+Data.swift */,
 			);
 			name = Extensions;
 			sourceTree = "<group>";
@@ -627,6 +671,61 @@
 				9B19593121616B5600AA320A /* DateInput */,
 			);
 			name = ViewControllers;
+			sourceTree = "<group>";
+		};
+		9BF12B80216AB7F100021249 /* Persistent */ = {
+			isa = PBXGroup;
+			children = (
+				9BF12BA5216ABE0600021249 /* Protocols */,
+				9BF12BA0216ABD5900021249 /* Mediators */,
+				9BF12B8D216AB9BB00021249 /* Managers */,
+				9BF12B8C216AB8B800021249 /* ManagedObjects */,
+				9BF12B81216AB81000021249 /* BuGuaApp.xcdatamodeld */,
+			);
+			name = Persistent;
+			sourceTree = "<group>";
+		};
+		9BF12B8C216AB8B800021249 /* ManagedObjects */ = {
+			isa = PBXGroup;
+			children = (
+				9BF12B96216ABBD300021249 /* BuGuaEntryObject+CoreDataClass.swift */,
+				9BF12B97216ABBD300021249 /* BuGuaEntryObject+CoreDataProperties.swift */,
+				9BF12B9C216ABCD100021249 /* CacheRecord+CoreDataClass.swift */,
+				9BF12B9D216ABCD100021249 /* CacheRecord+CoreDataProperties.swift */,
+				9BF12B94216ABBD300021249 /* GregorianDateObject+CoreDataClass.swift */,
+				9BF12B95216ABBD300021249 /* GregorianDateObject+CoreDataProperties.swift */,
+			);
+			name = ManagedObjects;
+			sourceTree = "<group>";
+		};
+		9BF12B8D216AB9BB00021249 /* Managers */ = {
+			isa = PBXGroup;
+			children = (
+				9BF12B8E216AB9D700021249 /* CacheManager.swift */,
+				9BF12B90216AB9FC00021249 /* CloudKitManager.swift */,
+				9BF12B92216ABA3C00021249 /* StorageManager.swift */,
+				9B1D703F21711E5300E517F5 /* UpdateManager.swift */,
+			);
+			name = Managers;
+			sourceTree = "<group>";
+		};
+		9BF12BA0216ABD5900021249 /* Mediators */ = {
+			isa = PBXGroup;
+			children = (
+				9BF12BA1216ABD6B00021249 /* BuGuaEntryMediator.swift */,
+			);
+			name = Mediators;
+			sourceTree = "<group>";
+		};
+		9BF12BA5216ABE0600021249 /* Protocols */ = {
+			isa = PBXGroup;
+			children = (
+				9BF12BA3216ABDEF00021249 /* Mediator.swift */,
+				9BF12BA6216ABE2400021249 /* ManagedConvertable.swift */,
+				9BF12BA8216ABE4D00021249 /* ImmutableConvertable.swift */,
+				9BF12BAA216C264800021249 /* CKRecordConvertable.swift */,
+			);
+			name = Protocols;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -873,45 +972,48 @@
 			buildActionMask = 2147483647;
 			files = (
 				9B933F6F213794F7004DCD3F /* UIFont+AppFont.swift in Sources */,
-				9B1D705C2171681F00E517F5 /* BuGuaEntryObject+CoreDataClass.swift in Sources */,
 				9B19592D21615AA500AA320A /* UITableViewCell+Nib.swift in Sources */,
 				3413A5632140D6FB00245C46 /* NumericTextfieldDelegate.swift in Sources */,
 				9B8B4F03215C4339009FBCD2 /* MasterDetailCell.swift in Sources */,
-				9B1D706A217169B500E517F5 /* NSManagedObject+Data.swift in Sources */,
 				9BCE8863214F0A590024FEF7 /* GuaXiangInputCoordinatorModel.swift in Sources */,
 				9B1D70492171473600E517F5 /* ImmutableConvertable.swift in Sources */,
 				9B1D706F217174B600E517F5 /* CacheRecord+CoreDataClass.swift in Sources */,
 				9BCE886C214F13780024FEF7 /* DatePickerViewModel.swift in Sources */,
+				9BF12BAB216C264800021249 /* CKRecordConvertable.swift in Sources */,
+				9BF12BA4216ABDEF00021249 /* Mediator.swift in Sources */,
 				34A13D4D214222E700D77D98 /* IntegerLiuYaoConverter.swift in Sources */,
+				9BF12B9B216ABBD300021249 /* BuGuaEntryObject+CoreDataProperties.swift in Sources */,
 				9B2AFBAA215701FB00DF9A5E /* UIView+Convenience.swift in Sources */,
+				9BF12B91216AB9FC00021249 /* CloudKitManager.swift in Sources */,
 				9B2AFBA62156EC9100DF9A5E /* GuaXiangRow.swift in Sources */,
+				9BF12B9A216ABBD300021249 /* BuGuaEntryObject+CoreDataClass.swift in Sources */,
+				9BF12B93216ABA3C00021249 /* StorageManager.swift in Sources */,
 				341EE5C32143A94A00CB7D53 /* GuaXiangViewLayout.swift in Sources */,
 				9B2AFBA82157011800DF9A5E /* ShiYaoView.swift in Sources */,
 				9B933F3F2134EBBE004DCD3F /* UIView+NibLoadable.swift in Sources */,
 				3413A5672140E0BC00245C46 /* AutoNextTextFieldDelegate.swift in Sources */,
+				9BF12B98216ABBD300021249 /* GregorianDateObject+CoreDataClass.swift in Sources */,
 				9B933F792138DEE2004DCD3F /* CGPoint+Math.swift in Sources */,
 				9BCE8867214F11960024FEF7 /* Coordinator.swift in Sources */,
 				3413A5652140D89900245C46 /* CharacterSet+MoreSets.swift in Sources */,
+				9B1D704021711E5300E517F5 /* UpdateManager.swift in Sources */,
 				346334482148A66E001D462B /* Container+Operator.swift in Sources */,
 				34F3E4FF2150A84F00A9BA2B /* Rx+Operators.swift in Sources */,
 				9B19593F2161709D00AA320A /* TimeGanZhiViewModel.swift in Sources */,
-				9B1D70552171674800E517F5 /* BuGuaApp.xcdatamodeld in Sources */,
-				9B1D705B2171681F00E517F5 /* GregorianDateObject+CoreDataProperties.swift in Sources */,
+				9BF12BB1216C311500021249 /* RepeatingTimer.swift in Sources */,
 				9B933F3B2134EB01004DCD3F /* FuXiBaGuaView.swift in Sources */,
-				9B1D705D2171681F00E517F5 /* BuGuaEntryObject+CoreDataProperties.swift in Sources */,
 				9BCE8874214F2E220024FEF7 /* DateGanZhiViewController.swift in Sources */,
-				9B1D705A2171681F00E517F5 /* GregorianDateObject+CoreDataClass.swift in Sources */,
 				3413A5692140E0D600245C46 /* ComposableTextfieldDelegate.swift in Sources */,
 				9BCB3616213E254900F7FDDE /* AppFactory.swift in Sources */,
 				9B933F772137A8C3004DCD3F /* YaoView.swift in Sources */,
-				9B1D70662171690B00E517F5 /* StorageManager.swift in Sources */,
 				9B1D704B2171475900E517F5 /* ManagedConvertable.swift in Sources */,
 				9B8B4F06215C5872009FBCD2 /* ContentCell.swift in Sources */,
+				9BF12BB6216C31DC00021249 /* NSManagedObject+Data.swift in Sources */,
 				9BCB361A213E30D700F7FDDE /* GuaXiangViewModel.swift in Sources */,
-				9B1D70682171698100E517F5 /* Mediator.swift in Sources */,
-				9B1D7047217146E100E517F5 /* CKRecordConvertable.swift in Sources */,
+				9BF12B9F216ABCD100021249 /* CacheRecord+CoreDataProperties.swift in Sources */,
 				34A13D4F2142294D00D77D98 /* Int+Conversion.swift in Sources */,
 				9BCB3609213E011800F7FDDE /* String+Vertical.swift in Sources */,
+				9BF12BA7216ABE2400021249 /* ManagedConvertable.swift in Sources */,
 				9BCB3618213E2A5800F7FDDE /* BuGuaEntryCoordinator.swift in Sources */,
 				9BCE8869214F133F0024FEF7 /* DatePickerViewController.swift in Sources */,
 				9B2AFBAC2157347200DF9A5E /* WideDivider.swift in Sources */,
@@ -919,25 +1021,28 @@
 				9BCB360D213E148200F7FDDE /* GuaXiangViewController.swift in Sources */,
 				9B19593421616BA000AA320A /* TimePickerViewController.swift in Sources */,
 				34EC158F21534EF700378758 /* ShallowThemeStore.swift in Sources */,
+				9BF12BA9216ABE4D00021249 /* ImmutableConvertable.swift in Sources */,
 				9B8B4F0A215C870F009FBCD2 /* BGPageControllerLayout.swift in Sources */,
-				9B1D704D217147A200E517F5 /* RepeatingTimer.swift in Sources */,
+				9BF12B9E216ABCD100021249 /* CacheRecord+CoreDataClass.swift in Sources */,
 				9B933F6D2136537A004DCD3F /* UIView+Layout.swift in Sources */,
 				3463344F2148BD4B001D462B /* HeaderLabelView.swift in Sources */,
 				34EC158D21534ECA00378758 /* Theme.swift in Sources */,
+				9BF12BA2216ABD6B00021249 /* BuGuaEntryMediator.swift in Sources */,
 				9B933EF32134E529004DCD3F /* ViewController.swift in Sources */,
 				9B933F7D2138DF75004DCD3F /* CGSize+Points.swift in Sources */,
 				9BADB6622172D184006D14D3 /* UpdateManager.swift in Sources */,
 				34BE79962159D25400B5010A /* BuGuaEntryViewController.swift in Sources */,
 				9B933F73213797A2004DCD3F /* UIColor+AppColors.swift in Sources */,
 				9B933F5B2135A8B0004DCD3F /* GuaXiangView.swift in Sources */,
+				9BF12B83216AB81000021249 /* BuGuaApp.xcdatamodeld in Sources */,
 				3413A55D2140BF4B00245C46 /* InputViewController.swift in Sources */,
 				9BCB3614213E234000F7FDDE /* AppCoordinator.swift in Sources */,
 				9BCE8861214EF5220024FEF7 /* GuaXiangInputCoordinator.swift in Sources */,
 				34BE79982159D26200B5010A /* BuGuaEntryViewModel.swift in Sources */,
 				9BCEE3A5215D844C000B50EC /* BGPageController.swift in Sources */,
 				9B19593C2161708900AA320A /* TimeGanZhiViewController.swift in Sources */,
-				9B1D706C21716A1D00E517F5 /* BuGuaEntryMediator.swift in Sources */,
 				9B933EF12134E529004DCD3F /* AppDelegate.swift in Sources */,
+				9BF12B8F216AB9D700021249 /* CacheManager.swift in Sources */,
 				9B19593621616C0300AA320A /* TimePickerViewModel.swift in Sources */,
 				346334462148A52F001D462B /* Array+Convert.swift in Sources */,
 				9B933F7B2138DF3B004DCD3F /* CGRect+Points.swift in Sources */,
@@ -945,6 +1050,7 @@
 				9B1D7070217174B600E517F5 /* CacheRecord+CoreDataProperties.swift in Sources */,
 				9B1D7072217174F600E517F5 /* CacheManager.swift in Sources */,
 				34BE799A2159D33A00B5010A /* BuGuaInfoViewController.swift in Sources */,
+				9BF12B99216ABBD300021249 /* GregorianDateObject+CoreDataProperties.swift in Sources */,
 				34EC158A2153426B00378758 /* ThemeManager.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -1312,12 +1418,12 @@
 /* End XCConfigurationList section */
 
 /* Begin XCVersionGroup section */
-		9B1D70532171674800E517F5 /* BuGuaApp.xcdatamodeld */ = {
+		9BF12B81216AB81000021249 /* BuGuaApp.xcdatamodeld */ = {
 			isa = XCVersionGroup;
 			children = (
-				9B1D70542171674800E517F5 /* BuGuaApp.xcdatamodel */,
+				9BF12B82216AB81000021249 /* BuGuaApp.xcdatamodel */,
 			);
-			currentVersion = 9B1D70542171674800E517F5 /* BuGuaApp.xcdatamodel */;
+			currentVersion = 9BF12B82216AB81000021249 /* BuGuaApp.xcdatamodel */;
 			path = BuGuaApp.xcdatamodeld;
 			sourceTree = "<group>";
 			versionGroupType = wrapper.xcdatamodel;

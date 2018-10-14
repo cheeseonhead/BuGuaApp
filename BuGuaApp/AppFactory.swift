@@ -21,6 +21,8 @@ class AppFactory {
     let themeManager: ThemeManager
     let storageManager: StorageManager
     let cacheManager: CacheManager
+    let cloudManager: CloudKitManager
+    let updateManager: UpdateManager
 
     // MARK: - CoreData
 
@@ -28,12 +30,19 @@ class AppFactory {
 
     init(container: NSPersistentContainer) {
         self.container = container
+
         themeManager = ThemeManager(store: themeStore)
 
         let cacheContext = container.newBackgroundContext()
         cacheManager = CacheManager(context: cacheContext, dateGenerator: { Date() as NSDate })
 
         storageManager = StorageManager(cacheManager: cacheManager, context: container.viewContext)
+
+        let updateContext = NSManagedObjectContext(concurrencyType: .privateQueueConcurrencyType)
+        updateContext.parent = self.container.viewContext
+        updateManager = UpdateManager(updateContext: updateContext)
+
+        cloudManager = CloudKitManager(container: CKContainer.default(), zone: CKRecordZone(zoneName: "Test"), cacheManager: cacheManager, updateManager: updateManager)
     }
 
     func makeAppCoordinator(with window: UIWindow) -> AppCoordinator {
