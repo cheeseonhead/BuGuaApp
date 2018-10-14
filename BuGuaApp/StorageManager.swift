@@ -28,9 +28,8 @@ class StorageManager {
 
         childContextSaveInput.bind { [unowned self] _ in
             self.context.perform {
-                print("Child Context saved\n")
                 try! self.context.save()
-                print("Saved context\n")
+                print("Child context changes saved\n")
             }
         }.disposed(by: bag)
     }

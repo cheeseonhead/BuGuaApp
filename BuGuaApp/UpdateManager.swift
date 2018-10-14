@@ -54,11 +54,10 @@ class UpdateManager {
 
     func flushChanges() {
         updateContext.perform {
-            try! self.updateContext.save()
+            guard self.updateContext.hasChanges else { return }
 
-            print("Will send save signal\n")
+            try! self.updateContext.save()
             self.contextSaveOutput.onNext(())
-            print("Did send save signal\n")
         }
     }
 
