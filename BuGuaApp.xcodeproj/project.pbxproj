@@ -36,7 +36,27 @@
 		9B19593C2161708900AA320A /* TimeGanZhiViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9B19593A2161708900AA320A /* TimeGanZhiViewController.swift */; };
 		9B19593D2161708900AA320A /* TimeGanZhiViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 9B19593B2161708900AA320A /* TimeGanZhiViewController.xib */; };
 		9B19593F2161709D00AA320A /* TimeGanZhiViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9B19593E2161709D00AA320A /* TimeGanZhiViewModel.swift */; };
+<<<<<<< HEAD
 		9B1D704021711E5300E517F5 /* UpdateManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9B1D703F21711E5300E517F5 /* UpdateManager.swift */; };
+=======
+		9B1D70432171466C00E517F5 /* CloudKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9B1D70422171466C00E517F5 /* CloudKit.framework */; };
+		9B1D7047217146E100E517F5 /* CKRecordConvertable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9B1D7046217146E100E517F5 /* CKRecordConvertable.swift */; };
+		9B1D70492171473600E517F5 /* ImmutableConvertable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9B1D70482171473600E517F5 /* ImmutableConvertable.swift */; };
+		9B1D704B2171475900E517F5 /* ManagedConvertable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9B1D704A2171475900E517F5 /* ManagedConvertable.swift */; };
+		9B1D704D217147A200E517F5 /* RepeatingTimer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9B1D704C217147A200E517F5 /* RepeatingTimer.swift */; };
+		9B1D70552171674800E517F5 /* BuGuaApp.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 9B1D70532171674800E517F5 /* BuGuaApp.xcdatamodeld */; };
+		9B1D705A2171681F00E517F5 /* GregorianDateObject+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9B1D70562171681F00E517F5 /* GregorianDateObject+CoreDataClass.swift */; };
+		9B1D705B2171681F00E517F5 /* GregorianDateObject+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9B1D70572171681F00E517F5 /* GregorianDateObject+CoreDataProperties.swift */; };
+		9B1D705C2171681F00E517F5 /* BuGuaEntryObject+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9B1D70582171681F00E517F5 /* BuGuaEntryObject+CoreDataClass.swift */; };
+		9B1D705D2171681F00E517F5 /* BuGuaEntryObject+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9B1D70592171681F00E517F5 /* BuGuaEntryObject+CoreDataProperties.swift */; };
+		9B1D70662171690B00E517F5 /* StorageManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9B1D70652171690B00E517F5 /* StorageManager.swift */; };
+		9B1D70682171698100E517F5 /* Mediator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9B1D70672171698100E517F5 /* Mediator.swift */; };
+		9B1D706A217169B500E517F5 /* NSManagedObject+Data.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9B1D7069217169B500E517F5 /* NSManagedObject+Data.swift */; };
+		9B1D706C21716A1D00E517F5 /* BuGuaEntryMediator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9B1D706B21716A1D00E517F5 /* BuGuaEntryMediator.swift */; };
+		9B1D706F217174B600E517F5 /* CacheRecord+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9B1D706D217174B600E517F5 /* CacheRecord+CoreDataClass.swift */; };
+		9B1D7070217174B600E517F5 /* CacheRecord+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9B1D706E217174B600E517F5 /* CacheRecord+CoreDataProperties.swift */; };
+		9B1D7072217174F600E517F5 /* CacheManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9B1D7071217174F600E517F5 /* CacheManager.swift */; };
+>>>>>>> develop
 		9B273D3321390ABD00BDFBE3 /* SnapKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9B273D3221390ABD00BDFBE3 /* SnapKit.framework */; };
 		9B2AFBA62156EC9100DF9A5E /* GuaXiangRow.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9B2AFBA52156EC9100DF9A5E /* GuaXiangRow.swift */; };
 		9B2AFBA82157011800DF9A5E /* ShiYaoView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9B2AFBA72157011800DF9A5E /* ShiYaoView.swift */; };
@@ -185,7 +205,28 @@
 		9B19593A2161708900AA320A /* TimeGanZhiViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TimeGanZhiViewController.swift; sourceTree = "<group>"; };
 		9B19593B2161708900AA320A /* TimeGanZhiViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = TimeGanZhiViewController.xib; sourceTree = "<group>"; };
 		9B19593E2161709D00AA320A /* TimeGanZhiViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TimeGanZhiViewModel.swift; sourceTree = "<group>"; };
+<<<<<<< HEAD
 		9B1D703F21711E5300E517F5 /* UpdateManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UpdateManager.swift; sourceTree = "<group>"; };
+=======
+		9B1D70412171466A00E517F5 /* BuGuaApp.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = BuGuaApp.entitlements; sourceTree = "<group>"; };
+		9B1D70422171466C00E517F5 /* CloudKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CloudKit.framework; path = System/Library/Frameworks/CloudKit.framework; sourceTree = SDKROOT; };
+		9B1D7046217146E100E517F5 /* CKRecordConvertable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CKRecordConvertable.swift; sourceTree = "<group>"; };
+		9B1D70482171473600E517F5 /* ImmutableConvertable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImmutableConvertable.swift; sourceTree = "<group>"; };
+		9B1D704A2171475900E517F5 /* ManagedConvertable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ManagedConvertable.swift; sourceTree = "<group>"; };
+		9B1D704C217147A200E517F5 /* RepeatingTimer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RepeatingTimer.swift; sourceTree = "<group>"; };
+		9B1D70542171674800E517F5 /* BuGuaApp.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = BuGuaApp.xcdatamodel; sourceTree = "<group>"; };
+		9B1D70562171681F00E517F5 /* GregorianDateObject+CoreDataClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "GregorianDateObject+CoreDataClass.swift"; sourceTree = "<group>"; };
+		9B1D70572171681F00E517F5 /* GregorianDateObject+CoreDataProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "GregorianDateObject+CoreDataProperties.swift"; sourceTree = "<group>"; };
+		9B1D70582171681F00E517F5 /* BuGuaEntryObject+CoreDataClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "BuGuaEntryObject+CoreDataClass.swift"; sourceTree = "<group>"; };
+		9B1D70592171681F00E517F5 /* BuGuaEntryObject+CoreDataProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "BuGuaEntryObject+CoreDataProperties.swift"; sourceTree = "<group>"; };
+		9B1D70652171690B00E517F5 /* StorageManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StorageManager.swift; sourceTree = "<group>"; };
+		9B1D70672171698100E517F5 /* Mediator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Mediator.swift; sourceTree = "<group>"; };
+		9B1D7069217169B500E517F5 /* NSManagedObject+Data.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "NSManagedObject+Data.swift"; sourceTree = "<group>"; };
+		9B1D706B21716A1D00E517F5 /* BuGuaEntryMediator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BuGuaEntryMediator.swift; sourceTree = "<group>"; };
+		9B1D706D217174B600E517F5 /* CacheRecord+CoreDataClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "CacheRecord+CoreDataClass.swift"; sourceTree = "<group>"; };
+		9B1D706E217174B600E517F5 /* CacheRecord+CoreDataProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "CacheRecord+CoreDataProperties.swift"; sourceTree = "<group>"; };
+		9B1D7071217174F600E517F5 /* CacheManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CacheManager.swift; sourceTree = "<group>"; };
+>>>>>>> develop
 		9B273D3221390ABD00BDFBE3 /* SnapKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SnapKit.framework; path = Carthage/Build/iOS/SnapKit.framework; sourceTree = "<group>"; };
 		9B2AFBA52156EC9100DF9A5E /* GuaXiangRow.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GuaXiangRow.swift; sourceTree = "<group>"; };
 		9B2AFBA72157011800DF9A5E /* ShiYaoView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShiYaoView.swift; sourceTree = "<group>"; };
@@ -419,6 +460,39 @@
 			name = Protocols;
 			sourceTree = "<group>";
 		};
+<<<<<<< HEAD
+=======
+		9B1D705E2171682E00E517F5 /* ManagedObject */ = {
+			isa = PBXGroup;
+			children = (
+				9B1D70582171681F00E517F5 /* BuGuaEntryObject+CoreDataClass.swift */,
+				9B1D70592171681F00E517F5 /* BuGuaEntryObject+CoreDataProperties.swift */,
+				9B1D706D217174B600E517F5 /* CacheRecord+CoreDataClass.swift */,
+				9B1D706E217174B600E517F5 /* CacheRecord+CoreDataProperties.swift */,
+				9B1D70562171681F00E517F5 /* GregorianDateObject+CoreDataClass.swift */,
+				9B1D70572171681F00E517F5 /* GregorianDateObject+CoreDataProperties.swift */,
+			);
+			name = ManagedObject;
+			sourceTree = "<group>";
+		};
+		9B1D705F2171688C00E517F5 /* Mediators */ = {
+			isa = PBXGroup;
+			children = (
+				9B1D706B21716A1D00E517F5 /* BuGuaEntryMediator.swift */,
+			);
+			name = Mediators;
+			sourceTree = "<group>";
+		};
+		9B1D7064217168FE00E517F5 /* Managers */ = {
+			isa = PBXGroup;
+			children = (
+				9B1D70652171690B00E517F5 /* StorageManager.swift */,
+				9B1D7071217174F600E517F5 /* CacheManager.swift */,
+			);
+			name = Managers;
+			sourceTree = "<group>";
+		};
+>>>>>>> develop
 		9B8B4F01215C431B009FBCD2 /* Cell */ = {
 			isa = PBXGroup;
 			children = (
@@ -900,6 +974,7 @@
 				9B8B4F03215C4339009FBCD2 /* MasterDetailCell.swift in Sources */,
 				9BCE8863214F0A590024FEF7 /* GuaXiangInputCoordinatorModel.swift in Sources */,
 				9B1D70492171473600E517F5 /* ImmutableConvertable.swift in Sources */,
+				9B1D706F217174B600E517F5 /* CacheRecord+CoreDataClass.swift in Sources */,
 				9BCE886C214F13780024FEF7 /* DatePickerViewModel.swift in Sources */,
 				9BF12BAB216C264800021249 /* CKRecordConvertable.swift in Sources */,
 				9BF12BA4216ABDEF00021249 /* Mediator.swift in Sources */,
@@ -968,6 +1043,8 @@
 				346334462148A52F001D462B /* Array+Convert.swift in Sources */,
 				9B933F7B2138DF3B004DCD3F /* CGRect+Points.swift in Sources */,
 				3413A5602140BFB900245C46 /* InputViewModel.swift in Sources */,
+				9B1D7070217174B600E517F5 /* CacheRecord+CoreDataProperties.swift in Sources */,
+				9B1D7072217174F600E517F5 /* CacheManager.swift in Sources */,
 				34BE799A2159D33A00B5010A /* BuGuaInfoViewController.swift in Sources */,
 				9BF12B99216ABBD300021249 /* GregorianDateObject+CoreDataProperties.swift in Sources */,
 				34EC158A2153426B00378758 /* ThemeManager.swift in Sources */,

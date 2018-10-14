@@ -12,10 +12,11 @@ import Foundation
 class StorageManager {
     private let cacheManager: CacheManager
     private let context: NSManagedObjectContext
+    private let cacheManager: CacheManager
 
     init(cacheManager: CacheManager, context: NSManagedObjectContext) {
-        self.cacheManager = cacheManager
         self.context = context
+        self.cacheManager = cacheManager
     }
 
     func makeObject<Immutable>(from immutable: Immutable) -> Immutable.ObjectType where Immutable: ManagedConvertable, Immutable.Context == NSManagedObjectContext {
@@ -28,7 +29,6 @@ class StorageManager {
             let modifiedObjects = self.context.updatedObjects
             let deletedRecordIDs = self.context.deletedObjects.map { obj -> NSData? in
                 guard let ckConvertable = obj as? CKRecordConvertable else { return nil }
-
                 return ckConvertable.recordData
             }
 
@@ -38,7 +38,6 @@ class StorageManager {
                 } catch {
                     fatalError(error.localizedDescription)
                 }
-
                 let insertedObjectIDs = insertedObjects.map { $0.objectID }
                 let modifiedObjectIDs = modifiedObjects.map { $0.objectID }
                 self.cacheManager.cacheUpdate(ids: insertedObjectIDs + modifiedObjectIDs, deleteIds: deletedRecordIDs)

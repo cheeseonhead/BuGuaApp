@@ -5,10 +5,11 @@
 //  Created by Jeffrey Wu on 2018-10-07.
 //  Copyright © 2018 Jeffrey Wu. All rights reserved.
 //
-
 import CloudKit
 import CoreData
 import Foundation
+
+typealias RawRecordID = NSData
 
 class CacheManager {
     // MARK: - Constant
@@ -27,7 +28,7 @@ class CacheManager {
 
     /// Call this method if there are managed objects that have been modified and should be uploaded to the cloud at
     /// a later time.
-    func cacheUpdate(ids: [NSManagedObjectID], deleteIds: [NSData?]) {
+    func cacheUpdate(ids: [NSManagedObjectID], deleteIds: [RawRecordID?]) {
         let uris = ids.map { $0.uriRepresentation() }
 
         context.perform { [unowned self] in
@@ -41,7 +42,7 @@ class CacheManager {
                 guard let id = $0 else { return }
 
                 let cacheObject = CacheRecord(context: self.context)
-                cacheObject.recordID = id
+                cacheObject.recordData = id
                 cacheObject.nextTryTimestamp = self.dateGenerator()
             }
             try! self.context.save()
@@ -49,21 +50,21 @@ class CacheManager {
     }
 
     /// Call this method to get all the objects that are waiting to be uploaded
-    func getCached(_ completion: @escaping ([CKRecordConvertable], [NSData]) -> Void) {
+    func getCached(_ completion: @escaping ([CKRecordConvertable], [CKRecord.ID]) -> Void) {
         context.perform { [unowned self] in
 
             let matureCacheRecords = self.fetchAllMatureCacheRecords()
 
             var idsToUpload: [NSManagedObjectID] = []
-            var dataToDelete: [NSData] = []
+            var recordIdToDelete: [CKRecord.ID] = []
 
             for cache in matureCacheRecords {
                 if let url = cache.managedObjectId {
                     idsToUpload.append(self.context.persistentStoreCoordinator!.managedObjectID(forURIRepresentation: url)!)
                 }
 
-                if let data = cache.recordID {
-                    dataToDelete.append(data)
+                if let recordID = cache.recordID {
+                    recordIdToDelete.append(recordID)
                 }
             }
 
@@ -78,14 +79,13 @@ class CacheManager {
                 objectsToUpload.append(ckObj)
             }
             try! self.context.save()
-            completion(objectsToUpload, dataToDelete)
+            completion(objectsToUpload, recordIdToDelete)
         }
     }
 
     /// This method is called when a record upload result has come back
     func handleRecordUploadResult(_ record: CKRecord, error _: Error?) {
         // TODO: Handle error
-
         context.perform {
             guard let correspondingObject = self.retrieveObject(for: record.recordID.recordName) else {
                 fatalError("Trying to handle a record uploaded that doesn't exist locally")
