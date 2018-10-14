@@ -115,12 +115,12 @@ class CloudKitManager {
         }
 
         zoneChangesOperation.fetchDatabaseChangesCompletionBlock = { token, _, error in
-            if let error = error {
+            if error != nil {
                 // TODO: Handler error
                 return
             }
 
-            print("Final new server token:\(token)")
+            print("Final new server token:\(token!)")
             latestServerChangeToken = token
 
             self.fetchZoneChanges(zoneIDs: changedZoneIDs, completion: {
@@ -155,23 +155,24 @@ class CloudKitManager {
         }
 
         operation.recordZoneFetchCompletionBlock = { zoneId, changeToken, _, _, error in
-            if let error = error {
+            if error != nil {
                 return
             }
-            print("Completion Zone: \(zoneId) Token:\(changeToken)")
+            print("Completion Zone: \(zoneId) Token:\(changeToken!)")
             UserDefaults.standard.setToken(changeToken, forKey: "TestZoneChangeToken")
             // Flush record changes and deletions for this zone to disk
             // Write this new zone change token to disk
         }
 
         operation.fetchRecordZoneChangesCompletionBlock = { error in
-            if let error = error {}
+            if error != nil {}
             completion()
         }
 
         container.privateCloudDatabase.add(operation)
     }
 
+    /// This is called when we are in inSync state. Gets cached records from cacheManager to upload to cloud.
     func uploadCache() {
         cacheManager.getCached { [unowned self] objectsToUpload, recordIDsToDelete in
             let recordsToUpload = objectsToUpload.map {
