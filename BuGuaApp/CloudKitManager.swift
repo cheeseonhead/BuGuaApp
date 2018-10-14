@@ -136,6 +136,7 @@ class CloudKitManager {
             self.fetchZoneChanges(zoneIDs: changedZoneIDs) {
                 UserDefaults.standard.setToken(latestServerChangeToken, forKey: self.serverChangeTokenKey)
                 self.updateManager.flushChanges()
+                // TODO: Change this to inSync
                 self.state = .serverOutdated
             }
         }
