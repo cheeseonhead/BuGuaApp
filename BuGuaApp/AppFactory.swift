@@ -41,6 +41,8 @@ class AppFactory {
         updateContext.parent = container.viewContext
         updateManager = UpdateManager(updateContext: updateContext)
 
+        updateManager.contextSaveOutput.bind(to: storageManager.childContextSaveInput).disposed(by: storageManager.bag)
+
         let recordZone = CKRecordZone(zoneName: "Test")
         cloudManager = CloudKitManager(container: CKContainer.default(), zone: recordZone, cacheManager: cacheManager, updateManager: updateManager)
     }
