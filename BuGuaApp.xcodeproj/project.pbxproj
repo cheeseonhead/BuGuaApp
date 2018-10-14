@@ -91,6 +91,7 @@
 		9B933F7D2138DF75004DCD3F /* CGSize+Points.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9B933F7C2138DF75004DCD3F /* CGSize+Points.swift */; };
 		9BADB6622172D184006D14D3 /* UpdateManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9BADB6612172D184006D14D3 /* UpdateManager.swift */; };
 		9BADB6642172D68E006D14D3 /* CloudKitManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9BADB6632172D68E006D14D3 /* CloudKitManager.swift */; };
+		9BADB6662172D6F4006D14D3 /* UserDefaults+CloudKit.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9BADB6652172D6F4006D14D3 /* UserDefaults+CloudKit.swift */; };
 		9BCB3609213E011800F7FDDE /* String+Vertical.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9BCB3608213E011800F7FDDE /* String+Vertical.swift */; };
 		9BCB360D213E148200F7FDDE /* GuaXiangViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9BCB360C213E148200F7FDDE /* GuaXiangViewController.swift */; };
 		9BCB3611213E150500F7FDDE /* GuaXiangViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 9BCB3610213E150500F7FDDE /* GuaXiangViewController.xib */; };
@@ -245,6 +246,7 @@
 		9B933F7C2138DF75004DCD3F /* CGSize+Points.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "CGSize+Points.swift"; sourceTree = "<group>"; };
 		9BADB6612172D184006D14D3 /* UpdateManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UpdateManager.swift; sourceTree = "<group>"; };
 		9BADB6632172D68E006D14D3 /* CloudKitManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CloudKitManager.swift; sourceTree = "<group>"; };
+		9BADB6652172D6F4006D14D3 /* UserDefaults+CloudKit.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UserDefaults+CloudKit.swift"; sourceTree = "<group>"; };
 		9BCB3608213E011800F7FDDE /* String+Vertical.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "String+Vertical.swift"; sourceTree = "<group>"; };
 		9BCB360C213E148200F7FDDE /* GuaXiangViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GuaXiangViewController.swift; sourceTree = "<group>"; };
 		9BCB3610213E150500F7FDDE /* GuaXiangViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = GuaXiangViewController.xib; sourceTree = "<group>"; };
@@ -570,6 +572,7 @@
 				9B933F6C2136537A004DCD3F /* UIView+Layout.swift */,
 				9B933F3E2134EBBE004DCD3F /* UIView+NibLoadable.swift */,
 				9B1D7069217169B500E517F5 /* NSManagedObject+Data.swift */,
+				9BADB6652172D6F4006D14D3 /* UserDefaults+CloudKit.swift */,
 			);
 			name = Extensions;
 			sourceTree = "<group>";
@@ -942,6 +945,7 @@
 				9B19593C2161708900AA320A /* TimeGanZhiViewController.swift in Sources */,
 				9B1D706C21716A1D00E517F5 /* BuGuaEntryMediator.swift in Sources */,
 				9B933EF12134E529004DCD3F /* AppDelegate.swift in Sources */,
+				9BADB6662172D6F4006D14D3 /* UserDefaults+CloudKit.swift in Sources */,
 				9B19593621616C0300AA320A /* TimePickerViewModel.swift in Sources */,
 				346334462148A52F001D462B /* Array+Convert.swift in Sources */,
 				9B933F7B2138DF3B004DCD3F /* CGRect+Points.swift in Sources */,

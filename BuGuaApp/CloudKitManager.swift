@@ -173,15 +173,12 @@ class CloudKitManager {
     }
 
     func uploadCache() {
-        cacheManager.getCached { [unowned self] objectsToUpload, recordDataToDelete in
+        cacheManager.getCached { [unowned self] objectsToUpload, recordIDsToDelete in
             let recordsToUpload = objectsToUpload.map {
                 $0.cloudKitRecord(zoneID: self.zone.zoneID)
             }
-            let idsToDelete = recordDataToDelete.map {
-                NSKeyedUnarchiver.unarchiveObject(with: $0 as Data) as! CKRecord.ID
-            }
 
-            let recordOperation = CKModifyRecordsOperation(recordsToSave: recordsToUpload, recordIDsToDelete: idsToDelete)
+            let recordOperation = CKModifyRecordsOperation(recordsToSave: recordsToUpload, recordIDsToDelete: recordIDsToDelete)
 
             recordOperation.perRecordCompletionBlock = { record, error in
                 if error == nil {
@@ -203,28 +200,5 @@ class CloudKitManager {
 
             self.container.privateCloudDatabase.add(recordOperation)
         }
-    }
-}
-
-extension UserDefaults {
-    func setToken(_ token: CKServerChangeToken?, forKey key: String) {
-        guard let token = token else {
-            set(nil, forKey: key)
-            return
-        }
-        let data = NSKeyedArchiver.archivedData(withRootObject: token)
-        set(data, forKey: key)
-    }
-
-    func changeToken(forKey key: String) -> CKServerChangeToken? {
-        guard let data = data(forKey: key) else {
-            return nil
-        }
-
-        guard let token = NSKeyedUnarchiver.unarchiveObject(with: data) as? CKServerChangeToken else {
-            return nil
-        }
-
-        return token
     }
 }
