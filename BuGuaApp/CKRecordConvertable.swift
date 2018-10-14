@@ -13,6 +13,7 @@ import Foundation
 protocol CKRecordConvertable: class {
     var recordData: NSData? { get set }
     var recordName: String? { get set }
+    var recordID: CKRecord.ID? { get }
 
     // MARK: - Send to Cloud
 
@@ -26,6 +27,14 @@ protocol CKRecordConvertable: class {
 }
 
 extension CKRecordConvertable where Self: NSManagedObject {
+    // MARK: - Computed Properties
+
+    var recordID: CKRecord.ID? {
+        guard let data = recordData else { return nil }
+
+        return (NSKeyedUnarchiver.unarchiveObject(with: data as Data) as! CKRecord.ID)
+    }
+
     // MARK: - Send to Cloud
 
     func cloudKitRecord(zoneID: CKRecordZone.ID) -> CKRecord {

@@ -20,7 +20,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         window?.rootViewController = UIViewController()
 
         let container = NSPersistentContainer(name: "BuGuaApp")
-        container.loadPersistentStores { storeDescription, _ in
+        container.loadPersistentStores { [unowned self, container] storeDescription, _ in
             print("Store: \(storeDescription.url!.absoluteString)")
             // TODO: Handle Error
             let factory = AppFactory(container: container)

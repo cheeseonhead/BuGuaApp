@@ -8,6 +8,7 @@
 //
 
 import BuGuaKit
+import CloudKit
 import CoreData
 import Foundation
 
@@ -41,5 +42,34 @@ extension GregorianDateObject: ImmutableConvertable {
         year = immutable.year.int64
         month = immutable.month.int64
         day = immutable.day.int64
+    }
+}
+
+extension GregorianDateObject: CKRecordConvertable {
+    func fillCloudRecord(_ record: CKRecord) {
+        record[.year] = year
+        record[.month] = month
+        record[.day] = day
+    }
+
+    func updateDetails(with record: CKRecord) {
+        year = record[.year] as! Int64
+        month = record[.month] as! Int64
+        day = record[.day] as! Int64
+    }
+}
+
+private extension CKRecord {
+    enum Key: String {
+        case year, month, day
+    }
+
+    subscript(key: Key) -> Any? {
+        get {
+            return self[key.rawValue]
+        }
+        set {
+            self[key.rawValue] = newValue as? CKRecordValue
+        }
     }
 }
