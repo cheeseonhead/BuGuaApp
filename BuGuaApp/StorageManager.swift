@@ -7,14 +7,30 @@
 //
 import CoreData
 import Foundation
+import RxCocoa
+import RxSwift
+import RxSwiftExt
 
 class StorageManager {
+    // MARK: - Inputs
+
+    private let bag = DisposeBag()
+    private(set) var childContextSave = PublishRelay<()>()
+
+    // MARK: - Dependencies
+
     private let context: NSManagedObjectContext
     private let cacheManager: CacheManager
 
     init(cacheManager: CacheManager, context: NSManagedObjectContext) {
         self.context = context
         self.cacheManager = cacheManager
+
+        childContextSave.bind { [unowned self] _ in
+            self.context.perform {
+                try! self.context.save()
+            }
+        }.disposed(by: bag)
     }
 
     func makeObject<Immutable>(from immutable: Immutable) -> Immutable.ObjectType where Immutable: ManagedConvertable, Immutable.Context == NSManagedObjectContext {
