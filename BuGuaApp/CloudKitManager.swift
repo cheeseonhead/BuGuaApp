@@ -32,6 +32,11 @@ class CloudKitManager {
     private let cacheManager: CacheManager
     private let updateManager: UpdateManager
 
+    // MARK: - PriConstants
+
+    private let serverChangeTokenKey = "serverChangeToken"
+    private let customZoneTokenKey = "TestZoneChangeToken"
+
     // MARK: - Private
 
     private let timer: RepeatingTimer
@@ -99,7 +104,8 @@ class CloudKitManager {
     }
 
     func fetchUpdates() {
-        var latestServerChangeToken = UserDefaults.standard.changeToken(forKey: "serverChangeToken")
+        // TODO: Make UserDefaults injected
+        var latestServerChangeToken = UserDefaults.standard.changeToken(forKey: serverChangeTokenKey)
 
         let zoneChangesOperation = CKFetchDatabaseChangesOperation(previousServerChangeToken: latestServerChangeToken)
 
@@ -115,18 +121,19 @@ class CloudKitManager {
         }
 
         zoneChangesOperation.fetchDatabaseChangesCompletionBlock = { token, _, error in
-            if error != nil {
-                // TODO: Handler error
+            // TODO: Handle Error
+            guard error == nil else {
+                print("Error Occured: \(error!.localizedDescription)")
                 return
             }
 
             print("Final new server token:\(token!)")
             latestServerChangeToken = token
 
-            self.fetchZoneChanges(zoneIDs: changedZoneIDs, completion: {
-                UserDefaults.standard.setToken(latestServerChangeToken, forKey: "serverChangeToken")
+            self.fetchZoneChanges(zoneIDs: changedZoneIDs) {
+                UserDefaults.standard.setToken(latestServerChangeToken, forKey: self.serverChangeTokenKey)
                 self.state = .serverOutdated
-            })
+            }
         }
 
         container.privateCloudDatabase.add(zoneChangesOperation)
@@ -135,37 +142,41 @@ class CloudKitManager {
     func fetchZoneChanges(zoneIDs: [CKRecordZone.ID], completion: @escaping () -> Void) {
         // Look up the previous change token for each zone
         var optionsByRecordZoneID = [CKRecordZone.ID: CKFetchRecordZoneChangesOperation.ZoneOptions]()
+
         for zoneID in zoneIDs {
             let options = CKFetchRecordZoneChangesOperation.ZoneOptions()
-            options.previousServerChangeToken = UserDefaults.standard.changeToken(forKey: "TestZoneChangeToken")
+            options.previousServerChangeToken = UserDefaults.standard.changeToken(forKey: customZoneTokenKey)
             optionsByRecordZoneID[zoneID] = options
         }
 
         let operation = CKFetchRecordZoneChangesOperation(recordZoneIDs: zoneIDs, optionsByRecordZoneID: optionsByRecordZoneID)
 
         operation.recordChangedBlock = { record in
-            print("Record changed:", record)
-            // Write this record change to memory
-            self.updateManager.recordUpdated(record)
+            self.updateManager.recordChanged(record)
         }
 
         operation.recordWithIDWasDeletedBlock = { recordId, _ in
-            print("Record deleted:", recordId)
-            // Write this record deletion to memory
+            self.updateManager.recordDeleted(recordId)
         }
 
         operation.recordZoneFetchCompletionBlock = { zoneId, changeToken, _, _, error in
-            if error != nil {
+            // TODO: Handle Error
+            guard error == nil else {
+                print("Error Occured: \(error!.localizedDescription)")
                 return
             }
-            print("Completion Zone: \(zoneId) Token:\(changeToken!)")
-            UserDefaults.standard.setToken(changeToken, forKey: "TestZoneChangeToken")
-            // Flush record changes and deletions for this zone to disk
-            // Write this new zone change token to disk
+
+            print("zoneFetch Completed! Zone: \(zoneId) Token:\(changeToken!)")
+            UserDefaults.standard.setToken(changeToken, forKey: self.customZoneTokenKey)
         }
 
         operation.fetchRecordZoneChangesCompletionBlock = { error in
-            if error != nil {}
+            // TODO: Handle Error
+            guard error == nil else {
+                print("Error Occured: \(error!.localizedDescription)")
+                return
+            }
+
             completion()
         }
 
@@ -184,7 +195,7 @@ class CloudKitManager {
             recordOperation.perRecordCompletionBlock = { record, error in
                 if error == nil {
                     print("Record uploaded successfully: \(record)")
-                    self.updateManager.recordUpdated(record)
+                    self.updateManager.recordChanged(record)
                 }
                 // TODO: Handle out of date error
                 self.cacheManager.handleRecordUploadResult(record, error: error)

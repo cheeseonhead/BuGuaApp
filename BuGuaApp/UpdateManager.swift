@@ -17,7 +17,7 @@ class UpdateManager {
     }
 
     /// This method is called when a record has been updated from the cloud
-    func recordUpdated(_ record: CKRecord) {
+    func recordChanged(_ record: CKRecord) {
         updateContext.perform {
             if let correspondingObject = self.retrieveRecordConvertable(for: record.recordID.recordName) {
                 correspondingObject.updateWithRecord(record)
