@@ -14,8 +14,8 @@ import RxSwiftExt
 class StorageManager {
     // MARK: - Inputs
 
-    private let bag = DisposeBag()
-    private(set) var childContextSave = PublishRelay<()>()
+    let bag = DisposeBag()
+    private(set) var childContextSaveInput = PublishRelay<()>()
 
     // MARK: - Dependencies
 
@@ -26,9 +26,11 @@ class StorageManager {
         self.context = context
         self.cacheManager = cacheManager
 
-        childContextSave.bind { [unowned self] _ in
+        childContextSaveInput.bind { [unowned self] _ in
             self.context.perform {
+                print("Child Context saved\n")
                 try! self.context.save()
+                print("Saved context\n")
             }
         }.disposed(by: bag)
     }
