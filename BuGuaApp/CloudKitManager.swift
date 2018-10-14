@@ -34,7 +34,7 @@ class CloudKitManager {
 
     // MARK: - PriConstants
 
-    private let updateInterval = TimeInterval(60)
+    private let updateInterval = TimeInterval(10)
     private let serverChangeTokenKey = "serverChangeToken"
     private let customZoneTokenKey = "TestZoneChangeToken"
 
@@ -135,6 +135,7 @@ class CloudKitManager {
 
             self.fetchZoneChanges(zoneIDs: changedZoneIDs) {
                 UserDefaults.standard.setToken(latestServerChangeToken, forKey: self.serverChangeTokenKey)
+                self.updateManager.flushChanges()
                 self.state = .serverOutdated
             }
         }
@@ -143,7 +144,6 @@ class CloudKitManager {
     }
 
     func fetchZoneChanges(zoneIDs: [CKRecordZone.ID], completion: @escaping () -> Void) {
-
         guard zoneIDs.count > 0 else {
             completion()
             return
