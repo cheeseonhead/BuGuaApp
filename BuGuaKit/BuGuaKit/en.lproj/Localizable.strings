@@ -1,0 +1,87 @@
+/*
+  GuaName.strings
+  BuGuaKit
+
+  Created by Cheese Onhead on 2018-07-22.
+  Copyright © 2018 cheeseonhead. All rights reserved.
+*/
+"fuxibaguaqian" = "乾";
+"fuxibaguadui" = "兌";
+"fuxibaguali" = "離";
+"fuxibaguazhen" = "震";
+"fuxibaguaxun" = "巽";
+"fuxibaguakan" = "坎";
+"fuxibaguagen" = "艮";
+"fuxibaguakun" = "坤";
+
+"liushisiguaqianqian" = "乾為天"
+"liushisiguaqiandui" = "澤天夬"
+"liushisiguaqianli" = "火天大有"
+"liushisiguaqianzhen" = "雷天大壯"
+"liushisiguaqianxun" = "風天小畜"
+"liushisiguaqiankan" = "水天需"
+"liushisiguaqiangen" = "山天大畜"
+"liushisiguaqiankun" = "地天泰"
+
+"liushisiguaduiqian" = "天澤履"
+"liushisiguaduidui" = "兌為澤"
+"liushisiguaduili" = "火澤睽"
+"liushisiguaduizhen" = "leizeguimei"
+"liushisiguaduixun" = "風澤中孚"
+"liushisiguaduikan" = "水澤節"
+"liushisiguaduigen" = "山澤損"
+"liushisiguaduikun" = "地澤臨"
+
+"liushisigualiqian" = "天火同人"
+"liushisigualidui" = "澤火革"
+"liushisigualili" = "離為火"
+"liushisigualizhen" = "雷火豐"
+"liushisigualixun" = "風火家人"
+"liushisigualikan" = "水火既濟"
+"liushisigualigen" = "山火賁"
+"liushisigualikun" = "地火明夷"
+
+"liushisiguazhenqian" = "天雷旡妄"
+"liushisiguazhendui" = "澤雷隨"
+"liushisiguazhenli" = "火雷噬嗑"
+"liushisiguazhenzhen" = "震為雷"
+"liushisiguazhenxun" = "風雷益"
+"liushisiguazhenkan" = "水雷屯"
+"liushisiguazhengen" = "山雷頤"
+"liushisiguazhenkun" = "地雷復"
+
+"liushisiguaxunqian" = "天風姤"
+"liushisiguaxundui" = "澤風大過"
+"liushisiguaxunli" = "火風鼎"
+"liushisiguaxunzhen" = "雷風恆"
+"liushisiguaxunxun" = "巽為風"
+"liushisiguaxunkan" = "水風井"
+"liushisiguaxungen" = "山風蠱"
+"liushisiguaxunkun" = "地風升"
+
+"liushisiguakanqian" = "天水訟"
+"liushisiguakandui" = "澤水困"
+"liushisiguakanli" = "火水未濟"
+"liushisiguakanzhen" = "雷水解"
+"liushisiguakanxun" = "風水渙"
+"liushisiguakankan" = "坎為水"
+"liushisiguakangen" = "山水蒙"
+"liushisiguakankun" = "地水師"
+
+"liushisiguagenqian" = "天山遯"
+"liushisiguagendui" = "澤山咸"
+"liushisiguagenli" = "火山旅"
+"liushisiguagenzhen" = "雷山小過"
+"liushisiguagenxun" = "風山漸"
+"liushisiguagenkan" = "水山蹇"
+"liushisiguagengen" = "艮為山"
+"liushisiguagenkun" = "地山謙"
+
+"liushisiguakunqian" = "天地否"
+"liushisiguakundui" = "澤地萃"
+"liushisiguakunli" = "火地晉"
+"liushisiguakunzhen" = "雷地豫"
+"liushisiguakunxun" = "風地觀"
+"liushisiguakunkan" = "水地比"
+"liushisiguakungen" = "山地剝"
+"liushisiguakunkun" = "坤為地"
