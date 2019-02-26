@@ -111,6 +111,7 @@
 		9BCE8877214F2EB10024FEF7 /* DateGanZhiViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9BCE8876214F2EB10024FEF7 /* DateGanZhiViewModel.swift */; };
 		9BCEE3A5215D844C000B50EC /* BGPageController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9BCEE3A4215D844C000B50EC /* BGPageController.swift */; };
 		9BF3C04D2225F86100C0808A /* Flexibility.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9BF3C04C2225F86100C0808A /* Flexibility.swift */; };
+		9BF3C04F2225F88B00C0808A /* Dimension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9BF3C04E2225F88B00C0808A /* Dimension.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -267,6 +268,7 @@
 		9BCE8876214F2EB10024FEF7 /* DateGanZhiViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DateGanZhiViewModel.swift; sourceTree = "<group>"; };
 		9BCEE3A4215D844C000B50EC /* BGPageController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BGPageController.swift; sourceTree = "<group>"; };
 		9BF3C04C2225F86100C0808A /* Flexibility.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Flexibility.swift; sourceTree = "<group>"; };
+		9BF3C04E2225F88B00C0808A /* Dimension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Dimension.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -644,6 +646,7 @@
 			isa = PBXGroup;
 			children = (
 				9BF3C04C2225F86100C0808A /* Flexibility.swift */,
+				9BF3C04E2225F88B00C0808A /* Dimension.swift */,
 			);
 			name = Layout;
 			sourceTree = "<group>";
@@ -946,6 +949,7 @@
 				9B933F7B2138DF3B004DCD3F /* CGRect+Points.swift in Sources */,
 				3413A5602140BFB900245C46 /* InputViewModel.swift in Sources */,
 				9B1D7070217174B600E517F5 /* CacheRecord+CoreDataProperties.swift in Sources */,
+				9BF3C04F2225F88B00C0808A /* Dimension.swift in Sources */,
 				9B1D7072217174F600E517F5 /* CacheManager.swift in Sources */,
 				34BE799A2159D33A00B5010A /* BuGuaInfoViewController.swift in Sources */,
 				34EC158A2153426B00378758 /* ThemeManager.swift in Sources */,
