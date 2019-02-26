@@ -13,3 +13,9 @@ extension Array where Element: Hashable {
         return Set(self)
     }
 }
+
+extension Array {
+    func count(if predicate: (Element) -> Bool) -> Int {
+        return reduce(0) { predicate($1) ? $0 + 1 : $0 }
+    }
+}
