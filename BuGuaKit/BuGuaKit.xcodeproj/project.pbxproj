@@ -51,6 +51,7 @@
 		9BCE885D214E07910024FEF7 /* GanZhi.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9BCE885C214E07910024FEF7 /* GanZhi.swift */; };
 		9BCE885F214E155A0024FEF7 /* DateGanZhi.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9BCE885E214E155A0024FEF7 /* DateGanZhi.swift */; };
 		9BCE8879214F40880024FEF7 /* GregorianDate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9BCE8878214F40880024FEF7 /* GregorianDate.swift */; };
+		9BF3C04B2225F7A000C0808A /* UniversalFunctions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9BF3C04A2225F7A000C0808A /* UniversalFunctions.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -113,6 +114,7 @@
 		9BCE885C214E07910024FEF7 /* GanZhi.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GanZhi.swift; sourceTree = "<group>"; };
 		9BCE885E214E155A0024FEF7 /* DateGanZhi.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DateGanZhi.swift; sourceTree = "<group>"; };
 		9BCE8878214F40880024FEF7 /* GregorianDate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GregorianDate.swift; sourceTree = "<group>"; };
+		9BF3C04A2225F7A000C0808A /* UniversalFunctions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UniversalFunctions.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -164,6 +166,7 @@
 		345F400621041033004714DB /* BuGuaKit */ = {
 			isa = PBXGroup;
 			children = (
+				9BF3C0492225F79100C0808A /* Functional */,
 				9B3C163D214C695A00DF4C6A /* ChineseCalendar */,
 				9B16525A21323FAA001991DB /* Enums */,
 				9B16525D21323FEB001991DB /* Structs */,
@@ -260,6 +263,14 @@
 				9BCE885E214E155A0024FEF7 /* DateGanZhi.swift */,
 			);
 			name = ChineseCalendar;
+			sourceTree = "<group>";
+		};
+		9BF3C0492225F79100C0808A /* Functional */ = {
+			isa = PBXGroup;
+			children = (
+				9BF3C04A2225F7A000C0808A /* UniversalFunctions.swift */,
+			);
+			name = Functional;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -429,6 +440,7 @@
 				345F40432104EA7C004714DB /* FuXiBaGua.swift in Sources */,
 				9B16525721323C02001991DB /* DiZhi.swift in Sources */,
 				9BCE8879214F40880024FEF7 /* GregorianDate.swift in Sources */,
+				9BF3C04B2225F7A000C0808A /* UniversalFunctions.swift in Sources */,
 				345F40452104F3DB004714DB /* LiuShiSiGua.swift in Sources */,
 				9B9F56E22159A1CA0079A6AB /* GregorianTime.swift in Sources */,
 			);
