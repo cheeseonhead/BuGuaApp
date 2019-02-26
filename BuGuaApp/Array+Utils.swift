@@ -13,10 +13,3 @@ extension Array where Element: Hashable {
         return Set(self)
     }
 }
-
-extension Array {
-    func unwrap<T>() -> Array<T> where Element == Optional<T> {
-        return lazy.filter { $0 != nil }
-            .map { $0! }
-    }
-}
