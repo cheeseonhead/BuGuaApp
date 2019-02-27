@@ -52,6 +52,7 @@
 		9BCE885F214E155A0024FEF7 /* DateGanZhi.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9BCE885E214E155A0024FEF7 /* DateGanZhi.swift */; };
 		9BCE8879214F40880024FEF7 /* GregorianDate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9BCE8878214F40880024FEF7 /* GregorianDate.swift */; };
 		9BF3C04B2225F7A000C0808A /* UniversalFunctions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9BF3C04A2225F7A000C0808A /* UniversalFunctions.swift */; };
+		9BF3C1122227127F00C0808A /* CharacterDescribable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9BF3C1112227127F00C0808A /* CharacterDescribable.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -115,6 +116,7 @@
 		9BCE885E214E155A0024FEF7 /* DateGanZhi.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DateGanZhi.swift; sourceTree = "<group>"; };
 		9BCE8878214F40880024FEF7 /* GregorianDate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GregorianDate.swift; sourceTree = "<group>"; };
 		9BF3C04A2225F7A000C0808A /* UniversalFunctions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UniversalFunctions.swift; sourceTree = "<group>"; };
+		9BF3C1112227127F00C0808A /* CharacterDescribable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CharacterDescribable.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -166,6 +168,7 @@
 		345F400621041033004714DB /* BuGuaKit */ = {
 			isa = PBXGroup;
 			children = (
+				9BF3C1102227125100C0808A /* Protocol */,
 				9BF3C0492225F79100C0808A /* Functional */,
 				9B3C163D214C695A00DF4C6A /* ChineseCalendar */,
 				9B16525A21323FAA001991DB /* Enums */,
@@ -271,6 +274,14 @@
 				9BF3C04A2225F7A000C0808A /* UniversalFunctions.swift */,
 			);
 			name = Functional;
+			sourceTree = "<group>";
+		};
+		9BF3C1102227125100C0808A /* Protocol */ = {
+			isa = PBXGroup;
+			children = (
+				9BF3C1112227127F00C0808A /* CharacterDescribable.swift */,
+			);
+			name = Protocol;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -432,6 +443,7 @@
 				346334512148C2EB001D462B /* TianGan.swift in Sources */,
 				342096BA21053EA70093C9A2 /* WuXing.swift in Sources */,
 				9B9F56E02159A0650079A6AB /* BuGuaEntry.swift in Sources */,
+				9BF3C1122227127F00C0808A /* CharacterDescribable.swift in Sources */,
 				9B16525921323F9B001991DB /* LiangYi.swift in Sources */,
 				9BCE885F214E155A0024FEF7 /* DateGanZhi.swift in Sources */,
 				9B0757CB2160932B0086AFA0 /* GregorianFormatter.swift in Sources */,
