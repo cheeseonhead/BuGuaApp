@@ -7,42 +7,46 @@
 //
 
 import BuGuaKit
-import RxSwift
+import Prelude
 import RxCocoa
+import RxSwift
 import SnapKit
 import UIKit
 
 class GuaXiangView: UIView {
-
     // MARK: - Views
-    let guaXiangRows = (1...6).map { _ in return GuaXiangRow(frame: .zero) }
+
+    let guaXiangRows = (1 ... 6).map { _ in return GuaXiangRow(frame: .zero) }
     let dividers = GuaXiangView.makeDividers()
     let headerView = HeaderLabelView(frame: .zero)
     lazy var viewStack = [
-            dividers[0],
-            headerView,
-            dividers[1],
-            guaXiangRows[5],
-            dividers[2],
-            guaXiangRows[4],
-            dividers[3],
-            guaXiangRows[3],
-            dividers[4],
-            guaXiangRows[2],
-            dividers[5],
-            guaXiangRows[1],
-            dividers[6],
-            guaXiangRows[0],
-            dividers[7]
-        ]
+        dividers[0],
+        headerView,
+        dividers[1],
+        guaXiangRows[5],
+        dividers[2],
+        guaXiangRows[4],
+        dividers[3],
+        guaXiangRows[3],
+        dividers[4],
+        guaXiangRows[2],
+        dividers[5],
+        guaXiangRows[1],
+        dividers[6],
+        guaXiangRows[0],
+        dividers[7],
+    ]
 
     // MARK: - Properties
+
     let guaXiangRelay = PublishRelay<LiuYaoGuaXiang>()
 
     // MARK: - Private Constants
+
     private let columnSpacing = 16
-    
+
     // MARK: - Private
+
     let bag = DisposeBag()
     private var spacingConstraints: [Constraint] = []
 
@@ -68,8 +72,8 @@ class GuaXiangView: UIView {
 }
 
 // MARK: - Setup
-private extension GuaXiangView {
 
+private extension GuaXiangView {
     func setupViews() {
         backgroundColor = nil
 
@@ -86,7 +90,7 @@ private extension GuaXiangView {
     }
 
     func bindings() {
-        (1...6).forEach { position in
+        (1 ... 6).forEach { position in
             guaXiangRelay.map { ($0, position) }
                 .bind(to: guaXiangRows[position - 1].guaXiangRelay)
                 .disposed(by: bag)
@@ -95,6 +99,7 @@ private extension GuaXiangView {
 }
 
 // MARK: - Constraints
+
 private extension GuaXiangView {
     func createConstraints() {
         stitchHeaderAndDividers()
@@ -109,12 +114,12 @@ private extension GuaXiangView {
     }
 
     func stitchHeaderAndDividers() {
-        dividers.first!.snp.makeConstraints { (make) in
+        dividers.first!.snp.makeConstraints { make in
             make.leading.trailing.top.equalToSuperview()
             make.bottom.equalTo(headerView.snp.top)
         }
 
-        headerView.snp.makeConstraints { (make) in
+        headerView.snp.makeConstraints { make in
             make.bottom.equalTo(dividers[1].snp.top)
         }
     }
@@ -127,24 +132,25 @@ private extension GuaXiangView {
 
     func centerAllViews(_ views: [UIView]) {
         views.forEach { v in
-            v.snp.makeConstraints({ (make) in
+            v.snp.makeConstraints({ make in
                 make.centerX.equalToSuperview()
             })
         }
     }
 
     func stitchAllBelowHeaderView(_ views: [UIView]) {
-        for i in 0..<views.count - 1 {
+        for i in 0 ..< views.count - 1 {
             let top = views[i]
-            let down = views[i+1]
+            let down = views[i + 1]
 
-            top.snp.makeConstraints { (make) in
+            top.snp.makeConstraints { make in
                 spacingConstraints.append(make.bottom.equalTo(down.snp.top).constraint)
             }
         }
     }
 
     // MARK: - Adjustment
+
     func adjustRows() {
         let bottomDivider = dividers.last!
         let bottomY = bottomDivider.frame.bottomLeft.y
@@ -164,12 +170,13 @@ private extension GuaXiangView {
 }
 
 // MARK: - Setup Views
+
 private extension GuaXiangView {
     static func makeDividers() -> [WideDivider] {
         let types: [WideDivider.Style] = [.thick, .thick, .default, .default, .thick, .default, .default, .default]
 
         return types.map { type in
-            return WideDivider(style: type)
+            WideDivider(style: type)
         }
     }
 }

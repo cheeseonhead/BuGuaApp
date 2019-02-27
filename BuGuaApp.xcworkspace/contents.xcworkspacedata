@@ -7,4 +7,7 @@
    <FileRef
       location = "group:BuGuaKit/BuGuaKit.xcodeproj">
    </FileRef>
+   <FileRef
+      location = "group:Carthage/Checkouts/swift-prelude/Prelude.xcodeproj">
+   </FileRef>
 </Workspace>
