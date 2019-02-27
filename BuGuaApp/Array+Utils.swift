@@ -15,8 +15,7 @@ extension Array where Element: Hashable {
 }
 
 extension Array {
-    func unwrap<T>() -> Array<T> where Element == Optional<T> {
-        return lazy.filter { $0 != nil }
-            .map { $0! }
+    func count(if predicate: (Element) -> Bool) -> Int {
+        return reduce(0) { predicate($1) ? $0 + 1 : $0 }
     }
 }
