@@ -13,6 +13,13 @@ import RxSwift
 import SnapKit
 import UIKit
 
+private enum Style {
+    static let stackViewSpacing = BGStyle.standardMargin * 1.5
+    static let padding = 0
+
+    static let labelFont = UIFont.scaled(.body3Medium)
+}
+
 class GuaXiangView: UIView {
     // MARK: - Views
 
@@ -74,6 +81,33 @@ class GuaXiangView: UIView {
 // MARK: - Setup
 
 private extension GuaXiangView {
+    typealias CharacterKeyPath = KeyPath<LiuYaoGuaXiang, [CharacterDescribable]>
+
+    func createRow(_ position: Int) -> Layout {
+        let textObservable = GuaXiangView.createObservable(guaXiangRelay, position: position)
+    }
+
+    func infoLabel(_ observable: @escaping (CharacterKeyPath) -> Observable<String>) -> (CharacterKeyPath) -> BodyLabel {
+        return { keyPath in
+            let label = GuaXiangView.makeLabel()
+            observable(keyPath).bind(to: label.rx.text).disposed(by: bag)
+        }
+    }
+
+    static func createObservable(_ guaXiangRelay: PublishRelay<LiuYaoGuaXiang>, position: Int) -> (CharacterKeyPath) -> Observable<String> {
+        return { keyPath in
+            guaXiangRelay.map(^keyPath).map { $0[position].character }
+        }
+    }
+}
+
+extension Optional: CharacterDescribable where Wrapped: CharacterDescribable {
+    public var character: String {
+        return map(^\.character) ?? ""
+    }
+}
+
+private extension GuaXiangView {
     func setupViews() {
         backgroundColor = nil
 
@@ -95,6 +129,19 @@ private extension GuaXiangView {
                 .bind(to: guaXiangRows[position - 1].guaXiangRelay)
                 .disposed(by: bag)
         }
+    }
+}
+
+// MARK: - Create Views
+
+private extension GuaXiangView {
+    static func makeLabel() -> BodyLabel {
+        let label = BodyLabel(frame: .zero)
+
+        label.text = "甲\n子"
+        label.font = Style.labelFont
+        label.numberOfLines = 2
+        return label
     }
 }
 
