@@ -61,7 +61,8 @@ class BuGuaInfoViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        setup()
+        // Removed for release
+//        setup()
     }
 }
 
