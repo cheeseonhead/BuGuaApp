@@ -17,6 +17,7 @@ class InputViewController: UIViewController {
     @IBOutlet weak var field1: UITextField!
     @IBOutlet weak var field2: UITextField!
     @IBOutlet weak var field3: UITextField!
+    @IBOutlet weak var field4: UITextField!
     @IBOutlet var fields: [UITextField]!
     @IBOutlet weak var errorLabel: UILabel!
     let cancelBarButton = UIBarButtonItem(title: NSLocalizedString("取消", comment: ""), style: .plain, target: nil, action: nil)
@@ -79,7 +80,8 @@ private extension InputViewController {
         
         field1.placeholder = "內掛數"
         field2.placeholder = "外掛數"
-        field3.placeholder = "動爻數"
+        field3.placeholder = "動爻數一"
+        field4.placeholder = "動爻數二"
         
         fields.forEach { field in
             field.font = .headline
@@ -92,7 +94,7 @@ private extension InputViewController {
             .bind(to: finishRelay)
             .disposed(by: bag)
         
-        let strs = Observable.combineLatest(field1.rx.text, field2.rx.text, field3.rx.text) { (($0, $1), [$2]) }
+        let strs = Observable.combineLatest(field1.rx.text, field2.rx.text, field3.rx.text, field4.rx.text) { (($0, $1), [$2, $3]) }
         
         finishRelay.withLatestFrom(strs)
             .map { $0.0 }
