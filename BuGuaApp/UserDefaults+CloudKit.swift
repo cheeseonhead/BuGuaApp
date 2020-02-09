@@ -15,7 +15,7 @@ extension UserDefaults {
             set(nil, forKey: key)
             return
         }
-        let data = NSKeyedArchiver.archivedData(withRootObject: token)
+        let data = try! NSKeyedArchiver.archivedData(withRootObject: token, requiringSecureCoding: true)
         set(data, forKey: key)
     }
 

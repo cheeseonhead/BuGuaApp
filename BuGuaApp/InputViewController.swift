@@ -113,8 +113,8 @@ private extension InputViewController {
             .disposed(by: bag)
         
         let errorStr = viewModel.yaoTypeSignal.asObservable().errors()
-            .mapAt(\.localizedDescription)
-            
+            .map { $0.localizedDescription }
+
         errorStr.mapTo(false).bind(to: errorLabel.rx.isHidden).disposed(by: bag)
         errorStr.bind(to: errorLabel.rx.text).disposed(by: bag)
     }

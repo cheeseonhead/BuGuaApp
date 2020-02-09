@@ -7,7 +7,6 @@
 //
 
 import BuGuaKit
-import Prelude
 import RxCocoa
 import RxSwift
 import SnapKit
