@@ -2,11 +2,11 @@
 //  BuGuaKit.h
 //  BuGuaKit
 //
-//  Created by Cheese Onhead on 2018-07-21.
-//  Copyright © 2018 cheeseonhead. All rights reserved.
+//  Created by Jeffrey Wu on 2020-05-18.
+//  Copyright © 2020 Jeffrey Wu. All rights reserved.
 //
 
-#import <UIKit/UIKit.h>
+#import <Foundation/Foundation.h>
 
 //! Project version number for BuGuaKit.
 FOUNDATION_EXPORT double BuGuaKitVersionNumber;

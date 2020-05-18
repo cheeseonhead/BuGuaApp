@@ -1,0 +1,124 @@
+/* 
+  GuaName.strings
+  BuGuaKit
+
+  Created by Cheese Onhead on 2018-07-22.
+  Copyright © 2018 cheeseonhead. All rights reserved.
+*/
+"fuxibaguaqian" = "乾";
+"fuxibaguadui" = "兌";
+"fuxibaguali" = "離";
+"fuxibaguazhen" = "震";
+"fuxibaguaxun" = "巽";
+"fuxibaguakan" = "坎";
+"fuxibaguagen" = "艮";
+"fuxibaguakun" = "坤";
+
+"dizhizi" = "子";
+"dizhichou" = "丑";
+"dizhiyin" = "寅";
+"dizhimao" = "卯";
+"dizhichen" = "辰";
+"dizhisi" = "巳";
+"dizhiwu" = "午";
+"dizhiwei" = "未";
+"dizhishen" = "申";
+"dizhiyou" = "酉";
+"dizhixu" = "戌";
+"dizhihai" = "亥";
+
+"wuxinggold" = "金";
+"wuxingwood" = "木";
+"wuxingwater" = "水";
+"wuxingfire" = "火";
+"wuxingearth" = "土";
+
+"liuqinparent" = "父母";
+"liuqinsibling" = "兄弟";
+"liuqinwealth" = "妻財";
+"liuqindescendant" = "子孫";
+"liuqinsuperior" = "官鬼";
+
+"tianganjia" = "甲";
+"tianganyi" = "乙";
+"tianganbing" = "丙";
+"tianganding" = "丁";
+"tianganwu" = "戊";
+"tianganji" = "己";
+"tiangangeng" = "庚";
+"tianganxin" = "辛";
+"tianganren" = "壬";
+"tiangangui" = "癸";
+
+"liushoudragon" = "青龍";
+"liushoubird" = "朱雀";
+"liushouhook" = "勾陳";
+"liushousnake" = "螣蛇";
+"liushoutiger" = "白虎";
+"liushoutortoise" = "玄武";
+
+"liushisiguaqianqian" = "乾為天";
+"liushisiguakunkun" = "坤為地";
+"liushisiguakanzhen" = "水雷屯";
+"liushisiguagenkan" = "山水蒙";
+"liushisiguakanqian" = "水天需";
+"liushisiguaqiankan" = "天水訟";
+"liushisiguakunkan" = "地水師";
+"liushisiguakankun" = "水地比";
+"liushisiguaxunqian" = "風天小畜";
+"liushisiguaqiandui" = "天澤履";
+"liushisiguakunqian" = "天地泰";
+"liushisiguaqiankun" = "地天否";
+"liushisiguaqianli" = "天火同人";
+"liushisigualiqian" = "火天大有";
+"liushisiguakungen" = "地山謙";
+"liushisiguazhenkun" = "雷地豫";
+"liushisiguaduizhen" = "澤雷隨";
+"liushisiguagenxun" = "山風蠱";
+"liushisiguakundui" = "地澤臨";
+"liushisiguaxunkun" = "風地觀";
+"liushisigualizhen" = "火雷噬嗑";
+"liushisiguagenli" = "山火賁";
+"liushisiguagenkun" = "山地剝";
+"liushisiguakunzhen" = "地雷復";
+"liushisiguaqianzhen" = "天雷無妄";
+"liushisiguagenqian" = "山天大畜";
+"liushisiguagenzhen" = "山雷頤";
+"liushisiguaduixun" = "澤風大過";
+"liushisiguakankan" = "坎為水";
+"liushisigualili" = "離為火";
+"liushisiguaduigen" = "澤山咸";
+"liushisiguazhenxun" = "雷風恆";
+"liushisiguaqiangen" = "天山遯";
+"liushisiguazhenqian" = "雷天大壯";
+"liushisigualikun" = "火地晉";
+"liushisiguakunli" = "地火明夷";
+"liushisiguaxunli" = "風火家人";
+"liushisigualidui" = "火澤睽";
+"liushisiguakangen" = "水山蹇";
+"liushisiguazhenkan" = "雷水解";
+"liushisiguagendui" = "山澤損";
+"liushisiguaxunzhen" = "風雷益";
+"liushisiguaduiqian" = "澤天夬";
+"liushisiguaqianxun" = "天風姤";
+"liushisiguaduikun" = "澤地萃";
+"liushisiguakunxun" = "地風升";
+"liushisiguaduikan" = "澤水困";
+"liushisiguakanxun" = "水風井";
+"liushisiguaduili" = "澤火革";
+"liushisigualixun" = "火風鼎";
+"liushisiguazhenzhen" = "震為雷";
+"liushisiguagengen" = "艮為山";
+"liushisiguaxungen" = "風山漸";
+"liushisiguazhendui" = "雷澤歸妹";
+"liushisiguazhenli" = "雷火豐";
+"liushisigualigen" = "火山旅";
+"liushisiguaxunxun" = "巽為風";
+"liushisiguaduidui" = "兌為澤";
+"liushisiguaxunkan" = "風水渙";
+"liushisiguakandui" = "水澤節";
+"liushisiguaxundui" = "風澤中孚";
+"liushisiguazhengen" = "雷山小過";
+"liushisiguakanli" = "水火既濟";
+"liushisigualikan" = "火水未濟";
+

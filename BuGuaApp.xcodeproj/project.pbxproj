@@ -109,11 +109,41 @@
 		9BF3C0512225F8C200C0808A /* Layout.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9BF3C0502225F8C200C0808A /* Layout.swift */; };
 		9BF3C0532225F8DB00C0808A /* Row.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9BF3C0522225F8DB00C0808A /* Row.swift */; };
 		9BF3C0552225F8F600C0808A /* Stack.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9BF3C0542225F8F600C0808A /* Stack.swift */; };
+		A4B2A38324731E7000C5C611 /* BuGuaKit.h in Headers */ = {isa = PBXBuildFile; fileRef = A4B2A38124731E7000C5C611 /* BuGuaKit.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		A4B2A38624731E7000C5C611 /* BuGuaKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A4B2A37F24731E7000C5C611 /* BuGuaKit.framework */; };
+		A4B2A38724731E7000C5C611 /* BuGuaKit.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = A4B2A37F24731E7000C5C611 /* BuGuaKit.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		A4B2A3AC24731E9C00C5C611 /* DiZhi.swift in Sources */ = {isa = PBXBuildFile; fileRef = A4B2A3AB24731E9C00C5C611 /* DiZhi.swift */; };
+		A4B2A3AD24731E9C00C5C611 /* TianGan.swift in Sources */ = {isa = PBXBuildFile; fileRef = A4B2A38D24731E9700C5C611 /* TianGan.swift */; };
+		A4B2A3AE24731E9C00C5C611 /* SolarTermDateComponentsFetcher.swift in Sources */ = {isa = PBXBuildFile; fileRef = A4B2A3AA24731E9C00C5C611 /* SolarTermDateComponentsFetcher.swift */; };
+		A4B2A3AF24731E9C00C5C611 /* WuXing.swift in Sources */ = {isa = PBXBuildFile; fileRef = A4B2A38E24731E9700C5C611 /* WuXing.swift */; };
+		A4B2A3B024731E9C00C5C611 /* SolarTermCalculator.swift in Sources */ = {isa = PBXBuildFile; fileRef = A4B2A39824731E9900C5C611 /* SolarTermCalculator.swift */; };
+		A4B2A3B124731E9C00C5C611 /* FuShenController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A4B2A39524731E9800C5C611 /* FuShenController.swift */; };
+		A4B2A3B224731E9C00C5C611 /* LiuQin.swift in Sources */ = {isa = PBXBuildFile; fileRef = A4B2A38F24731E9800C5C611 /* LiuQin.swift */; };
+		A4B2A3B324731E9C00C5C611 /* TimeZone+AppZones.swift in Sources */ = {isa = PBXBuildFile; fileRef = A4B2A39A24731E9A00C5C611 /* TimeZone+AppZones.swift */; };
+		A4B2A3B424731E9C00C5C611 /* GanZhi.swift in Sources */ = {isa = PBXBuildFile; fileRef = A4B2A3A324731E9B00C5C611 /* GanZhi.swift */; };
+		A4B2A3B524731E9C00C5C611 /* GuaShenController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A4B2A39D24731E9A00C5C611 /* GuaShenController.swift */; };
+		A4B2A3B624731E9C00C5C611 /* GregorianDate.swift in Sources */ = {isa = PBXBuildFile; fileRef = A4B2A3A624731E9B00C5C611 /* GregorianDate.swift */; };
+		A4B2A3B724731E9C00C5C611 /* LiuShou.swift in Sources */ = {isa = PBXBuildFile; fileRef = A4B2A3A124731E9A00C5C611 /* LiuShou.swift */; };
+		A4B2A3B824731E9C00C5C611 /* LiuShiSiGua.swift in Sources */ = {isa = PBXBuildFile; fileRef = A4B2A39024731E9800C5C611 /* LiuShiSiGua.swift */; };
+		A4B2A3B924731E9C00C5C611 /* SolarTerm.swift in Sources */ = {isa = PBXBuildFile; fileRef = A4B2A3A524731E9B00C5C611 /* SolarTerm.swift */; };
+		A4B2A3BA24731E9C00C5C611 /* LiangYi.swift in Sources */ = {isa = PBXBuildFile; fileRef = A4B2A39224731E9800C5C611 /* LiangYi.swift */; };
+		A4B2A3BB24731E9C00C5C611 /* DateGanZhi.swift in Sources */ = {isa = PBXBuildFile; fileRef = A4B2A3A924731E9C00C5C611 /* DateGanZhi.swift */; };
+		A4B2A3BC24731E9C00C5C611 /* KongWangController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A4B2A39624731E9900C5C611 /* KongWangController.swift */; };
+		A4B2A3BD24731E9C00C5C611 /* FuXiBaGua.swift in Sources */ = {isa = PBXBuildFile; fileRef = A4B2A3A424731E9B00C5C611 /* FuXiBaGua.swift */; };
+		A4B2A3BE24731E9C00C5C611 /* BuGuaEntry.swift in Sources */ = {isa = PBXBuildFile; fileRef = A4B2A39C24731E9A00C5C611 /* BuGuaEntry.swift */; };
+		A4B2A3BF24731E9C00C5C611 /* LiuShouController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A4B2A39724731E9900C5C611 /* LiuShouController.swift */; };
+		A4B2A3C024731E9C00C5C611 /* UniversalFunctions.swift in Sources */ = {isa = PBXBuildFile; fileRef = A4B2A39124731E9800C5C611 /* UniversalFunctions.swift */; };
+		A4B2A3C124731E9C00C5C611 /* GregorianTime.swift in Sources */ = {isa = PBXBuildFile; fileRef = A4B2A39324731E9800C5C611 /* GregorianTime.swift */; };
+		A4B2A3C224731E9C00C5C611 /* GregorianFormatter.swift in Sources */ = {isa = PBXBuildFile; fileRef = A4B2A3A224731E9B00C5C611 /* GregorianFormatter.swift */; };
+		A4B2A3C324731E9C00C5C611 /* LiuYaoGuaXiang.swift in Sources */ = {isa = PBXBuildFile; fileRef = A4B2A39B24731E9A00C5C611 /* LiuYaoGuaXiang.swift */; };
+		A4B2A3C424731E9C00C5C611 /* SolarTermDataLoader.swift in Sources */ = {isa = PBXBuildFile; fileRef = A4B2A3A824731E9B00C5C611 /* SolarTermDataLoader.swift */; };
+		A4B2A3C524731E9C00C5C611 /* YaoType.swift in Sources */ = {isa = PBXBuildFile; fileRef = A4B2A3A724731E9B00C5C611 /* YaoType.swift */; };
+		A4B2A3C724731F2700C5C611 /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = A4B2A39F24731E9A00C5C611 /* Localizable.strings */; };
+		A4B2A3C824731F6600C5C611 /* SolarTermDateComponents.plist in Resources */ = {isa = PBXBuildFile; fileRef = A4B2A39924731E9900C5C611 /* SolarTermDateComponents.plist */; };
 		A80872E023F0C94B007AB8C3 /* RxSwift in Frameworks */ = {isa = PBXBuildFile; productRef = A80872DF23F0C94B007AB8C3 /* RxSwift */; };
 		A80872E223F0C94B007AB8C3 /* RxCocoa in Frameworks */ = {isa = PBXBuildFile; productRef = A80872E123F0C94B007AB8C3 /* RxCocoa */; };
 		A80872E523F0C9D8007AB8C3 /* RxSwiftExt in Frameworks */ = {isa = PBXBuildFile; productRef = A80872E423F0C9D8007AB8C3 /* RxSwiftExt */; };
 		A80872E823F0CA0A007AB8C3 /* SnapKit in Frameworks */ = {isa = PBXBuildFile; productRef = A80872E723F0CA0A007AB8C3 /* SnapKit */; };
-		A80872EE23F0CA8D007AB8C3 /* BuGuaKit in Frameworks */ = {isa = PBXBuildFile; productRef = A80872ED23F0CA8D007AB8C3 /* BuGuaKit */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -131,6 +161,13 @@
 			remoteGlobalIDString = 9B933EEC2134E529004DCD3F;
 			remoteInfo = BuGuaApp;
 		};
+		A4B2A38424731E7000C5C611 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 9B933EE52134E529004DCD3F /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = A4B2A37E24731E7000C5C611;
+			remoteInfo = BuGuaKit;
+		};
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXCopyFilesBuildPhase section */
@@ -143,6 +180,17 @@
 				9B933F6B21365266004DCD3F /* RxTest.framework in CopyFiles */,
 				9B933F6A21365262004DCD3F /* RxBlocking.framework in CopyFiles */,
 			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		A4B2A38824731E7000C5C611 /* Embed Frameworks */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 10;
+			files = (
+				A4B2A38724731E7000C5C611 /* BuGuaKit.framework in Embed Frameworks */,
+			);
+			name = "Embed Frameworks";
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXCopyFilesBuildPhase section */
@@ -264,7 +312,38 @@
 		9BF3C0522225F8DB00C0808A /* Row.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Row.swift; sourceTree = "<group>"; };
 		9BF3C0542225F8F600C0808A /* Stack.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Stack.swift; sourceTree = "<group>"; };
 		9BF3C10C22270E4D00C0808A /* Prelude.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = Prelude.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		A80872EC23F0CA66007AB8C3 /* BuGuaKit */ = {isa = PBXFileReference; lastKnownFileType = folder; path = BuGuaKit; sourceTree = "<group>"; };
+		A4B2A37F24731E7000C5C611 /* BuGuaKit.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = BuGuaKit.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		A4B2A38124731E7000C5C611 /* BuGuaKit.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = BuGuaKit.h; sourceTree = "<group>"; };
+		A4B2A38224731E7000C5C611 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		A4B2A38D24731E9700C5C611 /* TianGan.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TianGan.swift; sourceTree = "<group>"; };
+		A4B2A38E24731E9700C5C611 /* WuXing.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WuXing.swift; sourceTree = "<group>"; };
+		A4B2A38F24731E9800C5C611 /* LiuQin.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LiuQin.swift; sourceTree = "<group>"; };
+		A4B2A39024731E9800C5C611 /* LiuShiSiGua.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LiuShiSiGua.swift; sourceTree = "<group>"; };
+		A4B2A39124731E9800C5C611 /* UniversalFunctions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UniversalFunctions.swift; sourceTree = "<group>"; };
+		A4B2A39224731E9800C5C611 /* LiangYi.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LiangYi.swift; sourceTree = "<group>"; };
+		A4B2A39324731E9800C5C611 /* GregorianTime.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GregorianTime.swift; sourceTree = "<group>"; };
+		A4B2A39524731E9800C5C611 /* FuShenController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FuShenController.swift; sourceTree = "<group>"; };
+		A4B2A39624731E9900C5C611 /* KongWangController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KongWangController.swift; sourceTree = "<group>"; };
+		A4B2A39724731E9900C5C611 /* LiuShouController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LiuShouController.swift; sourceTree = "<group>"; };
+		A4B2A39824731E9900C5C611 /* SolarTermCalculator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SolarTermCalculator.swift; sourceTree = "<group>"; };
+		A4B2A39924731E9900C5C611 /* SolarTermDateComponents.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = SolarTermDateComponents.plist; sourceTree = "<group>"; };
+		A4B2A39A24731E9A00C5C611 /* TimeZone+AppZones.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "TimeZone+AppZones.swift"; sourceTree = "<group>"; };
+		A4B2A39B24731E9A00C5C611 /* LiuYaoGuaXiang.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LiuYaoGuaXiang.swift; sourceTree = "<group>"; };
+		A4B2A39C24731E9A00C5C611 /* BuGuaEntry.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BuGuaEntry.swift; sourceTree = "<group>"; };
+		A4B2A39D24731E9A00C5C611 /* GuaShenController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GuaShenController.swift; sourceTree = "<group>"; };
+		A4B2A3A024731E9A00C5C611 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = Localizable.strings; sourceTree = "<group>"; };
+		A4B2A3A124731E9A00C5C611 /* LiuShou.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LiuShou.swift; sourceTree = "<group>"; };
+		A4B2A3A224731E9B00C5C611 /* GregorianFormatter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GregorianFormatter.swift; sourceTree = "<group>"; };
+		A4B2A3A324731E9B00C5C611 /* GanZhi.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GanZhi.swift; sourceTree = "<group>"; };
+		A4B2A3A424731E9B00C5C611 /* FuXiBaGua.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FuXiBaGua.swift; sourceTree = "<group>"; };
+		A4B2A3A524731E9B00C5C611 /* SolarTerm.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SolarTerm.swift; sourceTree = "<group>"; };
+		A4B2A3A624731E9B00C5C611 /* GregorianDate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GregorianDate.swift; sourceTree = "<group>"; };
+		A4B2A3A724731E9B00C5C611 /* YaoType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = YaoType.swift; sourceTree = "<group>"; };
+		A4B2A3A824731E9B00C5C611 /* SolarTermDataLoader.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SolarTermDataLoader.swift; sourceTree = "<group>"; };
+		A4B2A3A924731E9C00C5C611 /* DateGanZhi.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DateGanZhi.swift; sourceTree = "<group>"; };
+		A4B2A3AA24731E9C00C5C611 /* SolarTermDateComponentsFetcher.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SolarTermDateComponentsFetcher.swift; sourceTree = "<group>"; };
+		A4B2A3AB24731E9C00C5C611 /* DiZhi.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DiZhi.swift; sourceTree = "<group>"; };
+		A4B2A3C624731F1D00C5C611 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = ../en.lproj/Localizable.strings; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -274,10 +353,10 @@
 			files = (
 				A80872E223F0C94B007AB8C3 /* RxCocoa in Frameworks */,
 				A80872E823F0CA0A007AB8C3 /* SnapKit in Frameworks */,
+				A4B2A38624731E7000C5C611 /* BuGuaKit.framework in Frameworks */,
 				A80872E523F0C9D8007AB8C3 /* RxSwiftExt in Frameworks */,
 				9B1D70432171466C00E517F5 /* CloudKit.framework in Frameworks */,
 				A80872E023F0C94B007AB8C3 /* RxSwift in Frameworks */,
-				A80872EE23F0CA8D007AB8C3 /* BuGuaKit in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -291,6 +370,13 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 		9B933F092134E52A004DCD3F /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		A4B2A37C24731E7000C5C611 /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -482,10 +568,10 @@
 		9B933EE42134E529004DCD3F = {
 			isa = PBXGroup;
 			children = (
+				A4B2A38024731E7000C5C611 /* BuGuaKit */,
 				9B933EEF2134E529004DCD3F /* BuGuaApp */,
 				9B933F042134E52A004DCD3F /* BuGuaAppTests */,
 				9B933F0F2134E52A004DCD3F /* BuGuaAppUITests */,
-				A80872EC23F0CA66007AB8C3 /* BuGuaKit */,
 				9B933EEE2134E529004DCD3F /* Products */,
 				9B933F472135008A004DCD3F /* Frameworks */,
 			);
@@ -497,6 +583,7 @@
 				9B933EED2134E529004DCD3F /* BuGuaApp.app */,
 				9B933F012134E52A004DCD3F /* BuGuaAppTests.xctest */,
 				9B933F0C2134E52A004DCD3F /* BuGuaAppUITests.xctest */,
+				A4B2A37F24731E7000C5C611 /* BuGuaKit.framework */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -652,7 +739,63 @@
 			name = Layout;
 			sourceTree = "<group>";
 		};
+		A4B2A38024731E7000C5C611 /* BuGuaKit */ = {
+			isa = PBXGroup;
+			children = (
+				A4B2A39C24731E9A00C5C611 /* BuGuaEntry.swift */,
+				A4B2A3A924731E9C00C5C611 /* DateGanZhi.swift */,
+				A4B2A3AB24731E9C00C5C611 /* DiZhi.swift */,
+				A4B2A39524731E9800C5C611 /* FuShenController.swift */,
+				A4B2A3A424731E9B00C5C611 /* FuXiBaGua.swift */,
+				A4B2A3A324731E9B00C5C611 /* GanZhi.swift */,
+				A4B2A3A624731E9B00C5C611 /* GregorianDate.swift */,
+				A4B2A3A224731E9B00C5C611 /* GregorianFormatter.swift */,
+				A4B2A39324731E9800C5C611 /* GregorianTime.swift */,
+				A4B2A39D24731E9A00C5C611 /* GuaShenController.swift */,
+				A4B2A39624731E9900C5C611 /* KongWangController.swift */,
+				A4B2A39224731E9800C5C611 /* LiangYi.swift */,
+				A4B2A38F24731E9800C5C611 /* LiuQin.swift */,
+				A4B2A39024731E9800C5C611 /* LiuShiSiGua.swift */,
+				A4B2A3A124731E9A00C5C611 /* LiuShou.swift */,
+				A4B2A39724731E9900C5C611 /* LiuShouController.swift */,
+				A4B2A39B24731E9A00C5C611 /* LiuYaoGuaXiang.swift */,
+				A4B2A3A524731E9B00C5C611 /* SolarTerm.swift */,
+				A4B2A39824731E9900C5C611 /* SolarTermCalculator.swift */,
+				A4B2A3A824731E9B00C5C611 /* SolarTermDataLoader.swift */,
+				A4B2A3AA24731E9C00C5C611 /* SolarTermDateComponentsFetcher.swift */,
+				A4B2A38D24731E9700C5C611 /* TianGan.swift */,
+				A4B2A39A24731E9A00C5C611 /* TimeZone+AppZones.swift */,
+				A4B2A39124731E9800C5C611 /* UniversalFunctions.swift */,
+				A4B2A38E24731E9700C5C611 /* WuXing.swift */,
+				A4B2A3A724731E9B00C5C611 /* YaoType.swift */,
+				A4B2A3C924731F6A00C5C611 /* Resources */,
+			);
+			path = BuGuaKit;
+			sourceTree = "<group>";
+		};
+		A4B2A3C924731F6A00C5C611 /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				A4B2A39F24731E9A00C5C611 /* Localizable.strings */,
+				A4B2A39924731E9900C5C611 /* SolarTermDateComponents.plist */,
+				A4B2A38124731E7000C5C611 /* BuGuaKit.h */,
+				A4B2A38224731E7000C5C611 /* Info.plist */,
+			);
+			path = Resources;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
+
+/* Begin PBXHeadersBuildPhase section */
+		A4B2A37A24731E7000C5C611 /* Headers */ = {
+			isa = PBXHeadersBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				A4B2A38324731E7000C5C611 /* BuGuaKit.h in Headers */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXHeadersBuildPhase section */
 
 /* Begin PBXNativeTarget section */
 		9B933EEC2134E529004DCD3F /* BuGuaApp */ = {
@@ -663,10 +806,12 @@
 				9B933EEA2134E529004DCD3F /* Frameworks */,
 				9B933EEB2134E529004DCD3F /* Resources */,
 				346334522148CA6E001D462B /* Increment Build Number */,
+				A4B2A38824731E7000C5C611 /* Embed Frameworks */,
 			);
 			buildRules = (
 			);
 			dependencies = (
+				A4B2A38524731E7000C5C611 /* PBXTargetDependency */,
 			);
 			name = BuGuaApp;
 			packageProductDependencies = (
@@ -674,7 +819,6 @@
 				A80872E123F0C94B007AB8C3 /* RxCocoa */,
 				A80872E423F0C9D8007AB8C3 /* RxSwiftExt */,
 				A80872E723F0CA0A007AB8C3 /* SnapKit */,
-				A80872ED23F0CA8D007AB8C3 /* BuGuaKit */,
 			);
 			productName = BuGuaApp;
 			productReference = 9B933EED2134E529004DCD3F /* BuGuaApp.app */;
@@ -718,6 +862,24 @@
 			productReference = 9B933F0C2134E52A004DCD3F /* BuGuaAppUITests.xctest */;
 			productType = "com.apple.product-type.bundle.ui-testing";
 		};
+		A4B2A37E24731E7000C5C611 /* BuGuaKit */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = A4B2A38B24731E7000C5C611 /* Build configuration list for PBXNativeTarget "BuGuaKit" */;
+			buildPhases = (
+				A4B2A37A24731E7000C5C611 /* Headers */,
+				A4B2A37B24731E7000C5C611 /* Sources */,
+				A4B2A37C24731E7000C5C611 /* Frameworks */,
+				A4B2A37D24731E7000C5C611 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = BuGuaKit;
+			productName = BuGuaKit;
+			productReference = A4B2A37F24731E7000C5C611 /* BuGuaKit.framework */;
+			productType = "com.apple.product-type.framework";
+		};
 /* End PBXNativeTarget section */
 
 /* Begin PBXProject section */
@@ -747,6 +909,9 @@
 						CreatedOnToolsVersion = 10.0;
 						TestTargetID = 9B933EEC2134E529004DCD3F;
 					};
+					A4B2A37E24731E7000C5C611 = {
+						CreatedOnToolsVersion = 11.4.1;
+					};
 				};
 			};
 			buildConfigurationList = 9B933EE82134E529004DCD3F /* Build configuration list for PBXProject "BuGuaApp" */;
@@ -769,6 +934,7 @@
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
+				A4B2A37E24731E7000C5C611 /* BuGuaKit */,
 				9B933EEC2134E529004DCD3F /* BuGuaApp */,
 				9B933F002134E52A004DCD3F /* BuGuaAppTests */,
 				9B933F0B2134E52A004DCD3F /* BuGuaAppUITests */,
@@ -808,6 +974,15 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		A4B2A37D24731E7000C5C611 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				A4B2A3C824731F6600C5C611 /* SolarTermDateComponents.plist in Resources */,
+				A4B2A3C724731F2700C5C611 /* Localizable.strings in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -962,6 +1137,39 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		A4B2A37B24731E7000C5C611 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				A4B2A3BD24731E9C00C5C611 /* FuXiBaGua.swift in Sources */,
+				A4B2A3B324731E9C00C5C611 /* TimeZone+AppZones.swift in Sources */,
+				A4B2A3B524731E9C00C5C611 /* GuaShenController.swift in Sources */,
+				A4B2A3B624731E9C00C5C611 /* GregorianDate.swift in Sources */,
+				A4B2A3B124731E9C00C5C611 /* FuShenController.swift in Sources */,
+				A4B2A3B424731E9C00C5C611 /* GanZhi.swift in Sources */,
+				A4B2A3BC24731E9C00C5C611 /* KongWangController.swift in Sources */,
+				A4B2A3C024731E9C00C5C611 /* UniversalFunctions.swift in Sources */,
+				A4B2A3BF24731E9C00C5C611 /* LiuShouController.swift in Sources */,
+				A4B2A3B024731E9C00C5C611 /* SolarTermCalculator.swift in Sources */,
+				A4B2A3B824731E9C00C5C611 /* LiuShiSiGua.swift in Sources */,
+				A4B2A3B224731E9C00C5C611 /* LiuQin.swift in Sources */,
+				A4B2A3AD24731E9C00C5C611 /* TianGan.swift in Sources */,
+				A4B2A3BE24731E9C00C5C611 /* BuGuaEntry.swift in Sources */,
+				A4B2A3C224731E9C00C5C611 /* GregorianFormatter.swift in Sources */,
+				A4B2A3AF24731E9C00C5C611 /* WuXing.swift in Sources */,
+				A4B2A3C424731E9C00C5C611 /* SolarTermDataLoader.swift in Sources */,
+				A4B2A3BB24731E9C00C5C611 /* DateGanZhi.swift in Sources */,
+				A4B2A3B724731E9C00C5C611 /* LiuShou.swift in Sources */,
+				A4B2A3C124731E9C00C5C611 /* GregorianTime.swift in Sources */,
+				A4B2A3BA24731E9C00C5C611 /* LiangYi.swift in Sources */,
+				A4B2A3C524731E9C00C5C611 /* YaoType.swift in Sources */,
+				A4B2A3B924731E9C00C5C611 /* SolarTerm.swift in Sources */,
+				A4B2A3AE24731E9C00C5C611 /* SolarTermDateComponentsFetcher.swift in Sources */,
+				A4B2A3C324731E9C00C5C611 /* LiuYaoGuaXiang.swift in Sources */,
+				A4B2A3AC24731E9C00C5C611 /* DiZhi.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXTargetDependency section */
@@ -974,6 +1182,11 @@
 			isa = PBXTargetDependency;
 			target = 9B933EEC2134E529004DCD3F /* BuGuaApp */;
 			targetProxy = 9B933F0D2134E52A004DCD3F /* PBXContainerItemProxy */;
+		};
+		A4B2A38524731E7000C5C611 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = A4B2A37E24731E7000C5C611 /* BuGuaKit */;
+			targetProxy = A4B2A38424731E7000C5C611 /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
 
@@ -1003,6 +1216,15 @@
 				34F3E4F62150926F00A9BA2B /* zh-Hant */,
 			);
 			name = LaunchScreen.storyboard;
+			sourceTree = "<group>";
+		};
+		A4B2A39F24731E9A00C5C611 /* Localizable.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				A4B2A3A024731E9A00C5C611 /* en */,
+				A4B2A3C624731F1D00C5C611 /* en */,
+			);
+			name = Localizable.strings;
 			sourceTree = "<group>";
 		};
 /* End PBXVariantGroup section */
@@ -1133,6 +1355,7 @@
 		9B933F162134E52A004DCD3F /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_ENTITLEMENTS = BuGuaApp/BuGuaApp.entitlements;
 				CODE_SIGN_STYLE = Automatic;
@@ -1155,6 +1378,7 @@
 		9B933F172134E52A004DCD3F /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_ENTITLEMENTS = BuGuaApp/BuGuaApp.entitlements;
 				CODE_SIGN_STYLE = Automatic;
@@ -1264,6 +1488,60 @@
 			};
 			name = Release;
 		};
+		A4B2A38924731E7000C5C611 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				INFOPLIST_FILE = BuGuaKit/Resources/Info.plist;
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 13.4;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.cheeseonhead.BuGuaKit;
+				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
+				SKIP_INSTALL = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Debug;
+		};
+		A4B2A38A24731E7000C5C611 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				INFOPLIST_FILE = BuGuaKit/Resources/Info.plist;
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 13.4;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.cheeseonhead.BuGuaKit;
+				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
+				SKIP_INSTALL = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Release;
+		};
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
@@ -1299,6 +1577,15 @@
 			buildConfigurations = (
 				9B933F1C2134E52A004DCD3F /* Debug */,
 				9B933F1D2134E52A004DCD3F /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		A4B2A38B24731E7000C5C611 /* Build configuration list for PBXNativeTarget "BuGuaKit" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				A4B2A38924731E7000C5C611 /* Debug */,
+				A4B2A38A24731E7000C5C611 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
@@ -1352,10 +1639,6 @@
 			isa = XCSwiftPackageProductDependency;
 			package = A80872E623F0CA09007AB8C3 /* XCRemoteSwiftPackageReference "SnapKit" */;
 			productName = SnapKit;
-		};
-		A80872ED23F0CA8D007AB8C3 /* BuGuaKit */ = {
-			isa = XCSwiftPackageProductDependency;
-			productName = BuGuaKit;
 		};
 /* End XCSwiftPackageProductDependency section */
 
