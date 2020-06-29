@@ -109,7 +109,8 @@
 		9BF3C0512225F8C200C0808A /* Layout.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9BF3C0502225F8C200C0808A /* Layout.swift */; };
 		9BF3C0532225F8DB00C0808A /* Row.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9BF3C0522225F8DB00C0808A /* Row.swift */; };
 		9BF3C0552225F8F600C0808A /* Stack.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9BF3C0542225F8F600C0808A /* Stack.swift */; };
-		A80872E023F0C94B007AB8C3 /* RxSwift in Frameworks */ = {isa = PBXBuildFile; productRef = A80872DF23F0C94B007AB8C3 /* RxSwift */; };
+		A4AE7E3424AA375000B71CFB /* BuGuaKit in Frameworks */ = {isa = PBXBuildFile; productRef = A4AE7E3324AA375000B71CFB /* BuGuaKit */; };
+		A4AE7E3624AA376C00B71CFB /* RxSwift in Frameworks */ = {isa = PBXBuildFile; productRef = A4AE7E3524AA376C00B71CFB /* RxSwift */; };
 		A80872E223F0C94B007AB8C3 /* RxCocoa in Frameworks */ = {isa = PBXBuildFile; productRef = A80872E123F0C94B007AB8C3 /* RxCocoa */; };
 		A80872E523F0C9D8007AB8C3 /* RxSwiftExt in Frameworks */ = {isa = PBXBuildFile; productRef = A80872E423F0C9D8007AB8C3 /* RxSwiftExt */; };
 		A80872E823F0CA0A007AB8C3 /* SnapKit in Frameworks */ = {isa = PBXBuildFile; productRef = A80872E723F0CA0A007AB8C3 /* SnapKit */; };
@@ -281,11 +282,12 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				A4AE7E3624AA376C00B71CFB /* RxSwift in Frameworks */,
 				A80872E223F0C94B007AB8C3 /* RxCocoa in Frameworks */,
 				A80872E823F0CA0A007AB8C3 /* SnapKit in Frameworks */,
 				A80872E523F0C9D8007AB8C3 /* RxSwiftExt in Frameworks */,
 				9B1D70432171466C00E517F5 /* CloudKit.framework in Frameworks */,
-				A80872E023F0C94B007AB8C3 /* RxSwift in Frameworks */,
+				A4AE7E3424AA375000B71CFB /* BuGuaKit in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -687,10 +689,11 @@
 			);
 			name = BuGuaApp;
 			packageProductDependencies = (
-				A80872DF23F0C94B007AB8C3 /* RxSwift */,
 				A80872E123F0C94B007AB8C3 /* RxCocoa */,
 				A80872E423F0C9D8007AB8C3 /* RxSwiftExt */,
 				A80872E723F0CA0A007AB8C3 /* SnapKit */,
+				A4AE7E3324AA375000B71CFB /* BuGuaKit */,
+				A4AE7E3524AA376C00B71CFB /* RxSwift */,
 			);
 			productName = BuGuaApp;
 			productReference = 9B933EED2134E529004DCD3F /* BuGuaApp.app */;
@@ -1351,7 +1354,11 @@
 /* End XCRemoteSwiftPackageReference section */
 
 /* Begin XCSwiftPackageProductDependency section */
-		A80872DF23F0C94B007AB8C3 /* RxSwift */ = {
+		A4AE7E3324AA375000B71CFB /* BuGuaKit */ = {
+			isa = XCSwiftPackageProductDependency;
+			productName = BuGuaKit;
+		};
+		A4AE7E3524AA376C00B71CFB /* RxSwift */ = {
 			isa = XCSwiftPackageProductDependency;
 			package = A80872DE23F0C94B007AB8C3 /* XCRemoteSwiftPackageReference "RxSwift" */;
 			productName = RxSwift;
