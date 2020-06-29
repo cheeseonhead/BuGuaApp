@@ -22,6 +22,6 @@ public enum LiuQin {
     }
 
     public var character: String {
-        return NSLocalizedString("liuqin\(self)", tableName: nil, bundle: Bundle(identifier: "com.cheeseonhead.BuGuaKit")!, value: "", comment: "")
+        return NSLocalizedString("liuqin\(self)", tableName: nil, bundle: Bundle.module, value: "", comment: "")
     }
 }

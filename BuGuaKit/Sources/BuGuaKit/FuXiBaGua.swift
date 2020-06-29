@@ -41,7 +41,7 @@ public enum FuXiBaGua: Int, CaseIterable {
     }
 
     public var character: String {
-        return NSLocalizedString("fuxibagua\(self)", tableName: nil, bundle: Bundle(identifier: "com.cheeseonhead.BuGuaKit")!, value: "", comment: "")
+        return NSLocalizedString("fuxibagua\(self)", tableName: nil, bundle: Bundle.module, value: "", comment: "")
     }
 
     public var opposite: FuXiBaGua {

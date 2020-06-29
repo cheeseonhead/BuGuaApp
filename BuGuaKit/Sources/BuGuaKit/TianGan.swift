@@ -12,7 +12,7 @@ public enum TianGan: CaseIterable {
     case jia, yi, bing, ding, wu, ji, geng, xin, ren, gui
 
     public var character: String {
-        return NSLocalizedString("tiangan\(self)", tableName: nil, bundle: Bundle(identifier: "com.cheeseonhead.BuGuaKit")!, value: "", comment: "")
+        return NSLocalizedString("tiangan\(self)", tableName: nil, bundle: Bundle.module, value: "", comment: "")
     }
 
     func tianGan(after count: Int) -> TianGan {
