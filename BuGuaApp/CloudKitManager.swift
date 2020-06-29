@@ -34,6 +34,7 @@ class CloudKitManager {
 
     // MARK: - PriConstants
 
+    private let updateInterval = TimeInterval(10)
     private let serverChangeTokenKey = "serverChangeToken"
     private let customZoneTokenKey = "TestZoneChangeToken"
 
@@ -47,7 +48,7 @@ class CloudKitManager {
         self.cacheManager = cacheManager
         self.updateManager = updateManager
 
-        timer = RepeatingTimer(timeInterval: 5)
+        timer = RepeatingTimer(timeInterval: updateInterval)
         timer.eventHandler = { [unowned self] in
             self.loop()
         }
@@ -76,7 +77,7 @@ class CloudKitManager {
                 switch status {
                 case .available:
                     self.state = .loggedIn
-                    self.addZone()
+                    self.loop()
                 case .noAccount:
                     self.state = .notLoggedIn
                 case .couldNotDetermine:
@@ -97,6 +98,7 @@ class CloudKitManager {
         zoneOperation.modifyRecordZonesCompletionBlock = { [unowned self] savedZones, _, _ in
             if savedZones?.contains(self.zone) ?? false {
                 self.state = .serverOutdated
+                self.loop()
             }
         }
 
@@ -111,13 +113,14 @@ class CloudKitManager {
 
         var changedZoneIDs: [CKRecordZone.ID] = []
 
-        zoneChangesOperation.recordZoneWithIDChangedBlock = {
-            changedZoneIDs.append($0)
+        zoneChangesOperation.recordZoneWithIDChangedBlock = { zoneID in
+            print("Zone has changed: \(zoneID)")
+            changedZoneIDs.append(zoneID)
         }
 
-        zoneChangesOperation.changeTokenUpdatedBlock = {
-            print("New server token:\($0)")
-            latestServerChangeToken = $0
+        zoneChangesOperation.changeTokenUpdatedBlock = { serverChangeToken in
+            print("New server token:\(serverChangeToken)")
+            latestServerChangeToken = serverChangeToken
         }
 
         zoneChangesOperation.fetchDatabaseChangesCompletionBlock = { token, _, error in
@@ -132,6 +135,8 @@ class CloudKitManager {
 
             self.fetchZoneChanges(zoneIDs: changedZoneIDs) {
                 UserDefaults.standard.setToken(latestServerChangeToken, forKey: self.serverChangeTokenKey)
+                self.updateManager.flushChanges()
+                // TODO: Change this to inSync
                 self.state = .serverOutdated
             }
         }
@@ -140,6 +145,11 @@ class CloudKitManager {
     }
 
     func fetchZoneChanges(zoneIDs: [CKRecordZone.ID], completion: @escaping () -> Void) {
+        guard zoneIDs.count > 0 else {
+            completion()
+            return
+        }
+
         // Look up the previous change token for each zone
         var optionsByRecordZoneID = [CKRecordZone.ID: CKFetchRecordZoneChangesOperation.ZoneOptions]()
 
@@ -152,10 +162,12 @@ class CloudKitManager {
         let operation = CKFetchRecordZoneChangesOperation(recordZoneIDs: zoneIDs, optionsByRecordZoneID: optionsByRecordZoneID)
 
         operation.recordChangedBlock = { record in
+            print("Record updated: \(record)")
             self.updateManager.recordChanged(record)
         }
 
         operation.recordWithIDWasDeletedBlock = { recordId, _ in
+            print("Record deleted: \(recordId)")
             self.updateManager.recordDeleted(recordId)
         }
 

@@ -64,6 +64,7 @@ extension CKRecordConvertable where Self: NSManagedObject {
     // MARK: - Update from Cloud
 
     func updateWithRecord(_ record: CKRecord) {
+        recordName = record.recordID.recordName
         recordData = systemFieldData(for: record)
 
         updateDetails(with: record)
