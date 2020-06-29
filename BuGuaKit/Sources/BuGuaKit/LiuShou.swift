@@ -12,6 +12,6 @@ public enum LiuShou: CaseIterable {
     case dragon, bird, hook, snake, tiger, tortoise
 
     public var character: String {
-        return NSLocalizedString("liushou\(self)", tableName: nil, bundle: Bundle(identifier: "com.cheeseonhead.BuGuaKit")!, value: "", comment: "")
+        return NSLocalizedString("liushou\(self)", tableName: nil, bundle: Bundle.module, value: "", comment: "")
     }
 }

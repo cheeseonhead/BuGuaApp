@@ -12,7 +12,7 @@ public enum DiZhi: CaseIterable {
     case zi, chou, yin, mao, chen, si, wu, wei, shen, you, xu, hai
 
     public var character: String {
-        return NSLocalizedString("dizhi\(self)", tableName: nil, bundle: Bundle(identifier: "com.cheeseonhead.BuGuaKit")!, value: "", comment: "")
+        return NSLocalizedString("dizhi\(self)", tableName: nil, bundle: Bundle.module, value: "", comment: "")
     }
 
     public var wuXing: WuXing {
