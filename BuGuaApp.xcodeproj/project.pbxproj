@@ -312,6 +312,7 @@
 		9BF3C0522225F8DB00C0808A /* Row.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Row.swift; sourceTree = "<group>"; };
 		9BF3C0542225F8F600C0808A /* Stack.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Stack.swift; sourceTree = "<group>"; };
 		9BF3C10C22270E4D00C0808A /* Prelude.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = Prelude.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		A4AE7DB724AA311000B71CFB /* zh-Hant */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "zh-Hant"; path = "../zh-Hant.lproj/Localizable.strings"; sourceTree = "<group>"; };
 		A4B2A37F24731E7000C5C611 /* BuGuaKit.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = BuGuaKit.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		A4B2A38124731E7000C5C611 /* BuGuaKit.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = BuGuaKit.h; sourceTree = "<group>"; };
 		A4B2A38224731E7000C5C611 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -331,7 +332,6 @@
 		A4B2A39B24731E9A00C5C611 /* LiuYaoGuaXiang.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LiuYaoGuaXiang.swift; sourceTree = "<group>"; };
 		A4B2A39C24731E9A00C5C611 /* BuGuaEntry.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BuGuaEntry.swift; sourceTree = "<group>"; };
 		A4B2A39D24731E9A00C5C611 /* GuaShenController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GuaShenController.swift; sourceTree = "<group>"; };
-		A4B2A3A024731E9A00C5C611 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = Localizable.strings; sourceTree = "<group>"; };
 		A4B2A3A124731E9A00C5C611 /* LiuShou.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LiuShou.swift; sourceTree = "<group>"; };
 		A4B2A3A224731E9B00C5C611 /* GregorianFormatter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GregorianFormatter.swift; sourceTree = "<group>"; };
 		A4B2A3A324731E9B00C5C611 /* GanZhi.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GanZhi.swift; sourceTree = "<group>"; };
@@ -1221,8 +1221,8 @@
 		A4B2A39F24731E9A00C5C611 /* Localizable.strings */ = {
 			isa = PBXVariantGroup;
 			children = (
-				A4B2A3A024731E9A00C5C611 /* en */,
 				A4B2A3C624731F1D00C5C611 /* en */,
+				A4AE7DB724AA311000B71CFB /* zh-Hant */,
 			);
 			name = Localizable.strings;
 			sourceTree = "<group>";
@@ -1404,7 +1404,6 @@
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				BUNDLE_LOADER = "$(TEST_HOST)";
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = 77Q2XB2RSV;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(PROJECT_DIR)/Carthage/Build/iOS",
@@ -1429,7 +1428,6 @@
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				BUNDLE_LOADER = "$(TEST_HOST)";
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = 77Q2XB2RSV;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(PROJECT_DIR)/Carthage/Build/iOS",
@@ -1453,7 +1451,6 @@
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = 77Q2XB2RSV;
 				INFOPLIST_FILE = BuGuaAppUITests/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
@@ -1473,7 +1470,6 @@
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = 77Q2XB2RSV;
 				INFOPLIST_FILE = BuGuaAppUITests/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
